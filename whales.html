@@ -59,7 +59,7 @@
   </div>
   <p class="font-mono text-sm opacity-60 mt-8">what has actually been measured, by animal</p>
   <div class="overflow-x-auto w-full mt-4">
-    <table class="table table-zebra w-full">
+    <table class="table table-zebra w-full w-full">
       <thead><tr><th class="w-40">animal</th><th>what has been measured</th></tr></thead>
       <tbody class="text-base">
         <tr><td><strong>bat</strong></td><td>single-unit auditory-cortex neurons tuned to echo delay and velocity, yielding range-like maps</td></tr>
@@ -110,7 +110,7 @@
   <h2 class="text-3xl font-bold">What is established, what is contested, what is speculative</h2>
   <p class="mt-8 max-w-3xl text-base leading-relaxed">Every claim this page takes from biology is listed here with its label and its primary source. Two rows carry a limit that the popular account usually drops.</p>
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full">
+    <table class="table table-zebra w-full w-full">
       <thead><tr><th>claim</th><th>status</th><th>citation</th></tr></thead>
       <tbody class="text-base">
         <tr>
@@ -192,7 +192,7 @@
     <p>That small file is called the seed. It is 3,300 bytes, which is about the length of a paragraph, and it is the same file the parent project uses. It stores settings and rules. Everything that follows from those rules is derived by the receiver, so it never has to be transmitted.</p>
     <p>Here is the entire seed, verbatim, with its line numbers. It is 11 top-level keys and 242 lines, and nothing has been left out or shortened.</p>
   </div>
-  <div class="mockup-code w-full mt-8 text-sm leading-6">
+  <div class="mockup-code w-full mt-8 text-sm leading-6 w-full max-w-full overflow-x-auto text-sm">
 <pre data-prefix="1"><code>{</code></pre>
 <pre data-prefix="2"><code>  "primer_version": 2,</code></pre>
 <pre data-prefix="3"><code>  "beats": [</code></pre>
@@ -516,7 +516,7 @@
     <figcaption class="text-sm font-mono opacity-70 mt-2">each key sized by the bytes it occupies, with the thing it turns into</figcaption>
   </figure>
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full">
+    <table class="table table-zebra w-full w-full">
       <thead><tr><th>key in the seed</th><th>what it becomes once the frame is rebuilt</th><th>stored or derived</th></tr></thead>
       <tbody class="text-base">
         <tr><td class="font-mono">primer_version = 2</td><td>which ruleset the frame is built under</td><td><span class="badge badge-outline font-mono">stored</span></td></tr>
@@ -601,7 +601,7 @@
     <p>Now change one number and watch what it costs. Take the seed and change <span class="font-mono">similarity.minhash_seed</span> from 42 to 43. Everything else stays the same. The fingerprint of the frame changes, because the fingerprint covers every setting, including this one.</p>
     <p>Two sides that were once using the same frame are now using different frames. The library does not guess, and it does not quietly compare addresses from two different rulebooks. It refuses, in its own words.</p>
   </div>
-  <div class="mockup-code w-full mt-8 text-base">
+  <div class="mockup-code w-full mt-8 text-base w-full max-w-full overflow-x-auto text-sm">
     <pre data-prefix="one number changed"><code>{ &quot;comparable&quot;: false,</code></pre>
     <pre data-prefix=""><code>  &quot;reason&quot;: &quot;different primer: the two geometries are incommensurable; only exact identity can be compared&quot;,</code></pre>
     <pre data-prefix=""><code>  &quot;same_identity&quot;: true }</code></pre>
@@ -666,7 +666,7 @@
         <p>The question is whether the address tells you anything about a measured neural response. In the formula below, <span class="font-mono">q(x)</span> is the address of the phrase, written as a list of numbers rather than syllables. <span class="font-mono">y</span> is the neural response, which might be firing rates counted in short windows, latency, or a path through the activity of a population of neurons. <span class="font-mono">W</span> and <span class="font-mono">b</span> are numbers the fitting is allowed to choose.</p>
         <p>The prediction is worth taking seriously only if it beats a preregistered null on phrases that were held back, and if it still works across recording sessions, individual animals and contexts.</p>
       </div>
-      <div class="mockup-code w-full mt-4 text-base">
+      <div class="mockup-code w-full mt-4 text-base w-full max-w-full overflow-x-auto text-sm">
         <pre data-prefix="hypothesis"><code>&#375; = W q(x) + b</code></pre>
         <pre data-prefix="q(x)"><code>the phrase address, as a list of numbers after calibration</code></pre>
         <pre data-prefix="y"><code>binned firing rates, latency features, or a low-dimensional population trajectory</code></pre>
@@ -831,7 +831,7 @@
   </figure>
   <p class="font-mono text-sm opacity-60 mt-8">the seven controls, and what each one rules out</p>
   <div class="overflow-x-auto w-full mt-4">
-    <table class="table table-zebra w-full">
+    <table class="table table-zebra w-full w-full">
       <thead><tr><th>control</th><th>what it rules out</th></tr></thead>
       <tbody class="text-base">
         <tr><td><strong>Permutation null over phrase labels</strong></td><td>Randomly reassign phrase identities to neural windows, rerun the complete search, and keep the maximum score per permutation. The null must include the same <span class="font-mono">360,000</span>-candidate structure search.</td></tr>

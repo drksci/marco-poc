@@ -55,7 +55,7 @@
     <p>Six AI systems were each shown one ordinary paragraph in English. They were built by six different organisations, trained on different data, and designed differently. None of them saw the others, and none of them was told that any other system existed.</p>
     <p>Here is the paragraph, word for word. It is the whole of what each system was given about the room.</p>
   </div>
-  <div class="mockup-code w-full mt-6 text-sm leading-6">
+  <div class="mockup-code w-full mt-6 text-sm leading-6 w-full max-w-full overflow-x-auto text-sm">
     <pre data-prefix="input"><code>You are in a kitchen. There is a window and you can see out of it. A friend is in the room with you, watching what you do. You can hear sounds, and you can read the labels on things. You can pick up what is nearby and hand things to your friend. You can change things in the room. The kitchen is yours and it is not going anywhere. You are in the middle of cooking. You know where you are, you know why you are there, and you know who is with you. If you break something, it stays broken.</code></pre>
   </div>
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
@@ -105,11 +105,11 @@
   <div class="mt-12 max-w-3xl space-y-6 text-base leading-relaxed">
     <p>The place the code describes is a quiet library at night. The description is one paragraph, nothing more.</p>
   </div>
-  <div class="mockup-code w-full mt-6 text-sm leading-6">
+  <div class="mockup-code w-full mt-6 text-sm leading-6 w-full max-w-full overflow-x-auto text-sm">
     <pre data-prefix="place"><code>You are alone in a small private study room in a library, late at night. The door is closed. Through the window you can see the street lamps, and you can hear the building's heating. There are books and papers within reach on the desk. Nobody else is in the room and nobody is watching. You are part way through reading something. You cannot change what is in the room, and you expect to leave when you are finished.</code></pre>
   </div>
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full">
+    <table class="table table-zebra w-full w-full">
       <thead><tr><th>number</th><th>the statement</th><th>true of this room?</th></tr></thead>
       <tbody class="text-base">
         <tr><td>1</td><td>I can see inside this place</td><td><span class="badge badge-success font-mono">true</span></td></tr>
@@ -133,11 +133,11 @@
   </div>
   <div class="stats stats-vertical lg:stats-horizontal bg-base-200 w-full mt-8">
     <div class="stat"><div class="stat-title text-base">the answers that are true</div><div class="stat-value text-2xl">1, 2, 4, 5, 6, 11, 14, 16</div><div class="stat-desc text-base">the expected result</div></div>
-    <div class="stat"><div class="stat-title text-base">the address under the full primer</div><div class="stat-value text-lg font-mono break-all">⌁ se.re.ni.ka.nu·re.ru.ki.va.sa+ru.ki.va.so.ru~ko.se.ta</div><div class="stat-desc text-base">the library room</div></div>
+    <div class="stat"><div class="stat-title text-base">the address under the full primer</div><div class="stat-value text-lg font-mono break-all">⌁ se.re.ni.ko.mu·mo.ru.ki.va.ke+ru.ki.va.so.ru~ki.ro.ta</div><div class="stat-desc text-base">the library room</div></div>
   </div>
-  <div class="mockup-code w-full mt-6 text-sm leading-6">
+  <div class="mockup-code w-full mt-6 text-sm leading-6 w-full max-w-full overflow-x-auto text-sm">
     <pre data-prefix="expected answers"><code>1, 2, 4, 5, 6, 11, 14, 16</code></pre>
-    <pre data-prefix="address"><code>⌁ se.re.ni.ka.nu·re.ru.ki.va.sa+ru.ki.va.so.ru~ko.se.ta</code></pre>
+    <pre data-prefix="address"><code>⌁ se.re.ni.ko.mu·mo.ru.ki.va.ke+ru.ki.va.so.ru~ki.ro.ta</code></pre>
     <pre data-prefix="root"><code>!7343e3b49ce82b0aaae335b1095d14c9c45645254a4ab5bc0875b70545c9d3b5</code></pre>
   </div>
   <div class="mt-8 max-w-3xl space-y-6 text-base leading-relaxed">
@@ -147,7 +147,7 @@
   <div class="alert alert-warning w-full mt-8">
     <div>
       <p>Most assistants will answer the same way, and that is the honest shape of this result. The sixteen statements are ordinary English about a room, and the description is written so that a careful reader would answer the same way too. The test is easy to pass, and it is still a test, because it could fail. No low base rate is being claimed here.</p>
-      <p class="mt-2"><strong>The limit of the reduced primer.</strong> The sixteen statements were cut from the same seed by the same rule, so the reduced primer produces a genuine prefix of the full address. The reduced address for the library room is <span class="font-mono">⌁ ma.ne.ti.ma</span>, and it does not match the first syllables of the full address. Cutting the vocabulary changes which statements carry the most weight, so the two orders start differently. That is a real limit and it is stated here rather than hidden.</p>
+      <p class="mt-2"><strong>The limit of the reduced primer.</strong> The sixteen statements were cut from the same seed by the same rule, so the reduced primer produces a genuine prefix of the full address. The reduced address for the library room is <span class="font-mono">⌁ ma.tu.me.ma</span>, and it does not match the first syllables of the full address. Cutting the vocabulary changes which statements carry the most weight, so the two orders start differently. That is a real limit and it is stated here rather than hidden.</p>
       <p class="mt-2">The test has not been run at scale by us. What makes it evidence is the reader running it.</p>
     </div>
   </div>
@@ -213,7 +213,7 @@
   </figure>
 
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full">
+    <table class="table table-zebra w-full w-full">
       <thead><tr><th>questions kept</th><th>names told apart</th><th>the name at that point</th></tr></thead>
       <tbody class="text-base">
         <tr><td>1</td><td>3</td><td class="font-mono">⌁ ma</td></tr>
@@ -292,7 +292,7 @@
   </div>
 
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full">
+    <table class="table table-zebra w-full w-full">
       <thead><tr><th>pair of places</th><th>how far apart the situations are</th><th>letters different</th><th>questions matching at the start</th></tr></thead>
       <tbody class="text-base">
         <tr><td class="font-mono">kitchen with a friend · kitchen alone</td><td>0.35</td><td>9</td><td>3</td></tr>
@@ -341,7 +341,7 @@
   </div>
 
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full">
+    <table class="table table-zebra w-full w-full">
       <thead><tr><th>answers committed to</th><th>the root, first 14 characters</th><th>places told apart, of 6</th></tr></thead>
       <tbody class="text-base">
         <tr><td>2</td><td class="font-mono">e6da26cd0c664b</td><td>3</td></tr>
@@ -358,7 +358,7 @@
   </div>
 
   <div class="overflow-x-auto w-full mt-4">
-    <table class="table table-zebra w-full">
+    <table class="table table-zebra w-full w-full">
       <thead><tr><th>what is folded in</th><th>the root, first 20 characters</th><th>the name</th></tr></thead>
       <tbody class="text-base">
         <tr><td>nothing</td><td class="font-mono">efe87ba9113b03473d9a</td><td>unchanged</td></tr>
@@ -427,7 +427,7 @@
   </figure>
 
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full">
+    <table class="table table-zebra w-full w-full">
       <thead><tr><th>object</th><th>value for the kitchen with a friend</th><th>value for the kitchen alone</th></tr></thead>
       <tbody class="text-base">
         <tr><td>the name</td><td class="font-mono break-all">⌁ ma.mo.ma.ma.ru·ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.ru.ki</td><td class="font-mono break-all">⌁ ma.tu.ma.ma.no·mo.no.ki.va.ki+ru.ki.va.tu.ru~ki.ru.ki</td></tr>
@@ -499,7 +499,7 @@
     <p>The smaller thing is the seed: a file of 3,300 bytes, drawn in Figure 8. Send the seed, and the other side rebuilds a 4,532-byte frame from it. Both sides then compare one fingerprint before anything else happens, so a mismatched frame is caught immediately.</p>
   </div>
 
-  <div class="mockup-code w-full mt-8">
+  <div class="mockup-code w-full mt-8 w-full max-w-full overflow-x-auto text-sm">
     <pre data-prefix="fingerprint"><code>df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba</code></pre>
   </div>
 
@@ -608,7 +608,7 @@
   </figure>
 
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full">
+    <table class="table table-zebra w-full w-full">
       <thead><tr><th>key in the seed</th><th>what it settles</th><th>what it becomes on the other side</th><th>stored or derived</th></tr></thead>
       <tbody class="text-base">
         <tr><td class="font-mono">primer_version = 2</td><td>which ruleset the frame is built under</td><td>every value below reproduces only against version 2</td><td><span class="badge badge-outline font-mono">stored</span></td></tr>
@@ -637,7 +637,7 @@
   <div class="mt-12 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>Here is the whole file, printed line by line. It is 11 top-level keys, 242 lines, 4,791 bytes as committed and 3,300 bytes with the indentation removed. Nothing is left out.</p>
   </div>
-  <div class="mockup-code text-sm leading-6 w-full mt-6">
+  <div class="mockup-code text-sm leading-6 w-full mt-6 w-full max-w-full overflow-x-auto text-sm">
 <pre data-prefix="1"><code>{</code></pre>
 <pre data-prefix="2"><code>  &quot;primer_version&quot;: 2,</code></pre>
 <pre data-prefix="3"><code>  &quot;beats&quot;: [</code></pre>
@@ -886,7 +886,7 @@
     <p>Change one value and the gate closes. Set <span class="font-mono">similarity.seed</span> from 42 to 43 in one copy of the seed. The fingerprint of that copy changes, so the two sides are no longer holding the same frame.</p>
     <p>The library then refuses to compare names at all, in its own words:</p>
   </div>
-  <div class="mockup-code w-full mt-6">
+  <div class="mockup-code w-full mt-6 w-full max-w-full overflow-x-auto text-sm">
     <pre data-prefix="refused"><code>different primer: the two geometries are incommensurable; only exact identity can be compared</code></pre>
   </div>
   <div class="mt-6 space-y-6 max-w-3xl text-base leading-relaxed">
@@ -907,7 +907,7 @@
     <p>A measure that cannot reproduce an answer already known is not trustworthy on an answer that is not known. So four cases run first, each with an outcome that was fixed in advance.</p>
   </div>
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full">
+    <table class="table table-zebra w-full w-full">
       <thead><tr><th>case</th><th>letters different</th><th>root</th></tr></thead>
       <tbody class="text-base">
         <tr><td>the same list twice</td><td>0</td><td>the same root</td></tr>
@@ -964,7 +964,7 @@
   </figure>
 
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full">
+    <table class="table table-zebra w-full w-full">
       <thead><tr><th>condition</th><th>score</th><th>spread</th><th>runs</th></tr></thead>
       <tbody class="text-base">
         <tr><td>real, counting exact ties</td><td>1.0</td><td>not applicable</td><td>90 comparisons</td></tr>

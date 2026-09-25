@@ -24,7 +24,7 @@ These terms are everywhere and they are jargon. Remove them from the reader's pa
 - **partition** → "how the questions are ordered", or "the order the questions are asked in".
 - **Gray code** → never use the name. Explain the effect: neighbouring answers produce neighbouring sounds, so a small change in a place is a small change in its address, and the reader hears it.
 - **manifold** → keep it only where it is the subject, and always glossed on first use in plain words: the shape of all possible situations, where nearness means likeness.
-- **hamming distance** → "how many syllables differ", with the number.
+- **the recorded distance** → "how many letters differ", with the number. It counts differing letters in the rendered name, which is 36 letters for 18 syllables. Do not call it syllables; an agent checked this against `locus.Encoder.hamming` and the brief was wrong.
 - **canonical set** → "the statements that are true, in a fixed order".
 - **encoding** → "turning the answers into an address".
 - **deterministic** → "same input, same output, every time".

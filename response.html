@@ -41,7 +41,7 @@
     <p>The same property is why the scheme says nothing about location. Two agents doing nearly the same job get two unrelated codes, and there is no way to measure a gap between two codes. Text has no distance. Two house names, Rose Cottage and The Roses, are not one metre apart or three metres apart. They are the same or they are different.</p>
     <p>The paper names this weakness in itself. Different organisations may describe equivalent capabilities with incompatible paths. Its own remedy is an external mapping service: a second system to run, and a second source of truth that can drift away from both of the things it maps.</p>
   </div>
-  <div class="mockup-code w-full mt-8">
+  <div class="mockup-code w-full mt-8 w-full max-w-full overflow-x-auto text-sm">
     <pre data-prefix="acme.com"><code>/workflow/approval</code></pre>
     <pre data-prefix="globex.io"><code>/process/authorize</code></pre>
   </div>
@@ -98,7 +98,7 @@
     <p>The two sides do not observe identical statements, so equivalent jobs land near each other instead of on top of each other. That is what keeps this from being a tautology: the positions were not copied from the names.</p>
   </div>
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full">
+    <table class="table table-zebra w-full w-full">
       <thead><tr><th>organisation</th><th>capability path</th><th>the job it does</th><th>agent:// URI</th><th>⌁ position</th></tr></thead>
       <tbody class="text-base">
         <tr><td class="font-mono">acme.com</td><td class="font-mono">workflow/approval</td><td>approval</td><td class="font-mono break-all">agent://acme.com/workflow/approval/01h0000000000000000000000</td><td class="font-mono break-all">⌁ no.ki.ni.ke.ru·to.ru.ki.ru.ta+va.ki.ra.ma.no~ko.so.mo</td></tr>
@@ -127,7 +127,7 @@
     <p>Each query is one company's own capability path, asked against the other company's nine agents. The table below gives the outcome both ways, and the distance is in letters of the position, out of the 36 letters a position has.</p>
   </div>
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full">
+    <table class="table table-zebra w-full w-full">
       <thead><tr><th>query, as issued</th><th>found by matching the path</th><th>found by nearest position</th><th>letters apart</th><th>same job?</th></tr></thead>
       <tbody class="text-base">
         <tr><td class="font-mono">workflow/approval</td><td>nothing <span class="badge badge-outline font-mono">miss</span></td><td class="font-mono">process/authorize</td><td>2</td><td><span class="badge badge-success font-mono">hit</span></td></tr>
@@ -149,7 +149,7 @@
         <div class="chat-header font-mono text-base mb-2">by nearest position</div>
         <div class="chat-bubble chat-bubble-primary text-base my-3">Four queries, four hits, and the decoy 0 times.</div>
       </div>
-      <div class="mockup-code w-full mt-6 text-sm leading-6">
+      <div class="mockup-code w-full mt-6 text-sm leading-6 w-full max-w-full overflow-x-auto text-sm">
         <pre data-prefix="path"><code>workflow/approval      -&gt; 0 result(s)  none   MISS
 workflow/build         -&gt; 0 result(s)  none   MISS
 workflow/rollback      -&gt; 0 result(s)  none   MISS
@@ -182,7 +182,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
   <div class="mt-8 max-w-3xl text-base leading-relaxed">
     <p>Two agents, one job, two names with nothing in common, and two positions that nearly touch. Every step is written out with its real value so the arithmetic can be followed with a pen.</p>
   </div>
-  <div class="mockup-code w-full mt-8">
+  <div class="mockup-code w-full mt-8 w-full max-w-full overflow-x-auto text-sm">
     <pre data-prefix="acme.com"><code>agent://acme.com/workflow/approval/01h0000000000000000000000</code></pre>
     <pre data-prefix="globex.io"><code>agent://globex.io/process/authorize/01h0000000000000000000000</code></pre>
   </div>
@@ -236,7 +236,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
   </ul>
 
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full">
+    <table class="table table-zebra w-full w-full">
       <thead><tr><th>question</th><th>answer</th></tr></thead>
       <tbody class="text-base">
         <tr><td>is the path identical?</td><td>no, <span class="font-mono">workflow/approval</span> against <span class="font-mono">process/authorize</span></td></tr>
@@ -378,7 +378,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
     <p>What the agent sees is a virtual tree assembled from those layers. It is a view, not a folder. The table below pairs what the agent sees with where the bytes really are.</p>
   </div>
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full">
+    <table class="table table-zebra w-full w-full">
       <thead><tr><th>the path the agent sees</th><th>where it really is on the host</th></tr></thead>
       <tbody class="text-base">
         <tr><td class="font-mono">.config/claude/config.json</td><td class="font-mono break-all">/var/lib/ai-envs/env-1/claude/config/config.json</td></tr>
@@ -465,7 +465,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
     <div class="stat"><div class="stat-title text-base">for scale, a sealed empty room</div><div class="stat-value text-4xl">24</div><div class="stat-desc text-base">letters from the base position</div></div>
   </div>
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full">
+    <table class="table table-zebra w-full w-full">
       <thead><tr><th>pair</th><th>letters apart</th><th>questions the same at the start</th><th>how much the statements overlap</th><th>same root?</th><th>what the upper layer adds</th></tr></thead>
       <tbody class="text-base">
         <tr><td class="font-mono">base and project</td><td>2</td><td>29 of 45</td><td>0.8571</td><td>no</td><td class="font-mono break-all">reach/help/any, see/this_place/outside</td></tr>
@@ -494,7 +494,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
     <p>The smaller thing is the seed: 3,300 bytes, transmitted once, drawn in Figure 3. The other side rebuilds a 4,532-byte frame from it. Both sides then compare one fingerprint before anything else happens, so a mismatched frame is caught on the first comparison rather than in the results.</p>
   </div>
 
-  <div class="mockup-code w-full mt-8">
+  <div class="mockup-code w-full mt-8 w-full max-w-full overflow-x-auto text-sm">
     <pre data-prefix="fingerprint"><code>df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba</code></pre>
   </div>
 
@@ -601,7 +601,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
   </figure>
 
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full">
+    <table class="table table-zebra w-full w-full">
       <thead><tr><th>key in the seed</th><th>what it settles</th><th>what it becomes on the other side</th><th>stored or derived</th></tr></thead>
       <tbody class="text-base">
         <tr><td class="font-mono">primer_version = 2</td><td>which ruleset the frame is built under</td><td>every value below reproduces only against version 2</td><td><span class="badge badge-outline font-mono">stored</span></td></tr>
@@ -630,7 +630,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
   <div class="mt-12 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>Here is the whole file, printed line by line. It is 11 top-level keys, 242 lines, 4,791 bytes as committed and 3,300 bytes with the indentation removed. Nothing is left out.</p>
   </div>
-  <div class="mockup-code text-sm leading-6 w-full mt-6">
+  <div class="mockup-code text-sm leading-6 w-full mt-6 w-full max-w-full overflow-x-auto text-sm">
 <pre data-prefix="1"><code>{</code></pre>
 <pre data-prefix="2"><code>  &quot;primer_version&quot;: 2,</code></pre>
 <pre data-prefix="3"><code>  &quot;beats&quot;: [</code></pre>
@@ -879,7 +879,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
     <p>Change one value and the gate closes. Set <span class="font-mono">similarity.seed</span> from 42 to 43 in one copy of the seed. The fingerprint of that copy changes, so the two sides are no longer holding the same frame.</p>
     <p>The library then refuses to compare positions at all, in its own words:</p>
   </div>
-  <div class="mockup-code w-full mt-6">
+  <div class="mockup-code w-full mt-6 w-full max-w-full overflow-x-auto text-sm">
     <pre data-prefix="refused"><code>different primer: the two geometries are incommensurable; only exact identity can be compared</code></pre>
   </div>
   <div class="mt-6 space-y-6 max-w-3xl text-base leading-relaxed">
@@ -920,7 +920,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
     <p>The table gives every place, how many different lists of answers the six families reported, how many different roots came out, and which families agreed exactly.</p>
   </div>
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full">
+    <table class="table table-zebra w-full w-full">
       <thead><tr><th>place</th><th>different lists</th><th>different roots</th><th>the families that agreed exactly</th><th>group size</th><th>the root they agreed on</th></tr></thead>
       <tbody class="text-base">
         <tr><td class="font-mono">locked_storeroom</td><td>2</td><td>2</td><td class="font-mono">gemma-4-31b-it, glm-5.3, gpt-5.6-luna, gpt-6-luna, mimo-v2.6-pro</td><td>5 of 6</td><td class="font-mono break-all">ee9953d9b356615f308d8a6a4debc4578f17770cf6db6dac52d4f57ac13ad971</td></tr>
@@ -949,7 +949,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
     <p>An agent may be willing to disclose a few answers and nothing else. A root over part of a list is as checkable as a root over the whole list, as long as both sides agree which answers went in. The four runs below take the same situation and root the first 2, then 4, then 8, then all 45 of the most telling answers.</p>
   </div>
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full">
+    <table class="table table-zebra w-full w-full">
       <thead><tr><th>answers committed to</th><th>places told apart, of 6</th><th>the root, first 14 characters</th></tr></thead>
       <tbody class="text-base">
         <tr><td>2</td><td>3</td><td class="font-mono">e6da26cd0c664b</td></tr>
@@ -973,7 +973,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
     <p>Extra attributes ride in the same list, sorted the same way. The root moves and the position does not, in all four runs.</p>
   </div>
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full">
+    <table class="table table-zebra w-full w-full">
       <thead><tr><th>extra attributes folded in</th><th>the root, first 20 characters</th><th>the position</th></tr></thead>
       <tbody class="text-base">
         <tr><td>nothing</td><td class="font-mono">efe87ba9113b03473d9a</td><td>unchanged</td></tr>

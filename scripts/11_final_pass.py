@@ -337,6 +337,12 @@ def check_one_hashing_rule(files: list[Path]) -> list[str]:
                 if job in jobs:
                     selections.append(sorted(set(jobs[job]) | set(variations.get((org, job), []))))
 
+    ov = ROOT / "evidence" / "overlay-environment.json"
+    if ov.exists():
+        rec = json.loads(ov.read_text())
+        for pos in rec["positions"].values():
+            selections.append(sorted(pos["statements"]))
+
     ft = ROOT / "evidence" / "field-test.json"
     if ft.exists():
         rec = json.loads(ft.read_text())
