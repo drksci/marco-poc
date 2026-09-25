@@ -247,7 +247,7 @@
     <p>Yes and no cannot be measured against each other, so each question gets a number for this room. There are four possible numbers, and they are the four in the seed: 0.0 when the statement is true of the room, 0.3 when a close relative of the statement is true, 0.6 when something else in the same group is true, and 0.9 when nothing in that group is true.</p>
     <p>Below are all 45 numbers, in the order the questions are listed further up this page, question 1 first. This room produces 19 zeros and 26 values of 0.6, and no 0.3 or 0.9 at all.</p>
   </div>
-  <div class="mockup-code w-full mt-6 text-sm w-full max-w-full overflow-x-auto text-sm">
+  <div class="mockup-code w-full mt-6 max-w-full rounded-box text-xs leading-relaxed overflow-x-auto whitespace-pre-wrap break-words">
     <pre data-prefix="1-45"><code>0.0 0.0 0.0 0.0 0.6 0.0 0.6 0.0 0.6 0.0 0.6 0.6 0.0 0.6 0.6</code></pre>
     <pre data-prefix=""><code>0.6 0.6 0.6 0.0 0.6 0.6 0.0 0.6 0.0 0.6 0.6 0.0 0.6 0.6 0.6</code></pre>
     <pre data-prefix=""><code>0.0 0.6 0.6 0.6 0.6 0.0 0.0 0.6 0.0 0.6 0.6 0.0 0.6 0.0 0.0</code></pre>
@@ -258,7 +258,7 @@
     <p>Two ticks can spell four patterns, and there are four numbers, so each question becomes two ticks and each tick is on or off. Forty-five questions with two ticks each is 90 ticks. That is the whole amount of information in the address.</p>
     <p>Here are the 90 ticks in the order they are written, which is the derived question order rather than the order of the list. The first tick is off, the ninth is on, and so on.</p>
   </div>
-  <div class="mockup-code w-full mt-6 text-sm w-full max-w-full overflow-x-auto text-sm">
+  <div class="mockup-code w-full mt-6 max-w-full rounded-box text-xs leading-relaxed overflow-x-auto whitespace-pre-wrap break-words">
     <pre data-prefix="1-90"><code>000000001000000000001010100000100010101010001000101000001010100010100010101010101010001010</code></pre>
   </div>
 
@@ -266,7 +266,7 @@
   <div class="mt-4 max-w-prose space-y-4 text-base leading-relaxed">
     <p>The 90 ticks are cut into 18 groups of five. Each group of five is read as a number from 0 to 31, and that number picks one syllable out of a table of 32. The table is built so that neighbouring entries differ by one letter, which is why similar rooms end up with similar-sounding names.</p>
   </div>
-  <div class="mockup-code w-full mt-6 text-base w-full max-w-full overflow-x-auto text-sm">
+  <div class="mockup-code w-full mt-6 text-base max-w-full rounded-box text-xs leading-relaxed overflow-x-auto whitespace-pre-wrap break-words">
     <pre data-prefix="syllables"><code>ma mo ma ma ru ma va ki va mo ve ki va tu ru ki su ki</code></pre>
   </div>
 
@@ -275,7 +275,7 @@
     <p>Those 18 syllables, grouped into four beats, are the address in the transcript at the top of this page. They say how near this room is to other rooms. They do not say whether two systems are claiming exactly the same thing, because two nearby rooms have nearby addresses.</p>
     <p>For exactness, the same 19 statements are written in a fixed order and run through one arithmetic rule, and out comes a 64-character fingerprint called the root. It is not a location and it is not near anything. It is either identical to another root or completely unrelated to it.</p>
   </div>
-  <div class="mockup-code w-full mt-6 text-base w-full max-w-full overflow-x-auto text-sm">
+  <div class="mockup-code w-full mt-6 text-base max-w-full rounded-box text-xs leading-relaxed overflow-x-auto whitespace-pre-wrap break-words">
     <pre data-prefix="address"><code>&#8985; ma.mo.ma.ma.ru&middot;ma.va.ki.va.mo+ve.ki.va.tu.ru~ki.su.ki</code></pre>
     <pre data-prefix="root"><code>c36ccbff658ddbe0ff244daea09b4e771a6ef166b72dc3389728aad1e08bb911</code></pre>
   </div>
@@ -421,7 +421,7 @@
     <div class="stat"><div class="stat-title text-base">bytes rebuilt on arrival</div><div class="stat-value text-4xl">4,532</div><div class="stat-desc text-base">the frame, a working chart</div></div>
     <div class="stat"><div class="stat-title text-base">bytes a registry would ship</div><div class="stat-value text-4xl">67,561</div><div class="stat-desc text-base">20.47 times the seed</div></div>
   </div>
-  <div class="mockup-code w-full mt-8 text-base w-full max-w-full overflow-x-auto text-sm">
+  <div class="mockup-code w-full mt-8 text-base max-w-full rounded-box text-xs leading-relaxed overflow-x-auto whitespace-pre-wrap break-words">
     <pre data-prefix="fingerprint"><code>df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba</code></pre>
   </div>
   <div class="mt-8 max-w-prose space-y-4 text-base leading-relaxed">
@@ -587,7 +587,7 @@
   <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
     <p>Of the 11 keys, one carries almost the whole idea, and it is the second smallest. Here it is in full, all 61 bytes of it.</p>
   </div>
-  <div class="mockup-code w-full mt-8 text-base w-full max-w-full overflow-x-auto text-sm">
+  <div class="mockup-code w-full mt-8 text-base max-w-full rounded-box text-xs leading-relaxed overflow-x-auto whitespace-pre-wrap break-words">
     <pre data-prefix="seed"><code>&quot;partition&quot;: {</code></pre>
     <pre data-prefix=""><code>  &quot;levels&quot;: 45,</code></pre>
     <pre data-prefix=""><code>  &quot;branches&quot;: 4,</code></pre>
@@ -869,7 +869,7 @@
     <p>Here is the experiment that shows what the seed is actually for. Take the seed and change exactly one number in it: the <span class="font-mono">minhash_seed</span> inside <span class="font-mono">similarity</span>, from 42 to 43. Change nothing else.</p>
     <p>The first thing that happens is that the fingerprint changes. It is a fingerprint of the whole file, so any edit at all changes it completely, in the way that changing one letter of a document changes its checksum.</p>
   </div>
-  <div class="mockup-code w-full mt-8 text-base w-full max-w-full overflow-x-auto text-sm">
+  <div class="mockup-code w-full mt-8 text-base max-w-full rounded-box text-xs leading-relaxed overflow-x-auto whitespace-pre-wrap break-words">
     <pre data-prefix="42 (the real seed)"><code>&quot;similarity&quot;: { &quot;minhash_n&quot;: 96, &quot;minhash_seed&quot;: 42 }</code></pre>
     <pre data-prefix="42 fingerprint"><code>df2f8b9972c40bfd&hellip;</code></pre>
     <pre data-prefix="43 (one number changed)"><code>&quot;similarity&quot;: { &quot;minhash_n&quot;: 96, &quot;minhash_seed&quot;: 43 }</code></pre>
@@ -878,7 +878,7 @@
   <div class="mt-8 max-w-prose space-y-4 text-base leading-relaxed">
     <p>The second thing that happens is more interesting. Because the fingerprint no longer matches, the code refuses to compare the two machines' names at all. It does not try to guess how far apart they are. It stops, and it says so, in this exact sentence:</p>
   </div>
-  <div class="mockup-code w-full mt-8 text-base w-full max-w-full overflow-x-auto text-sm">
+  <div class="mockup-code w-full mt-8 text-base max-w-full rounded-box text-xs leading-relaxed overflow-x-auto whitespace-pre-wrap break-words">
     <pre data-prefix="marco/locus.py"><code>&quot;different primer: the two geometries are incommensurable; only exact identity can be compared&quot;</code></pre>
   </div>
   <div class="mt-8 max-w-prose space-y-4 text-base leading-relaxed">
@@ -1115,7 +1115,7 @@
     <p>The kitchen with a friend answers 19 of the 45 questions yes. Those 19 answers become one string that a machine can send and a person can read.</p>
     <p>Read the string as four beats: place, what, reach, now. A dot holds a beat together, a raised dot end the first beat, a plus ends the second, and a tilde opens the last. Nothing in the notation is decoration; each mark says where one part of the description stops and the next begins.</p>
   </div>
-  <div class="mockup-code w-full mt-8 text-base w-full max-w-full overflow-x-auto text-sm">
+  <div class="mockup-code w-full mt-8 text-base max-w-full rounded-box text-xs leading-relaxed overflow-x-auto whitespace-pre-wrap break-words">
     <pre data-prefix="the name"><code>&#8985; ma.mo.ma.ma.ru&middot;ma.va.ki.va.mo+ve.ki.va.tu.ru~ki.su.ki</code></pre>
   </div>
   <div class="mt-8 max-w-prose space-y-4 text-base leading-relaxed">
@@ -1178,7 +1178,7 @@
     <div class="p-4" id="scene-rootsplit" role="img" aria-label="The name on the left keeping two kitchens close, and the root on the right sharing no characters."></div>
   </div>
   <p class="font-mono text-sm opacity-70 mt-3">Figure 18. Left, two rooms whose names stay close: they share the first three syllables and differ in twelve of eighteen. Right, the same two rooms as exact fingerprints, sharing no character.</p>
-  <div class="mockup-code w-full mt-8 text-base w-full max-w-full overflow-x-auto text-sm">
+  <div class="mockup-code w-full mt-8 text-base max-w-full rounded-box text-xs leading-relaxed overflow-x-auto whitespace-pre-wrap break-words">
     <pre data-prefix="kitchen with friend"><code>c36ccbff658ddbe0ff244daea09b4e771a6ef166b72dc3389728aad1e08bb911</code></pre>
     <pre data-prefix="kitchen alone"><code>c6091ef5b45369fdcf0e7353cd0d6f024bdec3b2ad8fca383720052bda01dcd0</code></pre>
   </div>
@@ -1235,7 +1235,7 @@
     <p>It does three things in order. It rebuilds the frame from the seed and compares the fingerprint. It re-derives the name from the statements and compares it with the name claimed. It recomputes the root from the statements and compares that too. The first failure stops the check.</p>
     <p>Below is the whole thing, with the real values for the kitchen with a friend. If any of the three disagreed, the check would fail instead of printing True.</p>
   </div>
-  <div class="mockup-code w-full mt-8 text-base w-full max-w-full overflow-x-auto text-sm">
+  <div class="mockup-code w-full mt-8 text-base max-w-full rounded-box text-xs leading-relaxed overflow-x-auto whitespace-pre-wrap break-words">
 <pre data-prefix="python"><code>from marco import primer, verify
 
 frame = primer.expand()
@@ -1367,7 +1367,7 @@ v.grains  # {2: '&#8985; ma', 4: '&#8985; ma.ma', 6: '&#8985; ma.mo.ma', 12: '&#
     <p>The full list is 45 questions. We want to know what a much shorter list does, so a 16-statement field card was built for one room: a small private study room in a library, late at night, alone, with books within reach and nothing changeable in the room.</p>
     <p>Nine of the sixteen statements are true of that room: numbers 1, 2, 4, 5, 6, 10, 11, 14 and 16. Read with the full 45 questions, the address is the first string below. Read with only the 16 on the card, it is the second.</p>
   </div>
-  <div class="mockup-code w-full mt-8 text-base w-full max-w-full overflow-x-auto text-sm">
+  <div class="mockup-code w-full mt-8 text-base max-w-full rounded-box text-xs leading-relaxed overflow-x-auto whitespace-pre-wrap break-words">
     <pre data-prefix="16 questions"><code>&#8985; ma.tu.me.ma</code></pre>
     <pre data-prefix="45 questions"><code>&#8985; se.re.ni.ka.nu&middot;re.ru.ki.va.sa+ru.ki.va.so.ru~ko.se.ta</code></pre>
     <pre data-prefix="root"><code>7343e3b49ce82b0aaae335b1095d14c9c45645254a4ab5bc0875b70545c9d3b5&hellip;</code></pre>

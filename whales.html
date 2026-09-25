@@ -192,7 +192,7 @@
     <p>That small file is called the seed. It is 3,300 bytes, which is about the length of a paragraph, and it is the same file the parent project uses. It stores settings and rules. Everything that follows from those rules is derived by the receiver, so it never has to be transmitted.</p>
     <p>Here is the entire seed, verbatim, with its line numbers. It is 11 top-level keys and 242 lines, and nothing has been left out or shortened.</p>
   </div>
-  <div class="mockup-code w-full mt-8 text-sm leading-6 w-full max-w-full overflow-x-auto text-sm">
+  <div class="mockup-code w-full mt-8 leading-6 max-w-full rounded-box text-xs leading-relaxed overflow-x-auto whitespace-pre-wrap break-words">
 <pre data-prefix="1"><code>{</code></pre>
 <pre data-prefix="2"><code>  "primer_version": 2,</code></pre>
 <pre data-prefix="3"><code>  "beats": [</code></pre>
@@ -601,7 +601,7 @@
     <p>Now change one number and watch what it costs. Take the seed and change <span class="font-mono">similarity.minhash_seed</span> from 42 to 43. Everything else stays the same. The fingerprint of the frame changes, because the fingerprint covers every setting, including this one.</p>
     <p>Two sides that were once using the same frame are now using different frames. The library does not guess, and it does not quietly compare addresses from two different rulebooks. It refuses, in its own words.</p>
   </div>
-  <div class="mockup-code w-full mt-8 text-base w-full max-w-full overflow-x-auto text-sm">
+  <div class="mockup-code w-full mt-8 text-base max-w-full rounded-box text-xs leading-relaxed overflow-x-auto whitespace-pre-wrap break-words">
     <pre data-prefix="one number changed"><code>{ &quot;comparable&quot;: false,</code></pre>
     <pre data-prefix=""><code>  &quot;reason&quot;: &quot;different primer: the two geometries are incommensurable; only exact identity can be compared&quot;,</code></pre>
     <pre data-prefix=""><code>  &quot;same_identity&quot;: true }</code></pre>
@@ -666,7 +666,7 @@
         <p>The question is whether the address tells you anything about a measured neural response. In the formula below, <span class="font-mono">q(x)</span> is the address of the phrase, written as a list of numbers rather than syllables. <span class="font-mono">y</span> is the neural response, which might be firing rates counted in short windows, latency, or a path through the activity of a population of neurons. <span class="font-mono">W</span> and <span class="font-mono">b</span> are numbers the fitting is allowed to choose.</p>
         <p>The prediction is worth taking seriously only if it beats a preregistered null on phrases that were held back, and if it still works across recording sessions, individual animals and contexts.</p>
       </div>
-      <div class="mockup-code w-full mt-4 text-base w-full max-w-full overflow-x-auto text-sm">
+      <div class="mockup-code w-full mt-4 text-base max-w-full rounded-box text-xs leading-relaxed overflow-x-auto whitespace-pre-wrap break-words">
         <pre data-prefix="hypothesis"><code>&#375; = W q(x) + b</code></pre>
         <pre data-prefix="q(x)"><code>the phrase address, as a list of numbers after calibration</code></pre>
         <pre data-prefix="y"><code>binned firing rates, latency features, or a low-dimensional population trajectory</code></pre>

@@ -41,7 +41,7 @@
     <p>The same property is why the scheme says nothing about location. Two agents doing nearly the same job get two unrelated codes, and there is no way to measure a gap between two codes. Text has no distance. Two house names, Rose Cottage and The Roses, are not one metre apart or three metres apart. They are the same or they are different.</p>
     <p>The paper names this weakness in itself. Different organisations may describe equivalent capabilities with incompatible paths. Its own remedy is an external mapping service: a second system to run, and a second source of truth that can drift away from both of the things it maps.</p>
   </div>
-  <div class="mockup-code w-full mt-8 w-full max-w-full overflow-x-auto text-sm">
+  <div class="mockup-code w-full mt-8 max-w-full rounded-box text-xs leading-relaxed overflow-x-auto whitespace-pre-wrap break-words">
     <pre data-prefix="acme.com"><code>/workflow/approval</code></pre>
     <pre data-prefix="globex.io"><code>/process/authorize</code></pre>
   </div>
@@ -149,7 +149,7 @@
         <div class="chat-header font-mono text-base mb-2">by nearest position</div>
         <div class="chat-bubble chat-bubble-primary text-base my-3 max-w-[68ch] break-words">Four queries, four hits, and the decoy 0 times.</div>
       </div>
-      <div class="mockup-code w-full mt-6 text-sm leading-6 w-full max-w-full overflow-x-auto text-sm">
+      <div class="mockup-code w-full mt-6 leading-6 max-w-full rounded-box text-xs leading-relaxed overflow-x-auto whitespace-pre-wrap break-words">
         <pre data-prefix="path"><code>workflow/approval      -&gt; 0 result(s)  none   MISS
 workflow/build         -&gt; 0 result(s)  none   MISS
 workflow/rollback      -&gt; 0 result(s)  none   MISS
@@ -182,7 +182,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
   <div class="mt-8 max-w-3xl text-base leading-relaxed">
     <p>Two agents, one job, two names with nothing in common, and two positions that nearly touch. Every step is written out with its real value so the arithmetic can be followed with a pen.</p>
   </div>
-  <div class="mockup-code w-full mt-8 w-full max-w-full overflow-x-auto text-sm">
+  <div class="mockup-code w-full mt-8 max-w-full rounded-box text-xs leading-relaxed overflow-x-auto whitespace-pre-wrap break-words">
     <pre data-prefix="acme.com"><code>agent://acme.com/workflow/approval/01h0000000000000000000000</code></pre>
     <pre data-prefix="globex.io"><code>agent://globex.io/process/authorize/01h0000000000000000000000</code></pre>
   </div>
@@ -494,7 +494,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
     <p>The smaller thing is the seed: 3,300 bytes, transmitted once, drawn in Figure 3. The other side rebuilds a 4,532-byte frame from it. Both sides then compare one fingerprint before anything else happens, so a mismatched frame is caught on the first comparison rather than in the results.</p>
   </div>
 
-  <div class="mockup-code w-full mt-8 w-full max-w-full overflow-x-auto text-sm">
+  <div class="mockup-code w-full mt-8 max-w-full rounded-box text-xs leading-relaxed overflow-x-auto whitespace-pre-wrap break-words">
     <pre data-prefix="fingerprint"><code>df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba</code></pre>
   </div>
 
@@ -630,7 +630,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
   <div class="mt-12 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>Here is the whole file, printed line by line. It is 11 top-level keys, 242 lines, 4,791 bytes as committed and 3,300 bytes with the indentation removed. Nothing is left out.</p>
   </div>
-  <div class="mockup-code text-sm leading-6 w-full mt-6 w-full max-w-full overflow-x-auto text-sm">
+  <div class="mockup-code leading-6 w-full mt-6 max-w-full rounded-box text-xs leading-relaxed overflow-x-auto whitespace-pre-wrap break-words">
 <pre data-prefix="1"><code>{</code></pre>
 <pre data-prefix="2"><code>  &quot;primer_version&quot;: 2,</code></pre>
 <pre data-prefix="3"><code>  &quot;beats&quot;: [</code></pre>
@@ -879,7 +879,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
     <p>Change one value and the gate closes. Set <span class="font-mono">similarity.seed</span> from 42 to 43 in one copy of the seed. The fingerprint of that copy changes, so the two sides are no longer holding the same frame.</p>
     <p>The library then refuses to compare positions at all, in its own words:</p>
   </div>
-  <div class="mockup-code w-full mt-6 w-full max-w-full overflow-x-auto text-sm">
+  <div class="mockup-code w-full mt-6 max-w-full rounded-box text-xs leading-relaxed overflow-x-auto whitespace-pre-wrap break-words">
     <pre data-prefix="refused"><code>different primer: the two geometries are incommensurable; only exact identity can be compared</code></pre>
   </div>
   <div class="mt-6 space-y-6 max-w-3xl text-base leading-relaxed">
@@ -1078,7 +1078,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
       still agree on a result, because either can recompute it from scratch.</p>
     </div>
 
-    <div class="mockup-code w-full max-w-full overflow-x-auto text-sm mt-8">
+    <div class="mockup-code w-full max-w-full mt-8 rounded-box text-xs leading-relaxed overflow-x-auto whitespace-pre-wrap break-words">
 <pre data-prefix="1"><code>ENCODE(statements, primer) -&gt; address</code></pre>
 <pre data-prefix="2"><code>    canon  = sort(unique(statements))</code></pre>
 <pre data-prefix="3"><code>    vec    = [ min distance from canon to each of the 45 landmarks ]</code></pre>
@@ -1135,13 +1135,13 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
       kitchen with a friend, exactly as they appear in
       <code class="font-mono text-sm">marco/verify.py</code>:</p>
     </div>
-    <div class="mockup-code w-full max-w-full overflow-x-auto text-sm mt-4">
-      <pre data-prefix="$"><code>python3 -c "from marco import primer, world, verify; f = primer.expand(); \
+    <div class="mockup-code w-full max-w-full mt-4 rounded-box text-xs leading-relaxed overflow-x-auto whitespace-pre-wrap break-words">
+      <pre data-prefix="$" class="text-base-content"><code>python3 -c "from marco import primer, world, verify; f = primer.expand(); \
     s = sorted(world.WORLDS['kitchen_with_friend']); \
     print(verify.address_of(f, s)); print(verify.root_of(f, s))"</code></pre>
-      <pre data-prefix="&gt;"><code>⌁ ma.mo.ma.ma.ru·ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.ru.ki</code></pre>
-      <pre data-prefix="&gt;"><code>efe87ba9113b03473d9a657f01b994b88cd91bd0601d7131868d0bacbc6e9807</code></pre>
-      <pre data-prefix="#"><code>primer fingerprint df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba</code></pre>
+      <pre data-prefix="&gt;" class="text-base-content/70"><code>⌁ ma.mo.ma.ma.ru·ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.ru.ki</code></pre>
+      <pre data-prefix="&gt;" class="text-base-content/70"><code>efe87ba9113b03473d9a657f01b994b88cd91bd0601d7131868d0bacbc6e9807</code></pre>
+      <pre data-prefix="#" class="text-base-content/60"><code>primer fingerprint df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba</code></pre>
     </div>
 
     <div class="alert mt-6 max-w-none">
