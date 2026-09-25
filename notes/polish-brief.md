@@ -342,3 +342,39 @@ Keep the label across both columns at that row: *then each is shown the other's 
 ### The same treatment for every chat on every page
 
 Wherever a bubble carries a coordinate, it carries the question or statement that goes with it, not the string alone. A bubble with only a string in it is a fragment; a bubble with the sentence and the string is a message.
+
+## FAILURE 0e correction 3 — the seed row must read as a human exchange
+
+The row labelled "the same seed, handed to both" does not work. It pastes a wall of primer text into a chat bubble with no framing, which is not how a person would send anything to an assistant and does not explain why it is being sent.
+
+Rebuild it as an actual conversation, in plain human language, with the seed framed and the expected output stated. Use this shape, adapted to the page's voice:
+
+**Left column, human turn:**
+> Here is your Rosetta stone. It is a list of plain questions and the sounds they map to. Hold on to it, I will ask you about a place in a moment.
+>
+> *(the seed, pasted verbatim)*
+
+**Left column, model turn:**
+> Understood. I have the list.
+
+**Right column:** the identical two turns, so the reader sees both sides received the same thing word for word.
+
+Then the next row asks the question:
+
+**Both columns, human turn:**
+> Here is a place. Which of those questions are true of it?
+
+**Both columns, model turn:** the encoded coordinate.
+
+Three things this fixes: the seed arrives as something a person would actually hand over, with a reason; the output format is framed before the question rather than after; and the reader can see the same instrument being given to both sides, which is the whole point of the row.
+
+### How to render the seed inside a chat
+
+A verbatim seed inside a `chat-bubble` breaks the bubble: long lines overflow, indentation collapses, and the bubble grows to full width without the shape of a message. Rules:
+
+- A `chat-bubble` holds a short message. Never put the seed, a prompt, or any block of verbatim text directly inside one.
+- Put the message in the bubble, and the artefact in a `mockup-code` block immediately beneath it, still inside the same `chat` element so the speaker is unambiguous.
+- Every `mockup-code` uses `data-prefix` for line numbers, `w-full max-w-full overflow-x-auto`, and a monospace size no larger than `text-sm`.
+- Every `chat-bubble` carries an explicit width limit, roughly `max-w-[68ch]`, with `break-words` so a long coordinate wraps rather than widening the column. A bubble that stretches the full page width is not a bubble.
+- Code inside a chat indents with the mockup block's own padding, never with leading spaces typed into the markup, because leading spaces collapse in HTML.
+- Where a bubble carries a coordinate, keep it on one line if it fits and let it wrap if it does not; never break it with hard newlines that the reader might mistake for part of the string.
