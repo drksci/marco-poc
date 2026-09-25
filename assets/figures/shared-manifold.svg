@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1220 900" width="1220" height="900" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+<rect width="1220" height="900" fill="#ffffff"/>
+<text x="30" y="52" font-size="21" fill="#16161a" font-family="Georgia, serif">A shared manifold, and a chart laid over it</text>
+<text x="30" y="74" font-size="12" fill="#74747e">Six families, 6 independent systems, no shared weights and no shared context: the same place came out nearest in 96.7% of 90 comparisons.</text>
+<path d="M 30 225 Q 200 225 370 225" fill="none" stroke="#3f6b52" stroke-width="1"/>
+<path d="M 30 250 Q 200 263 370 250" fill="none" stroke="#3f6b52" stroke-width="1"/>
+<path d="M 30 275 Q 200 296 370 275" fill="none" stroke="#3f6b52" stroke-width="1"/>
+<path d="M 30 300 Q 200 324 370 300" fill="none" stroke="#3f6b52" stroke-width="1"/>
+<path d="M 30 325 Q 200 346 370 325" fill="none" stroke="#3f6b52" stroke-width="1"/>
+<path d="M 30 350 Q 200 363 370 350" fill="none" stroke="#3f6b52" stroke-width="1"/>
+<path d="M 30 375 Q 200 375 370 375" fill="none" stroke="#3f6b52" stroke-width="1"/>
+<path d="M 30 225 Q 30 300 30 375" fill="none" stroke="#3f6b52" stroke-width="1"/>
+<path d="M 72 225 Q 72 310 72 375" fill="none" stroke="#3f6b52" stroke-width="1"/>
+<path d="M 115 225 Q 115 318 115 375" fill="none" stroke="#3f6b52" stroke-width="1"/>
+<path d="M 158 225 Q 158 322 158 375" fill="none" stroke="#3f6b52" stroke-width="1"/>
+<path d="M 200 225 Q 200 324 200 375" fill="none" stroke="#3f6b52" stroke-width="1"/>
+<path d="M 242 225 Q 242 322 242 375" fill="none" stroke="#3f6b52" stroke-width="1"/>
+<path d="M 285 225 Q 285 318 285 375" fill="none" stroke="#3f6b52" stroke-width="1"/>
+<path d="M 328 225 Q 328 310 328 375" fill="none" stroke="#3f6b52" stroke-width="1"/>
+<path d="M 370 225 Q 370 300 370 375" fill="none" stroke="#3f6b52" stroke-width="1"/>
+<text x="200.0" y="199.0" font-size="12.5" fill="#3f6b52" text-anchor="middle" font-weight="bold">family A</text>
+<text x="200.0" y="215.0" font-size="10" fill="#74747e" text-anchor="middle">a different space, never compared</text>
+<circle cx="142" cy="299" r="5" fill="#3f6b52" stroke="#ffffff" stroke-width="1.5"/>
+<text x="142" y="289" font-size="8.5" fill="#74747e" text-anchor="middle">kitchen</text>
+<circle cx="200" cy="302" r="5" fill="#3f6b52" stroke="#ffffff" stroke-width="1.5"/>
+<text x="200" y="292" font-size="8.5" fill="#74747e" text-anchor="middle">kitchen</text>
+<circle cx="258" cy="299" r="5" fill="#3f6b52" stroke="#ffffff" stroke-width="1.5"/>
+<text x="258" y="289" font-size="8.5" fill="#74747e" text-anchor="middle">shared</text>
+<circle cx="142" cy="344" r="5" fill="#3f6b52" stroke="#ffffff" stroke-width="1.5"/>
+<text x="142" y="334" font-size="8.5" fill="#74747e" text-anchor="middle">warehouse</text>
+<circle cx="200" cy="346" r="5" fill="#3f6b52" stroke="#ffffff" stroke-width="1.5"/>
+<text x="200" y="336" font-size="8.5" fill="#74747e" text-anchor="middle">locked</text>
+<circle cx="258" cy="344" r="5" fill="#3f6b52" stroke="#ffffff" stroke-width="1.5"/>
+<text x="258" y="334" font-size="8.5" fill="#74747e" text-anchor="middle">dark</text>
+<path d="M 430 225 Q 600 225 770 225" fill="none" stroke="#3a4a6b" stroke-width="1"/>
+<path d="M 430 250 Q 600 263 770 250" fill="none" stroke="#3a4a6b" stroke-width="1"/>
+<path d="M 430 275 Q 600 296 770 275" fill="none" stroke="#3a4a6b" stroke-width="1"/>
+<path d="M 430 300 Q 600 324 770 300" fill="none" stroke="#3a4a6b" stroke-width="1"/>
+<path d="M 430 325 Q 600 346 770 325" fill="none" stroke="#3a4a6b" stroke-width="1"/>
+<path d="M 430 350 Q 600 363 770 350" fill="none" stroke="#3a4a6b" stroke-width="1"/>
+<path d="M 430 375 Q 600 375 770 375" fill="none" stroke="#3a4a6b" stroke-width="1"/>
+<path d="M 430 225 Q 430 300 430 375" fill="none" stroke="#3a4a6b" stroke-width="1"/>
+<path d="M 472 225 Q 472 310 472 375" fill="none" stroke="#3a4a6b" stroke-width="1"/>
+<path d="M 515 225 Q 515 318 515 375" fill="none" stroke="#3a4a6b" stroke-width="1"/>
+<path d="M 558 225 Q 558 322 558 375" fill="none" stroke="#3a4a6b" stroke-width="1"/>
+<path d="M 600 225 Q 600 324 600 375" fill="none" stroke="#3a4a6b" stroke-width="1"/>
+<path d="M 642 225 Q 642 322 642 375" fill="none" stroke="#3a4a6b" stroke-width="1"/>
+<path d="M 685 225 Q 685 318 685 375" fill="none" stroke="#3a4a6b" stroke-width="1"/>
+<path d="M 728 225 Q 728 310 728 375" fill="none" stroke="#3a4a6b" stroke-width="1"/>
+<path d="M 770 225 Q 770 300 770 375" fill="none" stroke="#3a4a6b" stroke-width="1"/>
+<text x="600.0" y="199.0" font-size="12.5" fill="#3a4a6b" text-anchor="middle" font-weight="bold">family B</text>
+<text x="600.0" y="215.0" font-size="10" fill="#74747e" text-anchor="middle">a different space, never compared</text>
+<circle cx="548" cy="299" r="5" fill="#3a4a6b" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="605" cy="301" r="5" fill="#3a4a6b" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="663" cy="298" r="5" fill="#3a4a6b" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="548" cy="344" r="5" fill="#3a4a6b" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="605" cy="346" r="5" fill="#3a4a6b" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="663" cy="343" r="5" fill="#3a4a6b" stroke="#ffffff" stroke-width="1.5"/>
+<path d="M 830 225 Q 1000 225 1170 225" fill="none" stroke="#9a6f2f" stroke-width="1"/>
+<path d="M 830 250 Q 1000 263 1170 250" fill="none" stroke="#9a6f2f" stroke-width="1"/>
+<path d="M 830 275 Q 1000 296 1170 275" fill="none" stroke="#9a6f2f" stroke-width="1"/>
+<path d="M 830 300 Q 1000 324 1170 300" fill="none" stroke="#9a6f2f" stroke-width="1"/>
+<path d="M 830 325 Q 1000 346 1170 325" fill="none" stroke="#9a6f2f" stroke-width="1"/>
+<path d="M 830 350 Q 1000 363 1170 350" fill="none" stroke="#9a6f2f" stroke-width="1"/>
+<path d="M 830 375 Q 1000 375 1170 375" fill="none" stroke="#9a6f2f" stroke-width="1"/>
+<path d="M 830 225 Q 830 300 830 375" fill="none" stroke="#9a6f2f" stroke-width="1"/>
+<path d="M 872 225 Q 872 310 872 375" fill="none" stroke="#9a6f2f" stroke-width="1"/>
+<path d="M 915 225 Q 915 318 915 375" fill="none" stroke="#9a6f2f" stroke-width="1"/>
+<path d="M 958 225 Q 958 322 958 375" fill="none" stroke="#9a6f2f" stroke-width="1"/>
+<path d="M 1000 225 Q 1000 324 1000 375" fill="none" stroke="#9a6f2f" stroke-width="1"/>
+<path d="M 1042 225 Q 1042 322 1042 375" fill="none" stroke="#9a6f2f" stroke-width="1"/>
+<path d="M 1085 225 Q 1085 318 1085 375" fill="none" stroke="#9a6f2f" stroke-width="1"/>
+<path d="M 1128 225 Q 1128 310 1128 375" fill="none" stroke="#9a6f2f" stroke-width="1"/>
+<path d="M 1170 225 Q 1170 300 1170 375" fill="none" stroke="#9a6f2f" stroke-width="1"/>
+<text x="1000.0" y="199.0" font-size="12.5" fill="#9a6f2f" text-anchor="middle" font-weight="bold">family C</text>
+<text x="1000.0" y="215.0" font-size="10" fill="#74747e" text-anchor="middle">a different space, never compared</text>
+<circle cx="953" cy="300" r="5" fill="#9a6f2f" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="1011" cy="301" r="5" fill="#9a6f2f" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="1069" cy="298" r="5" fill="#9a6f2f" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="953" cy="345" r="5" fill="#9a6f2f" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="1011" cy="346" r="5" fill="#9a6f2f" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="1069" cy="343" r="5" fill="#9a6f2f" stroke="#ffffff" stroke-width="1.5"/>
+<text x="30" y="409.0" font-size="12" fill="#16161a">Three surfaces we did not build, and cannot see. Each family carries its own.</text>
+<text x="30" y="427.0" font-size="12" fill="#74747e">The same six places sit in the same relative positions on every one of them. That is the thing being inferred.</text>
+<rect x="30" y="471.0" width="1160" height="150" rx="8" fill="#f4f4f5" stroke="#e2e2e6"/>
+<text x="46" y="497.0" font-size="13" fill="#16161a" font-weight="bold">The chart: ours, published, and small</text>
+<text x="46" y="517.0" font-size="11" fill="#74747e">45 statements, a 32-syllable codebook, an axis order derived over 204 places, and one hashing rule. 3,300 bytes.</text>
+<text x="46" y="543.0" font-size="12" fill="#16161a">The chart does not create the positions. It gives them names, an order, and a way to prove which one you are standing on.</text>
+<text x="46" y="563.0" font-size="12" fill="#74747e">Hand two cartographers the same grid and they label the same mountain the same way. That agreement is only worth something because the mountain was there first.</text>
+<text x="46" y="589.0" font-size="11.5" fill="#9a6f2f">Where it stops: the chart is shared too, but only when the states are unambiguous. Ambiguous states send the charts apart again, which is why the six places here are described in plain, concrete English.</text>
+<text x="46" y="609.0" font-size="11" fill="#74747e">This is the parent project's finding, restated: the manifold is shared, and the chart is shared when the situations are clear. It is inferred from agreement, not observed directly.</text>
+<line x1="30" y1="631.0" x2="1190" y2="631.0" stroke="#e2e2e6"/>
+<text x="30" y="655.0" font-size="15" fill="#16161a" font-weight="bold">What the numbers do and do not license</text>
+<rect x="30" y="667.0" width="96" height="22" rx="11" fill="#3f6b52" opacity="0.12" stroke="#3f6b52"/>
+<text x="42" y="683.0" font-size="10.5" fill="#3f6b52" font-weight="bold">SHOWN</text>
+<text x="142" y="683.0" font-size="12" fill="#16161a">Independent systems with separate lineage place the same situation in the same part of their own space, and state it i</text>
+<rect x="30" y="701.0" width="96" height="22" rx="11" fill="#3a4a6b" opacity="0.12" stroke="#3a4a6b"/>
+<text x="42" y="717.0" font-size="10.5" fill="#3a4a6b" font-weight="bold">IMPLIED</text>
+<text x="142" y="717.0" font-size="12" fill="#16161a">Situations have a structure that independently trained systems share. The primer charts it rather than inventing it.</text>
+<rect x="30" y="735.0" width="96" height="22" rx="11" fill="#9a6f2f" opacity="0.12" stroke="#9a6f2f"/>
+<text x="42" y="751.0" font-size="10.5" fill="#9a6f2f" font-weight="bold">NOT SHOWN</text>
+<text x="142" y="751.0" font-size="12" fill="#16161a">That any of this is meaning. A coordinate is a description of a position, and a shared position is not a shared unders</text>
+</svg>
