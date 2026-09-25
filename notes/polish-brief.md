@@ -221,3 +221,29 @@ Read it before finishing, and take its *form* rather than its subject. What that
 9. **Explorable where exploration teaches, static where it does not.** An interactive figure is acceptable when a reader dragging or stepping through it produces *insight* — seeing a space collapse, watching a value propagate. It is not acceptable as a way to hide information. Every value on these pages must be visible without interaction; exploration may only add.
 
 Apply that form to all four pages in addition to FAILURE 0 (register), 0b (daisyUI) and 0c (open on the transcript). The figures are the largest remaining gap: they are currently charts that report, when they need to be diagrams that teach.
+
+## FAILURE 0d — the proof must be runnable by the reader, not just reported
+
+The strongest thing this project can offer is not a number. It is that a reader can check the central claim themselves, in about two minutes, with a phone, and no key, no terminal, and no understanding of the code.
+
+Build this into proof.html as its own section, placed early, and reference it from index.html.
+
+### The artefacts, which already exist
+
+- `assets/figures/field-test-qr.svg` — a QR code holding a small self-contained primer: sixteen statements a person can honestly answer about a room, and one place described in plain English. Payload 1,062 bytes, QR version 27, medium error correction, so it scans from a screen and from paper. Show it at a size a phone can read, and say so.
+- `assets/figures/field-test-card.svg` — the card to fill in: the sixteen numbered statements and two blank columns, plus what each possible outcome means.
+- `evidence/field-test.json` — the whole fixture: the place text, the sixteen statements with their plain readings, which are true, the expected answer numbers, the address under the full primer, the address under the reduced primer, and the root.
+
+### The section to write
+
+State it as an instruction to the reader, in the register of FAILURE 0, and keep it short:
+
+1. What to do. Scan the code into one assistant. Do not tell it what the code is for and do not explain the project. It will answer with a set of numbers. Do the same in a different app. Tick the answers on the card and compare.
+2. Why it is a real test. The two assistants share no weights, no training data, no context and no contact. Neither is told the other exists. Neither is told what the place is called. If their answers agree, the frame is shared. If they differ, the claim on this page is wrong, and say so plainly.
+3. What will happen. Most assistants answer the same way, because the sixteen statements are ordinary English about a room and the place is described so that a careful reader would answer the same way. Say that this is the honest shape of the result: the test is easy to pass, and it is a test because it could fail. Do not overclaim a low base rate.
+4. What the reader can then check. Paste the numbers into the repository and get the address, or read it off: the expected answer is `1,2,4,5,6,11,14,16`, the library room's address under the full primer is `⌁ se.re.ni.ka.nu·re.ru.ki.va.sa+ru.ki.va.so.ru~ko.se.ta`, and the root of that answer is `!65bdc8219e4462894ea7bb2a54f9dff07545fd2c05e1baefd7a062329fbcb114`.
+5. State the limit of the reduced primer honestly: the sixteen statements are cut from the same seed by the same rule, so it produces a genuine prefix of the full address, and the reduced address for the library room is `⌁ ma.ne.ti.ma`, which does not match the full address's prefix because a reduced vocabulary changes which statements carry the most weight. Say that rather than hiding it.
+
+Do not claim the test has been run at scale by us. Say what it is, what it will show, and that the reader running it is what makes it evidence rather than a claim.
+
+Also add a line to index.html's opening, after the transcript, offering the reader this test in one sentence with a pointer to the section.
