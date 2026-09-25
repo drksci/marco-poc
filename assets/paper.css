@@ -1,0 +1,620 @@
+/* ==========================================================================
+   MARCO — the paper design system.
+
+   The four pages are an academic paper, not a landing page. This stylesheet is
+   the single place that decides what that means, so the four pages cannot drift
+   apart. It restyles the existing daisyUI markup rather than replacing it, so
+   every figure, chat exchange, table and code block already on a page survives
+   the redesign.
+
+   Rules it follows:
+
+     * one narrow measure for prose, wider for figures
+     * serif for reading, monospace for values
+     * hairline rules instead of cards, shadows and coloured pills
+     * colour comes only from the daisyUI theme variables, so the light theme
+       cannot produce light text on a light surface
+   ========================================================================== */
+
+.paper {
+  --measure: 44rem;
+  --wide: 58rem;
+  --hair: oklch(var(--b3));
+  --hair-soft: oklch(var(--b3) / 0.55);
+  --ink: oklch(var(--bc));
+  --faint: oklch(var(--bc) / 0.55);
+  --fainter: oklch(var(--bc) / 0.4);
+  --serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  background: oklch(var(--b1));
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---------------------------------------------------------------- top bar */
+.paper nav.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  min-height: 3rem;
+  height: 3rem;
+  padding: 0;
+  background: oklch(var(--b1) / 0.88);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--hair);
+}
+.paper nav.navbar > div {
+  max-width: var(--wide);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.75rem;
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 1;
+}
+.paper nav.navbar a {
+  color: var(--ink);
+  opacity: 0.5;
+  text-decoration: none;
+  padding: 0;
+  white-space: nowrap;
+}
+.paper nav.navbar a:hover { opacity: 0.85; }
+.paper nav.navbar a[aria-current="page"] {
+  opacity: 1;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
+}
+
+/* ---------------------------------------------------------------- masthead */
+.paper header.hero {
+  display: block;
+  background: oklch(var(--b1));
+  border-bottom: 1px solid var(--hair);
+}
+.paper header.hero > .hero-content {
+  display: block;
+  max-width: var(--wide);
+  margin: 0 auto;
+  padding: 5rem 1.5rem 2.5rem;
+  text-align: left;
+  gap: 0;
+}
+.paper header.hero > .hero-content > div { max-width: var(--measure); }
+.paper header.hero p:first-child {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.45;
+}
+.paper header.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.1rem, 5vw, 2.9rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  margin: 1.5rem 0 0;
+}
+.paper header.hero h1 em { font-style: italic; }
+.paper header.hero p {
+  font-size: 1.13rem;
+  line-height: 1.6;
+  opacity: 0.72;
+  margin-top: 1.4rem;
+}
+.paper header.hero p + p { margin-top: 1.4rem; }
+.paper header.hero .badge {
+  /* the three-way established/contested/speculative strip */
+  margin: 0 0.4rem 0 0;
+}
+
+/* ----------------------------------------------------------------- layout */
+.paper main.container {
+  max-width: var(--wide);
+  margin: 0 auto;
+  padding: 0 1.5rem 6rem;
+}
+.paper main > section,
+.paper main > div > section {
+  max-width: var(--measure);
+  border-bottom: 1px solid var(--hair-soft);
+  padding: 3.25rem 0;
+}
+.paper main > section:last-child,
+.paper main > div > section:last-child { border-bottom: 0; }
+
+/* let figures break out past the measure */
+.paper main section > figure,
+.paper main section > .grid,
+.paper main section > .overflow-x-auto,
+.paper main section > .card,
+.paper main section > div > figure {
+  max-width: var(--wide);
+}
+@media (min-width: 1024px) {
+  .paper main section > figure,
+  .paper main section > .overflow-x-auto { margin-left: -1.5rem; }
+}
+
+/* ------------------------------------------------------------------ type */
+.paper h2 {
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  line-height: 1.28;
+  letter-spacing: -0.012em;
+  font-weight: 600;
+  margin: 0 0 1.4rem;
+}
+.paper h3 {
+  font-family: var(--serif);
+  font-size: 1.14rem;
+  line-height: 1.4;
+  letter-spacing: -0.005em;
+  font-weight: 600;
+  margin: 2.5rem 0 0.9rem;
+}
+.paper h4 {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  margin: 2rem 0 0.75rem;
+}
+.paper p { margin: 0 0 1.15rem; }
+.paper section p:last-child { margin-bottom: 0; }
+.paper strong { font-weight: 600; }
+.paper a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: oklch(var(--bc) / 0.3);
+  text-underline-offset: 3px;
+}
+.paper a:hover { text-decoration-color: oklch(var(--p)); }
+
+/* lists */
+.paper ul, .paper ol { margin: 0 0 1.2rem; padding-left: 1.35rem; }
+.paper li { margin-bottom: 0.4rem; }
+.paper ul { list-style: disc; }
+.paper ol { list-style: decimal; }
+.paper ul li::marker, .paper ol li::marker { color: var(--fainter); }
+
+/* --------------------------------------------------- labels and kickers */
+/* A badge on these pages is a section label, never a coloured pill. */
+.paper .badge {
+  display: inline-block;
+  height: auto;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent !important;
+  color: var(--faint) !important;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  vertical-align: baseline;
+  margin-bottom: 0.9rem;
+}
+.paper .badge + h2, .paper .badge + h3 { margin-top: 0; }
+
+/* --------------------------------------------------------------- surfaces */
+/* Cards become plain blocks. No chrome, no shadow, no tint. */
+.paper .card {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.paper .card-body { padding: 0; }
+.paper .card-title {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.6rem;
+}
+
+/* The few cards that read as an aside keep a hairline box. */
+.paper .card.border, .paper .card.bg-base-200 {
+  border: 1px solid var(--hair);
+  border-radius: 3px;
+  background: oklch(var(--b2) / 0.4);
+  padding: 1.15rem 1.25rem;
+}
+.paper .card.border > .card-body, .paper .card.bg-base-200 > .card-body { padding: 0; }
+
+/* ------------------------------------------------------------------ code */
+.paper .mockup-code {
+  position: relative;
+  margin: 1.75rem 0;
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--hair);
+  border-radius: 3px;
+  background: oklch(var(--b2) / 0.45) !important;
+  color: var(--ink) !important;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  line-height: 1.7;
+  overflow-x: auto;
+}
+.paper .mockup-code::before { display: none !important; }
+.paper .mockup-code pre {
+  display: block;
+  padding: 0;
+  margin: 0 0 0.35rem;
+  background: transparent !important;
+  color: var(--ink) !important;
+  font-family: var(--mono);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.paper .mockup-code pre:last-child { margin-bottom: 0; }
+.paper .mockup-code pre::before {
+  content: attr(data-prefix);
+  display: block;
+  color: var(--fainter);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 0.15rem;
+}
+.paper .mockup-code code {
+  color: var(--ink) !important;
+  background: transparent !important;
+  font-size: inherit;
+}
+.paper pre:not(.mockup-code pre) {
+  margin: 1.5rem 0;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid var(--hair);
+  border-radius: 3px;
+  background: oklch(var(--b2) / 0.45);
+  font-family: var(--mono);
+  font-size: 12.5px;
+  line-height: 1.7;
+  overflow-x: auto;
+}
+.paper code {
+  font-family: var(--mono);
+  font-size: 0.86em;
+  background: oklch(var(--b2) / 0.7);
+  padding: 0.08em 0.32em;
+  border-radius: 2px;
+  word-break: break-word;
+}
+.paper .mockup-code code, .paper pre code { background: transparent; padding: 0; }
+
+/* ---------------------------------------------------------------- tables */
+.paper .table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.93rem;
+  font-family: var(--serif);
+}
+.paper .table thead th {
+  border-bottom: 1px solid var(--ink);
+  padding: 0.5rem 0.9rem 0.5rem 0;
+  text-align: left;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint);
+  background: transparent;
+}
+.paper .table tbody td {
+  border-bottom: 1px solid var(--hair-soft);
+  padding: 0.6rem 0.9rem 0.6rem 0;
+  vertical-align: top;
+  background: transparent;
+}
+.paper .table tbody tr:nth-child(even) { background: transparent !important; }
+.paper .table tbody tr:hover { background: transparent !important; }
+.paper .table :is(td, th):last-child { padding-right: 0; }
+
+/* ------------------------------------------------------------------ stats */
+/* A stat tile becomes a labelled row, the way a paper prints a quantity. */
+.paper .stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: 0 2rem;
+  border: 0;
+  background: transparent;
+  margin: 2rem 0;
+  overflow: visible;
+}
+.paper .stat {
+  display: block;
+  border: 0;
+  border-top: 1px solid var(--hair);
+  background: transparent;
+  padding: 0.85rem 0 0.9rem;
+  overflow: visible;
+}
+.paper .stat-title {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fainter);
+  white-space: normal;
+  margin-bottom: 0.3rem;
+}
+.paper .stat-value {
+  font-family: var(--mono);
+  font-size: 1.45rem !important;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--ink);
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.paper .stat-desc {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: var(--fainter);
+  white-space: normal;
+  margin-top: 0.25rem;
+}
+
+/* ------------------------------------------------------------------ notes */
+/* Alerts become a left-ruled note, not a filled banner. */
+.paper .alert {
+  display: block;
+  margin: 2rem 0;
+  padding: 0 0 0 1.25rem;
+  border: 0;
+  border-left: 2px solid oklch(var(--p));
+  border-radius: 0;
+  background: transparent !important;
+  color: var(--ink) !important;
+  font-size: 0.97rem;
+  line-height: 1.7;
+  align-items: flex-start;
+}
+.paper .alert > * { margin: 0 0 0.7rem; }
+.paper .alert > *:last-child { margin-bottom: 0; }
+.paper .alert-success { border-left-color: oklch(var(--su)); }
+.paper .alert-warning { border-left-color: oklch(var(--wa)); }
+.paper .alert-error { border-left-color: oklch(var(--er)); }
+.paper .alert-info { border-left-color: oklch(var(--in)); }
+.paper .alert .badge { margin-bottom: 0; }
+
+/* --------------------------------------------------------------- dividers */
+.paper .divider {
+  height: 1px;
+  min-height: 1px;
+  margin: 0;
+  background: transparent;
+  border: 0;
+  color: transparent;
+}
+.paper .divider::before, .paper .divider::after { display: none !important; }
+
+/* -------------------------------------------------------------------- chat */
+/* The exchanges stay, because they are the evidence. They get quieter. */
+.paper .chat { display: block; margin: 1.5rem 0; }
+.paper .chat-header {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  color: var(--faint);
+  margin-bottom: 0.4rem;
+  white-space: normal;
+}
+.paper .chat-footer {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--fainter);
+  margin-top: 0.4rem;
+}
+.paper .chat-bubble {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--hair);
+  border-radius: 3px;
+  background: oklch(var(--b2) / 0.4) !important;
+  color: var(--ink) !important;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.paper .chat-bubble::before { display: none !important; }
+.paper .chat-bubble p:last-child { margin-bottom: 0; }
+.paper .chat-end { text-align: right; }
+.paper .chat-end .chat-header, .paper .chat-end .chat-footer { text-align: right; }
+.paper .chat-end .chat-bubble {
+  display: inline-block;
+  text-align: left;
+  border-left: 0;
+  border-right: 2px solid oklch(var(--p));
+  background: oklch(var(--b2) / 0.25) !important;
+}
+.paper .chat-start .chat-bubble { border-left: 2px solid oklch(var(--bc) / 0.25); }
+.paper .chat-bubble-primary, .paper .chat-bubble-secondary, .paper .chat-bubble-neutral {
+  background: oklch(var(--b2) / 0.4) !important;
+  color: var(--ink) !important;
+}
+
+/* ---------------------------------------------------------------- figures */
+.paper figure { margin: 2.25rem 0; }
+.paper figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--hair);
+  border-radius: 3px;
+  background: oklch(var(--b1));
+}
+.paper figure img.max-w-md, .paper figure img.max-w-lg { width: auto; max-width: 100%; }
+.paper figure > div {
+  border: 1px solid var(--hair);
+  border-radius: 3px;
+  background: oklch(var(--b1));
+  padding: 1rem;
+}
+.paper figure > div > div[role="img"] { min-height: 2rem; }
+.paper figcaption {
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 1.65;
+  color: var(--faint);
+  margin-top: 0.7rem;
+}
+/* the caption paragraphs used on the pages that predate <figcaption> */
+.paper section > p.font-mono,
+.paper section > div > p.font-mono:only-child {
+  font-size: 12px;
+  line-height: 1.65;
+  color: var(--faint);
+  margin-top: -1.4rem;
+  margin-bottom: 1.6rem;
+}
+.paper section > .opacity-70.font-mono, .paper .font-mono.opacity-70 { color: var(--faint); }
+
+/* ---------------------------------------------------------------- contents */
+.paper nav.contents {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 1.75rem 0 1.9rem;
+  border-bottom: 1px solid var(--hair);
+}
+.paper nav.contents > p {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fainter);
+  margin-bottom: 0.8rem;
+}
+.paper nav.contents ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  columns: 1;
+  column-gap: 2.5rem;
+}
+@media (min-width: 900px) { .paper nav.contents ol { columns: 2; } }
+.paper nav.contents li {
+  break-inside: avoid;
+  margin-bottom: 0.35rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+.paper nav.contents a { text-decoration: none; color: var(--faint); }
+.paper nav.contents a:hover { color: var(--ink); text-decoration: underline; }
+.paper nav.contents .n {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--fainter);
+  margin-right: 0.55rem;
+}
+.paper h2 { scroll-margin-top: 4.5rem; }
+
+/* ------------------------------------------------------------------ steps */
+.paper .steps { display: block; list-style: none; padding: 0; margin: 1.75rem 0; }
+.paper .step {
+  position: relative;
+  display: block;
+  list-style: none;
+  padding: 0 0 0 2.4rem;
+  margin-bottom: 1.1rem;
+  min-height: 0;
+  font-size: 0.97rem;
+  color: var(--ink);
+}
+.paper .step::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.42em;
+  width: 1.6rem;
+  height: 1px;
+  background: var(--ink);
+}
+.paper .step::after {
+  content: "";
+  position: absolute;
+  left: 0.52rem;
+  top: 0.2em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--ink);
+}
+
+/* --------------------------------------------------------------- timeline */
+.paper .timeline { display: block; padding: 0; margin: 1.75rem 0; }
+.paper .timeline > li,
+.paper .timeline-middle, .paper .timeline-end, .paper .timeline-start {
+  display: block;
+  margin-bottom: 0.9rem;
+  padding-left: 0;
+}
+.paper .timeline-box {
+  border: 1px solid var(--hair);
+  border-radius: 3px;
+  background: oklch(var(--b2) / 0.35);
+  padding: 0.7rem 0.9rem;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* ------------------------------------------------------------------ misc */
+.paper .link { text-decoration: underline; text-underline-offset: 4px; }
+.paper .rounded-box, .paper .rounded { border-radius: 3px; }
+.paper .btn {
+  font-family: var(--mono);
+  font-size: 12px;
+  border-radius: 3px;
+  min-height: 2.25rem;
+  height: auto;
+  padding: 0.4rem 1rem;
+}
+.paper .bg-base-200 { background: transparent; }
+.paper .border-base-300 { border-color: var(--hair); }
+.paper .opacity-70 { opacity: 1; color: var(--faint); }
+.paper .opacity-60 { opacity: 1; color: var(--fainter); }
+
+/* keyboard-focus and print behave */
+.paper a:focus-visible, .paper button:focus-visible {
+  outline: 2px solid oklch(var(--p));
+  outline-offset: 3px;
+}
+@media print {
+  .paper nav.navbar, .paper nav.contents { display: none; }
+  .paper header.hero > .hero-content { padding-top: 0; }
+}
+
+/* ------------------------------------------------------------------ phone */
+@media (max-width: 640px) {
+  .paper { font-size: 16px; }
+  .paper main.container { padding: 0 1.15rem 4rem; }
+  .paper header.hero > .hero-content { padding: 3rem 1.15rem 2rem; }
+  .paper main > section, .paper main > div > section { padding: 2.5rem 0; }
+  .paper h2 { font-size: 1.35rem; }
+  .paper .stat { padding: 0.75rem 0; }
+  .paper .stat-value { font-size: 1.25rem !important; }
+  .paper .stats { grid-template-columns: 1fr; gap: 0; }
+  .paper nav.navbar > div { gap: 1rem; font-size: 11px; }
+}

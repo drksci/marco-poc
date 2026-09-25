@@ -6,17 +6,16 @@
 <title>The same answer twice · MARCO</title>
 <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
+<link href="assets/paper.css" rel="stylesheet" type="text/css" />
 </head>
-<body class="min-h-screen bg-base-100 text-base-content">
+<body class="min-h-screen bg-base-100 text-base-content paper">
 
-<nav aria-label="Sections">
-  <div class="navbar bg-base-200 sticky top-0 z-30 min-h-12">
-    <div class="navbar-center gap-4 lg:gap-6 text-sm w-full justify-center">
-      <a class="link link-hover" href="index.html">the whole story</a>
-      <a class="link link-hover" href="response.html">response to agent://</a>
-      <a class="link link-hover" href="proof.html" aria-current="page">the proof</a>
-      <a class="link link-hover" href="whales.html">whales</a>
-    </div>
+<nav class="navbar" aria-label="Sections">
+  <div>
+    <a class="link link-hover" href="index.html">overview</a>
+    <a class="link link-hover" href="response.html">agent://</a>
+    <a class="link link-hover" href="proof.html" aria-current="page">evidence</a>
+    <a class="link link-hover" href="whales.html">whales</a>
   </div>
 </nav>
 
@@ -30,11 +29,32 @@
   </div>
 </header>
 
+<nav class="contents" aria-label="Contents">
+    <p>Contents</p>
+    <ol>
+      <li><a href="#s1"><span class="n">1</span>One room, 45 questions, and two things made from the answers</a></li>
+      <li><a href="#s2"><span class="n">2</span>The same room was given to two systems, and both returned the same address</a></li>
+      <li><a href="#s3"><span class="n">3</span>You can run this test yourself, in about two minutes, with a phone</a></li>
+      <li><a href="#s4"><span class="n">4</span>Reading more of the name can separate two places, and never blur them</a></li>
+      <li><a href="#s5"><span class="n">5</span>The same answers give the same name every time</a></li>
+      <li><a href="#s6"><span class="n">6</span>How far apart two names are, and whether that matches the world</a></li>
+      <li><a href="#s7"><span class="n">7</span>A root over part of the answers is still exactly checkable</a></li>
+      <li><a href="#s8"><span class="n">8</span>One object says near, the other says same</a></li>
+      <li><a href="#s9"><span class="n">9</span>A claim can be no stronger than its weakest input</a></li>
+      <li><a href="#s10"><span class="n">10</span>Both sides need the same frame, and it fits in 3,300 bytes</a></li>
+      <li><a href="#s11"><span class="n">11</span>Cases whose answer was known before the measure was trusted</a></li>
+      <li><a href="#s12"><span class="n">12</span>The result against the nulls built to beat it</a></li>
+      <li><a href="#s13"><span class="n">13</span>One expectation was written down, measured, and kept when it failed</a></li>
+      <li><a href="#s14"><span class="n">14</span>Where this stops</a></li>
+    </ol>
+  </nav>
+
+
 <main class="container mx-auto max-w-5xl px-4">
 
 <!-- ==================================================== 1. the concrete instance -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">One room, 45 questions, and two things made from the answers</h2>
+  <h2 id="s1" class="text-3xl font-bold">One room, 45 questions, and two things made from the answers</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>The situation is a kitchen with a friend in it. An agent standing there answers 45 short questions about it. Can I see inside this place? Is anyone else here? Can I reach other places? Is this place private? Eighteen of the 45 come back true.</p>
     <p>The answers become a name you can say out loud: <span class="font-mono break-all">⌁ ma.mo.ma.ma.ru·ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.ru.ki</span>. It is 18 syllables in four groups. Read it left to right and you are reading the answers in a fixed order, five syllables to a group.</p>
@@ -50,7 +70,7 @@
 
 <!-- ==================================================== 1b. the same room, twice -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">The same room was given to two systems, and both returned the same address</h2>
+  <h2 id="s2" class="text-3xl font-bold">The same room was given to two systems, and both returned the same address</h2>
   <div class="mt-8 max-w-3xl space-y-6 text-base leading-relaxed">
     <p>Six AI systems were each shown one ordinary paragraph in English. They were built by six different organisations, trained on different data, and designed differently. None of them saw the others, and none of them was told that any other system existed.</p>
     <p>Here is the paragraph, word for word. It is the whole of what each system was given about the room.</p>
@@ -82,7 +102,7 @@
 
 <!-- ==================================================== 1c. the field test -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">You can run this test yourself, in about two minutes, with a phone</h2>
+  <h2 id="s3" class="text-3xl font-bold">You can run this test yourself, in about two minutes, with a phone</h2>
   <div class="mt-8 max-w-3xl space-y-6 text-base leading-relaxed">
     <p>The strongest thing here is not a number. It is that a reader can check the central claim without a key, a terminal, or any understanding of the code. Nothing below needs an account, and nothing below is hidden behind the repository.</p>
     <p>Here is what to do:</p>
@@ -134,11 +154,11 @@
     </table>
   </div>
   <div class="stats stats-vertical lg:stats-horizontal bg-base-200 w-full mt-8">
-    <div class="stat"><div class="stat-title text-base">the answers that are true</div><div class="stat-value text-2xl">1, 2, 4, 5, 6, 11, 14, 16</div><div class="stat-desc text-base">the expected result</div></div>
+    <div class="stat"><div class="stat-title text-base">the answers that are true</div><div class="stat-value text-2xl">1, 2, 4, 5, 6, 10, 11, 14, 16</div><div class="stat-desc text-base">the expected result</div></div>
     <div class="stat"><div class="stat-title text-base">the address under the full primer</div><div class="stat-value text-lg font-mono break-all">⌁ se.re.ni.ko.mu·mo.ru.ki.va.ke+ru.ki.va.so.ru~ki.ro.ta</div><div class="stat-desc text-base">the library room</div></div>
   </div>
   <div class="mockup-code w-full mt-6 leading-6 max-w-full rounded-box text-xs leading-relaxed overflow-x-auto whitespace-pre-wrap break-words">
-    <pre data-prefix="expected answers"><code>1, 2, 4, 5, 6, 11, 14, 16</code></pre>
+    <pre data-prefix="expected answers"><code>1, 2, 4, 5, 6, 10, 11, 14, 16</code></pre>
     <pre data-prefix="address"><code>⌁ se.re.ni.ko.mu·mo.ru.ki.va.ke+ru.ki.va.so.ru~ki.ro.ta</code></pre>
     <pre data-prefix="root"><code>!7343e3b49ce82b0aaae335b1095d14c9c45645254a4ab5bc0875b70545c9d3b5</code></pre>
   </div>
@@ -159,7 +179,7 @@
 
 <!-- ==================================================== 2. monotone refinement -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">Reading more of the name can separate two places, and never blur them</h2>
+  <h2 id="s4" class="text-3xl font-bold">Reading more of the name can separate two places, and never blur them</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>To compare two situations you want a name that gets more specific as you read further. You also want a guarantee: reading more must never merge two places that were already apart. A name that did that would be worse than useless, because the answer would change as you looked harder.</p>
     <p>So the same six places are named six times, keeping the first 1 question, then the first 2, 3, 4, 5 and 6. At 1 question the six collapse into 3 names. At 3 questions they are 4 names, at 4 questions 5 names, and at 6 questions all six are apart. The count never goes down, and the recorded number of violations is <span class="font-mono">0</span>. Figure 3 draws four of those readings side by side.</p>
@@ -236,7 +256,7 @@
 
 <!-- ==================================================== 3. determinism -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">The same answers give the same name every time</h2>
+  <h2 id="s5" class="text-3xl font-bold">The same answers give the same name every time</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>A name is useful only if it holds still. If the same 18 answers could produce two different names, nothing could be compared and nothing could be checked. So the same situation is named over and over, three different ways, and Figure 4 draws the three routes:</p>
     <ul class="list-disc pl-6 space-y-2">
@@ -287,7 +307,7 @@
 
 <!-- ==================================================== 4. distance -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">How far apart two names are, and whether that matches the world</h2>
+  <h2 id="s6" class="text-3xl font-bold">How far apart two names are, and whether that matches the world</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>Two names are worth measuring only if the gap between them means something. The gap used here is simple to state: line the two names up letter by letter and count the letters that differ. Each of the 18 syllables is two letters, so a name is 36 letters long, and the count runs from 0 to 36.</p>
     <p>All 15 pairs of the six places were measured. The distances were written down before anyone looked at the names, from how much the situations themselves differ. The two lists were then compared by rank. Figure 5 shows the same name read at more and more precision, which is how the gap keeps its meaning as you read further.</p>
@@ -336,7 +356,7 @@
 
 <!-- ==================================================== 5. the root at grain -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">A root over part of the answers is still exactly checkable</h2>
+  <h2 id="s7" class="text-3xl font-bold">A root over part of the answers is still exactly checkable</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>A root is a fingerprint of a list, and a list can be shortened. That matters because an agent may be willing to disclose the two most telling answers and nothing else. The question is whether a short root can still be checked.</p>
     <p>It can, as long as both sides agree which answers went in. The four runs below take the same situation, the kitchen with a friend, and root the first 2, then 4, then 8, then all 45 of the most telling answers. The set used is the one <span class="font-mono">deepseek-v4.1-flash</span> reported, so the count below measures how short a root can be rather than how much models disagree.</p>
@@ -390,7 +410,7 @@
 
 <!-- ==================================================== 6. address vs root -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">One object says near, the other says same</h2>
+  <h2 id="s8" class="text-3xl font-bold">One object says near, the other says same</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>Take the closest pair in the set, the kitchen with a friend and the kitchen alone. Their names are different at 9 of 36 letters and they agree for the first 3 questions. Their roots are different at 61 of 64 characters, and they share nothing at the start. Figure 7 draws the two objects side by side.</p>
     <p>This is deliberate. A name that kept nearness would be a poor fingerprint, and a fingerprint that kept nearness would let anyone who holds it learn roughly where you are. So the two jobs are given to two objects, and each one is only good at its own job.</p>
@@ -447,7 +467,7 @@
 
 <!-- ==================================================== 7. the ladder -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">A claim can be no stronger than its weakest input</h2>
+  <h2 id="s9" class="text-3xl font-bold">A claim can be no stronger than its weakest input</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>Some answers are checked, some are inferred, some are measured with an instrument, and some are beliefs. If all four were treated the same, a belief could be laundered into a fact by putting it next to a checked answer. So every answer carries a marker that says how it was arrived at.</p>
     <p>An address takes the weakest marker present anywhere in it. One measured answer is enough to pull the whole address down to that level. Five markers sit on the ladder, and only the top two are strong enough to anchor a claim.</p>
@@ -494,7 +514,7 @@
 
 <!-- ==================================================== 8. the seed -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">Both sides need the same frame, and it fits in 3,300 bytes</h2>
+  <h2 id="s10" class="text-3xl font-bold">Both sides need the same frame, and it fits in 3,300 bytes</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>Two sides can compare names only if they build them the same way. They need the same 45 questions, the same 32 syllables to write answers with, the same order for asking the questions, the same four levels for what counts as far, and the same five markers on the ladder.</p>
     <p>One way to get that agreement is to send the whole frame. It comes to 67,561 bytes, and a second copy has to be kept in step forever. Every one of those bytes is worked out from something smaller.</p>
@@ -904,7 +924,7 @@
 
 <!-- ==================================================== 9. known answers -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">Cases whose answer was known before the measure was trusted</h2>
+  <h2 id="s11" class="text-3xl font-bold">Cases whose answer was known before the measure was trusted</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>A measure that cannot reproduce an answer already known is not trustworthy on an answer that is not known. So four cases run first, each with an outcome that was fixed in advance.</p>
   </div>
@@ -928,7 +948,7 @@
 
 <!-- ==================================================== 10. controls -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">The result against the nulls built to beat it</h2>
+  <h2 id="s12" class="text-3xl font-bold">The result against the nulls built to beat it</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>A high score proves nothing until you know what a meaningless version of the same experiment would score. Three nulls were built for that purpose. The first is guessing: six places, so one in six is 16.7%. The second shuffles which family said what and repeats the comparison 6,000 times. The third replaces every model's answers with random statements of the same length, again 6,000 times.</p>
     <p>The real result over 90 comparisons is 96.7% when ties are broken strictly, and 100% when exact ties are counted as correct. Figure 10 puts that result next to the nulls.</p>
@@ -987,7 +1007,7 @@
 
 <!-- ==================================================== 11. the disagreement -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">One expectation was written down, measured, and kept when it failed</h2>
+  <h2 id="s13" class="text-3xl font-bold">One expectation was written down, measured, and kept when it failed</h2>
   <div class="card bg-base-200 w-full mt-8">
     <div class="card-body">
       <h3 class="card-title text-base">The expectation and the measurement <span class="badge badge-warning">disagreement</span></h3>
@@ -1004,7 +1024,7 @@
 
 <!-- ==================================================== 12. limits -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">Where this stops</h2>
+  <h2 id="s14" class="text-3xl font-bold">Where this stops</h2>
   <div class="alert alert-warning w-full mt-8">
     <div>
       <p>Nothing here is a claim about meaning. The name reports what an agent said and never what it understood. There is no proof that the derivation was done correctly, because the root commits to a list of answers rather than to the reasoning that chose them.</p>

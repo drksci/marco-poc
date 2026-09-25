@@ -6,17 +6,16 @@
 <title>What agent:// is missing</title>
 <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
+<link href="assets/paper.css" rel="stylesheet" type="text/css" />
 </head>
-<body class="min-h-screen bg-base-100 text-base-content">
+<body class="min-h-screen bg-base-100 text-base-content paper">
 
-<nav aria-label="Sections">
-  <div class="navbar bg-base-200 sticky top-0 z-30 min-h-12">
-    <div class="navbar-center gap-4 lg:gap-6 text-sm w-full justify-center">
-      <a class="link link-hover" href="index.html">the whole story</a>
-      <a class="link link-hover" href="response.html" aria-current="page">response to agent://</a>
-      <a class="link link-hover" href="proof.html">the proof</a>
-      <a class="link link-hover" href="whales.html">whales</a>
-    </div>
+<nav class="navbar" aria-label="Sections">
+  <div>
+    <a class="link link-hover" href="index.html">overview</a>
+    <a class="link link-hover" href="response.html" aria-current="page">agent://</a>
+    <a class="link link-hover" href="proof.html">evidence</a>
+    <a class="link link-hover" href="whales.html">whales</a>
   </div>
 </nav>
 
@@ -30,11 +29,39 @@
   </div>
 </header>
 
+<nav class="contents" aria-label="Contents">
+    <p>Contents</p>
+    <ol>
+      <li><a href="#s1"><span class="n">1</span>Two companies name the same job differently, and the paper&#x27;s identifier cannot tell</a></li>
+      <li><a href="#s2"><span class="n">2</span>Finding a partner by name, and finding one by position</a></li>
+      <li><a href="#s3"><span class="n">3</span>Two organisations, the same four jobs, and one decoy</a></li>
+      <li><a href="#s4"><span class="n">4</span>The two methods, on the same four queries</a></li>
+      <li><a href="#s5"><span class="n">5</span>The paper&#x27;s own example, worked through step by step</a></li>
+      <li><a href="#s6"><span class="n">6</span>Are the partners actually the near ones?</a></li>
+      <li><a href="#s7"><span class="n">7</span>Where those numbers come from</a></li>
+      <li><a href="#s8"><span class="n">8</span>An agent running inside a layered environment</a></li>
+      <li><a href="#s9"><span class="n">9</span>The three layers, and what each one adds</a></li>
+      <li><a href="#s10"><span class="n">10</span>Three positions in that one environment</a></li>
+      <li><a href="#s11"><span class="n">11</span>How far apart the three layers are</a></li>
+      <li><a href="#s12"><span class="n">12</span>The same 3,300 bytes both sides hold</a></li>
+      <li><a href="#s13"><span class="n">13</span>The exact half: the root says same</a></li>
+      <li><a href="#s14"><span class="n">14</span>Root agreement, place by place</a></li>
+      <li><a href="#s15"><span class="n">15</span>A root over part of the answers</a></li>
+      <li><a href="#s16"><span class="n">16</span>A root that can absorb whatever the operator already holds</a></li>
+      <li><a href="#s17"><span class="n">17</span>Why any of this could work at all</a></li>
+      <li><a href="#s18"><span class="n">18</span>Where the position has to stop</a></li>
+      <li><a href="#s19"><span class="n">19</span>What is demonstrated here, and what is not</a></li>
+      <li><a href="#s20"><span class="n">20</span>Most of this is older than it looks</a></li>
+      <li><a href="#s21"><span class="n">21</span>The whole check, as pseudocode</a></li>
+    </ol>
+  </nav>
+
+
 <main class="container mx-auto max-w-5xl px-4">
 
 <!-- ================================================== 1. what the paper solves -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">Two companies name the same job differently, and the paper's identifier cannot tell</h2>
+  <h2 id="s1" class="text-3xl font-bold">Two companies name the same job differently, and the paper's identifier cannot tell</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>Start with one job and two names for it. One company calls the job of approving a change <span class="font-mono">/workflow/approval</span>. Another calls the same job <span class="font-mono">/process/authorize</span>. The two settings share no word at all.</p>
     <p>The paper's identifier is built by hashing an agent's list of capabilities. A hash is a fingerprint for data: it turns any list into a fixed-length code, and changing one entry changes the code completely. That is the right property for a name. A name that drifted every time an agent learned something could not be used to refer to anything.</p>
@@ -67,7 +94,7 @@
 
 <!-- ================================================== 2. headline numbers -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">Finding a partner by name, and finding one by position</h2>
+  <h2 id="s2" class="text-3xl font-bold">Finding a partner by name, and finding one by position</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>Four queries are sent from one company to the other. Each query is a capability path, and each has an equivalent on the other side doing the same job under a different name. Two ways of answering are compared. The first matches the path exactly. The second gives every agent a position, worked out from the situation the job happens in rather than from the job's name, and returns whichever position is nearest.</p>
     <p>The results are below. All six values come from the same recorded run.</p>
@@ -91,7 +118,7 @@
 
 <!-- ================================================== 3. nine agents -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">Two organisations, the same four jobs, and one decoy</h2>
+  <h2 id="s3" class="text-3xl font-bold">Two organisations, the same four jobs, and one decoy</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>Nine agents are listed below. Eight of them do four jobs between them, four on each side, and every pair doing the same job carries a completely different name. The ninth, <span class="font-mono">process/migrate</span>, does something with no equivalent on the other side. It is the decoy, and the question later is whether the nearest-position method ever returns it.</p>
     <p>Each agent carries a <span class="font-mono">agent://</span> URI and, alongside it, a <span class="font-mono">⌁</span> position worked out from the situation the job happens in rather than from the job's name.</p>
@@ -122,7 +149,7 @@
 
 <!-- ================================================== 4. recall -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">The two methods, on the same four queries</h2>
+  <h2 id="s4" class="text-3xl font-bold">The two methods, on the same four queries</h2>
   <div class="mt-8 max-w-3xl text-base leading-relaxed">
     <p>Each query is one company's own capability path, asked against the other company's nine agents. The table below gives the outcome both ways, and the distance is in letters of the position, out of the 36 letters a position has.</p>
   </div>
@@ -178,7 +205,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
 
 <!-- ================================================== 5. the worked example -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">The paper's own example, worked through step by step</h2>
+  <h2 id="s5" class="text-3xl font-bold">The paper's own example, worked through step by step</h2>
   <div class="mt-8 max-w-3xl text-base leading-relaxed">
     <p>Two agents, one job, two names with nothing in common, and two positions that nearly touch. Every step is written out with its real value so the arithmetic can be followed with a pen.</p>
   </div>
@@ -256,7 +283,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
 
 <!-- ================================================== 6. nearness figure -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">Are the partners actually the near ones?</h2>
+  <h2 id="s6" class="text-3xl font-bold">Are the partners actually the near ones?</h2>
   <div class="mt-8 max-w-3xl text-base leading-relaxed">
     <p>Answering four queries correctly could still be luck. So all 20 pairs of agents, one from each company, were measured rather than the four queries only. Figure 1 places all nine agents using the distances between their positions and nothing else. No name, no job label, and no organisation was used to lay it out.</p>
   </div>
@@ -335,7 +362,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
 
 <!-- ================================================== 7. the arithmetic -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">Where those numbers come from</h2>
+  <h2 id="s7" class="text-3xl font-bold">Where those numbers come from</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>Every figure on this page can be recomputed from the recorded distances. The four sums below are the whole of it.</p>
   </div>
@@ -371,7 +398,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
 
 <!-- ================================================== 8. overlay environment -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">An agent running inside a layered environment</h2>
+  <h2 id="s8" class="text-3xl font-bold">An agent running inside a layered environment</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>The easier case is two companies describing the same job. The harder case is one machine where several layers of settings are in force at once, because then the same path can mean different things depending on who is asking.</p>
     <p>The environment is called <span class="font-mono">user-env-1</span> and it is mounted at <span class="font-mono">./user-env-1</span>. It allows two tools, <span class="font-mono">claude-code</span> and <span class="font-mono">codex</span>. Their real settings live in a host store at <span class="font-mono">/var/lib/ai-envs/env-1</span>, the workspace comes from <span class="font-mono">/home/user/projects/my-app</span>, and scratch space is at <span class="font-mono">/tmp/user-env-1/scratch</span>.</p>
@@ -397,7 +424,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
 
 <!-- ================================================== 9. layer stack -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">The three layers, and what each one adds</h2>
+  <h2 id="s9" class="text-3xl font-bold">The three layers, and what each one adds</h2>
   <div class="mt-8 max-w-3xl text-base leading-relaxed">
     <p>A layer above overrides the one below, and nothing below is rewritten or discarded. Three layers are in force in this run, and Figure 2 draws them.</p>
   </div>
@@ -419,7 +446,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
 
 <!-- ================================================== 10. three positions -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">Three positions in that one environment</h2>
+  <h2 id="s10" class="text-3xl font-bold">Three positions in that one environment</h2>
   <div class="mt-8 max-w-3xl text-base leading-relaxed">
     <p>Each layer produces its own position and its own root. The three sit close to one another, and a sealed empty room is included further down for scale. The three roots are recorded in full, all 64 characters each, in <span class="font-mono">evidence/overlay-environment.json</span>.</p>
   </div>
@@ -454,7 +481,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
 
 <!-- ================================================== 11. distances -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">How far apart the three layers are</h2>
+  <h2 id="s11" class="text-3xl font-bold">How far apart the three layers are</h2>
   <div class="mt-8 max-w-3xl text-base leading-relaxed">
     <p>The positions are compared across all three pairs. The shared prefix is the number of questions at the start that both sides answered the same way, out of 45. A sealed empty room is used for scale.</p>
   </div>
@@ -487,7 +514,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
 
 <!-- ================================================== 12. the seed -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">The same 3,300 bytes both sides hold</h2>
+  <h2 id="s12" class="text-3xl font-bold">The same 3,300 bytes both sides hold</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>Everything above assumes the two sides build their positions the same way. That assumption needs something concrete behind it: the same 45 questions, the same 32 syllables to write answers with, the same order for asking the questions, the same four levels of what counts as far, and the same five markers on the ladder.</p>
     <p>A registry-style exchange would ship all of that. It comes to 67,561 bytes, and a second copy has to be kept in step forever. Every one of those bytes can be worked out from something smaller.</p>
@@ -895,7 +922,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
 
 <!-- ================================================== 13. the root -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">The exact half: the root says same</h2>
+  <h2 id="s13" class="text-3xl font-bold">The exact half: the root says same</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>A root is a fingerprint of a list of answers, made with a hash. A hash turns any data into a fixed-length code and changes completely when one character of the input changes. So a root answers one question exactly: is this the same list of answers, or not?</p>
     <p>It is built over the answers sorted into one fixed order, so the order a side happened to write them down in cannot change the result.</p>
@@ -915,7 +942,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
 
 <!-- ================================================== 14. root table -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">Root agreement, place by place</h2>
+  <h2 id="s14" class="text-3xl font-bold">Root agreement, place by place</h2>
   <div class="mt-8 max-w-3xl text-base leading-relaxed">
     <p>The table gives every place, how many different lists of answers the six families reported, how many different roots came out, and which families agreed exactly.</p>
   </div>
@@ -944,7 +971,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
 
 <!-- ================================================== 15. grain -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">A root over part of the answers</h2>
+  <h2 id="s15" class="text-3xl font-bold">A root over part of the answers</h2>
   <div class="mt-8 max-w-3xl text-base leading-relaxed">
     <p>An agent may be willing to disclose a few answers and nothing else. A root over part of a list is as checkable as a root over the whole list, as long as both sides agree which answers went in. The four runs below take the same situation and root the first 2, then 4, then 8, then all 45 of the most telling answers.</p>
   </div>
@@ -968,7 +995,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
 
 <!-- ================================================== 16. extras -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">A root that can absorb whatever the operator already holds</h2>
+  <h2 id="s16" class="text-3xl font-bold">A root that can absorb whatever the operator already holds</h2>
   <div class="mt-8 max-w-3xl text-base leading-relaxed">
     <p>Extra attributes ride in the same list, sorted the same way. The root moves and the position does not, in all four runs.</p>
   </div>
@@ -995,7 +1022,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
 
 <!-- ================================================== 17. why any of this works -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">Why any of this could work at all</h2>
+  <h2 id="s17" class="text-3xl font-bold">Why any of this could work at all</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>Nothing so far explains why independently built systems agree. A shared vocabulary tells you what to answer with. It cannot make two differently built systems put the same situation in the same part of their own space. If that were all that was happening, the positions would be arbitrary but consistent, like two people agreeing to call a colour seven.</p>
     <p>The result implies something stronger. Situations appear to occupy a shape that independently trained systems have in common, where nearness means likeness. The seed is a chart laid over that shape rather than a substitute for it.</p>
@@ -1017,7 +1044,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
 
 <!-- ================================================== 18. where it has to stop -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">Where the position has to stop</h2>
+  <h2 id="s18" class="text-3xl font-bold">Where the position has to stop</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>The position is descriptive and never authoritative. It must not absorb identity, trust, routing, or any of the paper's five requirements. <span class="font-mono">agent://</span> is untouched, and the two objects ride alongside it and decide nothing on their own.</p>
     <p><span class="font-mono">agent://</span> says who you are. <span class="font-mono">⌁</span> says whereabouts you are. The distance between two positions says how close. The root says whether it is the same.</p>
@@ -1031,7 +1058,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
 
 <!-- ================================================== 19. what is demonstrated -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">What is demonstrated here, and what is not</h2>
+  <h2 id="s19" class="text-3xl font-bold">What is demonstrated here, and what is not</h2>
   <div class="alert alert-success w-full mt-8">
     <span>Demonstrated: a query from one organisation resolves to the equivalent job in the other by nearest position alone, with no mapping table anywhere in the path, at recall 4/4 against 1/4 for matching the path. A root verifies without contacting the issuer, because five of six families produced the byte-identical root for the locked storeroom and any holder of the vocabulary can recompute it. The frame is usable by six independently built model families. Precision is variable and measured: one question names 3 of the 6 places, three questions name 4, four name 5, and six name all 6. The position and the root are separate in the code, and the root destroys adjacency on purpose.</span>
   </div>
@@ -1051,7 +1078,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
 
 <!-- ================================================== 20. prior art -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">Most of this is older than it looks</h2>
+  <h2 id="s20" class="text-3xl font-bold">Most of this is older than it looks</h2>
   <div class="card bg-base-200 w-full mt-8">
     <div class="card-body">
       <p class="text-base leading-relaxed max-w-3xl">Short pronounceable identifiers have been built before, in geohash and in proquints. Locality-sensitive hashing preserves neighbourhoods. Merkle commitments give exact equality that does not depend on order. Metric embeddings and canonical correlation analysis map between spaces, and RSA is decades old.</p>
@@ -1067,7 +1094,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
   <div class="divider"></div>
 
   <section class="py-12" id="deterministic">
-    <h2 class="text-3xl font-bold">The whole check, as pseudocode</h2>
+    <h2 id="s21" class="text-3xl font-bold">The whole check, as pseudocode</h2>
 
     <div class="mt-6 max-w-3xl space-y-4 text-base leading-relaxed">
       <p>There are four operations, and only four. Everything else on this page is a consequence

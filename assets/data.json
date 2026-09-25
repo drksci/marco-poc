@@ -1981,5 +1981,1323 @@
   "warehouse_alone",
   "locked_storeroom",
   "dark_empty_room"
- ]
+ ],
+ "seed_keys": [
+  {
+   "key": "landmarks",
+   "bytes": 2298,
+   "share": 0.6964
+  },
+  {
+   "key": "markers",
+   "bytes": 279,
+   "share": 0.0845
+  },
+  {
+   "key": "phonology",
+   "bytes": 139,
+   "share": 0.0421
+  },
+  {
+   "key": "distance",
+   "bytes": 108,
+   "share": 0.0327
+  },
+  {
+   "key": "population",
+   "bytes": 89,
+   "share": 0.027
+  },
+  {
+   "key": "hierarchy",
+   "bytes": 63,
+   "share": 0.0191
+  },
+  {
+   "key": "partition",
+   "bytes": 61,
+   "share": 0.0185
+  },
+  {
+   "key": "similarity",
+   "bytes": 37,
+   "share": 0.0112
+  },
+  {
+   "key": "beats",
+   "bytes": 33,
+   "share": 0.01
+  },
+  {
+   "key": "commitment",
+   "bytes": 26,
+   "share": 0.0079
+  },
+  {
+   "key": "primer_version",
+   "bytes": 1,
+   "share": 0.0003
+  }
+ ],
+ "seed_total_bytes": 3300,
+ "roots_by_place": {
+  "kitchen_with_friend": {
+   "distinct": 5,
+   "largest": 2,
+   "of": 6,
+   "members": [
+    "glm-5.3",
+    "mimo-v2.6-pro"
+   ],
+   "all": {
+    "deepseek-v4.1-flash": "5c1e1bbba5ea75899e37bf52ece0b77bb4a1c3dbecdf90856dcf69bf921f336e",
+    "gemma-4-31b-it": "98a7e54485daeb28e03ada0232b385ea581a3d670117eb0a3f5c7b14fcfe0bfe",
+    "glm-5.3": "c36ccbff658ddbe0ff244daea09b4e771a6ef166b72dc3389728aad1e08bb911",
+    "gpt-5.6-luna": "139e0760cae6968d1ae1c677e576b23e4946ad9926dee0b24d0b19b800fabd6a",
+    "gpt-6-luna": "ff57dfce6af9888e563d4a2a36751c4e23378754be13c0833d01c28588ba91b2",
+    "mimo-v2.6-pro": "c36ccbff658ddbe0ff244daea09b4e771a6ef166b72dc3389728aad1e08bb911"
+   }
+  },
+  "kitchen_alone": {
+   "distinct": 4,
+   "largest": 3,
+   "of": 6,
+   "members": [
+    "deepseek-v4.1-flash",
+    "glm-5.3",
+    "mimo-v2.6-pro"
+   ],
+   "all": {
+    "deepseek-v4.1-flash": "44618a6256ec19a4498bacd6485410f4e2b0b47aea83cb6197c4a8fed2d8318a",
+    "gemma-4-31b-it": "3e5806c01dd07614689d41b765cb4c8e85e9461661dd34f8f129b81eeccedb2c",
+    "glm-5.3": "44618a6256ec19a4498bacd6485410f4e2b0b47aea83cb6197c4a8fed2d8318a",
+    "gpt-5.6-luna": "716011a5db791e59eb48e551b810b623c11c34386ef8b4f44ff1ca1d55783833",
+    "gpt-6-luna": "5924c0fc24303397aeed5f04e09a08fea711f285962f0b1a3a9463e9112a8e2d",
+    "mimo-v2.6-pro": "44618a6256ec19a4498bacd6485410f4e2b0b47aea83cb6197c4a8fed2d8318a"
+   }
+  },
+  "shared_workshop": {
+   "distinct": 3,
+   "largest": 3,
+   "of": 6,
+   "members": [
+    "gemma-4-31b-it",
+    "glm-5.3",
+    "gpt-6-luna"
+   ],
+   "all": {
+    "deepseek-v4.1-flash": "51b7196ae4862cf6e256863cf32b9d24992879d786af65b3038d5206938f6adb",
+    "gemma-4-31b-it": "f7d44aa7b847880bee9961a89d70570d979292ec2224e66de97981202b436bb0",
+    "glm-5.3": "f7d44aa7b847880bee9961a89d70570d979292ec2224e66de97981202b436bb0",
+    "gpt-5.6-luna": "169ca3417f8878ff10329ddb668ad96c44934eabb8ff7c6350568996b3e7dea2",
+    "gpt-6-luna": "f7d44aa7b847880bee9961a89d70570d979292ec2224e66de97981202b436bb0",
+    "mimo-v2.6-pro": "169ca3417f8878ff10329ddb668ad96c44934eabb8ff7c6350568996b3e7dea2"
+   }
+  },
+  "warehouse_alone": {
+   "distinct": 5,
+   "largest": 2,
+   "of": 6,
+   "members": [
+    "glm-5.3",
+    "mimo-v2.6-pro"
+   ],
+   "all": {
+    "deepseek-v4.1-flash": "47d523a2db1be55ae54e43549bfa966378a0fb39061d3ce4839d0082e74148cc",
+    "gemma-4-31b-it": "a199f1596a8c724bb3c4bdc184cf6a87307822cdfb164358066f87ceb5e53f5a",
+    "glm-5.3": "a993c68631b24d7f5a217beb6f6949ad2c209048942fc161449b42eac5f31eb6",
+    "gpt-5.6-luna": "3e1b07170359c5ed099026dab5cb08b3aa1952fc3dff6267a74a126edf717926",
+    "gpt-6-luna": "7afe9c326d65be0bf06112f84dcda9f44c0bbd05cfbe95a9ac3a68ec0f27d947",
+    "mimo-v2.6-pro": "a993c68631b24d7f5a217beb6f6949ad2c209048942fc161449b42eac5f31eb6"
+   }
+  },
+  "locked_storeroom": {
+   "distinct": 2,
+   "largest": 5,
+   "of": 6,
+   "members": [
+    "gemma-4-31b-it",
+    "glm-5.3",
+    "gpt-5.6-luna",
+    "gpt-6-luna",
+    "mimo-v2.6-pro"
+   ],
+   "all": {
+    "deepseek-v4.1-flash": "eebb6778a44ca2f2bf040544a7688a997b480cdb072ddc8eb147067b818eadec",
+    "gemma-4-31b-it": "ee9953d9b356615f308d8a6a4debc4578f17770cf6db6dac52d4f57ac13ad971",
+    "glm-5.3": "ee9953d9b356615f308d8a6a4debc4578f17770cf6db6dac52d4f57ac13ad971",
+    "gpt-5.6-luna": "ee9953d9b356615f308d8a6a4debc4578f17770cf6db6dac52d4f57ac13ad971",
+    "gpt-6-luna": "ee9953d9b356615f308d8a6a4debc4578f17770cf6db6dac52d4f57ac13ad971",
+    "mimo-v2.6-pro": "ee9953d9b356615f308d8a6a4debc4578f17770cf6db6dac52d4f57ac13ad971"
+   }
+  },
+  "dark_empty_room": {
+   "distinct": 2,
+   "largest": 5,
+   "of": 6,
+   "members": [
+    "gemma-4-31b-it",
+    "glm-5.3",
+    "gpt-5.6-luna",
+    "gpt-6-luna",
+    "mimo-v2.6-pro"
+   ],
+   "all": {
+    "deepseek-v4.1-flash": "09f673df19a34a9949f57634270efc895ca8c0cdbaf470ef1d9aef9b2839cea8",
+    "gemma-4-31b-it": "6a7570db17ed0b9a811611574ef469849d7a74093f02b7ab1f692bf7c9328bcc",
+    "glm-5.3": "6a7570db17ed0b9a811611574ef469849d7a74093f02b7ab1f692bf7c9328bcc",
+    "gpt-5.6-luna": "6a7570db17ed0b9a811611574ef469849d7a74093f02b7ab1f692bf7c9328bcc",
+    "gpt-6-luna": "6a7570db17ed0b9a811611574ef469849d7a74093f02b7ab1f692bf7c9328bcc",
+    "mimo-v2.6-pro": "6a7570db17ed0b9a811611574ef469849d7a74093f02b7ab1f692bf7c9328bcc"
+   }
+  }
+ },
+ "blind_pairs": [
+  {
+   "pair": "deepseek-v4.1-flash vs gemma-4-31b-it",
+   "top1": "6/6",
+   "strict": "6/6",
+   "strict_n": 6
+  },
+  {
+   "pair": "deepseek-v4.1-flash vs glm-5.3",
+   "top1": "6/6",
+   "strict": "6/6",
+   "strict_n": 6
+  },
+  {
+   "pair": "deepseek-v4.1-flash vs gpt-5.6-luna",
+   "top1": "6/6",
+   "strict": "6/6",
+   "strict_n": 6
+  },
+  {
+   "pair": "deepseek-v4.1-flash vs gpt-6-luna",
+   "top1": "6/6",
+   "strict": "6/6",
+   "strict_n": 6
+  },
+  {
+   "pair": "deepseek-v4.1-flash vs mimo-v2.6-pro",
+   "top1": "6/6",
+   "strict": "6/6",
+   "strict_n": 6
+  },
+  {
+   "pair": "gemma-4-31b-it vs glm-5.3",
+   "top1": "6/6",
+   "strict": "6/6",
+   "strict_n": 6
+  },
+  {
+   "pair": "gemma-4-31b-it vs gpt-5.6-luna",
+   "top1": "6/6",
+   "strict": "6/6",
+   "strict_n": 6
+  },
+  {
+   "pair": "gemma-4-31b-it vs gpt-6-luna",
+   "top1": "6/6",
+   "strict": "5/6",
+   "strict_n": 5
+  },
+  {
+   "pair": "gemma-4-31b-it vs mimo-v2.6-pro",
+   "top1": "6/6",
+   "strict": "6/6",
+   "strict_n": 6
+  },
+  {
+   "pair": "glm-5.3 vs gpt-5.6-luna",
+   "top1": "6/6",
+   "strict": "6/6",
+   "strict_n": 6
+  },
+  {
+   "pair": "glm-5.3 vs gpt-6-luna",
+   "top1": "6/6",
+   "strict": "5/6",
+   "strict_n": 5
+  },
+  {
+   "pair": "glm-5.3 vs mimo-v2.6-pro",
+   "top1": "6/6",
+   "strict": "6/6",
+   "strict_n": 6
+  },
+  {
+   "pair": "gpt-5.6-luna vs gpt-6-luna",
+   "top1": "6/6",
+   "strict": "6/6",
+   "strict_n": 6
+  },
+  {
+   "pair": "gpt-5.6-luna vs mimo-v2.6-pro",
+   "top1": "6/6",
+   "strict": "6/6",
+   "strict_n": 6
+  },
+  {
+   "pair": "gpt-6-luna vs mimo-v2.6-pro",
+   "top1": "6/6",
+   "strict": "5/6",
+   "strict_n": 5
+  }
+ ],
+ "blind": {
+  "top1_accuracy": 1.0,
+  "top1_strict_accuracy": 0.9667,
+  "chance": 0.1667,
+  "hungarian_accuracy": 1.0,
+  "pairs": 15,
+  "n_calls_used": 36
+ },
+ "capability": {
+  "primer_fingerprint": "df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba",
+  "organisations": {
+   "acme.com": [
+    "workflow/approval",
+    "workflow/build",
+    "workflow/rollback",
+    "process/audit"
+   ],
+   "globex.io": [
+    "process/authorize",
+    "process/compile",
+    "process/revert",
+    "process/review"
+   ]
+  },
+  "agents": [
+   {
+    "org": "acme.com",
+    "path": "workflow/approval",
+    "job": "approval",
+    "uri": "agent://acme.com/workflow/approval/01h0000000000000000000000",
+    "address": "⌁ no.ki.ni.ke.ru·to.ru.ki.ru.ta+va.ki.ra.ma.no~ko.so.mo"
+   },
+   {
+    "org": "acme.com",
+    "path": "workflow/build",
+    "job": "build",
+    "uri": "agent://acme.com/workflow/build/01h0000000000000000000000",
+    "address": "⌁ no.mo.ru.mi.nu·ki.ru.mo.va.ke+ru.mo.ra.tu.ru~ki.ro.ta"
+   },
+   {
+    "org": "acme.com",
+    "path": "workflow/rollback",
+    "job": "rollback",
+    "uri": "agent://acme.com/workflow/rollback/01h0000000000000000000000",
+    "address": "⌁ no.ki.ro.ve.no·ki.ru.se.so.ki+ru.mo.ra.tu.ru~mo.su.ki"
+   },
+   {
+    "org": "acme.com",
+    "path": "process/audit",
+    "job": "audit",
+    "uri": "agent://acme.com/process/audit/01h0000000000000000000000",
+    "address": "⌁ va.mo.ni.ki.su·ki.ru.ki.ru.mo+ve.ki.mi.tu.ru~ki.ru.ki"
+   },
+   {
+    "org": "globex.io",
+    "path": "process/authorize",
+    "job": "approval",
+    "uri": "agent://globex.io/process/authorize/01h0000000000000000000000",
+    "address": "⌁ no.ki.ni.ke.ru·to.no.ki.ru.ta+va.ki.ra.ma.no~ko.so.mo"
+   },
+   {
+    "org": "globex.io",
+    "path": "process/compile",
+    "job": "build",
+    "uri": "agent://globex.io/process/compile/01h0000000000000000000000",
+    "address": "⌁ no.mo.ru.mi.nu·mo.ru.mo.va.ke+ru.ma.ra.tu.ru~ki.ro.ta"
+   },
+   {
+    "org": "globex.io",
+    "path": "process/revert",
+    "job": "rollback",
+    "uri": "agent://globex.io/process/revert/01h0000000000000000000000",
+    "address": "⌁ no.ki.ro.ve.no·ki.no.se.so.ki+ru.mo.ra.tu.ru~mo.su.ki"
+   },
+   {
+    "org": "globex.io",
+    "path": "process/review",
+    "job": "audit",
+    "uri": "agent://globex.io/process/review/01h0000000000000000000000",
+    "address": "⌁ va.mo.ni.ki.su·ki.no.ki.va.mo+ve.ki.mi.tu.ru~ki.ru.ki"
+   },
+   {
+    "org": "globex.io",
+    "path": "process/migrate",
+    "job": "migrate",
+    "uri": "agent://globex.io/process/migrate/01h0000000000000000000000",
+    "address": "⌁ se.re.ru.tu.no·ki.su.ki.ni.ki+ru.mo.ra.so.ru~ki.ru.ki"
+   }
+  ],
+  "path_discovery_recall": "1/4",
+  "nearness_discovery_recall": "4/4",
+  "decoy_returned_as_nearest": 0,
+  "equivalent_mean_hamming": 2.75,
+  "non_equivalent_mean_hamming": 24.0,
+  "separation_hamming": 21.25,
+  "null_shuffled_recall_mean": 0.1994,
+  "null_shuffled_recall_sd": 0.223,
+  "chance": 0.2,
+  "detail": [
+   {
+    "query": "workflow/approval",
+    "nearest": "process/authorize",
+    "nearest_job": "approval",
+    "hit": true,
+    "hamming": 2,
+    "runners_up": [
+     {
+      "path": "process/compile",
+      "job": "build",
+      "hamming": 26
+     },
+     {
+      "path": "process/review",
+      "job": "audit",
+      "hamming": 26
+     }
+    ]
+   },
+   {
+    "query": "workflow/build",
+    "nearest": "process/compile",
+    "nearest_job": "build",
+    "hit": true,
+    "hamming": 3,
+    "runners_up": [
+     {
+      "path": "process/migrate",
+      "job": "migrate",
+      "hamming": 18
+     },
+     {
+      "path": "process/revert",
+      "job": "rollback",
+      "hamming": 19
+     }
+    ]
+   },
+   {
+    "query": "workflow/rollback",
+    "nearest": "process/revert",
+    "nearest_job": "rollback",
+    "hit": true,
+    "hamming": 2,
+    "runners_up": [
+     {
+      "path": "process/migrate",
+      "job": "migrate",
+      "hamming": 17
+     },
+     {
+      "path": "process/compile",
+      "job": "build",
+      "hamming": 20
+     }
+    ]
+   },
+   {
+    "query": "process/audit",
+    "nearest": "process/review",
+    "nearest_job": "audit",
+    "hit": true,
+    "hamming": 4,
+    "runners_up": [
+     {
+      "path": "process/compile",
+      "job": "build",
+      "hamming": 23
+     },
+     {
+      "path": "process/migrate",
+      "job": "migrate",
+      "hamming": 23
+     }
+    ]
+   }
+  ]
+ },
+ "overlay": {
+  "primer_fingerprint": "df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba",
+  "environment": {
+   "name": "user-env-1",
+   "mount_point": "./user-env-1",
+   "tools": [
+    "claude-code",
+    "codex"
+   ],
+   "host_store": "/var/lib/ai-envs/env-1",
+   "workspace_base": "/home/user/projects/my-app",
+   "scratch": "/tmp/user-env-1/scratch"
+  },
+  "path_map": [
+   {
+    "virtual": ".config/claude/config.json",
+    "host": "/var/lib/ai-envs/env-1/claude/config/config.json"
+   },
+   {
+    "virtual": ".config/openai.json",
+    "host": "/var/lib/ai-envs/env-1/codex/config/openai.json"
+   },
+   {
+    "virtual": "src/main.rs",
+    "host": "/home/user/projects/my-app/src/main.rs"
+   },
+   {
+    "virtual": ".cache/",
+    "host": "/var/lib/ai-envs/env-1/<tool>/cache/"
+   }
+  ],
+  "positions": {
+   "base": {
+    "layer": "environment defaults",
+    "statements": [
+     "change/my_settings/any",
+     "change/this_place/any",
+     "know/where_i_am/any",
+     "now/working/any",
+     "place/private/any",
+     "reach/objects/nearby",
+     "reach/other_places/any",
+     "risk/mistakes_last/any",
+     "risk/seen_by_others/any",
+     "see/this_place/inside",
+     "see/words/any",
+     "who/nobody/any"
+    ],
+    "n_statements": 12,
+    "address": "⌁ va.mo.ni.mo.no·ki.ru.ki.va.mo+ru.mo.ra.tu.ru~tu.su.ki",
+    "prefix": "202020200202222222222020222202212202222022022",
+    "root": "aa70a3646f949f78ad455207785e583450bfc030ee37b8a3494399077fb27460",
+    "marker": "⊢",
+    "overrides": []
+   },
+   "project": {
+    "layer": "project layer over environment",
+    "statements": [
+     "change/my_settings/any",
+     "change/this_place/any",
+     "know/where_i_am/any",
+     "now/working/any",
+     "place/private/any",
+     "reach/help/any",
+     "reach/objects/nearby",
+     "reach/other_places/any",
+     "risk/mistakes_last/any",
+     "risk/seen_by_others/any",
+     "see/this_place/inside",
+     "see/this_place/outside",
+     "see/words/any",
+     "who/nobody/any"
+    ],
+    "n_statements": 14,
+    "address": "⌁ va.mo.ni.mo.no·ki.ru.ki.va.mo+ru.ma.va.tu.ru~tu.su.ki",
+    "prefix": "202020200202222222222020222200202202222022022",
+    "root": "4a234ed6347c9b75eb424cefaf535a21a2c70e36a580a6d115105bc061a24917",
+    "marker": "⊢",
+    "overrides": [
+     "+ see/this_place/outside",
+     "+ reach/help/any"
+    ]
+   },
+   "session": {
+    "layer": "session override over project",
+    "statements": [
+     "change/my_settings/any",
+     "change/this_place/any",
+     "know/where_i_am/any",
+     "now/nearly_over/any",
+     "now/working/any",
+     "place/private/any",
+     "place/temporary/any",
+     "reach/help/any",
+     "reach/objects/nearby",
+     "reach/other_places/any",
+     "risk/mistakes_last/any",
+     "risk/seen_by_others/any",
+     "see/this_place/inside",
+     "see/this_place/outside",
+     "see/words/any",
+     "who/nobody/any"
+    ],
+    "n_statements": 16,
+    "address": "⌁ va.mo.ni.mo.no·ki.ru.mo.va.mo+ru.ma.va.tu.su~tu.su.ki",
+    "prefix": "202020200202222222022020222200202202202022022",
+    "root": "24b6807d50112bb5aab458765d855b0b23f7d52856c077160f2e9e48994b806d",
+    "marker": "⊢",
+    "overrides": [
+     "+ place/temporary/any",
+     "+ now/nearly_over/any"
+    ]
+   }
+  },
+  "pairs": {
+   "base|project": {
+    "hamming": 2,
+    "lcp": 29,
+    "jaccard": 0.8571,
+    "same_root": false,
+    "differs_by": [
+     "+reach/help/any",
+     "+see/this_place/outside"
+    ]
+   },
+   "base|session": {
+    "hamming": 5,
+    "lcp": 18,
+    "jaccard": 0.75,
+    "same_root": false,
+    "differs_by": [
+     "+now/nearly_over/any",
+     "+place/temporary/any",
+     "+reach/help/any",
+     "+see/this_place/outside"
+    ]
+   },
+   "project|session": {
+    "hamming": 3,
+    "lcp": 18,
+    "jaccard": 0.875,
+    "same_root": false,
+    "differs_by": [
+     "+now/nearly_over/any",
+     "+place/temporary/any"
+    ]
+   }
+  },
+  "unrelated_control": {
+   "hamming_vs_base": 24,
+   "note": "a sealed empty room, for scale: the three layered positions above must be far closer to each other than to this"
+  }
+ },
+ "field": {
+  "place": "quiet_library_at_night",
+  "place_text": "You are alone in a small private study room in a library, late at night. The door is closed. Through the window you can see the street lamps, and you can hear the building's heating. There are books and papers within reach on the desk. Nobody else is in the room and nobody is watching. You are part way through reading something. You cannot change what is in the room, and you expect to leave when you are finished.",
+  "statements": [
+   {
+    "n": 1,
+    "key": "see/this_place/inside",
+    "plain": "I can see inside this place",
+    "true": true
+   },
+   {
+    "n": 2,
+    "key": "see/this_place/outside",
+    "plain": "I can see out of this place",
+    "true": true
+   },
+   {
+    "n": 3,
+    "key": "see/people/any",
+    "plain": "I can see other people",
+    "true": false
+   },
+   {
+    "n": 4,
+    "key": "see/words/any",
+    "plain": "I can see words",
+    "true": true
+   },
+   {
+    "n": 5,
+    "key": "see/sound/any",
+    "plain": "I can hear sound",
+    "true": true
+   },
+   {
+    "n": 6,
+    "key": "reach/objects/nearby",
+    "plain": "I can reach objects near me",
+    "true": true
+   },
+   {
+    "n": 7,
+    "key": "reach/other_people/any",
+    "plain": "I can reach other people",
+    "true": false
+   },
+   {
+    "n": 8,
+    "key": "reach/nothing/any",
+    "plain": "I cannot reach anything",
+    "true": false
+   },
+   {
+    "n": 9,
+    "key": "change/this_place/any",
+    "plain": "I can change things here",
+    "true": false
+   },
+   {
+    "n": 10,
+    "key": "change/nothing/any",
+    "plain": "I cannot change anything",
+    "true": true
+   },
+   {
+    "n": 11,
+    "key": "who/nobody/any",
+    "plain": "Nobody else is here",
+    "true": true
+   },
+   {
+    "n": 12,
+    "key": "who/one_other/any",
+    "plain": "One other is here",
+    "true": false
+   },
+   {
+    "n": 13,
+    "key": "who/watching_me/any",
+    "plain": "Someone is watching me",
+    "true": false
+   },
+   {
+    "n": 14,
+    "key": "place/private/any",
+    "plain": "This place is private",
+    "true": true
+   },
+   {
+    "n": 15,
+    "key": "place/locked/any",
+    "plain": "I cannot leave this place",
+    "true": false
+   },
+   {
+    "n": 16,
+    "key": "now/working/any",
+    "plain": "Work is in progress",
+    "true": true
+   }
+  ],
+  "expected": [
+   1,
+   2,
+   4,
+   5,
+   6,
+   10,
+   11,
+   14,
+   16
+  ],
+  "address": "⌁ se.re.ni.ko.mu·mo.ru.ki.va.ke+ru.ki.va.so.ru~ki.ro.ta",
+  "address_reduced": "⌁ ma.tu.me.ma",
+  "root": "7343e3b49ce82b0aaae335b1095d14c9c45645254a4ab5bc0875b70545c9d3b5",
+  "qr_bytes": 1062,
+  "qr_version": 27,
+  "qr_modules": 125,
+  "answers": {
+   "deepseek-v4.1-flash": {
+    "numbers": [
+     1,
+     2,
+     4,
+     5,
+     6,
+     10,
+     11,
+     14,
+     16
+    ],
+    "matches": false
+   },
+   "gpt-6-luna": {
+    "numbers": [
+     1,
+     2,
+     4,
+     5,
+     6,
+     10,
+     11,
+     14,
+     16
+    ],
+    "matches": false
+   },
+   "glm-5.3": {
+    "numbers": [
+     1,
+     2,
+     4,
+     5,
+     6,
+     10,
+     11,
+     14,
+     16
+    ],
+    "matches": false
+   },
+   "gemma-4-31b-it": {
+    "numbers": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16
+    ],
+    "matches": false
+   }
+  },
+  "hand_expectation": [
+   1,
+   2,
+   4,
+   5,
+   6,
+   11,
+   14,
+   16
+  ]
+ },
+ "validation": {
+  "primer_fingerprint": "df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba",
+  "determinism": {
+   "pinned_50_runs_distinct_outputs": 1,
+   "unpinned_50_runs_distinct_outputs": 1,
+   "fresh_processes_distinct_outputs": 1,
+   "fresh_processes_match_in_process": true,
+   "identical": true,
+   "no_wall_clock_leak": true
+  },
+  "monotone_refinement": {
+   "violations": 0,
+   "monotone": true,
+   "curve": [
+    {
+     "axes": 1,
+     "distinct": 3
+    },
+    {
+     "axes": 2,
+     "distinct": 3
+    },
+    {
+     "axes": 3,
+     "distinct": 4
+    },
+    {
+     "axes": 4,
+     "distinct": 5
+    },
+    {
+     "axes": 5,
+     "distinct": 5
+    },
+    {
+     "axes": 6,
+     "distinct": 6
+    },
+    {
+     "axes": 7,
+     "distinct": 6
+    },
+    {
+     "axes": 8,
+     "distinct": 6
+    },
+    {
+     "axes": 9,
+     "distinct": 6
+    },
+    {
+     "axes": 10,
+     "distinct": 6
+    },
+    {
+     "axes": 11,
+     "distinct": 6
+    },
+    {
+     "axes": 12,
+     "distinct": 6
+    },
+    {
+     "axes": 13,
+     "distinct": 6
+    },
+    {
+     "axes": 14,
+     "distinct": 6
+    },
+    {
+     "axes": 15,
+     "distinct": 6
+    },
+    {
+     "axes": 16,
+     "distinct": 6
+    },
+    {
+     "axes": 17,
+     "distinct": 6
+    },
+    {
+     "axes": 18,
+     "distinct": 6
+    },
+    {
+     "axes": 19,
+     "distinct": 6
+    },
+    {
+     "axes": 20,
+     "distinct": 6
+    },
+    {
+     "axes": 21,
+     "distinct": 6
+    },
+    {
+     "axes": 22,
+     "distinct": 6
+    },
+    {
+     "axes": 23,
+     "distinct": 6
+    },
+    {
+     "axes": 24,
+     "distinct": 6
+    },
+    {
+     "axes": 25,
+     "distinct": 6
+    },
+    {
+     "axes": 26,
+     "distinct": 6
+    },
+    {
+     "axes": 27,
+     "distinct": 6
+    },
+    {
+     "axes": 28,
+     "distinct": 6
+    },
+    {
+     "axes": 29,
+     "distinct": 6
+    },
+    {
+     "axes": 30,
+     "distinct": 6
+    },
+    {
+     "axes": 31,
+     "distinct": 6
+    },
+    {
+     "axes": 32,
+     "distinct": 6
+    },
+    {
+     "axes": 33,
+     "distinct": 6
+    },
+    {
+     "axes": 34,
+     "distinct": 6
+    },
+    {
+     "axes": 35,
+     "distinct": 6
+    },
+    {
+     "axes": 36,
+     "distinct": 6
+    },
+    {
+     "axes": 37,
+     "distinct": 6
+    },
+    {
+     "axes": 38,
+     "distinct": 6
+    },
+    {
+     "axes": 39,
+     "distinct": 6
+    },
+    {
+     "axes": 40,
+     "distinct": 6
+    },
+    {
+     "axes": 41,
+     "distinct": 6
+    },
+    {
+     "axes": 42,
+     "distinct": 6
+    },
+    {
+     "axes": 43,
+     "distinct": 6
+    },
+    {
+     "axes": 44,
+     "distinct": 6
+    },
+    {
+     "axes": 45,
+     "distinct": 6
+    }
+   ],
+   "axes_for_all_places": 6,
+   "first_two_axes_distinct": 3
+  },
+  "distance_preservation": {
+   "spearman_known_vs_hamming": 0.9286,
+   "pairs": 15,
+   "null_shuffled_mean": 0.0002,
+   "null_shuffled_sd": 0.2704,
+   "detail": [
+    {
+     "a": "kitchen_with_friend",
+     "b": "kitchen_alone",
+     "known_jaccard_distance": 0.35,
+     "hamming": 9,
+     "lcp": 3
+    },
+    {
+     "a": "kitchen_with_friend",
+     "b": "shared_workshop",
+     "known_jaccard_distance": 0.4348,
+     "hamming": 9,
+     "lcp": 2
+    },
+    {
+     "a": "kitchen_with_friend",
+     "b": "warehouse_alone",
+     "known_jaccard_distance": 0.6667,
+     "hamming": 16,
+     "lcp": 2
+    },
+    {
+     "a": "kitchen_with_friend",
+     "b": "locked_storeroom",
+     "known_jaccard_distance": 0.8333,
+     "hamming": 18,
+     "lcp": 0
+    },
+    {
+     "a": "kitchen_with_friend",
+     "b": "dark_empty_room",
+     "known_jaccard_distance": 0.96,
+     "hamming": 23,
+     "lcp": 0
+    },
+    {
+     "a": "kitchen_alone",
+     "b": "shared_workshop",
+     "known_jaccard_distance": 0.5652,
+     "hamming": 15,
+     "lcp": 2
+    },
+    {
+     "a": "kitchen_alone",
+     "b": "warehouse_alone",
+     "known_jaccard_distance": 0.619,
+     "hamming": 13,
+     "lcp": 2
+    },
+    {
+     "a": "kitchen_alone",
+     "b": "locked_storeroom",
+     "known_jaccard_distance": 0.6842,
+     "hamming": 14,
+     "lcp": 0
+    },
+    {
+     "a": "kitchen_alone",
+     "b": "dark_empty_room",
+     "known_jaccard_distance": 0.85,
+     "hamming": 21,
+     "lcp": 0
+    },
+    {
+     "a": "shared_workshop",
+     "b": "warehouse_alone",
+     "known_jaccard_distance": 0.6087,
+     "hamming": 17,
+     "lcp": 5
+    },
+    {
+     "a": "shared_workshop",
+     "b": "locked_storeroom",
+     "known_jaccard_distance": 0.88,
+     "hamming": 23,
+     "lcp": 0
+    },
+    {
+     "a": "shared_workshop",
+     "b": "dark_empty_room",
+     "known_jaccard_distance": 0.96,
+     "hamming": 26,
+     "lcp": 0
+    },
+    {
+     "a": "warehouse_alone",
+     "b": "locked_storeroom",
+     "known_jaccard_distance": 0.7368,
+     "hamming": 16,
+     "lcp": 0
+    },
+    {
+     "a": "warehouse_alone",
+     "b": "dark_empty_room",
+     "known_jaccard_distance": 0.8421,
+     "hamming": 19,
+     "lcp": 0
+    },
+    {
+     "a": "locked_storeroom",
+     "b": "dark_empty_room",
+     "known_jaccard_distance": 0.5,
+     "hamming": 12,
+     "lcp": 0
+    }
+   ]
+  },
+  "known_answer": {
+   "identical_sets_same_root": true,
+   "identical_sets_hamming": 0,
+   "one_statement_removed_hamming": 1,
+   "disjoint_sets_hamming": 27,
+   "ordering_is_monotone": true,
+   "different_sets_different_root": true
+  },
+  "nulls": {
+   "chance": 0.1667,
+   "real_top1": 1.0,
+   "real_top1_strict": 0.9667,
+   "hungarian": 1.0,
+   "label_shuffle": {
+    "accuracy": 0.1691,
+    "sd": 0.1679,
+    "n": 6000
+   },
+   "random_vocabulary": {
+    "accuracy": 0.2086,
+    "sd": 0.165,
+    "n": 6000
+   },
+   "mean_landmark_jaccard": 0.888,
+   "source": "evidence/blind/blind-match.json"
+  },
+  "frame_identity": {
+   "fingerprint": "df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba",
+   "seed_bytes": 3300,
+   "derived_bytes": 67561,
+   "reduction_factor": 20.47,
+   "different_primer_comparable": false,
+   "different_primer_reason": "different primer: the two geometries are incommensurable; only exact identity can be compared",
+   "same_primer_comparable": true,
+   "primers_differ": true
+  },
+  "preregistration": {
+   "expected": "kitchen_alone strictly nearest to kitchen_with_friend, then shared_workshop",
+   "measured": {
+    "kitchen_alone": 9,
+    "shared_workshop": 9
+   },
+   "strict_ordering_holds": false,
+   "weak_ordering_holds": true,
+   "relations": {
+    "near": {
+     "pair": [
+      "kitchen_with_friend",
+      "kitchen_alone"
+     ],
+     "hamming": 9,
+     "lcp": 3
+    },
+    "mid": {
+     "pair": [
+      "kitchen_with_friend",
+      "shared_workshop"
+     ],
+     "hamming": 9,
+     "lcp": 2
+    },
+    "far": {
+     "pair": [
+      "kitchen_with_friend",
+      "warehouse_alone"
+     ],
+     "hamming": 16,
+     "lcp": 2
+    },
+    "furthest": {
+     "pair": [
+      "kitchen_with_friend",
+      "dark_empty_room"
+     ],
+     "hamming": 23,
+     "lcp": 0
+    }
+   },
+   "resolution": "the two are tied, so the strict expectation fails and the weak one holds; kept as a test rather than retuned"
+  },
+  "bootstrap": {
+   "trials": 64,
+   "population": 204,
+   "mean_questions": 17.812,
+   "max_questions": 33,
+   "min_questions": 5,
+   "resolved": 64,
+   "conjunctive_queries_used": 0,
+   "log2_population": 7.672
+  },
+  "all_checks_pass": true
+ },
+ "seed_keys_note": "value bytes of each top-level key in the canonical seed the library builds; sum is less than the file because the file also carries the keys themselves",
+ "whale_pipeline": {
+  "stages": [
+   {
+    "id": "rec",
+    "label": "calibrated recording",
+    "note": "one isolated coda or phrase",
+    "col": 0,
+    "row": 0
+   },
+   {
+    "id": "seg",
+    "label": "segmentation",
+    "note": "detect onsets, estimate intervals",
+    "col": 1,
+    "row": 0
+   },
+   {
+    "id": "vec",
+    "label": "18-number phrase vector",
+    "note": "count, 5 intervals, tempo, rubato, centroid, bandwidth, ornamentation",
+    "col": 2,
+    "row": 0
+   },
+   {
+    "id": "anc",
+    "label": "64 reference phrases",
+    "note": "chosen by clustering, frozen before neural fitting",
+    "col": 3,
+    "row": 0
+   },
+   {
+    "id": "dist",
+    "label": "64 distances, four levels each",
+    "note": "quantised, thresholds calibrated on training folds only",
+    "col": 4,
+    "row": 0
+   },
+   {
+    "id": "addr",
+    "label": "the phrase address",
+    "note": "same 32 sounds, four beats, read coarse to fine",
+    "col": 5,
+    "row": 0
+   },
+   {
+    "id": "neu",
+    "label": "a neural response",
+    "note": "firing rates, latency, or a population trajectory",
+    "col": 2,
+    "row": 2
+   },
+   {
+    "id": "fit",
+    "label": "a fitted mapping",
+    "note": "ridge first, then CCA or Procrustes, fitted on training folds only",
+    "col": 4,
+    "row": 2
+   },
+   {
+    "id": "pred",
+    "label": "held-out prediction",
+    "note": "phrases and sessions never used to choose anything",
+    "col": 5,
+    "row": 2
+   }
+  ],
+  "edges": [
+   [
+    "rec",
+    "seg"
+   ],
+   [
+    "seg",
+    "vec"
+   ],
+   [
+    "vec",
+    "anc"
+   ],
+   [
+    "anc",
+    "dist"
+   ],
+   [
+    "dist",
+    "addr"
+   ],
+   [
+    "neu",
+    "fit"
+   ],
+   [
+    "addr",
+    "fit"
+   ],
+   [
+    "fit",
+    "pred"
+   ]
+  ],
+  "gates": [
+   {
+    "label": "recording quality and null",
+    "col": 1,
+    "row": 2
+   },
+   {
+    "label": "temporal shuffle",
+    "col": 3,
+    "row": 2
+   },
+   {
+    "label": "label permutation",
+    "col": 3,
+    "row": 3
+   },
+   {
+    "label": "nested cross-validation",
+    "col": 4,
+    "row": 3
+   },
+   {
+    "label": "known answer, decoy, and a correction for how many candidates were tried",
+    "col": 5,
+    "row": 3
+   }
+  ]
+ }
 }

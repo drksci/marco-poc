@@ -6,14 +6,15 @@
 <title>Can a whale phrase be given an address?</title>
 <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
+<link href="assets/paper.css" rel="stylesheet" type="text/css" />
 </head>
-<body class="min-h-screen bg-base-100 text-base-content">
+<body class="min-h-screen bg-base-100 text-base-content paper">
 
-<nav class="navbar bg-base-200 sticky top-0 z-30 min-h-12 border-b border-base-300" aria-label="Sections">
-  <div class="navbar-center gap-4 lg:gap-6 text-sm w-full justify-center">
-    <a class="link link-hover" href="index.html">the whole story</a>
-    <a class="link link-hover" href="response.html">response to agent://</a>
-    <a class="link link-hover" href="proof.html">the proof</a>
+<nav class="navbar" aria-label="Sections">
+  <div>
+    <a class="link link-hover" href="index.html">overview</a>
+    <a class="link link-hover" href="response.html">agent://</a>
+    <a class="link link-hover" href="proof.html">evidence</a>
     <a class="link link-hover" href="whales.html" aria-current="page">whales</a>
   </div>
 </nav>
@@ -33,11 +34,38 @@
   </div>
 </header>
 
+<nav class="contents" aria-label="Contents">
+    <p>Contents</p>
+    <ol>
+      <li><a href="#s1"><span class="n">1</span>A coda is a rhythm, and a firing neuron is a rate</a></li>
+      <li><a href="#s2"><span class="n">2</span>The first question everybody asks is why no one records a whale brain</a></li>
+      <li><a href="#s3"><span class="n">3</span>A phrase needs two names, and they must not be the same name</a></li>
+      <li><a href="#s4"><span class="n">4</span>What is established, what is contested, what is speculative</a></li>
+      <li><a href="#s5"><span class="n">5</span>The mapping is built on a 3,300-byte seed</a></li>
+      <li><a href="#s6"><span class="n">6</span>Every key, and what it turns into</a></li>
+      <li><a href="#s7"><span class="n">7</span>3,300 bytes go out, and 67,561 bytes never do</a></li>
+      <li><a href="#s8"><span class="n">8</span>The one line that decides whether you send a rule or a list</a></li>
+      <li><a href="#s9"><span class="n">9</span>The bridge from a recording to a prediction, in five steps</a></li>
+      <li><a href="#s10"><span class="n">10</span>The pipeline, and where each control attaches</a></li>
+      <li><a href="#s11"><span class="n">11</span>The controls, and why they are the hard part</a></li>
+      <li><a href="#s12"><span class="n">12</span>With a few phrases and thousands of neurons, a fit can be pure luck</a></li>
+      <li><a href="#s13"><span class="n">13</span>The real result, against each control</a></li>
+      <li><a href="#s14"><span class="n">14</span>Six settings, each with the number that would end it</a></li>
+      <li><a href="#s15"><span class="n">15</span>What this cannot become</a></li>
+      <li><a href="#s16"><span class="n">16</span>The marker ladder, unchanged</a></li>
+      <li><a href="#s17"><span class="n">17</span>What the demonstration contributes, and what it does not</a></li>
+      <li><a href="#s18"><span class="n">18</span>Why six independent systems could agree at all</a></li>
+      <li><a href="#s19"><span class="n">19</span>What the numbers license</a></li>
+      <li><a href="#s20"><span class="n">20</span>The shared-vocabulary caveat, and nothing here removes it</a></li>
+    </ol>
+  </nav>
+
+
 <main class="container mx-auto max-w-5xl px-4">
 
 <!-- ============================================================ 1 the two descriptions -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">A coda is a rhythm, and a firing neuron is a rate</h2>
+  <h2 id="s1" class="text-3xl font-bold">A coda is a rhythm, and a firing neuron is a rate</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>A sperm whale makes short bursts of clicks called codas. One common coda is five clicks with a steady beat, and a field biologist writes it down as <span class="font-mono">5R</span> or <span class="font-mono">1+1+3</span>. The same note records the tempo and the gaps between the clicks. If you have ever tapped a rhythm on a table, you already have the whole idea of the first description.</p>
     <p>The second description comes from the listening side. A neuron fires, and what a recording of it shows is a spike rate: how many times that neuron fired in a second. A neurophysiologist may also record a delay, a path through the activity of many neurons at once, or a change in blood oxygen that an MRI scanner detects.</p>
@@ -52,7 +80,7 @@
 
 <!-- ============================================================ 2 why no whale brain -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">The first question everybody asks is why no one records a whale brain</h2>
+  <h2 id="s2" class="text-3xl font-bold">The first question everybody asks is why no one records a whale brain</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>You cannot put a chronic implant in a wild cetacean. Ethics and permits rule it out, and so does the practical side. The animal is enormous, it dives, it is immersed in water, and its brain anatomy is unlike that of the animals whose brains are recorded routinely. So the work that exists is non-invasive.</p>
     <p>Four other animals do have the recording this idea would need. Each row below is an established result with its own primary source, and the last row is the whale.</p>
@@ -85,7 +113,7 @@
 
 <!-- ============================================================ 3 two names -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">A phrase needs two names, and they must not be the same name</h2>
+  <h2 id="s3" class="text-3xl font-bold">A phrase needs two names, and they must not be the same name</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>We want two things that pull in opposite directions. We want to say that two recordings are nearly the same. We also want to say that two recordings are exactly the same, with no threshold to argue about. So the design keeps three separate objects, each doing one job.</p>
     <p>An <strong>address</strong> is like a postcode. The first letters already tell you the region, and the whole thing tells you the street, so two postcodes that start the same way are near each other. Where the comparison breaks: a postcode is handed out by an authority, while this address is worked out from the phrase itself, so nobody has to agree on it in advance.</p>
@@ -107,7 +135,7 @@
 
 <!-- ============================================================ 4 labels -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">What is established, what is contested, what is speculative</h2>
+  <h2 id="s4" class="text-3xl font-bold">What is established, what is contested, what is speculative</h2>
   <p class="mt-8 max-w-3xl text-base leading-relaxed">Every claim this page takes from biology is listed here with its label and its primary source. Two rows carry a limit that the popular account usually drops.</p>
   <div class="overflow-x-auto w-full mt-8">
     <table class="table table-zebra w-full">
@@ -186,7 +214,7 @@
 
 <!-- ============================================================ 5 the seed -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">The mapping is built on a 3,300-byte seed</h2>
+  <h2 id="s5" class="text-3xl font-bold">The mapping is built on a 3,300-byte seed</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>Two sides can compare addresses only if they are using the same frame, and a frame has many parts: the questions, the wording of each question, the order they are asked in, the sound alphabet, the distance table, and the rule for a fingerprint. Sending all of that is expensive. The alternative is to send a small file and rebuild the rest.</p>
     <p>That small file is called the seed. It is 3,300 bytes, which is about the length of a paragraph, and it is the same file the parent project uses. It stores settings and rules. Everything that follows from those rules is derived by the receiver, so it never has to be transmitted.</p>
@@ -446,7 +474,7 @@
 
 <!-- ============================================================ 6 decomposition -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">Every key, and what it turns into</h2>
+  <h2 id="s6" class="text-3xl font-bold">Every key, and what it turns into</h2>
   <p class="mt-8 max-w-3xl text-base leading-relaxed">The bars below are drawn to scale by how many bytes each key occupies. Beside each bar is the thing that key turns into once the frame is rebuilt.</p>
   <figure class="w-full mt-8">
     <svg viewBox="0 0 1200 650" class="w-full text-base-content" role="img" aria-label="The eleven top-level keys of the seed drawn as bars sized by the bytes each one occupies, labelled on the left. landmarks is the largest at 2,311 bytes, 70 per cent of the file. Beside each bar is the thing that key turns into." xmlns="http://www.w3.org/2000/svg">
@@ -542,7 +570,7 @@
 
 <!-- ============================================================ 7 size contrast -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">3,300 bytes go out, and 67,561 bytes never do</h2>
+  <h2 id="s7" class="text-3xl font-bold">3,300 bytes go out, and 67,561 bytes never do</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>The seed goes out. The receiver rebuilds the frame from it, and that frame is 4,532 bytes. If the frame were shipped instead, as a registry-style exchange would have to ship it, the landmarks, the codebook and the population would cost 67,561 bytes. That is 20.47 times the seed.</p>
     <p>The derived part is never transmitted. Both sides compute it for themselves and compare one fingerprint before they compare anything else.</p>
@@ -589,7 +617,7 @@
 
 <!-- ============================================================ 8 rule not list -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">The one line that decides whether you send a rule or a list</h2>
+  <h2 id="s8" class="text-3xl font-bold">The one line that decides whether you send a rule or a list</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>Look again at the key named partition. It holds three settings: 45 questions, four possible answers at each question, and the order descending-variance. That is a rule. Applied to the 204 places, the rule produces the order 36, 35, 38, 30, 29, 3, 26, 23, 12, 41 and continues from there.</p>
     <p>A registry would ship that order as a list and keep it versioned forever, because a list cannot explain itself. This file ships the rule and lets both sides work out the list.</p>
@@ -616,7 +644,7 @@
 
 <!-- ============================================================ 9 five steps -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">The bridge from a recording to a prediction, in five steps</h2>
+  <h2 id="s9" class="text-3xl font-bold">The bridge from a recording to a prediction, in five steps</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>The aim is to turn a recording into a short address, and then to ask whether that address predicts a measured neural response. Every step below is a quantity somebody can measure or a search somebody can bound, and none of it needs a whale to have a language. No step here has been run on a whale, and that stays true to the end of the page.</p>
   </div>
@@ -700,7 +728,7 @@
 
 <!-- ============================================================ 10 pipeline -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">The pipeline, and where each control attaches</h2>
+  <h2 id="s10" class="text-3xl font-bold">The pipeline, and where each control attaches</h2>
   <p class="mt-8 max-w-3xl text-base leading-relaxed">Six stages take one calibrated recording to a prediction of a response the fitting never saw. Each stage could be corrupted by a different mistake, so each stage has a control hanging off it. The phrase address is stage five and the prediction is stage six, which means nothing downstream can be scored before the address is frozen.</p>
   <figure class="w-full mt-8">
     <svg viewBox="0 0 1200 780" class="w-full text-base-content" role="img" aria-label="Six stages down the page: a recording, segmentation into clicks, a list of 18 numbers, distances to 64 reference phrases, the phrase address, and a prediction. Each stage has a control drawn beside it, joined by a dashed line." xmlns="http://www.w3.org/2000/svg">
@@ -792,7 +820,7 @@
 
 <!-- ============================================================ 11 controls -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">The controls, and why they are the hard part</h2>
+  <h2 id="s11" class="text-3xl font-bold">The controls, and why they are the hard part</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>Here is why controls exist at all. The search tries 7,200,000 fitted candidates. Faced with a choice that large, a result that looks impressive can mean nothing, because some candidate was always going to look good on the data it was chosen from. A control is the check that a result survives when the thing being tested is removed. Without controls, the search itself produces the finding.</p>
     <p>The tools used for the checking are long established. Canonical correlation analysis finds the best straight-line link between two sets of measurements (Hotelling 1936). Orthogonal Procrustes lines two shapes up under a fixed rule (Schönemann 1966, Psychometrika, doi:10.1007/BF02289451). Representational similarity analysis compares how dissimilar things are instead of assuming two sets of coordinates mean the same thing (Kriegeskorte et al. 2008, Frontiers in Human Neuroscience, doi:10.3389/neuro.01.1.1.004.2008). Models that learn to predict a neural measurement from features of the stimulus are the standard tool for this kind of question (Naselaris et al. 2011, NeuroImage, doi:10.1016/j.neuroimage.2010.07.073), and maps of where meaning lands in the brain show both the ambition and the assumptions (Huth et al. 2016, Nature, doi:10.1038/nature17637).</p>
@@ -854,7 +882,7 @@
 
 <!-- ============================================================ 12 spurious fit -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">With a few phrases and thousands of neurons, a fit can be pure luck</h2>
+  <h2 id="s12" class="text-3xl font-bold">With a few phrases and thousands of neurons, a fit can be pure luck</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>Before naming any method, here is the trap in everyday terms. If you have enough knobs to turn, you can fit a curve to any handful of points, and the curve will touch every one of them. It will then predict nothing new. Where the analogy breaks: a fitted curve is not useless on purpose, and a real fit can genuinely work. The problem is only that touching the data you fitted is no evidence at all about data you did not.</p>
     <p>The setting on this page is exactly that shape. A study might have a few hundred phrases and a neural response spread over thousands of neurons. When the number of measurements available to fit with approaches the number of phrases you have, a flexible method can align noise and report a near-perfect match. The method with this reputation is the one named in the section above, mentioned once, and the failure is called sample-size collapse.</p>
@@ -913,7 +941,7 @@
 
 <!-- ============================================================ 13 the real result -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">The real result, against each control</h2>
+  <h2 id="s13" class="text-3xl font-bold">The real result, against each control</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>The numbers in this section come from the parent repository, where six independently built systems were each asked to place six places. Every system was compared with every other system for every place, which is 90 comparisons, and the same place came back nearest in all 90 of them.</p>
     <p>Counting exact ties, that score is 100.0 per cent. Strictly, with ties counted against it, it is 96.7 per cent. Chance is 16.7 per cent, which is one in six, because there are six places to choose from.</p>
@@ -955,7 +983,7 @@
 
 <!-- ============================================================ 14 milestones -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">Six settings, each with the number that would end it</h2>
+  <h2 id="s14" class="text-3xl font-bold">Six settings, each with the number that would end it</h2>
   <p class="mt-8 max-w-3xl text-base leading-relaxed">Every setting below names what it measures and the single result that would end it. None of them is a whale whose neural response cannot be measured, which is why the whale settings stop where they do. These are proposals, and every one of them is a proposal.</p>
   <ul class="steps steps-vertical w-full mt-8">
     <li class="step step-primary">
@@ -1006,7 +1034,7 @@
 
 <!-- ============================================================ 15 limits -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">What this cannot become</h2>
+  <h2 id="s15" class="text-3xl font-bold">What this cannot become</h2>
   <div class="alert alert-warning mt-8 w-full">
     <p>Nothing in this proposal can establish that a coda or a song phrase has meaning. A predictive acoustic-to-neural map would not identify a referent, an intention or a semantic composition. It would be a model that takes a signal in and gives a measured response out, and a good predictor is not a dictionary.</p>
     <p class="mt-3">An address, a root or a neural coordinate is descriptive and never authoritative. In a whale application, a highly repeatable acoustic feature must not be promoted to a behavioural statement without independent evidence, and an inferred neural association stays a hypothesis until it survives held-out subjects, temporal shuffles, decoys and search-corrected nulls.</p>
@@ -1022,7 +1050,7 @@
 
 <!-- ============================================================ 16 ladder -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">The marker ladder, unchanged</h2>
+  <h2 id="s16" class="text-3xl font-bold">The marker ladder, unchanged</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>Every claim in the parent frame carries a marker, and a claim can only be as strong as the weakest marker in it. A model's confidence cannot promote a marker; only evidence can. The two highest rungs anchor a claim, and the other three never do.</p>
   </div>
@@ -1068,7 +1096,7 @@
 
 <!-- ============================================================ 17 contribution -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">What the demonstration contributes, and what it does not</h2>
+  <h2 id="s17" class="text-3xl font-bold">What the demonstration contributes, and what it does not</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>The parent repository has a real result of its own, and it is worth separating from the whale proposal. Six independently built systems, given the same 45 statements, placed the same six situations in the same part of their own space. A question-asking generator can name any of 204 places, and it takes 17.8 questions on average, against a floor of 7.672, which is the logarithm to base two of 204.</p>
     <p>Across 90 comparisons the same place came out nearest in 96.7 per cent strictly and 100 per cent counting exact ties, against a chance rate of 16.7 per cent. How many syllables differ between two addresses tracks how far apart the places are known to be, at rank correlation 0.9286 against a shuffled null of +0.0002 with a standard deviation of 0.2704.</p>
@@ -1088,7 +1116,7 @@
 
 <!-- ============================================================ 18 shared structure -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">Why six independent systems could agree at all</h2>
+  <h2 id="s18" class="text-3xl font-bold">Why six independent systems could agree at all</h2>
   <p class="mt-8 max-w-3xl text-base leading-relaxed">Handing six systems the same 45 statements does not explain the result. This argument belongs to the parent project, and this page restates it because the whale proposal depends on it.</p>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>A shared vocabulary tells you what to answer with. It does not make two differently built systems put the same situation in the same part of their own space. If a shared vocabulary were all that was happening, the addresses would be arbitrary but consistent, like two people agreeing to call a colour seven.</p>
@@ -1109,7 +1137,7 @@
 
 <!-- ============================================================ 19 what the numbers license -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">What the numbers license</h2>
+  <h2 id="s19" class="text-3xl font-bold">What the numbers license</h2>
   <div class="card bg-base-200 w-full mt-8">
     <div class="card-body space-y-8">
       <div>
@@ -1136,7 +1164,7 @@
 
 <!-- ============================================================ 20 caveat -->
 <section class="py-12">
-  <h2 class="text-3xl font-bold">The shared-vocabulary caveat, and nothing here removes it</h2>
+  <h2 id="s20" class="text-3xl font-bold">The shared-vocabulary caveat, and nothing here removes it</h2>
   <div class="alert alert-warning mt-8 w-full">
     <span><strong>The shared-vocabulary caveat is inherited, not discovered here.</strong> The parent experiment's handover report states it first: its blind cross-model matching used a shared anchor vocabulary and a rule that gives the same output for the same input every time, so it demonstrates matching at the level of turning answers into an address, given a shared primer. It does not establish independence from a shared ontology. Its recommended follow-up, a genuine-versus-shuffled-anchors-versus-random-loci-versus-garbage study, has still not been run.</span>
   </div>
