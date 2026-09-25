@@ -1,0 +1,205 @@
+{
+  "primer_fingerprint": "df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba",
+  "models": [
+    "deepseek-v4.1-flash",
+    "gemma-4-31b-it",
+    "glm-5.3",
+    "gpt-5.6-luna",
+    "gpt-6-luna",
+    "mimo-v2.6-pro"
+  ],
+  "places": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+  ],
+  "per_place": {
+    "kitchen_with_friend": {
+      "distinct_statement_sets": 5,
+      "distinct_roots": 5,
+      "largest_group": [
+        "glm-5.3",
+        "mimo-v2.6-pro"
+      ],
+      "largest_group_size": 2,
+      "roots": {
+        "deepseek-v4.1-flash": "5c1e1bbba5ea75899e37bf52ece0b77bb4a1c3dbecdf90856dcf69bf921f336e",
+        "gemma-4-31b-it": "98a7e54485daeb28e03ada0232b385ea581a3d670117eb0a3f5c7b14fcfe0bfe",
+        "glm-5.3": "c36ccbff658ddbe0ff244daea09b4e771a6ef166b72dc3389728aad1e08bb911",
+        "gpt-5.6-luna": "139e0760cae6968d1ae1c677e576b23e4946ad9926dee0b24d0b19b800fabd6a",
+        "gpt-6-luna": "ff57dfce6af9888e563d4a2a36751c4e23378754be13c0833d01c28588ba91b2",
+        "mimo-v2.6-pro": "c36ccbff658ddbe0ff244daea09b4e771a6ef166b72dc3389728aad1e08bb911"
+      }
+    },
+    "kitchen_alone": {
+      "distinct_statement_sets": 4,
+      "distinct_roots": 4,
+      "largest_group": [
+        "deepseek-v4.1-flash",
+        "glm-5.3",
+        "mimo-v2.6-pro"
+      ],
+      "largest_group_size": 3,
+      "roots": {
+        "deepseek-v4.1-flash": "44618a6256ec19a4498bacd6485410f4e2b0b47aea83cb6197c4a8fed2d8318a",
+        "gemma-4-31b-it": "3e5806c01dd07614689d41b765cb4c8e85e9461661dd34f8f129b81eeccedb2c",
+        "glm-5.3": "44618a6256ec19a4498bacd6485410f4e2b0b47aea83cb6197c4a8fed2d8318a",
+        "gpt-5.6-luna": "716011a5db791e59eb48e551b810b623c11c34386ef8b4f44ff1ca1d55783833",
+        "gpt-6-luna": "5924c0fc24303397aeed5f04e09a08fea711f285962f0b1a3a9463e9112a8e2d",
+        "mimo-v2.6-pro": "44618a6256ec19a4498bacd6485410f4e2b0b47aea83cb6197c4a8fed2d8318a"
+      }
+    },
+    "shared_workshop": {
+      "distinct_statement_sets": 3,
+      "distinct_roots": 3,
+      "largest_group": [
+        "gemma-4-31b-it",
+        "glm-5.3",
+        "gpt-6-luna"
+      ],
+      "largest_group_size": 3,
+      "roots": {
+        "deepseek-v4.1-flash": "51b7196ae4862cf6e256863cf32b9d24992879d786af65b3038d5206938f6adb",
+        "gemma-4-31b-it": "f7d44aa7b847880bee9961a89d70570d979292ec2224e66de97981202b436bb0",
+        "glm-5.3": "f7d44aa7b847880bee9961a89d70570d979292ec2224e66de97981202b436bb0",
+        "gpt-5.6-luna": "169ca3417f8878ff10329ddb668ad96c44934eabb8ff7c6350568996b3e7dea2",
+        "gpt-6-luna": "f7d44aa7b847880bee9961a89d70570d979292ec2224e66de97981202b436bb0",
+        "mimo-v2.6-pro": "169ca3417f8878ff10329ddb668ad96c44934eabb8ff7c6350568996b3e7dea2"
+      }
+    },
+    "warehouse_alone": {
+      "distinct_statement_sets": 5,
+      "distinct_roots": 5,
+      "largest_group": [
+        "glm-5.3",
+        "mimo-v2.6-pro"
+      ],
+      "largest_group_size": 2,
+      "roots": {
+        "deepseek-v4.1-flash": "47d523a2db1be55ae54e43549bfa966378a0fb39061d3ce4839d0082e74148cc",
+        "gemma-4-31b-it": "a199f1596a8c724bb3c4bdc184cf6a87307822cdfb164358066f87ceb5e53f5a",
+        "glm-5.3": "a993c68631b24d7f5a217beb6f6949ad2c209048942fc161449b42eac5f31eb6",
+        "gpt-5.6-luna": "3e1b07170359c5ed099026dab5cb08b3aa1952fc3dff6267a74a126edf717926",
+        "gpt-6-luna": "7afe9c326d65be0bf06112f84dcda9f44c0bbd05cfbe95a9ac3a68ec0f27d947",
+        "mimo-v2.6-pro": "a993c68631b24d7f5a217beb6f6949ad2c209048942fc161449b42eac5f31eb6"
+      }
+    },
+    "locked_storeroom": {
+      "distinct_statement_sets": 2,
+      "distinct_roots": 2,
+      "largest_group": [
+        "gemma-4-31b-it",
+        "glm-5.3",
+        "gpt-5.6-luna",
+        "gpt-6-luna",
+        "mimo-v2.6-pro"
+      ],
+      "largest_group_size": 5,
+      "roots": {
+        "deepseek-v4.1-flash": "eebb6778a44ca2f2bf040544a7688a997b480cdb072ddc8eb147067b818eadec",
+        "gemma-4-31b-it": "ee9953d9b356615f308d8a6a4debc4578f17770cf6db6dac52d4f57ac13ad971",
+        "glm-5.3": "ee9953d9b356615f308d8a6a4debc4578f17770cf6db6dac52d4f57ac13ad971",
+        "gpt-5.6-luna": "ee9953d9b356615f308d8a6a4debc4578f17770cf6db6dac52d4f57ac13ad971",
+        "gpt-6-luna": "ee9953d9b356615f308d8a6a4debc4578f17770cf6db6dac52d4f57ac13ad971",
+        "mimo-v2.6-pro": "ee9953d9b356615f308d8a6a4debc4578f17770cf6db6dac52d4f57ac13ad971"
+      }
+    },
+    "dark_empty_room": {
+      "distinct_statement_sets": 2,
+      "distinct_roots": 2,
+      "largest_group": [
+        "gemma-4-31b-it",
+        "glm-5.3",
+        "gpt-5.6-luna",
+        "gpt-6-luna",
+        "mimo-v2.6-pro"
+      ],
+      "largest_group_size": 5,
+      "roots": {
+        "deepseek-v4.1-flash": "09f673df19a34a9949f57634270efc895ca8c0cdbaf470ef1d9aef9b2839cea8",
+        "gemma-4-31b-it": "6a7570db17ed0b9a811611574ef469849d7a74093f02b7ab1f692bf7c9328bcc",
+        "glm-5.3": "6a7570db17ed0b9a811611574ef469849d7a74093f02b7ab1f692bf7c9328bcc",
+        "gpt-5.6-luna": "6a7570db17ed0b9a811611574ef469849d7a74093f02b7ab1f692bf7c9328bcc",
+        "gpt-6-luna": "6a7570db17ed0b9a811611574ef469849d7a74093f02b7ab1f692bf7c9328bcc",
+        "mimo-v2.6-pro": "6a7570db17ed0b9a811611574ef469849d7a74093f02b7ab1f692bf7c9328bcc"
+      }
+    }
+  },
+  "largest_group_total": "20/36",
+  "largest_group_fraction": 0.5556,
+  "grain": [
+    {
+      "grain": 2,
+      "root_prefix": "e6da26cd0c664b",
+      "distinct_roots": 3,
+      "places": 6
+    },
+    {
+      "grain": 4,
+      "root_prefix": "cb5581f2033328",
+      "distinct_roots": 6,
+      "places": 6
+    },
+    {
+      "grain": 8,
+      "root_prefix": "002236b86c64f7",
+      "distinct_roots": 6,
+      "places": 6
+    },
+    {
+      "grain": 12,
+      "root_prefix": "a716826069cf0a",
+      "distinct_roots": 6,
+      "places": 6
+    },
+    {
+      "grain": 16,
+      "root_prefix": "7a27c8471d860a",
+      "distinct_roots": 6,
+      "places": 6
+    },
+    {
+      "grain": 24,
+      "root_prefix": "5c1e1bbba5ea75",
+      "distinct_roots": 6,
+      "places": 6
+    },
+    {
+      "grain": 45,
+      "root_prefix": "5c1e1bbba5ea75",
+      "distinct_roots": 6,
+      "places": 6
+    }
+  ],
+  "extra_attribute_rows": [
+    {
+      "extra": [],
+      "root_prefix": "5c1e1bbba5ea7589"
+    },
+    {
+      "extra": [
+        "host:runner-7"
+      ],
+      "root_prefix": "b2c72a31d79deaf4"
+    },
+    {
+      "extra": [
+        "py:3.14.7",
+        "numpy:2.5.3"
+      ],
+      "root_prefix": "25ff027c0d1ece5d"
+    },
+    {
+      "extra": [
+        "host:runner-7",
+        "op:acme"
+      ],
+      "root_prefix": "4fc75731747d99ed"
+    }
+  ],
+  "address_unchanged_by_extra": true,
+  "determinism_across_processes": true
+}

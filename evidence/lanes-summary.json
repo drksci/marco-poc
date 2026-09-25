@@ -1,0 +1,340 @@
+{
+  "primer_fingerprint": "df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba",
+  "models": [
+    "deepseek-v4.1-flash",
+    "gemma-4-31b-it",
+    "glm-5.3",
+    "gpt-5.6-luna",
+    "gpt-6-luna",
+    "mimo-v2.6-pro"
+  ],
+  "places": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+  ],
+  "coordinates": {
+    "deepseek-v4.1-flash": {
+      "kitchen_with_friend": "⌁ ma.mo.ma.ma.ru·ma.va.ki.va.ki+ve.ki.va.ku.ru~ki.su.ki",
+      "kitchen_alone": "⌁ ma.tu.ma.ma.no·mo.ru.ki.va.ki+ru.ki.va.tu.ru~ki.su.ki",
+      "shared_workshop": "⌁ me.mo.me.ma.ru·ma.ve.ki.va.ma+no.ki.va.ku.ru~ki.ru.ki",
+      "warehouse_alone": "⌁ me.mo.ru.ma.no·mo.ve.ki.ma.ki+ru.mo.ra.tu.ru~ki.ru.ki",
+      "locked_storeroom": "⌁ va.tu.su.ki.ma·ki.ru.tu.va.ki+ru.ki.ra.tu.ru~ki.ru.ki",
+      "dark_empty_room": "⌁ se.to.ru.ki.ma·ki.ru.ki.no.ki+ru.ki.me.so.ru~ki.ru.ki"
+    },
+    "gemma-4-31b-it": {
+      "kitchen_with_friend": "⌁ ma.mo.ma.ma.ru·ma.va.ki.va.mo+ve.ki.va.ku.ru~ki.su.ki",
+      "kitchen_alone": "⌁ ma.tu.ma.ma.no·mo.ru.ki.va.ki+ru.ki.va.ku.ru~ki.su.ki",
+      "shared_workshop": "⌁ me.mo.me.ma.ru·ma.ve.ki.va.ma+no.ki.va.ku.ru~ki.su.ki",
+      "warehouse_alone": "⌁ ma.mo.ru.ma.no·mo.su.mo.ma.ki+ru.mo.ra.tu.ru~ki.su.ki",
+      "locked_storeroom": "⌁ va.tu.so.ki.ma·ke.se.tu.va.ki+ru.ki.ro.ko.ru~ki.ru.ko",
+      "dark_empty_room": "⌁ se.to.si.ki.ma·ke.se.tu.no.ki+ru.ki.nu.se.ru~ki.ru.ko"
+    },
+    "glm-5.3": {
+      "kitchen_with_friend": "⌁ ma.mo.ma.ma.ru·ma.va.ki.va.mo+ve.ki.va.tu.ru~ki.su.ki",
+      "kitchen_alone": "⌁ ma.tu.ma.ma.no·mo.ru.ki.va.ki+ru.ki.va.tu.ru~ki.su.ki",
+      "shared_workshop": "⌁ me.mo.me.ma.ru·ma.ve.ki.va.ma+no.ki.va.ku.ru~ki.su.ki",
+      "warehouse_alone": "⌁ me.mo.ru.tu.no·mo.su.mo.ma.ki+ru.mo.ru.ki.ru~ki.su.ki",
+      "locked_storeroom": "⌁ va.tu.so.ki.ma·ke.se.tu.va.ki+ru.ki.ro.ko.ru~ki.ru.ko",
+      "dark_empty_room": "⌁ se.to.si.ki.ma·ke.se.tu.no.ki+ru.ki.nu.se.ru~ki.ru.ko"
+    },
+    "gpt-5.6-luna": {
+      "kitchen_with_friend": "⌁ ma.mo.me.ma.ru·ma.ve.ki.va.ki+ve.ki.va.ku.ru~ki.ru.ki",
+      "kitchen_alone": "⌁ ma.tu.me.ma.no·mo.ru.ki.va.ki+ru.ki.va.ku.ru~ki.ru.ki",
+      "shared_workshop": "⌁ me.mo.me.ma.ru·ma.su.ki.va.ma+no.ki.va.ku.ru~ki.su.ki",
+      "warehouse_alone": "⌁ me.mo.ru.tu.no·mo.su.ki.ma.ki+ru.ki.ru.ki.ru~ki.ru.ki",
+      "locked_storeroom": "⌁ va.tu.so.ki.ma·ke.se.tu.va.ki+ru.ki.ro.ko.ru~ki.ru.ko",
+      "dark_empty_room": "⌁ se.to.si.ki.ma·ke.se.tu.no.ki+ru.ki.nu.se.ru~ki.ru.ko"
+    },
+    "gpt-6-luna": {
+      "kitchen_with_friend": "⌁ ma.mo.me.ma.ru·ma.ru.ki.va.ki+ve.ki.va.ku.ru~ki.ru.ki",
+      "kitchen_alone": "⌁ ma.tu.me.ma.no·mo.ru.ki.va.ki+ru.ki.va.ku.ru~ki.su.ki",
+      "shared_workshop": "⌁ me.mo.me.ma.ru·ma.ve.ki.va.ma+no.ki.va.ku.ru~ki.su.ki",
+      "warehouse_alone": "⌁ me.mo.ru.tu.no·mo.su.mo.ma.ki+ru.ki.ru.ki.ru~ki.su.ki",
+      "locked_storeroom": "⌁ va.tu.so.ki.ma·ke.se.tu.va.ki+ru.ki.ro.ko.ru~ki.ru.ko",
+      "dark_empty_room": "⌁ se.to.si.ki.ma·ke.se.tu.no.ki+ru.ki.nu.se.ru~ki.ru.ko"
+    },
+    "mimo-v2.6-pro": {
+      "kitchen_with_friend": "⌁ ma.mo.ma.ma.ru·ma.va.ki.va.mo+ve.ki.va.tu.ru~ki.su.ki",
+      "kitchen_alone": "⌁ ma.tu.ma.ma.no·mo.ru.ki.va.ki+ru.ki.va.tu.ru~ki.su.ki",
+      "shared_workshop": "⌁ me.mo.me.ma.ru·ma.su.ki.va.ma+no.ki.va.ku.ru~ki.su.ki",
+      "warehouse_alone": "⌁ me.mo.ru.tu.no·mo.su.mo.ma.ki+ru.mo.ru.ki.ru~ki.su.ki",
+      "locked_storeroom": "⌁ va.tu.so.ki.ma·ke.se.tu.va.ki+ru.ki.ro.ko.ru~ki.ru.ko",
+      "dark_empty_room": "⌁ se.to.si.ki.ma·ke.se.tu.no.ki+ru.ki.nu.se.ru~ki.ru.ko"
+    }
+  },
+  "beats": {
+    "deepseek-v4.1-flash": {
+      "kitchen_with_friend": [
+        "ma.mo.ma.ma.ru",
+        "ma.va.ki.va.ki",
+        "ve.ki.va.ku.ru",
+        "ki.su.ki"
+      ],
+      "kitchen_alone": [
+        "ma.tu.ma.ma.no",
+        "mo.ru.ki.va.ki",
+        "ru.ki.va.tu.ru",
+        "ki.su.ki"
+      ],
+      "shared_workshop": [
+        "me.mo.me.ma.ru",
+        "ma.ve.ki.va.ma",
+        "no.ki.va.ku.ru",
+        "ki.ru.ki"
+      ],
+      "warehouse_alone": [
+        "me.mo.ru.ma.no",
+        "mo.ve.ki.ma.ki",
+        "ru.mo.ra.tu.ru",
+        "ki.ru.ki"
+      ],
+      "locked_storeroom": [
+        "va.tu.su.ki.ma",
+        "ki.ru.tu.va.ki",
+        "ru.ki.ra.tu.ru",
+        "ki.ru.ki"
+      ],
+      "dark_empty_room": [
+        "se.to.ru.ki.ma",
+        "ki.ru.ki.no.ki",
+        "ru.ki.me.so.ru",
+        "ki.ru.ki"
+      ]
+    },
+    "gemma-4-31b-it": {
+      "kitchen_with_friend": [
+        "ma.mo.ma.ma.ru",
+        "ma.va.ki.va.mo",
+        "ve.ki.va.ku.ru",
+        "ki.su.ki"
+      ],
+      "kitchen_alone": [
+        "ma.tu.ma.ma.no",
+        "mo.ru.ki.va.ki",
+        "ru.ki.va.ku.ru",
+        "ki.su.ki"
+      ],
+      "shared_workshop": [
+        "me.mo.me.ma.ru",
+        "ma.ve.ki.va.ma",
+        "no.ki.va.ku.ru",
+        "ki.su.ki"
+      ],
+      "warehouse_alone": [
+        "ma.mo.ru.ma.no",
+        "mo.su.mo.ma.ki",
+        "ru.mo.ra.tu.ru",
+        "ki.su.ki"
+      ],
+      "locked_storeroom": [
+        "va.tu.so.ki.ma",
+        "ke.se.tu.va.ki",
+        "ru.ki.ro.ko.ru",
+        "ki.ru.ko"
+      ],
+      "dark_empty_room": [
+        "se.to.si.ki.ma",
+        "ke.se.tu.no.ki",
+        "ru.ki.nu.se.ru",
+        "ki.ru.ko"
+      ]
+    },
+    "glm-5.3": {
+      "kitchen_with_friend": [
+        "ma.mo.ma.ma.ru",
+        "ma.va.ki.va.mo",
+        "ve.ki.va.tu.ru",
+        "ki.su.ki"
+      ],
+      "kitchen_alone": [
+        "ma.tu.ma.ma.no",
+        "mo.ru.ki.va.ki",
+        "ru.ki.va.tu.ru",
+        "ki.su.ki"
+      ],
+      "shared_workshop": [
+        "me.mo.me.ma.ru",
+        "ma.ve.ki.va.ma",
+        "no.ki.va.ku.ru",
+        "ki.su.ki"
+      ],
+      "warehouse_alone": [
+        "me.mo.ru.tu.no",
+        "mo.su.mo.ma.ki",
+        "ru.mo.ru.ki.ru",
+        "ki.su.ki"
+      ],
+      "locked_storeroom": [
+        "va.tu.so.ki.ma",
+        "ke.se.tu.va.ki",
+        "ru.ki.ro.ko.ru",
+        "ki.ru.ko"
+      ],
+      "dark_empty_room": [
+        "se.to.si.ki.ma",
+        "ke.se.tu.no.ki",
+        "ru.ki.nu.se.ru",
+        "ki.ru.ko"
+      ]
+    },
+    "gpt-5.6-luna": {
+      "kitchen_with_friend": [
+        "ma.mo.me.ma.ru",
+        "ma.ve.ki.va.ki",
+        "ve.ki.va.ku.ru",
+        "ki.ru.ki"
+      ],
+      "kitchen_alone": [
+        "ma.tu.me.ma.no",
+        "mo.ru.ki.va.ki",
+        "ru.ki.va.ku.ru",
+        "ki.ru.ki"
+      ],
+      "shared_workshop": [
+        "me.mo.me.ma.ru",
+        "ma.su.ki.va.ma",
+        "no.ki.va.ku.ru",
+        "ki.su.ki"
+      ],
+      "warehouse_alone": [
+        "me.mo.ru.tu.no",
+        "mo.su.ki.ma.ki",
+        "ru.ki.ru.ki.ru",
+        "ki.ru.ki"
+      ],
+      "locked_storeroom": [
+        "va.tu.so.ki.ma",
+        "ke.se.tu.va.ki",
+        "ru.ki.ro.ko.ru",
+        "ki.ru.ko"
+      ],
+      "dark_empty_room": [
+        "se.to.si.ki.ma",
+        "ke.se.tu.no.ki",
+        "ru.ki.nu.se.ru",
+        "ki.ru.ko"
+      ]
+    },
+    "gpt-6-luna": {
+      "kitchen_with_friend": [
+        "ma.mo.me.ma.ru",
+        "ma.ru.ki.va.ki",
+        "ve.ki.va.ku.ru",
+        "ki.ru.ki"
+      ],
+      "kitchen_alone": [
+        "ma.tu.me.ma.no",
+        "mo.ru.ki.va.ki",
+        "ru.ki.va.ku.ru",
+        "ki.su.ki"
+      ],
+      "shared_workshop": [
+        "me.mo.me.ma.ru",
+        "ma.ve.ki.va.ma",
+        "no.ki.va.ku.ru",
+        "ki.su.ki"
+      ],
+      "warehouse_alone": [
+        "me.mo.ru.tu.no",
+        "mo.su.mo.ma.ki",
+        "ru.ki.ru.ki.ru",
+        "ki.su.ki"
+      ],
+      "locked_storeroom": [
+        "va.tu.so.ki.ma",
+        "ke.se.tu.va.ki",
+        "ru.ki.ro.ko.ru",
+        "ki.ru.ko"
+      ],
+      "dark_empty_room": [
+        "se.to.si.ki.ma",
+        "ke.se.tu.no.ki",
+        "ru.ki.nu.se.ru",
+        "ki.ru.ko"
+      ]
+    },
+    "mimo-v2.6-pro": {
+      "kitchen_with_friend": [
+        "ma.mo.ma.ma.ru",
+        "ma.va.ki.va.mo",
+        "ve.ki.va.tu.ru",
+        "ki.su.ki"
+      ],
+      "kitchen_alone": [
+        "ma.tu.ma.ma.no",
+        "mo.ru.ki.va.ki",
+        "ru.ki.va.tu.ru",
+        "ki.su.ki"
+      ],
+      "shared_workshop": [
+        "me.mo.me.ma.ru",
+        "ma.su.ki.va.ma",
+        "no.ki.va.ku.ru",
+        "ki.su.ki"
+      ],
+      "warehouse_alone": [
+        "me.mo.ru.tu.no",
+        "mo.su.mo.ma.ki",
+        "ru.mo.ru.ki.ru",
+        "ki.su.ki"
+      ],
+      "locked_storeroom": [
+        "va.tu.so.ki.ma",
+        "ke.se.tu.va.ki",
+        "ru.ki.ro.ko.ru",
+        "ki.ru.ko"
+      ],
+      "dark_empty_room": [
+        "se.to.si.ki.ma",
+        "ke.se.tu.no.ki",
+        "ru.ki.nu.se.ru",
+        "ki.ru.ko"
+      ]
+    }
+  },
+  "beat_identical_across_all_models": {
+    "kitchen_with_friend": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "kitchen_alone": [
+      false,
+      true,
+      false,
+      false
+    ],
+    "shared_workshop": [
+      true,
+      false,
+      true,
+      false
+    ],
+    "warehouse_alone": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "locked_storeroom": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "dark_empty_room": [
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "shared_beats": 3,
+  "total_beats": 24,
+  "n_models": 6
+}

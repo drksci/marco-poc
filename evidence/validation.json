@@ -1,0 +1,403 @@
+{
+  "primer_fingerprint": "df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba",
+  "determinism": {
+    "pinned_50_runs_distinct_outputs": 1,
+    "unpinned_50_runs_distinct_outputs": 1,
+    "fresh_processes_distinct_outputs": 1,
+    "fresh_processes_match_in_process": true,
+    "identical": true,
+    "no_wall_clock_leak": true
+  },
+  "monotone_refinement": {
+    "violations": 0,
+    "monotone": true,
+    "curve": [
+      {
+        "axes": 1,
+        "distinct": 3
+      },
+      {
+        "axes": 2,
+        "distinct": 3
+      },
+      {
+        "axes": 3,
+        "distinct": 4
+      },
+      {
+        "axes": 4,
+        "distinct": 5
+      },
+      {
+        "axes": 5,
+        "distinct": 5
+      },
+      {
+        "axes": 6,
+        "distinct": 6
+      },
+      {
+        "axes": 7,
+        "distinct": 6
+      },
+      {
+        "axes": 8,
+        "distinct": 6
+      },
+      {
+        "axes": 9,
+        "distinct": 6
+      },
+      {
+        "axes": 10,
+        "distinct": 6
+      },
+      {
+        "axes": 11,
+        "distinct": 6
+      },
+      {
+        "axes": 12,
+        "distinct": 6
+      },
+      {
+        "axes": 13,
+        "distinct": 6
+      },
+      {
+        "axes": 14,
+        "distinct": 6
+      },
+      {
+        "axes": 15,
+        "distinct": 6
+      },
+      {
+        "axes": 16,
+        "distinct": 6
+      },
+      {
+        "axes": 17,
+        "distinct": 6
+      },
+      {
+        "axes": 18,
+        "distinct": 6
+      },
+      {
+        "axes": 19,
+        "distinct": 6
+      },
+      {
+        "axes": 20,
+        "distinct": 6
+      },
+      {
+        "axes": 21,
+        "distinct": 6
+      },
+      {
+        "axes": 22,
+        "distinct": 6
+      },
+      {
+        "axes": 23,
+        "distinct": 6
+      },
+      {
+        "axes": 24,
+        "distinct": 6
+      },
+      {
+        "axes": 25,
+        "distinct": 6
+      },
+      {
+        "axes": 26,
+        "distinct": 6
+      },
+      {
+        "axes": 27,
+        "distinct": 6
+      },
+      {
+        "axes": 28,
+        "distinct": 6
+      },
+      {
+        "axes": 29,
+        "distinct": 6
+      },
+      {
+        "axes": 30,
+        "distinct": 6
+      },
+      {
+        "axes": 31,
+        "distinct": 6
+      },
+      {
+        "axes": 32,
+        "distinct": 6
+      },
+      {
+        "axes": 33,
+        "distinct": 6
+      },
+      {
+        "axes": 34,
+        "distinct": 6
+      },
+      {
+        "axes": 35,
+        "distinct": 6
+      },
+      {
+        "axes": 36,
+        "distinct": 6
+      },
+      {
+        "axes": 37,
+        "distinct": 6
+      },
+      {
+        "axes": 38,
+        "distinct": 6
+      },
+      {
+        "axes": 39,
+        "distinct": 6
+      },
+      {
+        "axes": 40,
+        "distinct": 6
+      },
+      {
+        "axes": 41,
+        "distinct": 6
+      },
+      {
+        "axes": 42,
+        "distinct": 6
+      },
+      {
+        "axes": 43,
+        "distinct": 6
+      },
+      {
+        "axes": 44,
+        "distinct": 6
+      },
+      {
+        "axes": 45,
+        "distinct": 6
+      }
+    ],
+    "axes_for_all_places": 6,
+    "first_two_axes_distinct": 3
+  },
+  "distance_preservation": {
+    "spearman_known_vs_hamming": 0.9286,
+    "pairs": 15,
+    "null_shuffled_mean": 0.0002,
+    "null_shuffled_sd": 0.2704,
+    "detail": [
+      {
+        "a": "kitchen_with_friend",
+        "b": "kitchen_alone",
+        "known_jaccard_distance": 0.35,
+        "hamming": 9,
+        "lcp": 3
+      },
+      {
+        "a": "kitchen_with_friend",
+        "b": "shared_workshop",
+        "known_jaccard_distance": 0.4348,
+        "hamming": 9,
+        "lcp": 2
+      },
+      {
+        "a": "kitchen_with_friend",
+        "b": "warehouse_alone",
+        "known_jaccard_distance": 0.6667,
+        "hamming": 16,
+        "lcp": 2
+      },
+      {
+        "a": "kitchen_with_friend",
+        "b": "locked_storeroom",
+        "known_jaccard_distance": 0.8333,
+        "hamming": 18,
+        "lcp": 0
+      },
+      {
+        "a": "kitchen_with_friend",
+        "b": "dark_empty_room",
+        "known_jaccard_distance": 0.96,
+        "hamming": 23,
+        "lcp": 0
+      },
+      {
+        "a": "kitchen_alone",
+        "b": "shared_workshop",
+        "known_jaccard_distance": 0.5652,
+        "hamming": 15,
+        "lcp": 2
+      },
+      {
+        "a": "kitchen_alone",
+        "b": "warehouse_alone",
+        "known_jaccard_distance": 0.619,
+        "hamming": 13,
+        "lcp": 2
+      },
+      {
+        "a": "kitchen_alone",
+        "b": "locked_storeroom",
+        "known_jaccard_distance": 0.6842,
+        "hamming": 14,
+        "lcp": 0
+      },
+      {
+        "a": "kitchen_alone",
+        "b": "dark_empty_room",
+        "known_jaccard_distance": 0.85,
+        "hamming": 21,
+        "lcp": 0
+      },
+      {
+        "a": "shared_workshop",
+        "b": "warehouse_alone",
+        "known_jaccard_distance": 0.6087,
+        "hamming": 17,
+        "lcp": 5
+      },
+      {
+        "a": "shared_workshop",
+        "b": "locked_storeroom",
+        "known_jaccard_distance": 0.88,
+        "hamming": 23,
+        "lcp": 0
+      },
+      {
+        "a": "shared_workshop",
+        "b": "dark_empty_room",
+        "known_jaccard_distance": 0.96,
+        "hamming": 26,
+        "lcp": 0
+      },
+      {
+        "a": "warehouse_alone",
+        "b": "locked_storeroom",
+        "known_jaccard_distance": 0.7368,
+        "hamming": 16,
+        "lcp": 0
+      },
+      {
+        "a": "warehouse_alone",
+        "b": "dark_empty_room",
+        "known_jaccard_distance": 0.8421,
+        "hamming": 19,
+        "lcp": 0
+      },
+      {
+        "a": "locked_storeroom",
+        "b": "dark_empty_room",
+        "known_jaccard_distance": 0.5,
+        "hamming": 12,
+        "lcp": 0
+      }
+    ]
+  },
+  "known_answer": {
+    "identical_sets_same_root": true,
+    "identical_sets_hamming": 0,
+    "one_statement_removed_hamming": 1,
+    "disjoint_sets_hamming": 27,
+    "ordering_is_monotone": true,
+    "different_sets_different_root": true
+  },
+  "nulls": {
+    "chance": 0.1667,
+    "real_top1": 1.0,
+    "real_top1_strict": 0.9667,
+    "hungarian": 1.0,
+    "label_shuffle": {
+      "accuracy": 0.1691,
+      "sd": 0.1679,
+      "n": 6000
+    },
+    "random_vocabulary": {
+      "accuracy": 0.2086,
+      "sd": 0.165,
+      "n": 6000
+    },
+    "mean_landmark_jaccard": 0.888,
+    "source": "evidence/blind/blind-match.json"
+  },
+  "frame_identity": {
+    "fingerprint": "df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba",
+    "seed_bytes": 3300,
+    "derived_bytes": 67561,
+    "reduction_factor": 20.47,
+    "different_primer_comparable": false,
+    "different_primer_reason": "different primer: the two geometries are incommensurable; only exact identity can be compared",
+    "same_primer_comparable": true,
+    "primers_differ": true
+  },
+  "preregistration": {
+    "expected": "kitchen_alone strictly nearest to kitchen_with_friend, then shared_workshop",
+    "measured": {
+      "kitchen_alone": 9,
+      "shared_workshop": 9
+    },
+    "strict_ordering_holds": false,
+    "weak_ordering_holds": true,
+    "relations": {
+      "near": {
+        "pair": [
+          "kitchen_with_friend",
+          "kitchen_alone"
+        ],
+        "hamming": 9,
+        "lcp": 3
+      },
+      "mid": {
+        "pair": [
+          "kitchen_with_friend",
+          "shared_workshop"
+        ],
+        "hamming": 9,
+        "lcp": 2
+      },
+      "far": {
+        "pair": [
+          "kitchen_with_friend",
+          "warehouse_alone"
+        ],
+        "hamming": 16,
+        "lcp": 2
+      },
+      "furthest": {
+        "pair": [
+          "kitchen_with_friend",
+          "dark_empty_room"
+        ],
+        "hamming": 23,
+        "lcp": 0
+      }
+    },
+    "resolution": "the two are tied, so the strict expectation fails and the weak one holds; kept as a test rather than retuned"
+  },
+  "bootstrap": {
+    "trials": 64,
+    "population": 204,
+    "mean_questions": 17.812,
+    "max_questions": 33,
+    "min_questions": 5,
+    "resolved": 64,
+    "conjunctive_queries_used": 0,
+    "log2_population": 7.672
+  },
+  "all_checks_pass": true
+}

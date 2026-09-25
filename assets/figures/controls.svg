@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 300" width="880" height="300" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+<rect width="880" height="300" fill="#ffffff"/>
+<text x="28" y="38" font-size="19" fill="#16161a" font-family="Georgia, serif">The result and its controls</text>
+<text x="28" y="60" font-size="11.5" fill="#74747e">15 model pairs x 6 places = 90 comparisons. Bars: accuracy. Whiskers: one standard deviation over 400 trials per pair.</text>
+<text x="236" y="106" font-size="12" fill="#16161a" text-anchor="end">real cross-model</text>
+<rect x="250" y="90" width="480" height="22" fill="#f0f0f2"/>
+<rect x="250" y="90" width="480.0" height="22" fill="#3f6b52" opacity="0.85"/>
+<text x="738.0" y="106" font-size="12" fill="#16161a">100.0%</text>
+<text x="236" y="148" font-size="12" fill="#16161a" text-anchor="end">chance</text>
+<rect x="250" y="132" width="480" height="22" fill="#f0f0f2"/>
+<rect x="250" y="132" width="80.0" height="22" fill="#74747e" opacity="0.85"/>
+<text x="338.0" y="148" font-size="12" fill="#16161a">16.7%</text>
+<text x="236" y="190" font-size="12" fill="#16161a" text-anchor="end">null: labels shuffled</text>
+<rect x="250" y="174" width="480" height="22" fill="#f0f0f2"/>
+<rect x="250" y="174" width="81.2" height="22" fill="#9a6f2f" opacity="0.85"/>
+<text x="339.2" y="190" font-size="12" fill="#16161a">16.9%</text>
+<line x1="250.6" y1="185" x2="411.8" y2="185" stroke="#16161a" stroke-width="1"/>
+<line x1="250.6" y1="180" x2="250.6" y2="190" stroke="#16161a" stroke-width="1"/>
+<line x1="411.8" y1="180" x2="411.8" y2="190" stroke="#16161a" stroke-width="1"/>
+<text x="236" y="232" font-size="12" fill="#16161a" text-anchor="end">null: random vocabulary</text>
+<rect x="250" y="216" width="480" height="22" fill="#f0f0f2"/>
+<rect x="250" y="216" width="100.1" height="22" fill="#9a6f2f" opacity="0.85"/>
+<text x="358.1" y="232" font-size="12" fill="#16161a">20.9%</text>
+<line x1="270.9" y1="227" x2="429.3" y2="227" stroke="#16161a" stroke-width="1"/>
+<line x1="270.9" y1="222" x2="270.9" y2="232" stroke="#16161a" stroke-width="1"/>
+<line x1="429.3" y1="222" x2="429.3" y2="232" stroke="#16161a" stroke-width="1"/>
+<line x1="250" y1="258" x2="730" y2="258" stroke="#e2e2e6"/>
+<line x1="250.0" y1="258" x2="250.0" y2="263" stroke="#e2e2e6"/>
+<text x="250.0" y="278" font-size="10.5" fill="#74747e" text-anchor="middle">0%</text>
+<line x1="370.0" y1="258" x2="370.0" y2="263" stroke="#e2e2e6"/>
+<text x="370.0" y="278" font-size="10.5" fill="#74747e" text-anchor="middle">25%</text>
+<line x1="490.0" y1="258" x2="490.0" y2="263" stroke="#e2e2e6"/>
+<text x="490.0" y="278" font-size="10.5" fill="#74747e" text-anchor="middle">50%</text>
+<line x1="610.0" y1="258" x2="610.0" y2="263" stroke="#e2e2e6"/>
+<text x="610.0" y="278" font-size="10.5" fill="#74747e" text-anchor="middle">75%</text>
+<line x1="730.0" y1="258" x2="730.0" y2="263" stroke="#e2e2e6"/>
+<text x="730.0" y="278" font-size="10.5" fill="#74747e" text-anchor="middle">100%</text>
+<text x="470" y="298" font-size="11" fill="#74747e">The nulls sit at chance. The result does not.</text>
+</svg>

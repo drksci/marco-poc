@@ -1,0 +1,143 @@
+{
+  "curve": [
+    {
+      "axes": 1,
+      "distinct": 3,
+      "syllables": null,
+      "groups": [
+        [
+          "kitchen_with_friend",
+          "kitchen_alone",
+          "shared_workshop",
+          "warehouse_alone"
+        ]
+      ]
+    },
+    {
+      "axes": 2,
+      "distinct": 3,
+      "syllables": null,
+      "groups": [
+        [
+          "kitchen_with_friend",
+          "kitchen_alone",
+          "shared_workshop",
+          "warehouse_alone"
+        ]
+      ]
+    },
+    {
+      "axes": 3,
+      "distinct": 4,
+      "syllables": null,
+      "groups": [
+        [
+          "kitchen_with_friend",
+          "kitchen_alone"
+        ],
+        [
+          "shared_workshop",
+          "warehouse_alone"
+        ]
+      ]
+    },
+    {
+      "axes": 4,
+      "distinct": 5,
+      "syllables": null,
+      "groups": [
+        [
+          "shared_workshop",
+          "warehouse_alone"
+        ]
+      ]
+    },
+    {
+      "axes": 6,
+      "distinct": 6,
+      "syllables": null,
+      "groups": []
+    },
+    {
+      "axes": 8,
+      "distinct": 6,
+      "syllables": null,
+      "groups": []
+    },
+    {
+      "axes": 12,
+      "distinct": 6,
+      "syllables": null,
+      "groups": []
+    },
+    {
+      "axes": 16,
+      "distinct": 6,
+      "syllables": null,
+      "groups": []
+    },
+    {
+      "axes": 24,
+      "distinct": 6,
+      "syllables": null,
+      "groups": []
+    },
+    {
+      "axes": 32,
+      "distinct": 6,
+      "syllables": null,
+      "groups": []
+    },
+    {
+      "axes": 45,
+      "distinct": 6,
+      "syllables": null,
+      "groups": []
+    }
+  ],
+  "unfold": [
+    {
+      "axes": 1,
+      "text": "⌁ ma",
+      "prefix": "0",
+      "prefix_len": 1,
+      "syllables": 1
+    },
+    {
+      "axes": 2,
+      "text": "⌁ ma",
+      "prefix": "00",
+      "prefix_len": 2,
+      "syllables": 1
+    },
+    {
+      "axes": 4,
+      "text": "⌁ ma.ma",
+      "prefix": "0000",
+      "prefix_len": 4,
+      "syllables": 2
+    },
+    {
+      "axes": 6,
+      "text": "⌁ ma.mo.ma",
+      "prefix": "000020",
+      "prefix_len": 6,
+      "syllables": 3
+    },
+    {
+      "axes": 12,
+      "text": "⌁ ma.mo.ma.ma.su",
+      "prefix": "000020000022",
+      "prefix_len": 12,
+      "syllables": 5
+    },
+    {
+      "axes": 45,
+      "text": "⌁ ma.mo.ma.ma.ru·ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.ru.ki",
+      "prefix": "000020000022200002222022220022202202222222222",
+      "prefix_len": 45,
+      "syllables": 18
+    }
+  ],
+  "primer_fingerprint": "df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba"
+}

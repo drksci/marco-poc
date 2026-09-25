@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 586 496" width="586" height="496" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+<rect width="586" height="496" fill="#ffffff"/>
+<text x="28" y="38" font-size="19" fill="#16161a" font-family="Georgia, serif">Two models, one matrix</text>
+<text x="28" y="60" font-size="11.5" fill="#74747e">deepseek-v4.1-flash (rows) against mimo-v2.6-pro (columns). Cells: distance between two addresses. The diagonal is the same place seen by both.</text>
+<rect x="250" y="130" width="44" height="44" fill="rgb(222,233,230)"/>
+<text x="272" y="156" font-size="12" fill="#16161a" text-anchor="middle">3</text>
+<rect x="250" y="130" width="44" height="44" fill="none" stroke="#3f6b52" stroke-width="2.5"/>
+<rect x="296" y="130" width="44" height="44" fill="rgb(180,208,214)"/>
+<text x="318" y="156" font-size="12" fill="#16161a" text-anchor="middle">10</text>
+<rect x="342" y="130" width="44" height="44" fill="rgb(192,215,218)"/>
+<text x="364" y="156" font-size="12" fill="#16161a" text-anchor="middle">8</text>
+<rect x="388" y="130" width="44" height="44" fill="rgb(120,172,190)"/>
+<text x="410" y="156" font-size="12" fill="#16161a" text-anchor="middle">20</text>
+<rect x="434" y="130" width="44" height="44" fill="rgb(108,164,185)"/>
+<text x="456" y="156" font-size="12" fill="#16161a" text-anchor="middle">22</text>
+<rect x="480" y="130" width="44" height="44" fill="rgb(90,154,178)"/>
+<text x="502" y="156" font-size="12" fill="#16161a" text-anchor="middle">25</text>
+<rect x="250" y="176" width="44" height="44" fill="rgb(174,204,211)"/>
+<text x="272" y="202" font-size="12" fill="#16161a" text-anchor="middle">11</text>
+<rect x="296" y="176" width="44" height="44" fill="rgb(240,244,238)"/>
+<text x="318" y="202" font-size="12" fill="#16161a" text-anchor="middle">0</text>
+<rect x="296" y="176" width="44" height="44" fill="none" stroke="#3f6b52" stroke-width="2.5"/>
+<rect x="342" y="176" width="44" height="44" fill="rgb(162,197,206)"/>
+<text x="364" y="202" font-size="12" fill="#16161a" text-anchor="middle">13</text>
+<rect x="388" y="176" width="44" height="44" fill="rgb(138,182,197)"/>
+<text x="410" y="202" font-size="12" fill="#16161a" text-anchor="middle">17</text>
+<rect x="434" y="176" width="44" height="44" fill="rgb(126,175,192)"/>
+<text x="456" y="202" font-size="12" fill="#16161a" text-anchor="middle">19</text>
+<rect x="480" y="176" width="44" height="44" fill="rgb(102,161,182)"/>
+<text x="502" y="202" font-size="12" fill="#16161a" text-anchor="middle">23</text>
+<rect x="250" y="222" width="44" height="44" fill="rgb(192,215,218)"/>
+<text x="272" y="248" font-size="12" fill="#16161a" text-anchor="middle">8</text>
+<rect x="296" y="222" width="44" height="44" fill="rgb(150,190,202)"/>
+<text x="318" y="248" font-size="12" fill="#16161a" text-anchor="middle">15</text>
+<rect x="342" y="222" width="44" height="44" fill="rgb(222,233,230)"/>
+<text x="364" y="248" font-size="12" fill="#16161a" text-anchor="middle">3</text>
+<rect x="342" y="222" width="44" height="44" fill="none" stroke="#3f6b52" stroke-width="2.5"/>
+<rect x="388" y="222" width="44" height="44" fill="rgb(108,164,185)"/>
+<text x="410" y="248" font-size="12" fill="#16161a" text-anchor="middle">22</text>
+<rect x="434" y="222" width="44" height="44" fill="rgb(102,161,182)"/>
+<text x="456" y="248" font-size="12" fill="#16161a" text-anchor="middle">23</text>
+<rect x="480" y="222" width="44" height="44" fill="rgb(96,157,180)"/>
+<text x="502" y="248" font-size="12" fill="#16161a" text-anchor="middle">24</text>
+<rect x="250" y="268" width="44" height="44" fill="rgb(144,186,199)"/>
+<text x="272" y="294" font-size="12" fill="#16161a" text-anchor="middle">16</text>
+<rect x="296" y="268" width="44" height="44" fill="rgb(168,200,209)"/>
+<text x="318" y="294" font-size="12" fill="#16161a" text-anchor="middle">12</text>
+<rect x="342" y="268" width="44" height="44" fill="rgb(138,182,197)"/>
+<text x="364" y="294" font-size="12" fill="#16161a" text-anchor="middle">17</text>
+<rect x="388" y="268" width="44" height="44" fill="rgb(180,208,214)"/>
+<text x="410" y="294" font-size="12" fill="#16161a" text-anchor="middle">10</text>
+<rect x="388" y="268" width="44" height="44" fill="none" stroke="#3f6b52" stroke-width="2.5"/>
+<rect x="434" y="268" width="44" height="44" fill="rgb(108,164,185)"/>
+<text x="456" y="294" font-size="12" fill="#16161a" text-anchor="middle">22</text>
+<rect x="480" y="268" width="44" height="44" fill="rgb(108,164,185)"/>
+<text x="502" y="294" font-size="12" fill="#16161a" text-anchor="middle">22</text>
+<rect x="250" y="314" width="44" height="44" fill="rgb(114,168,187)"/>
+<text x="272" y="340" font-size="12" fill="#16161a" text-anchor="middle">21</text>
+<rect x="296" y="314" width="44" height="44" fill="rgb(162,197,206)"/>
+<text x="318" y="340" font-size="12" fill="#16161a" text-anchor="middle">13</text>
+<rect x="342" y="314" width="44" height="44" fill="rgb(108,164,185)"/>
+<text x="364" y="340" font-size="12" fill="#16161a" text-anchor="middle">22</text>
+<rect x="388" y="314" width="44" height="44" fill="rgb(114,168,187)"/>
+<text x="410" y="340" font-size="12" fill="#16161a" text-anchor="middle">21</text>
+<rect x="434" y="314" width="44" height="44" fill="rgb(192,215,218)"/>
+<text x="456" y="340" font-size="12" fill="#16161a" text-anchor="middle">8</text>
+<rect x="434" y="314" width="44" height="44" fill="none" stroke="#3f6b52" stroke-width="2.5"/>
+<rect x="480" y="314" width="44" height="44" fill="rgb(156,193,204)"/>
+<text x="502" y="340" font-size="12" fill="#16161a" text-anchor="middle">14</text>
+<rect x="250" y="360" width="44" height="44" fill="rgb(96,157,180)"/>
+<text x="272" y="386" font-size="12" fill="#16161a" text-anchor="middle">24</text>
+<rect x="296" y="360" width="44" height="44" fill="rgb(132,179,194)"/>
+<text x="318" y="386" font-size="12" fill="#16161a" text-anchor="middle">18</text>
+<rect x="342" y="360" width="44" height="44" fill="rgb(108,164,185)"/>
+<text x="364" y="386" font-size="12" fill="#16161a" text-anchor="middle">22</text>
+<rect x="388" y="360" width="44" height="44" fill="rgb(120,172,190)"/>
+<text x="410" y="386" font-size="12" fill="#16161a" text-anchor="middle">20</text>
+<rect x="434" y="360" width="44" height="44" fill="rgb(144,186,199)"/>
+<text x="456" y="386" font-size="12" fill="#16161a" text-anchor="middle">16</text>
+<rect x="480" y="360" width="44" height="44" fill="rgb(174,204,211)"/>
+<text x="502" y="386" font-size="12" fill="#16161a" text-anchor="middle">11</text>
+<rect x="480" y="360" width="44" height="44" fill="none" stroke="#3f6b52" stroke-width="2.5"/>
+<text x="238" y="153" font-size="10.5" fill="#16161a" text-anchor="end">kitchen with friend</text>
+<text x="238" y="199" font-size="10.5" fill="#16161a" text-anchor="end">kitchen alone</text>
+<text x="238" y="245" font-size="10.5" fill="#16161a" text-anchor="end">shared workshop</text>
+<text x="238" y="291" font-size="10.5" fill="#16161a" text-anchor="end">warehouse alone</text>
+<text x="238" y="337" font-size="10.5" fill="#16161a" text-anchor="end">locked storeroom</text>
+<text x="238" y="383" font-size="10.5" fill="#16161a" text-anchor="end">dark empty room</text>
+<g transform="translate(268,120) rotate(-45)"><text font-size="10.5" fill="#16161a" text-anchor="start">kitchen with friend</text></g>
+<g transform="translate(314,120) rotate(-45)"><text font-size="10.5" fill="#16161a" text-anchor="start">kitchen alone</text></g>
+<g transform="translate(360,120) rotate(-45)"><text font-size="10.5" fill="#16161a" text-anchor="start">shared workshop</text></g>
+<g transform="translate(406,120) rotate(-45)"><text font-size="10.5" fill="#16161a" text-anchor="start">warehouse alone</text></g>
+<g transform="translate(452,120) rotate(-45)"><text font-size="10.5" fill="#16161a" text-anchor="start">locked storeroom</text></g>
+<g transform="translate(498,120) rotate(-45)"><text font-size="10.5" fill="#16161a" text-anchor="start">dark empty room</text></g>
+<text x="250" y="440" font-size="11.5" fill="#74747e">Ringed diagonal: same place, both models. Range 0-11. Off-diagonal range 8-25.</text>
+<text x="250" y="458" font-size="11.5" fill="#74747e">The diagonal never overlaps the rest: 6 of 6 rows have a strictly smallest value on the diagonal.</text>
+</svg>

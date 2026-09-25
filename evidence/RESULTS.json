@@ -1,0 +1,464 @@
+{
+  "primer": {
+    "fingerprint": "df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba",
+    "version": 2,
+    "seed_bytes": 3300,
+    "naive_transport_bytes": 67561,
+    "reconstructed_frame_bytes": 4532,
+    "reduction_factor": 20.47,
+    "transmitted_fraction": 0.0488,
+    "landmarks": 45,
+    "places_in_population": 204,
+    "beats": [
+      "place",
+      "what",
+      "reach",
+      "now"
+    ],
+    "branches": 4
+  },
+  "worlds": {
+    "names": [
+      "kitchen_with_friend",
+      "kitchen_alone",
+      "shared_workshop",
+      "warehouse_alone",
+      "locked_storeroom",
+      "dark_empty_room"
+    ],
+    "count": 6,
+    "spearman_known_distance_vs_hamming": 0.9286,
+    "pairs": [
+      {
+        "a": "kitchen_with_friend",
+        "b": "kitchen_alone",
+        "known": 0.35,
+        "hamming": 9,
+        "lcp": 3
+      },
+      {
+        "a": "kitchen_with_friend",
+        "b": "shared_workshop",
+        "known": 0.4348,
+        "hamming": 9,
+        "lcp": 2
+      },
+      {
+        "a": "locked_storeroom",
+        "b": "dark_empty_room",
+        "known": 0.5,
+        "hamming": 12,
+        "lcp": 0
+      },
+      {
+        "a": "kitchen_alone",
+        "b": "warehouse_alone",
+        "known": 0.619,
+        "hamming": 13,
+        "lcp": 2
+      },
+      {
+        "a": "kitchen_alone",
+        "b": "locked_storeroom",
+        "known": 0.6842,
+        "hamming": 14,
+        "lcp": 0
+      },
+      {
+        "a": "kitchen_alone",
+        "b": "shared_workshop",
+        "known": 0.5652,
+        "hamming": 15,
+        "lcp": 2
+      },
+      {
+        "a": "kitchen_with_friend",
+        "b": "warehouse_alone",
+        "known": 0.6667,
+        "hamming": 16,
+        "lcp": 2
+      },
+      {
+        "a": "warehouse_alone",
+        "b": "locked_storeroom",
+        "known": 0.7368,
+        "hamming": 16,
+        "lcp": 0
+      },
+      {
+        "a": "shared_workshop",
+        "b": "warehouse_alone",
+        "known": 0.6087,
+        "hamming": 17,
+        "lcp": 5
+      },
+      {
+        "a": "kitchen_with_friend",
+        "b": "locked_storeroom",
+        "known": 0.8333,
+        "hamming": 18,
+        "lcp": 0
+      },
+      {
+        "a": "warehouse_alone",
+        "b": "dark_empty_room",
+        "known": 0.8421,
+        "hamming": 19,
+        "lcp": 0
+      },
+      {
+        "a": "kitchen_alone",
+        "b": "dark_empty_room",
+        "known": 0.85,
+        "hamming": 21,
+        "lcp": 0
+      },
+      {
+        "a": "kitchen_with_friend",
+        "b": "dark_empty_room",
+        "known": 0.96,
+        "hamming": 23,
+        "lcp": 0
+      },
+      {
+        "a": "shared_workshop",
+        "b": "locked_storeroom",
+        "known": 0.88,
+        "hamming": 23,
+        "lcp": 0
+      },
+      {
+        "a": "shared_workshop",
+        "b": "dark_empty_room",
+        "known": 0.96,
+        "hamming": 26,
+        "lcp": 0
+      }
+    ],
+    "preregistered": {
+      "near": {
+        "pair": [
+          "kitchen_with_friend",
+          "kitchen_alone"
+        ],
+        "hamming": 9,
+        "lcp": 3
+      },
+      "mid": {
+        "pair": [
+          "kitchen_with_friend",
+          "shared_workshop"
+        ],
+        "hamming": 9,
+        "lcp": 2
+      },
+      "far": {
+        "pair": [
+          "kitchen_with_friend",
+          "warehouse_alone"
+        ],
+        "hamming": 16,
+        "lcp": 2
+      },
+      "furthest": {
+        "pair": [
+          "kitchen_with_friend",
+          "dark_empty_room"
+        ],
+        "hamming": 23,
+        "lcp": 0
+      }
+    },
+    "preregistration_disagreement": {
+      "expected": "kitchen_with_friend strictly nearest kitchen_alone, then shared_workshop",
+      "measured": "kitchen_alone and shared_workshop both at hamming 9 — a tie, so the strict ordering does not hold",
+      "resolution": "reported as a tie; the weak ordering near <= mid < far < furthest does hold"
+    },
+    "ties_counted_note": "hamming values are syllable-level edit counts over an 18-syllable address (36 characters)"
+  },
+  "precision": {
+    "six_axes_names_every_place": true,
+    "curve": [
+      {
+        "axes": 1,
+        "distinct": 3,
+        "syllables": null,
+        "groups": [
+          [
+            "kitchen_with_friend",
+            "kitchen_alone",
+            "shared_workshop",
+            "warehouse_alone"
+          ]
+        ]
+      },
+      {
+        "axes": 2,
+        "distinct": 3,
+        "syllables": null,
+        "groups": [
+          [
+            "kitchen_with_friend",
+            "kitchen_alone",
+            "shared_workshop",
+            "warehouse_alone"
+          ]
+        ]
+      },
+      {
+        "axes": 3,
+        "distinct": 4,
+        "syllables": null,
+        "groups": [
+          [
+            "kitchen_with_friend",
+            "kitchen_alone"
+          ],
+          [
+            "shared_workshop",
+            "warehouse_alone"
+          ]
+        ]
+      },
+      {
+        "axes": 4,
+        "distinct": 5,
+        "syllables": null,
+        "groups": [
+          [
+            "shared_workshop",
+            "warehouse_alone"
+          ]
+        ]
+      },
+      {
+        "axes": 6,
+        "distinct": 6,
+        "syllables": null,
+        "groups": []
+      },
+      {
+        "axes": 8,
+        "distinct": 6,
+        "syllables": null,
+        "groups": []
+      },
+      {
+        "axes": 12,
+        "distinct": 6,
+        "syllables": null,
+        "groups": []
+      },
+      {
+        "axes": 16,
+        "distinct": 6,
+        "syllables": null,
+        "groups": []
+      },
+      {
+        "axes": 24,
+        "distinct": 6,
+        "syllables": null,
+        "groups": []
+      },
+      {
+        "axes": 32,
+        "distinct": 6,
+        "syllables": null,
+        "groups": []
+      },
+      {
+        "axes": 45,
+        "distinct": 6,
+        "syllables": null,
+        "groups": []
+      }
+    ],
+    "unfold": [
+      {
+        "axes": 1,
+        "text": "⌁ ma",
+        "prefix": "0",
+        "prefix_len": 1,
+        "syllables": 1
+      },
+      {
+        "axes": 2,
+        "text": "⌁ ma",
+        "prefix": "00",
+        "prefix_len": 2,
+        "syllables": 1
+      },
+      {
+        "axes": 4,
+        "text": "⌁ ma.ma",
+        "prefix": "0000",
+        "prefix_len": 4,
+        "syllables": 2
+      },
+      {
+        "axes": 6,
+        "text": "⌁ ma.mo.ma",
+        "prefix": "000020",
+        "prefix_len": 6,
+        "syllables": 3
+      },
+      {
+        "axes": 12,
+        "text": "⌁ ma.mo.ma.ma.su",
+        "prefix": "000020000022",
+        "prefix_len": 12,
+        "syllables": 5
+      },
+      {
+        "axes": 45,
+        "text": "⌁ ma.mo.ma.ma.ru·ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.ru.ki",
+        "prefix": "000020000022200002222022220022202202222222222",
+        "prefix_len": 45,
+        "syllables": 18
+      }
+    ]
+  },
+  "cross_model": {
+    "models": [
+      "deepseek-v4.1-flash",
+      "gemma-4-31b-it",
+      "glm-5.3",
+      "gpt-5.6-luna",
+      "gpt-6-luna",
+      "mimo-v2.6-pro"
+    ],
+    "n_models": 6,
+    "places": [
+      "dark_empty_room",
+      "kitchen_alone",
+      "kitchen_with_friend",
+      "locked_storeroom",
+      "shared_workshop",
+      "warehouse_alone"
+    ],
+    "n_places": 6,
+    "pairs": 15,
+    "comparisons": 90,
+    "top1": 1.0,
+    "top1_strict": 0.9667,
+    "hungarian": 1.0,
+    "chance": 0.1667,
+    "null_label_shuffle": {
+      "accuracy": 0.1691,
+      "sd": 0.1679,
+      "n": 6000
+    },
+    "null_random_vocabulary": {
+      "accuracy": 0.2086,
+      "sd": 0.165,
+      "n": 6000
+    },
+    "mean_landmark_jaccard": 0.888,
+    "known_answer": {
+      "identical_sets_same_commitment": true,
+      "identical_sets_hamming": 0,
+      "one_landmark_removed_hamming": 1,
+      "disjoint_sets_hamming": 27,
+      "disjoint_greater_than_one_removed": true,
+      "monotone": true
+    },
+    "cost_usd": 0.0516
+  },
+  "bootstrap": {
+    "trials": 64,
+    "population": 204,
+    "mean_questions": 17.812,
+    "max_questions": 33,
+    "min_questions": 5,
+    "resolved": 64,
+    "conjunctive_queries_used": 0,
+    "log2_population": 7.672
+  },
+  "marco_polo": {
+    "hider_model": "gpt-6-luna",
+    "questions": 1,
+    "calls": 1,
+    "cost_usd": 4.7e-05,
+    "opening": "⌁ ma",
+    "verdict": "POLO",
+    "verified": true
+  },
+  "root_proof": {
+    "largest_agreeing_group": "20/36",
+    "largest_agreeing_fraction": 0.5556,
+    "per_place_largest_group": {
+      "kitchen_with_friend": 2,
+      "kitchen_alone": 3,
+      "shared_workshop": 3,
+      "warehouse_alone": 2,
+      "locked_storeroom": 5,
+      "dark_empty_room": 5
+    },
+    "per_place_distinct_roots": {
+      "kitchen_with_friend": 5,
+      "kitchen_alone": 4,
+      "shared_workshop": 3,
+      "warehouse_alone": 5,
+      "locked_storeroom": 2,
+      "dark_empty_room": 2
+    },
+    "grain": [
+      {
+        "grain": 2,
+        "root_prefix": "e6da26cd0c664b",
+        "distinct_roots": 3,
+        "places": 6
+      },
+      {
+        "grain": 4,
+        "root_prefix": "cb5581f2033328",
+        "distinct_roots": 6,
+        "places": 6
+      },
+      {
+        "grain": 8,
+        "root_prefix": "002236b86c64f7",
+        "distinct_roots": 6,
+        "places": 6
+      },
+      {
+        "grain": 12,
+        "root_prefix": "a716826069cf0a",
+        "distinct_roots": 6,
+        "places": 6
+      },
+      {
+        "grain": 16,
+        "root_prefix": "7a27c8471d860a",
+        "distinct_roots": 6,
+        "places": 6
+      },
+      {
+        "grain": 24,
+        "root_prefix": "5c1e1bbba5ea75",
+        "distinct_roots": 6,
+        "places": 6
+      },
+      {
+        "grain": 45,
+        "root_prefix": "5c1e1bbba5ea75",
+        "distinct_roots": 6,
+        "places": 6
+      }
+    ],
+    "address_unchanged_by_extra": true,
+    "determinism_across_processes": true
+  },
+  "capability_nearness": {
+    "path_discovery_recall": "1/4",
+    "nearness_discovery_recall": "4/4",
+    "decoy_returned_as_nearest": 0,
+    "equivalent_mean_hamming": 2.75,
+    "non_equivalent_mean_hamming": 24.0,
+    "separation_hamming": 21.25,
+    "null_shuffled_recall_mean": 0.1994,
+    "null_shuffled_recall_sd": 0.223,
+    "chance": 0.2
+  }
+}

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 348" width="900" height="348" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+<rect width="900" height="348" fill="#ffffff"/>
+<text x="28" y="38" font-size="19" fill="#16161a" font-family="Georgia, serif">One turn, one question</text>
+<text x="28" y="60" font-size="11.5" fill="#74747e">hider gpt-6-luna · 1 question · 1 model call · $0.000047 · verdict POLO</text>
+<circle cx="40" cy="106" r="5" fill="#3f6b52"/>
+<text x="58" y="110" font-size="12" fill="#74747e">hider discloses</text>
+<text x="200" y="110" font-size="13" fill="#16161a">"⌁ ma"</text>
+<text x="200" y="127" font-size="10.5" fill="#74747e">1 of 45 axes</text>
+<line x1="40" y1="111" x2="40" y2="156" stroke="#e2e2e6"/>
+<circle cx="40" cy="162" r="5" fill="#9a6f2f"/>
+<text x="58" y="166" font-size="12" fill="#74747e">seeker asks</text>
+<text x="200" y="166" font-size="13" fill="#16161a">"I can see other people"</text>
+<text x="200" y="183" font-size="10.5" fill="#74747e">YES</text>
+<line x1="40" y1="167" x2="40" y2="212" stroke="#e2e2e6"/>
+<circle cx="40" cy="218" r="5" fill="#3f6b52"/>
+<text x="58" y="222" font-size="12" fill="#74747e">hider discloses</text>
+<text x="200" y="222" font-size="13" fill="#16161a">"⌁ ma.ma"</text>
+<text x="200" y="239" font-size="10.5" fill="#74747e">3 of 45 axes</text>
+<text x="28" y="276" font-size="11.5" fill="#74747e">PLACES STILL POSSIBLE</text>
+<rect x="60" y="290" width="200" height="20" fill="#f0f0f2"/>
+<rect x="60" y="290" width="133" height="20" fill="#3f6b52" opacity="0.8"/>
+<text x="68" y="305" font-size="11.5" fill="#ffffff" font-weight="bold">4 of 6</text>
+<text x="60" y="326" font-size="10.5" fill="#74747e">after 1 axes disclosed</text>
+<rect x="310" y="290" width="200" height="20" fill="#f0f0f2"/>
+<rect x="310" y="290" width="67" height="20" fill="#3f6b52" opacity="0.8"/>
+<text x="318" y="305" font-size="11.5" fill="#ffffff" font-weight="bold">2 of 6</text>
+<text x="310" y="326" font-size="10.5" fill="#74747e">after 3 axes disclosed</text>
+<rect x="560" y="290" width="200" height="20" fill="#f0f0f2"/>
+<rect x="560" y="290" width="33" height="20" fill="#3f6b52" opacity="0.8"/>
+<text x="568" y="305" font-size="11.5" fill="#ffffff" font-weight="bold">1 of 6</text>
+<text x="560" y="326" font-size="10.5" fill="#74747e">after 6 axes disclosed</text>
+</svg>

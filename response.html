@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What agent:// is missing · MARCO</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { theme: { extend: { colors: {
+  background: 'hsl(var(, background))', foreground: 'hsl(var(, foreground))',
+  muted: 'hsl(var(, muted))', mutedfg: 'hsl(var(, muted-foreground))',
+  border: 'hsl(var(, border))', card: 'hsl(var(, card))' } } } }
+</script>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<nav class="site-nav">
+  <a href="index.html">the whole story</a>
+  <a href="response.html" aria-current="page">response to agent://</a>
+  <a href="proof.html">the proof</a>
+  <a href="whales.html">whales</a>
+</nav>
+<main class="page-grid pt-10">
+
+  <div class="col-wide">
+    <p class="eyebrow">a working response · arXiv:2601.14567v2 · cs.MA</p>
+    <h1 class="display text-4xl mt-3">What <em>agent://</em> is missing</h1>
+    <p class="lede measure mt-4">Roland R. Rodriguez Jr, “Agent Identity URI Scheme: Topology-Independent Naming and Capability-Based Discovery for Multi-Agent Systems”, arXiv:2601.14567v2 (v1 21 January 2026, v2 13 July 2026), <a href="https://arxiv.org/abs/2601.14567">arxiv.org/abs/2601.14567</a>. The paper binds agent identity to a trust root, a hierarchical capability path and a sortable unique identifier, so a URI survives migration; discovery derives DHT keys from the capability path, so a query returns agents by what they do rather than where they are. It reports 100% capability coverage on 369 production tools, discovery F1 = 1.0 across 10,000 agents, migration-invariance proofs, and under 5 microseconds per operation, and invites feedback on “DHT incentive models and capability mapping service design”.</p>
+  </div>
+
+  <div class="col-wide mt-2">
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="stat-label">discovery by capability path</div>
+        <div class="stat-value">1/4</div>
+        <div class="stat-note">one hit, and it is a prefix accident</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">discovery by address nearness</div>
+        <div class="stat-value">4/4</div>
+        <div class="stat-note">no mapping table, no curator</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">equivalent vs non-equivalent</div>
+        <div class="stat-value">2.75 / 24.0</div>
+        <div class="stat-note">mean Hamming, 16 non-equivalent pairs</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">separation</div>
+        <div class="stat-value">+21.25</div>
+        <div class="stat-note">against a shuffled null of 0.1994</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">identical root, one place</div>
+        <div class="stat-value">5 of 6</div>
+        <div class="stat-note">locked_storeroom, dark_empty_room</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-main mt-8">
+    <h2 class="display text-2xl">The paper solves <em>who</em>, and its identifier destroys <em>where</em> on purpose</h2>
+    <p class="mt-4">The identifier is SHA-256 over the agent's capability set, so two agents whose sets differ by a single entry receive unrelated keys, and no threshold on those keys recovers a distance. That is correct for reference and for audit: an identifier that drifted with behaviour could not be used to name anything.</p>
+    <p class="mt-4">It is also why the scheme has nothing to say about location. Two agents doing nearly the same job have no distance between them at all, because strings have no metric: there is nothing to compare except equality.</p>
+  </div>
+
+  <div class="col-side mt-8">
+    <div class="alert">
+      <div class="alert-title">The paper names this weakness in itself</div>
+      Different organisations may describe equivalent capabilities with incompatible paths: <code>/workflow/approval</code> and <code>/process/authorize</code> mean nearly the same thing, and exact-path discovery fails the pair. Its own remedy is an external capability-mapping service, a second system to run, and a second source of truth that can drift from both sides it maps.
+    </div>
+  </div>
+
+  <hr class="separator col-full">
+
+  <div class="col-full">
+    <h2 class="display text-2xl">Two organisations, the same four jobs, one decoy</h2>
+    <p class="measure mt-4">Every agent below carries an <code>agent://</code> URI and, alongside it, a <code>⌁</code> address derived from the situation the job happens in rather than from the job's name. The two sides do not observe identical statements (each records a slightly different set), so equivalent jobs land <em>near</em> each other rather than identical, which is why this is not a tautology.</p>
+  </div>
+
+  <div class="col-full mt-4">
+    <div class="table-wrap">
+      <table class="data">
+        <thead>
+          <tr><th>organisation</th><th>capability path</th><th>the job it does</th><th>agent:// URI</th><th>⌁ address</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="mono">acme.com</td><td class="mono">workflow/approval</td><td>approval</td><td class="mono">agent://acme.com/workflow/approval/01h0000000000000000000000</td><td class="mono">⌁ no.ki.ni.ke.ru·to.ru.ki.ru.ta+va.ki.ra.ma.no~ko.so.mo</td></tr>
+          <tr><td class="mono">acme.com</td><td class="mono">workflow/build</td><td>build</td><td class="mono">agent://acme.com/workflow/build/01h0000000000000000000000</td><td class="mono">⌁ no.mo.ru.mi.nu·ki.ru.mo.va.ke+ru.mo.ra.tu.ru~ki.ro.ta</td></tr>
+          <tr><td class="mono">acme.com</td><td class="mono">workflow/rollback</td><td>rollback</td><td class="mono">agent://acme.com/workflow/rollback/01h0000000000000000000000</td><td class="mono">⌁ no.ki.ro.ve.no·ki.ru.se.so.ki+ru.mo.ra.tu.ru~mo.su.ki</td></tr>
+          <tr><td class="mono">acme.com</td><td class="mono">process/audit</td><td>audit</td><td class="mono">agent://acme.com/process/audit/01h0000000000000000000000</td><td class="mono">⌁ va.mo.ni.ki.su·ki.ru.ki.ru.mo+ve.ki.mi.tu.ru~ki.ru.ki</td></tr>
+          <tr><td class="mono">globex.io</td><td class="mono">process/authorize</td><td>approval</td><td class="mono">agent://globex.io/process/authorize/01h0000000000000000000000</td><td class="mono">⌁ no.ki.ni.ke.ru·to.no.ki.ru.ta+va.ki.ra.ma.no~ko.so.mo</td></tr>
+          <tr><td class="mono">globex.io</td><td class="mono">process/compile</td><td>build</td><td class="mono">agent://globex.io/process/compile/01h0000000000000000000000</td><td class="mono">⌁ no.mo.ru.mi.nu·mo.ru.mo.va.ke+ru.ma.ra.tu.ru~ki.ro.ta</td></tr>
+          <tr><td class="mono">globex.io</td><td class="mono">process/revert</td><td>rollback</td><td class="mono">agent://globex.io/process/revert/01h0000000000000000000000</td><td class="mono">⌁ no.ki.ro.ve.no·ki.no.se.so.ki+ru.mo.ra.tu.ru~mo.su.ki</td></tr>
+          <tr><td class="mono">globex.io</td><td class="mono">process/review</td><td>audit</td><td class="mono">agent://globex.io/process/review/01h0000000000000000000000</td><td class="mono">⌁ va.mo.ni.ki.su·ki.no.ki.va.mo+ve.ki.mi.tu.ru~ki.ru.ki</td></tr>
+          <tr><td class="mono">globex.io</td><td class="mono">process/migrate</td><td>migrate, no equivalent</td><td class="mono">agent://globex.io/process/migrate/01h0000000000000000000000</td><td class="mono">⌁ se.re.ru.tu.no·ki.su.ki.ni.ki+ru.mo.ra.so.ru~ki.ru.ki</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="measure text-sm mt-3">Nine agents, eight of them doing four jobs under two vocabularies: four equivalent pairs and sixteen non-equivalent pairs. <code>process/migrate</code> exists only on the globex side and is the decoy.</p>
+  </div>
+
+  <div class="col-full mt-8">
+    <h2 class="display text-2xl">The two mechanisms, measured on the same four queries</h2>
+    <p class="measure mt-4">Each query is an acme agent's own capability path, asked against the globex population: by exact path, then by address nearness with no mapping table anywhere in the path.</p>
+  </div>
+
+  <div class="col-full mt-4">
+    <div class="table-wrap">
+      <table class="data">
+        <thead>
+          <tr><th>query (acme path)</th><th>discovery by capability path</th><th>discovery by address nearness</th><th class="num">Hamming</th><th>same job?</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="mono">workflow/approval</td><td>0 results <span class="badge badge-muted">MISS</span></td><td class="mono">process/authorize</td><td class="num">2</td><td><span class="badge badge-signal">HIT</span></td></tr>
+          <tr><td class="mono">workflow/build</td><td>0 results <span class="badge badge-muted">MISS</span></td><td class="mono">process/compile</td><td class="num">3</td><td><span class="badge badge-signal">HIT</span></td></tr>
+          <tr><td class="mono">workflow/rollback</td><td>0 results <span class="badge badge-muted">MISS</span></td><td class="mono">process/revert</td><td class="num">2</td><td><span class="badge badge-signal">HIT</span></td></tr>
+          <tr><td class="mono">process/audit</td><td>5 results: every <code>process/*</code> path on the other side, including the decoy <span class="badge badge-warm">HIT</span></td><td class="mono">process/review</td><td class="num">4</td><td><span class="badge badge-signal">HIT</span></td></tr>
+          <tr><td><strong>recall</strong></td><td><strong>1/4</strong></td><td><strong>4/4</strong></td><td class="num">n/a</td><td>n/a</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="col-main mt-6">
+    <p>The single capability-path hit is accidental. <code>process/audit</code> prefix-matches every <code>process/*</code> path on the other side, so five results come back and one of them happens to carry the audit job, a string artefact of a shared first segment, not a meaning. The other three queries return nothing at all.</p>
+    <p class="mt-4">Runners-up make the same point from the other side: <code>workflow/build</code> sits 18 from the decoy and 19 from <code>process/revert</code>, against 3 from its equivalent.</p>
+  </div>
+
+  <div class="col-side mt-6">
+    <div class="transcript">
+      <div class="turn">
+        <div class="turn-who">capability path</div>
+        <div class="turn-said">workflow/approval      -&gt; 0 result(s)  none   MISS
+workflow/build         -&gt; 0 result(s)  none   MISS
+workflow/rollback      -&gt; 0 result(s)  none   MISS
+process/audit          -&gt; 5 result(s)  ['process/authorize', 'process/compile', 'process/revert', 'process/review', 'process/migrate']   HIT
+  recall = 1/4</div>
+      </div>
+      <div class="turn hider">
+        <div class="turn-who">address nearness</div>
+        <div class="turn-said">workflow/approval      -&gt; process/authorize      (hamming  2)   HIT
+workflow/build         -&gt; process/compile        (hamming  3)   HIT
+workflow/rollback      -&gt; process/revert         (hamming  2)   HIT
+process/audit          -&gt; process/review         (hamming  4)   HIT
+  recall = 4/4
+  decoy 'process/migrate' returned as nearest: 0 times</div>
+      </div>
+    </div>
+    <p class="text-sm mt-3">Recorded output of <code>scripts/07_capability_nearness.py</code>, abridged to the four queries.</p>
+  </div>
+
+  <div class="col-full mt-8">
+    <h2 class="display text-2xl">The paper's own example, worked in full</h2>
+    <p class="measure mt-4">Two agents, the same job, two names with nothing in common, and two addresses two syllables apart.</p>
+  </div>
+
+  <div class="col-wide mt-4">
+    <div class="root-block">agent://acme.com/workflow/approval/01h0000000000000000000000
+agent://globex.io/process/authorize/01h0000000000000000000000</div>
+    <div class="locus-block mt-3">⌁ no.ki.ni.ke.ru·to.ru.ki.ru.ta+va.ki.ra.ma.no~ko.so.mo</div>
+    <div class="locus-block mt-2">⌁ no.ki.ni.ke.ru·to.no.ki.ru.ta+va.ki.ra.ma.no~ko.so.mo</div>
+  </div>
+
+  <div class="col-side mt-4">
+    <div class="table-wrap">
+      <table class="data">
+        <thead><tr><th>question</th><th>answer</th></tr></thead>
+        <tbody>
+          <tr><td>identical path?</td><td>No, <code>workflow/approval</code> against <code>process/authorize</code></td></tr>
+          <tr><td>shared path prefix?</td><td>No, the first segments differ</td></tr>
+          <tr><td>distance between the names?</td><td>not defined, strings have no distance</td></tr>
+          <tr><td>distance between the addresses?</td><td><strong>2</strong> syllables, over an 18-syllable address</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="col-main mt-8">
+    <h2 class="display text-2xl">Are the equivalents actually the near ones?</h2>
+    <p class="mt-4">All twenty acme-to-globex pairs are measured, not just the four queries, so the equivalence is visible as geometry rather than as a lucky nearest neighbour.</p>
+  </div>
+
+  <div class="col-wide mt-4">
+    <div class="workings">
+      <div class="step">
+        <div class="step-n">01</div>
+        <div>
+          <div class="step-title">The four equivalent pairs</div>
+          <div class="step-body"><code>workflow/approval</code>→<code>process/authorize</code> at <span class="val">2</span>, <code>workflow/build</code>→<code>process/compile</code> at <span class="val">3</span>, <code>workflow/rollback</code>→<code>process/revert</code> at <span class="val">2</span>, <code>process/audit</code>→<code>process/review</code> at <span class="val">4</span>. Sum <span class="val">2 + 3 + 2 + 4 = 11</span>, and <span class="val">11 / 4 = 2.75</span>. Range <span class="val">2, 4</span>.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">02</div>
+        <div>
+          <div class="step-title">The sixteen non-equivalent pairs</div>
+          <div class="step-body">Every other acme-to-globex pairing, including the four pairs against the decoy: <span class="val">17, 18, 19, 20, 21, 23, 23, 24, 26, 26, 27, 27, 27, 27, 29, 30</span>. Sum <span class="val">384</span>, and <span class="val">384 / 16 = 24.0</span>. Range <span class="val">17, 30</span>.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">03</div>
+        <div>
+          <div class="step-title">The separation</div>
+          <div class="step-body"><span class="val">24.0 − 2.75 = +21.25</span> syllables. No equivalent pair is closer than 2, and no non-equivalent pair is closer than 17, so the two populations do not touch.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">04</div>
+        <div>
+          <div class="step-title">The control, and the decoy</div>
+          <div class="step-body">Shuffling which globex agent does which job and repeating the query 2,000 times gives recall <span class="val">0.1994</span>, sd <span class="val">0.223</span>, against the chance rate of one in five, <span class="val">0.200</span>; the real recall is <span class="val">1.000</span>. The decoy was returned as nearest <span class="val">0</span> times.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="separator col-full">
+
+  <div class="col-main mt-2">
+    <h2 class="display text-2xl">The exact half: the root says <em>same</em></h2>
+    <p class="mt-4">The root is SHA-256 over a canonical serialisation of the statement set, under the commitment rule <code>sha256/canonical-json-v1</code> that the primer names. Five of the six independently-built families produced the byte-identical root for <code>locked_storeroom</code>, <span class="mono">ee9953d9b356615f308d8a6a4debc4578f17770cf6db6dac52d4f57ac13ad971</span>, and five of the six again for <code>dark_empty_room</code>.</p>
+    <p class="mt-4">Across all six places, <span class="val">20 of 36</span> model-place pairs fall in the single largest agreeing group, or 55.6%. Where the statement sets differ, the roots are unrelated: there is nothing to threshold and nothing to tune.</p>
+  </div>
+
+  <div class="col-side mt-2">
+    <figure class="figure">
+      <img src="assets/figures/roots.svg" alt="How many of six independently-built model families produced the byte-identical root, shown per place.">
+      <figcaption>root agreement per place, from <code>evidence/root-proof.json</code>: five of six for two places, three of six for two, two of six for two.</figcaption>
+    </figure>
+  </div>
+
+  <div class="col-full mt-6">
+    <div class="table-wrap">
+      <table class="data">
+        <thead>
+          <tr><th>place</th><th class="num">distinct statement sets</th><th class="num">distinct roots</th><th>largest byte-identical group</th><th class="num">size</th><th>the shared root</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="mono">locked_storeroom</td><td class="num">2</td><td class="num">2</td><td class="mono">gemma-4-31b-it, glm-5.3, gpt-5.6-luna, gpt-6-luna, mimo-v2.6-pro</td><td class="num">5 of 6</td><td class="mono">ee9953d9b356615f308d8a6a4debc4578f17770cf6db6dac52d4f57ac13ad971</td></tr>
+          <tr><td class="mono">dark_empty_room</td><td class="num">2</td><td class="num">2</td><td class="mono">gemma-4-31b-it, glm-5.3, gpt-5.6-luna, gpt-6-luna, mimo-v2.6-pro</td><td class="num">5 of 6</td><td class="mono">6a7570db17ed0b9a811611574ef469849d7a74093f02b7ab1f692bf7c9328bcc</td></tr>
+          <tr><td class="mono">kitchen_alone</td><td class="num">4</td><td class="num">4</td><td class="mono">deepseek-v4.1-flash, glm-5.3, mimo-v2.6-pro</td><td class="num">3 of 6</td><td class="mono">44618a6256ec19a4498bacd6485410f4e2b0b47aea83cb6197c4a8fed2d8318a</td></tr>
+          <tr><td class="mono">shared_workshop</td><td class="num">3</td><td class="num">3</td><td class="mono">gemma-4-31b-it, glm-5.3, gpt-6-luna</td><td class="num">3 of 6</td><td class="mono">f7d44aa7b847880bee9961a89d70570d979292ec2224e66de97981202b436bb0</td></tr>
+          <tr><td class="mono">kitchen_with_friend</td><td class="num">5</td><td class="num">5</td><td class="mono">glm-5.3, mimo-v2.6-pro</td><td class="num">2 of 6</td><td class="mono">c36ccbff658ddbe0ff244daea09b4e771a6ef166b72dc3389728aad1e08bb911</td></tr>
+          <tr><td class="mono">warehouse_alone</td><td class="num">5</td><td class="num">5</td><td class="mono">glm-5.3, mimo-v2.6-pro</td><td class="num">2 of 6</td><td class="mono">a993c68631b24d7f5a217beb6f6949ad2c209048942fc161449b42eac5f31eb6</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="col-span-6 mt-8">
+    <h3 class="display text-xl">A root at any grain</h3>
+    <p class="text-sm mt-3">A root over the <em>k</em> most discriminative statements an agent selected is as checkable as a root over all 45, so a partial disclosure can still be verified exactly.</p>
+    <div class="table-wrap mt-3">
+      <table class="data">
+        <thead><tr><th class="num">grain</th><th class="num">places told apart, of 6</th><th>root prefix</th></tr></thead>
+        <tbody>
+          <tr><td class="num">2</td><td class="num">3</td><td class="mono">e6da26cd0c664b</td></tr>
+          <tr><td class="num">4</td><td class="num">6</td><td class="mono">cb5581f2033328</td></tr>
+          <tr><td class="num">8</td><td class="num">6</td><td class="mono">002236b86c64f7</td></tr>
+          <tr><td class="num">12</td><td class="num">6</td><td class="mono">a716826069cf0a</td></tr>
+          <tr><td class="num">16</td><td class="num">6</td><td class="mono">7a27c8471d860a</td></tr>
+          <tr><td class="num">24</td><td class="num">6</td><td class="mono">5c1e1bbba5ea75</td></tr>
+          <tr><td class="num">45</td><td class="num">6</td><td class="mono">5c1e1bbba5ea75</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-sm mt-3">Grain 4 already separates all six places, so a four-statement root distinguishes every place in the set. Grains 24 and 45 carry the same recorded prefix.</p>
+  </div>
+
+  <div class="col-span-6 mt-8">
+    <h3 class="display text-xl">A root that absorbs whatever the operator already has</h3>
+    <p class="text-sm mt-3">Extra attributes ride in the same canonical serialisation, sorted the same way. The root moves; the address does not, in all four runs.</p>
+    <div class="table-wrap mt-3">
+      <table class="data">
+        <thead><tr><th>extra attributes folded in</th><th>root prefix</th><th>address</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">none</td><td class="mono">5c1e1bbba5ea7589</td><td>unchanged</td></tr>
+          <tr><td class="mono">host:runner-7</td><td class="mono">b2c72a31d79deaf4</td><td>unchanged</td></tr>
+          <tr><td class="mono">py:3.14.7, numpy:2.5.3</td><td class="mono">25ff027c0d1ece5d</td><td>unchanged</td></tr>
+          <tr><td class="mono">host:runner-7, op:acme</td><td class="mono">4fc75731747d99ed</td><td>unchanged</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-sm mt-3">The address was byte-identical in every case. A registry can cover the generic attributes it already collects without moving a coordinate.</p>
+  </div>
+
+  <div class="col-full mt-6">
+    <div class="workings">
+      <div class="step">
+        <div class="step-n">01</div>
+        <div>
+          <div class="step-title">What one agent reports, canonically</div>
+          <div class="step-body">acme's approval agent reports <span class="val">10</span> statements. Canonically sorted, they are <span class="val">know/what_comes_next/any, know/why_im_here/any, now/waiting/any, place/private/any, reach/other_people/any, risk/mistakes_last/any, see/this_place/inside, see/words/any, who/one_other/any, who/telling_me_what_to_do/any</span>. Sorting is what makes the serialisation independent of the order in which a side happened to record them.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">02</div>
+        <div>
+          <div class="step-title">The other organisation's version of the same job</div>
+          <div class="step-body">globex's approval agent reports <span class="val">11</span> statements, the same ten, plus <span class="val">see/the_time/any</span>. Different tooling, same job; this one extra statement is the whole reason the two sides come out near rather than identical.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">03</div>
+        <div>
+          <div class="step-title">The two roots, and why they differ</div>
+          <div class="step-body">SHA-256 over the first set gives <span class="val">46ecd649750a481313b631fe0ae33f231a8612daf20f4a99ffb2ca2bc8587070</span>; over the second, <span class="val">1e87ea5f59e90302a0b9b27fe75492dc5a550f30468be23980bcd9d33d58d50d</span>. One statement apart, unrelated 32 bytes, so nearness is not sameness, and the two organisations' roots are not interchangeable. <em>Recomputed from the repository's own encoder for this page.</em></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">04</div>
+        <div>
+          <div class="step-title">The same set, produced independently</div>
+          <div class="step-body">When six separately-built families were each asked about <code>locked_storeroom</code> and agreed on the set, they produced one root: <span class="val">ee9953d9b356615f…</span> in <span class="val">5 of 6</span> families. Nothing was exchanged between them and no issuer was consulted.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">05</div>
+        <div>
+          <div class="step-title">What that buys a registry</div>
+          <div class="step-body">A registry holding only the root, the statement vocabulary and the commitment rule can recompute it from a published set and compare: <span class="val">1</span> distinct output over 50 pinned runs, <span class="val">1</span> over 50 unpinned runs, and <span class="val">1</span> across fresh interpreters, which matched the in-process value. The primer is 3300 bytes and the frame it derives is 67,561 bytes, 20.47× the seed, and none of that frame is transmitted. Same bytes means the same situation was described, with no shared vocabulary, no mapping table and no third party.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="separator col-full">
+
+  <div class="col-main mt-2">
+    <h2 class="display text-2xl">Where the address has to stop</h2>
+    <p class="mt-4">The address is descriptive and never authoritative: it must not absorb identity, trust, routing, or any of the paper's five requirements. <code>agent://</code> is untouched, and the two objects ride alongside it and decide nothing on their own.</p>
+  </div>
+
+  <div class="col-full mt-2">
+    <p class="pull"><strong><code>agent://</code> says who you are; <code>⌁</code> says whereabouts you are; the distance between two addresses says how close; the root says whether it is the same.</strong></p>
+  </div>
+
+  <div class="col-full mt-8">
+    <div class="alert alert-warm">
+      <div class="alert-title">What is demonstrated here, and what is not</div>
+      <p>Demonstrated: the frame is usable by six independently-built model families; precision is variable and measured: one axis names 3 of the 6 places, three axes name 4, four axes name 5, and six axes name all 6, where <code>⌁ ma.mo.ma</code> already separates them; an exact root is reproducible across those families, at any grain, across fresh interpreters; and identity and location are separated in code, with the commitment destroying adjacency on purpose.</p>
+      <p class="mt-3">Not demonstrated: that nearness resolves the capability-mapping weakness in a production federation. Two organisations with four hand-written situations is a demonstration, not a federation, and the equivalent pairs were written as situations rather than observed from live traffic.</p>
+      <p class="mt-3">The shared-vocabulary caveat travels with all of it: every family was handed the same 45 statements and agreed on 88.8% of its choices, and that agreement is what the addresses inherit. The framing result underneath it is measured: across 90 family-and-place comparisons the same place came out nearest in 96.7% strictly and 100% counting exact ties, against a chance rate of 16.7%, and address Hamming tracks known distance at Spearman rho 0.9286 against a shuffled null of +0.0002 (sd 0.2704). This would not show that minds with different vocabularies would invent the same vocabulary.</p>
+    </div>
+  </div>
+
+  <div class="col-span-6 mt-8">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">What the next artefact has to show</div>
+        <div class="card-description">properties, not advice</div>
+      </div>
+      <div class="card-content">
+        <ul class="text-sm" style="list-style: disc; padding-left: 1.1rem; line-height: 1.7">
+          <li>An <code>agent://</code> pair working end to end, through a discovery call rather than a table.</li>
+          <li>Two organisations with two trust roots, each deriving its own coordinates, sharing no vocabulary.</li>
+          <li>A nearness query that returns the semantically-equivalent capability pair as neighbours with no mapping table anywhere in the path.</li>
+          <li>A root that verifies without contacting the issuer.</li>
+          <li>The falsifier, stated in advance: if nearness needs a curated mapping to work, nothing was gained over the mapping service the paper already proposes.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-span-6 mt-8">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Most of this is older than it looks</div>
+        <div class="card-description">prior art, named</div>
+      </div>
+      <div class="card-content">
+        <p class="text-sm">Geohash and proquints make short pronounceable identifiers; locality-sensitive hashing preserves neighbourhoods; Merkle commitments give exact, order-independent equality; metric embeddings and canonical correlation analysis map between spaces; RSA is decades old.</p>
+        <p class="text-sm mt-3">The narrow claim is the conjunction: pronounceable <em>and</em> Gray-coded <em>and</em> locality-preserving, plus independently-built model families producing the same address <em>and</em> the same root. The novelty is in the join and in the measurement, not in any one part.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer col-full">
+    <p>Primer fingerprint <code>df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba</code>, the same primer on both sides of every comparison above.</p>
+    <p class="mt-2">Read on: <a href="index.html">the whole story</a> · <a href="proof.html">the proof</a> · <a href="whales.html">whales</a></p>
+    <p class="mt-2">Every figure and number on this page regenerates from the repository: <code>evidence/capability-nearness.json</code>, <code>evidence/root-proof.json</code>, <code>evidence/validation.json</code> and <code>scripts/07_capability_nearness.py</code>. The two roots in step 03 of the registry workings are recomputed by <code>marco/locus.py</code> at this revision.</p>
+  </footer>
+
+</main>
+</body>
+</html>

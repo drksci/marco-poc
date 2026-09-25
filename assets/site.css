@@ -1,0 +1,440 @@
+/* ==========================================================================
+   MARCO — site component layer, in the shadcn/ui idiom.
+
+   shadcn/ui is a React component set built on Tailwind and Radix. This site is
+   static HTML published from a repo, so there is no React build here. What is
+   reproduced instead is the *design language and the token contract*: the same
+   CSS custom properties, the same card / badge / table / separator / stat
+   primitives, the same neutral palette, the same focus and radius conventions.
+
+   Tailwind (CDN) supplies the utilities and the CSS Grid layout on each page.
+   This file supplies the tokens and the component classes, so markup stays
+   readable: <div class="card"><div class="card-header">…</div></div> rather than
+   a wall of utilities.
+
+   Load order per page:
+     <script src="https://cdn.tailwindcss.com"></script>
+     <script>tailwind.config = { theme: { extend: { colors: … } } }</script>
+     <link rel="stylesheet" href="assets/site.css">
+   ========================================================================== */
+
+:root {
+  /* shadcn/ui token names, light theme. HSL triples. */
+  --background: 0 0% 100%;
+  --foreground: 240 10% 4%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 4%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 4%;
+  --primary: 240 6% 10%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 240 5% 96%;
+  --secondary-foreground: 240 6% 10%;
+  --muted: 240 5% 96%;
+  --muted-foreground: 240 4% 46%;
+  --accent: 240 5% 96%;
+  --accent-foreground: 240 6% 10%;
+  --destructive: 0 72% 51%;
+  --border: 240 6% 90%;
+  --input: 240 6% 90%;
+  --ring: 240 5% 65%;
+  --radius: 0.6rem;
+
+  /* the two accents this project actually uses */
+  --signal: 152 26% 33%;         /* the green: agreement, anchoring */
+  --signal-soft: 152 30% 95%;
+  --warm: 36 52% 40%;            /* the ochre: caveats, controls */
+  --warm-soft: 38 55% 95%;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: 240 10% 4%;
+    --foreground: 0 0% 98%;
+    --card: 240 8% 7%;
+    --card-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 6% 10%;
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 240 4% 16%;
+    --accent-foreground: 0 0% 98%;
+    --border: 240 4% 18%;
+    --input: 240 4% 18%;
+    --ring: 240 5% 45%;
+    --signal: 152 40% 62%;
+    --signal-soft: 152 20% 12%;
+    --warm: 36 60% 62%;
+    --warm-soft: 36 25% 12%;
+  }
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "ss01", "cv01";
+}
+
+/* ---------------------------------------------------------------- layout --
+   A 12-column CSS Grid is the page skeleton. Every page opens with it, and
+   content is placed by span, so the reading measure is set once rather than
+   per-element.                                                */
+
+.page-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1.5rem;
+  max-width: 84rem;
+  margin: 0 auto;
+  padding: 0 1.5rem 6rem;
+}
+
+.col-full  { grid-column: 1 / -1; }
+.col-main  { grid-column: 1 / -1; }
+.col-wide  { grid-column: 1 / -1; }
+.col-half  { grid-column: 1 / -1; }
+.col-third { grid-column: 1 / -1; }
+.col-side  { grid-column: 1 / -1; }
+
+@media (min-width: 900px) {
+  .col-main  { grid-column: 1 / span 7; }
+  .col-wide  { grid-column: 1 / span 9; }
+  .col-half  { grid-column: 1 / span 6; }
+  .col-third { grid-column: span 4; }
+  .col-side  { grid-column: 9 / span 4; }
+  .col-offset { grid-column-start: 2; }
+}
+
+.measure { max-width: 68ch; }
+.measure-tight { max-width: 52ch; }
+
+/* ------------------------------------------------------------- typography -- */
+
+.eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.display {
+  font-family: Georgia, "Iowan Old Style", Palatino, serif;
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+}
+
+.lede {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: hsl(var(--muted-foreground));
+}
+
+.prose-block p { margin-bottom: 1rem; }
+.prose-block h2 { margin-top: 2.75rem; }
+.prose-block h3 { margin-top: 1.75rem; }
+
+.mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+/* -------------------------------------------------------------- components --
+   shadcn/ui primitives, in plain CSS. Same names, same shape, no build step. */
+
+.card {
+  background: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+}
+
+.card-header {
+  padding: 1rem 1.15rem 0.6rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.card-title {
+  font-size: 0.95rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.card-description {
+  font-size: 0.82rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.card-content { padding: 0.6rem 1.15rem 1.15rem; }
+.card-footer {
+  padding: 0.75rem 1.15rem;
+  border-top: 1px solid hsl(var(--border));
+  font-size: 0.78rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.12rem 0.55rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  background: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
+}
+
+.badge-outline { background: transparent; border-color: hsl(var(--border)); }
+.badge-signal { background: hsl(var(--signal-soft)); color: hsl(var(--signal)); border-color: hsl(var(--signal)); }
+.badge-warm { background: hsl(var(--warm-soft)); color: hsl(var(--warm)); border-color: hsl(var(--warm)); }
+.badge-muted { background: transparent; color: hsl(var(--muted-foreground)); border-color: hsl(var(--border)); }
+
+.separator { height: 1px; background: hsl(var(--border)); border: 0; margin: 2.5rem 0; }
+
+/* stats strip */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.stat { padding: 0.95rem 1.05rem 1.05rem; }
+.stat + .stat { border-left: 1px solid hsl(var(--border)); }
+
+.stat-label {
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.stat-value {
+  font-family: Georgia, "Iowan Old Style", Palatino, serif;
+  font-size: 1.55rem;
+  line-height: 1.15;
+  margin-top: 0.3rem;
+}
+
+.stat-note { font-size: 0.75rem; color: hsl(var(--muted-foreground)); margin-top: 0.2rem; }
+
+/* the address itself */
+.locus-block {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  background: hsl(var(--muted));
+  border: 1px solid hsl(var(--border));
+  border-left: 3px solid hsl(var(--signal));
+  border-radius: calc(var(--radius) - 2px);
+  padding: 0.7rem 0.9rem;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.root-block {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  word-break: break-all;
+  background: hsl(var(--muted));
+  border: 1px solid hsl(var(--border));
+  border-left: 3px solid hsl(var(--warm));
+  border-radius: calc(var(--radius) - 2px);
+  padding: 0.7rem 0.9rem;
+}
+
+/* the certainty ladder */
+.ladder { border: 1px solid hsl(var(--border)); border-radius: var(--radius); overflow: hidden; }
+.ladder-row {
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0, 1fr) auto;
+  gap: 0.75rem;
+  align-items: baseline;
+  padding: 0.55rem 0.85rem;
+  font-size: 0.88rem;
+}
+.ladder-row + .ladder-row { border-top: 1px solid hsl(var(--border)); }
+.ladder-row:nth-child(odd) { background: hsl(var(--muted)); }
+.ladder-glyph { font-family: ui-monospace, monospace; font-size: 1.05rem; text-align: center; }
+.ladder-row.anchors .ladder-glyph { color: hsl(var(--signal)); }
+.ladder-row:not(.anchors) .ladder-glyph { color: hsl(var(--muted-foreground)); }
+.ladder-row .ladder-mark {
+  font-family: ui-monospace, monospace;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: hsl(var(--muted-foreground));
+}
+
+/* numbered step-by-step workings */
+.workings { display: grid; gap: 0; }
+.step {
+  display: grid;
+  grid-template-columns: 2.25rem minmax(0, 1fr);
+  gap: 0.9rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid hsl(var(--border));
+}
+.step:last-child { border-bottom: 1px solid hsl(var(--border)); }
+.step-n {
+  font-family: ui-monospace, monospace;
+  font-size: 0.72rem;
+  color: hsl(var(--muted-foreground));
+  padding-top: 0.15rem;
+}
+.step-title { font-weight: 650; font-size: 0.92rem; }
+.step-body { font-size: 0.9rem; line-height: 1.6; }
+.step-body .val {
+  font-family: ui-monospace, monospace;
+  font-size: 0.84rem;
+  background: hsl(var(--muted));
+  border-radius: 3px;
+  padding: 0.05rem 0.3rem;
+}
+
+/* transcript */
+.transcript {
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.turn { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); }
+.turn + .turn { border-top: 1px solid hsl(var(--border)); }
+.turn-who {
+  padding: 0.7rem 0.85rem;
+  font-family: ui-monospace, monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: hsl(var(--muted-foreground));
+  background: hsl(var(--muted));
+  border-right: 1px solid hsl(var(--border));
+}
+.turn-said {
+  padding: 0.7rem 0.95rem;
+  font-family: ui-monospace, monospace;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.turn.hider .turn-who { color: hsl(var(--signal)); }
+.turn.seeker .turn-who { color: hsl(var(--warm)); }
+
+/* table */
+.table-wrap { overflow-x: auto; border: 1px solid hsl(var(--border)); border-radius: var(--radius); }
+table.data { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+table.data th {
+  text-align: left;
+  font-family: ui-monospace, monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
+  font-weight: 600;
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid hsl(var(--border));
+  background: hsl(var(--muted));
+  white-space: nowrap;
+}
+table.data td {
+  padding: 0.55rem 0.8rem;
+  border-bottom: 1px solid hsl(var(--border));
+  vertical-align: top;
+}
+table.data tr:last-child td { border-bottom: 0; }
+table.data td.mono, table.data th.mono { font-family: ui-monospace, monospace; }
+table.data .num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* callouts, in the shadcn alert idiom */
+.alert {
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  padding: 0.9rem 1.05rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.alert-title { font-weight: 650; margin-bottom: 0.3rem; font-size: 0.92rem; }
+.alert-signal { background: hsl(var(--signal-soft)); border-color: hsl(var(--signal)); }
+.alert-signal .alert-title { color: hsl(var(--signal)); }
+.alert-warm { background: hsl(var(--warm-soft)); border-color: hsl(var(--warm)); }
+.alert-warm .alert-title { color: hsl(var(--warm)); }
+
+/* figures */
+.figure {
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #fff;
+}
+.figure img { display: block; width: 100%; height: auto; }
+.figure figcaption {
+  padding: 0.65rem 0.85rem;
+  border-top: 1px solid hsl(var(--border));
+  font-size: 0.76rem;
+  line-height: 1.55;
+  color: hsl(var(--muted-foreground));
+  font-family: ui-monospace, monospace;
+}
+
+.pull {
+  font-family: Georgia, "Iowan Old Style", Palatino, serif;
+  font-size: 1.3rem;
+  line-height: 1.4;
+  font-style: italic;
+  color: hsl(var(--muted-foreground));
+  border-left: 2px solid hsl(var(--border));
+  padding-left: 1.05rem;
+}
+
+/* nav */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 0.7rem 1.5rem;
+  border-bottom: 1px solid hsl(var(--border));
+  background: hsl(var(--background) / 0.92);
+  backdrop-filter: saturate(140%) blur(8px);
+  font-family: ui-monospace, monospace;
+  font-size: 0.74rem;
+}
+.site-nav a { color: hsl(var(--muted-foreground)); text-decoration: none; }
+.site-nav a:hover { color: hsl(var(--foreground)); }
+.site-nav a[aria-current="page"] { color: hsl(var(--foreground)); font-weight: 700; }
+
+.site-footer {
+  border-top: 1px solid hsl(var(--border));
+  margin-top: 3.5rem;
+  padding-top: 1.2rem;
+  font-size: 0.84rem;
+  color: hsl(var(--muted-foreground));
+}
+
+a { color: hsl(var(--signal)); }
+:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 2px; }
+::selection { background: hsl(var(--signal-soft)); color: hsl(var(--foreground)); }
+
+code {
+  font-family: ui-monospace, monospace;
+  font-size: 0.86em;
+  background: hsl(var(--muted));
+  border-radius: 3px;
+  padding: 0.08em 0.32em;
+}

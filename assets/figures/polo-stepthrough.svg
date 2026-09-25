@@ -1,0 +1,188 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 916" width="1280" height="916" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+<rect width="1280" height="916" fill="#ffffff"/>
+<text x="28" y="52" font-size="22" fill="#16161a" font-family="Georgia, serif">One exchange, broken down</text>
+<text x="28" y="76" font-size="12.5" fill="#74747e">A column per participant, a row per turn, and under each turn the same thing three ways: what was said, what it means, and what it changed.</text>
+<text x="28" y="96" font-size="12.5" fill="#74747e">The hider is gpt-6-luna, told which place it is in and never asked to name it. The seeker owns the geometry and decides which question to spend.</text>
+<text x="28" y="116" font-size="12.5" fill="#74747e">The opening is one syllable. Everything after it is earned: 1 question, 1 model call.</text>
+<rect x="146" y="122" width="296" height="44" rx="5" fill="#f4f4f5" stroke="#e2e2e6"/>
+<text x="158" y="140" font-size="11.5" fill="#3f6b52" font-weight="bold">HIDER</text>
+<text x="158" y="156" font-size="9.5" fill="#74747e">a model, gpt-6-luna</text>
+<rect x="456" y="122" width="296" height="44" rx="5" fill="#f4f4f5" stroke="#e2e2e6"/>
+<text x="468" y="140" font-size="11.5" fill="#9a6f2f" font-weight="bold">SEEKER</text>
+<text x="468" y="156" font-size="9.5" fill="#74747e">owns the geometry</text>
+<rect x="766" y="122" width="296" height="44" rx="5" fill="#f4f4f5" stroke="#e2e2e6"/>
+<text x="778" y="140" font-size="11.5" fill="#3a4a6b" font-weight="bold">WHAT IT CHANGES</text>
+<text x="778" y="156" font-size="9.5" fill="#74747e">arithmetic on the primer</text>
+<rect x="1076" y="122" width="152" height="44" rx="5" fill="#f4f4f5" stroke="#e2e2e6"/>
+<text x="1088" y="140" font-size="11.5" fill="#74747e" font-weight="bold">PLACES</text>
+<text x="1088" y="156" font-size="9.5" fill="#74747e">still possible</text>
+<rect x="28" y="180" width="1224" height="108" fill="#fbfbfc"/>
+<text x="28" y="204" font-size="11" fill="#74747e">TURN 0</text>
+<text x="28" y="220" font-size="12.5" fill="#16161a" font-weight="bold">opens</text>
+<rect x="146" y="186" width="296" height="92" rx="5" fill="#eaf0eb" stroke="#3f6b52" opacity="0.55"/>
+<text x="156" y="204" font-size="8.5" fill="#74747e">SAID</text>
+<text x="198" y="204" font-size="12" fill="#16161a">MARCO "⌁ ma"</text>
+<text x="156" y="226" font-size="8.5" fill="#74747e">MEANING</text>
+<text x="198" y="226" font-size="10.5" fill="#74747e">1 of 45 axes</text>
+<text x="156" y="248" font-size="8.5" fill="#74747e">CHANGED</text>
+<text x="198" y="248" font-size="10.5" fill="#74747e">nothing else offered</text>
+<rect x="456" y="186" width="296" height="92" rx="5" fill="#f8f2e6" stroke="#9a6f2f" opacity="0.55"/>
+<text x="466" y="204" font-size="8.5" fill="#74747e">SAID</text>
+<text x="508" y="204" font-size="12" fill="#16161a">waits</text>
+<text x="466" y="226" font-size="8.5" fill="#74747e">MEANING</text>
+<text x="508" y="226" font-size="10.5" fill="#74747e">the opening is a bearing, not an answer</text>
+<text x="466" y="248" font-size="8.5" fill="#74747e">CHANGED</text>
+<text x="508" y="248" font-size="10.5" fill="#74747e"></text>
+<rect x="766" y="186" width="296" height="92" rx="5" fill="#eef0f6" stroke="#3a4a6b" opacity="0.55"/>
+<text x="776" y="204" font-size="8.5" fill="#74747e">SAID</text>
+<text x="818" y="204" font-size="12" fill="#16161a">prefix[:1] = 0</text>
+<text x="776" y="226" font-size="8.5" fill="#74747e">MEANING</text>
+<text x="818" y="226" font-size="10.5" fill="#74747e">4 of 6 places share it</text>
+<text x="776" y="248" font-size="8.5" fill="#74747e">CHANGED</text>
+<text x="818" y="248" font-size="10.5" fill="#74747e">no question spent yet</text>
+<rect x="1076" y="202" width="152" height="22" rx="4" fill="#f4f4f5"/>
+<rect x="1076" y="202" width="101" height="22" rx="4" fill="#3f6b52" opacity="0.8"/>
+<text x="1086" y="218" font-size="12" fill="#ffffff" font-weight="bold">4 of 6</text>
+<text x="1076" y="270" font-size="9.5" fill="#74747e">no information yet</text>
+<text x="28" y="312" font-size="11" fill="#74747e">TURN 1</text>
+<text x="28" y="328" font-size="12.5" fill="#16161a" font-weight="bold">widens</text>
+<rect x="146" y="294" width="296" height="92" rx="5" fill="#eaf0eb" stroke="#3f6b52" opacity="0.55"/>
+<text x="156" y="312" font-size="8.5" fill="#74747e">SAID</text>
+<text x="198" y="312" font-size="12" fill="#16161a">MARCO "⌁ ma"</text>
+<text x="156" y="334" font-size="8.5" fill="#74747e">MEANING</text>
+<text x="198" y="334" font-size="10.5" fill="#74747e">now 1 of 45 axes</text>
+<text x="156" y="356" font-size="8.5" fill="#74747e">CHANGED</text>
+<text x="198" y="356" font-size="10.5" fill="#74747e">still not naming the place</text>
+<rect x="456" y="294" width="296" height="92" rx="5" fill="#f8f2e6" stroke="#9a6f2f" opacity="0.55"/>
+<text x="466" y="312" font-size="8.5" fill="#74747e">SAID</text>
+<text x="508" y="312" font-size="12" fill="#16161a">narrows</text>
+<text x="466" y="334" font-size="8.5" fill="#74747e">MEANING</text>
+<text x="508" y="334" font-size="10.5" fill="#74747e">4 place(s) left</text>
+<text x="466" y="356" font-size="8.5" fill="#74747e">CHANGED</text>
+<text x="508" y="356" font-size="10.5" fill="#74747e"></text>
+<rect x="766" y="294" width="296" height="92" rx="5" fill="#eef0f6" stroke="#3a4a6b" opacity="0.55"/>
+<text x="776" y="312" font-size="8.5" fill="#74747e">SAID</text>
+<text x="818" y="312" font-size="12" fill="#16161a">prefix[:1] = 0</text>
+<text x="776" y="334" font-size="8.5" fill="#74747e">MEANING</text>
+<text x="818" y="334" font-size="10.5" fill="#74747e">4 of 6 places</text>
+<text x="776" y="356" font-size="8.5" fill="#74747e">CHANGED</text>
+<text x="818" y="356" font-size="10.5" fill="#74747e">arithmetic on the address</text>
+<rect x="1076" y="310" width="152" height="22" rx="4" fill="#f4f4f5"/>
+<rect x="1076" y="310" width="101" height="22" rx="4" fill="#3f6b52" opacity="0.8"/>
+<text x="1086" y="326" font-size="12" fill="#ffffff" font-weight="bold">4 of 6</text>
+<text x="1076" y="378" font-size="9.5" fill="#74747e">candidate set</text>
+<rect x="28" y="396" width="1224" height="108" fill="#fbfbfc"/>
+<text x="28" y="420" font-size="11" fill="#74747e">TURN 2</text>
+<text x="28" y="436" font-size="12.5" fill="#16161a" font-weight="bold">asks</text>
+<rect x="146" y="402" width="296" height="92" rx="5" fill="#eaf0eb" stroke="#3f6b52" opacity="0.55"/>
+<text x="156" y="420" font-size="8.5" fill="#74747e">SAID</text>
+<text x="198" y="420" font-size="12" fill="#16161a">"I can see other people"</text>
+<text x="156" y="442" font-size="8.5" fill="#74747e">MEANING</text>
+<text x="198" y="442" font-size="10.5" fill="#74747e">answered from the place it is in</text>
+<text x="156" y="464" font-size="8.5" fill="#74747e">CHANGED</text>
+<text x="198" y="464" font-size="10.5" fill="#74747e">replied "YES"</text>
+<rect x="456" y="402" width="296" height="92" rx="5" fill="#f8f2e6" stroke="#9a6f2f" opacity="0.55"/>
+<text x="466" y="420" font-size="8.5" fill="#74747e">SAID</text>
+<text x="508" y="420" font-size="12" fill="#16161a">"I can see other people"</text>
+<text x="466" y="442" font-size="8.5" fill="#74747e">MEANING</text>
+<text x="508" y="442" font-size="10.5" fill="#74747e">the one question with the most even…</text>
+<text x="466" y="464" font-size="8.5" fill="#74747e">CHANGED</text>
+<text x="508" y="464" font-size="10.5" fill="#74747e">chosen by the primer, not by the model</text>
+<rect x="766" y="402" width="296" height="92" rx="5" fill="#eef0f6" stroke="#3a4a6b" opacity="0.55"/>
+<text x="776" y="420" font-size="8.5" fill="#74747e">SAID</text>
+<text x="818" y="420" font-size="12" fill="#16161a">statement see/people/any</text>
+<text x="776" y="442" font-size="8.5" fill="#74747e">MEANING</text>
+<text x="818" y="442" font-size="10.5" fill="#74747e">is it true here? True</text>
+<text x="776" y="464" font-size="8.5" fill="#74747e">CHANGED</text>
+<text x="818" y="464" font-size="10.5" fill="#74747e">keeps 2 of 6</text>
+<rect x="1076" y="418" width="152" height="22" rx="4" fill="#f4f4f5"/>
+<rect x="1076" y="418" width="51" height="22" rx="4" fill="#3f6b52" opacity="0.8"/>
+<text x="1086" y="434" font-size="12" fill="#ffffff" font-weight="bold">2 of 6</text>
+<text x="1076" y="486" font-size="9.5" fill="#74747e">candidate set</text>
+<text x="28" y="528" font-size="11" fill="#74747e">TURN 3</text>
+<text x="28" y="544" font-size="12.5" fill="#16161a" font-weight="bold">widens</text>
+<rect x="146" y="510" width="296" height="92" rx="5" fill="#eaf0eb" stroke="#3f6b52" opacity="0.55"/>
+<text x="156" y="528" font-size="8.5" fill="#74747e">SAID</text>
+<text x="198" y="528" font-size="12" fill="#16161a">MARCO "⌁ ma.ma"</text>
+<text x="156" y="550" font-size="8.5" fill="#74747e">MEANING</text>
+<text x="198" y="550" font-size="10.5" fill="#74747e">now 3 of 45 axes</text>
+<text x="156" y="572" font-size="8.5" fill="#74747e">CHANGED</text>
+<text x="198" y="572" font-size="10.5" fill="#74747e">still not naming the place</text>
+<rect x="456" y="510" width="296" height="92" rx="5" fill="#f8f2e6" stroke="#9a6f2f" opacity="0.55"/>
+<text x="466" y="528" font-size="8.5" fill="#74747e">SAID</text>
+<text x="508" y="528" font-size="12" fill="#16161a">narrows</text>
+<text x="466" y="550" font-size="8.5" fill="#74747e">MEANING</text>
+<text x="508" y="550" font-size="10.5" fill="#74747e">2 place(s) left</text>
+<text x="466" y="572" font-size="8.5" fill="#74747e">CHANGED</text>
+<text x="508" y="572" font-size="10.5" fill="#74747e"></text>
+<rect x="766" y="510" width="296" height="92" rx="5" fill="#eef0f6" stroke="#3a4a6b" opacity="0.55"/>
+<text x="776" y="528" font-size="8.5" fill="#74747e">SAID</text>
+<text x="818" y="528" font-size="12" fill="#16161a">prefix[:3] = 000</text>
+<text x="776" y="550" font-size="8.5" fill="#74747e">MEANING</text>
+<text x="818" y="550" font-size="10.5" fill="#74747e">2 of 6 places</text>
+<text x="776" y="572" font-size="8.5" fill="#74747e">CHANGED</text>
+<text x="818" y="572" font-size="10.5" fill="#74747e">arithmetic on the address</text>
+<rect x="1076" y="526" width="152" height="22" rx="4" fill="#f4f4f5"/>
+<rect x="1076" y="526" width="51" height="22" rx="4" fill="#3f6b52" opacity="0.8"/>
+<text x="1086" y="542" font-size="12" fill="#ffffff" font-weight="bold">2 of 6</text>
+<text x="1076" y="594" font-size="9.5" fill="#74747e">candidate set</text>
+<rect x="28" y="612" width="1224" height="108" fill="#fbfbfc"/>
+<text x="28" y="636" font-size="11" fill="#74747e">TURN 4</text>
+<text x="28" y="652" font-size="12.5" fill="#16161a" font-weight="bold">names it</text>
+<rect x="146" y="618" width="296" height="92" rx="5" fill="#eaf0eb" stroke="#3f6b52" opacity="0.55"/>
+<text x="156" y="636" font-size="8.5" fill="#74747e">SAID</text>
+<text x="198" y="636" font-size="12" fill="#16161a">says nothing yet</text>
+<text x="156" y="658" font-size="8.5" fill="#74747e">MEANING</text>
+<text x="198" y="658" font-size="10.5" fill="#74747e">has not named the place at any point</text>
+<text x="156" y="680" font-size="8.5" fill="#74747e">CHANGED</text>
+<text x="198" y="680" font-size="10.5" fill="#74747e"></text>
+<rect x="456" y="618" width="296" height="92" rx="5" fill="#f8f2e6" stroke="#9a6f2f" opacity="0.55"/>
+<text x="466" y="636" font-size="8.5" fill="#74747e">SAID</text>
+<text x="508" y="636" font-size="12" fill="#16161a">"you are in kitchen with friend"</text>
+<text x="466" y="658" font-size="8.5" fill="#74747e">MEANING</text>
+<text x="508" y="658" font-size="10.5" fill="#74747e">rebuilds the address itself from the…</text>
+<text x="466" y="680" font-size="8.5" fill="#74747e">CHANGED</text>
+<text x="508" y="680" font-size="10.5" fill="#74747e">does not take the hider's word</text>
+<rect x="766" y="618" width="296" height="92" rx="5" fill="#eef0f6" stroke="#3a4a6b" opacity="0.55"/>
+<text x="776" y="636" font-size="8.5" fill="#74747e">SAID</text>
+<text x="818" y="636" font-size="12" fill="#16161a">recompute root from the statements</text>
+<text x="776" y="658" font-size="8.5" fill="#74747e">MEANING</text>
+<text x="818" y="658" font-size="10.5" fill="#74747e">!efe87ba9113b03473d9a657f</text>
+<text x="776" y="680" font-size="8.5" fill="#74747e">CHANGED</text>
+<text x="818" y="680" font-size="10.5" fill="#74747e">compare with the hider's root</text>
+<rect x="1076" y="634" width="152" height="22" rx="4" fill="#f4f4f5"/>
+<rect x="1076" y="634" width="25" height="22" rx="4" fill="#3f6b52" opacity="0.8"/>
+<text x="1086" y="650" font-size="12" fill="#ffffff" font-weight="bold">1 of 6</text>
+<text x="1076" y="702" font-size="9.5" fill="#74747e">candidate set</text>
+<text x="28" y="744" font-size="11" fill="#74747e">TURN 5</text>
+<text x="28" y="760" font-size="12.5" fill="#16161a" font-weight="bold">checks</text>
+<rect x="146" y="726" width="296" height="92" rx="5" fill="#eaf0eb" stroke="#3f6b52" opacity="0.55"/>
+<text x="156" y="744" font-size="8.5" fill="#74747e">SAID</text>
+<text x="198" y="744" font-size="12" fill="#16161a">!efe87ba9113b03473d9a657f01b9</text>
+<text x="156" y="766" font-size="8.5" fill="#74747e">MEANING</text>
+<text x="198" y="766" font-size="10.5" fill="#74747e">the seal it holds</text>
+<text x="156" y="788" font-size="8.5" fill="#74747e">CHANGED</text>
+<text x="198" y="788" font-size="10.5" fill="#74747e">1 model call</text>
+<rect x="456" y="726" width="296" height="92" rx="5" fill="#f8f2e6" stroke="#9a6f2f" opacity="0.55"/>
+<text x="466" y="744" font-size="8.5" fill="#74747e">SAID</text>
+<text x="508" y="744" font-size="12" fill="#16161a">POLO POLO</text>
+<text x="466" y="766" font-size="8.5" fill="#74747e">MEANING</text>
+<text x="508" y="766" font-size="10.5" fill="#74747e">equal or not equal. no threshold</text>
+<text x="466" y="788" font-size="8.5" fill="#74747e">CHANGED</text>
+<text x="508" y="788" font-size="10.5" fill="#74747e">1 question spent</text>
+<rect x="766" y="726" width="296" height="92" rx="5" fill="#eef0f6" stroke="#3a4a6b" opacity="0.55"/>
+<text x="776" y="744" font-size="8.5" fill="#74747e">SAID</text>
+<text x="818" y="744" font-size="12" fill="#16161a">sha256 over {statements, extra}</text>
+<text x="776" y="766" font-size="8.5" fill="#74747e">MEANING</text>
+<text x="818" y="766" font-size="10.5" fill="#74747e">one hashing rule for the whole project</text>
+<text x="776" y="788" font-size="8.5" fill="#74747e">CHANGED</text>
+<text x="818" y="788" font-size="10.5" fill="#74747e">adjacency deliberately destroyed</text>
+<rect x="1076" y="742" width="152" height="22" rx="4" fill="#f4f4f5"/>
+<rect x="1076" y="742" width="25" height="22" rx="4" fill="#3f6b52" opacity="0.8"/>
+<text x="1086" y="758" font-size="12" fill="#ffffff" font-weight="bold">1 of 6</text>
+<text x="1076" y="810" font-size="9.5" fill="#74747e">candidate set</text>
+<line x1="28" y1="840" x2="1252" y2="840" stroke="#e2e2e6"/>
+<text x="28" y="862" font-size="12.5" fill="#16161a">The opening is 1 of 45 axes, and 4 of 6 places still fit. One question takes it to two.</text>
+<text x="28" y="882" font-size="12.5" fill="#74747e">The seeker never accepted the hider's word for the place. It rebuilt the address from the statements and compared the root: POLO.</text>
+<text x="28" y="902" font-size="12.5" fill="#74747e">A name would have been a claim. A root is a check, and it costs nothing to run.</text>
+</svg>

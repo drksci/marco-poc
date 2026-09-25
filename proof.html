@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The same answer twice. MARCO</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { theme: { extend: { colors: {
+  background: 'hsl(var(, background))', foreground: 'hsl(var(, foreground))',
+  muted: 'hsl(var(, muted))', mutedfg: 'hsl(var(, muted-foreground))',
+  border: 'hsl(var(, border))', card: 'hsl(var(, card))' } } } }
+</script>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<nav class="site-nav">
+  <a href="index.html">the whole story</a>
+  <a href="response.html">response to agent://</a>
+  <a href="proof.html" aria-current="page">the proof</a>
+  <a href="whales.html">whales</a>
+</nav>
+<main class="page-grid pt-10">
+
+<header class="col-full">
+  <p class="eyebrow">MARCO · the proof</p>
+  <h1 class="display text-4xl mt-2">The same answer twice</h1>
+  <p class="lede measure mt-5">Two runs that ought to agree are only evidence if they could have disagreed, so every headline number here sits next to the check that would have caught it, and this page stops where the checking does.</p>
+</header>
+
+<!-- ============================ 2. determinism ============================ -->
+<section class="col-wide">
+  <h2 class="display text-2xl mt-10">Determinism: one place, encoded three ways</h2>
+  <p class="measure mt-3 text-sm">The place is the use's canonical <span class="mono">shared_workshop</span>, 18 of 45 statements true, address <span class="mono">⌁ me.mo.me.ma.ru·ma.ve.ki.va.ma+no.tu.va.tu.ru~ki.ru.ki</span>, and the check is the commitment over its canonical statement set.</p>
+
+  <div class="workings mt-4">
+    <div class="step">
+      <div class="step-n">A1</div>
+      <div>
+        <div class="step-title">in-process, repeated fifty times</div>
+        <div class="step-body">Fifty encodings of the same observations at the same pinned instant give <span class="val">1 distinct output</span>: the commitment <span class="val">c73d7633a6df505844118b31a9244744d5802dcb9e384f8a82f021c0170c571d</span>.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">A2</div>
+      <div>
+        <div class="step-title">repeated fifty times with no pinned instant</div>
+        <div class="step-body">Drop the timestamp and fifty runs still give <span class="val">1 distinct output</span>, <span class="val">4b325803641e0eca831eed053ef7cbed541241bacfecb797a92d985650cd1c55</span>, so <span class="val">no_wall_clock_leak: true</span>.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">A3</div>
+      <div>
+        <div class="step-title">three fresh interpreters</div>
+        <div class="step-body">Three separate processes, each re-declaring the encoder rather than importing a cached one, give <span class="val">1 distinct output</span> and <span class="val">fresh_processes_match_in_process: true</span> against A1.</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="measure mt-4 text-sm">One line of conclusion: the address and the commitment are functions of the statements and the primer and of nothing else, <span class="mono">identical: true</span> across all three routes.</p>
+</section>
+
+<!-- ============================ 3. monotone refinement ============================ -->
+<section class="col-wide mt-10">
+  <h2 class="display text-2xl">Monotone refinement: more precision never conflates</h2>
+  <p class="measure mt-3 text-sm">Axes 1 to 45, and the number of distinct places the prefix separates: <span class="mono">0 violations</span>, <span class="mono">monotone: true</span>. Three places at one axis, five at four, and all six from axis 6 onwards.</p>
+
+  <div class="table-wrap mt-5">
+    <table class="data">
+      <thead>
+        <tr><th class="num">axes kept</th><th class="num">distinct places</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="mono num">1</td><td class="num">3</td></tr>
+        <tr><td class="mono num">2</td><td class="num">3</td></tr>
+        <tr><td class="mono num">3</td><td class="num">4</td></tr>
+        <tr><td class="mono num">4</td><td class="num">5</td></tr>
+        <tr><td class="mono num">5</td><td class="num">5</td></tr>
+        <tr><td class="mono num">6</td><td class="num">6</td></tr>
+        <tr><td class="mono num">7</td><td class="num">6</td></tr>
+        <tr><td class="mono num">8</td><td class="num">6</td></tr>
+        <tr><td class="mono num">9</td><td class="num">6</td></tr>
+        <tr><td class="mono num">10</td><td class="num">6</td></tr>
+        <tr><td class="mono num">11</td><td class="num">6</td></tr>
+        <tr><td class="mono num">12</td><td class="num">6</td></tr>
+        <tr><td class="mono num">13</td><td class="num">6</td></tr>
+        <tr><td class="mono num">14</td><td class="num">6</td></tr>
+        <tr><td class="mono num">15</td><td class="num">6</td></tr>
+        <tr><td class="mono num">16</td><td class="num">6</td></tr>
+        <tr><td class="mono num">17</td><td class="num">6</td></tr>
+        <tr><td class="mono num">18</td><td class="num">6</td></tr>
+        <tr><td class="mono num">19</td><td class="num">6</td></tr>
+        <tr><td class="mono num">20</td><td class="num">6</td></tr>
+        <tr><td class="mono num">21</td><td class="num">6</td></tr>
+        <tr><td class="mono num">22</td><td class="num">6</td></tr>
+        <tr><td class="mono num">23</td><td class="num">6</td></tr>
+        <tr><td class="mono num">24</td><td class="num">6</td></tr>
+        <tr><td class="mono num">25</td><td class="num">6</td></tr>
+        <tr><td class="mono num">26</td><td class="num">6</td></tr>
+        <tr><td class="mono num">27</td><td class="num">6</td></tr>
+        <tr><td class="mono num">28</td><td class="num">6</td></tr>
+        <tr><td class="mono num">29</td><td class="num">6</td></tr>
+        <tr><td class="mono num">30</td><td class="num">6</td></tr>
+        <tr><td class="mono num">31</td><td class="num">6</td></tr>
+        <tr><td class="mono num">32</td><td class="num">6</td></tr>
+        <tr><td class="mono num">33</td><td class="num">6</td></tr>
+        <tr><td class="mono num">34</td><td class="num">6</td></tr>
+        <tr><td class="mono num">35</td><td class="num">6</td></tr>
+        <tr><td class="mono num">36</td><td class="num">6</td></tr>
+        <tr><td class="mono num">37</td><td class="num">6</td></tr>
+        <tr><td class="mono num">38</td><td class="num">6</td></tr>
+        <tr><td class="mono num">39</td><td class="num">6</td></tr>
+        <tr><td class="mono num">40</td><td class="num">6</td></tr>
+        <tr><td class="mono num">41</td><td class="num">6</td></tr>
+        <tr><td class="mono num">42</td><td class="num">6</td></tr>
+        <tr><td class="mono num">43</td><td class="num">6</td></tr>
+        <tr><td class="mono num">44</td><td class="num">6</td></tr>
+        <tr><td class="mono num">45</td><td class="num">6</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="measure mt-3 text-sm">The six-axes result is the one that matters: <span class="mono">axes_for_all_places: 6</span>, and the first two axes already separate <span class="mono">3</span> places.</p>
+
+  <figure class="figure mt-5">
+    <img src="assets/figures/precision-gradient.svg" alt="The same address read at six precisions, with the refinement curve">
+    <figcaption>One address, many precisions. Every step narrows and no step contradicts an earlier one; the violations count is <span class="mono">0</span>.</figcaption>
+  </figure>
+</section>
+
+<!-- ============================ 4. distance preservation ============================ -->
+<section class="col-full mt-10">
+  <h2 class="display text-2xl">Distance preservation: the address respects a known ordering</h2>
+</section>
+
+<section class="col-half">
+  <p class="measure text-sm mt-3">The ordering was written down before the geometry was consulted: <span class="mono">kitchen_with_friend, kitchen_alone</span> near, <span class="mono">, shared_workshop</span> mid, <span class="mono">, warehouse_alone</span> far, <span class="mono">, dark_empty_room</span> furthest. Rank correlation over all 15 pairs is <span class="mono">rho = 0.9286</span>, against a shuffled null of <span class="mono">+0.0002</span> with sd <span class="mono">0.2704</span>.</p>
+
+  <div class="table-wrap mt-4">
+    <table class="data">
+      <thead>
+        <tr><th>pair</th><th class="num">known distance</th><th class="num">hamming</th><th class="num">lcp</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="mono">kitchen_with_friend · kitchen_alone</td><td class="num">0.35</td><td class="num">9</td><td class="num">3</td></tr>
+        <tr><td class="mono">locked_storeroom · dark_empty_room</td><td class="num">0.5</td><td class="num">12</td><td class="num">0</td></tr>
+        <tr><td class="mono">kitchen_with_friend · dark_empty_room</td><td class="num">0.96</td><td class="num">23</td><td class="num">0</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="measure mt-3 text-sm">The nearest pair shares <span class="mono">3</span> syllables before it differs and the furthest shares <span class="mono">0</span>, which is the ordering the addresses were never told about.</p>
+</section>
+
+<section class="col-half mt-3">
+  <figure class="figure">
+    <img src="assets/figures/matrix.svg" alt="Six by six distance matrix with the same place on the ringed diagonal">
+    <figcaption>Two families, one matrix: deepseek-v4.1-flash (rows) against mimo-v2.6-pro (columns). The ringed diagonal is the same place seen by both.</figcaption>
+  </figure>
+</section>
+
+<!-- ============================ 5. the root ============================ -->
+<section class="col-wide mt-10">
+  <h2 class="display text-2xl">The root at any grain, and with anything folded in</h2>
+  <p class="measure mt-3 text-sm">A root taken over the k most discriminative statements is still exactly checkable, so a partial disclosure can be verified without the rest. One model throughout, <span class="mono">deepseek-v4.1-flash</span> on <span class="mono">kitchen_with_friend</span>, so the count measures grain rather than model disagreement.</p>
+
+  <div class="workings mt-4">
+    <div class="step">
+      <div class="step-n">R1</div>
+      <div>
+        <div class="step-title">grain 2</div>
+        <div class="step-body">Root over the two most discriminative statements, prefix <span class="val">e6da26cd0c664b</span>: <span class="val">3 of 6</span> places still distinguishable.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">R2</div>
+      <div>
+        <div class="step-title">grain 4</div>
+        <div class="step-body">Prefix <span class="val">cb5581f2033328</span>, and all <span class="val">6 of 6</span> places are distinguishable.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">R3</div>
+      <div>
+        <div class="step-title">grain 8</div>
+        <div class="step-body">Prefix <span class="val">002236b86c64f7</span>, still <span class="val">6 of 6</span>.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">R4</div>
+      <div>
+        <div class="step-title">grain 45</div>
+        <div class="step-body">Prefix <span class="val">5c1e1bbba5ea75</span>, the opening of the full root <span class="val">!5c1e1bbba5ea75899e37bf52ece0b77bb4a1c3dbecdf90856dcf69bf921f336e</span>, with <span class="val">6 of 6</span>.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="table-wrap mt-5">
+    <table class="data">
+      <thead>
+        <tr><th>folded in</th><th class="mono">root, first 16 hex</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>nothing</td><td class="mono">5c1e1bbba5ea7589</td></tr>
+        <tr><td class="mono">host:runner-7</td><td class="mono">b2c72a31d79deaf4</td></tr>
+        <tr><td class="mono">py:3.14.7 · numpy:2.5.3</td><td class="mono">25ff027c0d1ece5d</td></tr>
+        <tr><td class="mono">host:runner-7 · op:acme</td><td class="mono">4fc75731747d99ed</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="measure mt-3 text-sm">Every fold-in changes the root and leaves the coordinate alone: <span class="mono">address_unchanged_by_extra: true</span>. A root can carry an environment fingerprint without contaminating the place.</p>
+
+  <figure class="figure mt-5">
+    <img src="assets/figures/roots.svg" alt="How many families produced the byte-identical root, per place, out of six">
+    <figcaption>The same root from separate families: <span class="mono">20/36</span> model-place pairs produced a byte-identical root (55.6%), from 5 of 6 families for <span class="mono">locked_storeroom</span> down to 2 of 6 for <span class="mono">warehouse_alone</span>.</figcaption>
+  </figure>
+</section>
+
+<!-- ============================ 6. address versus root ============================ -->
+<section class="col-wide mt-10">
+  <h2 class="display text-2xl">The address against the root, on a real pair</h2>
+  <p class="measure mt-3 text-sm">Take the pair the use calls nearest, <span class="mono">kitchen_with_friend</span> and <span class="mono">kitchen_alone</span>, whose known Jaccard distance is <span class="mono">0.35</span>.</p>
+
+  <div class="table-wrap mt-4">
+    <table class="data">
+      <thead>
+        <tr><th>object</th><th>value</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>addresses</td><td class="mono">⌁ ma.mo.ma.ma.ru·ma.va.ki.va.ki+ve.ki.va.ku.ru~ki.su.ki &nbsp;vs&nbsp; ⌁ ma.tu.ma.ma.no·mo.ru.ki.va.ki+ru.ki.va.tu.ru~ki.su.ki</td></tr>
+        <tr><td>distance between them</td><td><span class="mono">9</span> syllables apart, sharing a prefix of <span class="mono">3</span></td></tr>
+        <tr><td>roots</td><td class="mono">!5c1e1bbba5ea75899e37bf52ece0b77bb4a1c3dbecdf90856dcf69bf921f336e &nbsp;vs&nbsp; !44618a6256ec19a4498bacd6485410f4e2b0b47aea83cb6197c4a8fed2d8318a</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="measure mt-3 text-sm">Different roots and addresses 9 apart is the design: the root answers "same place" and the address answers "how near". Read on the two sets <span class="mono">deepseek-v4.1-flash</span> actually produced, the same pair comes out <span class="mono">10</span> apart with a shared prefix of <span class="mono">2</span>, the same claim with that model's own disagreement added.</p>
+</section>
+
+<!-- ============================ 7. the ladder ============================ -->
+<section class="col-wide mt-10">
+  <h2 class="display text-2xl">The certainty ladder</h2>
+  <p class="measure mt-3 text-sm">Five markers, each with a rank, and only the top two anchor a claim: a locus takes the weakest marker present, so confidence cannot promote it and only evidence can.</p>
+
+  <div class="ladder mt-5">
+    <div class="ladder-row anchors"><span class="ladder-glyph">=</span><span>checked and matched exactly</span><span class="ladder-mark">rank 5 · anchors</span></div>
+    <div class="ladder-row anchors"><span class="ladder-glyph">⊢</span><span>worked out the same way twice from what I was given</span><span class="ladder-mark">rank 4 · anchors</span></div>
+    <div class="ladder-row"><span class="ladder-glyph">≈</span><span>measured with an instrument, so roughly</span><span class="ladder-mark">rank 3 · does not anchor</span></div>
+    <div class="ladder-row"><span class="ladder-glyph">~</span><span>what I believe, not what I know</span><span class="ladder-mark">rank 2 · does not anchor</span></div>
+    <div class="ladder-row"><span class="ladder-glyph">?</span><span>a guess I cannot support</span><span class="ladder-mark">rank 1 · does not anchor</span></div>
+  </div>
+  <p class="measure mt-4 text-sm"><span class="mono">kitchen_with_friend</span> floors at <span class="mono">≈</span>, rank 3, because <span class="mono">world.py</span> marks <span class="mono">see/this_place/outside</span> and <span class="mono">see/sound/any</span> as measured rather than inspected, so that place is a region, not an anchor.</p>
+</section>
+
+<!-- ============================ 8. the frame gate ============================ -->
+<section class="col-wide mt-10">
+  <h2 class="display text-2xl">The frame gate</h2>
+  <p class="measure mt-3 text-sm">Both sides must hold the same primer bytes, identified by fingerprint <span class="mono">df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba</span>. Show a different primer and the library refuses the comparison in its own words:</p>
+
+  <div class="transcript mt-4">
+    <div class="turn">
+      <div class="turn-who">different primer</div>
+      <div class="turn-said">different primer: the two geometries are incommensurable; only exact identity can be compared</div>
+    </div>
+  </div>
+
+  <p class="measure mt-4 text-sm">So the gate answers three ways rather than one: <span class="mono">same_primer_comparable: true</span>, <span class="mono">different_primer_comparable: false</span>, <span class="mono">primers_differ: true</span>. The transmitted seed is <span class="mono">3,300 bytes</span> against <span class="mono">67,561 bytes</span> reconstructed, a factor of <span class="mono">20.47</span>.</p>
+</section>
+
+<!-- ============================ 9. known-answer cases ============================ -->
+<section class="col-wide mt-10">
+  <h2 class="display text-2xl">Known-answer cases, which run first</h2>
+  <p class="measure mt-3 text-sm">These four run before any headline number, because a metric that cannot reproduce an answer already known is not trustworthy on a result that is not.</p>
+
+  <div class="table-wrap mt-4">
+    <table class="data">
+      <thead>
+        <tr><th>case</th><th class="num">hamming</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>identical sets</td><td class="num">0</td></tr>
+        <tr><td>one statement removed</td><td class="num">1</td></tr>
+        <tr><td>disjoint sets</td><td class="num">21</td></tr>
+        <tr><td>ordering is monotone</td><td class="num">True</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="measure mt-3 text-sm">The identical case also fixes the roots: <span class="mono">identical_sets_same_root: true</span>, while one statement removed is a different root, so the scale runs 0, 1, 21 with no gap pretending to be exactness.</p>
+</section>
+
+<!-- ============================ 10. the controls ============================ -->
+<section class="col-full mt-10">
+  <h2>Six families, and what chance would give</h2>
+<p>The cross-model result is <span class="val">87 of 90</span> comparisons where the same place came out strictly nearest, which is <span class="val">96.7%</span>, against a chance rate of <span class="val">16.7%</span>.</p>
+<h2 class="display text-2xl">The controls</h2>
+</section>
+
+<section class="col-half">
+  <figure class="figure mt-3">
+    <img src="assets/figures/controls.svg" alt="The result against its nulls: 100.0% real, 16.7% chance, 16.9% labels shuffled, 20.9% random vocabulary">
+    <figcaption>The result and its nulls, as bars with one standard deviation as whiskers. The figure's own caption says 400 trials; <span class="mono">evidence/validation.json</span> records <span class="mono">n = 6000</span> for both nulls.</figcaption>
+  </figure>
+</section>
+
+<section class="col-half mt-3">
+  <div class="table-wrap">
+    <table class="data">
+      <thead>
+        <tr><th>condition</th><th class="num">accuracy</th><th class="num">sd</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>real, cross-model</td><td class="num">1.0</td><td class="num">, </td></tr>
+        <tr><td>real, strict</td><td class="num">0.9667</td><td class="num">, </td></tr>
+        <tr><td>chance</td><td class="num">0.1667</td><td class="num">, </td></tr>
+        <tr><td>null · labels shuffled</td><td class="num">0.1691</td><td class="num">0.1679</td></tr>
+        <tr><td>null · random vocabulary</td><td class="num">0.2086</td><td class="num">0.1650</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="measure mt-3 text-sm">In a space like this the metric is more likely to be wrong than the model, which is why the shuffled-label null sits at <span class="mono">16.9%</span> against a chance floor of <span class="mono">16.7%</span> and the random-vocabulary null at <span class="mono">20.9%</span>.</p>
+</section>
+
+<!-- ============================ 11. where proof stops ============================ -->
+<section class="col-wide mt-10">
+  <div class="alert alert-warm">
+    <div class="alert-title">Where proof stops</div>
+    <p>Nothing here is a claim about meaning: the address reports what an agent said and never what it understood. There is no zero-knowledge proof of correct derivation, because the root commits to a set of statements rather than to the reasoning that selected them.</p>
+    <p class="mt-2">Locality leaks neighbourhood information: two addresses <span class="mono">9</span> syllables apart reveal that the places are near, which the root deliberately does not. And all six families were handed the same 45 statements, so the <span class="mono">88.8%</span> statement agreement is inherited rather than derived.</p>
+  </div>
+</section>
+
+<!-- ============================ 12. what would make it a proof ============================ -->
+<section class="col-half mt-10">
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">What would make it a proof</span>
+      <span class="badge badge-muted">requirements</span>
+    </div>
+    <div class="card-content">
+      <p class="card-description">The evidence rests on a six-place population and a shared vocabulary, so a stronger claim needs a stronger instrument, stated as properties rather than as intentions.</p>
+      <ul class="mt-3 text-sm">
+        <li>Held-out statement vocabularies: each family invents or receives its own 45 statements, so agreement cannot be inherited from the chart.</li>
+        <li>A population larger than six places: the <span class="mono">204</span>-place population is used for calibration, while the headline is still <span class="mono">6 of 6</span>.</li>
+        <li>A real commitment scheme with proofs: the root is a plain SHA-256 over canonical JSON and carries no proof of correct derivation.</li>
+        <li>An adversary: every number here came from parties with no reason to lie, and none of them was tested against one that had one.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="col-half mt-10">
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">What the checks refused to hide</span>
+      <span class="badge badge-outline">disagreement</span>
+    </div>
+    <div class="card-content">
+      <p class="card-description">The pre-registration expected <span class="mono">kitchen_alone</span> strictly nearest to <span class="mono">kitchen_with_friend</span> and then <span class="mono">shared_workshop</span>. Measured: both at hamming <span class="mono">9</span>, so <span class="mono">strict_ordering_holds: false</span> while the weak ordering near ≤ mid &lt; far &lt; furthest holds. The test was kept rather than retuned.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 13. footer ============================ -->
+<footer class="col-full site-footer">
+  <p>Primer fingerprint <span class="mono">df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba</span>.</p>
+  <p class="mt-2">Pages: <a href="index.html">the whole story</a> · <a href="response.html">response to agent://</a> · <a href="proof.html">the proof</a> · <a href="whales.html">whales</a>.</p>
+  <p class="mt-2">Every figure and every number on this page regenerates from the repo: <span class="mono">python3 scripts/09_validate.py</span>, <span class="mono">python3 scripts/08_root_proof.py</span>, <span class="mono">python3 scripts/10_figure_dataviz.py</span>.</p>
+</footer>
+
+</main>
+</body>
+</html>

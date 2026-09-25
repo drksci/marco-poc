@@ -1,0 +1,3 @@
+# The library needs only numpy. The probe and the live turn use the standard
+# library alone (urllib), so no HTTP client is required.
+numpy>=1.24

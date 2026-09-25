@@ -1,0 +1,181 @@
+{
+  "primer_fingerprint": "df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba",
+  "metric": "hamming",
+  "models": [
+    "deepseek-v4.1-flash",
+    "gemma-4-31b-it",
+    "glm-5.3",
+    "gpt-5.6-luna",
+    "gpt-6-luna",
+    "mimo-v2.6-pro"
+  ],
+  "situations": [
+    "dark_empty_room",
+    "kitchen_alone",
+    "kitchen_with_friend",
+    "locked_storeroom",
+    "shared_workshop",
+    "warehouse_alone"
+  ],
+  "n_calls_used": 36,
+  "n_calls_recorded": 36,
+  "pairs": 15,
+  "top1_accuracy": 1.0,
+  "top1_strict_accuracy": 0.9667,
+  "top1_ties_counted_as_hits": 0.0333,
+  "top1_sd_across_pairs": 0.0,
+  "hungarian_accuracy": 1.0,
+  "chance": 0.1667,
+  "pair_detail": {
+    "deepseek-v4.1-flash vs gemma-4-31b-it": {
+      "top1": "6/6",
+      "top1_accuracy": 1.0,
+      "top1_strict": "6/6",
+      "top1_strict_accuracy": 1.0,
+      "hungarian": "6/6",
+      "hungarian_accuracy": 1.0
+    },
+    "deepseek-v4.1-flash vs glm-5.3": {
+      "top1": "6/6",
+      "top1_accuracy": 1.0,
+      "top1_strict": "6/6",
+      "top1_strict_accuracy": 1.0,
+      "hungarian": "6/6",
+      "hungarian_accuracy": 1.0
+    },
+    "deepseek-v4.1-flash vs gpt-5.6-luna": {
+      "top1": "6/6",
+      "top1_accuracy": 1.0,
+      "top1_strict": "6/6",
+      "top1_strict_accuracy": 1.0,
+      "hungarian": "6/6",
+      "hungarian_accuracy": 1.0
+    },
+    "deepseek-v4.1-flash vs gpt-6-luna": {
+      "top1": "6/6",
+      "top1_accuracy": 1.0,
+      "top1_strict": "6/6",
+      "top1_strict_accuracy": 1.0,
+      "hungarian": "6/6",
+      "hungarian_accuracy": 1.0
+    },
+    "deepseek-v4.1-flash vs mimo-v2.6-pro": {
+      "top1": "6/6",
+      "top1_accuracy": 1.0,
+      "top1_strict": "6/6",
+      "top1_strict_accuracy": 1.0,
+      "hungarian": "6/6",
+      "hungarian_accuracy": 1.0
+    },
+    "gemma-4-31b-it vs glm-5.3": {
+      "top1": "6/6",
+      "top1_accuracy": 1.0,
+      "top1_strict": "6/6",
+      "top1_strict_accuracy": 1.0,
+      "hungarian": "6/6",
+      "hungarian_accuracy": 1.0
+    },
+    "gemma-4-31b-it vs gpt-5.6-luna": {
+      "top1": "6/6",
+      "top1_accuracy": 1.0,
+      "top1_strict": "6/6",
+      "top1_strict_accuracy": 1.0,
+      "hungarian": "6/6",
+      "hungarian_accuracy": 1.0
+    },
+    "gemma-4-31b-it vs gpt-6-luna": {
+      "top1": "6/6",
+      "top1_accuracy": 1.0,
+      "top1_strict": "5/6",
+      "top1_strict_accuracy": 0.8333,
+      "hungarian": "6/6",
+      "hungarian_accuracy": 1.0
+    },
+    "gemma-4-31b-it vs mimo-v2.6-pro": {
+      "top1": "6/6",
+      "top1_accuracy": 1.0,
+      "top1_strict": "6/6",
+      "top1_strict_accuracy": 1.0,
+      "hungarian": "6/6",
+      "hungarian_accuracy": 1.0
+    },
+    "glm-5.3 vs gpt-5.6-luna": {
+      "top1": "6/6",
+      "top1_accuracy": 1.0,
+      "top1_strict": "6/6",
+      "top1_strict_accuracy": 1.0,
+      "hungarian": "6/6",
+      "hungarian_accuracy": 1.0
+    },
+    "glm-5.3 vs gpt-6-luna": {
+      "top1": "6/6",
+      "top1_accuracy": 1.0,
+      "top1_strict": "5/6",
+      "top1_strict_accuracy": 0.8333,
+      "hungarian": "6/6",
+      "hungarian_accuracy": 1.0
+    },
+    "glm-5.3 vs mimo-v2.6-pro": {
+      "top1": "6/6",
+      "top1_accuracy": 1.0,
+      "top1_strict": "6/6",
+      "top1_strict_accuracy": 1.0,
+      "hungarian": "6/6",
+      "hungarian_accuracy": 1.0
+    },
+    "gpt-5.6-luna vs gpt-6-luna": {
+      "top1": "6/6",
+      "top1_accuracy": 1.0,
+      "top1_strict": "6/6",
+      "top1_strict_accuracy": 1.0,
+      "hungarian": "6/6",
+      "hungarian_accuracy": 1.0
+    },
+    "gpt-5.6-luna vs mimo-v2.6-pro": {
+      "top1": "6/6",
+      "top1_accuracy": 1.0,
+      "top1_strict": "6/6",
+      "top1_strict_accuracy": 1.0,
+      "hungarian": "6/6",
+      "hungarian_accuracy": 1.0
+    },
+    "gpt-6-luna vs mimo-v2.6-pro": {
+      "top1": "6/6",
+      "top1_accuracy": 1.0,
+      "top1_strict": "5/6",
+      "top1_strict_accuracy": 0.8333,
+      "hungarian": "6/6",
+      "hungarian_accuracy": 1.0
+    }
+  },
+  "mean_pairwise_landmark_jaccard": {
+    "per_situation": {
+      "dark_empty_room": 0.8889,
+      "kitchen_alone": 0.9006,
+      "kitchen_with_friend": 0.8468,
+      "locked_storeroom": 0.963,
+      "shared_workshop": 0.949,
+      "warehouse_alone": 0.7798
+    },
+    "mean": 0.888
+  },
+  "known_answer": {
+    "identical_sets_same_commitment": true,
+    "identical_sets_hamming": 0,
+    "one_landmark_removed_hamming": 1,
+    "disjoint_sets_hamming": 27,
+    "disjoint_greater_than_one_removed": true,
+    "monotone": true
+  },
+  "null_label_shuffle": {
+    "accuracy": 0.1691,
+    "sd": 0.1679,
+    "n": 6000
+  },
+  "null_random_vocabulary": {
+    "accuracy": 0.2086,
+    "sd": 0.165,
+    "n": 6000
+  },
+  "null_seed": 20260925
+}

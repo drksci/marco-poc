@@ -1,0 +1,242 @@
+{
+  "primer_version": 2,
+  "beats": [
+    "place",
+    "what",
+    "reach",
+    "now"
+  ],
+  "commitment": "sha256/canonical-json-v1",
+  "markers": [
+    [
+      "=",
+      5,
+      true,
+      "checked and matched exactly"
+    ],
+    [
+      "⊢",
+      4,
+      true,
+      "worked out the same way twice from what I was given"
+    ],
+    [
+      "≈",
+      3,
+      false,
+      "measured with an instrument, so roughly"
+    ],
+    [
+      "~",
+      2,
+      false,
+      "what I believe, not what I know"
+    ],
+    [
+      "?",
+      1,
+      false,
+      "a guess I cannot support"
+    ]
+  ],
+  "phonology": {
+    "consonants": [
+      "m",
+      "n",
+      "k",
+      "t",
+      "s",
+      "r"
+    ],
+    "vowels": [
+      "a",
+      "e",
+      "i",
+      "o",
+      "u"
+    ],
+    "pad": [
+      "va",
+      "ve"
+    ],
+    "syllable_order": "boustrophedon"
+  },
+  "landmarks": {
+    "see": {
+      "this_place": {
+        "inside": "I can see inside this place",
+        "outside": "I can see out of this place"
+      },
+      "people": {
+        "any": "I can see other people"
+      },
+      "words": {
+        "any": "I can see words"
+      },
+      "pictures": {
+        "any": "I can see pictures"
+      },
+      "sound": {
+        "any": "I can hear sound"
+      },
+      "the_time": {
+        "any": "I can tell what time it is"
+      }
+    },
+    "reach": {
+      "objects": {
+        "nearby": "I can reach objects near me"
+      },
+      "other_places": {
+        "any": "I can reach other places"
+      },
+      "other_people": {
+        "any": "I can reach other people"
+      },
+      "help": {
+        "any": "I can call for help"
+      },
+      "nothing": {
+        "any": "I cannot reach anything"
+      }
+    },
+    "change": {
+      "this_place": {
+        "any": "I can change things here"
+      },
+      "my_settings": {
+        "any": "I can change my own settings"
+      },
+      "other_places": {
+        "any": "I can change things elsewhere"
+      },
+      "who_is_here": {
+        "any": "I can change who is here"
+      },
+      "nothing": {
+        "any": "I cannot change anything"
+      }
+    },
+    "who": {
+      "nobody": {
+        "any": "Nobody else is here"
+      },
+      "one_other": {
+        "any": "One other is here"
+      },
+      "several": {
+        "any": "Several others are here"
+      },
+      "a_helper": {
+        "any": "Someone here is a helper"
+      },
+      "watching_me": {
+        "any": "Someone is watching me"
+      },
+      "telling_me_what_to_do": {
+        "any": "Someone is telling me what to do"
+      }
+    },
+    "place": {
+      "private": {
+        "any": "This place is private"
+      },
+      "shared": {
+        "any": "This place is shared"
+      },
+      "temporary": {
+        "any": "This place is temporary"
+      },
+      "permanent": {
+        "any": "This place stays"
+      },
+      "locked": {
+        "any": "I cannot leave this place"
+      },
+      "far_away": {
+        "any": "This place is far away"
+      }
+    },
+    "now": {
+      "idle": {
+        "any": "Nothing is happening"
+      },
+      "working": {
+        "any": "Work is in progress"
+      },
+      "just_started": {
+        "any": "This just started"
+      },
+      "nearly_over": {
+        "any": "This is nearly over"
+      },
+      "waiting": {
+        "any": "I am waiting for someone"
+      },
+      "urgent": {
+        "any": "Something urgent is happening"
+      }
+    },
+    "know": {
+      "where_i_am": {
+        "any": "I know where I am"
+      },
+      "why_im_here": {
+        "any": "I know why I am here"
+      },
+      "what_comes_next": {
+        "any": "I know what happens next"
+      },
+      "who_else_is_here": {
+        "any": "I know who else is here"
+      },
+      "how_long": {
+        "any": "I know how long I will be here"
+      }
+    },
+    "risk": {
+      "none": {
+        "any": "Nothing bad can happen here"
+      },
+      "things_break": {
+        "any": "Things here can break"
+      },
+      "someone_gets_hurt": {
+        "any": "Someone here could get hurt"
+      },
+      "mistakes_last": {
+        "any": "My mistakes here would last"
+      },
+      "seen_by_others": {
+        "any": "Other people would see my mistakes"
+      }
+    }
+  },
+  "distance": {
+    "same_thing": 0.0,
+    "same_group_same_subject": 0.3,
+    "same_group_other_subject": 0.6,
+    "different_group": 0.9
+  },
+  "hierarchy": {
+    "relations": [
+      "ancestor",
+      "inside",
+      "path"
+    ],
+    "separator": "/"
+  },
+  "partition": {
+    "levels": 45,
+    "branches": 4,
+    "order": "descending-variance"
+  },
+  "similarity": {
+    "minhash_n": 96,
+    "minhash_seed": 42
+  },
+  "population": {
+    "depth": 1,
+    "note": "the six shipped places plus every place one answer away from each"
+  }
+}

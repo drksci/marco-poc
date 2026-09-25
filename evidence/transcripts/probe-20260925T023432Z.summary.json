@@ -1,0 +1,25 @@
+{
+  "transcript": "evidence/transcripts/probe-20260925T023432Z.jsonl",
+  "primer_fingerprint": "df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba",
+  "provider_label": "openai-compatible",
+  "models": [
+    "deepseek-v4.1-flash",
+    "gpt-5.6-luna",
+    "glm-5.3",
+    "gemma-4-31b-it",
+    "mimo-v2.6-pro",
+    "gpt-6-luna"
+  ],
+  "situations": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+  ],
+  "calls": 36,
+  "ok": 36,
+  "failed": 0,
+  "seed_label": "45 plain statements; six independent model families; one place per call"
+}

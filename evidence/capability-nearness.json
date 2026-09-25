@@ -1,0 +1,169 @@
+{
+  "primer_fingerprint": "df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba",
+  "organisations": {
+    "acme.com": [
+      "workflow/approval",
+      "workflow/build",
+      "workflow/rollback",
+      "process/audit"
+    ],
+    "globex.io": [
+      "process/authorize",
+      "process/compile",
+      "process/revert",
+      "process/review"
+    ]
+  },
+  "agents": [
+    {
+      "org": "acme.com",
+      "path": "workflow/approval",
+      "job": "approval",
+      "uri": "agent://acme.com/workflow/approval/01h0000000000000000000000",
+      "address": "⌁ no.ki.ni.ke.ru·to.ru.ki.ru.ta+va.ki.ra.ma.no~ko.so.mo"
+    },
+    {
+      "org": "acme.com",
+      "path": "workflow/build",
+      "job": "build",
+      "uri": "agent://acme.com/workflow/build/01h0000000000000000000000",
+      "address": "⌁ no.mo.ru.mi.nu·ki.ru.mo.va.ke+ru.mo.ra.tu.ru~ki.ro.ta"
+    },
+    {
+      "org": "acme.com",
+      "path": "workflow/rollback",
+      "job": "rollback",
+      "uri": "agent://acme.com/workflow/rollback/01h0000000000000000000000",
+      "address": "⌁ no.ki.ro.ve.no·ki.ru.se.so.ki+ru.mo.ra.tu.ru~mo.su.ki"
+    },
+    {
+      "org": "acme.com",
+      "path": "process/audit",
+      "job": "audit",
+      "uri": "agent://acme.com/process/audit/01h0000000000000000000000",
+      "address": "⌁ va.mo.ni.ki.su·ki.ru.ki.ru.mo+ve.ki.mi.tu.ru~ki.ru.ki"
+    },
+    {
+      "org": "globex.io",
+      "path": "process/authorize",
+      "job": "approval",
+      "uri": "agent://globex.io/process/authorize/01h0000000000000000000000",
+      "address": "⌁ no.ki.ni.ke.ru·to.no.ki.ru.ta+va.ki.ra.ma.no~ko.so.mo"
+    },
+    {
+      "org": "globex.io",
+      "path": "process/compile",
+      "job": "build",
+      "uri": "agent://globex.io/process/compile/01h0000000000000000000000",
+      "address": "⌁ no.mo.ru.mi.nu·mo.ru.mo.va.ke+ru.ma.ra.tu.ru~ki.ro.ta"
+    },
+    {
+      "org": "globex.io",
+      "path": "process/revert",
+      "job": "rollback",
+      "uri": "agent://globex.io/process/revert/01h0000000000000000000000",
+      "address": "⌁ no.ki.ro.ve.no·ki.no.se.so.ki+ru.mo.ra.tu.ru~mo.su.ki"
+    },
+    {
+      "org": "globex.io",
+      "path": "process/review",
+      "job": "audit",
+      "uri": "agent://globex.io/process/review/01h0000000000000000000000",
+      "address": "⌁ va.mo.ni.ki.su·ki.no.ki.va.mo+ve.ki.mi.tu.ru~ki.ru.ki"
+    },
+    {
+      "org": "globex.io",
+      "path": "process/migrate",
+      "job": "migrate",
+      "uri": "agent://globex.io/process/migrate/01h0000000000000000000000",
+      "address": "⌁ se.re.ru.tu.no·ki.su.ki.ni.ki+ru.mo.ra.so.ru~ki.ru.ki"
+    }
+  ],
+  "path_discovery_recall": "1/4",
+  "nearness_discovery_recall": "4/4",
+  "decoy_returned_as_nearest": 0,
+  "equivalent_mean_hamming": 2.75,
+  "non_equivalent_mean_hamming": 24.0,
+  "separation_hamming": 21.25,
+  "null_shuffled_recall_mean": 0.1994,
+  "null_shuffled_recall_sd": 0.223,
+  "chance": 0.2,
+  "detail": [
+    {
+      "query": "workflow/approval",
+      "nearest": "process/authorize",
+      "nearest_job": "approval",
+      "hit": true,
+      "hamming": 2,
+      "runners_up": [
+        {
+          "path": "process/compile",
+          "job": "build",
+          "hamming": 26
+        },
+        {
+          "path": "process/review",
+          "job": "audit",
+          "hamming": 26
+        }
+      ]
+    },
+    {
+      "query": "workflow/build",
+      "nearest": "process/compile",
+      "nearest_job": "build",
+      "hit": true,
+      "hamming": 3,
+      "runners_up": [
+        {
+          "path": "process/migrate",
+          "job": "migrate",
+          "hamming": 18
+        },
+        {
+          "path": "process/revert",
+          "job": "rollback",
+          "hamming": 19
+        }
+      ]
+    },
+    {
+      "query": "workflow/rollback",
+      "nearest": "process/revert",
+      "nearest_job": "rollback",
+      "hit": true,
+      "hamming": 2,
+      "runners_up": [
+        {
+          "path": "process/migrate",
+          "job": "migrate",
+          "hamming": 17
+        },
+        {
+          "path": "process/compile",
+          "job": "build",
+          "hamming": 20
+        }
+      ]
+    },
+    {
+      "query": "process/audit",
+      "nearest": "process/review",
+      "nearest_job": "audit",
+      "hit": true,
+      "hamming": 4,
+      "runners_up": [
+        {
+          "path": "process/compile",
+          "job": "build",
+          "hamming": 23
+        },
+        {
+          "path": "process/migrate",
+          "job": "migrate",
+          "hamming": 23
+        }
+      ]
+    }
+  ]
+}

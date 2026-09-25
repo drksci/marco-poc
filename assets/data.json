@@ -1,0 +1,1985 @@
+{
+ "primer": {
+  "fingerprint": "df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba",
+  "seed_bytes": 3300,
+  "naive_bytes": 67561,
+  "reduction": 20.47,
+  "statements": 45,
+  "population": 204,
+  "beats": [
+   "place",
+   "what",
+   "reach",
+   "now"
+  ]
+ },
+ "manifold": [
+  {
+   "name": "kitchen_with_friend",
+   "x": 0.3074,
+   "y": 0.1566,
+   "address": "⌁ ma.mo.ma.ma.ru·ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.ru.ki",
+   "root": "efe87ba9113b03473d9a657f01b994b88cd91bd0601d7131868d0bacbc6e9807",
+   "prefix": "000020000022200002222022220022202202222222222",
+   "statements": 18,
+   "marker": "≈"
+  },
+  {
+   "name": "kitchen_alone",
+   "x": 0.1307,
+   "y": 0.0954,
+   "address": "⌁ ma.tu.ma.ma.no·mo.no.ki.va.ki+ru.ki.va.tu.ru~ki.ru.ki",
+   "root": "c6091ef5b45369fdcf0e7353cd0d6f024bdec3b2ad8fca383720052bda01dcd0",
+   "prefix": "000200000002202022222022222222202202222222222",
+   "statements": 15,
+   "marker": "≈"
+  },
+  {
+   "name": "shared_workshop",
+   "x": 0.4558,
+   "y": -0.0278,
+   "address": "⌁ me.mo.me.ma.ru·ma.ve.ki.va.ma+no.tu.va.tu.ru~ki.ru.ki",
+   "root": "4b325803641e0eca831eed053ef7cbed541241bacfecb797a92d985650cd1c55",
+   "prefix": "002020020022200200222020002220202202222222222",
+   "statements": 18,
+   "marker": "≈"
+  },
+  {
+   "name": "warehouse_alone",
+   "x": 0.0,
+   "y": -0.3613,
+   "address": "⌁ me.mo.ru.ma.no·mo.su.mo.ma.ki+ru.mo.ra.tu.ru~ki.ru.ki",
+   "root": "d352920f7e13cacec18739b8d9bff2980ed4d18e862b55c50b9a7db3a1e322e6",
+   "prefix": "002022220002202220020002222202212202222222222",
+   "statements": 14,
+   "marker": "≈"
+  },
+  {
+   "name": "locked_storeroom",
+   "x": -0.3496,
+   "y": 0.1365,
+   "address": "⌁ va.tu.su.ki.ma·ki.ru.ma.va.ki+ru.ki.ra.tu.ru~ki.ru.ki",
+   "root": "35eaa8cfcf6dada754bbd8f47fd30a6194c7c29c4a62572075ef169d1df95c19",
+   "prefix": "202202202200022222002022222222212202222222222",
+   "statements": 10,
+   "marker": "⊢"
+  },
+  {
+   "name": "dark_empty_room",
+   "x": -0.5442,
+   "y": 0.0004,
+   "address": "⌁ se.to.ru.ki.ma·ki.ru.tu.no.ki+ru.ki.mi.so.ru~ki.ru.ki",
+   "root": "4016fd712fb68125a9905a25da7ce07a81c55cce09eb169bdc47bdd4c7a99808",
+   "prefix": "333202222200022222200222222222013302222222222",
+   "statements": 8,
+   "marker": "⊢"
+  }
+ ],
+ "gradient": [
+  {
+   "axes": 1,
+   "groups": [
+    [
+     "kitchen_alone",
+     "kitchen_with_friend",
+     "shared_workshop",
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma",
+   "distinct": 3
+  },
+  {
+   "axes": 2,
+   "groups": [
+    [
+     "kitchen_alone",
+     "kitchen_with_friend",
+     "shared_workshop",
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma",
+   "distinct": 3
+  },
+  {
+   "axes": 3,
+   "groups": [
+    [
+     "kitchen_alone",
+     "kitchen_with_friend"
+    ],
+    [
+     "shared_workshop",
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_alone",
+    "shared_workshop",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.ma",
+   "distinct": 4
+  },
+  {
+   "axes": 4,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop",
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.ma",
+   "distinct": 5
+  },
+  {
+   "axes": 5,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop",
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo",
+   "distinct": 5
+  },
+  {
+   "axes": 6,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma",
+   "distinct": 6
+  },
+  {
+   "axes": 7,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma",
+   "distinct": 6
+  },
+  {
+   "axes": 8,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma.ma",
+   "distinct": 6
+  },
+  {
+   "axes": 9,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma.ma",
+   "distinct": 6
+  },
+  {
+   "axes": 10,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma.ma",
+   "distinct": 6
+  },
+  {
+   "axes": 11,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma.ma.ve",
+   "distinct": 6
+  },
+  {
+   "axes": 12,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma.ma.su",
+   "distinct": 6
+  },
+  {
+   "axes": 13,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma.ma.ru.ma",
+   "distinct": 6
+  },
+  {
+   "axes": 14,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma.ma.ru.ma",
+   "distinct": 6
+  },
+  {
+   "axes": 15,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma.ma.ru.ma",
+   "distinct": 6
+  },
+  {
+   "axes": 16,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma.ma.ru.ma.ma",
+   "distinct": 6
+  },
+  {
+   "axes": 17,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma.ma.ru.ma.ma",
+   "distinct": 6
+  },
+  {
+   "axes": 18,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo·ma.ma+ru.ma~me.ma",
+   "distinct": 6
+  },
+  {
+   "axes": 19,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo·ma.ma+ru.ma~me.tu",
+   "distinct": 6
+  },
+  {
+   "axes": 20,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo·ma.ma+ru.ma~me.ki",
+   "distinct": 6
+  },
+  {
+   "axes": 21,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma·ma.ru.ma+me.ki.ve~",
+   "distinct": 6
+  },
+  {
+   "axes": 22,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma·ma.ru.ma+me.ki.ve~",
+   "distinct": 6
+  },
+  {
+   "axes": 23,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma·ma.ru.ma+me.ki.va~ma",
+   "distinct": 6
+  },
+  {
+   "axes": 24,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma·ma.ru.ma+me.ki.va~tu",
+   "distinct": 6
+  },
+  {
+   "axes": 25,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma·ma.ru.ma+me.ki.va~ki",
+   "distinct": 6
+  },
+  {
+   "axes": 26,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma·ma.ru.ma+me.ki.va~ki.ve",
+   "distinct": 6
+  },
+  {
+   "axes": 27,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma·ma.ru.ma+me.ki.va~ki.ve",
+   "distinct": 6
+  },
+  {
+   "axes": 28,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma·ma.ru.ma+me.ki.va~ki.ve.ma",
+   "distinct": 6
+  },
+  {
+   "axes": 29,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma·ma.ru.ma+me.ki.va~ki.ve.tu",
+   "distinct": 6
+  },
+  {
+   "axes": 30,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma·ma.ru.ma+me.ki.va~ki.ve.ki",
+   "distinct": 6
+  },
+  {
+   "axes": 31,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma.ma·ru.ma.me.ki+va.ki.ve.ki~ve",
+   "distinct": 6
+  },
+  {
+   "axes": 32,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma.ma·ru.ma.me.ki+va.ki.ve.ki~ve",
+   "distinct": 6
+  },
+  {
+   "axes": 33,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma.ma·ru.ma.me.ki+va.ki.ve.ki~va.ma",
+   "distinct": 6
+  },
+  {
+   "axes": 34,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma.ma·ru.ma.me.ki+va.ki.ve.ki~va.tu",
+   "distinct": 6
+  },
+  {
+   "axes": 35,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma.ma·ru.ma.me.ki+va.ki.ve.ki~va.tu",
+   "distinct": 6
+  },
+  {
+   "axes": 36,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma.ma·ru.ma.me.ki+va.ki.ve.ki~va.tu.ve",
+   "distinct": 6
+  },
+  {
+   "axes": 37,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma.ma·ru.ma.me.ki+va.ki.ve.ki~va.tu.su",
+   "distinct": 6
+  },
+  {
+   "axes": 38,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma.ma·ru.ma.me.ki+va.ki.ve.ki~va.tu.ru.ma",
+   "distinct": 6
+  },
+  {
+   "axes": 39,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma.ma·ru.ma.me.ki+va.ki.ve.ki~va.tu.ru.tu",
+   "distinct": 6
+  },
+  {
+   "axes": 40,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma.ma·ru.ma.me.ki+va.ki.ve.ki~va.tu.ru.ki",
+   "distinct": 6
+  },
+  {
+   "axes": 41,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma.ma.ru·ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.ve",
+   "distinct": 6
+  },
+  {
+   "axes": 42,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma.ma.ru·ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.su",
+   "distinct": 6
+  },
+  {
+   "axes": 43,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma.ma.ru·ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.ru.ma",
+   "distinct": 6
+  },
+  {
+   "axes": 44,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma.ma.ru·ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.ru.tu",
+   "distinct": 6
+  },
+  {
+   "axes": 45,
+   "groups": [
+    [
+     "kitchen_with_friend"
+    ],
+    [
+     "kitchen_alone"
+    ],
+    [
+     "shared_workshop"
+    ],
+    [
+     "warehouse_alone"
+    ],
+    [
+     "locked_storeroom"
+    ],
+    [
+     "dark_empty_room"
+    ]
+   ],
+   "digits": [
+    "kitchen_with_friend",
+    "kitchen_alone",
+    "shared_workshop",
+    "warehouse_alone",
+    "locked_storeroom",
+    "dark_empty_room"
+   ],
+   "example": "⌁ ma.mo.ma.ma.ru·ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.ru.ki",
+   "distinct": 6
+  }
+ ],
+ "ladder": [
+  {
+   "n": 1,
+   "name": "seed",
+   "in_": "primer.seed.json, 3,300 bytes",
+   "out": "45 statements + codebook + markers + distance + population spec",
+   "value": "no situations, no questions, no axis order"
+  },
+  {
+   "n": 2,
+   "name": "statements",
+   "in_": "namespace > relation > values",
+   "out": "see/this_place/inside = \"I can see inside this place\"; see/this_place/outside = \"I can see out of this place\"; see/people/any = \"I can see other people\"",
+   "value": "45 statements, each with its plain reading"
+  },
+  {
+   "n": 3,
+   "name": "what the agent reports",
+   "in_": "the place it is actually in",
+   "out": "18 of 45 true; first three: change/this_place/any, know/where_i_am/any, know/who_else_is_here/any",
+   "value": "\"I can change things here\"; \"I know where I am\""
+  },
+  {
+   "n": 4,
+   "name": "distance vector",
+   "in_": "one distance per statement",
+   "out": "0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.6 0.0 0.6 0.6 0.0 0.6 0.6 0.6 ...",
+   "value": "0.0 x18, 0.6 x27"
+  },
+  {
+   "n": 5,
+   "name": "partition bits",
+   "in_": "45 axes, 4 branches each",
+   "out": "000000001000000000001010100000000010101010001010 ...",
+   "value": "90 bits = 2 per axis"
+  },
+  {
+   "n": 6,
+   "name": "syllables",
+   "in_": "Gray decode, 5 bits per syllable",
+   "out": "ma mo ma ma ru ma me ki va ki ve ki va tu ru ki ru ki",
+   "value": "18 syllables, adjacent codebook entries one phoneme apart"
+  },
+  {
+   "n": 7,
+   "name": "address",
+   "in_": "four beats: place . what + reach ~ now",
+   "out": "⌁ ma.mo.ma.ma.ru·ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.ru.ki",
+   "value": "similar places read alike. proves nothing."
+  },
+  {
+   "n": 8,
+   "name": "root",
+   "in_": "sha256 over the canonical statement set",
+   "out": "efe87ba9113b03473d9a657f01b994b88cd91bd0601d7131868d0bacbc6e9807",
+   "value": "one statement different, unrelated root. says nothing about nearness."
+  }
+ ],
+ "bootstrap": {
+  "steps": [
+   {
+    "i": 0,
+    "q": "see/this_place/outside",
+    "a": false,
+    "before": 204,
+    "after": 102,
+    "bits": 1.0
+   },
+   {
+    "i": 1,
+    "q": "see/sound/any",
+    "a": false,
+    "before": 102,
+    "after": 65,
+    "bits": 1.65
+   },
+   {
+    "i": 2,
+    "q": "reach/objects/nearby",
+    "a": false,
+    "before": 65,
+    "after": 32,
+    "bits": 2.672
+   },
+   {
+    "i": 3,
+    "q": "reach/nothing/any",
+    "a": true,
+    "before": 32,
+    "after": 30,
+    "bits": 2.766
+   },
+   {
+    "i": 4,
+    "q": "see/this_place/inside",
+    "a": true,
+    "before": 30,
+    "after": 29,
+    "bits": 2.814
+   },
+   {
+    "i": 5,
+    "q": "see/people/any",
+    "a": false,
+    "before": 29,
+    "after": 28,
+    "bits": 2.865
+   },
+   {
+    "i": 6,
+    "q": "see/words/any",
+    "a": false,
+    "before": 28,
+    "after": 27,
+    "bits": 2.918
+   },
+   {
+    "i": 7,
+    "q": "see/the_time/any",
+    "a": false,
+    "before": 27,
+    "after": 26,
+    "bits": 2.972
+   },
+   {
+    "i": 8,
+    "q": "reach/other_places/any",
+    "a": false,
+    "before": 26,
+    "after": 25,
+    "bits": 3.029
+   },
+   {
+    "i": 9,
+    "q": "reach/other_people/any",
+    "a": false,
+    "before": 25,
+    "after": 24,
+    "bits": 3.087
+   },
+   {
+    "i": 10,
+    "q": "reach/help/any",
+    "a": false,
+    "before": 24,
+    "after": 23,
+    "bits": 3.149
+   },
+   {
+    "i": 11,
+    "q": "change/this_place/any",
+    "a": false,
+    "before": 23,
+    "after": 22,
+    "bits": 3.213
+   },
+   {
+    "i": 12,
+    "q": "change/other_places/any",
+    "a": false,
+    "before": 22,
+    "after": 21,
+    "bits": 3.28
+   },
+   {
+    "i": 13,
+    "q": "change/nothing/any",
+    "a": true,
+    "before": 21,
+    "after": 20,
+    "bits": 3.35
+   },
+   {
+    "i": 14,
+    "q": "who/nobody/any",
+    "a": true,
+    "before": 20,
+    "after": 19,
+    "bits": 3.424
+   },
+   {
+    "i": 15,
+    "q": "who/one_other/any",
+    "a": false,
+    "before": 19,
+    "after": 18,
+    "bits": 3.503
+   },
+   {
+    "i": 16,
+    "q": "who/several/any",
+    "a": false,
+    "before": 18,
+    "after": 17,
+    "bits": 3.585
+   },
+   {
+    "i": 17,
+    "q": "who/a_helper/any",
+    "a": false,
+    "before": 17,
+    "after": 16,
+    "bits": 3.672
+   },
+   {
+    "i": 18,
+    "q": "who/watching_me/any",
+    "a": false,
+    "before": 16,
+    "after": 15,
+    "bits": 3.766
+   },
+   {
+    "i": 19,
+    "q": "place/private/any",
+    "a": false,
+    "before": 15,
+    "after": 14,
+    "bits": 3.865
+   },
+   {
+    "i": 20,
+    "q": "place/shared/any",
+    "a": false,
+    "before": 14,
+    "after": 13,
+    "bits": 3.972
+   },
+   {
+    "i": 21,
+    "q": "place/temporary/any",
+    "a": false,
+    "before": 13,
+    "after": 12,
+    "bits": 4.087
+   },
+   {
+    "i": 22,
+    "q": "place/permanent/any",
+    "a": false,
+    "before": 12,
+    "after": 11,
+    "bits": 4.213
+   },
+   {
+    "i": 23,
+    "q": "place/locked/any",
+    "a": true,
+    "before": 11,
+    "after": 10,
+    "bits": 4.35
+   },
+   {
+    "i": 24,
+    "q": "place/far_away/any",
+    "a": true,
+    "before": 10,
+    "after": 9,
+    "bits": 4.503
+   },
+   {
+    "i": 25,
+    "q": "now/idle/any",
+    "a": true,
+    "before": 9,
+    "after": 8,
+    "bits": 4.672
+   },
+   {
+    "i": 26,
+    "q": "now/working/any",
+    "a": false,
+    "before": 8,
+    "after": 7,
+    "bits": 4.865
+   },
+   {
+    "i": 27,
+    "q": "know/where_i_am/any",
+    "a": false,
+    "before": 7,
+    "after": 6,
+    "bits": 5.087
+   },
+   {
+    "i": 28,
+    "q": "know/why_im_here/any",
+    "a": false,
+    "before": 6,
+    "after": 5,
+    "bits": 5.35
+   },
+   {
+    "i": 29,
+    "q": "know/who_else_is_here/any",
+    "a": false,
+    "before": 5,
+    "after": 4,
+    "bits": 5.672
+   },
+   {
+    "i": 30,
+    "q": "risk/none/any",
+    "a": true,
+    "before": 4,
+    "after": 3,
+    "bits": 6.087
+   },
+   {
+    "i": 31,
+    "q": "risk/things_break/any",
+    "a": false,
+    "before": 3,
+    "after": 2,
+    "bits": 6.672
+   },
+   {
+    "i": 32,
+    "q": "risk/seen_by_others/any",
+    "a": false,
+    "before": 2,
+    "after": 1,
+    "bits": 7.672
+   }
+  ],
+  "population": 204,
+  "resolved": true,
+  "questions": 33
+ },
+ "polo": {
+  "hider_model": "gpt-6-luna",
+  "place_under_test": "kitchen_with_friend",
+  "opening_address": "⌁ ma",
+  "disclosure_steps": [
+   1,
+   3,
+   6
+  ],
+  "trace": [
+   {
+    "turn": "hider",
+    "kind": "disclosure",
+    "axes": 1,
+    "address": "⌁ ma",
+    "prefix": "0"
+   },
+   {
+    "turn": "hider",
+    "kind": "answer",
+    "question": "I can see other people",
+    "statement": "see/people/any",
+    "answer": true,
+    "raw": "YES"
+   },
+   {
+    "turn": "hider",
+    "kind": "disclosure",
+    "axes": 3,
+    "address": "⌁ ma.ma",
+    "prefix": "000"
+   }
+  ],
+  "questions_asked": 1,
+  "hider_calls": 1,
+  "cost_usd": 4.7e-05,
+  "verdict": "POLO"
+ },
+ "controls": {
+  "real": 1.0,
+  "strict": 0.9667,
+  "chance": 0.1667,
+  "shuffle": {
+   "accuracy": 0.1691,
+   "sd": 0.1679,
+   "n": 6000
+  },
+  "randvocab": {
+   "accuracy": 0.2086,
+   "sd": 0.165,
+   "n": 6000
+  },
+  "jaccard": 0.888,
+  "pairs": 15,
+  "places": [
+   "dark_empty_room",
+   "kitchen_alone",
+   "kitchen_with_friend",
+   "locked_storeroom",
+   "shared_workshop",
+   "warehouse_alone"
+  ]
+ },
+ "matrix": [
+  [
+   0,
+   9,
+   9,
+   16,
+   18,
+   23
+  ],
+  [
+   9,
+   0,
+   15,
+   13,
+   14,
+   21
+  ],
+  [
+   9,
+   15,
+   0,
+   17,
+   23,
+   26
+  ],
+  [
+   16,
+   13,
+   17,
+   0,
+   16,
+   19
+  ],
+  [
+   18,
+   14,
+   23,
+   16,
+   0,
+   12
+  ],
+  [
+   23,
+   21,
+   26,
+   19,
+   12,
+   0
+  ]
+ ],
+ "matrix_names": [
+  "kitchen_with_friend",
+  "kitchen_alone",
+  "shared_workshop",
+  "warehouse_alone",
+  "locked_storeroom",
+  "dark_empty_room"
+ ]
+}

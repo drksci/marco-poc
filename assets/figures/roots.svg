@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+<rect width="880" height="420" fill="#ffffff"/>
+<text x="28" y="38" font-size="19" fill="#16161a" font-family="Georgia, serif">The same root, from separate families</text>
+<text x="28" y="60" font-size="11.5" fill="#74747e">6 independent model families. Bar: how many produced the byte-identical root for that place. Out of 6.</text>
+<text x="246" y="101" font-size="11.5" fill="#16161a" text-anchor="end">locked storeroom</text>
+<rect x="260" y="84" width="380" height="24" fill="#f0f0f2"/>
+<rect x="260" y="84" width="316.7" height="24" fill="#3f6b52" opacity="0.85"/>
+<text x="268" y="101" font-size="12" fill="#ffffff" font-weight="bold">5 of 6</text>
+<text x="652" y="101" font-size="11" fill="#74747e">2 distinct roots</text>
+<text x="246" y="141" font-size="11.5" fill="#16161a" text-anchor="end">dark empty room</text>
+<rect x="260" y="124" width="380" height="24" fill="#f0f0f2"/>
+<rect x="260" y="124" width="316.7" height="24" fill="#3f6b52" opacity="0.85"/>
+<text x="268" y="141" font-size="12" fill="#ffffff" font-weight="bold">5 of 6</text>
+<text x="652" y="141" font-size="11" fill="#74747e">2 distinct roots</text>
+<text x="246" y="181" font-size="11.5" fill="#16161a" text-anchor="end">kitchen alone</text>
+<rect x="260" y="164" width="380" height="24" fill="#f0f0f2"/>
+<rect x="260" y="164" width="190.0" height="24" fill="#3f6b52" opacity="0.85"/>
+<text x="268" y="181" font-size="12" fill="#ffffff" font-weight="bold">3 of 6</text>
+<text x="652" y="181" font-size="11" fill="#74747e">4 distinct roots</text>
+<text x="246" y="221" font-size="11.5" fill="#16161a" text-anchor="end">shared workshop</text>
+<rect x="260" y="204" width="380" height="24" fill="#f0f0f2"/>
+<rect x="260" y="204" width="190.0" height="24" fill="#3f6b52" opacity="0.85"/>
+<text x="268" y="221" font-size="12" fill="#ffffff" font-weight="bold">3 of 6</text>
+<text x="652" y="221" font-size="11" fill="#74747e">3 distinct roots</text>
+<text x="246" y="261" font-size="11.5" fill="#16161a" text-anchor="end">kitchen with friend</text>
+<rect x="260" y="244" width="380" height="24" fill="#f0f0f2"/>
+<rect x="260" y="244" width="126.7" height="24" fill="#3f6b52" opacity="0.85"/>
+<text x="268" y="261" font-size="12" fill="#ffffff" font-weight="bold">2 of 6</text>
+<text x="652" y="261" font-size="11" fill="#74747e">5 distinct roots</text>
+<text x="246" y="301" font-size="11.5" fill="#16161a" text-anchor="end">warehouse alone</text>
+<rect x="260" y="284" width="380" height="24" fill="#f0f0f2"/>
+<rect x="260" y="284" width="126.7" height="24" fill="#3f6b52" opacity="0.85"/>
+<text x="268" y="301" font-size="12" fill="#ffffff" font-weight="bold">2 of 6</text>
+<text x="652" y="301" font-size="11" fill="#74747e">5 distinct roots</text>
+<line x1="260" y1="332" x2="640" y2="332" stroke="#e2e2e6"/>
+<text x="260" y="352" font-size="11.5" fill="#74747e">20/36 model-place pairs produced a byte-identical root (55.6%).</text>
+<text x="260" y="370" font-size="11.5" fill="#74747e">A root is not a similarity: it is the same 32 bytes, or it is unrelated. The address is allowed to differ; this is not.</text>
+</svg>

@@ -1,0 +1,82 @@
+{
+  "tool": "avoid-ai-writing-detector",
+  "tool_version": "3.36.0",
+  "source": "https://github.com/conorbronsdon/avoid-ai-writing",
+  "note": "Detection only. Prose checked as rendered text with markup, nav and SVG stripped.",
+  "pages": [
+    {
+      "file": "index.html",
+      "words": 2659,
+      "score": 1,
+      "label": "Minimal AI signals",
+      "issue_count": 1,
+      "by_type": {
+        "low-ttr": 1
+      },
+      "issues": [
+        {
+          "type": "low-ttr",
+          "text": "Vocabulary diversity 22.4% (689 unique / 3082 tokens)",
+          "severity": "low"
+        }
+      ]
+    },
+    {
+      "file": "proof.html",
+      "words": 1467,
+      "score": 1,
+      "label": "Minimal AI signals",
+      "issue_count": 1,
+      "by_type": {
+        "low-ttr": 1
+      },
+      "issues": [
+        {
+          "type": "low-ttr",
+          "text": "Vocabulary diversity 37.0% (552 unique / 1490 tokens)",
+          "severity": "low"
+        }
+      ]
+    },
+    {
+      "file": "response.html",
+      "words": 2150,
+      "score": 1,
+      "label": "Minimal AI signals",
+      "issue_count": 1,
+      "by_type": {
+        "low-ttr": 1
+      },
+      "issues": [
+        {
+          "type": "low-ttr",
+          "text": "Vocabulary diversity 28.8% (718 unique / 2491 tokens)",
+          "severity": "low"
+        }
+      ]
+    },
+    {
+      "file": "whales.html",
+      "words": 2816,
+      "score": 1,
+      "label": "Minimal AI signals",
+      "issue_count": 2,
+      "by_type": {
+        "tier1-clarity": 1,
+        "low-ttr": 1
+      },
+      "issues": [
+        {
+          "type": "tier1-clarity",
+          "text": "features",
+          "severity": "medium"
+        },
+        {
+          "type": "low-ttr",
+          "text": "Vocabulary diversity 37.8% (1077 unique / 2849 tokens)",
+          "severity": "low"
+        }
+      ]
+    }
+  ]
+}

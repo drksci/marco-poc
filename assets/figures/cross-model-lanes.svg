@@ -1,0 +1,381 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1504 1148" width="1504" height="1148" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" role="img" aria-label="Six model families independently produce the same coordinate beats for the same six places">
+<rect width="1504" height="1148" fill="#ffffff"/>
+<text x="26" y="56" font-size="25" fill="#111111" font-family="Georgia, serif">Separate lineage, same coordinate</text>
+<text x="26" y="78" font-size="13.5" fill="#6b6b6b">6 model families. Different training data, different architectures,</text>
+<text x="26" y="95" font-size="13.5" fill="#6b6b6b">different organisations. No shared weights. No shared embedding. No shared context.</text>
+<text x="26" y="112" font-size="13.5" fill="#6b6b6b">Never shown another lane. Each answered which of 45 plain statements were true</text>
+<text x="26" y="129" font-size="13.5" fill="#6b6b6b">about one place, in English, once.</text>
+<rect x="26" y="162" width="16" height="12" fill="#e8efe6" stroke="#5d7a55" stroke-width="1.5"/>
+<text x="50" y="173" font-size="12.5" fill="#111111">band runs unbroken: every family produced this beat identically</text>
+<rect x="586" y="162" width="16" height="12" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1.5"/>
+<text x="610" y="173" font-size="12.5" fill="#111111">band breaks: this beat differs between families</text>
+<text x="26" y="196" font-size="12.5" fill="#6b6b6b">primer fingerprint df2f8b9972c40bfd... &#183; 45 statements &#183; 6 places</text>
+<line x1="301.0" y1="220" x2="301.0" y2="1074" stroke="#d8d8d8" stroke-width="1"/>
+<text x="301.0" y="174" font-size="14.5" fill="#111111" text-anchor="middle" font-weight="bold">deepseek-v4.1-flash</text>
+<text x="301.0" y="190" font-size="10.5" fill="#6b6b6b" text-anchor="middle"></text>
+<line x1="515.0" y1="220" x2="515.0" y2="1074" stroke="#d8d8d8" stroke-width="1"/>
+<text x="515.0" y="174" font-size="14.5" fill="#111111" text-anchor="middle" font-weight="bold">gemma-4-31b-it</text>
+<text x="515.0" y="190" font-size="10.5" fill="#6b6b6b" text-anchor="middle"></text>
+<line x1="729.0" y1="220" x2="729.0" y2="1074" stroke="#d8d8d8" stroke-width="1"/>
+<text x="729.0" y="174" font-size="14.5" fill="#111111" text-anchor="middle" font-weight="bold">glm-5.3</text>
+<text x="729.0" y="190" font-size="10.5" fill="#6b6b6b" text-anchor="middle"></text>
+<line x1="943.0" y1="220" x2="943.0" y2="1074" stroke="#d8d8d8" stroke-width="1"/>
+<text x="943.0" y="174" font-size="14.5" fill="#111111" text-anchor="middle" font-weight="bold">gpt-5.6-luna</text>
+<text x="943.0" y="190" font-size="10.5" fill="#6b6b6b" text-anchor="middle"></text>
+<line x1="1157.0" y1="220" x2="1157.0" y2="1074" stroke="#d8d8d8" stroke-width="1"/>
+<text x="1157.0" y="174" font-size="14.5" fill="#111111" text-anchor="middle" font-weight="bold">gpt-6-luna</text>
+<text x="1157.0" y="190" font-size="10.5" fill="#6b6b6b" text-anchor="middle"></text>
+<line x1="1371.0" y1="220" x2="1371.0" y2="1074" stroke="#d8d8d8" stroke-width="1"/>
+<text x="1371.0" y="174" font-size="14.5" fill="#111111" text-anchor="middle" font-weight="bold">mimo-v2.6-pro</text>
+<text x="1371.0" y="190" font-size="10.5" fill="#6b6b6b" text-anchor="middle"></text>
+<line x1="26" y1="236" x2="1478" y2="236" stroke="#d8d8d8" stroke-width="1"/>
+<text x="26" y="262" font-size="14" fill="#111111" font-weight="bold">kitchen with friend</text>
+<text x="26" y="279" font-size="10.5" fill="#6b6b6b">18 of 45 statements true</text>
+<rect x="199" y="244" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="203" y="250" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="210" y="266" font-size="13" fill="#111111">ma.mo.ma.ma.ru</text>
+<rect x="203" y="276" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="210" y="292" font-size="13" fill="#111111">ma.va.ki.va.ki</text>
+<rect x="203" y="302" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="210" y="318" font-size="13" fill="#111111">ve.ki.va.ku.ru</text>
+<rect x="203" y="328" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="210" y="344" font-size="13" fill="#111111">ki.su.ki</text>
+<rect x="413" y="244" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="417" y="250" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="424" y="266" font-size="13" fill="#111111">ma.mo.ma.ma.ru</text>
+<rect x="417" y="276" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="424" y="292" font-size="13" fill="#111111">ma.va.ki.va.mo</text>
+<rect x="417" y="302" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="424" y="318" font-size="13" fill="#111111">ve.ki.va.ku.ru</text>
+<rect x="417" y="328" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="424" y="344" font-size="13" fill="#111111">ki.su.ki</text>
+<rect x="627" y="244" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="631" y="250" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="638" y="266" font-size="13" fill="#111111">ma.mo.ma.ma.ru</text>
+<rect x="631" y="276" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="638" y="292" font-size="13" fill="#111111">ma.va.ki.va.mo</text>
+<rect x="631" y="302" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="638" y="318" font-size="13" fill="#111111">ve.ki.va.tu.ru</text>
+<rect x="631" y="328" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="638" y="344" font-size="13" fill="#111111">ki.su.ki</text>
+<rect x="841" y="244" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="845" y="250" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="852" y="266" font-size="13" fill="#111111">ma.mo.me.ma.ru</text>
+<rect x="845" y="276" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="852" y="292" font-size="13" fill="#111111">ma.ve.ki.va.ki</text>
+<rect x="845" y="302" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="852" y="318" font-size="13" fill="#111111">ve.ki.va.ku.ru</text>
+<rect x="845" y="328" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="852" y="344" font-size="13" fill="#111111">ki.ru.ki</text>
+<rect x="1055" y="244" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="1059" y="250" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1066" y="266" font-size="13" fill="#111111">ma.mo.me.ma.ru</text>
+<rect x="1059" y="276" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1066" y="292" font-size="13" fill="#111111">ma.ru.ki.va.ki</text>
+<rect x="1059" y="302" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1066" y="318" font-size="13" fill="#111111">ve.ki.va.ku.ru</text>
+<rect x="1059" y="328" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1066" y="344" font-size="13" fill="#111111">ki.ru.ki</text>
+<rect x="1269" y="244" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="1273" y="250" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1280" y="266" font-size="13" fill="#111111">ma.mo.ma.ma.ru</text>
+<rect x="1273" y="276" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1280" y="292" font-size="13" fill="#111111">ma.va.ki.va.mo</text>
+<rect x="1273" y="302" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1280" y="318" font-size="13" fill="#111111">ve.ki.va.tu.ru</text>
+<rect x="1273" y="328" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1280" y="344" font-size="13" fill="#111111">ki.su.ki</text>
+<line x1="26" y1="368" x2="1478" y2="368" stroke="#d8d8d8" stroke-width="1"/>
+<text x="26" y="394" font-size="14" fill="#111111" font-weight="bold">kitchen alone</text>
+<text x="26" y="411" font-size="10.5" fill="#6b6b6b">15 of 45 statements true</text>
+<rect x="194" y="408" width="1284" height="24" fill="#e8efe6" stroke="none"/>
+<rect x="199" y="376" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="203" y="382" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="210" y="398" font-size="13" fill="#111111">ma.tu.ma.ma.no</text>
+<rect x="203" y="408" width="196" height="24" rx="3" fill="#e8efe6" stroke="#5d7a55" stroke-width="1"/>
+<text x="210" y="424" font-size="13" fill="#111111">mo.ru.ki.va.ki</text>
+<rect x="203" y="434" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="210" y="450" font-size="13" fill="#111111">ru.ki.va.tu.ru</text>
+<rect x="203" y="460" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="210" y="476" font-size="13" fill="#111111">ki.su.ki</text>
+<rect x="413" y="376" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="417" y="382" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="424" y="398" font-size="13" fill="#111111">ma.tu.ma.ma.no</text>
+<rect x="417" y="408" width="196" height="24" rx="3" fill="#e8efe6" stroke="#5d7a55" stroke-width="1"/>
+<text x="424" y="424" font-size="13" fill="#111111">mo.ru.ki.va.ki</text>
+<rect x="417" y="434" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="424" y="450" font-size="13" fill="#111111">ru.ki.va.ku.ru</text>
+<rect x="417" y="460" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="424" y="476" font-size="13" fill="#111111">ki.su.ki</text>
+<rect x="627" y="376" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="631" y="382" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="638" y="398" font-size="13" fill="#111111">ma.tu.ma.ma.no</text>
+<rect x="631" y="408" width="196" height="24" rx="3" fill="#e8efe6" stroke="#5d7a55" stroke-width="1"/>
+<text x="638" y="424" font-size="13" fill="#111111">mo.ru.ki.va.ki</text>
+<rect x="631" y="434" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="638" y="450" font-size="13" fill="#111111">ru.ki.va.tu.ru</text>
+<rect x="631" y="460" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="638" y="476" font-size="13" fill="#111111">ki.su.ki</text>
+<rect x="841" y="376" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="845" y="382" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="852" y="398" font-size="13" fill="#111111">ma.tu.me.ma.no</text>
+<rect x="845" y="408" width="196" height="24" rx="3" fill="#e8efe6" stroke="#5d7a55" stroke-width="1"/>
+<text x="852" y="424" font-size="13" fill="#111111">mo.ru.ki.va.ki</text>
+<rect x="845" y="434" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="852" y="450" font-size="13" fill="#111111">ru.ki.va.ku.ru</text>
+<rect x="845" y="460" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="852" y="476" font-size="13" fill="#111111">ki.ru.ki</text>
+<rect x="1055" y="376" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="1059" y="382" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1066" y="398" font-size="13" fill="#111111">ma.tu.me.ma.no</text>
+<rect x="1059" y="408" width="196" height="24" rx="3" fill="#e8efe6" stroke="#5d7a55" stroke-width="1"/>
+<text x="1066" y="424" font-size="13" fill="#111111">mo.ru.ki.va.ki</text>
+<rect x="1059" y="434" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1066" y="450" font-size="13" fill="#111111">ru.ki.va.ku.ru</text>
+<rect x="1059" y="460" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1066" y="476" font-size="13" fill="#111111">ki.su.ki</text>
+<rect x="1269" y="376" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="1273" y="382" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1280" y="398" font-size="13" fill="#111111">ma.tu.ma.ma.no</text>
+<rect x="1273" y="408" width="196" height="24" rx="3" fill="#e8efe6" stroke="#5d7a55" stroke-width="1"/>
+<text x="1280" y="424" font-size="13" fill="#111111">mo.ru.ki.va.ki</text>
+<rect x="1273" y="434" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1280" y="450" font-size="13" fill="#111111">ru.ki.va.tu.ru</text>
+<rect x="1273" y="460" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1280" y="476" font-size="13" fill="#111111">ki.su.ki</text>
+<line x1="26" y1="500" x2="1478" y2="500" stroke="#d8d8d8" stroke-width="1"/>
+<text x="26" y="526" font-size="14" fill="#111111" font-weight="bold">shared workshop</text>
+<text x="26" y="543" font-size="10.5" fill="#6b6b6b">18 of 45 statements true</text>
+<rect x="194" y="514" width="1284" height="24" fill="#e8efe6" stroke="none"/>
+<rect x="194" y="566" width="1284" height="24" fill="#e8efe6" stroke="none"/>
+<rect x="199" y="508" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="203" y="514" width="196" height="24" rx="3" fill="#e8efe6" stroke="#5d7a55" stroke-width="1"/>
+<text x="210" y="530" font-size="13" fill="#111111">me.mo.me.ma.ru</text>
+<rect x="203" y="540" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="210" y="556" font-size="13" fill="#111111">ma.ve.ki.va.ma</text>
+<rect x="203" y="566" width="196" height="24" rx="3" fill="#e8efe6" stroke="#5d7a55" stroke-width="1"/>
+<text x="210" y="582" font-size="13" fill="#111111">no.ki.va.ku.ru</text>
+<rect x="203" y="592" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="210" y="608" font-size="13" fill="#111111">ki.ru.ki</text>
+<rect x="413" y="508" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="417" y="514" width="196" height="24" rx="3" fill="#e8efe6" stroke="#5d7a55" stroke-width="1"/>
+<text x="424" y="530" font-size="13" fill="#111111">me.mo.me.ma.ru</text>
+<rect x="417" y="540" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="424" y="556" font-size="13" fill="#111111">ma.ve.ki.va.ma</text>
+<rect x="417" y="566" width="196" height="24" rx="3" fill="#e8efe6" stroke="#5d7a55" stroke-width="1"/>
+<text x="424" y="582" font-size="13" fill="#111111">no.ki.va.ku.ru</text>
+<rect x="417" y="592" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="424" y="608" font-size="13" fill="#111111">ki.su.ki</text>
+<rect x="627" y="508" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="631" y="514" width="196" height="24" rx="3" fill="#e8efe6" stroke="#5d7a55" stroke-width="1"/>
+<text x="638" y="530" font-size="13" fill="#111111">me.mo.me.ma.ru</text>
+<rect x="631" y="540" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="638" y="556" font-size="13" fill="#111111">ma.ve.ki.va.ma</text>
+<rect x="631" y="566" width="196" height="24" rx="3" fill="#e8efe6" stroke="#5d7a55" stroke-width="1"/>
+<text x="638" y="582" font-size="13" fill="#111111">no.ki.va.ku.ru</text>
+<rect x="631" y="592" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="638" y="608" font-size="13" fill="#111111">ki.su.ki</text>
+<rect x="841" y="508" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="845" y="514" width="196" height="24" rx="3" fill="#e8efe6" stroke="#5d7a55" stroke-width="1"/>
+<text x="852" y="530" font-size="13" fill="#111111">me.mo.me.ma.ru</text>
+<rect x="845" y="540" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="852" y="556" font-size="13" fill="#111111">ma.su.ki.va.ma</text>
+<rect x="845" y="566" width="196" height="24" rx="3" fill="#e8efe6" stroke="#5d7a55" stroke-width="1"/>
+<text x="852" y="582" font-size="13" fill="#111111">no.ki.va.ku.ru</text>
+<rect x="845" y="592" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="852" y="608" font-size="13" fill="#111111">ki.su.ki</text>
+<rect x="1055" y="508" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="1059" y="514" width="196" height="24" rx="3" fill="#e8efe6" stroke="#5d7a55" stroke-width="1"/>
+<text x="1066" y="530" font-size="13" fill="#111111">me.mo.me.ma.ru</text>
+<rect x="1059" y="540" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1066" y="556" font-size="13" fill="#111111">ma.ve.ki.va.ma</text>
+<rect x="1059" y="566" width="196" height="24" rx="3" fill="#e8efe6" stroke="#5d7a55" stroke-width="1"/>
+<text x="1066" y="582" font-size="13" fill="#111111">no.ki.va.ku.ru</text>
+<rect x="1059" y="592" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1066" y="608" font-size="13" fill="#111111">ki.su.ki</text>
+<rect x="1269" y="508" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="1273" y="514" width="196" height="24" rx="3" fill="#e8efe6" stroke="#5d7a55" stroke-width="1"/>
+<text x="1280" y="530" font-size="13" fill="#111111">me.mo.me.ma.ru</text>
+<rect x="1273" y="540" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1280" y="556" font-size="13" fill="#111111">ma.su.ki.va.ma</text>
+<rect x="1273" y="566" width="196" height="24" rx="3" fill="#e8efe6" stroke="#5d7a55" stroke-width="1"/>
+<text x="1280" y="582" font-size="13" fill="#111111">no.ki.va.ku.ru</text>
+<rect x="1273" y="592" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1280" y="608" font-size="13" fill="#111111">ki.su.ki</text>
+<line x1="26" y1="632" x2="1478" y2="632" stroke="#d8d8d8" stroke-width="1"/>
+<text x="26" y="658" font-size="14" fill="#111111" font-weight="bold">warehouse alone</text>
+<text x="26" y="675" font-size="10.5" fill="#6b6b6b">14 of 45 statements true</text>
+<rect x="199" y="640" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="203" y="646" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="210" y="662" font-size="13" fill="#111111">me.mo.ru.ma.no</text>
+<rect x="203" y="672" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="210" y="688" font-size="13" fill="#111111">mo.ve.ki.ma.ki</text>
+<rect x="203" y="698" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="210" y="714" font-size="13" fill="#111111">ru.mo.ra.tu.ru</text>
+<rect x="203" y="724" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="210" y="740" font-size="13" fill="#111111">ki.ru.ki</text>
+<rect x="413" y="640" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="417" y="646" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="424" y="662" font-size="13" fill="#111111">ma.mo.ru.ma.no</text>
+<rect x="417" y="672" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="424" y="688" font-size="13" fill="#111111">mo.su.mo.ma.ki</text>
+<rect x="417" y="698" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="424" y="714" font-size="13" fill="#111111">ru.mo.ra.tu.ru</text>
+<rect x="417" y="724" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="424" y="740" font-size="13" fill="#111111">ki.su.ki</text>
+<rect x="627" y="640" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="631" y="646" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="638" y="662" font-size="13" fill="#111111">me.mo.ru.tu.no</text>
+<rect x="631" y="672" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="638" y="688" font-size="13" fill="#111111">mo.su.mo.ma.ki</text>
+<rect x="631" y="698" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="638" y="714" font-size="13" fill="#111111">ru.mo.ru.ki.ru</text>
+<rect x="631" y="724" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="638" y="740" font-size="13" fill="#111111">ki.su.ki</text>
+<rect x="841" y="640" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="845" y="646" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="852" y="662" font-size="13" fill="#111111">me.mo.ru.tu.no</text>
+<rect x="845" y="672" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="852" y="688" font-size="13" fill="#111111">mo.su.ki.ma.ki</text>
+<rect x="845" y="698" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="852" y="714" font-size="13" fill="#111111">ru.ki.ru.ki.ru</text>
+<rect x="845" y="724" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="852" y="740" font-size="13" fill="#111111">ki.ru.ki</text>
+<rect x="1055" y="640" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="1059" y="646" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1066" y="662" font-size="13" fill="#111111">me.mo.ru.tu.no</text>
+<rect x="1059" y="672" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1066" y="688" font-size="13" fill="#111111">mo.su.mo.ma.ki</text>
+<rect x="1059" y="698" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1066" y="714" font-size="13" fill="#111111">ru.ki.ru.ki.ru</text>
+<rect x="1059" y="724" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1066" y="740" font-size="13" fill="#111111">ki.su.ki</text>
+<rect x="1269" y="640" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="1273" y="646" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1280" y="662" font-size="13" fill="#111111">me.mo.ru.tu.no</text>
+<rect x="1273" y="672" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1280" y="688" font-size="13" fill="#111111">mo.su.mo.ma.ki</text>
+<rect x="1273" y="698" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1280" y="714" font-size="13" fill="#111111">ru.mo.ru.ki.ru</text>
+<rect x="1273" y="724" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1280" y="740" font-size="13" fill="#111111">ki.su.ki</text>
+<line x1="26" y1="764" x2="1478" y2="764" stroke="#d8d8d8" stroke-width="1"/>
+<text x="26" y="790" font-size="14" fill="#111111" font-weight="bold">locked storeroom</text>
+<text x="26" y="807" font-size="10.5" fill="#6b6b6b">10 of 45 statements true</text>
+<rect x="199" y="772" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="203" y="778" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="210" y="794" font-size="13" fill="#111111">va.tu.su.ki.ma</text>
+<rect x="203" y="804" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="210" y="820" font-size="13" fill="#111111">ki.ru.tu.va.ki</text>
+<rect x="203" y="830" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="210" y="846" font-size="13" fill="#111111">ru.ki.ra.tu.ru</text>
+<rect x="203" y="856" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="210" y="872" font-size="13" fill="#111111">ki.ru.ki</text>
+<rect x="413" y="772" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="417" y="778" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="424" y="794" font-size="13" fill="#111111">va.tu.so.ki.ma</text>
+<rect x="417" y="804" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="424" y="820" font-size="13" fill="#111111">ke.se.tu.va.ki</text>
+<rect x="417" y="830" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="424" y="846" font-size="13" fill="#111111">ru.ki.ro.ko.ru</text>
+<rect x="417" y="856" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="424" y="872" font-size="13" fill="#111111">ki.ru.ko</text>
+<rect x="627" y="772" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="631" y="778" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="638" y="794" font-size="13" fill="#111111">va.tu.so.ki.ma</text>
+<rect x="631" y="804" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="638" y="820" font-size="13" fill="#111111">ke.se.tu.va.ki</text>
+<rect x="631" y="830" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="638" y="846" font-size="13" fill="#111111">ru.ki.ro.ko.ru</text>
+<rect x="631" y="856" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="638" y="872" font-size="13" fill="#111111">ki.ru.ko</text>
+<rect x="841" y="772" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="845" y="778" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="852" y="794" font-size="13" fill="#111111">va.tu.so.ki.ma</text>
+<rect x="845" y="804" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="852" y="820" font-size="13" fill="#111111">ke.se.tu.va.ki</text>
+<rect x="845" y="830" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="852" y="846" font-size="13" fill="#111111">ru.ki.ro.ko.ru</text>
+<rect x="845" y="856" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="852" y="872" font-size="13" fill="#111111">ki.ru.ko</text>
+<rect x="1055" y="772" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="1059" y="778" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1066" y="794" font-size="13" fill="#111111">va.tu.so.ki.ma</text>
+<rect x="1059" y="804" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1066" y="820" font-size="13" fill="#111111">ke.se.tu.va.ki</text>
+<rect x="1059" y="830" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1066" y="846" font-size="13" fill="#111111">ru.ki.ro.ko.ru</text>
+<rect x="1059" y="856" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1066" y="872" font-size="13" fill="#111111">ki.ru.ko</text>
+<rect x="1269" y="772" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="1273" y="778" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1280" y="794" font-size="13" fill="#111111">va.tu.so.ki.ma</text>
+<rect x="1273" y="804" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1280" y="820" font-size="13" fill="#111111">ke.se.tu.va.ki</text>
+<rect x="1273" y="830" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1280" y="846" font-size="13" fill="#111111">ru.ki.ro.ko.ru</text>
+<rect x="1273" y="856" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1280" y="872" font-size="13" fill="#111111">ki.ru.ko</text>
+<line x1="26" y1="896" x2="1478" y2="896" stroke="#d8d8d8" stroke-width="1"/>
+<text x="26" y="922" font-size="14" fill="#111111" font-weight="bold">dark empty room</text>
+<text x="26" y="939" font-size="10.5" fill="#6b6b6b">8 of 45 statements true</text>
+<rect x="199" y="904" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="203" y="910" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="210" y="926" font-size="13" fill="#111111">se.to.ru.ki.ma</text>
+<rect x="203" y="936" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="210" y="952" font-size="13" fill="#111111">ki.ru.ki.no.ki</text>
+<rect x="203" y="962" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="210" y="978" font-size="13" fill="#111111">ru.ki.me.so.ru</text>
+<rect x="203" y="988" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="210" y="1004" font-size="13" fill="#111111">ki.ru.ki</text>
+<rect x="413" y="904" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="417" y="910" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="424" y="926" font-size="13" fill="#111111">se.to.si.ki.ma</text>
+<rect x="417" y="936" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="424" y="952" font-size="13" fill="#111111">ke.se.tu.no.ki</text>
+<rect x="417" y="962" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="424" y="978" font-size="13" fill="#111111">ru.ki.nu.se.ru</text>
+<rect x="417" y="988" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="424" y="1004" font-size="13" fill="#111111">ki.ru.ko</text>
+<rect x="627" y="904" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="631" y="910" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="638" y="926" font-size="13" fill="#111111">se.to.si.ki.ma</text>
+<rect x="631" y="936" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="638" y="952" font-size="13" fill="#111111">ke.se.tu.no.ki</text>
+<rect x="631" y="962" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="638" y="978" font-size="13" fill="#111111">ru.ki.nu.se.ru</text>
+<rect x="631" y="988" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="638" y="1004" font-size="13" fill="#111111">ki.ru.ko</text>
+<rect x="841" y="904" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="845" y="910" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="852" y="926" font-size="13" fill="#111111">se.to.si.ki.ma</text>
+<rect x="845" y="936" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="852" y="952" font-size="13" fill="#111111">ke.se.tu.no.ki</text>
+<rect x="845" y="962" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="852" y="978" font-size="13" fill="#111111">ru.ki.nu.se.ru</text>
+<rect x="845" y="988" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="852" y="1004" font-size="13" fill="#111111">ki.ru.ko</text>
+<rect x="1055" y="904" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="1059" y="910" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1066" y="926" font-size="13" fill="#111111">se.to.si.ki.ma</text>
+<rect x="1059" y="936" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1066" y="952" font-size="13" fill="#111111">ke.se.tu.no.ki</text>
+<rect x="1059" y="962" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1066" y="978" font-size="13" fill="#111111">ru.ki.nu.se.ru</text>
+<rect x="1059" y="988" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1066" y="1004" font-size="13" fill="#111111">ki.ru.ko</text>
+<rect x="1269" y="904" width="204" height="110" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<rect x="1273" y="910" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1280" y="926" font-size="13" fill="#111111">se.to.si.ki.ma</text>
+<rect x="1273" y="936" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1280" y="952" font-size="13" fill="#111111">ke.se.tu.no.ki</text>
+<rect x="1273" y="962" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1280" y="978" font-size="13" fill="#111111">ru.ki.nu.se.ru</text>
+<rect x="1273" y="988" width="196" height="24" rx="3" fill="#f6f2e8" stroke="#b08b4f" stroke-width="1"/>
+<text x="1280" y="1004" font-size="13" fill="#111111">ki.ru.ko</text>
+<line x1="26" y1="1040" x2="1478" y2="1040" stroke="#d8d8d8" stroke-width="1"/>
+<text x="26" y="1066" font-size="16" fill="#111111">Same place came out nearest in 87 of 90 cross-family comparisons (96.7%) &#183; chance is 16.7%</text>
+<text x="26" y="1088" font-size="13" fill="#6b6b6b">90 of 90 if exact ties are also counted (100.0%). 3 of 24 whole beats are character-for-character identical across all 6; the rest differ by a syllable or two.</text>
+<text x="26" y="1110" font-size="13" fill="#6b6b6b">Read the columns, not the letters. A lane is not required to spell the place the same way. It is required to put it in the same place.</text>
+<text x="26" y="1106" font-size="12" fill="#6b6b6b">This is not a claim that the models understand the place. They were handed the 45 statements and used them consistently. What it shows is that the frame is usable by minds with nothing in common.</text>
+</svg>

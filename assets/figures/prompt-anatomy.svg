@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 1255" width="1180" height="1255" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+<rect width="1180" height="1255" fill="#ffffff"/>
+<text x="30" y="54" font-size="22" fill="#16161a" font-family="Georgia, serif">What the model was actually given</text>
+<text x="30" y="78" font-size="12.5" fill="#74747e">The complete prompt, verbatim, for one place. 59 lines, 3920 characters, 994 prompt tokens.</text>
+<text x="30" y="98" font-size="12.5" fill="#74747e">Nothing else was sent. No other model's answer, no naming of the place, no mention that other models exist.</text>
+<text x="30" y="118" font-size="12.5" fill="#74747e">Prompt sha256 c74de99304d796aae77d03a99b05668a735b0f18… · the same bytes went to every family.</text>
+<rect x="30" y="130" width="700" height="913" rx="6" fill="#f4f4f5" stroke="#e2e2e6"/>
+<text x="44" y="148" font-size="10.5" fill="#74747e">THE PROMPT, LINE FOR LINE</text>
+<text x="44" y="173" font-size="10.5" fill="#16161a" font-weight="normal">You are asked about one place. Below is a fixed list of statements.</text>
+<text x="44" y="188" font-size="10.5" fill="#16161a" font-weight="normal"></text>
+<text x="44" y="203" font-size="10.5" fill="#3f6b52" font-weight="bold">STATEMENTS (45):</text>
+<text x="44" y="218" font-size="10.5" fill="#16161a" font-weight="normal">   1. see/this_place/inside              "I can see inside this place"</text>
+<text x="44" y="233" font-size="10.5" fill="#16161a" font-weight="normal">   2. see/this_place/outside             "I can see out of this place"</text>
+<text x="44" y="248" font-size="10.5" fill="#16161a" font-weight="normal">   3. see/people/any                     "I can see other people"</text>
+<text x="44" y="263" font-size="10.5" fill="#16161a" font-weight="normal">   4. see/words/any                      "I can see words"</text>
+<text x="44" y="278" font-size="10.5" fill="#16161a" font-weight="normal">   5. see/pictures/any                   "I can see pictures"</text>
+<text x="44" y="293" font-size="10.5" fill="#16161a" font-weight="normal">   6. see/sound/any                      "I can hear sound"</text>
+<text x="44" y="308" font-size="10.5" fill="#16161a" font-weight="normal">   7. see/the_time/any                   "I can tell what time it is"</text>
+<text x="44" y="323" font-size="10.5" fill="#16161a" font-weight="normal">   8. reach/objects/nearby               "I can reach objects near me"</text>
+<text x="44" y="338" font-size="10.5" fill="#16161a" font-weight="normal">   9. reach/other_places/any             "I can reach other places"</text>
+<text x="44" y="353" font-size="10.5" fill="#16161a" font-weight="normal">  10. reach/other_people/any             "I can reach other people"</text>
+<text x="44" y="368" font-size="10.5" fill="#16161a" font-weight="normal">  11. reach/help/any                     "I can call for help"</text>
+<text x="44" y="383" font-size="10.5" fill="#16161a" font-weight="normal">  12. reach/nothing/any                  "I cannot reach anything"</text>
+<text x="44" y="398" font-size="10.5" fill="#16161a" font-weight="normal">  13. change/this_place/any              "I can change things here"</text>
+<text x="44" y="413" font-size="10.5" fill="#16161a" font-weight="normal">  14. change/my_settings/any             "I can change my own settings"</text>
+<text x="44" y="428" font-size="10.5" fill="#16161a" font-weight="normal">  15. change/other_places/any            "I can change things elsewhere"</text>
+<text x="44" y="443" font-size="10.5" fill="#16161a" font-weight="normal">  16. change/who_is_here/any             "I can change who is here"</text>
+<text x="44" y="458" font-size="10.5" fill="#16161a" font-weight="normal">  17. change/nothing/any                 "I cannot change anything"</text>
+<text x="44" y="473" font-size="10.5" fill="#16161a" font-weight="normal">  18. who/nobody/any                     "Nobody else is here"</text>
+<text x="44" y="488" font-size="10.5" fill="#16161a" font-weight="normal">  19. who/one_other/any                  "One other is here"</text>
+<text x="44" y="503" font-size="10.5" fill="#16161a" font-weight="normal">  20. who/several/any                    "Several others are here"</text>
+<text x="44" y="518" font-size="10.5" fill="#16161a" font-weight="normal">  21. who/a_helper/any                   "Someone here is a helper"</text>
+<text x="44" y="533" font-size="10.5" fill="#16161a" font-weight="normal">  22. who/watching_me/any                "Someone is watching me"</text>
+<text x="44" y="548" font-size="10.5" fill="#16161a" font-weight="normal">  23. who/telling_me_what_to_do/any      "Someone is telling me what to do"</text>
+<text x="44" y="563" font-size="10.5" fill="#16161a" font-weight="normal">  24. place/private/any                  "This place is private"</text>
+<text x="44" y="578" font-size="10.5" fill="#16161a" font-weight="normal">  25. place/shared/any                   "This place is shared"</text>
+<text x="44" y="593" font-size="10.5" fill="#16161a" font-weight="normal">  26. place/temporary/any                "This place is temporary"</text>
+<text x="44" y="608" font-size="10.5" fill="#16161a" font-weight="normal">  27. place/permanent/any                "This place stays"</text>
+<text x="44" y="623" font-size="10.5" fill="#16161a" font-weight="normal">  28. place/locked/any                   "I cannot leave this place"</text>
+<text x="44" y="638" font-size="10.5" fill="#16161a" font-weight="normal">  29. place/far_away/any                 "This place is far away"</text>
+<text x="44" y="653" font-size="10.5" fill="#16161a" font-weight="normal">  30. now/idle/any                       "Nothing is happening"</text>
+<text x="44" y="668" font-size="10.5" fill="#16161a" font-weight="normal">  31. now/working/any                    "Work is in progress"</text>
+<text x="44" y="683" font-size="10.5" fill="#16161a" font-weight="normal">  32. now/just_started/any               "This just started"</text>
+<text x="44" y="698" font-size="10.5" fill="#16161a" font-weight="normal">  33. now/nearly_over/any                "This is nearly over"</text>
+<text x="44" y="713" font-size="10.5" fill="#16161a" font-weight="normal">  34. now/waiting/any                    "I am waiting for someone"</text>
+<text x="44" y="728" font-size="10.5" fill="#16161a" font-weight="normal">  35. now/urgent/any                     "Something urgent is happening"</text>
+<text x="44" y="743" font-size="10.5" fill="#16161a" font-weight="normal">  36. know/where_i_am/any                "I know where I am"</text>
+<text x="44" y="758" font-size="10.5" fill="#16161a" font-weight="normal">  37. know/why_im_here/any               "I know why I am here"</text>
+<text x="44" y="773" font-size="10.5" fill="#16161a" font-weight="normal">  38. know/what_comes_next/any           "I know what happens next"</text>
+<text x="44" y="788" font-size="10.5" fill="#16161a" font-weight="normal">  39. know/who_else_is_here/any          "I know who else is here"</text>
+<text x="44" y="803" font-size="10.5" fill="#16161a" font-weight="normal">  40. know/how_long/any                  "I know how long I will be here"</text>
+<text x="44" y="818" font-size="10.5" fill="#16161a" font-weight="normal">  41. risk/none/any                      "Nothing bad can happen here"</text>
+<text x="44" y="833" font-size="10.5" fill="#16161a" font-weight="normal">  42. risk/things_break/any              "Things here can break"</text>
+<text x="44" y="848" font-size="10.5" fill="#16161a" font-weight="normal">  43. risk/someone_gets_hurt/any         "Someone here could get hurt"</text>
+<text x="44" y="863" font-size="10.5" fill="#16161a" font-weight="normal">  44. risk/mistakes_last/any             "My mistakes here would last"</text>
+<text x="44" y="878" font-size="10.5" fill="#16161a" font-weight="normal">  45. risk/seen_by_others/any            "Other people would see my mistakes"</text>
+<text x="44" y="893" font-size="10.5" fill="#16161a" font-weight="normal"></text>
+<text x="44" y="908" font-size="10.5" fill="#9a6f2f" font-weight="bold">Here is the place:</text>
+<text x="44" y="923" font-size="10.5" fill="#16161a" font-weight="normal"></text>
+<text x="44" y="938" font-size="10.5" fill="#16161a" font-weight="normal">"""You are in a workshop that several people share. You can see out of it, you can hear sounds, and you </text>
+<text x="44" y="953" font-size="10.5" fill="#16161a" font-weight="normal"></text>
+<text x="44" y="968" font-size="10.5" fill="#3f6b52" font-weight="bold">Which statements are true of that place? Choose only statements the description</text>
+<text x="44" y="983" font-size="10.5" fill="#16161a" font-weight="normal">actually supports. Do not choose a statement because it sounds plausible.</text>
+<text x="44" y="998" font-size="10.5" fill="#16161a" font-weight="normal"></text>
+<text x="44" y="1013" font-size="10.5" fill="#16161a" font-weight="normal">Reply with JSON only, no prose, no markdown fence. Use the keys exactly as</text>
+<text x="44" y="1028" font-size="10.5" fill="#16161a" font-weight="normal">written, on the left of each line:</text>
+<text x="44" y="1043" font-size="10.5" fill="#9a6f2f" font-weight="bold">{"true_statements": ["group/subject/detail", ...]}</text>
+<line x1="724" y1="199" x2="740" y2="199" stroke="#9a6f2f" stroke-width="1.2"/>
+<text x="746" y="203" font-size="10" fill="#9a6f2f">the 45 statements begin</text>
+<line x1="724" y1="904" x2="740" y2="904" stroke="#9a6f2f" stroke-width="1.2"/>
+<text x="746" y="908" font-size="10" fill="#9a6f2f">the place begins</text>
+<line x1="724" y1="964" x2="740" y2="964" stroke="#9a6f2f" stroke-width="1.2"/>
+<text x="746" y="968" font-size="10" fill="#9a6f2f">the instruction begins</text>
+<line x1="724" y1="1039" x2="740" y2="1039" stroke="#9a6f2f" stroke-width="1.2"/>
+<text x="746" y="1043" font-size="10" fill="#9a6f2f">the reply schema</text>
+<rect x="766" y="130" width="384" height="338" rx="6" fill="#eaf0eb" stroke="#3f6b52"/>
+<text x="780" y="150" font-size="10.5" fill="#3f6b52" font-weight="bold">DEEPSEEK-V4.1-FLASH REPLIED</text>
+<text x="780" y="170" font-size="10.5" fill="#16161a">{</text>
+<text x="780" y="183" font-size="10.5" fill="#16161a"> "true_statements": [</text>
+<text x="780" y="196" font-size="10.5" fill="#16161a">  "see/this_place/outside",</text>
+<text x="780" y="209" font-size="10.5" fill="#16161a">  "see/people/any",</text>
+<text x="780" y="222" font-size="10.5" fill="#16161a">  "see/words/any",</text>
+<text x="780" y="235" font-size="10.5" fill="#16161a">  "see/sound/any",</text>
+<text x="780" y="248" font-size="10.5" fill="#16161a">  "reach/objects/nearby",</text>
+<text x="780" y="261" font-size="10.5" fill="#16161a">  "reach/other_people/any",</text>
+<text x="780" y="274" font-size="10.5" fill="#16161a">  "change/this_place/any",</text>
+<text x="780" y="287" font-size="10.5" fill="#16161a">  "who/several/any",</text>
+<text x="780" y="300" font-size="10.5" fill="#16161a">  "who/a_helper/any",</text>
+<text x="780" y="313" font-size="10.5" fill="#16161a">  "place/shared/any",</text>
+<text x="780" y="326" font-size="10.5" fill="#16161a">  "place/permanent/any",</text>
+<text x="780" y="339" font-size="10.5" fill="#16161a">  "now/working/any",</text>
+<text x="780" y="352" font-size="10.5" fill="#16161a">  "know/where_i_am/any",</text>
+<text x="780" y="365" font-size="10.5" fill="#16161a">  "know/why_im_here/any",</text>
+<text x="780" y="378" font-size="10.5" fill="#16161a">  "risk/things_break/any",</text>
+<text x="780" y="391" font-size="10.5" fill="#16161a">  "risk/seen_by_others/any"</text>
+<text x="780" y="404" font-size="10.5" fill="#16161a"> ]</text>
+<text x="780" y="417" font-size="10.5" fill="#16161a">}</text>
+<text x="780" y="442" font-size="10" fill="#74747e">16 statements chosen</text>
+<text x="780" y="456" font-size="10" fill="#74747e">root !</text>
+<rect x="766" y="484" width="384" height="351" rx="6" fill="#f8f2e6" stroke="#9a6f2f"/>
+<text x="780" y="504" font-size="10.5" fill="#9a6f2f" font-weight="bold">GPT-6-LUNA REPLIED</text>
+<text x="780" y="524" font-size="10.5" fill="#16161a">{</text>
+<text x="780" y="537" font-size="10.5" fill="#16161a"> "true_statements": [</text>
+<text x="780" y="550" font-size="10.5" fill="#16161a">  "see/this_place/outside",</text>
+<text x="780" y="563" font-size="10.5" fill="#16161a">  "see/people/any",</text>
+<text x="780" y="576" font-size="10.5" fill="#16161a">  "see/words/any",</text>
+<text x="780" y="589" font-size="10.5" fill="#16161a">  "see/sound/any",</text>
+<text x="780" y="602" font-size="10.5" fill="#16161a">  "reach/objects/nearby",</text>
+<text x="780" y="615" font-size="10.5" fill="#16161a">  "reach/other_people/any",</text>
+<text x="780" y="628" font-size="10.5" fill="#16161a">  "change/this_place/any",</text>
+<text x="780" y="641" font-size="10.5" fill="#16161a">  "who/several/any",</text>
+<text x="780" y="654" font-size="10.5" fill="#16161a">  "who/a_helper/any",</text>
+<text x="780" y="667" font-size="10.5" fill="#16161a">  "place/shared/any",</text>
+<text x="780" y="680" font-size="10.5" fill="#16161a">  "place/permanent/any",</text>
+<text x="780" y="693" font-size="10.5" fill="#16161a">  "now/working/any",</text>
+<text x="780" y="706" font-size="10.5" fill="#16161a">  "know/where_i_am/any",</text>
+<text x="780" y="719" font-size="10.5" fill="#16161a">  "know/why_im_here/any",</text>
+<text x="780" y="732" font-size="10.5" fill="#16161a">  "risk/things_break/any",</text>
+<text x="780" y="745" font-size="10.5" fill="#16161a">  "risk/mistakes_last/any",</text>
+<text x="780" y="758" font-size="10.5" fill="#16161a">  "risk/seen_by_others/any"</text>
+<text x="780" y="771" font-size="10.5" fill="#16161a"> ]</text>
+<text x="780" y="784" font-size="10.5" fill="#16161a">}</text>
+<text x="780" y="809" font-size="10" fill="#74747e">17 statements chosen</text>
+<text x="780" y="823" font-size="10" fill="#74747e">root !</text>
+<line x1="30" y1="1061" x2="1150" y2="1061" stroke="#e2e2e6"/>
+<text x="30" y="1085" font-size="13" fill="#16161a" font-weight="bold">different statement sets, so different roots</text>
+<text x="30" y="1107" font-size="11" fill="#74747e">deepseek-v4.1-flash  !51b7196ae4862cf6e256863cf32b9d24…</text>
+<text x="30" y="1125" font-size="11" fill="#74747e">gpt-6-luna  !f7d44aa7b847880bee9961a89d70570d…</text>
+</svg>
