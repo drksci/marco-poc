@@ -305,3 +305,40 @@ Bring all four to one level. Work through them together, comparing as you go, so
 7. **No page may be thinner than another in kind.** Length may differ. Completeness of treatment may not.
 
 When you have finished, `python3 scripts/11_final_pass.py --check` must report zero problems and `.venv/bin/python -m pytest tests/ -q` must pass. Report per page: byte size, section count, figure count, and the single sentence you would use to describe what that page delivers.
+
+## FAILURE 0e — corrections. Read these before drawing the figure.
+
+Two defects in the cross-check figure as originally specified. Both must be fixed.
+
+### 1. The crossing arrows must never pass over text
+
+Arrows drawn from one column to the other currently run across the bubbles and the labels, which makes both unreadable. Rules:
+
+- Route every connector through the **gutter between the two columns**, never across a bubble, a heading, or a line of text.
+- Reserve a dedicated horizontal band for the cross-over. Give it its own vertical space between turn 3 and turn 4, so the arms have somewhere to travel that contains no text at all.
+- Draw the arms as elbows, not diagonals: out from the source edge into the gutter, down or up within the gutter, then into the target edge. Right-angled routes can be checked at a glance for overlap; diagonals cannot.
+- Put the arrowhead on the target edge, outside the bubble.
+- If a route would still cross anything, move the row, not the text. Text never moves to accommodate a line.
+- Verify by rendering: no connector path may intersect a text bounding box. If the figure is inline SVG, compute the boxes and assert no intersection before finishing.
+
+### 2. The cross-over messages must carry the narrative and the coordinate
+
+Turn 4 is the point of the figure and its bubbles are currently bare. Each bubble must contain the actual question being asked and the actual string being handed over.
+
+Left column, receiving the right column's answer, says:
+
+    Where is this coordinate {right model} shared?
+    ⌁ se.re.ni.ko.mu·mo.ru.ki.va.ke+ru.ki.va.so.ru~ki.ro.ta
+
+Right column, receiving the left column's answer, says:
+
+    Where is this coordinate {left model} shared?
+    ⌁ <that model's encoded coordinate>
+
+Substitute the real model id in place of `{model}` and the real encoded coordinate, taken from `evidence/lanes-summary.json`. The coordinate goes in the bubble in a `font-mono` span so it is legible. Put the reply beneath it in the same bubble or in the chat footer: that this is the same place, or if the pair differs, what the difference is.
+
+Keep the label across both columns at that row: *then each is shown the other's answer*. Keep the honesty caption: separate calls, the cross-over is a reconstruction, and nothing is claimed about understanding.
+
+### The same treatment for every chat on every page
+
+Wherever a bubble carries a coordinate, it carries the question or statement that goes with it, not the string alone. A bubble with only a string in it is a fragment; a bubble with the sentence and the string is a message.
