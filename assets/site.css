@@ -438,3 +438,132 @@ code {
   border-radius: 3px;
   padding: 0.08em 0.32em;
 }
+
+/* ==========================================================================
+   FLAT LAYER
+   Everything below this line exists to undo decoration, not to add it.
+
+   The pages had grown nested: cards inside cards, daisyUI mockup frames with
+   faux window chrome around plain content, and accordion panels hiding material
+   behind a click. None of that serves a reader who is trying to follow an
+   argument. This layer flattens the lot: nothing is nested more than one level,
+   nothing is hidden, and every artefact takes the full width it needs.
+   ========================================================================== */
+
+/* --- 1. no faux window chrome ---------------------------------------------
+   The mockup components draw a title bar with three dots and a toolbar. That
+   is theatre around content that is just text or a figure. Removed, and the
+   frame becomes a plain bordered block. */
+
+.mockup-window::before,
+.mockup-browser::before,
+.mockup-code::before,
+.mockup-phone::before {
+  display: none !important;
+  content: none !important;
+  height: 0 !important;
+}
+
+.mockup-window,
+.mockup-browser,
+.mockup-phone {
+  padding: 0 !important;
+  border-radius: var(--radius) !important;
+}
+
+.mockup-window > *:first-child:not(.mockup-window-content),
+.mockup-browser .mockup-browser-toolbar,
+.mockup-browser > .toolbar {
+  display: none !important;
+}
+
+/* --- 2. no nesting ---------------------------------------------------------
+   A card inside a card is a box drawn around a box. The inner one loses its
+   border, fill and padding so the page reads as one plane. */
+
+.card .card,
+.card .card-body > .card,
+.card > .card-body > .collapse:not(.collapse-open) {
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.card .card-body { padding: 0 !important; }
+.card > .card-body > .card { margin: 0 !important; }
+
+/* --- 3. nothing hidden behind a click -------------------------------------
+   Accordions and disclosures defeat the purpose: the reader cannot see what
+   they have not opened. Every panel is forced open and the toggle is removed. */
+
+.collapse:not(.collapse-open):not(.collapse-close) > .collapse-content,
+.collapse > .collapse-content,
+details > *:not(summary) {
+  display: block !important;
+  visibility: visible !important;
+  max-height: none !important;
+  height: auto !important;
+  opacity: 1 !important;
+  overflow: visible !important;
+  padding-bottom: 1rem !important;
+}
+
+.collapse > input[type="checkbox"],
+.collapse > input[type="radio"],
+.collapse > .collapse-title,
+details > summary {
+  display: none !important;
+}
+
+.collapse, details {
+  border: 0 !important;
+  background: transparent !important;
+  min-height: 0 !important;
+}
+
+/* --- 4. full width for artefacts ------------------------------------------
+   Figures, tables, transcripts and code are the content. They get the whole
+   measure, never a third of it in a side column. */
+
+figure,
+.figure,
+.figcaption,
+table,
+.table,
+.table-wrap,
+.chat,
+.transcript,
+pre,
+.mockup-code,
+.mockup-window,
+.mockup-browser {
+  width: 100% !important;
+  max-width: 100% !important;
+  grid-column: 1 / -1 !important;
+}
+
+figure svg,
+.figure img {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* prose keeps a readable measure; artefacts do not */
+.prose, .prose-block { max-width: 68ch; }
+
+/* --- 5. one plane ---------------------------------------------------------
+   Cards stop being raised objects: a hairline and nothing else. */
+.card {
+  box-shadow: none !important;
+  border: 1px solid hsl(var(--border)) !important;
+}
+
+.card + .card { margin-top: 1.5rem !important; }
+
+/* and the chat bubbles get room to read */
+.chat-bubble {
+  max-width: min(72ch, 100%) !important;
+  line-height: 1.6 !important;
+  padding: 0.7rem 1rem !important;
+}
+.chat + .chat { margin-top: 0.35rem; }
