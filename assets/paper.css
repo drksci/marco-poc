@@ -496,14 +496,17 @@
 }
 .paper section > .opacity-70.font-mono, .paper .font-mono.opacity-70 { color: var(--faint); }
 
-/* ---------------------------------------------------------------- contents */
-.paper nav.contents {
+/* -------------------------------------------------------------------- toc */
+/* The class is paper-toc, not contents: Tailwind generates a `.contents`
+   utility that sets `display: contents`, which collapsed this whole block and
+   spilled its list across the page at x=0. */
+.paper nav.paper-toc {
   max-width: var(--measure);
   margin: 0 auto;
   padding: 1.75rem 0 1.9rem;
   border-bottom: 1px solid var(--hair);
 }
-.paper nav.contents > p {
+.paper nav.paper-toc > p {
   font-family: var(--mono);
   font-size: 10.5px;
   letter-spacing: 0.2em;
@@ -511,23 +514,23 @@
   color: var(--fainter);
   margin-bottom: 0.8rem;
 }
-.paper nav.contents ol {
+.paper nav.paper-toc ol {
   list-style: none;
   padding: 0;
   margin: 0;
   columns: 1;
   column-gap: 2.5rem;
 }
-@media (min-width: 900px) { .paper nav.contents ol { columns: 2; } }
-.paper nav.contents li {
+@media (min-width: 900px) { .paper nav.paper-toc ol { columns: 2; } }
+.paper nav.paper-toc li {
   break-inside: avoid;
   margin-bottom: 0.35rem;
   font-size: 0.92rem;
   line-height: 1.5;
 }
-.paper nav.contents a { text-decoration: none; color: var(--faint); }
-.paper nav.contents a:hover { color: var(--ink); text-decoration: underline; }
-.paper nav.contents .n {
+.paper nav.paper-toc a { text-decoration: none; color: var(--faint); }
+.paper nav.paper-toc a:hover { color: var(--ink); text-decoration: underline; }
+.paper nav.paper-toc .n {
   font-family: var(--mono);
   font-size: 11px;
   color: var(--fainter);
@@ -606,7 +609,7 @@
   outline-offset: 3px;
 }
 @media print {
-  .paper nav.navbar, .paper nav.contents { display: none; }
+  .paper nav.navbar, .paper nav.paper-toc { display: none; }
   .paper header.hero > .hero-content { padding-top: 0; }
 }
 

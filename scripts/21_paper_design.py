@@ -87,7 +87,7 @@ def add_ids_and_toc(body: str) -> tuple[str, str]:
     items = "\n".join(
         f'      <li><a href="#{a}"><span class="n">{i}</span>{H.escape(label)}</a></li>'
         for i, (a, label) in enumerate(entries, 1))
-    toc = f"""<nav class="contents" aria-label="Contents">
+    toc = f"""<nav class="paper-toc" aria-label="Contents">
     <p>Contents</p>
     <ol>
 {items}
@@ -130,7 +130,7 @@ def migrate(name: str) -> dict:
     if head_end != -1:
         cut = head_end + len("</header>")
         body_part, toc = add_ids_and_toc(src[cut:])
-        if 'class="contents"' not in src:
+        if 'class="paper-toc"' not in src:
             src = src[:cut] + "\n\n" + toc + "\n" + body_part
         else:
             src = src[:cut] + body_part
