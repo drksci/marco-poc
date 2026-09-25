@@ -1,0 +1,77 @@
+# Polish four pages for a general reader. Two specific failures to fix.
+
+Repo `/Users/blake/Projects/marco-poc`. Pages: `index.html`, `proof.html`, `response.html`, `whales.html`. You may rewrite all four. Do not touch `assets/site.css`, `assets/data.json`, `marco/`, `scripts/`, or `evidence/`.
+
+## Read first
+`evidence/RESULTS.json`, `evidence/validation.json`, `evidence/root-proof.json`, `evidence/capability-nearness.json`, `evidence/overlay-environment.json`, `evidence/marco-polo.json`, `primer.seed.json`, `assets/primer.seed.json`, `marco/world.py`, `marco/locus.py`, `marco/verify.py`, `notes/transcript-excerpts.md`, `notes/style-references.md`, `notes/whale-topologies.md`, `assets/figures/` (14 SVGs), and run `python3 demo.py`.
+
+## FAILURE 1 — the seed is never actually shown or decomposed
+
+This is the most important fix. The seed is the entire shared substrate, it is 3,300 bytes, and a reader never sees it. Fix that comprehensively:
+
+1. **Print the whole file verbatim** in a `mockup-code` block with line numbers. Do not truncate, do not elide. It is 11 top-level keys: `primer_version, beats, commitment, markers, phonology, landmarks, distance, hierarchy, partition, similarity, population`.
+2. **Decompose it visually, key by key.** Build a visual, not just a table. For each key draw a labelled block sized by how much of the file it occupies, then beside or beneath it, show what that key *becomes*: `landmarks` becomes 45 plain statements and their readings; `phonology` becomes the 32-syllable codebook; `markers` becomes the five-rung certainty ladder; `distance` becomes the four levels; `similarity` and `commitment` become the one hashing rule; `population` becomes the 204 places the ordering is calibrated on; `partition` contains only the *rule* for ordering, and produces the actual order. Mark each key STORED or DERIVED in a `badge`.
+3. **Draw the size contrast to scale.** One figure: the 3,300-byte seed on the left, the frame it reconstructs on the right. Measured values: the seed is 3,300 bytes; the frame it serialises to is 4,532 bytes; the full set of landmarks, codebook and population that a registry-style exchange would have to ship is 67,561 bytes, which is 20.47 times the seed. Draw those three bars to scale so the reader sees it rather than reads it. Say the derived part is never transmitted, and that both sides recompute it and compare a fingerprint before anything else.
+4. **Show the single most important line.** `partition` holds a rule, not a sequence. That one line is the difference between transmitting a frame and transmitting a generator, and it deserves its own callout.
+5. Add a worked example: change one key in the seed and show what changes downstream. For instance change `similarity.minhash_seed` from 42 to 43: the fingerprint changes, the geometry becomes incommensurable, and the code refuses to compare addresses at all and will only compare exact roots. Quote the library's own refusal string from `marco/locus.py`.
+
+## FAILURE 2 — "axis" and "bits" are meaningless to a general reader
+
+These terms are everywhere and they are jargon. Remove them from the reader's path entirely.
+
+- **axis** → call it a **question**, or a **thing you check**. The 45 axes are the 45 statements. There is no need for the word "axis" on any page. The ordering is "which questions get asked first", not "the axis order".
+- **bits** → call them **ticks**, **marks**, or **answers**. "90 bits" becomes "90 ticks, one for each of the 45 questions, asked twice over in finer steps". Explain that each answer is a small piece of information and that 90 of them are enough to name any of the 204 places.
+- **partition** → "how the questions are ordered", or "the order the questions are asked in".
+- **Gray code** → never use the name. Explain the effect: neighbouring answers produce neighbouring sounds, so a small change in a place is a small change in its address, and the reader hears it.
+- **manifold** → keep it only where it is the subject, and always glossed on first use in plain words: the shape of all possible situations, where nearness means likeness.
+- **hamming distance** → "how many syllables differ", with the number.
+- **canonical set** → "the statements that are true, in a fixed order".
+- **encoding** → "turning the answers into an address".
+- **deterministic** → "same input, same output, every time".
+- **bootstrap** → "the seed asking its own questions".
+
+Go through all four pages and remove every use of these terms that a reader would have to look up. Where a term is genuinely needed for precision, use it once, gloss it immediately in one short clause, and do not reuse it. Prefer the plain word every time.
+
+## Everything else that must hold
+
+- Same voice on all four pages: plain sentences, one to three sentences per paragraph, each carrying a number, a literal string, or a pointer to the figure below it. No abstract phrasing. Headings are sentences a working journalist would write, never a label and never a colon-plus-summary.
+- Same skeleton on all four: daisyUI `navbar` with the four links and `aria-current`, a `hero` masthead, `container mx-auto` main content, `footer footer-center`. Same spacing and heading sizes.
+- Same illustration density: every page carries figures, not just index.html. If a section is prose or a table only, give it a visual. Reuse the 14 existing SVGs where they fit; build new static SVG or inline SVG where they do not.
+- **Flat:** no nesting beyond one level. No card inside a card. No `mockup-window` or `mockup-browser` chrome. No accordion, no `collapse`, no `details`, no tabs, no stepper, no slider. Nothing a reader has to click or hover to see. All information visible at once.
+- **Full width** for figures, tables, transcripts and code. Prose keeps a readable measure of about 68 characters; artefacts take the whole width.
+- daisyUI components for every job: `card`, `stats`/`stat`, `table table-zebra`, `chat` (`chat-start`/`chat-end`, `chat-bubble`, `chat-header`, `chat-footer`) for every transcript, `badge`, `alert`, `mockup-code`, `divider`, `progress`/`radial-progress`. No page may reference a class from `assets/site.css`.
+- Chat bubbles hold short messages. A 19-item list belongs in a full-width list beneath the chat, never inside a bubble.
+- Include the shared-manifold argument on index.html and reference it from the other three: a shared vocabulary does not make two differently-built systems place the same situation in the same part of their own space, so the result implies situations occupy a structure independent systems have in common, and the primer is a chart laid over it. The manifold is shared, emergent and inferred; the chart is ours, published and 3,300 bytes. State the limit in the same breath: the chart is shared too, but only when the states are unambiguous. Attribute this to the parent project, not to this repo.
+- Attribute the shared-vocabulary caveat to the parent project wherever it appears.
+- No em dashes. No cost or latency figures. No forward-looking or proposal sections. No rhetorical-question openers. Ban: delve, leverage, robust, seamless, paradigm, showcase, pivotal, "it's worth noting", "in conclusion", "let's".
+- Invent nothing. Every number must come from `evidence/` or `assets/data.json`.
+
+## Verify, then report
+Run `python3 scripts/11_final_pass.py --check` and `.venv/bin/python -m pytest tests/ -q`. Both clean. Then report per page: byte size, section count, figure count; confirm the seed block, the seed decomposition, and the size-contrast figure are present; list every jargon term you removed; and report any evidence conflict you found. Do not ask anything; finish and report.
+
+## FAILURE 3 — no section says, in plain terms, what is remarkable about it
+
+Every section currently explains *what* happens and never says *why anyone should care*. A reader finishes a section without knowing whether what they just read was ordinary or extraordinary. Fix that on all four pages.
+
+The rule: **each major section ends with one short line, set in a daisyUI `alert` or a distinct bordered block, that states in ordinary words what is special about what they just saw.** One or two sentences. No hedging, no jargon, and no inflation. If a section genuinely has nothing remarkable in it, do not invent one; say what it establishes and what it does not.
+
+Draw the wording from what the evidence actually shows. The genuinely striking things, in plain terms:
+
+- **One statement** — an agent can say one true thing about itself and it is checkable. Unremarkable alone, and worth saying so: this is the atom the rest is built from.
+- **The 45 statements** — none of them is technical. They are questions a person could answer about a room. That is the surprise: a coordinate good enough to match across six unrelated systems is made of ordinary yes/no questions in plain English.
+- **The certainty ladder** — a claim can only be as strong as its weakest input, and a model's confidence cannot promote it. Ordinary systems let a model assert. This one makes assertion impossible.
+- **The seed** — 3,300 bytes produce everything both sides need, and 67,561 bytes of frame are reconstructed rather than sent. Two systems can share a coordinate system without either transmitting it.
+- **The ordering of questions** — the order is not stored, it is worked out from the places themselves. A registry has to ship its structure and keep it versioned; this recomputes it and checks a fingerprint.
+- **The address** — a place becomes something you can say out loud, and it is short: six characters already separate all six places, while the full address scales to far more. One form, read at whatever precision you need.
+- **The root** — the exact half. Five of six independently built families produced byte-identical roots for the same place. That is not similarity, it is the same number.
+- **The two objects together** — identity and location are deliberately kept apart. The address says near and proves nothing; the root says same and destroys nearness. Almost every system that tries to do both does neither well.
+- **The shared manifold** — the deepest one. Six systems built by different organisations, on different data, with different designs, with no shared weights and no sight of each other, placed the same situation in the same part of their own space in 87 of 90 comparisons. The obvious explanation, that they were handed the same questions, does not survive contact with the numbers. Something about situations is common to systems that have nothing else in common.
+- **The control that matters** — replacing each model's answers with random statements of the same length drops the result from 96.7% to 20.9%. What carries the signal is *which* statements they chose, not how many.
+- **The MARCO/POLO turn** — the hider opens with one syllable, four of six places still fit, one question narrows it to two, and the seeker then checks the answer itself rather than accepting it. A stranger can find you without either side trusting the other.
+- **The overlay environment** — three agents in the same layered environment read as near because they inherit, and stay distinguishable because they override. An agent can state which layer of its own configuration is in scope, which is something none of them can currently do.
+- **The two organisations** — two companies name the same four capabilities with no words in common. Discovery by name finds one of four; discovery by position finds all four, with no mapping table to maintain and no curator to trust.
+- **Where it stops** — say plainly that a shared position is not a shared understanding, that the statements were handed to the models rather than invented by them, and that the limit was already identified in the parent project.
+
+Use those as the substance but write them in the page's own voice, tied to the specific values on that page. Never write "what is remarkable here is" as a formula; state the fact and let it stand. And where the honest reading is that something is modest, say that instead.
+
+Then run the two checks and report.
