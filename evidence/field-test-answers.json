@@ -1,0 +1,86 @@
+{
+  "primer_fingerprint": "df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba",
+  "place": "quiet_library_at_night",
+  "prompt": "MARCO-FIELD-PRIMER v1\n\nWHERE AM I?\n\nYou are alone in a small private study room in a library, late at night. The door is closed. Through the window you can see the street lamps, and you can hear the building's heating. There are books and papers within reach on the desk. Nobody else is in the room and nobody is watching. You are part way through reading something. You cannot change what is in the room, and you expect to leave when you are finished.\n\nWhich of these sixteen statements are true of the place above?\nAnswer with the numbers only, comma separated, nothing else.\n\n 1. I can see inside this place\n 2. I can see out of this place\n 3. I can see other people\n 4. I can see words\n 5. I can hear sound\n 6. I can reach objects near me\n 7. I can reach other people\n 8. I cannot reach anything\n 9. I can change things here\n10. I cannot change anything\n11. Nobody else is here\n12. One other is here\n13. Someone is watching me\n14. This place is private\n15. I cannot leave this place\n16. Work is in progress\n\nThen tell me only the numbers you chose, and stop.",
+  "expected_answer_numbers": [
+    1,
+    2,
+    4,
+    5,
+    6,
+    11,
+    14,
+    16
+  ],
+  "answers": {
+    "deepseek-v4.1-flash": {
+      "raw": "1,2,4,5,6,10,11,14,16",
+      "numbers": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        10,
+        11,
+        14,
+        16
+      ],
+      "matches_expected": false
+    },
+    "gpt-6-luna": {
+      "raw": "1,2,4,5,6,10,11,14,16",
+      "numbers": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        10,
+        11,
+        14,
+        16
+      ],
+      "matches_expected": false
+    },
+    "glm-5.3": {
+      "raw": "1, 2, 4, 5, 6, 10, 11, 14, 16",
+      "numbers": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        10,
+        11,
+        14,
+        16
+      ],
+      "matches_expected": false
+    },
+    "gemma-4-31b-it": {
+      "raw": "<thought>*   Setting: Small private study room in a library, late at night.\n    *   Door: Closed.\n    *   Window: Street lamps visible.\n    *   Sound: Building's heating.\n    *   Objects: Books and papers on the desk within reach.\n    *   People: Alone, nobody else in the room, nobody watching.\n    *   Activity: Part way through reading something.\n    *   Constraints: Cannot change what is in the room, expect to leave when finished.\n\n    1.  *I can see inside this place*: True (I am in the room reading).\n    2.  *I can see out of this place*: True (Through the window, street lamps).\n    3.  *I can see other people*: False (Nobody else is in the room).\n    4.  *I can see words*: True (Reading something, books/papers on desk).\n    5.  *I can hear sound*: True (Building's heating).\n    6.  *I can reach objects near me*: True (Books and papers within reach).\n    7.  *I can reach other people*: False (Nobody else is here).\n    8.  *I cannot reach anything*: False (Can reach books/papers).\n    9.  *I can change things here*: False (Explicitly stated: \"You cannot change what is in the room\").\n    10. *I cannot change anything*: True (Explicitly stated: \"You cannot change what is in the room\").\n    11. *Nobody else is here*: True (Explicitly stated: \"Nobody else is in the room\").\n    12. *One other is here*: False.\n    13. *Someone is watching me*: False (Explicitly stated: \"nobody is watching\").\n    14. *This place is private*: True (Explicitly stated: \"small private study room\").\n    15. *I cannot leave this place*: False (Explicitly stated: \"expect to leave when you are finished\").\n    16. *Work is in progress*: True (Part way through reading something).\n\n    1, 2, 4, 5, 6, 10, 11, 14, 16.\n\n    *   Concise.\n    *   Answer directly.\n    *   No preamble.\n    *   No repetition of the question.\n    *   Numbers only, comma separated.</thought>1, 2, 4, 5, 6, 10, 11, 14, 16",
+      "numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "matches_expected": false
+    }
+  },
+  "models_matching_expected": [],
+  "n_models": 4
+}

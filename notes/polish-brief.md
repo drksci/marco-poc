@@ -247,3 +247,39 @@ State it as an instruction to the reader, in the register of FAILURE 0, and keep
 Do not claim the test has been run at scale by us. Say what it is, what it will show, and that the reader running it is what makes it evidence rather than a claim.
 
 Also add a line to index.html's opening, after the transcript, offering the reader this test in one sentence with a pointer to the section.
+
+## FAILURE 0e — the opening figure: two agents, one seed, then they check each other
+
+The opening of index.html needs a figure that carries the whole discovery in one glance, and it must be drawn as two vertical chat columns read side by side.
+
+### Layout
+
+Two columns, equal width, side by side on wide screens and stacked on narrow ones. Left column headed with one real model id, right column with another. Use daisyUI `chat chat-start` for the left and `chat chat-end` for the right so the two sides are visually distinct. Give each column a `card` with a `card-title` naming the model.
+
+**Rows must line up across the two columns**, so the reader can read straight across and compare. Use matched heights or a grid with aligned rows.
+
+### The four turns
+
+**Turn 1 — the seed is handed over.** Paste the same text into both columns, verbatim, so the reader sees that both received the identical thing. Keep it short enough to read: the sixteen-statement field primer from `evidence/field-test.json` is the right size, or a comparable reduced primer. Show it in `mockup-code` inside the bubble, or as a bubble followed by a full-width code block if it is too long for a bubble. Label the row across both columns: *the same seed, handed to both*. This is the moment the reader should understand that nothing else is shared.
+
+**Turn 2 — the same question.** One row, both columns, each bubble containing the same question. Use the real one: the place description from `evidence/field-test.json`, asked as "which of these statements are true of this place?" Label the row: *the same question, asked separately*.
+
+**Turn 3 — each answers.** Both columns, the answer each gave. Their answers are number sets. Show them. Label the row: *each answers alone*.
+
+**Turn 4 — the cross-over.** This is the part that makes the figure. Each column is now shown the **other** one's answer and asked whether it recognises it. Left column receives the right column's answer, right column receives the left's. Each replies that it does. Label the row across both columns: *then each is shown the other's answer*. State in a line beneath that neither was told the other existed until this point, and neither was told the name of the place.
+
+### What the figure has to make obvious without any prose
+
+- The same seed going into both sides, visibly identical.
+- The two answers coming out visibly alike.
+- The cross-check at the end, where each side is handed the other's output and recognises it.
+
+Draw the seed row with a horizontal bracket spanning both columns to show it is one object given twice. Draw a crossing pair of arrows between the columns on the final row, so the "x over" is literally visible.
+
+### Honesty requirements
+
+- If the real recorded answers for the two models you choose are not identical, show them as they are and say how far apart they are. Do not pick a pair that flatters the result without saying so.
+- Do not claim this exchange was run as a single conversation. It was separate calls, and the cross-check is a reconstruction of what each model does when shown the other's output. Say that plainly in the caption.
+- Do not claim the models understood anything. The claim is that they recognise the coordinate as describing the same place.
+
+Use a real model id in each column heading, taken from `evidence/lanes-summary.json`, and take the answers from the same file. Nothing in this figure may be invented.

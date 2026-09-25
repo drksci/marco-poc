@@ -168,6 +168,37 @@ def check_figures(files: list[Path]) -> list[str]:
     return problems
 
 
+def check_chat_formatting(files: list[Path], limit: int = 160) -> list[str]:
+    """Chat bubbles must be readable messages, not one collapsed line.
+
+    A bubble holding a long comma-separated list, or a paragraph with no breaks,
+    renders as an unreadable strip. The rule is mechanical: a bubble's text must
+    either be short, or contain line breaks or a code block. A list of statements
+    belongs in a list beneath the chat, not inside a bubble.
+    """
+    problems = []
+    for f in files:
+        if not f.exists():
+            continue
+        html = f.read_text(encoding="utf-8")
+        for m in re.finditer(r'<div[^>]*class="[^"]*chat-bubble[^"]*"[^>]*>(.*?)</div>',
+                             html, re.S):
+            body = m.group(1)
+            has_break = ("<br" in body or "<pre" in body or "<ul" in body
+                         or "<ol" in body or "<li" in body or "<p" in body)
+            text = re.sub(r"<[^>]+>", " ", body)
+            text = re.sub(r"\s+", " ", text).strip()
+            if len(text) > limit and not has_break:
+                problems.append(
+                    f"{f.name}: a chat bubble holds {len(text)} characters on one line "
+                    f"({text[:50]!r}\u2026); break it up or move the list out")
+            if text.count(",") >= 8:
+                problems.append(
+                    f"{f.name}: a chat bubble holds a comma list of "
+                    f"{text.count(',') + 1} items; that belongs in a list beneath the chat")
+    return problems
+
+
 def check_theme_colours(files: list[Path]) -> list[str]:
     """Pages must take their colour from the daisyUI theme, not from literals.
 
@@ -420,6 +451,13 @@ def main() -> int:
     if not hashing:
         print("     one hashing rule; no stray root values quoted")
 
+    print("\n4b chat readability")
+    chat = check_chat_formatting(present)
+    for p in chat:
+        print(f"     {p}")
+    if not chat:
+        print("     no collapsed chat bubbles; long content is broken up or listed")
+
     print("\n5  colour comes from the theme")
     colour = check_theme_colours(present)
     for p in colour:
@@ -435,7 +473,7 @@ def main() -> int:
         print("     no placeholders, tracking parameters or chatbot markup")
 
     total = (len(fig_problems) + len(claim_problems) + len(left)
-             + len(fwd) + len(hashing) + len(colour))
+             + len(fwd) + len(hashing) + len(colour) + len(chat))
     print(f"\n{len(present)}/{len(PAGES)} pages present; {total} problem(s)")
     return 1 if total else 0
 

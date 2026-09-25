@@ -61,7 +61,7 @@
       "n": 10,
       "key": "change/nothing/any",
       "plain": "I cannot change anything",
-      "true": false
+      "true": true
     },
     {
       "n": 11,
@@ -106,13 +106,14 @@
     4,
     5,
     6,
+    10,
     11,
     14,
     16
   ],
-  "address_full_primer": "⌁ se.re.ni.ka.nu·re.ru.ki.va.sa+ru.ki.va.so.ru~ko.se.ta",
-  "address_reduced_primer": "⌁ ma.ne.ti.ma",
-  "root": "65bdc8219e4462894ea7bb2a54f9dff07545fd2c05e1baefd7a062329fbcb114",
+  "address_full_primer": "⌁ se.re.ni.ko.mu·mo.ru.ki.va.ke+ru.ki.va.so.ru~ki.ro.ta",
+  "address_reduced_primer": "⌁ ma.tu.me.ma",
+  "root": "7343e3b49ce82b0aaae335b1095d14c9c45645254a4ab5bc0875b70545c9d3b5",
   "qr_payload_bytes": 1062,
   "qr_version": 27,
   "qr_modules": 125,

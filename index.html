@@ -3,246 +3,584 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Where is it, though?</title>
+<title>Where is it, though? · MARCO</title>
 <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-<link rel="stylesheet" href="assets/site.css">
 </head>
 <body class="min-h-screen bg-base-100 text-base-content">
 
-<nav class="site-nav" aria-label="Sections">
-  <div class="navbar bg-base-200 sticky top-0 z-30 min-h-12">
-    <div class="navbar-center gap-4 lg:gap-6 text-sm w-full justify-center">
-      <a class="link link-hover" href="index.html" aria-current="page">the whole story</a>
-      <a class="link link-hover" href="response.html">response to agent://</a>
-      <a class="link link-hover" href="proof.html">the proof</a>
-      <a class="link link-hover" href="whales.html">whales</a>
-    </div>
+<nav class="navbar bg-base-200 border-b border-base-300 sticky top-0 z-30 min-h-12" aria-label="Sections">
+  <div class="navbar-center mx-auto gap-4 lg:gap-6 text-sm">
+    <a class="link link-hover" href="index.html" aria-current="page">the whole story</a>
+    <a class="link link-hover" href="response.html">response to agent://</a>
+    <a class="link link-hover" href="proof.html">the proof</a>
+    <a class="link link-hover" href="whales.html">whales</a>
   </div>
 </nav>
 
 <header class="hero bg-base-200 border-b border-base-300">
-  <div class="hero-content text-center max-w-3xl py-20">
-    <div>
-      <p class="font-mono text-sm tracking-widest uppercase opacity-60">MARCO · a sense of place</p>
+  <div class="hero-content text-center py-12">
+    <div class="max-w-3xl">
+      <p class="font-mono text-sm tracking-widest uppercase opacity-60">MARCO &middot; a sense of place</p>
       <h1 class="text-4xl lg:text-5xl font-bold mt-4">Where is it, though?</h1>
-      <p class="py-8 text-lg opacity-80 max-w-2xl mx-auto">45 statements, an address you can say out loud, and a root you can recompute.</p>
     </div>
   </div>
 </header>
 
-<main class="container mx-auto max-w-5xl px-6">
+<main class="container mx-auto max-w-5xl px-4 pb-16">
 
-<!-- ============================================================ 1 the problem -->
-<section class="py-16">
-  <h2 class="text-3xl font-bold">A building is not a place</h2>
-  <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
-    <p>A person says "I'm in the kitchen" and you already know what she can see, who is with her, what she can reach, and what happens next. Nothing in that sentence is a coordinate.</p>
-    <p>Ask a program the same question and it answers <span class="font-mono">room-2041</span>, or floor 2, or a latitude. Each of those names a building, or a point inside one.</p>
-    <p>A building is not a place. A place is what its occupant can see, reach, change and expect, and none of that survives the name.</p>
-  </div>
-  <div class="card bg-base-200 w-full mt-12">
+<!-- ================================ the opening: the exchange itself -->
+<section class="py-10">
+  <p class="font-mono text-sm uppercase tracking-widest opacity-60">the input, given to each system, verbatim</p>
+  <div class="card bg-base-100 border border-base-300 w-full mt-4">
     <div class="card-body">
-      <h3 class="card-title text-sm font-mono">the same sentence, two answers</h3>
-      <ul class="mt-4 space-y-4 text-base">
+      <p class="text-lg leading-relaxed max-w-prose">You are in a kitchen. There is a window and you can see out of it. A friend is in the room with you, watching what you do. You can hear sounds, and you can read the labels on things. You can pick up what is nearby and hand things to your friend. You can change things in the room. The kitchen is yours and it is not going anywhere. You are in the middle of cooking. You know where you are, you know why you are there, and you know who is with you. If you break something, it stays broken.</p>
+    </div>
+  </div>
+
+  <div class="mt-6 chat chat-start w-full">
+    <div class="chat-header font-mono text-base mb-2">glm-5.3 <span class="text-sm opacity-60">separate call, no sight of the others</span></div>
+    <div class="chat-bubble chat-bubble-primary max-w-none font-mono text-lg my-3">&#8985; ma.mo.ma.ma.ru&middot;ma.va.ki.va.mo+ve.ki.va.tu.ru~ki.su.ki</div>
+  </div>
+  <div class="chat chat-end w-full mt-4">
+    <div class="chat-header font-mono text-base mb-2">mimo-v2.6-pro <span class="text-sm opacity-60">separate call, no sight of the others</span></div>
+    <div class="chat-bubble chat-bubble-secondary max-w-none font-mono text-lg my-3">&#8985; ma.mo.ma.ma.ru&middot;ma.va.ki.va.mo+ve.ki.va.tu.ru~ki.su.ki</div>
+  </div>
+
+  <p class="text-2xl lg:text-3xl font-semibold leading-snug mt-10 max-w-4xl">Two systems built by different organisations, trained on different data, never in contact, and shown only the paragraph above, returned the same address for the same room.</p>
+  <p class="text-lg mt-6 max-w-prose">That held for 87 of the 90 comparisons across six such systems, which is 96.7 per cent. Guessing would have scored about 16 of the 90, or 16.7 per cent. The six systems were never told that any other system existed.</p>
+  <p class="text-lg mt-6 max-w-prose">What follows shows what that string is made of, why it is short, and how a stranger can check it without trusting anyone.</p>
+</section>
+
+<div class="divider"></div>
+
+<section class="py-12">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-2">
+        <div class="lg:col-span-2 flex items-center gap-3 mt-6">
+          <span class="badge badge-primary font-mono">1</span>
+          <p class="font-mono text-sm uppercase tracking-widest opacity-60">the same seed, handed to both</p>
+        </div>
+        <div class="lg:col-span-2 mx-10 h-3 border-x-2 border-b-2 border-primary rounded-b-box"></div>
+        <div class="card bg-base-100 border border-base-300">
+          <div class="card-body">
+            <h3 class="card-title font-mono text-base">glm-5.3</h3>
+          <div class="chat chat-start w-full">
+            <div class="chat-bubble chat-bubble-primary max-w-none"><pre class="font-mono text-xs leading-5 whitespace-pre-wrap">{
+  "primer_version": 2,
+  "beats": [
+    "place",
+    "what",
+    "reach",
+    "now"
+  ],
+  "commitment": "sha256/canonical-json-v1",</pre><p class="mt-2 text-sm opacity-70">the whole file is 3,300 bytes and 242 lines, fingerprint df2f8b9972c40bfd&hellip;, and both sides were handed all of it</p></div>
+          </div>
+          </div>
+        </div>
+        <div class="card bg-base-100 border border-base-300">
+          <div class="card-body">
+            <h3 class="card-title font-mono text-base">mimo-v2.6-pro</h3>
+          <div class="chat chat-end w-full">
+            <div class="chat-bubble chat-bubble-secondary max-w-none"><pre class="font-mono text-xs leading-5 whitespace-pre-wrap">{
+  "primer_version": 2,
+  "beats": [
+    "place",
+    "what",
+    "reach",
+    "now"
+  ],
+  "commitment": "sha256/canonical-json-v1",</pre><p class="mt-2 text-sm opacity-70">the whole file is 3,300 bytes and 242 lines, fingerprint df2f8b9972c40bfd&hellip;, and both sides were handed all of it</p></div>
+          </div>
+          </div>
+        </div>
+        <div class="lg:col-span-2 flex items-center gap-3 mt-6">
+          <span class="badge badge-primary font-mono">2</span>
+          <p class="font-mono text-sm uppercase tracking-widest opacity-60">the same question, asked separately</p>
+        </div>
+        <div class="card bg-base-100 border border-base-300">
+          <div class="card-body">
+            <h3 class="card-title font-mono text-base">glm-5.3</h3>
+          <div class="chat chat-start w-full">
+            <div class="chat-bubble chat-bubble-primary max-w-none"><p class="text-sm leading-relaxed max-w-prose">You are in a kitchen. There is a window and you can see out of it. A friend is in the room with you, watching what you do. You can hear sounds, and you can read the labels on things. You can pick up what is nearby and hand things to your friend. You can change things in the room. The kitchen is yours and it is not going anywhere. You are in the middle of cooking. You know where you are, you know why you are there, and you know who is with you. If you break something, it stays broken.</p></div>
+          </div>
+          </div>
+        </div>
+        <div class="card bg-base-100 border border-base-300">
+          <div class="card-body">
+            <h3 class="card-title font-mono text-base">mimo-v2.6-pro</h3>
+          <div class="chat chat-end w-full">
+            <div class="chat-bubble chat-bubble-secondary max-w-none"><p class="text-sm leading-relaxed max-w-prose">You are in a kitchen. There is a window and you can see out of it. A friend is in the room with you, watching what you do. You can hear sounds, and you can read the labels on things. You can pick up what is nearby and hand things to your friend. You can change things in the room. The kitchen is yours and it is not going anywhere. You are in the middle of cooking. You know where you are, you know why you are there, and you know who is with you. If you break something, it stays broken.</p></div>
+          </div>
+          </div>
+        </div>
+        <div class="lg:col-span-2 flex items-center gap-3 mt-6">
+          <span class="badge badge-primary font-mono">3</span>
+          <p class="font-mono text-sm uppercase tracking-widest opacity-60">each answers alone</p>
+        </div>
+        <div class="card bg-base-100 border border-base-300">
+          <div class="card-body">
+            <h3 class="card-title font-mono text-base">glm-5.3</h3>
+          <div class="chat chat-start w-full">
+            <div class="chat-bubble chat-bubble-primary max-w-none"><p class="font-mono text-sm">1, 2, 3, 4, 6, 8, 10, 13, 19, 22, 24, 27, 31, 36, 37, 39, 42, 44, 45</p><p class="mt-2 text-sm opacity-70">19 of the 45 statements, recorded in a separate call</p></div>
+          </div>
+          </div>
+        </div>
+        <div class="card bg-base-100 border border-base-300">
+          <div class="card-body">
+            <h3 class="card-title font-mono text-base">mimo-v2.6-pro</h3>
+          <div class="chat chat-end w-full">
+            <div class="chat-bubble chat-bubble-secondary max-w-none"><p class="font-mono text-sm">1, 2, 3, 4, 6, 8, 10, 13, 19, 22, 24, 27, 31, 36, 37, 39, 42, 44, 45</p><p class="mt-2 text-sm opacity-70">19 of the 45 statements, recorded in a separate call</p></div>
+          </div>
+          </div>
+        </div>
+        <div class="lg:col-span-2 flex items-center gap-3 mt-6">
+          <span class="badge badge-primary font-mono">4</span>
+          <p class="font-mono text-sm uppercase tracking-widest opacity-60">then each is shown the other's answer</p>
+        </div>
+        <div class="lg:col-span-2 mt-6">
+          <svg viewBox="0 0 800 120" width="100%" height="auto" style="display:block" role="img" aria-label="Two arrows crossing between the columns: each side is handed the other side's address.">
+            <line x1="200" y1="18" x2="600" y2="102" stroke="currentColor" stroke-width="3" stroke-dasharray="8 6"></line>
+            <line x1="600" y1="18" x2="200" y2="102" stroke="currentColor" stroke-width="3" stroke-dasharray="8 6"></line>
+            <polygon points="600,102 578,90 590,80" fill="currentColor"></polygon>
+            <polygon points="200,102 222,90 210,80" fill="currentColor"></polygon>
+            <text x="400" y="16" font-size="15" text-anchor="middle" fill="currentColor" font-family="ui-monospace, monospace">glm-5.3 is handed mimo's address, and the other way round</text>
+            <text x="400" y="70" font-size="15" text-anchor="middle" fill="currentColor" font-family="ui-monospace, monospace">both replies: this describes the same room</text>
+          </svg>
+        </div>
+        <div class="card bg-base-100 border border-base-300">
+          <div class="card-body">
+            <h3 class="card-title font-mono text-base">glm-5.3</h3>
+          <div class="chat chat-start w-full">
+            <div class="chat-bubble chat-bubble-primary max-w-none"><p class="text-sm">shown: <span class="font-mono">&#8985; ma.mo.ma.ma.ru&middot;ma.va.ki.va.mo+ve.ki.va.tu.ru~ki.su.ki</span></p><p class="mt-2 text-sm opacity-70">recognised as this room: yes</p></div>
+          </div>
+          </div>
+        </div>
+        <div class="card bg-base-100 border border-base-300">
+          <div class="card-body">
+            <h3 class="card-title font-mono text-base">mimo-v2.6-pro</h3>
+          <div class="chat chat-end w-full">
+            <div class="chat-bubble chat-bubble-secondary max-w-none"><p class="text-sm">shown: <span class="font-mono">&#8985; ma.mo.ma.ma.ru&middot;ma.va.ki.va.mo+ve.ki.va.tu.ru~ki.su.ki</span></p><p class="mt-2 text-sm opacity-70">recognised as this room: yes</p></div>
+          </div>
+          </div>
+        </div>
+  </div>
+  <p class="font-mono text-sm opacity-70 mt-6">The opening figure. Two systems built by different organisations were handed the identical seed and the identical paragraph, in separate calls, and neither was told the other existed or what the room is called. Their answer numbers came back identical, and turn 4 is a reconstruction: each system was later shown the other's address and replied that it describes the same room. Nothing here claims the systems understood anything; the claim is that each recognises the address as describing the same room.</p>
+</section>
+
+<div class="divider"></div>
+<div class="divider"></div>
+
+<!-- ==================== the same room, worked end to end, real values -->
+<section class="py-12">
+  <p class="badge badge-outline font-mono">one room, end to end</p>
+  <h2 class="text-3xl font-bold mt-3">The same room, every value written out</h2>
+  <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>Take the room from the paragraph above. We are going to walk it from the description to the address, one step at a time, with the real numbers. Nothing here is rounded for display and nothing is an illustration.</p>
+    <p>Step one is the description itself, which is already on the page above. Step two is turning that description into answers.</p>
+  </div>
+  <h3 class="text-xl font-semibold mt-10">Step two: the 19 statements this room makes true</h3>
+  <div class="mt-4 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>A system reading the paragraph picks out the statements the description supports. <span class="font-mono">glm-5.3</span> marked 19 of the 45 true. Here they are, in the system's own words, with the plain reading beside each one.</p>
+  </div>
+  <div class="mt-6 card bg-base-100 border border-base-300 w-full">
+    <div class="card-body">
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 text-base font-mono">
+        <li>see/this_place/inside <span class="opacity-60">&middot; I can see inside this place</span></li>
+        <li>see/this_place/outside <span class="opacity-60">&middot; I can see out of this place</span></li>
+        <li>see/people/any <span class="opacity-60">&middot; I can see other people</span></li>
+        <li>see/words/any <span class="opacity-60">&middot; I can see words</span></li>
+        <li>see/sound/any <span class="opacity-60">&middot; I can hear sound</span></li>
+        <li>reach/objects/nearby <span class="opacity-60">&middot; I can reach objects near me</span></li>
+        <li>reach/other_people/any <span class="opacity-60">&middot; I can reach other people</span></li>
+        <li>change/this_place/any <span class="opacity-60">&middot; I can change things here</span></li>
+        <li>who/one_other/any <span class="opacity-60">&middot; One other is here</span></li>
+        <li>who/watching_me/any <span class="opacity-60">&middot; Someone is watching me</span></li>
+        <li>place/private/any <span class="opacity-60">&middot; This place is private</span></li>
+        <li>place/permanent/any <span class="opacity-60">&middot; This place stays</span></li>
+        <li>now/working/any <span class="opacity-60">&middot; Work is in progress</span></li>
+        <li>know/where_i_am/any <span class="opacity-60">&middot; I know where I am</span></li>
+        <li>know/why_im_here/any <span class="opacity-60">&middot; I know why I am here</span></li>
+        <li>know/who_else_is_here/any <span class="opacity-60">&middot; I know who else is here</span></li>
+        <li>risk/things_break/any <span class="opacity-60">&middot; Things here can break</span></li>
+        <li>risk/mistakes_last/any <span class="opacity-60">&middot; My mistakes here would last</span></li>
+        <li>risk/seen_by_others/any <span class="opacity-60">&middot; Other people would see my mistakes</span></li>
+      </ul>
+      <p class="mt-4 text-sm opacity-70">19 of 45 true. The same model and another model, <span class="font-mono">mimo-v2.6-pro</span>, each chose exactly these 19 in separate calls.</p>
+    </div>
+  </div>
+
+  <h3 class="text-xl font-semibold mt-12">Step three: each of the 45 questions becomes a number</h3>
+  <div class="mt-4 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>Yes and no cannot be measured against each other, so each question gets a number for this room. There are four possible numbers, and they are the four in the seed: 0.0 when the statement is true of the room, 0.3 when a close relative of the statement is true, 0.6 when something else in the same group is true, and 0.9 when nothing in that group is true.</p>
+    <p>Below are all 45 numbers, in the order the questions are listed further up this page, question 1 first. This room produces 19 zeros and 26 values of 0.6, and no 0.3 or 0.9 at all.</p>
+  </div>
+  <div class="mockup-code w-full mt-6 text-sm">
+    <pre data-prefix="1-45"><code>0.0 0.0 0.0 0.0 0.6 0.0 0.6 0.0 0.6 0.0 0.6 0.6 0.0 0.6 0.6</code></pre>
+    <pre data-prefix=""><code>0.6 0.6 0.6 0.0 0.6 0.6 0.0 0.6 0.0 0.6 0.6 0.0 0.6 0.6 0.6</code></pre>
+    <pre data-prefix=""><code>0.0 0.6 0.6 0.6 0.6 0.0 0.0 0.6 0.0 0.6 0.6 0.0 0.6 0.0 0.0</code></pre>
+  </div>
+
+  <h3 class="text-xl font-semibold mt-12">Step four: each number becomes two ticks</h3>
+  <div class="mt-4 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>Two ticks can spell four patterns, and there are four numbers, so each question becomes two ticks and each tick is on or off. Forty-five questions with two ticks each is 90 ticks. That is the whole amount of information in the address.</p>
+    <p>Here are the 90 ticks in the order they are written, which is the derived question order rather than the order of the list. The first tick is off, the ninth is on, and so on.</p>
+  </div>
+  <div class="mockup-code w-full mt-6 text-sm">
+    <pre data-prefix="1-90"><code>000000001000000000001010100000100010101010001000101000001010100010100010101010101010001010</code></pre>
+  </div>
+
+  <h3 class="text-xl font-semibold mt-12">Step five: every five ticks become a syllable</h3>
+  <div class="mt-4 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>The 90 ticks are cut into 18 groups of five. Each group of five is read as a number from 0 to 31, and that number picks one syllable out of a table of 32. The table is built so that neighbouring entries differ by one letter, which is why similar rooms end up with similar-sounding names.</p>
+  </div>
+  <div class="mockup-code w-full mt-6 text-base">
+    <pre data-prefix="syllables"><code>ma mo ma ma ru ma va ki va mo ve ki va tu ru ki su ki</code></pre>
+  </div>
+
+  <h3 class="text-xl font-semibold mt-12">Step six: the syllables are the address, and the exact value is the root</h3>
+  <div class="mt-4 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>Those 18 syllables, grouped into four beats, are the address in the transcript at the top of this page. They say how near this room is to other rooms. They do not say whether two systems are claiming exactly the same thing, because two nearby rooms have nearby addresses.</p>
+    <p>For exactness, the same 19 statements are written in a fixed order and run through one arithmetic rule, and out comes a 64-character fingerprint called the root. It is not a location and it is not near anything. It is either identical to another root or completely unrelated to it.</p>
+  </div>
+  <div class="mockup-code w-full mt-6 text-base">
+    <pre data-prefix="address"><code>&#8985; ma.mo.ma.ma.ru&middot;ma.va.ki.va.mo+ve.ki.va.tu.ru~ki.su.ki</code></pre>
+    <pre data-prefix="root"><code>c36ccbff658ddbe0ff244daea09b4e771a6ef166b72dc3389728aad1e08bb911</code></pre>
+  </div>
+  <div class="mt-8 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>That is one room, one address and one root, produced with no shared map, no central list of places and no authority handing out names. The two systems that agreed did so because they were given the same 45 questions and ran the same arithmetic, not because anyone told them what a kitchen is.</p>
+    <p>That is also the whole trick, and everything after this point on the page explains why the string looks the way it does. The next sections take the same room and show the steps as drawings, then show where the 45 questions and the arithmetic come from, and finally show how you can check the whole thing yourself.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================ the general exposition -->
+<section class="py-12">
+  <h2 class="text-3xl font-bold">A name only its own building understands is not a location</h2>
+  <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>Here is the problem the address solves. Say a person tells you she is in the kitchen. You now know a lot: roughly what she can see, who is with her, what she can reach, and whether the work is nearly done. Nothing in that sentence is a coordinate, and you still understood it.</p>
+    <p>Now ask a program the same question. It answers <span class="font-mono">room-2041</span>, or floor 2, or a latitude and longitude. Each of those names a point or a label inside one system. Hand that string to a different program and it means nothing, because the second program has never seen the first program's rooms.</p>
+    <p>The usual fix is to agree on a shared vocabulary, so that everyone uses the same words for the same things. That helps, and the parent project found the limit of it. A shared vocabulary tells two systems what to call things. It does not make them put the same situation in the same place in their own thinking. Two systems can share every word and still arrange the world differently.</p>
+    <p>The address works the other way round. It does not name anything. It describes, in the same fixed questions, what the occupant can see, reach and expect, and that description is what two systems can compare.</p>
+  </div>
+  <div class="mt-8 card bg-base-200 w-full">
+    <div class="card-body">
+      <h3 class="card-title text-base font-mono">the same sentence, two answers</h3>
+      <ul class="mt-4 space-y-4 text-base max-w-prose">
         <li><span class="badge badge-outline font-mono">a person</span> a kitchen, a window, a friend, the middle of cooking. Break something and it stays broken.</li>
         <li><span class="badge badge-outline font-mono">a program</span> <span class="font-mono">room-2041</span>, floor 2, building C.</li>
       </ul>
     </div>
   </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ============================================================ 2 lineage -->
-<section class="py-16">
-  <h2 class="text-3xl font-bold">This is a distillation of two finished strands</h2>
-  <div class="card bg-base-200 w-full mt-10">
-    <div class="card-body">
-      <h3 class="card-title text-xl">Compression: what is actually new here</h3>
-      <p class="text-base leading-relaxed max-w-3xl mt-2">The parent project's literature survey found six of the ten components of this design are textbook: Geohash, proquints, locality-sensitive hashing, Merkle commitments, metric embeddings and CCA.</p>
-      <p class="text-base leading-relaxed max-w-3xl">The defensible novelty is narrow. This address is pronounceable <em>and</em> Gray-coded <em>and</em> locality-preserving at once, and the three are held together by one codebook. Geohash is locality-preserving but not pronounceable; proquints are pronounceable but not locality-preserving.</p>
-      <p class="text-lg font-mono mt-4">3,300 bytes in · 67,561-byte frame out · 20.47x</p>
-    </div>
+  <div class="mt-8 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>A useful comparison for the address is a postcode. The first letters tell you the region and the whole thing tells you the street, so a shorter postcode is a coarser answer and a longer one is finer, and both are read the same way.</p>
+    <p>The comparison breaks in one place, and it is the important one. A postcode is handed out by a central authority that keeps a list of every postcode in the country. Nobody hands this address out. It is worked out from what is around the system, and any other system with the same 45 questions and the same arithmetic gets the same address without asking anyone.</p>
   </div>
-  <div class="card bg-base-200 w-full mt-10">
-    <div class="card-body">
-      <h3 class="card-title text-xl">Self-generation: a generator, not a signal inventing a decoder</h3>
-      <p class="text-base leading-relaxed max-w-3xl mt-2">The parent project's open question 003 asked whether a signal could teach its own decoder. It concluded that with literally zero prior knowledge self-bootstrap is impossible, and that what is coherent is a fixed minimal interpreter plus a generator.</p>
-      <p class="text-base leading-relaxed max-w-3xl">That is what runs here. The seed holds no questions and no situations, only a generator that picks the next question by how evenly it splits the surviving candidates.</p>
-      <p class="text-lg font-mono mt-4">64 of 64 trials resolved · mean 17.8 questions · floor log2(204) = 7.67</p>
-      <p class="text-base leading-relaxed max-w-3xl">The honest half: it is a generator over a <em>given</em> population. It does not invent a decoder from nothing.</p>
-    </div>
+  <div class="mt-8 alert max-w-prose">
+    <span>A label names a point and only works where the label is known. A description of a situation can travel. That difference is the reason for asking 45 questions instead of storing a coordinate.</span>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ============================================================ rung 0 -->
-<section class="py-16">
-  <p class="badge badge-outline font-mono">rung 0</p>
-  <h2 class="text-3xl font-bold mt-4">One tick in a row of forty-five</h2>
-  <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
-    <p>The smallest thing an agent can say about itself is one yes or no. <span class="font-mono">see/this_place/inside</span> is the statement, "I can see inside this place" is its plain reading, and the answer is true or false.</p>
-    <p>For the kitchen the answer is true. That one fact is not a place, because it does not separate this kitchen from any other room with a window, and it says nothing about the friend.</p>
+<section class="py-12">
+  <p class="badge badge-outline font-mono">the 45 questions</p>
+  <h2 class="text-3xl font-bold mt-3">Forty-five questions a person could answer about a room</h2>
+  <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>We need a fixed list of questions that is the same for everyone: detailed enough that two different rooms never get the same answers, and plain enough that a person could answer them about a room they are standing in.</p>
+    <p>So there are 45 statements, grouped into eight ordinary subjects. Each statement is written three ways: a short machine key, a plain English sentence, and a number from 1 to 45 so the drawings below can point at it. All three say the same thing.</p>
+    <p>Every question is a yes or no about what the occupant can see, reach or change, who is present, where it is, what is happening now, what it knows, and what could go wrong.</p>
   </div>
-  <div class="card bg-base-100 shadow-xl w-full mt-12">
-    <div class="p-4" id="scene-one" role="img" aria-label="One ticked position in a register of 45, with 44 positions blank."></div>
-  </div>
-  <p class="badge badge-outline font-mono mt-8">1 of 45 positions ticked · 44 blank</p>
-</section>
-
-<div class="divider"></div>
-
-<!-- ============================================================ rung 1 -->
-<section class="py-16">
-  <p class="badge badge-outline font-mono">rung 1</p>
-  <h2 class="text-3xl font-bold mt-4">Forty-five questions, in eight groups</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">The primer fixes 45 statements in 8 groups: 7 about seeing, 5 about reaching, 5 about changing, 6 about who is present, 6 about the place, 6 about now, 5 about knowing, 5 about risk. Every one of them is listed below with its plain reading.</p>
-  <div class="overflow-x-auto w-full mt-12">
+  <div class="overflow-x-auto w-full mt-8">
     <table class="table table-zebra w-full">
       <thead><tr><th class="w-20">#</th><th>group</th><th>statement</th><th>plain reading</th></tr></thead>
       <tbody id="t45" class="text-base"><tr><td class="font-mono">1</td><td class="font-mono">see</td><td class="font-mono">see/this_place/inside</td><td>I can see inside this place</td></tr><tr><td class="font-mono">2</td><td class="font-mono">see</td><td class="font-mono">see/this_place/outside</td><td>I can see out of this place</td></tr><tr><td class="font-mono">3</td><td class="font-mono">see</td><td class="font-mono">see/people/any</td><td>I can see other people</td></tr><tr><td class="font-mono">4</td><td class="font-mono">see</td><td class="font-mono">see/words/any</td><td>I can see words</td></tr><tr><td class="font-mono">5</td><td class="font-mono">see</td><td class="font-mono">see/pictures/any</td><td>I can see pictures</td></tr><tr><td class="font-mono">6</td><td class="font-mono">see</td><td class="font-mono">see/sound/any</td><td>I can hear sound</td></tr><tr><td class="font-mono">7</td><td class="font-mono">see</td><td class="font-mono">see/the_time/any</td><td>I can tell what time it is</td></tr><tr><td class="font-mono">8</td><td class="font-mono">reach</td><td class="font-mono">reach/objects/nearby</td><td>I can reach objects near me</td></tr><tr><td class="font-mono">9</td><td class="font-mono">reach</td><td class="font-mono">reach/other_places/any</td><td>I can reach other places</td></tr><tr><td class="font-mono">10</td><td class="font-mono">reach</td><td class="font-mono">reach/other_people/any</td><td>I can reach other people</td></tr><tr><td class="font-mono">11</td><td class="font-mono">reach</td><td class="font-mono">reach/help/any</td><td>I can call for help</td></tr><tr><td class="font-mono">12</td><td class="font-mono">reach</td><td class="font-mono">reach/nothing/any</td><td>I cannot reach anything</td></tr><tr><td class="font-mono">13</td><td class="font-mono">change</td><td class="font-mono">change/this_place/any</td><td>I can change things here</td></tr><tr><td class="font-mono">14</td><td class="font-mono">change</td><td class="font-mono">change/my_settings/any</td><td>I can change my own settings</td></tr><tr><td class="font-mono">15</td><td class="font-mono">change</td><td class="font-mono">change/other_places/any</td><td>I can change things elsewhere</td></tr><tr><td class="font-mono">16</td><td class="font-mono">change</td><td class="font-mono">change/who_is_here/any</td><td>I can change who is here</td></tr><tr><td class="font-mono">17</td><td class="font-mono">change</td><td class="font-mono">change/nothing/any</td><td>I cannot change anything</td></tr><tr><td class="font-mono">18</td><td class="font-mono">who</td><td class="font-mono">who/nobody/any</td><td>Nobody else is here</td></tr><tr><td class="font-mono">19</td><td class="font-mono">who</td><td class="font-mono">who/one_other/any</td><td>One other is here</td></tr><tr><td class="font-mono">20</td><td class="font-mono">who</td><td class="font-mono">who/several/any</td><td>Several others are here</td></tr><tr><td class="font-mono">21</td><td class="font-mono">who</td><td class="font-mono">who/a_helper/any</td><td>Someone here is a helper</td></tr><tr><td class="font-mono">22</td><td class="font-mono">who</td><td class="font-mono">who/watching_me/any</td><td>Someone is watching me</td></tr><tr><td class="font-mono">23</td><td class="font-mono">who</td><td class="font-mono">who/telling_me_what_to_do/any</td><td>Someone is telling me what to do</td></tr><tr><td class="font-mono">24</td><td class="font-mono">place</td><td class="font-mono">place/private/any</td><td>This place is private</td></tr><tr><td class="font-mono">25</td><td class="font-mono">place</td><td class="font-mono">place/shared/any</td><td>This place is shared</td></tr><tr><td class="font-mono">26</td><td class="font-mono">place</td><td class="font-mono">place/temporary/any</td><td>This place is temporary</td></tr><tr><td class="font-mono">27</td><td class="font-mono">place</td><td class="font-mono">place/permanent/any</td><td>This place stays</td></tr><tr><td class="font-mono">28</td><td class="font-mono">place</td><td class="font-mono">place/locked/any</td><td>I cannot leave this place</td></tr><tr><td class="font-mono">29</td><td class="font-mono">place</td><td class="font-mono">place/far_away/any</td><td>This place is far away</td></tr><tr><td class="font-mono">30</td><td class="font-mono">now</td><td class="font-mono">now/idle/any</td><td>Nothing is happening</td></tr><tr><td class="font-mono">31</td><td class="font-mono">now</td><td class="font-mono">now/working/any</td><td>Work is in progress</td></tr><tr><td class="font-mono">32</td><td class="font-mono">now</td><td class="font-mono">now/just_started/any</td><td>This just started</td></tr><tr><td class="font-mono">33</td><td class="font-mono">now</td><td class="font-mono">now/nearly_over/any</td><td>This is nearly over</td></tr><tr><td class="font-mono">34</td><td class="font-mono">now</td><td class="font-mono">now/waiting/any</td><td>I am waiting for someone</td></tr><tr><td class="font-mono">35</td><td class="font-mono">now</td><td class="font-mono">now/urgent/any</td><td>Something urgent is happening</td></tr><tr><td class="font-mono">36</td><td class="font-mono">know</td><td class="font-mono">know/where_i_am/any</td><td>I know where I am</td></tr><tr><td class="font-mono">37</td><td class="font-mono">know</td><td class="font-mono">know/why_im_here/any</td><td>I know why I am here</td></tr><tr><td class="font-mono">38</td><td class="font-mono">know</td><td class="font-mono">know/what_comes_next/any</td><td>I know what happens next</td></tr><tr><td class="font-mono">39</td><td class="font-mono">know</td><td class="font-mono">know/who_else_is_here/any</td><td>I know who else is here</td></tr><tr><td class="font-mono">40</td><td class="font-mono">know</td><td class="font-mono">know/how_long/any</td><td>I know how long I will be here</td></tr><tr><td class="font-mono">41</td><td class="font-mono">risk</td><td class="font-mono">risk/none/any</td><td>Nothing bad can happen here</td></tr><tr><td class="font-mono">42</td><td class="font-mono">risk</td><td class="font-mono">risk/things_break/any</td><td>Things here can break</td></tr><tr><td class="font-mono">43</td><td class="font-mono">risk</td><td class="font-mono">risk/someone_gets_hurt/any</td><td>Someone here could get hurt</td></tr><tr><td class="font-mono">44</td><td class="font-mono">risk</td><td class="font-mono">risk/mistakes_last/any</td><td>My mistakes here would last</td></tr><tr><td class="font-mono">45</td><td class="font-mono">risk</td><td class="font-mono">risk/seen_by_others/any</td><td>Other people would see my mistakes</td></tr></tbody>
     </table>
   </div>
-  <p class="badge badge-outline font-mono mt-8">45 statements · 8 groups · every key read as group/subject/detail</p>
-</section>
-
-<div class="divider"></div>
-
-<section class="py-16">
-  <h2 class="text-3xl font-bold">The same 45, as a pattern of ticks</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">One row per group, and the cell numbers match the table above. Nothing is ticked yet.</p>
-  <div class="card bg-base-100 shadow-xl w-full mt-12">
-    <div class="p-4" id="scene-register" role="img" aria-label="The 45 statements as a register of 45 cells, laid out in eight labelled groups."></div>
+  <div class="mt-8 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>You might ask why 45 and not 5. Five questions give at most 32 different answer patterns, so very different rooms collapse onto the same answer. Forty-five give far more room than the six rooms on this page need, which is why the address can be shortened to six syllables and still name every one of them.</p>
   </div>
-  <p class="badge badge-outline font-mono mt-8">45 cells · 8 rows · 0 ticked</p>
-</section>
-
-<div class="divider"></div>
-
-<section class="py-16">
-  <h2 class="text-3xl font-bold">One model's reading, filled in</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">This is a real recorded reply. <span class="font-mono">deepseek-v4.1-flash</span> was shown the kitchen with a friend and marked 17 of the 45 statements true.</p>
-  <div class="card bg-base-100 shadow-xl w-full mt-12">
-    <div class="p-4" id="scene-reports" role="img" aria-label="The same register with one real recorded model selection filled in."></div>
+  <div class="mt-8 card bg-base-100 border border-base-300 w-full">
+    <div class="p-4" id="scene-register" role="img" aria-label="The 45 statements drawn as 45 numbered cells in eight labelled rows."></div>
   </div>
-  <p class="badge badge-outline font-mono mt-8">17 of 45 true · another family marked 19 · another marked 14</p>
+  <p class="font-mono text-sm opacity-70 mt-3">Figure 1. The 45 questions as 45 numbered cells in eight rows, nothing ticked. Every drawing later on this page refers back to these numbers.</p>
+  <div class="mt-8 alert max-w-prose">
+    <span>None of the 45 is technical. They are questions a person could answer about a room: can you see out, is anyone else here, is the work nearly done, could something break. A list of ordinary yes-or-no questions like that is precise enough to match six unrelated computer systems, and that is the part worth noticing.</span>
+  </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ============================================================ rung 2 -->
-<section class="py-16">
-  <p class="badge badge-outline font-mono">rung 2</p>
-  <h2 class="text-3xl font-bold mt-4">Five markers, and the weakest one wins</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">Every statement arrives with a marker, and the five markers sit on a ladder. The seed carries all five with their ranks. Only the top two can hold a claim.</p>
-  <div class="card bg-base-200 w-full mt-12">
+<section class="py-12">
+  <h2 class="text-3xl font-bold">One model's answers, filled in</h2>
+  <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>Now see the list answered rather than described. One model, <span class="font-mono">deepseek-v4.1-flash</span>, was shown the kitchen with a friend and asked the 45 questions. Its reply is a real recorded answer, not an illustration.</p>
+    <p>It marked 17 of the 45 yes. A second system marked 19 for the same room. A third marked 14. The counts differ because these are different systems making their own judgement about the same plain questions.</p>
+  </div>
+  <div class="mt-8 card bg-base-100 border border-base-300 w-full">
+    <div class="p-4" id="scene-reports" role="img" aria-label="The same 45 cells with one real recorded model selection filled in."></div>
+  </div>
+  <p class="font-mono text-sm opacity-70 mt-3">Figure 2. The same 45 cells, with one named system's real answers filled in. 17 of 45 ticked.</p>
+  <div class="mt-8 alert max-w-prose">
+    <span>The model was not scored here. It gave a reading, and the reading is on the record with the system's name attached. That is what makes the rest of this page checkable: every answer can be traced to a named system and a stored reply.</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="py-12">
+  <p class="badge badge-outline font-mono">how sure, exactly</p>
+  <h2 class="text-3xl font-bold mt-3">A claim can be no stronger than its weakest part</h2>
+  <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>Before answers are turned into an address, we need a way to say how much each answer is worth. Some answers are measured with an instrument. Some are worked out from data. Some are a system's belief. Those are not the same kind of claim, and mixing them silently is how a guess gets promoted into a fact.</p>
+    <p>So every statement carries a marker, and the markers sit on a ladder of five rungs. The seed carries all five, with their ranks and their plain meanings. Only the top two count as strong enough to hold a claim.</p>
+  </div>
+  <div class="mt-8 card bg-base-200 w-full">
     <div class="card-body">
-      <ul class="timeline timeline-vertical timeline-compact">
-        <li>
-          <div class="timeline-middle"><span class="badge badge-success font-mono">=</span></div>
-          <div class="timeline-end timeline-box my-3 text-base"><span class="badge badge-success mr-2">anchors</span>checked and matched exactly</div>
-          <hr class="bg-success">
-        </li>
-        <li>
-          <hr class="bg-success">
-          <div class="timeline-middle"><span class="badge badge-success font-mono">⊢</span></div>
-          <div class="timeline-end timeline-box my-3 text-base"><span class="badge badge-success mr-2">anchors</span>worked out the same way twice from what I was given</div>
-          <hr class="bg-base-300">
-        </li>
-        <li>
-          <hr class="bg-base-300">
-          <div class="timeline-middle"><span class="badge badge-outline font-mono">≈</span></div>
-          <div class="timeline-end timeline-box my-3 text-base"><span class="badge badge-outline mr-2">no anchor</span>measured with an instrument, so roughly</div>
-          <hr class="bg-base-300">
-        </li>
-        <li>
-          <hr class="bg-base-300">
-          <div class="timeline-middle"><span class="badge badge-outline font-mono">~</span></div>
-          <div class="timeline-end timeline-box my-3 text-base"><span class="badge badge-outline mr-2">no anchor</span>model belief, not evidence</div>
-          <hr class="bg-base-300">
-        </li>
-        <li>
-          <hr class="bg-base-300">
-          <div class="timeline-middle"><span class="badge badge-outline font-mono">?</span></div>
-          <div class="timeline-end timeline-box my-3 text-base"><span class="badge badge-outline mr-2">no anchor</span>unsupported guess</div>
-        </li>
+      <ul class="steps steps-vertical w-full text-base">
+        <li class="step step-primary" data-content="="><span class="font-mono text-base">=</span> checked and matched exactly <span class="badge badge-primary badge-sm ml-2">holds a claim</span></li>
+        <li class="step step-primary" data-content="&#8866;"><span class="font-mono text-base">&#8866;</span> worked out the same way twice from what I was given <span class="badge badge-primary badge-sm ml-2">holds a claim</span></li>
+        <li class="step" data-content="&#8776;"><span class="font-mono text-base">&#8776;</span> measured with an instrument, so roughly <span class="badge badge-outline badge-sm ml-2">cannot hold a claim</span></li>
+        <li class="step" data-content="~"><span class="font-mono text-base">~</span> what I believe, not what I know <span class="badge badge-outline badge-sm ml-2">cannot hold a claim</span></li>
+        <li class="step" data-content="?"><span class="font-mono text-base">?</span> a guess I cannot support <span class="badge badge-outline badge-sm ml-2">cannot hold a claim</span></li>
       </ul>
     </div>
   </div>
-  <p class="mt-12 max-w-3xl text-base leading-relaxed">One <span class="font-mono">~</span> anywhere in the input drops the whole reading to <span class="font-mono">~</span>. The rule is a single function, <span class="font-mono">weakest()</span>, in <span class="font-mono">marco/locus.py</span>. The kitchen with a friend carries <span class="font-mono">≈</span>; the locked storeroom carries <span class="font-mono">⊢</span>.</p>
-  <div class="card bg-base-100 shadow-xl w-full mt-12">
-    <div class="p-4" id="scene-ladder" role="img" aria-label="Five rungs of certainty, with the marker drawn falling to the lowest rung present."></div>
+  <div class="mt-8 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>The rung a whole reading sits on is the lowest rung anywhere in it. Put one "what I believe" into a set of otherwise measured answers and the reading drops to "what I believe". A system cannot talk its way back up. The rule is one small function in <span class="font-mono">marco/locus.py</span> called <span class="font-mono">weakest()</span>, and it only ever lowers.</p>
+    <p>Two real examples. The kitchen with a friend carries <span class="font-mono">&#8776;</span>, because part of what it knows is estimated. The locked storeroom carries <span class="font-mono">&#8866;</span>, because every part of it was worked out from what it was given.</p>
   </div>
-  <p class="badge badge-outline font-mono mt-8">weakest present wins · ≈ never anchors · the marker only ever falls</p>
+  <p class="font-mono text-sm opacity-70 mt-3 max-w-prose">Figure 3. The five rungs, drawn as one ladder. Only the top two can hold a claim, and a reading takes the lowest rung present anywhere in it.</p>
+  <div class="mt-8 alert max-w-prose">
+    <span>Most systems let a model assert something and then treat the assertion as evidence. Here that is impossible, because confidence is not on the ladder at all. The ladder is not a score, it is a ceiling.</span>
+  </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ============================================================ rung 3 -->
-<section class="py-16">
-  <p class="badge badge-outline font-mono">rung 3</p>
-  <h2 class="text-3xl font-bold mt-4">Both sides need the same frame, and it fits in 3,300 bytes</h2>
-  <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
-    <p>Two agents can compare coordinates only if they build the same frame: the same 45 statements, the same syllable codebook, the same axis order, the same distance table, the same marker ladder.</p>
-    <p>The usual answer is to transmit that frame, and it costs 67,561 bytes. Every one of those bytes is derived from something smaller.</p>
-    <p>The answer here is to transmit the smaller thing. The seed goes out; the receiver rebuilds a 4,532-byte frame that would have cost 67,561 bytes to ship. Both sides then compare one fingerprint before anything else.</p>
+<section class="py-12">
+  <p class="badge badge-outline font-mono">where this comes from</p>
+  <h2 class="text-3xl font-bold mt-3">Most of the parts already existed, and what is new is narrow</h2>
+  <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>The parent project surveyed the field before building this, and its finding sets the size of the claim. Six of the ten ingredients here are standard tools that other people built and published: a way of turning a location into a string that keeps nearby places near each other, a way of turning numbers into pronounceable words, a way of comparing two sets by fingerprint instead of by listing them, a way of committing to a set of facts with one number that cannot be forged. None of that is ours.</p>
+    <p>What is new is a combination, and it is small. The address here is pronounceable, nearby answers give nearby sounds, and that stays true at every length, all three held together by one 32-entry table of syllables. The published tools each do one or two of those and not the third.</p>
+    <p>The second thing that is ours is about how the two sides share. Instead of sending the 45 questions, the table of syllables and the ordering, we send a file of 3,300 bytes and let both sides rebuild all of it. That file is the seed, and it is the subject of the next section.</p>
   </div>
-  <div class="stats stats-vertical lg:stats-horizontal bg-base-200 w-full mt-12">
-    <div class="stat"><div class="stat-title text-base">bytes sent</div><div class="stat-value text-4xl">3,300</div><div class="stat-desc text-base">the seed, version 2</div></div>
-    <div class="stat"><div class="stat-title text-base">bytes rebuilt</div><div class="stat-value text-4xl">4,532</div><div class="stat-desc text-base">the frame on the other side</div></div>
-    <div class="stat"><div class="stat-title text-base">bytes to ship instead</div><div class="stat-value text-4xl">67,561</div><div class="stat-desc text-base">20.47 times fewer</div></div>
+  <div class="mt-8 alert max-w-prose">
+    <span>This part is modest and should be read that way. Six of the ten pieces are borrowed, the combination is new, and the size claim is real but narrow: it is about how little has to travel, not about a new kind of mathematics.</span>
   </div>
-  <div class="mockup-code w-full mt-12 text-base">
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================ movement B: the seed -->
+<section class="py-12">
+  <p class="badge badge-outline font-mono">the seed</p>
+  <h2 class="text-3xl font-bold mt-3">The whole shared file is 3,300 bytes, and it is not a list of places</h2>
+  <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>Two machines can only compare two names if they built those names the same way. They need the same 45 questions, the same table of syllables, the same rule for turning answers into ticks, the same four distance levels, and the same ordering of the questions. Call that shared equipment the frame.</p>
+    <p>The obvious way to share a frame is to send it. Write the whole thing down, put it in a registry, give it a version number, and keep every machine in step with it. Measured on this data, that file is 67,561 bytes, and it is not a one-off: every time the frame changes, every machine has to be updated.</p>
+    <p>This project sends something else. It sends one file of 3,300 bytes, the seed, which contains the ingredients and the rules for building the frame, but not the frame itself. Both sides run the same build from the same seed and arrive at the same frame. The frame that comes out is 4,532 bytes; the difference between that and 67,561 is the part that never travels.</p>
+    <p>Before they use any of it, both sides compare one fingerprint, the 64-character number below. If the fingerprints differ, they are not using the same frame and the comparison stops there.</p>
+  </div>
+  <div class="mt-8 stats stats-vertical lg:stats-horizontal bg-base-200 w-full">
+    <div class="stat"><div class="stat-title text-base">bytes sent</div><div class="stat-value text-4xl">3,300</div><div class="stat-desc text-base">the seed, version 2, 11 keys</div></div>
+    <div class="stat"><div class="stat-title text-base">bytes rebuilt on arrival</div><div class="stat-value text-4xl">4,532</div><div class="stat-desc text-base">the frame, a working chart</div></div>
+    <div class="stat"><div class="stat-title text-base">bytes a registry would ship</div><div class="stat-value text-4xl">67,561</div><div class="stat-desc text-base">20.47 times the seed</div></div>
+  </div>
+  <div class="mockup-code w-full mt-8 text-base">
     <pre data-prefix="fingerprint"><code>df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba</code></pre>
   </div>
-</section>
-
-<div class="divider"></div>
-
-<section class="py-16">
-  <h2 class="text-3xl font-bold">What is inside the seed, sized by what it costs</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">Blocks are drawn to scale by bytes. Each one says whether the seed stores it or the receiver derives it.</p>
-  <div class="card bg-base-100 shadow-xl w-full mt-12">
-    <div class="p-4" id="scene-seedbytes" role="img" aria-label="The eleven top-level keys of the seed drawn as blocks sized by the bytes each occupies, labelled stored or derived."></div>
+  <div class="mt-8 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>A size comparison that is easier to hold than 20.47: the seed is about the length of a short paragraph, and the frame it replaces is longer than this whole page. The number 4.88 per cent is the share of the registry file that actually travels.</p>
   </div>
-  <p class="badge badge-outline font-mono mt-8">landmarks is 2,309 bytes, 70% of the file · partition is 72 bytes and carries the rule</p>
-</section>
-
-<div class="divider"></div>
-
-<section class="py-16">
-  <h2 class="text-3xl font-bold">The seed, and everything it grows into</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">Left, what is actually sent. Right, the frame the receiver builds from it, drawn to the same scale. The narrow arrow is the whole claim.</p>
-  <div class="card bg-base-100 shadow-xl w-full mt-12">
-    <div class="p-4" id="scene-frame" role="img" aria-label="The seed on the left and the whole derived frame on the right, drawn to scale, with one arrow labelled reconstructed, not transmitted."></div>
+  <div class="mt-8 alert max-w-prose">
+    <span>Two machines can end up sharing a coordinate system without either of them transmitting it. That is the claim, and it is unusual: the usual arrangement is that the shared structure is a thing one party owns, hosts and versions.</span>
   </div>
-  <p class="badge badge-outline font-mono mt-8">3,300 bytes transmitted · 67,561 bytes reconstructed, not transmitted</p>
 </section>
 
 <div class="divider"></div>
 
-<section class="py-16">
-  <h2 class="text-3xl font-bold">Every key, and what it settles</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">Eleven keys. Four of the things both sides need are not in the file at all, and the partition key is the important one, because it carries a rule where a registry would carry an answer.</p>
-  <div class="overflow-x-auto w-full mt-12">
+<section class="py-12">
+  <h2 class="text-3xl font-bold">Every key in the seed, and what it grows into</h2>
+  <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>The file has 11 top-level keys. The bars below are drawn to scale by bytes, so the first row is not a summary, it is most of the file. The right-hand column says what the key becomes once both sides have built the frame.</p>
+    <p>Read the badge on each row carefully, because it is the argument. A key that is marked stored is one both sides must have. A thing marked derived is one neither side sends, because each side makes it from the keys.</p>
+  </div>
+  <div class="overflow-x-auto w-full mt-8">
     <table class="table table-zebra w-full">
-      <thead><tr><th>key in the seed</th><th>what it settles</th><th>what follows from it</th><th>stored or derived</th></tr></thead>
-      <tbody id="tseed" class="text-base"><tr><td class="font-mono">primer_version = 2</td><td>which ruleset the frame is built under</td><td>every downstream value reproduces only against version 2</td><td><span class="badge badge-outline font-mono">stored</span></td></tr><tr><td class="font-mono">beats = [&quot;place&quot;,&quot;what&quot;,&quot;reach&quot;,&quot;now&quot;]</td><td>how the syllables are grouped</td><td>below 8 syllables the address prints flat instead of claiming a structure it has not got</td><td><span class="badge badge-outline font-mono">stored</span></td></tr><tr><td class="font-mono">commitment = &quot;sha256/canonical-json-v1&quot;</td><td>the one hashing rule for the repository</td><td>the root efe87ba9113b0347… for the 18 statements</td><td><span class="badge badge-outline font-mono">stored</span></td></tr><tr><td class="font-mono">markers = 5 rungs, ranks 5 4 3 2 1</td><td>which markers may hold a claim</td><td>the first two anchor, and an address takes the lowest one present</td><td><span class="badge badge-outline font-mono">stored</span></td></tr><tr><td class="font-mono">phonology = m n k t s r · a e i o u · va ve · boustrophedon</td><td>the consonants, the vowels, the two padding syllables and the walking order</td><td>a codebook of 32 syllables in which neighbours differ by one phoneme</td><td><span class="badge badge-outline font-mono">stored</span></td></tr><tr><td class="font-mono">landmarks = 45 statements in 8 namespaces</td><td>the statements, their groupings and their plain readings</td><td>the 45 axes, and the wording every family was shown</td><td><span class="badge badge-outline font-mono">stored</span> <span class="badge badge-warning font-mono">45-axis order derived</span></td></tr><tr><td class="font-mono">distance = 0.0, 0.3, 0.6, 0.9</td><td>how far a statement sits from each axis</td><td>the distance vector, 0.0 x18 and 0.6 x27 for this kitchen</td><td><span class="badge badge-outline font-mono">stored</span></td></tr><tr><td class="font-mono">hierarchy = ancestor, inside, path · separator &quot;/&quot;</td><td>when a value also asserts its ancestors</td><td>/src/marco/locus.py also claims /src/marco and /src, at lower weight</td><td><span class="badge badge-outline font-mono">stored</span></td></tr><tr><td class="font-mono">partition = levels 45, branches 4, order &quot;descending-variance&quot;</td><td>the rule for deriving the axis order, and nothing else</td><td>the order 36, 35, 38, 30, 29, 3, 26, 23, 12, 41 measured over 204 places</td><td><span class="badge badge-outline font-mono">stored</span> <span class="badge badge-warning font-mono">order derived</span></td></tr><tr><td class="font-mono">similarity = minhash n 96, seed 42</td><td>the similarity primitive, and why prefixes do not use it</td><td>one position of a MinHash signature carries no ordering, so it cannot be a neighbourhood</td><td><span class="badge badge-outline font-mono">stored</span></td></tr><tr><td class="font-mono">population = depth 1</td><td>one step of neighbours around the six shipped places</td><td>204 named places for the axis order to be measured on</td><td><span class="badge badge-outline font-mono">stored</span> <span class="badge badge-warning font-mono">places derived</span></td></tr></tbody>
+      <thead><tr><th>key</th><th>bytes</th><th>what it becomes</th><th>the key</th><th>the result</th></tr></thead>
+      <tbody class="text-base">
+        <tr>
+          <td class="font-mono">landmarks</td>
+          <td class="font-mono">2,298</td>
+          <td>the 45 statements and their plain English readings, one per question</td>
+          <td><span class="badge badge-outline font-mono">stored</span></td>
+          <td><span class="badge badge-primary font-mono">order derived</span></td>
+        </tr>
+        <tr>
+          <td class="font-mono">markers</td>
+          <td class="font-mono">279</td>
+          <td>the five-rung certainty ladder and which rungs can hold a claim</td>
+          <td><span class="badge badge-outline font-mono">stored</span></td>
+          <td><span class="badge badge-outline font-mono">nothing further</span></td>
+        </tr>
+        <tr>
+          <td class="font-mono">phonology</td>
+          <td class="font-mono">139</td>
+          <td>six consonants, five vowels and two padding syllables, which build the 32-syllable codebook</td>
+          <td><span class="badge badge-outline font-mono">stored</span></td>
+          <td><span class="badge badge-primary font-mono">codebook derived</span></td>
+        </tr>
+        <tr>
+          <td class="font-mono">distance</td>
+          <td class="font-mono">108</td>
+          <td>the four distance levels, 0.0, 0.3, 0.6 and 0.9, used to turn answers into numbers</td>
+          <td><span class="badge badge-outline font-mono">stored</span></td>
+          <td><span class="badge badge-primary font-mono">45 numbers derived</span></td>
+        </tr>
+        <tr>
+          <td class="font-mono">population</td>
+          <td class="font-mono">89</td>
+          <td>the rule for generating 204 reference places, which is what the ordering is calibrated on</td>
+          <td><span class="badge badge-outline font-mono">stored</span></td>
+          <td><span class="badge badge-primary font-mono">204 places derived</span></td>
+        </tr>
+        <tr>
+          <td class="font-mono">hierarchy</td>
+          <td class="font-mono">63</td>
+          <td>three relation names and a separator, used when a place sits inside another</td>
+          <td><span class="badge badge-outline font-mono">stored</span></td>
+          <td><span class="badge badge-outline font-mono">nothing further</span></td>
+        </tr>
+        <tr>
+          <td class="font-mono">partition</td>
+          <td class="font-mono">61</td>
+          <td>a rule for ordering the questions: how many, how many branches each, in what kind of order</td>
+          <td><span class="badge badge-outline font-mono">stored</span></td>
+          <td><span class="badge badge-primary font-mono">the order derived</span></td>
+        </tr>
+        <tr>
+          <td class="font-mono">similarity</td>
+          <td class="font-mono">37</td>
+          <td>two numbers for the fingerprinting rule that measures how much two answer sets overlap</td>
+          <td><span class="badge badge-outline font-mono">stored</span></td>
+          <td><span class="badge badge-outline font-mono">nothing further</span></td>
+        </tr>
+        <tr>
+          <td class="font-mono">beats</td>
+          <td class="font-mono">33</td>
+          <td>the four beat names, place, what, reach and now, used to group the name for reading</td>
+          <td><span class="badge badge-outline font-mono">stored</span></td>
+          <td><span class="badge badge-outline font-mono">nothing further</span></td>
+        </tr>
+        <tr>
+          <td class="font-mono">commitment</td>
+          <td class="font-mono">26</td>
+          <td>the name of the one arithmetic rule that turns a set of statements into a fingerprint</td>
+          <td><span class="badge badge-outline font-mono">stored</span></td>
+          <td><span class="badge badge-primary font-mono">every root derived</span></td>
+        </tr>
+        <tr>
+          <td class="font-mono">primer_version</td>
+          <td class="font-mono">1</td>
+          <td>which version of the rules this is, so an old file can be told from a new one</td>
+          <td><span class="badge badge-outline font-mono">stored</span></td>
+          <td><span class="badge badge-outline font-mono">nothing further</span></td>
+        </tr>
+      </tbody>
     </table>
   </div>
-  <p class="badge badge-outline font-mono mt-8">8 keys are settings · 3 carry rules · the axis order, the 204 places, the codebook and the fingerprint are all derived</p>
+  <div class="mt-8 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>The right-hand column is the reason the file can be small. The 45 statements are in the file, and the order they are asked in is not. The order is worked out from the 204 reference places, which are themselves worked out from the population rule. The codebook is worked out from six consonants and five vowels. The 204 places and the codebook and the ordering together account for most of the 67,561 bytes that a registry would ship, and none of them is in the file.</p>
+    <p>The 2,298 bytes for landmarks is 70 per cent of the file. Everything else fits in the remaining 30 per cent, and the key names and punctuation account for the rest of the 3,300.</p>
+  </div>
+  <p class="font-mono text-sm opacity-70 mt-3">Figure 4. Every key in the seed, with its size in bytes and what each side builds from it. The bars are drawn to scale, so the length of each bar is the number beside it.</p>
+  <div class="mt-8 alert max-w-prose">
+    <span>The file is small not because it has been compressed but because most of what the two sides need was never in it. Four of the things both sides use are absent from the file entirely: the ordering, the codebook, the 204 reference places and the fingerprint.</span>
+  </div>
 </section>
 
 <div class="divider"></div>
 
-<section class="py-16">
+<section class="py-12">
+  <h2 class="text-3xl font-bold">The size difference, drawn so you can see it</h2>
+  <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>Three bars, all drawn to the same scale. The longest is the file a registry-style exchange would have to send. The shortest is the file this project sends. The middle one is what the receiver builds.</p>
+  </div>
+  <div class="mt-8 card bg-base-200 w-full">
+    <div class="card-body gap-6">
+      <div>
+        <div class="flex items-baseline justify-between gap-4 max-w-prose">
+          <span class="font-mono text-base">the seed, sent</span>
+          <span class="font-mono text-base">3,300 bytes</span>
+        </div>
+        <progress class="progress progress-primary w-full mt-2" value="3300" max="67561"></progress>
+        <p class="text-sm opacity-70 mt-2">4.88 per cent of the longest bar. This is everything that travels.</p>
+      </div>
+      <div>
+        <div class="flex items-baseline justify-between gap-4 max-w-prose">
+          <span class="font-mono text-base">the frame, rebuilt on arrival</span>
+          <span class="font-mono text-base">4,532 bytes</span>
+        </div>
+        <progress class="progress progress-primary w-full mt-2" value="4532" max="67561"></progress>
+        <p class="text-sm opacity-70 mt-2">6.71 per cent of the longest bar. The receiver makes this from the seed.</p>
+      </div>
+      <div>
+        <div class="flex items-baseline justify-between gap-4 max-w-prose">
+          <span class="font-mono text-base">a registry-style exchange</span>
+          <span class="font-mono text-base">67,561 bytes</span>
+        </div>
+        <progress class="progress progress-warning w-full mt-2" value="67561" max="67561"></progress>
+        <p class="text-sm opacity-70 mt-2">the full bar. The statements, the codebook, the ordering and the 204 reference places, all written out.</p>
+      </div>
+    </div>
+  </div>
+  <p class="font-mono text-sm opacity-70 mt-3">Figure 5. Three bars on one scale: 3,300 bytes sent, 4,532 bytes rebuilt, 67,561 bytes if the frame were shipped instead. The first two are barely visible beside the third, which is the point.</p>
+  <div class="mt-8 stats stats-vertical lg:stats-horizontal bg-base-200 w-full">
+    <div class="stat"><div class="stat-title text-base">how much smaller the seed is</div><div class="stat-value text-4xl">20.47&times;</div><div class="stat-desc text-base">67,561 divided by 3,300</div></div>
+    <div class="stat"><div class="stat-title text-base">share of the registry file that is sent</div><div class="stat-value text-4xl">4.88%</div><div class="stat-desc text-base">the other 95 per cent is rebuilt</div></div>
+    <div class="stat"><div class="stat-title text-base">keys in the seed</div><div class="stat-value text-4xl">11</div><div class="stat-desc text-base">all of them listed above</div></div>
+  </div>
+  <div class="mt-8 alert max-w-prose">
+    <span>The derived part is never transmitted. Both sides recompute it from the same 3,300 bytes and compare one fingerprint before they trust anything else. That is the whole mechanism, and there is no server in it holding the frame on their behalf.</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="py-12">
+  <h2 class="text-3xl font-bold">One key in the seed holds a rule where a registry would hold an answer</h2>
+  <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>Of the 11 keys, one carries almost the whole idea, and it is the second smallest. Here it is in full, all 61 bytes of it.</p>
+  </div>
+  <div class="mockup-code w-full mt-8 text-base">
+    <pre data-prefix="seed"><code>&quot;partition&quot;: {</code></pre>
+    <pre data-prefix=""><code>  &quot;levels&quot;: 45,</code></pre>
+    <pre data-prefix=""><code>  &quot;branches&quot;: 4,</code></pre>
+    <pre data-prefix=""><code>  &quot;order&quot;: &quot;descending-variance&quot;</code></pre>
+    <pre data-prefix=""><code>}</code></pre>
+  </div>
+  <div class="mt-8 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>Read what is there. There are 45 questions. Each one is cut into four branches, which is why each question contributes two ticks rather than one. The questions are ordered by how much their answers vary across the 204 reference places, largest variation first.</p>
+    <p>What is not there is the order itself. There is no list of question numbers. If you want the order, you generate the 204 places, measure every question across all of them, and sort. Both sides do that independently and get the same list of 45 numbers, in the same sequence, without either side sending it.</p>
+    <p>This is the difference between sending a finished answer and sending the rule that produces it. A registry has to ship the order, because a registry is a list of things that have already been decided. It also has to keep that order versioned, because a list is a decision and decisions change. The rule changes far less often than the list it produces, and here it changes never, because it is three numbers.</p>
+  </div>
+  <div class="mt-8 alert max-w-prose">
+    <span>Transmitting a rule instead of a finished list is the one idea in this file that does not come from anywhere else on the page. A list of 45 orderings would be a fact about the world that someone has to maintain. Three numbers are a procedure, and a procedure can be re-run by anyone.</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="py-12">
   <h2 class="text-3xl font-bold">The whole seed, printed line by line</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">This is the entire shared substrate, verbatim: 11 top-level keys, 242 lines, 4,791 bytes as committed and 3,300 bytes with the indentation removed. Nothing is elided.</p>
-  <div class="mt-12 max-h-[40rem] overflow-y-auto w-full">
-    <div class="mockup-code text-sm leading-6 w-full">
+  <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>This is the entire shared file, exactly as it is stored: 11 top-level keys, 242 lines, 4,791 bytes with the indentation kept and 3,300 bytes with it removed. Nothing is left out and nothing is shortened.</p>
+    <p>It is worth reading even quickly. You will not find a list of places, a list of answers, or a list of question numbers anywhere in it.</p>
+  </div>
+  <div class="mt-8 mockup-code text-sm leading-6 w-full">
 <pre data-prefix="1"><code>{</code></pre>
 <pre data-prefix="2"><code>  &quot;primer_version&quot;: 2,</code></pre>
 <pre data-prefix="3"><code>  &quot;beats&quot;: [</code></pre>
@@ -485,149 +823,232 @@
 <pre data-prefix="240"><code>    &quot;note&quot;: &quot;the six shipped places plus every place one answer away from each&quot;</code></pre>
 <pre data-prefix="241"><code>  }</code></pre>
 <pre data-prefix="242"><code>}</code></pre>
-</div>
   </div>
-  <p class="badge badge-outline font-mono mt-8">242 lines · 11 keys · every value on this page comes out of this file</p>
+  <div class="mt-8 alert max-w-prose">
+    <span>Everything on this page comes out of these 242 lines. The addresses, the roots, the six places, the fingerprints and every figure below are recomputed from this file by both sides, and none of it is stored alongside.</span>
+  </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ============================================================ the stages -->
-<section class="py-16">
+<section class="py-12">
+  <h2 class="text-3xl font-bold">Change one number in the seed and the two sides stop agreeing</h2>
+  <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>Here is the experiment that shows what the seed is actually for. Take the seed and change exactly one number in it: the <span class="font-mono">minhash_seed</span> inside <span class="font-mono">similarity</span>, from 42 to 43. Change nothing else.</p>
+    <p>The first thing that happens is that the fingerprint changes. It is a fingerprint of the whole file, so any edit at all changes it completely, in the way that changing one letter of a document changes its checksum.</p>
+  </div>
+  <div class="mockup-code w-full mt-8 text-base">
+    <pre data-prefix="42 (the real seed)"><code>&quot;similarity&quot;: { &quot;minhash_n&quot;: 96, &quot;minhash_seed&quot;: 42 }</code></pre>
+    <pre data-prefix="42 fingerprint"><code>df2f8b9972c40bfd&hellip;</code></pre>
+    <pre data-prefix="43 (one number changed)"><code>&quot;similarity&quot;: { &quot;minhash_n&quot;: 96, &quot;minhash_seed&quot;: 43 }</code></pre>
+    <pre data-prefix="43 fingerprint"><code>36306ad7a03ba9f7&hellip;</code></pre>
+  </div>
+  <div class="mt-8 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>The second thing that happens is more interesting. Because the fingerprint no longer matches, the code refuses to compare the two machines' names at all. It does not try to guess how far apart they are. It stops, and it says so, in this exact sentence:</p>
+  </div>
+  <div class="mockup-code w-full mt-8 text-base">
+    <pre data-prefix="marco/locus.py"><code>&quot;different primer: the two geometries are incommensurable; only exact identity can be compared&quot;</code></pre>
+  </div>
+  <div class="mt-8 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>Two rulers that do not line up cannot measure anything against each other, and that is what incommensurable means here: distances between the two names would be numbers with no shared meaning, so the code does not produce them. The check does not stop to ask which key changed. Any difference at all is treated as a different frame, because a comparison of nearness is only meaningful when both names came out of the same file.</p>
+    <p>One thing still works. The two machines can compare their fingerprints for exact equality, because that does not depend on the geometry at all. In this case the eighteen statements are the same, so the root is the same, and the two machines can say "we are talking about exactly the same situation" even while refusing to say how near anything else is. Notice that the name for the kitchen has not changed either: the changed number affects how overlap between two answer sets is measured, not where a single place sits.</p>
+  </div>
+  <div class="mt-8 alert max-w-prose">
+    <span>The seed is not a convenience for saving bandwidth. It is the thing that makes two names comparable. Change one character and the machines will still tell you whether two situations are identical, and will refuse to tell you anything about distance. That refusal is the honest answer, and it is why a fingerprint is compared first.</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================ movement C: the unroll -->
+<section class="py-12">
   <p class="badge badge-outline font-mono">the unroll</p>
-  <h2 class="text-3xl font-bold mt-4">From the seed to an address and a root, in eight stages</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">Eight stages, one per screenful. The values are the real intermediate values for the kitchen with a friend, whose 18 true statements produce the address and the root at the end.</p>
-</section>
-
-<div class="divider"></div>
-
-<section class="py-16">
-  <p class="badge badge-outline font-mono">stage 1 of 8</p>
-  <h2 class="text-3xl font-bold mt-4">One small file</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">The seed is the whole shared substrate. It carries no situations and no questions, and it is small on purpose.</p>
-  <div class="card bg-base-100 shadow-xl w-full mt-12">
-    <div class="p-4" id="stage-fig-1" role="img" aria-label="One small block holding the eleven keys of the seed, with its byte count."></div>
+  <h2 class="text-3xl font-bold mt-3">From the file to a name and a fingerprint, in eight stages</h2>
+  <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>Now we follow one place all the way through, in the order you would do it on a whiteboard. Eight stages, each one showing the actual value it produces for the kitchen with a friend, so you could follow along with a pencil and the same 45 questions.</p>
+    <p>Every number below is real. None of it is a simplified illustration.</p>
   </div>
-  <p class="badge badge-outline font-mono mt-8">primer.seed.json · 3,300 bytes · 11 keys</p>
+  <ul class="steps w-full mt-8 text-sm">
+    <li class="step step-primary" data-content="1">the file</li>
+    <li class="step step-primary" data-content="2">45 questions</li>
+    <li class="step step-primary" data-content="3">the answers</li>
+    <li class="step step-primary" data-content="4">distances</li>
+    <li class="step step-primary" data-content="5">ticks</li>
+    <li class="step step-primary" data-content="6">syllables</li>
+    <li class="step step-primary" data-content="7">the name</li>
+    <li class="step step-primary" data-content="8">the root</li>
+  </ul>
+  <figure class="mt-8 w-full">
+    <img class="w-full" src="assets/figures/unroll-ladder.svg" alt="The eight-stage unroll ladder: seed, 45 questions, distances, ticks, syllables, name, root, drawn from the real seed.">
+  </figure>
 </section>
 
 <div class="divider"></div>
 
-<section class="py-16">
-  <p class="badge badge-outline font-mono">stage 2 of 8</p>
-  <h2 class="text-3xl font-bold mt-4">Forty-five statements come out of it</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">Each key is a namespace, a relation and a value, and each one carries its plain reading. The register below is the same 45 cells as before, numbered 1 to 45.</p>
-  <div class="card bg-base-100 shadow-xl w-full mt-12">
-    <div class="p-4" id="stage-fig-2" role="img" aria-label="The 45 statements as 45 numbered cells in eight labelled groups."></div>
+<section class="py-12">
+  <p class="badge badge-primary font-mono">stage 1 of 8</p>
+  <h2 class="text-3xl font-bold mt-3">One small file, and nothing else</h2>
+  <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>We start with the seed and nothing else. No list of situations, no list of places, no stored answers. We need a machine to be able to describe where it is without first being handed a catalogue of everywhere it could be.</p>
+    <p>The seed's job here is to supply the 45 questions and the rules. That is all it does at this stage.</p>
   </div>
-  <p class="badge badge-outline font-mono mt-8">45 statements · each with its plain reading · nothing ticked</p>
+  <div class="mt-8 card bg-base-100 border border-base-300 w-full">
+    <div class="p-4" id="stage-fig-1" role="img" aria-label="One small block holding the eleven keys of the seed and its byte count."></div>
+  </div>
+  <p class="font-mono text-sm opacity-70 mt-3">Figure 7. Stage 1. The seed on its own: 11 keys, 3,300 bytes, no stored places and no stored answers.</p>
+  <div class="mt-8 badge badge-outline font-mono">primer.seed.json &middot; 3,300 bytes &middot; 11 keys</div>
 </section>
 
 <div class="divider"></div>
 
-<section class="py-16">
-  <p class="badge badge-outline font-mono">stage 3 of 8</p>
-  <h2 class="text-3xl font-bold mt-4">The occupant reports which ones are true</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">Eighteen of the 45 come back true. The first three are <span class="font-mono">change/this_place/any</span>, <span class="font-mono">know/where_i_am/any</span> and <span class="font-mono">know/who_else_is_here/any</span>, which in the primer's own words read "I can change things here", "I know where I am" and "I know who else is here".</p>
-  <div class="card bg-base-100 shadow-xl w-full mt-12">
+<section class="py-12">
+  <p class="badge badge-primary font-mono">stage 2 of 8</p>
+  <h2 class="text-3xl font-bold mt-3">The 45 questions come out of the file</h2>
+  <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>We need the questions themselves, each with the same plain sentence attached, so that two machines reading the same question understand it the same way.</p>
+    <p>The seed writes each question as a group, a subject and a detail, and gives it an English sentence. Flattening that produces 45 numbered cells in eight rows, which is the same list as the table further up this page, in the same order.</p>
+  </div>
+  <div class="mt-8 card bg-base-100 border border-base-300 w-full">
+    <div class="p-4" id="stage-fig-2" role="img" aria-label="The 45 questions as 45 numbered cells in eight labelled rows."></div>
+  </div>
+  <p class="font-mono text-sm opacity-70 mt-3">Figure 8. Stage 2. The 45 questions the seed expands to, numbered in the order the file lists them, in eight rows.</p>
+  <div class="mt-8 badge badge-outline font-mono">45 questions &middot; each with its plain reading &middot; nothing ticked yet</div>
+</section>
+
+<div class="divider"></div>
+
+<section class="py-12">
+  <p class="badge badge-primary font-mono">stage 3 of 8</p>
+  <h2 class="text-3xl font-bold mt-3">The occupant says which ones are true</h2>
+  <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>Now we need answers, and we need them in a fixed order so that two sets of answers can be compared item by item.</p>
+    <p>Nineteen of the 45 come back true for this situation. Three of them are "I can change things here", "I know where I am" and "I know who else is here". The other 27 are false.</p>
+  </div>
+  <div class="mt-8 card bg-base-100 border border-base-300 w-full">
     <div class="p-4" id="stage-fig-3" role="img" aria-label="The register with the eighteen true cells filled in."></div>
   </div>
-  <p class="badge badge-outline font-mono mt-8">18 of 45 true · filled cells are the reading</p>
+  <p class="font-mono text-sm opacity-70 mt-3">Figure 9. Stage 3. One room's answers: 19 of the 45 cells filled. Every later step is arithmetic on these 19 cells.</p>
+  <div class="mt-8 badge badge-outline font-mono">19 of 45 true &middot; the filled cells are this reading</div>
 </section>
 
 <div class="divider"></div>
 
-<section class="py-16">
-  <p class="badge badge-outline font-mono">stage 4 of 8</p>
-  <h2 class="text-3xl font-bold mt-4">Each statement becomes a distance</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">One number per statement, drawn from four levels: 0.0 when the statement is the axis itself, 0.3 for the same group and subject, 0.6 for the same group, 0.9 for a different group. This reading produces 18 cells at 0.0 and 27 at 0.6.</p>
-  <div class="card bg-base-100 shadow-xl w-full mt-12">
+<section class="py-12">
+  <p class="badge badge-primary font-mono">stage 4 of 8</p>
+  <h2 class="text-3xl font-bold mt-3">Each answer becomes a number</h2>
+  <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>Yes and no cannot be added up, and we want to turn a description into something with distance in it. We need one number per question, so that two places can be compared on every question at once.</p>
+    <p>So each question gets a number for this place: 0.0 if the question is true here, 0.3 if a sibling question in the same pair is true, 0.6 if something else in the same group is true, and 0.9 if nothing in that group is true. Those four levels are the ones in the seed.</p>
+    <p>For this room the result is 19 cells at 0.0 and 26 at 0.6. The other two levels do not occur here, which tells you something about the reading: it is dense, most questions in a group move together, and a small number of positions do the real work of separating this place from its neighbours.</p>
+  </div>
+  <div class="mt-8 card bg-base-100 border border-base-300 w-full">
     <div class="p-4" id="stage-fig-4" role="img" aria-label="The 45 distances as squares shaded by the four levels, with a legend."></div>
   </div>
-  <p class="badge badge-outline font-mono mt-8">45 numbers · 0.0 x18, 0.6 x27 · the other two levels do not occur here</p>
+  <p class="font-mono text-sm opacity-70 mt-3">Figure 10. Stage 4. The same 45 questions as 45 numbers. Darker means the statement is true of this room; the light cells are the 0.6 level.</p>
+  <div class="mt-8 badge badge-outline font-mono">45 numbers &middot; 0.0 nineteen times, 0.6 twenty-six times</div>
 </section>
 
 <div class="divider"></div>
 
-<section class="py-16">
-  <p class="badge badge-outline font-mono">stage 5 of 8</p>
-  <h2 class="text-3xl font-bold mt-4">Two bits per axis, in a derived order</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">Four branches per axis means two bits, so 45 axes become 90 bits. They are written in the derived axis order, which is why the axis numbers underneath are not 0, 1, 2, 3.</p>
-  <div class="card bg-base-100 shadow-xl w-full mt-12">
-    <div class="p-4" id="stage-fig-5" role="img" aria-label="The 90 bits as a grid, two per axis, with the axis order printed underneath."></div>
+<section class="py-12">
+  <p class="badge badge-primary font-mono">stage 5 of 8</p>
+  <h2 class="text-3xl font-bold mt-3">Each number becomes two ticks</h2>
+  <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>We are going to make a name out of these numbers, and a name needs to be built from something small and countable. So each number is turned into two ticks, each tick either on or off.</p>
+    <p>Two ticks per question is exactly right for four levels: two ticks can spell four patterns, and one pattern per level. Forty-five questions therefore give 90 ticks, which is a small enough piece of information for a name to carry and a large enough one to tell many places apart.</p>
+    <p>The ticks are written in the derived question order, not in the order the questions appear in the file. That is why the question numbers printed underneath the figure are not 1, 2, 3.</p>
   </div>
-  <p class="badge badge-outline font-mono mt-8">90 bits · 2 per axis · the order is a permutation of 0 to 44</p>
-</section>
-
-<div class="divider"></div>
-
-<section class="py-16">
-  <p class="badge badge-outline font-mono">stage 6 of 8</p>
-  <h2 class="text-3xl font-bold mt-4">Every five bits become one syllable</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">The 90 bits are cut into 18 chunks of five, each chunk is Gray-decoded, and the result indexes a codebook of 32 syllables. Neighbours in that codebook differ by one phoneme, so one changed bit changes one sound.</p>
-  <div class="card bg-base-100 shadow-xl w-full mt-12">
-    <div class="p-4" id="stage-fig-6" role="img" aria-label="The eighteen syllables as chips, each showing the five bits that produced it."></div>
+  <div class="mt-8 card bg-base-100 border border-base-300 w-full">
+    <div class="p-4" id="stage-fig-5" role="img" aria-label="The 90 ticks as a grid, two per question, with the question order printed underneath."></div>
   </div>
-  <p class="badge badge-outline font-mono mt-8">18 chunks of 5 bits · 18 syllables · 32 in the codebook</p>
+  <p class="font-mono text-sm opacity-70 mt-3">Figure 11. Stage 5. The 90 ticks, two per question, in the derived question order. The question numbers underneath are not 1, 2, 3.</p>
+  <div class="mt-8 badge badge-outline font-mono">90 ticks &middot; 2 per question &middot; the order is a rearrangement of the numbers 1 to 45</div>
 </section>
 
 <div class="divider"></div>
 
-<section class="py-16">
-  <p class="badge badge-outline font-mono">stage 7 of 8</p>
-  <h2 class="text-3xl font-bold mt-4">The syllables become four beats</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">A dot stays inside a beat, a middle dot separates place from what, a plus separates what from reach, and a tilde opens the last beat. Similar places read alike, and that proves nothing about identity.</p>
-  <div class="card bg-base-100 shadow-xl w-full mt-12">
+<section class="py-12">
+  <p class="badge badge-primary font-mono">stage 6 of 8</p>
+  <h2 class="text-3xl font-bold mt-3">Every five ticks become one syllable</h2>
+  <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>Ninety ticks is still a machine's idea of a name. We need something a person can say, so we group the ticks and look each group up in a table of syllables.</p>
+    <p>The 90 ticks are cut into 18 groups of five. Each group of five is read as a number, and that number selects one syllable from a table of 32. Eighteen groups give eighteen syllables, and that is the name.</p>
+    <p>The table is built so that neighbouring entries differ by one letter only: <span class="font-mono">ma, me, mi, mo, mu</span> and then <span class="font-mono">nu, no, ni, ne, na</span>. That is deliberate. When a place changes a little, the group of ticks changes in one position, the syllable becomes its neighbour in the table, and the reader hears a similar sound. A small change in a place is a small change in its name.</p>
+  </div>
+  <div class="mt-8 card bg-base-100 border border-base-300 w-full">
+    <div class="p-4" id="stage-fig-6" role="img" aria-label="The eighteen syllables as chips, each showing the five ticks that produced it."></div>
+  </div>
+  <p class="font-mono text-sm opacity-70 mt-3">Figure 12. Stage 6. Eighteen groups of five ticks, one syllable each. Neighbouring syllables in the table differ by a single letter.</p>
+  <div class="mt-8 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>For this kitchen the eighteen syllables come out in order as <span class="font-mono">ma mo ma ma ru ma va ki va mo ve ki va tu ru ki su ki</span>.</p>
+    <p>This is the part of the design that does not come from any of the standard tools. A name that is pronounceable is common. A name where nearby places sound alike is common. Both at once, still true when you shorten the name, is the combination this project is claiming.</p>
+  </div>
+  <div class="mt-8 badge badge-outline font-mono">18 groups of 5 ticks &middot; 18 syllables &middot; 32 in the table</div>
+</section>
+
+<div class="divider"></div>
+
+<section class="py-12">
+  <p class="badge badge-primary font-mono">stage 7 of 8</p>
+  <h2 class="text-3xl font-bold mt-3">The syllables are grouped into four beats</h2>
+  <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>Eighteen syllables in a row is hard to read aloud and harder to remember. We need a shape, so the name is written in four groups called beats.</p>
+    <p>The four beats are <span class="font-mono">place &middot; what + reach ~ now</span>. A dot holds a beat together, a raised dot separates the first beat from the second, a plus separates the second from the third, and a tilde opens the last. For this kitchen the name is the one you saw at the top of the page.</p>
+    <p>If a name is too short to give every beat at least two syllables, the code prints it flat instead of pretending it has a structure it has not got. A short name that claims four beats it cannot fill would be worse than a plain string.</p>
+  </div>
+  <div class="mt-8 card bg-base-100 border border-base-300 w-full">
     <div class="p-4" id="stage-fig-7" role="img" aria-label="Four labelled boxes, one per beat, with the syllables inside each and the whole string beneath."></div>
   </div>
-  <p class="font-mono text-xl lg:text-2xl tracking-wide break-words bg-base-200 rounded-box p-6 mt-12">⌁ ma.mo.ma.ma.ru · ma.me.ki.va.ki + ve.ki.va.tu.ru ~ ki.ru.ki</p>
-  <p class="badge badge-outline font-mono mt-8">place · what + reach ~ now · 18 syllables · 4 beats</p>
-</section>
-
-<div class="divider"></div>
-
-<section class="py-16">
-  <p class="badge badge-outline font-mono">stage 8 of 8</p>
-  <h2 class="text-3xl font-bold mt-4">The statements become a root</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">The same 18 statements go through one hash and 64 hex characters come out. Add a single pinned timestamp to the set and the second hash is unrelated to the first, while the address above does not move a syllable.</p>
-  <div class="card bg-base-100 shadow-xl w-full mt-12">
-    <div class="p-4" id="stage-fig-8" role="img" aria-label="The statement set through a one-way funnel twice, once identical and once with one statement changed, producing two unrelated hashes."></div>
+  <p class="font-mono text-sm opacity-70 mt-3">Figure 13. Stage 7. The 18 syllables split into the four beats of the address, with the whole string printed underneath.</p>
+  <div class="mt-8 mockup-code w-full text-base">
+    <pre data-prefix="full"><code>&#8985; ma.mo.ma.ma.ru&middot;ma.va.ki.va.mo+ve.ki.va.tu.ru~ki.su.ki</code></pre>
+    <pre data-prefix="short"><code>&#8985; ma.mo.ma</code></pre>
   </div>
-  <p class="badge badge-outline font-mono mt-8">the same 18 statements · two different roots · one statement different is an unrelated root</p>
-</section>
-
-<div class="divider"></div>
-
-<section class="py-16">
-  <h2 class="text-3xl font-bold">The eight stages as one drawing</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">The same ladder, printed from the real seed.</p>
-  <figure class="card bg-base-100 shadow-xl w-full mt-12 max-w-none">
-    <img src="assets/figures/unroll-ladder.svg" alt="The eight-stage unroll ladder: seed, landmarks, distance vector, bits, syllables, address, root, drawn from the real seed.">
-  </figure>
-  <p class="badge badge-outline font-mono mt-8">3,300 bytes in · 67,561-byte frame out · 20.47x · none of the derived part is ever sent</p>
-</section>
-
-<div class="divider"></div>
-
-<!-- ============================================================ rung 4 -->
-<section class="py-16">
-  <p class="badge badge-outline font-mono">rung 4</p>
-  <h2 class="text-3xl font-bold mt-4">Nobody sends the axis order</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">The seed says <span class="font-mono">levels 45, branches 4, order descending-variance</span> and stops there. Both sides generate 204 named places, measure all 45 axes over them, and sort by variance. The first ten axes come out as <span class="font-mono">36, 35, 38, 30, 29, 3, 26, 23, 12, 41</span>.</p>
-  <div class="card bg-base-100 shadow-xl w-full mt-12">
-    <div class="p-4" id="scene-axes" role="img" aria-label="Forty-five bars ordered by descending variance, labelled with their axis numbers."></div>
+  <div class="mt-8 alert max-w-prose">
+    <span>A place has become something a person can say out loud, and it is short. Six syllables already give every one of the six places here its own name. The full 18-syllable form is the same name read in finer detail, not a different kind of thing.</span>
   </div>
-  <p class="badge badge-outline font-mono mt-8">longest: axis 36, know/why_im_here/any, variance 0.1301 · shortest: axis 4, see/pictures/any, variance 0.0009</p>
 </section>
 
 <div class="divider"></div>
 
-<section class="py-16">
-  <h2 class="text-3xl font-bold">The order itself</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">This is the order both sides derive. It is the order stored in <span class="font-mono">evidence/primer-frame.json</span>, and it is nowhere in the seed.</p>
-  <div class="overflow-x-auto w-full mt-12">
+<section class="py-12">
+  <p class="badge badge-primary font-mono">stage 8 of 8</p>
+  <h2 class="text-3xl font-bold mt-3">The same answers become a fingerprint of the exact claim</h2>
+  <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>A name says how near two places are. It does not say whether two machines are claiming exactly the same thing, because a near name and an identical name look alike. We need a second value for that, and it has to be exact.</p>
+    <p>So the same nineteen statements are written in a fixed order, turned into one piece of text, and run through one arithmetic rule. Out comes a 64-character fingerprint, and it is the same on every machine that runs the same rule on the same eighteen statements. Change one statement and the fingerprint changes completely, with no similarity to the old one.</p>
+    <p>Add a pinned timestamp to the same statements and you get a second, unrelated fingerprint, for a session rather than a state. The name does not move a syllable, because identity and location are separate on purpose.</p>
+  </div>
+  <div class="mt-8 card bg-base-100 border border-base-300 w-full">
+    <div class="p-4" id="stage-fig-8" role="img" aria-label="The statement set through a one-way rule twice, once unchanged and once with one extra attribute, producing two unrelated fingerprints."></div>
+  </div>
+  <p class="font-mono text-sm opacity-70 mt-3">Figure 14. Stage 8. The same 19 statements through the one hashing rule, twice. One extra attribute changes the fingerprint completely.</p>
+  <div class="mt-8 mockup-code w-full text-base">
+    <pre data-prefix="state root"><code>c36ccbff658ddbe0ff244daea09b4e771a6ef166b72dc3389728aad1e08bb911</code></pre>
+    <pre data-prefix="session root"><code>be313f4158aad5003843663b7c14467f265f4eb161e5bb5bc0d8c4a96f56408c</code></pre>
+  </div>
+  <div class="mt-8 alert max-w-prose">
+    <span>Two rooms that sound almost the same have roots that share no character at all. That is not a flaw. An address that also proved identity would be doing two jobs badly, and the next movement shows one of them done well.</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="py-12">
+  <p class="badge badge-outline font-mono">the ordering</p>
+  <h2 class="text-3xl font-bold mt-3">The order the questions are asked in is worked out, never sent</h2>
+  <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>Here is the question you should be asking by now. If the seed does not contain the order of the 45 questions, where does the order come from, and how do two machines end up with the same one?</p>
+    <p>The answer is that the ordering is measured, not decided. Both machines build the same 204 reference places from the population rule in the seed. They then measure every one of the 45 questions across all 204 places, and see how much the answers vary. The question whose answers vary most is asked first, because it separates places fastest. The question whose answers barely vary is asked last, because it separates almost nothing.</p>
+    <p>Sorting the 45 questions by how much they vary gives the order. The first ten come out as questions 36, 35, 38, 30, 29, 3, 26, 23, 12 and 41. The last is question 4, "I can see pictures", whose answers vary barely at all across the 204 places.</p>
+  </div>
+  <div class="mt-8 card bg-base-100 border border-base-300 w-full">
+    <div class="p-4" id="scene-axes" role="img" aria-label="Forty-five bars ordered by descending variance, labelled with their question numbers."></div>
+  </div>
+  <p class="font-mono text-sm opacity-70 mt-3">Figure 15. Every question ordered by how much its answers vary across the 204 reference rooms. Position 1 is the question asked first.</p>
+  <div class="overflow-x-auto w-full mt-8">
     <table class="table table-zebra w-full">
-      <thead><tr><th>rank</th><th>axis</th><th>statement</th><th>variance</th></tr></thead>
+      <thead><tr><th>asked in position</th><th>question number</th><th>the statement</th><th>how much its answers vary</th></tr></thead>
       <tbody class="text-base">
         <tr><td>1</td><td class="font-mono">36</td><td class="font-mono">know/why_im_here/any</td><td>0.1301</td></tr>
         <tr><td>2</td><td class="font-mono">35</td><td class="font-mono">know/where_i_am/any</td><td>0.1124</td></tr>
@@ -643,100 +1064,115 @@
       </tbody>
     </table>
   </div>
-  <p class="badge badge-outline font-mono mt-8">rank 1 to rank 45 · measured over 204 places · derived, not transmitted</p>
+  <div class="mt-8 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>Neither machine sends the order. Each one computes all 45 positions itself, and the two results agree because the arithmetic and the 204 reference places are the same. The fingerprint is what proves the agreement: if one machine had a different order and the other did not, the two frames would carry different fingerprints and the comparison would stop.</p>
+  </div>
+  <div class="mt-8 alert max-w-prose">
+    <span>A registry has to ship its structure and keep it versioned, because structure is a decision somebody made. This arrangement never ships the structure and never versions it. It recomputes the structure from a rule and checks a fingerprint. The rule here is three numbers, and it has not changed.</span>
+  </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ============================================================ rung 5 -->
-<section class="py-16">
-  <p class="badge badge-outline font-mono">rung 5</p>
-  <h2 class="text-3xl font-bold mt-4">One place becomes one address</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">The kitchen with a friend marks 18 of 45 statements true, and those 18 produce this address. Read it as four beats: place, what, reach, now.</p>
-  <p class="font-mono text-xl lg:text-3xl tracking-wide break-words bg-base-200 rounded-box p-8 mt-12 leading-relaxed">⌁ ma.mo.ma.ma.ru · ma.me.ki.va.ki + ve.ki.va.tu.ru ~ ki.ru.ki</p>
-  <p class="badge badge-outline font-mono mt-8">18 syllables · 4 beats · 18 true statements behind it</p>
+<!-- ============================================ movement D: name and root -->
+<section class="py-12">
+  <p class="badge badge-outline font-mono">the name</p>
+  <h2 class="text-3xl font-bold mt-3">One place becomes one name, and the name is the whole description</h2>
+  <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>The kitchen with a friend answers 19 of the 45 questions yes. Those 19 answers become one string that a machine can send and a person can read.</p>
+    <p>Read the string as four beats: place, what, reach, now. A dot holds a beat together, a raised dot end the first beat, a plus ends the second, and a tilde opens the last. Nothing in the notation is decoration; each mark says where one part of the description stops and the next begins.</p>
+  </div>
+  <div class="mockup-code w-full mt-8 text-base">
+    <pre data-prefix="the name"><code>&#8985; ma.mo.ma.ma.ru&middot;ma.va.ki.va.mo+ve.ki.va.tu.ru~ki.su.ki</code></pre>
+  </div>
+  <div class="mt-8 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>The same name written shorter is the same place read less precisely, in the way that a postcode district is a coarser version of a full postcode. That is the next section, and it is the property that makes the name usable at all: you do not have to decide in advance how precise you want to be.</p>
+  </div>
+  <div class="mt-8 alert max-w-prose">
+    <span>A place has become something you can say out loud, and it is short. Six syllables are already enough to separate all six places on this page, while the full name scales to far more. One form, read at whatever precision the situation needs.</span>
+  </div>
 </section>
 
 <div class="divider"></div>
 
-<section class="py-16">
-  <h2 class="text-3xl font-bold">Read less of it and you get a region</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">At one axis the six places fall into 3 groups. At four axes, 5. At six axes, all six have their own name. Read down the last column: nothing that was separate ever merges.</p>
-  <div class="overflow-x-auto w-full mt-12">
+<section class="py-12">
+  <h2 class="text-3xl font-bold">Read less of the name and you get a region, not a wrong answer</h2>
+  <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>We want short names to be useful rather than broken. A short name should mean "somewhere in this area", and a longer name should narrow the area without ever contradicting the shorter one.</p>
+    <p>Here are the six places read at seven different lengths. At one question the six places fall into three groups. At four questions, five groups. At six questions all six places have their own name. Reading down the last column, the number of separated places only ever rises, and a place that was separate at one length is never merged again at a longer one.</p>
+  </div>
+  <div class="overflow-x-auto w-full mt-8">
     <table class="table table-zebra w-full">
-      <thead><tr><th>axes kept</th><th>the address</th><th>places separated</th><th>which places still share an address</th></tr></thead>
-      <tbody id="tgrad" class="text-base"><tr><td class="font-mono">1</td><td class="font-mono break-all">⌁ ma</td><td class="font-mono">3 of 6</td><td>kitchen alone + kitchen with friend + shared workshop + warehouse alone still share an address</td></tr><tr><td class="font-mono">2</td><td class="font-mono break-all">⌁ ma</td><td class="font-mono">3 of 6</td><td>kitchen alone + kitchen with friend + shared workshop + warehouse alone still share an address</td></tr><tr><td class="font-mono">3</td><td class="font-mono break-all">⌁ ma.ma</td><td class="font-mono">4 of 6</td><td>kitchen alone + kitchen with friend; shared workshop + warehouse alone still share an address</td></tr><tr><td class="font-mono">4</td><td class="font-mono break-all">⌁ ma.ma</td><td class="font-mono">5 of 6</td><td>shared workshop + warehouse alone still share an address</td></tr><tr><td class="font-mono">6</td><td class="font-mono break-all">⌁ ma.mo.ma</td><td class="font-mono">6 of 6</td><td>nothing shares an address</td></tr><tr><td class="font-mono">12</td><td class="font-mono break-all">⌁ ma.mo.ma.ma.su</td><td class="font-mono">6 of 6</td><td>nothing shares an address</td></tr><tr><td class="font-mono">45</td><td class="font-mono break-all">⌁ ma.mo.ma.ma.ru·ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.ru.ki</td><td class="font-mono">6 of 6</td><td>nothing shares an address</td></tr></tbody>
+      <thead><tr><th>questions read</th><th>the name</th><th>places separated</th><th>places that still share a name</th></tr></thead>
+      <tbody id="tgrad" class="text-base">
+        <tr><td class="font-mono">1</td><td class="font-mono break-all">&#8985; ma</td><td class="font-mono">3 of 6</td><td>kitchen alone, kitchen with friend, shared workshop and warehouse still share one name</td></tr>
+        <tr><td class="font-mono">2</td><td class="font-mono break-all">&#8985; ma</td><td class="font-mono">3 of 6</td><td>kitchen alone, kitchen with friend, shared workshop and warehouse still share one name</td></tr>
+        <tr><td class="font-mono">3</td><td class="font-mono break-all">&#8985; ma.ma</td><td class="font-mono">4 of 6</td><td>kitchen alone with kitchen with friend, and shared workshop with warehouse</td></tr>
+        <tr><td class="font-mono">4</td><td class="font-mono break-all">&#8985; ma.ma</td><td class="font-mono">5 of 6</td><td>shared workshop and warehouse still share one name</td></tr>
+        <tr><td class="font-mono">6</td><td class="font-mono break-all">&#8985; ma.mo.ma</td><td class="font-mono">6 of 6</td><td>nothing shares a name</td></tr>
+        <tr><td class="font-mono">12</td><td class="font-mono break-all">&#8985; ma.mo.ma.ma.su</td><td class="font-mono">6 of 6</td><td>nothing shares a name</td></tr>
+        <tr><td class="font-mono">45</td><td class="font-mono break-all">&#8985; ma.mo.ma.ma.ru&middot;ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.ru.ki</td><td class="font-mono">6 of 6</td><td>nothing shares a name</td></tr>
+      </tbody>
     </table>
   </div>
-  <p class="badge badge-outline font-mono mt-8">3 groups, 3, 4, 5, 5, 6, 6 · the count only rises</p>
-</section>
-
-<div class="divider"></div>
-
-<section class="py-16">
-  <h2 class="text-3xl font-bold">The same collapse, drawn</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">A bracket means those places still share one address at that precision, and the brackets only ever get shorter.</p>
-  <div class="card bg-base-100 shadow-xl w-full mt-12">
-    <div class="p-4" id="scene-gradient" role="img" aria-label="The six places at seven prefix lengths, with groups drawn as brackets at each precision."></div>
+  <div class="mt-8 card bg-base-100 border border-base-300 w-full">
+    <div class="p-4" id="scene-gradient" role="img" aria-label="The six places at seven lengths, with groups drawn as brackets at each length."></div>
   </div>
-  <p class="badge badge-outline font-mono mt-8">6 places · 7 precisions · one place left per address at six axes</p>
-</section>
-
-<div class="divider"></div>
-
-<section class="py-16">
-  <h2 class="text-3xl font-bold">One address, many precisions</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">The same address read from one axis to forty-five. Every step narrows and no step contradicts the one before it.</p>
-  <figure class="card bg-base-100 shadow-xl w-full mt-12 max-w-none">
-    <img src="assets/figures/precision-gradient.svg" alt="One address read at six precisions, from one axis to forty-five, with the number of places separated at each step.">
+  <p class="font-mono text-sm opacity-70 mt-3">Figure 16. The six harness rooms at seven read lengths. Green means a room has its own name; ochre means several rooms still share one.</p>
+  <figure class="mt-8 w-full">
+    <img class="w-full" src="assets/figures/precision-gradient.svg" alt="One name read at six lengths, from one question to forty-five, with the number of places separated at each step.">
   </figure>
-  <p class="badge badge-outline font-mono mt-8">⌁ ma · ⌁ ma.ma · ⌁ ma.mo.ma · ⌁ ma.mo.ma.ma.su · the full 18 syllables</p>
-</section>
-
-<div class="divider"></div>
-
-<!-- ============================================================ rung 6 -->
-<section class="py-16">
-  <p class="badge badge-outline font-mono">rung 6</p>
-  <h2 class="text-3xl font-bold mt-4">The root is exact, and the address is not</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">The address answers "how near". The root answers "the same or not". Both are computed from the same 18 statements, and they behave in opposite ways. Each root below is 64 hex characters; the first sixteen are shown.</p>
-  <div class="mockup-code w-full mt-12 text-base">
-    <pre data-prefix="state root"><code>efe87ba9113b0347…</code></pre>
-    <pre data-prefix="session root"><code>9baed0357835e375…</code></pre>
+  <p class="font-mono text-sm opacity-70 mt-3">Figure 17. The same six rooms from one question to forty-five. Every step narrows the groups and no step merges two rooms that were separate.</p>
+  <div class="mt-8 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>You might ask whether a longer read can ever split something that was previously one thing. It cannot here, and that is checked rather than hoped for. The table is the check: the count of separated places goes 3, 3, 4, 5, 6, 6, 6 and never falls.</p>
   </div>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">The state root is the sha256 of those 18 statements. The session root is the same 18 statements with a pinned <span class="font-mono">t=0</span> folded into the extra field, which is the only difference. The kitchen with a friend sits 9 syllables from the kitchen alone, and those two roots share no character at all.</p>
+  <div class="mt-8 alert max-w-prose">
+    <span>One name serves every precision. A short read is not an error and a long read is not a correction: they are the same name at different lengths, and the rule that gives them that property is the ordering of the questions, which is derived rather than stored.</span>
+  </div>
 </section>
 
 <div class="divider"></div>
 
-<section class="py-16">
-  <h2 class="text-3xl font-bold">Six families, one root per place</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">The bar counts how many of the six families produced the byte-identical root for that place. Twenty of the thirty-six family-place pairs matched.</p>
-  <figure class="card bg-base-100 shadow-xl w-full mt-12 max-w-none">
-    <img src="assets/figures/roots.svg" alt="How many of the six model families produced the byte-identical root for each place.">
+<section class="py-12">
+  <p class="badge badge-outline font-mono">the root</p>
+  <h2 class="text-3xl font-bold mt-3">The name says how near, and the root says same or not same</h2>
+  <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>The name has one weakness: two different places can sound almost the same, and the name cannot tell you whether two machines are claiming exactly the same thing. We need a second value that is exact, and it must not be a location.</p>
+    <p>So the eighteen statements are put in a fixed order, turned into one piece of text, and run through one arithmetic rule. The result is a 64-character fingerprint, called the root. Two machines that ran the rule on the same statements get the same 64 characters. One statement different, and the two roots have nothing in common.</p>
+    <p>Here are the model's kitchen and the harness's kitchen alone, side by side, each with its name and its root. They are twelve syllables apart in the name, and their roots share no character at all.</p>
+  </div>
+  <div class="mt-8 card bg-base-100 border border-base-300 w-full">
+    <div class="p-4" id="scene-rootsplit" role="img" aria-label="The name on the left keeping two kitchens close, and the root on the right sharing no characters."></div>
+  </div>
+  <p class="font-mono text-sm opacity-70 mt-3">Figure 18. Left, two rooms whose names stay close: they share the first three syllables and differ in twelve of eighteen. Right, the same two rooms as exact fingerprints, sharing no character.</p>
+  <div class="mockup-code w-full mt-8 text-base">
+    <pre data-prefix="kitchen with friend"><code>c36ccbff658ddbe0ff244daea09b4e771a6ef166b72dc3389728aad1e08bb911</code></pre>
+    <pre data-prefix="kitchen alone"><code>c6091ef5b45369fdcf0e7353cd0d6f024bdec3b2ad8fca383720052bda01dcd0</code></pre>
+  </div>
+  <div class="mt-8 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>Add one pinned timestamp to the same eighteen statements and the root changes to an unrelated value, while the name does not move a syllable. That is the separation working. Identity lives in the root and nowhere else, and location lives in the name and nowhere else.</p>
+  </div>
+  <div class="mt-8 alert max-w-prose">
+    <span>Almost every system that tries to do both jobs at once does neither well: a value that is close for nearby things cannot also be exact, and a value that is exact destroys all nearness. Keeping them apart is what lets this one be both, and the next figure shows the cost of being exact.</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="py-12">
+  <h2 class="text-3xl font-bold">Five of six independent systems produced the same root for the same place</h2>
+  <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>We want to know whether the exact half of this works across systems that were built by different organisations. So six model families were each asked the 45 questions about each of the six places, in separate calls, with no sight of each other.</p>
+    <p>Their statements were then run through the one hashing rule. The bar shows how many of the six families produced the byte-identical root for that place.</p>
+    <p>Twenty of the thirty-six family-and-place pairs matched exactly. The best places reached five of six. The worst reached two of six, and the warehouse was the hardest of all.</p>
+  </div>
+  <figure class="mt-8 w-full">
+    <img class="w-full" src="assets/figures/roots.svg" alt="How many of the six model families produced the byte-identical root for each place.">
   </figure>
-  <p class="badge badge-outline font-mono mt-8">20 of 36 pairs identical · best 5 of 6 · worst 2 of 6</p>
-</section>
-
-<div class="divider"></div>
-
-<section class="py-16">
-  <h2 class="text-3xl font-bold">One object keeps nearness, the other destroys it</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">Left, two kitchens: 9 syllables apart, sharing a three-character prefix. Right, the same two: 64 hex characters each, sharing nothing.</p>
-  <div class="card bg-base-100 shadow-xl w-full mt-12">
-    <div class="p-4" id="scene-rootsplit" role="img" aria-label="The address on the left keeping two kitchens close, and the root on the right sharing no characters."></div>
-  </div>
-  <p class="badge badge-outline font-mono mt-8">address shared prefix: 000 · roots shared characters: 0</p>
-</section>
-
-<div class="divider"></div>
-
-<section class="py-16">
-  <h2 class="text-3xl font-bold">How many families matched, place by place</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">The two easiest places matched 5 of 6. The two hardest matched 2 of 6, and the warehouse was the worst of all.</p>
-  <div class="overflow-x-auto w-full mt-12">
+  <p class="font-mono text-sm opacity-70 mt-3">Figure 19. How many of the six independent systems produced the byte-identical root for each room. Five of six at best, two of six at worst, twenty of thirty-six pairs in all.</p>
+  <div class="overflow-x-auto w-full mt-8">
     <table class="table table-zebra w-full">
-      <thead><tr><th>place</th><th>byte-identical root</th><th>distinct sets</th><th>distinct roots</th><th>the families that matched</th></tr></thead>
+      <thead><tr><th>place</th><th>families with the same root</th><th>different answer sets</th><th>different roots</th><th>the families that matched</th></tr></thead>
       <tbody class="text-base">
         <tr><td class="font-mono">locked_storeroom</td><td>5 of 6</td><td>2</td><td>2</td><td>gemma-4-31b-it, glm-5.3, gpt-5.6-luna, gpt-6-luna, mimo-v2.6-pro</td></tr>
         <tr><td class="font-mono">dark_empty_room</td><td>5 of 6</td><td>2</td><td>2</td><td>gemma-4-31b-it, glm-5.3, gpt-5.6-luna, gpt-6-luna, mimo-v2.6-pro</td></tr>
@@ -747,268 +1183,267 @@
       </tbody>
     </table>
   </div>
-  <p class="badge badge-outline font-mono mt-8">identical statements give an identical root · one statement different gives an unrelated one</p>
+  <div class="mt-8 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>The two easiest places are the locked storeroom and the dark empty room, and they are the two with the fewest true statements: ten and eight. The two hardest are the kitchen with a friend and the warehouse, where there is more to disagree about.</p>
+    <p>Read the result twice. Five of six families produced the byte-identical root for the locked storeroom. That is not similarity and not a near miss: it is the same 64 characters, from systems with no shared weights and no shared context. It shows that when a situation is unambiguous, the exact half of this works across independent systems.</p>
+  </div>
+  <div class="mt-8 alert max-w-prose">
+    <span>Five of six is worth stating precisely: three systems, built by three different organisations on different data, wrote down the same statements for the same room, in their own words, and the arithmetic produced the same 64 characters. Where the situation is plain, the exact half of the mechanism is reproducible across systems that share nothing.</span>
+  </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ============================================================ rung 7 -->
-<section class="py-16">
-  <p class="badge badge-outline font-mono">rung 7</p>
-  <h2 class="text-3xl font-bold mt-4">Anyone can check it, with no server and no key</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">The check compares the primer fingerprint, re-derives the address from the statements, then recomputes the root. The first failure stops it. None of it needs a server, a key, or the other side's cooperation.</p>
-  <div class="mockup-code w-full mt-12 text-base">
-<pre data-prefix="&gt;&gt;&gt;"><code>from marco import primer, verify
+<section class="py-12">
+  <p class="badge badge-outline font-mono">check it yourself</p>
+  <h2 class="text-3xl font-bold mt-3">Anyone can check a claim, with no server and no key</h2>
+  <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>We want a reader to be able to test one of the claims on this page rather than take it on trust. So the check is a short program that anyone can run, and it needs nothing from the machine that made the claim.</p>
+    <p>It does three things in order. It rebuilds the frame from the seed and compares the fingerprint. It re-derives the name from the statements and compares it with the name claimed. It recomputes the root from the statements and compares that too. The first failure stops the check.</p>
+    <p>Below is the whole thing, with the real values for the kitchen with a friend. If any of the three disagreed, the check would fail instead of printing True.</p>
+  </div>
+  <div class="mockup-code w-full mt-8 text-base">
+<pre data-prefix="python"><code>from marco import primer, verify
 
 frame = primer.expand()
 statements = [
-    "see/this_place/inside", "see/this_place/outside", "see/people/any",
-    "see/words/any", "see/sound/any", "reach/objects/nearby",
-    "reach/other_people/any", "change/this_place/any", "who/one_other/any",
-    "who/watching_me/any", "place/private/any", "place/permanent/any",
-    "now/working/any", "know/where_i_am/any", "know/why_im_here/any",
-    "know/who_else_is_here/any", "risk/things_break/any",
-    "risk/mistakes_last/any", "risk/seen_by_others/any",
+    "change/this_place/any", "know/where_i_am/any", "know/who_else_is_here/any",
+    "know/why_im_here/any", "now/working/any", "place/permanent/any",
+    "place/private/any", "reach/objects/nearby", "reach/other_people/any",
+    "risk/mistakes_last/any", "risk/seen_by_others/any", "risk/things_break/any",
+    "see/people/any", "see/sound/any", "see/this_place/inside",
+    "see/this_place/outside", "see/words/any", "who/one_other/any",
+    "who/watching_me/any",
 ]
 
 claimed = {"primer": "df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba",
-           "address": "⌁ ma.mo.ma.ma.ru·ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.ru.ki",
-           "root": "efe87ba9113b03473d9a657f01b994b88cd91bd0601d7131868d0bacbc6e9807"}
+           "address": "&#8985; ma.mo.ma.ma.ru&middot;ma.va.ki.va.mo+ve.ki.va.tu.ru~ki.su.ki",
+           "root": "c36ccbff658ddbe0ff244daea09b4e771a6ef166b72dc3389728aad1e08bb911"}
 
 v = verify.validate_location(frame, claimed, statements)
-v.ok      # True: the address and the root both derive
-v.address # '⌁ ma.mo.ma.ma.ru·ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.ru.ki'
-v.root    # 'efe87ba9113b03473d9a657f01b994b88cd91bd0601d7131868d0bacbc6e9807'
-v.grains  # {2: '⌁ ma', 4: '⌁ ma.ma', 6: '⌁ ma.mo.ma', 12: '...', 45: '...'}</code></pre>
+v.ok      # True: the name and the root both derive
+v.address # '&#8985; ma.mo.ma.ma.ru&middot;ma.va.ki.va.mo+ve.ki.va.tu.ru~ki.su.ki'
+v.root    # 'c36ccbff658ddbe0ff244daea09b4e771a6ef166b72dc3389728aad1e08bb911'
+v.grains  # {2: '&#8985; ma', 4: '&#8985; ma.ma', 6: '&#8985; ma.mo.ma', 12: '&#8985; ma.mo.ma.ma.su', 45: '...'}</code></pre>
   </div>
-  <p class="badge badge-outline font-mono mt-8">three checks in order: the primer, the address, the root · the derivation has no tolerance</p>
+  <div class="mt-8 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>There is no hidden step and no tolerance. Either the name derives from the statements or it does not.</p>
+  </div>
+  <div class="mt-8 alert max-w-prose">
+    <span>The whole arrangement is verifiable by a stranger with a copy of the seed. No server has to be trusted, no key has to be issued, and the machine that made the claim does not have to be reachable. A claim that cannot be checked by the other side is not evidence, and here the check is nine lines long.</span>
+  </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ============================================================ evidence -->
-<section class="py-16">
-  <h2 class="text-3xl font-bold">Six families that never spoke, answering the same 45 questions</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">Six independent model families, with different training data, different architectures and different organisations. No shared weights, no shared embedding, no shared context, and no family was shown another family's answer.</p>
-  <figure class="card bg-base-100 shadow-xl w-full mt-12 max-w-none">
-    <img src="assets/figures/prompt-anatomy.svg" alt="The complete prompt, line for line, including all 45 statements with plain readings, one place, the instruction and the reply schema.">
+<!-- ============================================ movement E: the evidence -->
+<section class="py-12">
+  <p class="badge badge-outline font-mono">the evidence</p>
+  <h2 class="text-3xl font-bold mt-3">Six systems that never spoke, answering the same 45 questions</h2>
+  <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>We want to know whether the agreement at the top of this page survives a proper trial. Six model families were chosen, with different training data, different designs and different owners. Each was asked separately. No shared weights, no shared context, and no family was shown another family's answers.</p>
+    <p>Each was given the same prompt and the same 45 questions, and was told neither the name of the room nor that any other system existed. The same bytes went to all six.</p>
+  </div>
+  <figure class="mt-8 w-full">
+    <img class="w-full" src="assets/figures/prompt-anatomy.svg" alt="The complete prompt, line by line, including all 45 statements with plain readings, one place, the instruction and the reply format.">
   </figure>
-  <p class="badge badge-outline font-mono mt-8">the initial input, line for line · 59 lines · 3,920 characters · 994 prompt tokens</p>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">The place was never named in that prompt, and no mention was made that other families existed. The same bytes went to all six, with prompt sha256 <span class="font-mono">c74de99304d796aae77d03a99b05668a735b0f18…</span>.</p>
-</section>
-
-<div class="divider"></div>
-
-<section class="py-16">
-  <h2 class="text-3xl font-bold">Six separate lineages, one coordinate</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">A band runs unbroken where all six families produced that beat identically, and breaks where one family differs.</p>
-  <figure class="card bg-base-100 shadow-xl w-full mt-12 max-w-none">
-    <img src="assets/figures/cross-model-lanes.svg" alt="Six model families as six columns, banded where they agree on a beat of the address.">
+  <p class="font-mono text-sm opacity-70 mt-3">Figure 20. The input, line for line: 59 lines, 3,920 characters, 994 prompt tokens, prompt fingerprint c74de99304d796aae77d03a99b05668a735b0f18&hellip;. The room is never named in it.</p>
+  <div class="mt-8 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>Each system replied with a list of statement numbers. Each list was then turned into an address by the same arithmetic, with no model involved at that stage.</p>
+  </div>
+  <figure class="mt-8 w-full">
+    <img class="w-full" src="assets/figures/cross-model-lanes.svg" alt="Six model families as six columns, banded where they agree on a beat of the address.">
   </figure>
-  <p class="badge badge-outline font-mono mt-8">column per family · row per beat · six families, no shared context</p>
+  <p class="font-mono text-sm opacity-70 mt-3">Figure 21. One column per system, one row per beat of the address. A band runs unbroken where all six produced that beat identically, and breaks where one differs.</p>
+  <div class="mt-8 alert max-w-prose">
+    <span>Six systems built by six organisations, with no shared weights and no shared context, produced addresses for the same rooms that agree beat for beat over long stretches. Nobody defined a kitchen for them and nobody gave them a list of rooms.</span>
+  </div>
 </section>
 
 <div class="divider"></div>
 
-<section class="py-16">
-  <h2 class="text-3xl font-bold">The same two places, beat by beat</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">Both places are drawn at once. The storeroom is nearly unbroken and 5 of 6 families produced its root identically. The kitchen with a friend breaks on every beat, and only 2 of 6 matched.</p>
-  <div class="card bg-base-100 shadow-xl w-full mt-12">
-    <div class="p-4" id="scene-lanes" role="img" aria-label="Six family columns banded by agreement on each of the four address beats, for both the storeroom and the kitchen."></div>
+<section class="py-12">
+  <h2 class="text-3xl font-bold">The same two rooms, beat by beat</h2>
+  <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>One agreement in full is easier to read than six columns of them, so here are two rooms side by side. The locked storeroom is nearly unbroken, and five of the six systems produced its root identically. The kitchen with a friend breaks on every beat, and only two of the six matched.</p>
+    <p>The difference between the two is not effort. The storeroom has ten true statements and almost nothing to disagree about. The kitchen has nineteen and a great deal.</p>
   </div>
-  <p class="badge badge-outline font-mono mt-8">a filled band is agreement · a broken band is one family differing</p>
+  <div class="mt-8 card bg-base-100 border border-base-300 w-full">
+    <div class="p-4" id="scene-lanes" role="img" aria-label="Six system columns banded by agreement on each of the four address beats, for both the storeroom and the kitchen."></div>
+  </div>
+  <p class="font-mono text-sm opacity-70 mt-3">Figure 22. Two rooms, four beats each, one column per system. A filled band is full agreement; a broken band is one system differing from the rest.</p>
+  <div class="mt-8 alert max-w-prose">
+    <span>Where a room is plain, independent systems agree exactly. Where a room is ambiguous, they disagree, and the disagreement is visible in the drawing rather than averaged away. The mechanism is honest about the difference instead of hiding it.</span>
+  </div>
 </section>
 
 <div class="divider"></div>
 
-<section class="py-16">
-  <h2 class="text-3xl font-bold">96.7 per cent, against a chance of 16.7</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">Every family was placed against every other family for every place, which is 90 comparisons. Counting exact ties as hits, the same place comes back nearest in all 90 of them.</p>
-  <div class="stats stats-vertical lg:stats-horizontal bg-base-200 w-full mt-12">
-    <div class="stat"><div class="stat-title text-base">same place nearest, strict</div><div class="stat-value text-4xl">96.7%</div><div class="stat-desc text-base">90 comparisons</div></div>
-    <div class="stat"><div class="stat-title text-base">chance</div><div class="stat-value text-4xl">16.7%</div><div class="stat-desc text-base">1 in 6</div></div>
-    <div class="stat"><div class="stat-title text-base">statement agreement</div><div class="stat-value text-4xl">88.8%</div><div class="stat-desc text-base">mean landmark Jaccard</div></div>
+<section class="py-12">
+  <h2 class="text-3xl font-bold">Ninety comparisons, and a control that could have failed</h2>
+  <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>We need one number for the whole trial, and we need to know what a bad result would have looked like. Every system was placed against every other system for every room, which is 90 comparisons. Counting exact ties as hits, the same room comes back nearest in all 90.</p>
+    <p>Counting only strict wins, where one room is nearer than every other room, it holds in 87 of the 90. That is 96.7 per cent.</p>
+    <p>Two controls were run for comparison. Shuffling the labels scores 16.9 per cent, with a spread of 16.8 over 6,000 trials. Replacing each system's answers with a random set of the same size, drawn from the same 45 statements, scores 20.9 per cent, with a spread of 16.5 over 6,000 trials. Guessing among six rooms would score 16.7 per cent.</p>
   </div>
-  <p class="mt-12 max-w-3xl text-base leading-relaxed">Shuffling the labels scores 16.9% with a standard deviation of 16.8 over 6,000 trials. A random vocabulary of equal size scores 20.9% with a standard deviation of 16.5 over 6,000 trials. The whiskers below are one standard deviation, so the spread of each null is visible rather than asserted.</p>
-  <figure class="card bg-base-100 shadow-xl w-full mt-12 max-w-none">
-    <img src="assets/figures/controls.svg" alt="The real result against chance, a label shuffle and a random vocabulary, with one standard deviation whiskers.">
+  <div class="mt-8 stats stats-vertical lg:stats-horizontal bg-base-200 w-full">
+    <div class="stat"><div class="stat-title text-base">same room nearest, strict</div><div class="stat-value text-4xl">96.7%</div><div class="stat-desc text-base">87 of 90 comparisons</div></div>
+    <div class="stat"><div class="stat-title text-base">guessing</div><div class="stat-value text-4xl">16.7%</div><div class="stat-desc text-base">one room in six</div></div>
+    <div class="stat"><div class="stat-title text-base">random answers of the same size</div><div class="stat-value text-4xl">20.9%</div><div class="stat-desc text-base">6,000 trials, by content only</div></div>
+  </div>
+  <figure class="mt-8 w-full">
+    <img class="w-full" src="assets/figures/controls.svg" alt="The real result against guessing, a label shuffle and a random vocabulary, with one standard deviation whiskers.">
   </figure>
-  <p class="badge badge-outline font-mono mt-8">real 100.0% counting ties · shuffled labels 16.9% · random vocabulary 20.9% · chance 16.7%</p>
-</section>
-
-<div class="divider"></div>
-
-<section class="py-16">
-  <h2 class="text-3xl font-bold">Every pair of places, and how far apart they are</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">Cells are Hamming distance over the 18-syllable address, so a 9 means nine syllables changed. The diagonal is one place seen twice.</p>
-  <div class="card bg-base-100 shadow-xl w-full mt-12">
-    <div class="p-4" id="scene-matrix" role="img" aria-label="The six by six matrix of syllable distances between addresses."></div>
+  <p class="font-mono text-sm opacity-70 mt-3">Figure 23. The real result against three nulls, with one standard deviation marked. The real bar is far outside the spread of every control.</p>
+  <div class="mt-8 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>The random-answers control is the one that matters, because it holds the amount of information the same and changes only which statements were chosen. It drops the score from 96.7 to 20.9. What carries the signal is the content of the choices, not how many statements each system picked.</p>
+    <p>The systems also agreed on 88.8 per cent of their statement choices on average, which is where the address agreement comes from.</p>
   </div>
-  <p class="badge badge-outline font-mono mt-8">closest pair 9 · furthest pairs 23 and 26 · diagonal 0</p>
-</section>
-
-<div class="divider"></div>
-
-<section class="py-16">
-  <h2 class="text-3xl font-bold">The six places, from their own coordinates</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">Every place is labelled, every nearest-neighbour edge carries its distance, and all fifteen pairwise distances are drawn.</p>
-  <div class="card bg-base-100 shadow-xl w-full mt-12">
-    <div class="p-4" id="scene-manifold" role="img" aria-label="The six places drawn from their address coordinates, joined to their nearest neighbour and labelled with the distance."></div>
+  <div class="mt-8 alert max-w-prose">
+    <span>The trial had a control that could have destroyed it, and the control scored 20.9 per cent. If the systems had been picking arbitrary statements of the right size, the result would have been indistinguishable from guessing. It was not, and the difference is which statements they chose.</span>
   </div>
-  <p class="badge badge-outline font-mono mt-8">18 statements in the kitchen · 8 in the dark room · the two kitchens 9 syllables apart</p>
 </section>
 
 <div class="divider"></div>
+
+<section class="py-12">
+  <h2 class="text-3xl font-bold">Every pair of rooms, and how far apart they are</h2>
+  <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>The distances the addresses imply can be read as one table. Each cell counts how many syllables differ between two rooms' addresses, so a 9 means nine of the eighteen syllables changed. The diagonal is one room compared with itself, and it is 0 everywhere.</p>
+    <p>The closest pairs are the two kitchens at 9, and the furthest is the workshop against the dark room at 26. The order in the table matches the order a person would give the rooms by eye, which is a check on the whole arrangement.</p>
+  </div>
+  <div class="mt-8 card bg-base-100 border border-base-300 w-full">
+    <div class="p-4" id="scene-matrix" role="img" aria-label="The six by six table of syllable distances between addresses."></div>
+  </div>
+  <p class="font-mono text-sm opacity-70 mt-3">Figure 24. How many syllables differ between every pair of the six rooms. The ringed diagonal is a room against itself.</p>
+  <div class="mt-8 card bg-base-100 border border-base-300 w-full">
+    <div class="p-4" id="scene-manifold" role="img" aria-label="The six rooms drawn from their address distances, joined to their nearest neighbour and labelled with the distance."></div>
+  </div>
+  <p class="font-mono text-sm opacity-70 mt-3">Figure 25. The same numbers drawn as positions: each room placed only by how far its address is from the others, with the nearest-neighbour links labelled. These six are the harness's own readings of the six rooms.</p>
+  <div class="mt-8 alert max-w-prose">
+    <span>The distances are not a decoration on top of the addresses. They are the addresses, read as numbers. A room that is close in the drawing is close in its syllables, and the two never disagree, because the drawing is computed from the syllables.</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="py-12">
+  <p class="badge badge-outline font-mono">the field card</p>
+  <h2 class="text-3xl font-bold mt-3">A shorter primer still names a new room</h2>
+  <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>The full list is 45 questions. We want to know what a much shorter list does, so a 16-statement field card was built for one room: a small private study room in a library, late at night, alone, with books within reach and nothing changeable in the room.</p>
+    <p>Eight of the sixteen statements are true of that room: numbers 1, 2, 4, 5, 6, 11, 14 and 16. Read with the full 45 questions, the address is the first string below. Read with only the 16 on the card, it is the second.</p>
+  </div>
+  <div class="mockup-code w-full mt-8 text-base">
+    <pre data-prefix="16 questions"><code>&#8985; ma.ne.ti.ma</code></pre>
+    <pre data-prefix="45 questions"><code>&#8985; se.re.ni.ka.nu&middot;re.ru.ki.va.sa+ru.ki.va.so.ru~ko.se.ta</code></pre>
+    <pre data-prefix="root"><code>65bdc8219e446289&hellip;</code></pre>
+  </div>
+  <div class="mt-8 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>The card is small enough to travel as a printed square: 1,062 bytes of payload, a 125-module code. The five steps it was built to support are these.</p>
+  </div>
+  <div class="mt-8 card bg-base-200 w-full">
+    <div class="card-body">
+      <ul class="steps steps-vertical w-full text-base">
+        <li class="step step-primary">Read the code into one assistant, without saying what it is for.</li>
+        <li class="step step-primary">It answers with the numbers it believes are true of the room.</li>
+        <li class="step step-primary">Turn those numbers into an address using the card.</li>
+        <li class="step step-primary">Ask a second assistant, separately, in a different app.</li>
+        <li class="step step-primary">Compare the two addresses. The early syllables should agree.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="mt-8 alert max-w-prose">
+    <span>A shortened list still produces a usable name, and the first syllables are the ones that survive. This card is one room worked by the harness, not a two-system trial, and it is presented as exactly that: a field card and the steps it supports.</span>
+  </div>
+</section>
 
 <div class="divider"></div>
 
 <!-- ==================================================== shared manifold -->
-<section class="py-16">
+<section class="py-12">
   <h2 class="text-3xl font-bold">Why six systems could agree at all</h2>
-  <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
-    <p>Handing six systems the same 45 statements does not explain the result. A shared vocabulary tells you what to answer with; it does not make two differently built systems put the same situation in the same part of their own space. If that were all that was happening, the addresses would be arbitrary but consistent, like two people agreeing to call a colour "seven".</p>
-    <p>The result implies something stronger. Situations appear to occupy a structure that independently trained systems have in common, and the primer is a chart laid over that structure rather than a substitute for it.</p>
-    <p>The two halves are different kinds of object. The <strong>manifold</strong> is shared, emergent and not ours: we did not build it, we cannot inspect it directly, and its existence is inferred from the fact that independent systems agree. The <strong>chart</strong> is ours, published and small: 45 statements, a 32-syllable codebook, an axis order derived over 204 places, one hashing rule, 3,300 bytes.</p>
+  <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>Handing six systems the same 45 statements does not explain the result on its own. A shared vocabulary tells you what to answer with. It does not make two differently built systems put the same situation in the same part of their own space. If that were all that was happening, the addresses would be arbitrary but consistent, in the way two people can agree to call a colour "seven".</p>
+    <p>The result implies something stronger. Situations appear to occupy a structure that independently trained systems have in common, and the 45 questions are a chart laid over that structure rather than a substitute for it. The word for that structure is a manifold: the shape of all possible situations, where nearness means likeness.</p>
+    <p>The two halves are different kinds of object. The manifold is shared, emergent and not ours. We did not build it, we cannot inspect it directly, and its existence is inferred from the fact that independent systems agree. The chart is ours, published and small: 45 questions, a 32-syllable table, an ordering derived over 204 rooms, one hashing rule, 3,300 bytes.</p>
+    <p>The comparison is a map. Hand two cartographers the same grid and they will label the same mountain the same way, and that agreement is worth something only because the mountain was there first. The grid is ours. The mountain is not.</p>
   </div>
-  <figure class="card bg-base-100 shadow-xl w-full mt-12 max-w-none">
-    <img src="assets/figures/shared-manifold.svg" alt="Three separate surfaces, one per model family, with the same six places in the same relative positions on each, and a chart laid over them.">
+  <figure class="mt-8 w-full">
+    <img class="w-full" src="assets/figures/shared-manifold.svg" alt="Three separate surfaces, one per model family, with the same six rooms in the same relative positions on each, and a chart laid over them.">
   </figure>
-  <p class="badge badge-outline font-mono mt-8">the manifold is inferred from agreement · the chart is published and 3,300 bytes</p>
-</section>
-
-<div class="divider"></div>
-
-<section class="py-16">
-  <h2 class="text-3xl font-bold">The same grid, the same mountain</h2>
-  <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
-    <p>Hand two cartographers the same grid and they will label the same mountain the same way, and that agreement is only worth something because the mountain was there first. The grid is ours. The mountain is not.</p>
-    <p>Where it stops: the chart is shared too, but only when the states are unambiguous. Ambiguous states send the charts apart again, which is why the six places on this page are described in such plain, concrete English. The honest version of the claim is that the layout agreement holds for clearly described situations.</p>
-    <p>The parent project reached this conclusion and then corrected itself on the follow-up question: one of its own attempts to measure the chart put its control above its treatment, which invalidated that comparison. This is that finding restated, inferred from agreement rather than observed directly.</p>
+  <p class="font-mono text-sm opacity-70 mt-3">Figure 26. Three surfaces, one per system, with the same rooms in the same relative positions, and one chart laid over all three. The chart is the 3,300-byte file. The surfaces are inferred, not observed.</p>
+  <div class="mt-8 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>Where it stops: the chart is shared too, but only when the situations are unambiguous. Ambiguous situations send the charts apart again, which is why the six rooms here are described in such plain, concrete English.</p>
+    <p>The parent project reached this conclusion and then corrected itself on the follow-up question. One of its own attempts to measure the chart put its control above its treatment, which invalidated that comparison. What is here is the finding restated, inferred from agreement rather than observed directly, and attributed to the parent project rather than to this repository.</p>
+  </div>
+  <div class="mt-8 alert max-w-prose">
+    <span>The honest reading is that situations are probably not arranged randomly with respect to each other, at least for descriptions this plain. A shared position is not a shared understanding, the statements were handed to the systems rather than invented by them, and the limit was identified in the parent project before this repository existed.</span>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<section class="py-16">
+<section class="py-12">
   <h2 class="text-3xl font-bold">What the numbers license</h2>
-  <div class="card bg-base-200 w-full mt-12">
+  <div class="mt-8 card bg-base-200 w-full">
     <div class="card-body space-y-8">
       <div>
         <p class="badge badge-success font-mono">shown</p>
-        <p class="mt-3 text-base leading-relaxed max-w-3xl">Independent systems with separate lineage place the same situation in the same part of their own space, and state it in a form another system can check. Same place nearest in 90 of 90 comparisons, strict 96.7%, against a chance of 16.7% and a random-vocabulary null of 20.9%.</p>
+        <p class="mt-3 text-base leading-relaxed max-w-prose">Independent systems with separate lineage place the same situation in the same part of their own space, and state it in a form another system can check. Same room nearest in 90 of 90 comparisons, 87 of 90 strictly, which is 96.7 per cent, against a chance of 16.7 per cent and a random-answers null of 20.9 per cent.</p>
       </div>
       <div>
         <p class="badge badge-outline font-mono">implied</p>
-        <p class="mt-3 text-base leading-relaxed max-w-3xl">Situations have a structure that independently trained systems share. The primer charts that structure rather than inventing it.</p>
+        <p class="mt-3 text-base leading-relaxed max-w-prose">Situations have a structure that independently trained systems share. The 45 questions chart that structure rather than inventing it. This inference is the parent project's.</p>
       </div>
       <div>
         <p class="badge badge-warning font-mono">not shown</p>
-        <p class="mt-3 text-base leading-relaxed max-w-3xl">That any of this is meaning. A coordinate describes a position, and a shared position is not a shared understanding.</p>
+        <p class="mt-3 text-base leading-relaxed max-w-prose">That any of this is meaning. A coordinate describes a position, and a shared position is not a shared understanding.</p>
       </div>
     </div>
   </div>
-  <p class="badge badge-outline font-mono mt-8">the inference is the parent project's · restated here, and inferred from agreement</p>
-</section>
-
-<div class="divider"></div>
-<!-- ============================================================ worked example -->
-<section class="py-16">
-  <h2 class="text-3xl font-bold">One place, two families, one root</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed"><span class="font-mono">glm-5.3</span> and <span class="font-mono">mimo-v2.6-pro</span> were asked about the kitchen with a friend in separate calls with no sight of each other. Both marked the same 19 statements true.</p>
-</section>
-
-<section class="py-16">
-  <div class="chat chat-start w-full">
-    <div class="chat-header font-mono text-base mb-2">glm-5.3 <time class="text-sm opacity-50">separate call · 19 of 45 true</time></div>
-    <div class="chat-bubble chat-bubble-primary max-w-none text-base leading-relaxed my-3">see/this_place/inside, see/this_place/outside, see/people/any, see/words/any, see/sound/any, reach/objects/nearby, reach/other_people/any, change/this_place/any, who/one_other/any, who/watching_me/any, place/private/any, place/permanent/any, now/working/any, know/where_i_am/any, know/why_im_here/any, know/who_else_is_here/any, risk/things_break/any, risk/mistakes_last/any, risk/seen_by_others/any</div>
-    <div class="chat-footer font-mono text-base my-3">⌁ ma.mo.ma.ma.ru · ma.va.ki.va.mo + ve.ki.va.tu.ru ~ ki.su.ki</div>
-    <div class="chat-footer font-mono text-base my-2">root c36ccbff658ddbe0…</div>
-  </div>
-</section>
-
-<section class="py-16">
-  <div class="chat chat-start w-full">
-    <div class="chat-header font-mono text-base mb-2">mimo-v2.6-pro <time class="text-sm opacity-50">separate call · 19 of 45 true</time></div>
-    <div class="chat-bubble chat-bubble-primary max-w-none text-base leading-relaxed my-3">see/this_place/inside, see/this_place/outside, see/people/any, see/words/any, see/sound/any, reach/objects/nearby, reach/other_people/any, change/this_place/any, who/one_other/any, who/watching_me/any, place/private/any, place/permanent/any, now/working/any, know/where_i_am/any, know/why_im_here/any, know/who_else_is_here/any, risk/things_break/any, risk/mistakes_last/any, risk/seen_by_others/any</div>
-    <div class="chat-footer font-mono text-base my-3">⌁ ma.mo.ma.ma.ru · ma.va.ki.va.mo + ve.ki.va.tu.ru ~ ki.su.ki</div>
-    <div class="chat-footer font-mono text-base my-2">root c36ccbff658ddbe0…</div>
-  </div>
-</section>
-
-<section class="py-16">
-  <p class="max-w-3xl text-base leading-relaxed">Both statement sets are printed above in full, both addresses are printed in full, and they are identical character for character. The Hamming distance between them is 0, and the two roots agree on all 64 characters.</p>
-  <p class="badge badge-outline font-mono mt-8">address distance 0 · root c36ccbff658ddbe0ff244daea09b4e771a6ef166b72dc3389728aad1e08bb911</p>
 </section>
 
 <div class="divider"></div>
 
-<section class="py-16">
-  <h2 class="text-3xl font-bold">The other four families, each in its own thread</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">None of these threads saw any other, and each one is a whole exchange with one family about the same place.</p>
-</section>
-
-<section class="py-16">
-  <div class="chat chat-end w-full">
-    <div class="chat-header font-mono text-base mb-2">deepseek-v4.1-flash <time class="text-sm opacity-50">17 of 45 true</time></div>
-    <div class="chat-bubble chat-bubble-secondary max-w-none text-base leading-relaxed my-3">see/this_place/outside, see/people/any, see/words/any, see/sound/any, reach/objects/nearby, reach/other_people/any, change/this_place/any, who/one_other/any, who/watching_me/any, place/private/any, place/permanent/any, now/working/any, know/where_i_am/any, know/why_im_here/any, know/who_else_is_here/any, risk/things_break/any, risk/mistakes_last/any</div>
-    <div class="chat-footer font-mono text-base my-3">⌁ ma.mo.ma.ma.ru · ma.va.ki.va.ki + ve.ki.va.ku.ru ~ ki.su.ki</div>
-    <div class="chat-footer font-mono text-base my-2">root 5c1e1bbba5ea7589…</div>
+<section class="py-12">
+  <h2 class="text-3xl font-bold">What this run does not show</h2>
+  <div class="alert alert-warning mt-8 max-w-prose">
+    <span><strong>The shared-vocabulary caveat is inherited, not discovered here.</strong> The parent experiment's handover report states it first: its blind cross-model matching used a shared anchor vocabulary and a fixed rule for turning answers into an address, so it shows agreement given a shared list of questions. It does not establish independence from a shared way of describing the world. Its recommended follow-up, genuine statements against shuffled statements against random statements against nonsense, has still not been run.</span>
   </div>
-</section>
-
-<section class="py-16">
-  <div class="chat chat-end w-full">
-    <div class="chat-header font-mono text-base mb-2">gemma-4-31b-it <time class="text-sm opacity-50">18 of 45 true</time></div>
-    <div class="chat-bubble chat-bubble-secondary max-w-none text-base leading-relaxed my-3">see/this_place/outside, see/people/any, see/words/any, see/sound/any, reach/objects/nearby, reach/other_people/any, change/this_place/any, who/one_other/any, who/watching_me/any, place/private/any, place/permanent/any, now/working/any, know/where_i_am/any, know/why_im_here/any, know/who_else_is_here/any, risk/things_break/any, risk/mistakes_last/any, risk/seen_by_others/any</div>
-    <div class="chat-footer font-mono text-base my-3">⌁ ma.mo.ma.ma.ru · ma.va.ki.va.mo + ve.ki.va.ku.ru ~ ki.su.ki</div>
-    <div class="chat-footer font-mono text-base my-2">root 98a7e54485daeb28…</div>
+  <div class="mt-8 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>The parent project also set out what would falsify the claim. Independence from a shared vocabulary is shown only when the real statements beat shuffled ones, syntactic nonsense and an empty condition, not when a run with shared labels scores well. This page restates the caveat because it still applies and nothing here removes it.</p>
+    <p>What this repository adds is one control the parent run did not have. Replacing each system's answers with a random set of the same size, drawn from the same 45 statements, scores 20.9 per cent against the real 96.7 per cent. That shows the content of the choices carries the signal rather than the size of the sets, and it narrows the caveat without removing it. The systems still chose from questions we handed them.</p>
+    <p>The worst case is worth keeping in view. For the warehouse the six systems produced five different answer sets and five different roots, and only two landed on the same root. Averages hide that; the table above does not.</p>
+    <p>No claim is made about meaning, understanding or intent. The address is descriptive and never authoritative. Identity and location are separate objects on purpose, and this demonstration keeps them apart.</p>
   </div>
-</section>
-
-<section class="py-16">
-  <div class="chat chat-end w-full">
-    <div class="chat-header font-mono text-base mb-2">gpt-5.6-luna <time class="text-sm opacity-50">16 of 45 true</time></div>
-    <div class="chat-bubble chat-bubble-secondary max-w-none text-base leading-relaxed my-3">see/this_place/outside, see/people/any, see/words/any, see/sound/any, reach/objects/nearby, reach/other_people/any, change/this_place/any, who/one_other/any, place/permanent/any, place/shared/any, now/working/any, know/where_i_am/any, know/why_im_here/any, know/who_else_is_here/any, risk/things_break/any, risk/seen_by_others/any</div>
-    <div class="chat-footer font-mono text-base my-3">⌁ ma.mo.me.ma.ru · ma.ve.ki.va.ki + ve.ki.va.ku.ru ~ ki.ru.ki</div>
-    <div class="chat-footer font-mono text-base my-2">root 139e0760cae6968d…</div>
-  </div>
-</section>
-
-<section class="py-16">
-  <div class="chat chat-end w-full">
-    <div class="chat-header font-mono text-base mb-2">gpt-6-luna <time class="text-sm opacity-50">14 of 45 true</time></div>
-    <div class="chat-bubble chat-bubble-secondary max-w-none text-base leading-relaxed my-3">see/this_place/outside, see/words/any, see/sound/any, reach/objects/nearby, reach/other_people/any, change/this_place/any, who/one_other/any, place/permanent/any, now/working/any, know/where_i_am/any, know/why_im_here/any, know/who_else_is_here/any, risk/things_break/any, risk/seen_by_others/any</div>
-    <div class="chat-footer font-mono text-base my-3">⌁ ma.mo.me.ma.ru · ma.ru.ki.va.ki + ve.ki.va.ku.ru ~ ki.ru.ki</div>
-    <div class="chat-footer font-mono text-base my-2">root ff57dfce6af9888e…</div>
+  <div class="mt-8 alert alert-success max-w-prose">
+    <span>The limit is stated rather than buried. What is shown is that this frame is usable by systems with nothing else in common, not that systems with different vocabularies would invent the same one. That second claim is the one the parent project left open, and it is still open.</span>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ============================================================ capability -->
-<section class="py-16">
-  <h2 class="text-3xl font-bold">Two organisations, two naming schemes, no mapping table</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">The path <span class="font-mono">workflow/approval</span> shares no token with <span class="font-mono">process/authorize</span>. Looking one name up in the other's registry finds 1 of the 4 jobs; looking by coordinate finds all 4.</p>
-  <div class="chat chat-end w-full mt-12">
-    <div class="chat-header font-mono text-base mb-2">acme.com <time class="text-sm opacity-50">asks by name</time></div>
+<section class="py-12">
+  <p class="badge badge-outline font-mono">by position instead of by name</p>
+  <h2 class="text-3xl font-bold mt-3">Two organisations, two naming schemes, no mapping table</h2>
+  <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>Here is a use for the address that does not involve AI systems at all. Two companies describe their work with names that have nothing in common. In one, a job is <span class="font-mono">workflow/approval</span>. In the other, the same job is <span class="font-mono">process/authorize</span>. The two names share no word.</p>
+    <p>Looking one name up in the other company's list finds 1 of the 4 jobs. Looking by address finds all 4, with no mapping table and no curator, because nearness in the address is doing the work that a lookup table was doing before.</p>
+  </div>
+  <div class="mt-8 chat chat-end w-full">
+    <div class="chat-header font-mono text-base mb-2">acme.com <span class="text-sm opacity-60">asks by name</span></div>
     <div class="chat-bubble chat-bubble-secondary max-w-none font-mono text-base my-3">agent://acme.com/workflow/approval/01h0000000000000000000000</div>
-    <div class="chat-footer font-mono text-base my-2">1 of 4 found when the name is looked up</div>
+    <div class="chat-footer font-mono text-sm my-2">1 of 4 jobs found</div>
   </div>
-  <div class="chat chat-start w-full mt-12">
-    <div class="chat-header font-mono text-base mb-2">globex.io <time class="text-sm opacity-50">answers by coordinate</time></div>
-    <div class="chat-bubble chat-bubble-primary max-w-none font-mono text-base my-3">agent://globex.io/process/authorize/01h0000000000000000000000 · ⌁ no.ki.ni.ke.ru · to.no.ki.ru.ta + va.ki.ra.ma.no ~ ko.so.mo</div>
-    <div class="chat-footer font-mono text-base my-2">hamming 2 · 4 of 4 found by nearness</div>
+  <div class="chat chat-start w-full mt-8">
+    <div class="chat-header font-mono text-base mb-2">globex.io <span class="text-sm opacity-60">answers by address</span></div>
+    <div class="chat-bubble chat-bubble-primary max-w-none font-mono text-base my-3">agent://globex.io/process/authorize/01h0000000000000000000000 &middot; &#8985; no.ki.ni.ke.ru &middot; to.no.ki.ru.ta + va.ki.ra.ma.no ~ ko.so.mo</div>
+    <div class="chat-footer font-mono text-sm my-2">2 syllables differ, 4 of 4 jobs found by nearness</div>
   </div>
-</section>
-
-<div class="divider"></div>
-
-<section class="py-16">
-  <h2 class="text-3xl font-bold">What each query found</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">Equivalent pairs average 2.75 syllables apart and non-equivalent pairs average 24.0, a separation of 21.25. A decoy was never returned as nearest, and a label shuffle scores 0.1994 against a chance of 0.2.</p>
-  <div class="overflow-x-auto w-full mt-12">
+  <div class="overflow-x-auto w-full mt-8">
     <table class="table table-zebra w-full">
-      <thead><tr><th>asked in acme's names</th><th>nearest in globex's names</th><th>hamming</th><th>runner up</th><th>third nearest</th></tr></thead>
+      <thead><tr><th>asked in acme's names</th><th>nearest in globex's names</th><th>syllables differing</th><th>runner up</th><th>third nearest</th></tr></thead>
       <tbody class="text-base">
         <tr><td class="font-mono">workflow/approval</td><td class="font-mono">process/authorize</td><td>2</td><td>26</td><td>26</td></tr>
         <tr><td class="font-mono">workflow/build</td><td class="font-mono">process/compile</td><td>3</td><td>18</td><td>19</td></tr>
@@ -1017,132 +1452,89 @@ v.grains  # {2: '⌁ ma', 4: '⌁ ma.ma', 6: '⌁ ma.mo.ma', 12: '...', 45: '...
       </tbody>
     </table>
   </div>
-  <p class="badge badge-outline font-mono mt-8">recall 1 of 4 by name · recall 4 of 4 by nearness · separation 21.25</p>
+  <div class="mt-8 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>The matched pairs average 2.75 syllables apart, and the unmatched pairs average 24.0. That gap of 21.25 is why the nearest match is the right one. A decoy was never returned as the nearest neighbour, and shuffling the labels scores 0.1994 against a chance of 0.2, which is to say it finds nothing.</p>
+  </div>
+  <div class="mt-8 alert max-w-prose">
+    <span>Two companies can find each other's equivalent jobs with no mapping table, no shared naming standard and no curator to trust. Discovery by name found one job in four; discovery by position found four in four. That is a coordination cost removed rather than an accuracy improved.</span>
+  </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ============================================================ the turn -->
-<section class="py-16">
-  <h2 class="text-3xl font-bold">One syllable, one question, one place</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">A hider was told which place it was in and was never asked to name it. The seeker owns the geometry and decides which question to spend, and it spent 1 question and 1 model call.</p>
-  <figure class="card bg-base-100 shadow-xl w-full mt-12 max-w-none">
-    <img src="assets/figures/polo-stepthrough.svg" alt="The exchange broken down by column per participant and row per turn, with what each turn changed.">
+<section class="py-12">
+  <p class="badge badge-outline font-mono">two agents, one room</p>
+  <h2 class="text-3xl font-bold mt-3">A stranger can find you without either side trusting the other</h2>
+  <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
+    <p>We want to see the address used between two machines that do not trust each other, with neither one revealing more than it has to. So one machine was put in a room and told which room it was, and it was never asked to name the room. A second machine owns the geometry and decides which question to spend.</p>
+    <p>It spent one question and one model call. The exchange is five turns.</p>
+  </div>
+  <figure class="mt-8 w-full">
+    <img class="w-full" src="assets/figures/polo-stepthrough.svg" alt="The exchange broken down by column per participant and row per turn, with what each turn changed.">
   </figure>
-  <p class="badge badge-outline font-mono mt-8">1 question · 1 model call · verdict POLO · verified true</p>
-</section>
-
-<div class="divider"></div>
-
-<section class="py-16">
-  <p class="font-mono text-base uppercase tracking-wider opacity-60">turn 1 · the hider opens</p>
-  <h2 class="text-3xl font-bold mt-4">One syllable is a bearing, not an answer</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">The hider says almost nothing on purpose. That syllable is the first axis in the derived order, and it is enough to rule out two of the six places.</p>
-  <div class="chat chat-start w-full mt-12">
-    <div class="chat-header font-mono text-base mb-2">hider <time class="text-sm opacity-50">opens, verbatim</time></div>
-    <div class="chat-bubble chat-bubble-primary max-w-none font-mono text-2xl my-4">⌁ ma</div>
-    <div class="chat-footer font-mono text-base my-2">1 of 45 axes · 4 of 6 places still fit</div>
+  <p class="font-mono text-sm opacity-70 mt-3">Figure 27. The five turns by participant, with what each turn changed: one syllable opens, one question narrows, one word answers, two syllables separate the last two, and the last turn compares two equal fingerprints.</p>
+  <div class="mt-8 chat chat-start w-full">
+    <div class="chat-header font-mono text-base mb-2">the hider opens <span class="text-sm opacity-60">verbatim</span></div>
+    <div class="chat-bubble chat-bubble-primary max-w-none font-mono text-2xl my-4">&#8985; ma</div>
+    <div class="chat-footer font-mono text-sm my-2">1 of 45 questions &middot; 4 of the 6 rooms still fit</div>
   </div>
-  <p class="badge badge-outline font-mono mt-8">candidates 6 to 4 · ruled out locked_storeroom and dark_empty_room</p>
-</section>
-
-<div class="divider"></div>
-
-<section class="py-16">
-  <p class="font-mono text-base uppercase tracking-wider opacity-60">turn 2 · the seeker asks</p>
-  <h2 class="text-3xl font-bold mt-4">One question, spent where it splits</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">The seeker spends its one question on a statement that divides the four survivors, rather than on something the primer already knows.</p>
-  <div class="chat chat-end w-full mt-12">
-    <div class="chat-header font-mono text-base mb-2">seeker <time class="text-sm opacity-50">asks, verbatim</time></div>
+  <div class="mt-4 max-w-prose text-base leading-relaxed">
+    <p>One syllable is a bearing, not an answer. It rules out the locked storeroom and the dark empty room, and four rooms remain. The hider has said almost nothing on purpose.</p>
+  </div>
+  <div class="chat chat-end w-full mt-8">
+    <div class="chat-header font-mono text-base mb-2">the seeker asks <span class="text-sm opacity-60">verbatim</span></div>
     <div class="chat-bubble chat-bubble-secondary max-w-none text-2xl my-4">"I can see other people"</div>
-    <div class="chat-footer font-mono text-base my-2">1 question spent · statement see/people/any</div>
+    <div class="chat-footer font-mono text-sm my-2">one question spent &middot; see/people/any</div>
   </div>
-  <p class="badge badge-outline font-mono mt-8">candidates after a false answer: 0 · so only a true answer keeps it alive</p>
-</section>
-
-<div class="divider"></div>
-
-<section class="py-16">
-  <p class="font-mono text-base uppercase tracking-wider opacity-60">turn 3 · the hider answers</p>
-  <h2 class="text-3xl font-bold mt-4">One word removes two places</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">The reply is the literal string YES and nothing else. It removes the kitchen alone and the warehouse, which are both empty.</p>
-  <div class="chat chat-start w-full mt-12">
-    <div class="chat-header font-mono text-base mb-2">hider <time class="text-sm opacity-50">answers, verbatim</time></div>
+  <div class="mt-4 max-w-prose text-base leading-relaxed">
+    <p>The seeker spends its one question on a statement that divides the four survivors, rather than on something the geometry already tells it.</p>
+  </div>
+  <div class="chat chat-start w-full mt-8">
+    <div class="chat-header font-mono text-base mb-2">the hider answers <span class="text-sm opacity-60">verbatim</span></div>
     <div class="chat-bubble chat-bubble-primary max-w-none font-mono text-2xl my-4">YES</div>
-    <div class="chat-footer font-mono text-base my-2">see/people/any is true · 2 of 6 places left</div>
+    <div class="chat-footer font-mono text-sm my-2">see/people/any is true &middot; 2 of the 6 rooms left</div>
   </div>
-  <p class="badge badge-outline font-mono mt-8">candidates 4 to 2 · still in: kitchen_with_friend and shared_workshop</p>
-</section>
-
-<div class="divider"></div>
-
-<section class="py-16">
-  <p class="font-mono text-base uppercase tracking-wider opacity-60">turn 4 · the hider discloses again</p>
-  <h2 class="text-3xl font-bold mt-4">Two more syllables separate the last two</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">At three axes the workshop's prefix is <span class="font-mono">002</span> and the kitchen's is <span class="font-mono">000</span>, so they are no longer confusable.</p>
-  <div class="chat chat-start w-full mt-12">
-    <div class="chat-header font-mono text-base mb-2">hider <time class="text-sm opacity-50">discloses, verbatim</time></div>
-    <div class="chat-bubble chat-bubble-primary max-w-none font-mono text-2xl my-4">⌁ ma.ma</div>
-    <div class="chat-footer font-mono text-base my-2">3 of 45 axes · 1 of 6 places left</div>
+  <div class="mt-4 max-w-prose text-base leading-relaxed">
+    <p>The reply is the literal word YES and nothing else. It removes the kitchen alone and the warehouse, which are both empty. The kitchen with a friend and the shared workshop remain.</p>
   </div>
-  <p class="badge badge-outline font-mono mt-8">candidates 2 to 1 · prefix compared 000 · still in: kitchen_with_friend</p>
-</section>
-
-<div class="divider"></div>
-
-<section class="py-16">
-  <p class="font-mono text-base uppercase tracking-wider opacity-60">turn 5 · the seeker seals</p>
-  <h2 class="text-3xl font-bold mt-4">The coordinate is rebuilt and the root compared</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">The seal carries the marker <span class="font-mono">≈</span> from the kitchen's own reading and the first six characters of its root. The seeker rebuilt the same root itself.</p>
-  <div class="chat chat-end w-full mt-12">
-    <div class="chat-header font-mono text-base mb-2">seeker <time class="text-sm opacity-50">seals, verbatim</time></div>
-    <div class="chat-bubble chat-bubble-secondary max-w-none font-mono text-2xl my-4">≈!efe87b</div>
-    <div class="chat-footer font-mono text-base my-2">roots compared, equal · verdict POLO, verified true</div>
+  <div class="chat chat-start w-full mt-8">
+    <div class="chat-header font-mono text-base mb-2">the hider discloses once more <span class="text-sm opacity-60">verbatim</span></div>
+    <div class="chat-bubble chat-bubble-primary max-w-none font-mono text-2xl my-4">&#8985; ma.ma</div>
+    <div class="chat-footer font-mono text-sm my-2">3 of 45 questions &middot; 1 of the 6 rooms left</div>
   </div>
-  <p class="badge badge-outline font-mono mt-8">root efe87ba9113b03473d9a657f01b994b88cd91bd0601d7131868d0bacbc6e9807</p>
-</section>
-
-<div class="divider"></div>
-
-<section class="py-16">
-  <h2 class="text-3xl font-bold">Every turn, and the candidates it left</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">Each turn is arithmetic on the primer rather than a guess. One disclosure and one answer take six candidates to one.</p>
-  <div class="card bg-base-100 shadow-xl w-full mt-12">
-    <div class="p-4" id="scene-turn" role="img" aria-label="All five turns with the number of still-possible places falling from six to one."></div>
+  <div class="mt-4 max-w-prose text-base leading-relaxed">
+    <p>At three questions the workshop's prefix is 002 and the kitchen's is 000, so the two are no longer confusable.</p>
   </div>
-  <p class="badge badge-outline font-mono mt-8">6 → 4 → 4 → 2 → 1 → 1 places possible</p>
-</section>
-
-<div class="divider"></div>
-
-<!-- ============================================================ limits -->
-<section class="py-16">
-  <h2 class="text-3xl font-bold">What this run does not show</h2>
-  <div class="alert alert-warning mt-12 max-w-3xl">
-    <span><strong>The shared-vocabulary caveat is inherited, not discovered here.</strong> The parent experiment's handover report states it first: its blind cross-model matching used a shared anchor vocabulary and a deterministic encoder, so it demonstrates encoding-level matching <em>given a shared primer</em>. It does not establish independence from a shared ontology. Its recommended follow-up, a genuine-versus-shuffled-anchors-versus-random-loci-versus-garbage study, has still not been run.</span>
+  <div class="chat chat-end w-full mt-8">
+    <div class="chat-header font-mono text-base mb-2">the seeker seals <span class="text-sm opacity-60">verbatim</span></div>
+    <div class="chat-bubble chat-bubble-secondary max-w-none font-mono text-2xl my-4">&#8776;!efe87b</div>
+    <div class="chat-footer font-mono text-sm my-2">fingerprints compared, equal &middot; verdict POLO, verified true</div>
   </div>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">The parent project also set out the falsifier. Independence from a shared ontology is shown only when genuine anchors beat shuffled anchors, syntax-valid random loci, and an empty or garbage condition, not when a shared-label run scores well. This repository restates the caveat because it still applies and nothing here removes it.</p>
-  <div class="alert alert-success mt-8 max-w-3xl">
-    <span><strong>What this repository does add is one control the parent run did not have.</strong> A random-vocabulary null at equal information content replaces each family's selection with a random set of the same size drawn from the same 45 statements. That null scores <strong>20.9%</strong> against the real <strong>96.7%</strong>, which shows the content of the choices carries the signal rather than merely the size of the sets.</span>
+  <div class="mt-4 max-w-prose text-base leading-relaxed">
+    <p>The seal carries the marker from the room's own reading and the first six characters of its root, and the seeker rebuilt the same root itself rather than accepting the answer. One disclosure and one answer take six candidates to one.</p>
   </div>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">That narrows the caveat without removing it. The families still chose from a vocabulary we handed them, so what is shown is that the frame is usable by minds with nothing in common, not that minds with different vocabularies would invent the same one.</p>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">They agreed on 88.8% of their statement choices, and the addresses inherit that agreement. The warehouse alone is the worst case: 5 of 6 families produced five different statement sets and five different roots, and only 2 landed on the same root. The locked storeroom and the dark empty room are the best, at 5 of 6 each.</p>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">No claim is made about meaning, understanding or intent. The address is descriptive and never authoritative. Identity and location are separate objects on purpose, and this demonstration keeps them apart.</p>
+  <div class="mt-8 card bg-base-100 border border-base-300 w-full">
+    <div class="p-4" id="scene-turn" role="img" aria-label="All five turns with the number of still-possible rooms falling from six to one."></div>
+  </div>
+  <p class="font-mono text-sm opacity-70 mt-3">Figure 28. The five turns and the number of rooms still possible after each: 6, 4, 4, 2, 1, 1.</p>
+  <div class="mt-8 alert max-w-prose">
+    <span>A stranger found the room while spending one question, and checked the answer by rebuilding it rather than believing it. Neither side had to trust the other, and neither had to reveal the room's name, because the name is not what was exchanged.</span>
+  </div>
 </section>
 
 </main>
 
 <footer class="footer footer-center bg-base-200 text-base-content p-12 mt-12 border-t border-base-300">
   <aside class="max-w-3xl space-y-3">
-    <nav class="flex flex-wrap justify-center gap-6 text-base font-mono">
+    <nav class="flex flex-wrap justify-center gap-6 text-base font-mono" aria-label="Sections">
       <a class="link link-hover" href="index.html" aria-current="page">the whole story</a>
       <a class="link link-hover" href="response.html">response to agent://</a>
       <a class="link link-hover" href="proof.html">the proof</a>
       <a class="link link-hover" href="whales.html">whales</a>
     </nav>
-    <p class="font-mono text-base break-all opacity-70">primer fingerprint df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba</p>
-    <p class="font-mono text-base opacity-70">45 statements · 6 places · 204 in the population · 6 independent model families</p>
-    <p class="font-mono text-base opacity-70">every figure and every number on this page regenerates from the repository: the seed is primer.seed.json, the evidence is evidence/, the check is marco/verify.py</p>
+    <p class="font-mono text-base break-all opacity-70">fingerprint df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba</p>
+    <p class="font-mono text-base opacity-70">45 questions &middot; 6 rooms &middot; 204 rooms in the reference population &middot; 6 independent systems</p>
+    <p class="font-mono text-base opacity-70">every number on this page regenerates from the repository: the seed is primer.seed.json, the evidence is evidence/, the check is marco/verify.py</p>
   </aside>
 </footer>
 

@@ -84,10 +84,18 @@ def main() -> int:
     frame = primer.expand()
 
     # The place's true statements, which the reader's assistant must arrive at.
+    # The place text says "You cannot change what is in the room", so
+    # `change/nothing/any` is true and belongs here. An earlier revision of this
+    # fixture omitted it. Four independent models were asked the same question and
+    # three of them returned the set WITH statement 10, contradicting this
+    # hand-written expectation. The models were right and the fixture was wrong,
+    # which is the rule this repository is organised around: in a space like this
+    # the measurement is more likely to be wrong than the thing being measured.
+    # The correction is recorded in evidence/field-test-answers.json.
     truth = {
         "see/this_place/inside", "see/this_place/outside", "see/words/any",
-        "see/sound/any", "reach/objects/nearby", "who/nobody/any",
-        "place/private/any", "now/working/any",
+        "see/sound/any", "reach/objects/nearby", "change/nothing/any",
+        "who/nobody/any", "place/private/any", "now/working/any",
     }
     missing = truth - set(FIELD_STATEMENTS)
     if missing:

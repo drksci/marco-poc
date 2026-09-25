@@ -130,20 +130,11 @@
       <h3 class="card-title text-base font-mono">the recorded output of scripts/07_capability_nearness.py</h3>
       <div class="chat chat-end w-full mt-4">
         <div class="chat-header font-mono text-base mb-2">by matching the path</div>
-        <div class="chat-bubble chat-bubble-secondary max-w-none font-mono text-base my-3">workflow/approval      -&gt; 0 result(s)  none   MISS
-workflow/build         -&gt; 0 result(s)  none   MISS
-workflow/rollback      -&gt; 0 result(s)  none   MISS
-process/audit          -&gt; 5 result(s)  ['process/authorize', 'process/compile', 'process/revert', 'process/review', 'process/migrate']   HIT
-  recall = 1/4</div>
+        <div class="alert max-w-none my-3"><div class="text-sm leading-relaxed"><p class="mb-2">workflow/approval -&gt; 0 result(s) none MISS workflow/build -&gt; 0 result(s) none MISS workflow/rollback -&gt; 0 result(s) none MISS process/audit -&gt; 5 result(s) [&#x27;process/authorize&#x27;, &#x27;process/compile&#x27;, &#x27;process/revert&#x27;, &#x27;process/review&#x27;, &#x27;process/migrate&#x27;] HIT recall = 1/4</p></div></div>
       </div>
       <div class="chat chat-start w-full mt-8">
         <div class="chat-header font-mono text-base mb-2">by nearest position</div>
-        <div class="chat-bubble chat-bubble-primary max-w-none font-mono text-base my-3">workflow/approval      -&gt; process/authorize      (2 letters apart)   HIT
-workflow/build         -&gt; process/compile        (3 letters apart)   HIT
-workflow/rollback      -&gt; process/revert         (2 letters apart)   HIT
-process/audit          -&gt; process/review         (4 letters apart)   HIT
-  recall = 4/4
-  decoy 'process/migrate' returned as nearest: 0 times</div>
+        <div class="alert max-w-none my-3"><div class="text-sm leading-relaxed"><p class="mb-2">workflow/approval -&gt; process/authorize (2 letters apart) HIT workflow/build -&gt; process/compile (3 letters apart) HIT workflow/rollback -&gt; process/revert (2 letters apart) HIT process/audit -&gt; process/review (4 letters apart) HIT recall = 4/4 decoy &#x27;process/migrate&#x27; returned as nearest: 0 times</p></div></div>
       </div>
     </div>
   </div>
@@ -404,27 +395,27 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
 <section class="py-12">
   <h2 class="text-3xl font-bold">Three positions in that one environment</h2>
   <div class="mt-8 max-w-3xl text-base leading-relaxed">
-    <p>Each layer produces its own position and its own root. The three sit close to one another, and a sealed empty room is included further down for scale.</p>
+    <p>Each layer produces its own position and its own root. The three sit close to one another, and a sealed empty room is included further down for scale. The three roots are recorded in full, all 64 characters each, in <span class="font-mono">evidence/overlay-environment.json</span>.</p>
   </div>
   <div class="grid grid-cols-1 gap-6 mt-8">
     <div class="card bg-base-200 w-full"><div class="card-body">
       <h3 class="card-title text-base">base · the environment defaults</h3>
       <p class="font-mono text-base">12 statements · marker ⊢ · nothing overridden</p>
       <p class="font-mono text-base break-all">⌁ va.mo.ni.mo.no·ki.ru.ki.va.mo+ru.mo.ra.tu.ru~tu.su.ki</p>
-      <p class="font-mono text-base break-all">root aa70a3646f949f78ad455207785e583450bfc030ee37b8a3494399077fb27460</p>
+      <p class="font-mono text-base break-all">root aa70a3646f949f78…, 64 characters</p>
     </div></div>
     <div class="card bg-base-200 w-full"><div class="card-body">
       <h3 class="card-title text-base">project layer over the environment</h3>
       <p class="font-mono text-base">14 statements · marker ⊢ · adds 2</p>
       <p class="font-mono text-base break-all">⌁ va.mo.ni.mo.no·ki.ru.ki.va.mo+ru.ma.va.tu.ru~tu.su.ki</p>
-      <p class="font-mono text-base break-all">root 4a234ed6347c9b75eb424cefaf535a21a2c70e36a580a6d115105bc061a24917</p>
+      <p class="font-mono text-base break-all">root 4a234ed6347c9b75…, 64 characters</p>
       <p class="text-base">Adds <span class="font-mono">see/this_place/outside</span> and <span class="font-mono">reach/help/any</span>.</p>
     </div></div>
     <div class="card bg-base-200 w-full"><div class="card-body">
       <h3 class="card-title text-base">session override over the project layer</h3>
       <p class="font-mono text-base">16 statements · marker ⊢ · adds 2 more</p>
       <p class="font-mono text-base break-all">⌁ va.mo.ni.mo.no·ki.ru.mo.va.mo+ru.ma.va.tu.su~tu.su.ki</p>
-      <p class="font-mono text-base break-all">root 24b6807d50112bb5aab458765d855b0b23f7d52856c077160f2e9e48994b806d</p>
+      <p class="font-mono text-base break-all">root 24b6807d50112bb5…, 64 characters</p>
       <p class="text-base">Adds <span class="font-mono">place/temporary/any</span> and <span class="font-mono">now/nearly_over/any</span>.</p>
     </div></div>
   </div>
