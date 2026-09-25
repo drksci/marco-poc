@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 880" width="1180" height="880" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+<rect width="1180" height="880" fill="#ffffff"/>
+<text x="30" y="52" font-size="21" fill="#16161a" font-family="Georgia, serif">An agent inside a layered environment</text>
+<text x="30" y="74" font-size="12" fill="#74747e">user-env-1 at ./user-env-1. The virtual tree is assembled from layers; each layer can override the one below.</text>
+<rect x="30" y="78" width="500" height="62" rx="7" fill="#f8f2e6" stroke="#9a6f2f"/>
+<text x="44" y="100" font-size="13" fill="#16161a" font-weight="bold">session override</text>
+<text x="44" y="116" font-size="10.5" fill="#74747e">this run only</text>
+<text x="230" y="100" font-size="10.5" fill="#16161a">now/nearly_over/any</text>
+<text x="230" y="114" font-size="10.5" fill="#16161a">place/temporary/any</text>
+<path d="M 280 140 L 280 152" stroke="#e2e2e6" stroke-width="1.4"/>
+<rect x="30" y="152" width="500" height="62" rx="7" fill="#eef0f6" stroke="#3a4a6b"/>
+<text x="44" y="174" font-size="13" fill="#16161a" font-weight="bold">project layer</text>
+<text x="44" y="190" font-size="10.5" fill="#74747e">./user-env-1/project.yaml</text>
+<text x="230" y="174" font-size="10.5" fill="#16161a">see/this_place/outside</text>
+<text x="230" y="188" font-size="10.5" fill="#16161a">reach/help/any</text>
+<path d="M 280 214 L 280 226" stroke="#e2e2e6" stroke-width="1.4"/>
+<rect x="30" y="226" width="500" height="62" rx="7" fill="#eaf0eb" stroke="#3f6b52"/>
+<text x="44" y="248" font-size="13" fill="#16161a" font-weight="bold">environment defaults</text>
+<text x="44" y="264" font-size="10.5" fill="#74747e">env-spec.yaml</text>
+<text x="230" y="248" font-size="10.5" fill="#16161a">the base twelve statements</text>
+<text x="230" y="262" font-size="10.5" fill="#16161a">in force unless overridden</text>
+<text x="30" y="304" font-size="10.5" fill="#74747e">a layer above overrides the one below; nothing below is rewritten</text>
+<text x="570" y="84" font-size="12" fill="#16161a" font-weight="bold">The same virtual path, three meanings</text>
+<rect x="570" y="102" width="580" height="28" rx="4" fill="#f4f4f5" />
+<text x="580" y="120" font-size="11" fill="#16161a">.config/claude/config.json</text>
+<text x="820" y="120" font-size="11" fill="#74747e">→ /var/lib/ai-envs/env-1/claude/config/config.json</text>
+<rect x="570" y="136" width="580" height="28" rx="4" fill="#f4f4f5" />
+<text x="580" y="154" font-size="11" fill="#16161a">.config/openai.json</text>
+<text x="820" y="154" font-size="11" fill="#74747e">→ /var/lib/ai-envs/env-1/codex/config/openai.json</text>
+<rect x="570" y="170" width="580" height="28" rx="4" fill="#f4f4f5" />
+<text x="580" y="188" font-size="11" fill="#16161a">src/main.rs</text>
+<text x="820" y="188" font-size="11" fill="#74747e">→ /home/user/projects/my-app/src/main.rs</text>
+<rect x="570" y="204" width="580" height="28" rx="4" fill="#f4f4f5" />
+<text x="580" y="222" font-size="11" fill="#16161a">.cache/</text>
+<text x="820" y="222" font-size="11" fill="#74747e">→ /var/lib/ai-envs/env-1/&lt;tool&gt;/cache/</text>
+<line x1="30" y1="330" x2="1150" y2="330" stroke="#e2e2e6"/>
+<text x="30" y="350" font-size="13" fill="#16161a" font-weight="bold">And here is where each of the three thinks it is</text>
+<rect x="30" y="368" width="1120" height="66" rx="7" fill="#ffffff" stroke="#3f6b52"/>
+<text x="44" y="390" font-size="12.5" fill="#3f6b52" font-weight="bold">BASE</text>
+<text x="140" y="390" font-size="11" fill="#74747e">12 statements · environment defaults</text>
+<text x="44" y="412" font-size="13.5" fill="#16161a">⌁ va.mo.ni.mo.no·ki.ru.ki.va.mo+ru.mo.ra.tu.ru~tu.su.ki</text>
+<text x="44" y="428" font-size="11" fill="#9a6f2f">!aa70a3646f949f78ad455207785e5834…</text>
+<rect x="30" y="446" width="1120" height="66" rx="7" fill="#ffffff" stroke="#3a4a6b"/>
+<text x="44" y="468" font-size="12.5" fill="#3a4a6b" font-weight="bold">PROJECT</text>
+<text x="140" y="468" font-size="11" fill="#74747e">14 statements · project layer over environment</text>
+<text x="44" y="490" font-size="13.5" fill="#16161a">⌁ va.mo.ni.mo.no·ki.ru.ki.va.mo+ru.ma.va.tu.ru~tu.su.ki</text>
+<text x="44" y="506" font-size="11" fill="#9a6f2f">!4a234ed6347c9b75eb424cefaf535a21…</text>
+<rect x="30" y="524" width="1120" height="66" rx="7" fill="#ffffff" stroke="#9a6f2f"/>
+<text x="44" y="546" font-size="12.5" fill="#9a6f2f" font-weight="bold">SESSION</text>
+<text x="140" y="546" font-size="11" fill="#74747e">16 statements · session override over project</text>
+<text x="44" y="568" font-size="13.5" fill="#16161a">⌁ va.mo.ni.mo.no·ki.ru.mo.va.mo+ru.ma.va.tu.su~tu.su.ki</text>
+<text x="44" y="584" font-size="11" fill="#9a6f2f">!24b6807d50112bb5aab458765d855b0b…</text>
+<text x="30" y="616" font-size="12" fill="#16161a" font-weight="bold">Near to each other, because they inherit. Distinguishable, because they override.</text>
+<rect x="30" y="628" width="360" height="46" rx="6" fill="#f4f4f5" stroke="#e2e2e6"/>
+<text x="42" y="646" font-size="11" fill="#16161a">base → project</text>
+<text x="42" y="664" font-size="10.5" fill="#74747e">hamming 2 · shared prefix 29 · +reach/help/any, +see/this_place/outside</text>
+<rect x="402" y="628" width="360" height="46" rx="6" fill="#f4f4f5" stroke="#e2e2e6"/>
+<text x="414" y="646" font-size="11" fill="#16161a">base → session</text>
+<text x="414" y="664" font-size="10.5" fill="#74747e">hamming 5 · shared prefix 18 · +now/nearly_over/any, +place/temporary/any, +reach/help/any, +see/this_place/outside</text>
+<rect x="774" y="628" width="360" height="46" rx="6" fill="#f4f4f5" stroke="#e2e2e6"/>
+<text x="786" y="646" font-size="11" fill="#16161a">project → session</text>
+<text x="786" y="664" font-size="10.5" fill="#74747e">hamming 3 · shared prefix 18 · +now/nearly_over/any, +place/temporary/any</text>
+<text x="30" y="696" font-size="11" fill="#74747e">For scale, a sealed empty room sits at hamming 24 from base.</text>
+</svg>

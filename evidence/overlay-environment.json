@@ -1,0 +1,153 @@
+{
+  "primer_fingerprint": "df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba",
+  "environment": {
+    "name": "user-env-1",
+    "mount_point": "./user-env-1",
+    "tools": [
+      "claude-code",
+      "codex"
+    ],
+    "host_store": "/var/lib/ai-envs/env-1",
+    "workspace_base": "/home/user/projects/my-app",
+    "scratch": "/tmp/user-env-1/scratch"
+  },
+  "path_map": [
+    {
+      "virtual": ".config/claude/config.json",
+      "host": "/var/lib/ai-envs/env-1/claude/config/config.json"
+    },
+    {
+      "virtual": ".config/openai.json",
+      "host": "/var/lib/ai-envs/env-1/codex/config/openai.json"
+    },
+    {
+      "virtual": "src/main.rs",
+      "host": "/home/user/projects/my-app/src/main.rs"
+    },
+    {
+      "virtual": ".cache/",
+      "host": "/var/lib/ai-envs/env-1/<tool>/cache/"
+    }
+  ],
+  "positions": {
+    "base": {
+      "layer": "environment defaults",
+      "statements": [
+        "change/my_settings/any",
+        "change/this_place/any",
+        "know/where_i_am/any",
+        "now/working/any",
+        "place/private/any",
+        "reach/objects/nearby",
+        "reach/other_places/any",
+        "risk/mistakes_last/any",
+        "risk/seen_by_others/any",
+        "see/this_place/inside",
+        "see/words/any",
+        "who/nobody/any"
+      ],
+      "n_statements": 12,
+      "address": "⌁ va.mo.ni.mo.no·ki.ru.ki.va.mo+ru.mo.ra.tu.ru~tu.su.ki",
+      "prefix": "202020200202222222222020222202212202222022022",
+      "root": "aa70a3646f949f78ad455207785e583450bfc030ee37b8a3494399077fb27460",
+      "marker": "⊢",
+      "overrides": []
+    },
+    "project": {
+      "layer": "project layer over environment",
+      "statements": [
+        "change/my_settings/any",
+        "change/this_place/any",
+        "know/where_i_am/any",
+        "now/working/any",
+        "place/private/any",
+        "reach/help/any",
+        "reach/objects/nearby",
+        "reach/other_places/any",
+        "risk/mistakes_last/any",
+        "risk/seen_by_others/any",
+        "see/this_place/inside",
+        "see/this_place/outside",
+        "see/words/any",
+        "who/nobody/any"
+      ],
+      "n_statements": 14,
+      "address": "⌁ va.mo.ni.mo.no·ki.ru.ki.va.mo+ru.ma.va.tu.ru~tu.su.ki",
+      "prefix": "202020200202222222222020222200202202222022022",
+      "root": "4a234ed6347c9b75eb424cefaf535a21a2c70e36a580a6d115105bc061a24917",
+      "marker": "⊢",
+      "overrides": [
+        "+ see/this_place/outside",
+        "+ reach/help/any"
+      ]
+    },
+    "session": {
+      "layer": "session override over project",
+      "statements": [
+        "change/my_settings/any",
+        "change/this_place/any",
+        "know/where_i_am/any",
+        "now/nearly_over/any",
+        "now/working/any",
+        "place/private/any",
+        "place/temporary/any",
+        "reach/help/any",
+        "reach/objects/nearby",
+        "reach/other_places/any",
+        "risk/mistakes_last/any",
+        "risk/seen_by_others/any",
+        "see/this_place/inside",
+        "see/this_place/outside",
+        "see/words/any",
+        "who/nobody/any"
+      ],
+      "n_statements": 16,
+      "address": "⌁ va.mo.ni.mo.no·ki.ru.mo.va.mo+ru.ma.va.tu.su~tu.su.ki",
+      "prefix": "202020200202222222022020222200202202202022022",
+      "root": "24b6807d50112bb5aab458765d855b0b23f7d52856c077160f2e9e48994b806d",
+      "marker": "⊢",
+      "overrides": [
+        "+ place/temporary/any",
+        "+ now/nearly_over/any"
+      ]
+    }
+  },
+  "pairs": {
+    "base|project": {
+      "hamming": 2,
+      "lcp": 29,
+      "jaccard": 0.8571,
+      "same_root": false,
+      "differs_by": [
+        "+reach/help/any",
+        "+see/this_place/outside"
+      ]
+    },
+    "base|session": {
+      "hamming": 5,
+      "lcp": 18,
+      "jaccard": 0.75,
+      "same_root": false,
+      "differs_by": [
+        "+now/nearly_over/any",
+        "+place/temporary/any",
+        "+reach/help/any",
+        "+see/this_place/outside"
+      ]
+    },
+    "project|session": {
+      "hamming": 3,
+      "lcp": 18,
+      "jaccard": 0.875,
+      "same_root": false,
+      "differs_by": [
+        "+now/nearly_over/any",
+        "+place/temporary/any"
+      ]
+    }
+  },
+  "unrelated_control": {
+    "hamming_vs_base": 24,
+    "note": "a sealed empty room, for scale: the three layered positions above must be far closer to each other than to this"
+  }
+}

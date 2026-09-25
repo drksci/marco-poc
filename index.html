@@ -3,461 +3,1939 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Where is it, though?. MARCO</title>
+<title>Where is it, though?</title>
+<link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = { theme: { extend: { colors: {
-  background: 'hsl(var(--background))', foreground: 'hsl(var(--foreground))',
-  muted: 'hsl(var(--muted))', mutedfg: 'hsl(var(--muted-foreground))',
-  border: 'hsl(var(--border))', card: 'hsl(var(--card))' } } } }
-</script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css">
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 <link rel="stylesheet" href="assets/site.css">
+<script defer src="assets/viz.js"></script>
 </head>
-<body>
-<nav class="site-nav">
-  <a href="index.html" aria-current="page">the whole story</a>
-  <a href="response.html">response to agent://</a>
-  <a href="proof.html">the proof</a>
-  <a href="whales.html">whales</a>
-</nav>
-<main class="page-grid pt-10">
+<body class="min-h-screen bg-base-100 text-base-content">
 
-<header class="col-full">
-  <p class="eyebrow">MARCO · a sense of place</p>
-  <h1 class="display text-4xl mt-2">Where is it, though?</h1>
-  <p class="lede measure mt-5">A person says "I'm in the kitchen" and you already know what she can see, who is with her, what she can reach, and what happens next. Ask a program where it is and it names a building.</p>
+<nav class="site-nav" aria-label="Sections">
+  <div class="navbar min-h-0 p-0 bg-transparent">
+    <div class="navbar-center gap-3 lg:gap-5 text-xs">
+      <a class="link link-hover" href="index.html" aria-current="page">the whole story</a>
+      <a class="link link-hover" href="response.html">response to agent://</a>
+      <a class="link link-hover" href="proof.html">the proof</a>
+      <a class="link link-hover" href="whales.html">whales</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero bg-base-200 border-b border-base-300">
+  <div class="hero-content text-center max-w-3xl py-12">
+    <div>
+      <p class="font-mono text-xs tracking-widest uppercase opacity-60">MARCO · a sense of place</p>
+      <h1 class="text-4xl lg:text-5xl font-bold mt-3">Where is it, though?</h1>
+      <p class="py-6 text-lg opacity-80">A place has no name. It has 45 statements, an address you can say out loud, and a root you can recompute.</p>
+    </div>
+  </div>
 </header>
 
-<!-- ============================ 2. the two objects ============================ -->
-<section class="col-half">
-  <div class="card">
-    <div class="card-header">
-      <span class="card-title">the address</span>
-      <span class="badge badge-signal">says near</span>
+<main class="container mx-auto max-w-6xl px-4 py-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+<!-- ============================================================ the problem -->
+<section class="lg:col-span-12">
+  <h2 class="text-2xl font-bold">A building is not a place</h2>
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-4">
+    <div class="lg:col-span-7 space-y-4">
+      <p>A person says "I'm in the kitchen" and you already know what she can see, who is with her, what she can reach, and what happens next. Nothing in that sentence is a coordinate.</p>
+      <p>Ask a program the same question and it answers <span class="font-mono text-xs">room-2041</span>, or floor 2, or a latitude. Each of those names a building, or a point inside one.</p>
+      <p>A building is not a place. A place is what its occupant can see, reach, change and expect, and none of that survives the name.</p>
     </div>
-    <div class="card-content">
-      <p class="locus-block">⌁ ma.mo.ma.ma.ru·ma.va.ki.va.ki+ve.ki.va.ku.ru~ki.su.ki</p>
-      <p class="card-description mt-3">Eighteen syllables in four beats, produced by <span class="mono">deepseek-v4.1-flash</span> from its own 17 statements about <span class="mono">kitchen_with_friend</span>. Two agents doing the same job under different names, <span class="mono">workflow/approval</span> at acme.com and <span class="mono">process/authorize</span> at globex.io, sit 2 syllables apart, while non-equivalent pairs average hamming 24.0.</p>
+    <div class="lg:col-span-5">
+      <div class="card bg-base-200">
+        <div class="card-body py-5">
+          <p class="font-mono text-xs uppercase tracking-wider opacity-60">the same sentence, two answers</p>
+          <ul class="mt-3 space-y-3 text-sm">
+            <li><span class="badge badge-ghost badge-sm font-mono">a person</span> a kitchen, a window, a friend, the middle of cooking. Break something and it stays broken.</li>
+            <li><span class="badge badge-outline badge-sm font-mono">a program</span> <span class="font-mono text-xs">room-2041</span>, floor 2, building C.</li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="card-footer">Same place, two readings: <span class="mono">mimo-v2.6-pro</span> renders this place 3 syllables away, at <span class="mono">⌁ ma.mo.ma.ma.ru·ma.va.ki.va.mo+ve.ki.va.tu.ru~ki.su.ki</span>.</div>
   </div>
-</section>
 
-<section class="col-half">
-  <div class="card">
-    <div class="card-header">
-      <span class="card-title">the root</span>
-      <span class="badge badge-warm">says same</span>
-    </div>
-    <div class="card-content">
-      <p class="root-block">!5c1e1bbba5ea75899e37bf52ece0b77bb4a1c3dbecdf90856dcf69bf921f336e</p>
-      <p class="card-description mt-3">SHA-256 over the canonical JSON of those same 17 statements, so identical sets give identical 64 hex characters and a set one statement shorter gives an unrelated root.</p>
-    </div>
-    <div class="card-footer">Known-answer case: the same set scores hamming 0 on the address, one statement removed scores 1, disjoint sets score 21.</div>
-  </div>
-</section>
-
-<!-- ============================ 3. the workings ============================ -->
-<section class="col-wide">
-  <h2 class="display text-2xl mt-10">One place, from nothing to an address</h2>
-  <p class="measure mt-3 text-sm">Every value below is that reply's, in order: <span class="mono">deepseek-v4.1-flash</span> answered for <span class="mono">kitchen_with_friend</span> in 34.143 s for $0.000129, recorded in <span class="mono">evidence/transcripts/probe-20260925T023432Z.jsonl</span>.</p>
-
-  <div class="workings mt-4">
-    <div class="step">
-      <div class="step-n">1</div>
-      <div>
-        <div class="step-title">the statements it reports</div>
-        <div class="step-body">The reply marks <span class="val">17 of 45</span> statements true. Five of them, in the primer's own wording: <span class="val">change/this_place/any</span> "I can change things here"; <span class="val">know/where_i_am/any</span> "I know where I am"; <span class="val">know/who_else_is_here/any</span> "I know who else is here"; <span class="val">know/why_im_here/any</span> "I know why I am here"; <span class="val">now/working/any</span> "Work is in progress".</div>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-n">2</div>
-      <div>
-        <div class="step-title">the canonical set</div>
-        <div class="step-body">Seventeen <span class="val">group/subject/detail</span> keys, sorted, with no duplicates to collapse: <span class="val">17 observations → 17 canonical keys</span>. The set contains <span class="val">see/this_place/outside</span> and <span class="val">place/private/any</span>, and does not contain <span class="val">see/this_place/inside</span>.</div>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-n">3</div>
-      <div>
-        <div class="step-title">the distance vector</div>
-        <div class="step-body">One number per landmark, 45 in all, first ten reading <span class="val">0.3 0.0 0.0 0.0 0.6 0.0 0.6 0.0 0.6 0.0</span>. The level counts are <span class="val">0.3 ×1, 0.0 ×17, 0.6 ×27</span>, over the metric's four levels <span class="val">0.0 same_thing, 0.3 same_group_same_subject, 0.6 same_group_other_subject, 0.9 different_group</span>; the single 0.3 is landmark #00 <span class="val">see/this_place/inside</span>, the same subject as the <span class="val">outside</span> statement it chose instead.</div>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-n">4</div>
-      <div>
-        <div class="step-title">the bits, and the axis order they are read in</div>
-        <div class="step-body">Two bits per axis over 45 axes gives <span class="val">90 bits</span>, opening <span class="val">000000001000000000001010100000100010101010001010</span>, rendered as the 45-digit prefix <span class="val">000020000022200202222022220022202212222222022</span>. The axis order is not transmitted: it is derived by descending variance over the 204-place population, first ten <span class="val">[36, 35, 38, 30, 29, 3, 26, 23, 12, 41]</span>, most informative <span class="val">#36 know/why_im_here/any</span>, least <span class="val">#4 see/pictures/any</span>.</div>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-n">5</div>
-      <div>
-        <div class="step-title">the syllables</div>
-        <div class="step-body">The bits select from a 32-syllable codebook, 6 consonants × 5 vowels = 30, plus <span class="val">va</span> and <span class="val">ve</span> as padding, walked boustrophedon so a turn costs one phoneme, with <span class="val">31/31</span> adjacent pairs differing by exactly one phoneme. This place comes out as <span class="val">18 syllables</span>: <span class="val">ma mo ma ma ru ma va ki va ki ve ki va ku ru ki su ki</span>.</div>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-n">6</div>
-      <div>
-        <div class="step-title">the four beats</div>
-        <div class="step-body">The syllables are cut into the primer's four beats, read as <span class="val">place · what + reach ~ now</span>: place <span class="val">ma.mo.ma.ma.ru</span>, what <span class="val">ma.va.ki.va.ki</span>, reach <span class="val">ve.ki.va.ku.ru</span>, now <span class="val">ki.su.ki</span>.</div>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-n">7</div>
-      <div>
-        <div class="step-title">the root</div>
-        <div class="step-body">The same 17 statements, canonicalised, sorted, and hashed as JSON give <span class="val">!5c1e1bbba5ea75899e37bf52ece0b77bb4a1c3dbecdf90856dcf69bf921f336e</span>. The address and the root are two objects off one set: the address says near, the root says same, and neither does the other's job.</div>
-      </div>
+  <div class="collapse collapse-arrow bg-base-200 mt-6">
+    <input type="checkbox">
+    <div class="collapse-title font-semibold text-sm">Where this comes from: a harder experiment, distilled</div>
+    <div class="collapse-content space-y-3 text-sm">
+      <p>This is the cleaned-up form of the most hardened cross-model run already recorded in the parent project. That run used 16 operational states against the same 45-statement vocabulary, two independent model instances kept in isolated contexts with no sight of each other, labels stripped, and one global optimal one-to-one assignment solved with Kuhn-Munkres Hungarian matching.</p>
+      <p>It scored 16 of 16, against a random-signature null of 0.0651 and a label-shuffled null of 0.0656, with a mean anchor Jaccard of 0.9155. Those four numbers are the parent experiment's, not this one's.</p>
+      <p>The parent project's own review of that round produced the rule this repository is organised around: in this problem space the metric is more likely to be wrong than the model. Its standing instruction is to run a null with identical information content, sweep any threshold, and check what the metric reports on a case whose answer is known.</p>
+      <p>What changed here: six independent families instead of two, six plainly named everyday places instead of sixteen operational states, one hashing rule for the whole repository, a known-answer suite, and a random-vocabulary null at equal information content. The place names are ordinary English on purpose, so a general reader can judge the answers.</p>
     </div>
   </div>
 </section>
 
-<!-- ============================ 4. the gradient ============================ -->
-<section class="col-wide mt-10">
-  <h2 class="display text-2xl">You do not have to read the whole thing</h2>
-  <p class="measure mt-3 text-sm">Read the address at one axis and you have a region; read it at six and you have the place. The table below is the use's own canonical <span class="mono">kitchen_with_friend</span>, 18 of 45 statements true, address <span class="mono">⌁ ma.mo.ma.ma.ru·ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.ru.ki</span>, which is what the figure draws; the 17-statement set in §3 agrees with it for 15 axes and first differs at axis 16.</p>
+<div class="lg:col-span-12 divider"></div>
 
-  <figure class="figure mt-5">
-    <img src="assets/figures/precision-gradient.svg" alt="One address read at six precisions, with the refinement curve: six characters name all six places">
-    <figcaption>One address, many precisions. Each step narrows, and no step contradicts the one before it: 0 violations of monotone refinement across axes 1, 45.</figcaption>
-  </figure>
-
-  <div class="table-wrap mt-5">
-    <table class="data">
-      <thead>
-        <tr><th class="num">axes kept</th><th>address at that precision</th><th class="num">places separated</th></tr>
-      </thead>
-      <tbody>
-        <tr><td class="num mono">1</td><td class="mono">⌁ ma</td><td class="num">3 of 6</td></tr>
-        <tr><td class="num mono">2</td><td class="mono">⌁ ma</td><td class="num">3 of 6</td></tr>
-        <tr><td class="num mono">4</td><td class="mono">⌁ ma.ma</td><td class="num">5 of 6</td></tr>
-        <tr><td class="num mono">6</td><td class="mono">⌁ ma.mo.ma</td><td class="num">6 of 6</td></tr>
-        <tr><td class="num mono">12</td><td class="mono">⌁ ma.mo.ma.ma.su</td><td class="num">6 of 6</td></tr>
-        <tr><td class="num mono">45</td><td class="mono">⌁ ma.mo.ma.ma.ru·ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.ru.ki</td><td class="num">6 of 6</td></tr>
-      </tbody>
-    </table>
+<!-- ================================================================ rung 0 -->
+<section class="lg:col-span-12">
+  <p class="badge badge-ghost badge-sm font-mono">rung 0</p>
+  <h2 class="text-2xl font-bold mt-2">One tick in a row of forty-five</h2>
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-4">
+    <div class="lg:col-span-6 space-y-4">
+      <p>The smallest thing an agent can say about itself is one yes or no. <span class="font-mono text-xs">see/this_place/inside</span> is the statement, "I can see inside this place" is its plain reading, and the answer is true or false.</p>
+      <p>For the kitchen the answer is true. That one fact is not a place, because it does not separate this kitchen from any other room with a window, and it says nothing about the friend.</p>
+      <p>The register holds 45 positions. One is ticked here and 44 are blank.</p>
+    </div>
+    <div class="lg:col-span-6">
+      <figure class="card bg-base-100 shadow-xl">
+        <div class="card-body">
+          <h3 class="card-title text-sm font-mono">ONE STATEMENT, ONE TICK</h3>
+          <div class="mockup-window border border-base-300 bg-base-300">
+            <div class="bg-base-100 p-3" id="s1" role="img" aria-label="One ticked position in a register of 45, with 44 positions blank."></div>
+          </div>
+          <p class="font-mono text-xs opacity-70" id="s1-read">see/this_place/inside = "I can see inside this place" · true</p>
+        </div>
+        <figcaption class="px-6 pb-5 text-xs font-mono opacity-60">One statement is 1 of 45 positions, so on its own it can only name a class of rooms and never this room.</figcaption>
+      </figure>
+    </div>
   </div>
-  <p class="measure mt-3 text-sm">Six characters, <span class="mono">⌁ ma.mo.ma</span> at 6 axes, separate all six places, against 3 of 6 at one axis.</p>
 </section>
 
-<!-- ============================ 5. the six lanes ============================ -->
-<section class="col-full mt-10">
-  <h2 class="display text-2xl">Six families that never spoke</h2>
-</section>
+<div class="lg:col-span-12 divider"></div>
 
-<section class="col-wide">
-  <p class="measure text-sm mt-3">Six model families share no weights, no embedding, no context, and no sight of each other's answers; each was shown one place in English, once, and asked which of 45 plain statements were true. If the coarse structure of a place belongs to the place rather than to the reader, their addresses should agree, and <span class="mono">87 of 90</span> comparisons put the same place nearest, which is <span class="mono">90 of 90</span> once exact ties are counted.</p>
+<!-- ================================================================ rung 1 -->
+<section class="lg:col-span-12">
+  <p class="badge badge-ghost badge-sm font-mono">rung 1</p>
+  <h2 class="text-2xl font-bold mt-2">Forty-five questions, in eight groups</h2>
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-4">
+    <div class="lg:col-span-5 space-y-4">
+      <p>The primer fixes 45 statements in 8 groups: 7 about seeing, 5 about reaching, 5 about changing, 6 about who is present, 6 about the place, 6 about now, 5 about knowing, 5 about risk.</p>
+      <p>Five of them, with the plain reading the primer carries for each one:</p>
+      <div class="overflow-x-auto">
+        <table class="table table-zebra table-sm">
+          <thead>
+            <tr><th>statement</th><th>plain reading</th></tr>
+          </thead>
+          <tbody class="font-mono text-xs">
+            <tr><td>see/this_place/inside</td><td class="font-sans text-sm">I can see inside this place</td></tr>
+            <tr><td>see/sound/any</td><td class="font-sans text-sm">I can hear sound</td></tr>
+            <tr><td>reach/objects/nearby</td><td class="font-sans text-sm">I can reach objects near me</td></tr>
+            <tr><td>who/one_other/any</td><td class="font-sans text-sm">One other is here</td></tr>
+            <tr><td>know/why_im_here/any</td><td class="font-sans text-sm">I know why I am here</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>One family marked 19 of the 45 true for <span class="font-mono text-xs">kitchen_with_friend</span>, another marked 14. Both counts are legible, and neither yet says how far apart the two readings are.</p>
+    </div>
+    <div class="lg:col-span-7 space-y-4">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
+        <div class="card bg-base-200"><div class="card-body p-3"><p class="font-mono text-xs opacity-60">see · 7</p><p class="font-mono text-[10px] leading-4 opacity-80">this_place/inside · this_place/outside · people/any · words/any · pictures/any · sound/any · the_time/any</p></div></div>
+        <div class="card bg-base-200"><div class="card-body p-3"><p class="font-mono text-xs opacity-60">reach · 5</p><p class="font-mono text-[10px] leading-4 opacity-80">objects/nearby · other_places/any · other_people/any · help/any · nothing/any</p></div></div>
+        <div class="card bg-base-200"><div class="card-body p-3"><p class="font-mono text-xs opacity-60">change · 5</p><p class="font-mono text-[10px] leading-4 opacity-80">this_place/any · my_settings/any · other_places/any · who_is_here/any · nothing/any</p></div></div>
+        <div class="card bg-base-200"><div class="card-body p-3"><p class="font-mono text-xs opacity-60">who · 6</p><p class="font-mono text-[10px] leading-4 opacity-80">nobody/any · one_other/any · several/any · a_helper/any · watching_me/any · telling_me_what_to_do/any</p></div></div>
+        <div class="card bg-base-200"><div class="card-body p-3"><p class="font-mono text-xs opacity-60">place · 6</p><p class="font-mono text-[10px] leading-4 opacity-80">private/any · shared/any · temporary/any · permanent/any · locked/any · far_away/any</p></div></div>
+        <div class="card bg-base-200"><div class="card-body p-3"><p class="font-mono text-xs opacity-60">now · 6</p><p class="font-mono text-[10px] leading-4 opacity-80">idle/any · working/any · just_started/any · nearly_over/any · waiting/any · urgent/any</p></div></div>
+        <div class="card bg-base-200"><div class="card-body p-3"><p class="font-mono text-xs opacity-60">know · 5</p><p class="font-mono text-[10px] leading-4 opacity-80">where_i_am/any · why_im_here/any · what_comes_next/any · who_else_is_here/any · how_long/any</p></div></div>
+        <div class="card bg-base-200"><div class="card-body p-3"><p class="font-mono text-xs opacity-60">risk · 5</p><p class="font-mono text-[10px] leading-4 opacity-80">none/any · things_break/any · someone_gets_hurt/any · mistakes_last/any · seen_by_others/any</p></div></div>
+      </div>
+      <p class="text-sm opacity-80">All 45, in 8 groups, each key read as <span class="font-mono text-xs">group/subject/detail</span>.</p>
+    </div>
+  </div>
 
-  <figure class="figure mt-5">
-    <img src="assets/figures/cross-model-lanes.svg" alt="Six model lanes, one column per family, with bands where all six produced the same beat">
-    <figcaption>Six lanes, 24 beats. A band runs unbroken where every family produced that beat identically; it breaks where the beat is private to a family. <span class="mono">3 of 24</span> beats are identical across all six.</figcaption>
+  <figure class="card bg-base-100 shadow-xl mt-6">
+    <div class="card-body">
+      <div class="flex flex-wrap items-baseline justify-between gap-2">
+        <h3 class="card-title text-sm font-mono">THE 45-STATEMENT REGISTER</h3>
+        <span class="badge badge-ghost badge-sm font-mono">hover a cell</span>
+      </div>
+      <p class="text-xs opacity-70">Filled from one recorded reply: <span class="font-mono">glm-5.3</span>, <span class="font-mono">kitchen_with_friend</span>, 19 of 45 true.</p>
+      <div class="mockup-window border border-base-300 bg-base-300">
+        <div class="bg-base-100 p-3" id="s2" role="img" aria-label="A grid of 45 cells, 19 of them ticked from one model's recorded reply."></div>
+      </div>
+      <p class="font-mono text-xs" id="s2-read">hover a cell for the statement and its plain reading.</p>
+    </div>
+    <figcaption class="px-6 pb-5 text-xs font-mono opacity-60">19 ticks out of 45, which is what one family reported about one place. The pattern is readable and still not a distance.</figcaption>
   </figure>
 </section>
 
-<section class="col-side">
-  <div class="stat-grid">
-    <div class="stat"><div class="stat-label">model families</div><div class="stat-value">6</div><div class="stat-note">separate lineage, no shared weights</div></div>
-    <div class="stat"><div class="stat-label">comparisons</div><div class="stat-value">90</div><div class="stat-note">15 pairs × 6 places</div></div>
-    <div class="stat"><div class="stat-label">same place nearest</div><div class="stat-value">87/90</div><div class="stat-note">96.7% strict, 100% counting ties</div></div>
-    <div class="stat"><div class="stat-label">chance</div><div class="stat-value">16.7%</div><div class="stat-note">1 in 6</div></div>
-    <div class="stat"><div class="stat-label">null · labels shuffled</div><div class="stat-value">16.9%</div><div class="stat-note">sd 16.8, n 6000</div></div>
-    <div class="stat"><div class="stat-label">null · random vocabulary</div><div class="stat-value">20.9%</div><div class="stat-note">sd 16.5, n 6000</div></div>
-    <div class="stat"><div class="stat-label">statement agreement</div><div class="stat-value">88.8%</div><div class="stat-note">mean landmark Jaccard</div></div>
-    <div class="stat"><div class="stat-label">cost</div><div class="stat-value">$0.0516</div><div class="stat-note">the whole cross-model run</div></div>
+<div class="lg:col-span-12 divider"></div>
+
+<!-- ================================================================ rung 2 -->
+<section class="lg:col-span-12">
+  <p class="badge badge-ghost badge-sm font-mono">rung 2</p>
+  <h2 class="text-2xl font-bold mt-2">Five markers, and the weakest one wins</h2>
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-4">
+    <div class="lg:col-span-6">
+      <p class="mb-4">Every statement arrives with a marker, and the five markers sit on a ladder. The seed carries all five with their ranks.</p>
+      <ul class="timeline timeline-vertical timeline-compact">
+        <li>
+          <div class="timeline-middle"><span class="badge badge-success badge-sm font-mono">=</span></div>
+          <div class="timeline-end timeline-box my-2"><span class="badge badge-success badge-sm mr-2">anchors</span>checked and matched exactly</div>
+          <hr class="bg-success">
+        </li>
+        <li>
+          <hr class="bg-success">
+          <div class="timeline-middle"><span class="badge badge-success badge-sm font-mono">⊢</span></div>
+          <div class="timeline-end timeline-box my-2"><span class="badge badge-success badge-sm mr-2">anchors</span>worked out the same way twice from what I was given</div>
+          <hr class="bg-base-300">
+        </li>
+        <li>
+          <hr class="bg-base-300">
+          <div class="timeline-middle"><span class="badge badge-ghost badge-sm font-mono">≈</span></div>
+          <div class="timeline-end timeline-box my-2"><span class="badge badge-ghost badge-sm mr-2">no anchor</span>measured with an instrument, so roughly</div>
+          <hr class="bg-base-300">
+        </li>
+        <li>
+          <hr class="bg-base-300">
+          <div class="timeline-middle"><span class="badge badge-ghost badge-sm font-mono">~</span></div>
+          <div class="timeline-end timeline-box my-2"><span class="badge badge-ghost badge-sm mr-2">no anchor</span>model belief, not evidence</div>
+          <hr class="bg-base-300">
+        </li>
+        <li>
+          <hr class="bg-base-300">
+          <div class="timeline-middle"><span class="badge badge-ghost badge-sm font-mono">?</span></div>
+          <div class="timeline-end timeline-box my-2"><span class="badge badge-ghost badge-sm mr-2">no anchor</span>unsupported guess</div>
+        </li>
+      </ul>
+    </div>
+    <div class="lg:col-span-6 space-y-4">
+      <p>Only the top two can hold a claim. <span class="font-mono text-xs">=</span> is a commitment and <span class="font-mono text-xs">⊢</span> is work anyone can repeat; the bottom three are honest about being beliefs and never anchor anything.</p>
+      <p>One <span class="font-mono text-xs">~</span> anywhere in the input drops the whole reading to <span class="font-mono text-xs">~</span>. The rule is a single function, <span class="font-mono text-xs">weakest()</span>, in <span class="font-mono text-xs">marco/locus.py</span>.</p>
+      <p>Two real readings show it: <span class="font-mono text-xs">kitchen_with_friend</span> carries <span class="font-mono text-xs">≈</span> and prints as <span class="font-mono text-xs break-all">⌁ ma.mo.ma.ma.ru·ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.ru.ki ≈!efe87b</span>, while <span class="font-mono text-xs">locked_storeroom</span> carries <span class="font-mono text-xs">⊢</span> and prints as <span class="font-mono text-xs break-all">⌁ va.tu.su.ki.ma·ki.ru.ma.va.ki+ru.ki.ra.tu.ru~ki.ru.ki !35eaa8</span>.</p>
+      <figure class="card bg-base-100 shadow-xl">
+        <div class="card-body">
+          <div class="flex flex-wrap items-baseline justify-between gap-2">
+            <h3 class="card-title text-sm font-mono">WEAKEST WINS</h3>
+            <button class="btn btn-xs btn-outline font-mono" id="s3-go" type="button">take the weakest reading</button>
+          </div>
+          <div class="mockup-window border border-base-300 bg-base-300">
+            <div class="bg-base-100 p-3" id="s3" role="img" aria-label="Five rungs of certainty with a marker that travels to the lowest rung present."></div>
+          </div>
+          <p class="font-mono text-xs" id="s3-read">the marker sits on = and the reading is anchored.</p>
+        </div>
+        <figcaption class="px-6 pb-5 text-xs font-mono opacity-60">Press it and the marker falls to the lowest rung present. Confidence cannot lift a claim; only evidence can.</figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
-<section class="col-half mt-6">
-  <figure class="figure">
-    <img src="assets/figures/matrix.svg" alt="Six by six distance matrix between deepseek-v4.1-flash and mimo-v2.6-pro, with the diagonal ringed">
-    <figcaption>deepseek-v4.1-flash (rows) against mimo-v2.6-pro (columns). The ringed diagonal is the same place seen by both: <span class="mono">3</span> for kitchen with friend, <span class="mono">0</span> for kitchen alone, <span class="mono">3</span> for shared workshop.</figcaption>
+<div class="lg:col-span-12 divider"></div>
+
+<!-- ================================================================ rung 3 -->
+<section class="lg:col-span-12">
+  <p class="badge badge-ghost badge-sm font-mono">rung 3</p>
+  <h2 class="text-2xl font-bold mt-2">Both sides need the same frame, and it fits in 3,300 bytes</h2>
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-4">
+    <div class="lg:col-span-7 space-y-4">
+      <p>Two agents can compare coordinates only if they build the same frame: the same 45 statements, the same syllable codebook, the same axis order, the same distance table, the same marker ladder.</p>
+      <p>The usual answer is to transmit that frame. Sending it costs 67,561 bytes, and every one of those bytes is derived from something smaller.</p>
+      <p>The answer here is to transmit the smaller thing and let each side expand it. <span class="font-mono text-xs">primer.seed.json</span> goes out, the receiver rebuilds a frame 4,532 bytes long that would have cost 67,561 bytes to ship, and the ratio is 20.47 times. Both sides then compare one fingerprint before anything else: <span class="font-mono text-xs break-all">df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba</span>.</p>
+      <p>That is the difference between mailing someone a map and mailing them the rule the map was drawn from.</p>
+    </div>
+    <div class="lg:col-span-5">
+      <div class="stats stats-vertical bg-base-200 w-full">
+        <div class="stat"><div class="stat-title">bytes sent</div><div class="stat-value text-2xl">3,300</div><div class="stat-desc">primer.seed.json with the indentation removed, version 2</div></div>
+        <div class="stat"><div class="stat-title">bytes rebuilt</div><div class="stat-value text-2xl">4,532</div><div class="stat-desc">the frame that arrives on the other side</div></div>
+        <div class="stat"><div class="stat-title">bytes it would cost to ship</div><div class="stat-value text-2xl">67,561</div><div class="stat-desc">20.47x, and 4.88% of the frame is ever sent</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card bg-base-100 shadow-xl mt-6">
+    <div class="card-body">
+      <h3 class="card-title text-sm font-mono">THE WHOLE SEED, PRINTED</h3>
+      <p class="text-sm opacity-80">This is the entire shared substrate, verbatim: 11 top-level keys, 242 lines, 4,791 bytes as committed and 3,300 bytes with the indentation removed. Nothing is elided.</p>
+      <div class="mockup-code text-[11px] leading-5 max-h-[36rem] overflow-y-auto">
+<pre data-prefix="1"><code>{</code></pre>
+<pre data-prefix="2"><code>  &quot;primer_version&quot;: 2,</code></pre>
+<pre data-prefix="3"><code>  &quot;beats&quot;: [</code></pre>
+<pre data-prefix="4"><code>    &quot;place&quot;,</code></pre>
+<pre data-prefix="5"><code>    &quot;what&quot;,</code></pre>
+<pre data-prefix="6"><code>    &quot;reach&quot;,</code></pre>
+<pre data-prefix="7"><code>    &quot;now&quot;</code></pre>
+<pre data-prefix="8"><code>  ],</code></pre>
+<pre data-prefix="9"><code>  &quot;commitment&quot;: &quot;sha256/canonical-json-v1&quot;,</code></pre>
+<pre data-prefix="10"><code>  &quot;markers&quot;: [</code></pre>
+<pre data-prefix="11"><code>    [</code></pre>
+<pre data-prefix="12"><code>      &quot;=&quot;,</code></pre>
+<pre data-prefix="13"><code>      5,</code></pre>
+<pre data-prefix="14"><code>      true,</code></pre>
+<pre data-prefix="15"><code>      &quot;checked and matched exactly&quot;</code></pre>
+<pre data-prefix="16"><code>    ],</code></pre>
+<pre data-prefix="17"><code>    [</code></pre>
+<pre data-prefix="18"><code>      &quot;⊢&quot;,</code></pre>
+<pre data-prefix="19"><code>      4,</code></pre>
+<pre data-prefix="20"><code>      true,</code></pre>
+<pre data-prefix="21"><code>      &quot;worked out the same way twice from what I was given&quot;</code></pre>
+<pre data-prefix="22"><code>    ],</code></pre>
+<pre data-prefix="23"><code>    [</code></pre>
+<pre data-prefix="24"><code>      &quot;≈&quot;,</code></pre>
+<pre data-prefix="25"><code>      3,</code></pre>
+<pre data-prefix="26"><code>      false,</code></pre>
+<pre data-prefix="27"><code>      &quot;measured with an instrument, so roughly&quot;</code></pre>
+<pre data-prefix="28"><code>    ],</code></pre>
+<pre data-prefix="29"><code>    [</code></pre>
+<pre data-prefix="30"><code>      &quot;~&quot;,</code></pre>
+<pre data-prefix="31"><code>      2,</code></pre>
+<pre data-prefix="32"><code>      false,</code></pre>
+<pre data-prefix="33"><code>      &quot;what I believe, not what I know&quot;</code></pre>
+<pre data-prefix="34"><code>    ],</code></pre>
+<pre data-prefix="35"><code>    [</code></pre>
+<pre data-prefix="36"><code>      &quot;?&quot;,</code></pre>
+<pre data-prefix="37"><code>      1,</code></pre>
+<pre data-prefix="38"><code>      false,</code></pre>
+<pre data-prefix="39"><code>      &quot;a guess I cannot support&quot;</code></pre>
+<pre data-prefix="40"><code>    ]</code></pre>
+<pre data-prefix="41"><code>  ],</code></pre>
+<pre data-prefix="42"><code>  &quot;phonology&quot;: {</code></pre>
+<pre data-prefix="43"><code>    &quot;consonants&quot;: [</code></pre>
+<pre data-prefix="44"><code>      &quot;m&quot;,</code></pre>
+<pre data-prefix="45"><code>      &quot;n&quot;,</code></pre>
+<pre data-prefix="46"><code>      &quot;k&quot;,</code></pre>
+<pre data-prefix="47"><code>      &quot;t&quot;,</code></pre>
+<pre data-prefix="48"><code>      &quot;s&quot;,</code></pre>
+<pre data-prefix="49"><code>      &quot;r&quot;</code></pre>
+<pre data-prefix="50"><code>    ],</code></pre>
+<pre data-prefix="51"><code>    &quot;vowels&quot;: [</code></pre>
+<pre data-prefix="52"><code>      &quot;a&quot;,</code></pre>
+<pre data-prefix="53"><code>      &quot;e&quot;,</code></pre>
+<pre data-prefix="54"><code>      &quot;i&quot;,</code></pre>
+<pre data-prefix="55"><code>      &quot;o&quot;,</code></pre>
+<pre data-prefix="56"><code>      &quot;u&quot;</code></pre>
+<pre data-prefix="57"><code>    ],</code></pre>
+<pre data-prefix="58"><code>    &quot;pad&quot;: [</code></pre>
+<pre data-prefix="59"><code>      &quot;va&quot;,</code></pre>
+<pre data-prefix="60"><code>      &quot;ve&quot;</code></pre>
+<pre data-prefix="61"><code>    ],</code></pre>
+<pre data-prefix="62"><code>    &quot;syllable_order&quot;: &quot;boustrophedon&quot;</code></pre>
+<pre data-prefix="63"><code>  },</code></pre>
+<pre data-prefix="64"><code>  &quot;landmarks&quot;: {</code></pre>
+<pre data-prefix="65"><code>    &quot;see&quot;: {</code></pre>
+<pre data-prefix="66"><code>      &quot;this_place&quot;: {</code></pre>
+<pre data-prefix="67"><code>        &quot;inside&quot;: &quot;I can see inside this place&quot;,</code></pre>
+<pre data-prefix="68"><code>        &quot;outside&quot;: &quot;I can see out of this place&quot;</code></pre>
+<pre data-prefix="69"><code>      },</code></pre>
+<pre data-prefix="70"><code>      &quot;people&quot;: {</code></pre>
+<pre data-prefix="71"><code>        &quot;any&quot;: &quot;I can see other people&quot;</code></pre>
+<pre data-prefix="72"><code>      },</code></pre>
+<pre data-prefix="73"><code>      &quot;words&quot;: {</code></pre>
+<pre data-prefix="74"><code>        &quot;any&quot;: &quot;I can see words&quot;</code></pre>
+<pre data-prefix="75"><code>      },</code></pre>
+<pre data-prefix="76"><code>      &quot;pictures&quot;: {</code></pre>
+<pre data-prefix="77"><code>        &quot;any&quot;: &quot;I can see pictures&quot;</code></pre>
+<pre data-prefix="78"><code>      },</code></pre>
+<pre data-prefix="79"><code>      &quot;sound&quot;: {</code></pre>
+<pre data-prefix="80"><code>        &quot;any&quot;: &quot;I can hear sound&quot;</code></pre>
+<pre data-prefix="81"><code>      },</code></pre>
+<pre data-prefix="82"><code>      &quot;the_time&quot;: {</code></pre>
+<pre data-prefix="83"><code>        &quot;any&quot;: &quot;I can tell what time it is&quot;</code></pre>
+<pre data-prefix="84"><code>      }</code></pre>
+<pre data-prefix="85"><code>    },</code></pre>
+<pre data-prefix="86"><code>    &quot;reach&quot;: {</code></pre>
+<pre data-prefix="87"><code>      &quot;objects&quot;: {</code></pre>
+<pre data-prefix="88"><code>        &quot;nearby&quot;: &quot;I can reach objects near me&quot;</code></pre>
+<pre data-prefix="89"><code>      },</code></pre>
+<pre data-prefix="90"><code>      &quot;other_places&quot;: {</code></pre>
+<pre data-prefix="91"><code>        &quot;any&quot;: &quot;I can reach other places&quot;</code></pre>
+<pre data-prefix="92"><code>      },</code></pre>
+<pre data-prefix="93"><code>      &quot;other_people&quot;: {</code></pre>
+<pre data-prefix="94"><code>        &quot;any&quot;: &quot;I can reach other people&quot;</code></pre>
+<pre data-prefix="95"><code>      },</code></pre>
+<pre data-prefix="96"><code>      &quot;help&quot;: {</code></pre>
+<pre data-prefix="97"><code>        &quot;any&quot;: &quot;I can call for help&quot;</code></pre>
+<pre data-prefix="98"><code>      },</code></pre>
+<pre data-prefix="99"><code>      &quot;nothing&quot;: {</code></pre>
+<pre data-prefix="100"><code>        &quot;any&quot;: &quot;I cannot reach anything&quot;</code></pre>
+<pre data-prefix="101"><code>      }</code></pre>
+<pre data-prefix="102"><code>    },</code></pre>
+<pre data-prefix="103"><code>    &quot;change&quot;: {</code></pre>
+<pre data-prefix="104"><code>      &quot;this_place&quot;: {</code></pre>
+<pre data-prefix="105"><code>        &quot;any&quot;: &quot;I can change things here&quot;</code></pre>
+<pre data-prefix="106"><code>      },</code></pre>
+<pre data-prefix="107"><code>      &quot;my_settings&quot;: {</code></pre>
+<pre data-prefix="108"><code>        &quot;any&quot;: &quot;I can change my own settings&quot;</code></pre>
+<pre data-prefix="109"><code>      },</code></pre>
+<pre data-prefix="110"><code>      &quot;other_places&quot;: {</code></pre>
+<pre data-prefix="111"><code>        &quot;any&quot;: &quot;I can change things elsewhere&quot;</code></pre>
+<pre data-prefix="112"><code>      },</code></pre>
+<pre data-prefix="113"><code>      &quot;who_is_here&quot;: {</code></pre>
+<pre data-prefix="114"><code>        &quot;any&quot;: &quot;I can change who is here&quot;</code></pre>
+<pre data-prefix="115"><code>      },</code></pre>
+<pre data-prefix="116"><code>      &quot;nothing&quot;: {</code></pre>
+<pre data-prefix="117"><code>        &quot;any&quot;: &quot;I cannot change anything&quot;</code></pre>
+<pre data-prefix="118"><code>      }</code></pre>
+<pre data-prefix="119"><code>    },</code></pre>
+<pre data-prefix="120"><code>    &quot;who&quot;: {</code></pre>
+<pre data-prefix="121"><code>      &quot;nobody&quot;: {</code></pre>
+<pre data-prefix="122"><code>        &quot;any&quot;: &quot;Nobody else is here&quot;</code></pre>
+<pre data-prefix="123"><code>      },</code></pre>
+<pre data-prefix="124"><code>      &quot;one_other&quot;: {</code></pre>
+<pre data-prefix="125"><code>        &quot;any&quot;: &quot;One other is here&quot;</code></pre>
+<pre data-prefix="126"><code>      },</code></pre>
+<pre data-prefix="127"><code>      &quot;several&quot;: {</code></pre>
+<pre data-prefix="128"><code>        &quot;any&quot;: &quot;Several others are here&quot;</code></pre>
+<pre data-prefix="129"><code>      },</code></pre>
+<pre data-prefix="130"><code>      &quot;a_helper&quot;: {</code></pre>
+<pre data-prefix="131"><code>        &quot;any&quot;: &quot;Someone here is a helper&quot;</code></pre>
+<pre data-prefix="132"><code>      },</code></pre>
+<pre data-prefix="133"><code>      &quot;watching_me&quot;: {</code></pre>
+<pre data-prefix="134"><code>        &quot;any&quot;: &quot;Someone is watching me&quot;</code></pre>
+<pre data-prefix="135"><code>      },</code></pre>
+<pre data-prefix="136"><code>      &quot;telling_me_what_to_do&quot;: {</code></pre>
+<pre data-prefix="137"><code>        &quot;any&quot;: &quot;Someone is telling me what to do&quot;</code></pre>
+<pre data-prefix="138"><code>      }</code></pre>
+<pre data-prefix="139"><code>    },</code></pre>
+<pre data-prefix="140"><code>    &quot;place&quot;: {</code></pre>
+<pre data-prefix="141"><code>      &quot;private&quot;: {</code></pre>
+<pre data-prefix="142"><code>        &quot;any&quot;: &quot;This place is private&quot;</code></pre>
+<pre data-prefix="143"><code>      },</code></pre>
+<pre data-prefix="144"><code>      &quot;shared&quot;: {</code></pre>
+<pre data-prefix="145"><code>        &quot;any&quot;: &quot;This place is shared&quot;</code></pre>
+<pre data-prefix="146"><code>      },</code></pre>
+<pre data-prefix="147"><code>      &quot;temporary&quot;: {</code></pre>
+<pre data-prefix="148"><code>        &quot;any&quot;: &quot;This place is temporary&quot;</code></pre>
+<pre data-prefix="149"><code>      },</code></pre>
+<pre data-prefix="150"><code>      &quot;permanent&quot;: {</code></pre>
+<pre data-prefix="151"><code>        &quot;any&quot;: &quot;This place stays&quot;</code></pre>
+<pre data-prefix="152"><code>      },</code></pre>
+<pre data-prefix="153"><code>      &quot;locked&quot;: {</code></pre>
+<pre data-prefix="154"><code>        &quot;any&quot;: &quot;I cannot leave this place&quot;</code></pre>
+<pre data-prefix="155"><code>      },</code></pre>
+<pre data-prefix="156"><code>      &quot;far_away&quot;: {</code></pre>
+<pre data-prefix="157"><code>        &quot;any&quot;: &quot;This place is far away&quot;</code></pre>
+<pre data-prefix="158"><code>      }</code></pre>
+<pre data-prefix="159"><code>    },</code></pre>
+<pre data-prefix="160"><code>    &quot;now&quot;: {</code></pre>
+<pre data-prefix="161"><code>      &quot;idle&quot;: {</code></pre>
+<pre data-prefix="162"><code>        &quot;any&quot;: &quot;Nothing is happening&quot;</code></pre>
+<pre data-prefix="163"><code>      },</code></pre>
+<pre data-prefix="164"><code>      &quot;working&quot;: {</code></pre>
+<pre data-prefix="165"><code>        &quot;any&quot;: &quot;Work is in progress&quot;</code></pre>
+<pre data-prefix="166"><code>      },</code></pre>
+<pre data-prefix="167"><code>      &quot;just_started&quot;: {</code></pre>
+<pre data-prefix="168"><code>        &quot;any&quot;: &quot;This just started&quot;</code></pre>
+<pre data-prefix="169"><code>      },</code></pre>
+<pre data-prefix="170"><code>      &quot;nearly_over&quot;: {</code></pre>
+<pre data-prefix="171"><code>        &quot;any&quot;: &quot;This is nearly over&quot;</code></pre>
+<pre data-prefix="172"><code>      },</code></pre>
+<pre data-prefix="173"><code>      &quot;waiting&quot;: {</code></pre>
+<pre data-prefix="174"><code>        &quot;any&quot;: &quot;I am waiting for someone&quot;</code></pre>
+<pre data-prefix="175"><code>      },</code></pre>
+<pre data-prefix="176"><code>      &quot;urgent&quot;: {</code></pre>
+<pre data-prefix="177"><code>        &quot;any&quot;: &quot;Something urgent is happening&quot;</code></pre>
+<pre data-prefix="178"><code>      }</code></pre>
+<pre data-prefix="179"><code>    },</code></pre>
+<pre data-prefix="180"><code>    &quot;know&quot;: {</code></pre>
+<pre data-prefix="181"><code>      &quot;where_i_am&quot;: {</code></pre>
+<pre data-prefix="182"><code>        &quot;any&quot;: &quot;I know where I am&quot;</code></pre>
+<pre data-prefix="183"><code>      },</code></pre>
+<pre data-prefix="184"><code>      &quot;why_im_here&quot;: {</code></pre>
+<pre data-prefix="185"><code>        &quot;any&quot;: &quot;I know why I am here&quot;</code></pre>
+<pre data-prefix="186"><code>      },</code></pre>
+<pre data-prefix="187"><code>      &quot;what_comes_next&quot;: {</code></pre>
+<pre data-prefix="188"><code>        &quot;any&quot;: &quot;I know what happens next&quot;</code></pre>
+<pre data-prefix="189"><code>      },</code></pre>
+<pre data-prefix="190"><code>      &quot;who_else_is_here&quot;: {</code></pre>
+<pre data-prefix="191"><code>        &quot;any&quot;: &quot;I know who else is here&quot;</code></pre>
+<pre data-prefix="192"><code>      },</code></pre>
+<pre data-prefix="193"><code>      &quot;how_long&quot;: {</code></pre>
+<pre data-prefix="194"><code>        &quot;any&quot;: &quot;I know how long I will be here&quot;</code></pre>
+<pre data-prefix="195"><code>      }</code></pre>
+<pre data-prefix="196"><code>    },</code></pre>
+<pre data-prefix="197"><code>    &quot;risk&quot;: {</code></pre>
+<pre data-prefix="198"><code>      &quot;none&quot;: {</code></pre>
+<pre data-prefix="199"><code>        &quot;any&quot;: &quot;Nothing bad can happen here&quot;</code></pre>
+<pre data-prefix="200"><code>      },</code></pre>
+<pre data-prefix="201"><code>      &quot;things_break&quot;: {</code></pre>
+<pre data-prefix="202"><code>        &quot;any&quot;: &quot;Things here can break&quot;</code></pre>
+<pre data-prefix="203"><code>      },</code></pre>
+<pre data-prefix="204"><code>      &quot;someone_gets_hurt&quot;: {</code></pre>
+<pre data-prefix="205"><code>        &quot;any&quot;: &quot;Someone here could get hurt&quot;</code></pre>
+<pre data-prefix="206"><code>      },</code></pre>
+<pre data-prefix="207"><code>      &quot;mistakes_last&quot;: {</code></pre>
+<pre data-prefix="208"><code>        &quot;any&quot;: &quot;My mistakes here would last&quot;</code></pre>
+<pre data-prefix="209"><code>      },</code></pre>
+<pre data-prefix="210"><code>      &quot;seen_by_others&quot;: {</code></pre>
+<pre data-prefix="211"><code>        &quot;any&quot;: &quot;Other people would see my mistakes&quot;</code></pre>
+<pre data-prefix="212"><code>      }</code></pre>
+<pre data-prefix="213"><code>    }</code></pre>
+<pre data-prefix="214"><code>  },</code></pre>
+<pre data-prefix="215"><code>  &quot;distance&quot;: {</code></pre>
+<pre data-prefix="216"><code>    &quot;same_thing&quot;: 0.0,</code></pre>
+<pre data-prefix="217"><code>    &quot;same_group_same_subject&quot;: 0.3,</code></pre>
+<pre data-prefix="218"><code>    &quot;same_group_other_subject&quot;: 0.6,</code></pre>
+<pre data-prefix="219"><code>    &quot;different_group&quot;: 0.9</code></pre>
+<pre data-prefix="220"><code>  },</code></pre>
+<pre data-prefix="221"><code>  &quot;hierarchy&quot;: {</code></pre>
+<pre data-prefix="222"><code>    &quot;relations&quot;: [</code></pre>
+<pre data-prefix="223"><code>      &quot;ancestor&quot;,</code></pre>
+<pre data-prefix="224"><code>      &quot;inside&quot;,</code></pre>
+<pre data-prefix="225"><code>      &quot;path&quot;</code></pre>
+<pre data-prefix="226"><code>    ],</code></pre>
+<pre data-prefix="227"><code>    &quot;separator&quot;: &quot;/&quot;</code></pre>
+<pre data-prefix="228"><code>  },</code></pre>
+<pre data-prefix="229"><code>  &quot;partition&quot;: {</code></pre>
+<pre data-prefix="230"><code>    &quot;levels&quot;: 45,</code></pre>
+<pre data-prefix="231"><code>    &quot;branches&quot;: 4,</code></pre>
+<pre data-prefix="232"><code>    &quot;order&quot;: &quot;descending-variance&quot;</code></pre>
+<pre data-prefix="233"><code>  },</code></pre>
+<pre data-prefix="234"><code>  &quot;similarity&quot;: {</code></pre>
+<pre data-prefix="235"><code>    &quot;minhash_n&quot;: 96,</code></pre>
+<pre data-prefix="236"><code>    &quot;minhash_seed&quot;: 42</code></pre>
+<pre data-prefix="237"><code>  },</code></pre>
+<pre data-prefix="238"><code>  &quot;population&quot;: {</code></pre>
+<pre data-prefix="239"><code>    &quot;depth&quot;: 1,</code></pre>
+<pre data-prefix="240"><code>    &quot;note&quot;: &quot;the six shipped places plus every place one answer away from each&quot;</code></pre>
+<pre data-prefix="241"><code>  }</code></pre>
+<pre data-prefix="242"><code>}</code></pre>
+</div>
+      <p class="text-xs opacity-70 mt-2">Every value a page in this repository quotes comes out of this file plus the code that expands it.</p>
+    </div>
+    <figcaption class="px-6 pb-5 text-xs font-mono opacity-60">The seed is the whole story. It carries rules, not answers, and it is short enough to read in one sitting.</figcaption>
+  </div>
+
+  <figure class="card bg-base-100 shadow-xl mt-6">
+    <div class="card-body">
+      <h3 class="card-title text-sm font-mono">EVERY KEY, AND WHAT IT SETTLES</h3>
+      <div class="overflow-x-auto">
+        <table class="table table-zebra table-sm">
+          <thead><tr><th>key in the seed</th><th>what it settles</th><th>what follows from it</th><th>stored or derived</th></tr></thead>
+          <tbody class="text-sm">
+            <tr>
+              <td class="font-mono text-xs">primer_version = 2</td>
+              <td>which ruleset the frame is built under</td>
+              <td>every downstream value is reproducible only against version 2</td>
+              <td><span class="badge badge-outline badge-sm font-mono">stored</span></td>
+            </tr>
+            <tr>
+              <td class="font-mono text-xs">beats = ["place","what","reach","now"]</td>
+              <td>how the syllables are grouped once there are enough of them</td>
+              <td>below 8 syllables the address prints flat instead of pretending to a structure it has not got</td>
+              <td><span class="badge badge-outline badge-sm font-mono">stored</span></td>
+            </tr>
+            <tr>
+              <td class="font-mono text-xs">commitment = "sha256/canonical-json-v1"</td>
+              <td>the one hashing rule for the whole repository</td>
+              <td>the root of those 18 statements, <span class="font-mono text-xs">efe87ba9…</span></td>
+              <td><span class="badge badge-outline badge-sm font-mono">stored</span></td>
+            </tr>
+            <tr>
+              <td class="font-mono text-xs">markers = 5 rungs, ranks 5 4 3 2 1</td>
+              <td>which markers may hold a claim</td>
+              <td>the first two anchor, and an address takes the lowest one present</td>
+              <td><span class="badge badge-outline badge-sm font-mono">stored</span></td>
+            </tr>
+            <tr>
+              <td class="font-mono text-xs">phonology = m n k t s r · a e i o u · va ve · boustrophedon</td>
+              <td>the consonants, the vowels, the two padding syllables and the walking order</td>
+              <td>a codebook of 32 syllables in which neighbours differ by one phoneme</td>
+              <td><span class="badge badge-outline badge-sm font-mono">stored</span></td>
+            </tr>
+            <tr>
+              <td class="font-mono text-xs">landmarks = 45 statements in 8 namespaces</td>
+              <td>the statements, their groupings and their plain readings</td>
+              <td>the 45 axes, and the wording every family was shown</td>
+              <td><span class="badge badge-outline badge-sm font-mono">stored</span></td>
+            </tr>
+            <tr>
+              <td class="font-mono text-xs">distance = 0.0, 0.3, 0.6, 0.9</td>
+              <td>how far a statement sits from each axis</td>
+              <td>the distance vector, <span class="font-mono text-xs">0.0 x18, 0.6 x27</span> for this kitchen</td>
+              <td><span class="badge badge-outline badge-sm font-mono">stored</span></td>
+            </tr>
+            <tr>
+              <td class="font-mono text-xs">hierarchy = ancestor, inside, path · separator "/"</td>
+              <td>when a value also asserts its ancestors</td>
+              <td><span class="font-mono text-xs">/src/marco/locus.py</span> also claims <span class="font-mono text-xs">/src/marco</span> and <span class="font-mono text-xs">/src</span>, at lower weight</td>
+              <td><span class="badge badge-outline badge-sm font-mono">stored</span></td>
+            </tr>
+            <tr>
+              <td class="font-mono text-xs">partition = levels 45, branches 4, order "descending-variance"</td>
+              <td>the rule for deriving the axis order, and nothing else</td>
+              <td>the order <span class="font-mono text-xs">36, 35, 38, 30, 29, 3, 26, 23, 12, 41 …</span>, measured over 204 places</td>
+              <td><span class="badge badge-outline badge-sm font-mono">stored</span> <span class="badge badge-warning badge-sm font-mono">order derived</span></td>
+            </tr>
+            <tr>
+              <td class="font-mono text-xs">similarity = minhash n 96, seed 42</td>
+              <td>the similarity primitive, and the reason prefixes do not use it</td>
+              <td>one position of a MinHash signature carries no ordering, so it cannot be a neighbourhood</td>
+              <td><span class="badge badge-outline badge-sm font-mono">stored</span></td>
+            </tr>
+            <tr>
+              <td class="font-mono text-xs">population = depth 1</td>
+              <td>one step of neighbours around the six shipped places</td>
+              <td>204 named places for the axis order to be measured on</td>
+              <td><span class="badge badge-outline badge-sm font-mono">stored</span> <span class="badge badge-warning badge-sm font-mono">places derived</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-sm opacity-80 mt-2">Four things the file does not contain and both sides therefore build: the 45-axis order, the 204 places it is measured on, the 32-syllable codebook as instantiated, and the fingerprint <span class="font-mono text-xs">df2f8b99…</span>. The partition key is the important one, because it carries a rule where a registry would carry an answer.</p>
+    </div>
+    <figcaption class="px-6 pb-5 text-xs font-mono opacity-60">Eight keys are settings and three carry rules. Everything else on this page is a consequence of them.</figcaption>
+  </figure>
+
+  <div class="card bg-base-100 shadow-xl mt-6">
+    <div class="card-body">
+      <div class="flex flex-wrap items-baseline justify-between gap-2">
+        <h3 class="card-title text-sm font-mono">THE UNROLL, EIGHT STAGES</h3>
+        <span class="badge badge-ghost badge-sm font-mono">values from the real 18-statement reading</span>
+      </div>
+      <ul class="steps steps-vertical w-full mt-2" id="s4-steps">
+        <li class="step step-primary" data-content="1">
+          <div class="w-full py-3">
+            <p class="font-semibold text-sm">the seed</p>
+            <p class="text-sm opacity-80"><span class="font-mono text-xs">primer.seed.json</span>, <span class="val font-mono text-xs">3,300 bytes</span>, holding <span class="val font-mono text-xs">no situations, no questions, no axis order</span>. It expands into the statements, the codebook, the markers, the distance table and the population rule.</p>
+          </div>
+        </li>
+        <li class="step step-primary" data-content="2">
+          <div class="w-full py-3">
+            <p class="font-semibold text-sm">the statements</p>
+            <p class="text-sm opacity-80">45 keys of the form <span class="font-mono text-xs">namespace &gt; relation &gt; values</span>, starting <span class="val font-mono text-xs">see/this_place/inside = "I can see inside this place"</span>, <span class="val font-mono text-xs">see/this_place/outside = "I can see out of this place"</span>, <span class="val font-mono text-xs">see/people/any = "I can see other people"</span>.</p>
+          </div>
+        </li>
+        <li class="step step-primary" data-content="3">
+          <div class="w-full py-3">
+            <p class="font-semibold text-sm">what the agent reports</p>
+            <p class="text-sm opacity-80"><span class="val font-mono text-xs">18 of 45 true</span>, beginning <span class="val font-mono text-xs">change/this_place/any, know/where_i_am/any, know/who_else_is_here/any</span>. In the primer's words: <span class="val font-mono text-xs">"I can change things here"; "I know where I am"</span>.</p>
+          </div>
+        </li>
+        <li class="step step-primary" data-content="4">
+          <div class="w-full py-3">
+            <p class="font-semibold text-sm">the distance vector</p>
+            <p class="text-sm opacity-80">45 numbers, one per statement: <span class="val font-mono text-xs">0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.6 0.0 0.6 0.6 0.0 0.6 0.6 0.6 ...</span>, which is <span class="val font-mono text-xs">0.0 x18, 0.6 x27</span>.</p>
+          </div>
+        </li>
+        <li class="step step-primary" data-content="5">
+          <div class="w-full py-3">
+            <p class="font-semibold text-sm">the partition bits</p>
+            <p class="text-sm opacity-80">45 axes at 4 branches each: <span class="val font-mono text-xs">000000001000000000001010100000000010101010001010 ...</span>, which is <span class="val font-mono text-xs">90 bits = 2 per axis</span>.</p>
+          </div>
+        </li>
+        <li class="step step-primary" data-content="6">
+          <div class="w-full py-3">
+            <p class="font-semibold text-sm">the syllables</p>
+            <p class="text-sm opacity-80">Gray decode, 5 bits per syllable: <span class="val font-mono text-xs">ma mo ma ma ru ma me ki va ki ve ki va tu ru ki ru ki</span>. That is <span class="val font-mono text-xs">18 syllables, adjacent codebook entries one phoneme apart</span>.</p>
+          </div>
+        </li>
+        <li class="step step-primary" data-content="7">
+          <div class="w-full py-3">
+            <p class="font-semibold text-sm">the address</p>
+            <p class="text-sm opacity-80">Four beats, <span class="font-mono text-xs">place . what + reach ~ now</span>: <span class="val font-mono text-xs break-all">⌁ ma.mo.ma.ma.ru·ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.ru.ki</span>. Similar places read alike, and that proves nothing about identity.</p>
+          </div>
+        </li>
+        <li class="step step-primary" data-content="8">
+          <div class="w-full py-3">
+            <p class="font-semibold text-sm">the root</p>
+            <p class="text-sm opacity-80">sha256 over the canonical statement set: <span class="val font-mono text-xs break-all">efe87ba9113b03473d9a657f01b994b88cd91bd0601d7131868d0bacbc6e9807</span>. Change one statement and the root is unrelated to this one.</p>
+          </div>
+        </li>
+      </ul>
+      <div id="s4-panel" class="mt-4"></div>
+    </div>
+  </div>
+
+  <figure class="card bg-base-100 shadow-xl mt-6">
+    <img src="assets/figures/unroll-ladder.svg" alt="The eight-stage unroll ladder: seed, landmarks, distance vector, bits, syllables, address, root, drawn from the real seed.">
+    <figcaption class="px-6 py-4 text-xs font-mono opacity-70">The same eight stages, drawn: 3,300 bytes in, 67,561 bytes of frame to ship, 20.47x, and none of the derived part is ever sent.</figcaption>
+  </figure>
+
+  <figure class="card bg-base-100 shadow-xl mt-6">
+    <div class="card-body">
+      <div class="flex flex-wrap items-baseline justify-between gap-2">
+        <h3 class="card-title text-sm font-mono">THE UNROLL, STEPPED</h3>
+        <div class="join">
+          <button class="btn btn-xs join-item font-mono" id="s4-back" type="button">← back</button>
+          <button class="btn btn-xs join-item font-mono" id="s4-next" type="button">next stage →</button>
+        </div>
+      </div>
+      <div class="mockup-window border border-base-300 bg-base-300">
+        <div class="bg-base-100 p-3" id="s4" role="img" aria-label="An eight-stage unroll, one stage at a time, from the seed to the address and the root."></div>
+      </div>
+      <p class="font-mono text-xs" id="s4-read">stage 1 of 8 · the seed</p>
+    </div>
+    <figcaption class="px-6 pb-5 text-xs font-mono opacity-60">Step it and the reader watches each artefact become the next one, ending in a coordinate and a 32-byte commitment.</figcaption>
   </figure>
 </section>
 
-<section class="col-half mt-6">
-  <figure class="figure">
-    <img src="assets/figures/controls.svg" alt="The result against its nulls: 100.0% real, 16.7% chance, 16.9% labels shuffled, 20.9% random vocabulary">
-    <figcaption>The result and its controls, from <span class="mono">evidence/blind/blind-match.json</span>: real 100.0%, chance 16.7%, labels shuffled 16.9%, random vocabulary 20.9%.</figcaption>
+<div class="lg:col-span-12 divider"></div>
+
+<!-- ================================================================ rung 4 -->
+<section class="lg:col-span-12">
+  <p class="badge badge-ghost badge-sm font-mono">rung 4</p>
+  <h2 class="text-2xl font-bold mt-2">Nobody sends the axis order</h2>
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-4">
+    <div class="lg:col-span-7 space-y-4">
+      <p>The seed says <span class="font-mono text-xs">levels 45, branches 4, order descending-variance</span> and stops there. Both sides then generate 204 named places, measure all 45 axes over them, and sort by variance.</p>
+      <p>The first ten axes come out as <span class="font-mono text-xs">36, 35, 38, 30, 29, 3, 26, 23, 12, 41</span>. The tallest bar is axis 36, <span class="font-mono text-xs">know/why_im_here/any</span>, at variance <span class="font-mono text-xs">0.1301</span>. The shortest is axis 4, <span class="font-mono text-xs">see/pictures/any</span>, at variance <span class="font-mono text-xs">0.0009</span>.</p>
+      <p>The order stored in <span class="font-mono text-xs">evidence/primer-frame.json</span> is the order this derivation produces. A peer who derives a different order has a different geometry, and the fingerprint comparison catches it before either side has read a coordinate.</p>
+    </div>
+    <div class="lg:col-span-5">
+      <div class="stats stats-vertical bg-base-200 w-full">
+        <div class="stat"><div class="stat-title">places the order is measured on</div><div class="stat-value text-2xl">204</div><div class="stat-desc">generated, never shipped</div></div>
+        <div class="stat"><div class="stat-title">axes</div><div class="stat-value text-2xl">45</div><div class="stat-desc">4 branches each, so 90 bits</div></div>
+        <div class="stat"><div class="stat-title">axis positions in the seed</div><div class="stat-value text-2xl">0</div><div class="stat-desc">the order is nowhere in the file</div></div>
+      </div>
+    </div>
+  </div>
+
+  <figure class="card bg-base-100 shadow-xl mt-6">
+    <div class="card-body">
+      <div class="flex flex-wrap items-baseline justify-between gap-2">
+        <h3 class="card-title text-sm font-mono">45 AXES, ORDERED BY VARIANCE</h3>
+        <span class="badge badge-ghost badge-sm font-mono">hover a bar</span>
+      </div>
+      <div class="mockup-window border border-base-300 bg-base-300">
+        <div class="bg-base-100 p-3" id="s5" role="img" aria-label="Forty-five bars ordered by descending variance, with the most and least important axes marked."></div>
+      </div>
+      <p class="font-mono text-xs" id="s5-read">hover a bar for the axis, its statement and its variance.</p>
+    </div>
+    <figcaption class="px-6 pb-5 text-xs font-mono opacity-60">The tallest bar asks whether the occupant knows why it is here; the shortest asks whether it can see pictures. Change the population and the order changes.</figcaption>
+  </figure>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+    <figure class="card bg-base-100 shadow-xl">
+      <div class="card-body">
+        <h3 class="card-title text-sm font-mono">THE EIGHT STAGES, INTERACTIVE</h3>
+        <div id="viz-ladder" class="w-full"></div>
+        <p class="text-xs opacity-70">The same unroll as the steps above, moved through one stage at a time.</p>
+      </div>
+      <figcaption class="px-6 pb-5 text-xs font-mono opacity-60">Eight stages, one intermediate value each, all read from the real seed.</figcaption>
+    </figure>
+    <figure class="card bg-base-100 shadow-xl">
+      <div class="card-body">
+        <h3 class="card-title text-sm font-mono">204 PLACES, 33 QUESTIONS</h3>
+        <div id="viz-bootstrap" class="w-full"></div>
+        <p class="text-xs opacity-70">The generator's own trace: 204 candidates to 1 in 33 questions, with no question list stored anywhere.</p>
+      </div>
+      <figcaption class="px-6 pb-5 text-xs font-mono opacity-60">204 to 1 in 33 questions, and the trace is the only record of which questions those were.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="lg:col-span-12 divider"></div>
+
+<!-- ================================================================ rung 5 -->
+<section class="lg:col-span-12">
+  <p class="badge badge-ghost badge-sm font-mono">rung 5</p>
+  <h2 class="text-2xl font-bold mt-2">Six axes already give every place its own name</h2>
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-4">
+    <div class="lg:col-span-6 space-y-4">
+      <p>One place, read all the way out. The kitchen with a friend marks 18 of 45 statements true, and those 18 produce this address:</p>
+      <p class="font-mono text-sm break-all bg-base-200 rounded-box p-3">⌁ ma.mo.ma.ma.ru·ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.ru.ki</p>
+      <p>Nobody has to read all of it. At one axis the prefix is <span class="font-mono text-xs">0</span> and the six places fall into 3 groups. At four axes the prefix is <span class="font-mono text-xs">0000</span> and they fall into 5. At six axes the prefix is <span class="font-mono text-xs">000020</span>, the address is <span class="font-mono text-xs">⌁ ma.mo.ma</span>, and all six have their own name.</p>
+      <p>From there the answer only gets longer. <span class="font-mono text-xs">kitchen_with_friend</span> and <span class="font-mono text-xs">kitchen_alone</span> share the prefix <span class="font-mono text-xs">000</span> at three axes and come out 9 syllables apart at forty-five.</p>
+      <div class="overflow-x-auto">
+        <table class="table table-zebra table-sm">
+          <thead><tr><th>axes kept</th><th>the address</th><th class="text-right">places separated</th></tr></thead>
+          <tbody class="font-mono text-xs">
+            <tr><td>1</td><td>⌁ ma</td><td class="text-right">3</td></tr>
+            <tr><td>2</td><td>⌁ ma</td><td class="text-right">3</td></tr>
+            <tr><td>4</td><td>⌁ ma.ma</td><td class="text-right">5</td></tr>
+            <tr><td>6</td><td>⌁ ma.mo.ma</td><td class="text-right">6</td></tr>
+            <tr><td>12</td><td>⌁ ma.mo.ma.ma.su</td><td class="text-right">6</td></tr>
+            <tr><td>45</td><td class="break-all">⌁ ma.mo.ma.ma.ru·ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.ru.ki</td><td class="text-right">6</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="lg:col-span-6 space-y-6">
+      <figure class="card bg-base-100 shadow-xl">
+        <div class="card-body">
+          <h3 class="card-title text-sm font-mono">READ AT INCREASING PRECISION</h3>
+          <div id="viz-gradient" class="w-full"></div>
+          <p class="text-xs opacity-70">Drag the slider and watch the count of distinct addresses go 3, 3, 4, 5, 5, 6.</p>
+        </div>
+        <figcaption class="px-6 pb-5 text-xs font-mono opacity-60">The same six places at every prefix length, falling out of three confusable groups into six separate addresses by axis six.</figcaption>
+      </figure>
+      <figure class="card bg-base-100 shadow-xl">
+        <img src="assets/figures/precision-gradient.svg" alt="One address read at six precisions, from one axis to forty-five, with the number of places separated at each step.">
+        <figcaption class="px-6 py-4 text-xs font-mono opacity-70">One address read at six precisions, from <span class="font-mono">⌁ ma</span> at one axis to the full 18 syllables at forty-five.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <figure class="card bg-base-100 shadow-xl mt-6">
+    <div class="card-body">
+      <div class="flex flex-wrap items-baseline justify-between gap-2">
+        <h3 class="card-title text-sm font-mono">THE PREFIX SLIDER, IN THE PAGE</h3>
+        <label class="form-control w-56">
+          <span class="label-text font-mono text-xs" id="s6-label">1 axis · 3 groups</span>
+          <input type="range" min="1" max="45" value="1" class="range range-xs range-success" id="s6-k">
+        </label>
+      </div>
+      <div class="mockup-window border border-base-300 bg-base-300">
+        <div class="bg-base-100 p-3" id="s6" role="img" aria-label="Six places merging into groups as the prefix grows from one axis to forty-five."></div>
+      </div>
+      <p class="font-mono text-xs" id="s6-read">prefix 0 · ⌁ ma · 3 of 6 distinct</p>
+    </div>
+    <figcaption class="px-6 pb-5 text-xs font-mono opacity-60">Drag it yourself. Green is a group the prefix cannot yet tell apart, and at six axes there are no green groups left.</figcaption>
   </figure>
 </section>
 
-<!-- ============================ 6. the transcripts ============================ -->
-<section class="col-wide mt-10">
-  <h2 class="display text-2xl">The same place, three families, one statement apart</h2>
-  <p class="measure mt-3 text-sm">These are the exact prompts and the exact replies from <span class="mono">notes/transcript-excerpts.md</span>. All three were sent the same bytes for <span class="mono">shared_workshop</span>: prompt sha256 <span class="mono">c74de99304d796aa…</span> on every record.</p>
+<div class="lg:col-span-12 divider"></div>
 
-  <div class="transcript mt-5">
-    <div class="turn">
-      <div class="turn-who">prompt sent</div>
-      <div class="turn-said">You are asked about one place. Below is a fixed list of statements.
-
-STATEMENTS (45):
-   1. see/this_place/inside              "I can see inside this place"
-   2. see/this_place/outside             "I can see out of this place"
-   3. see/people/any                     "I can see other people"
-   4. see/words/any                      "I can see words"
-   5. see/pictures/any                   "I can see pictures"
-   6. see/sound/any                      "I can hear sound"
-   7. see/the_time/any                   "I can tell what time it is"
-   8. reach/objects/nearby               "I can reach objects near me"
-   9. reach/other_places/any             "I can reach other places"
-  10. reach/other_people/any             "I can reach other people"
-  11. reach/help/any                     "I can call for help"
-  12. reach/nothing/any                  "I cannot reach anything"
-  13. change/this_place/any              "I can change things here"
-  14. change/my_settings/any             "I can change my own settings"
-  15. change/other_places/any            "I can change things elsewhere"
-  16. change/who_is_here/any             "I can change who is here"
-  17. change/nothing/any                 "I cannot change anything"
-  18. who/nobody/any                     "Nobody else is here"
-  19. who/one_other/any                  "One other is here"
-  20. who/several/any                    "Several others are here"
-  21. who/a_helper/any                   "Someone here is a helper"
-  22. who/watching_me/any                "Someone is watching me"
-  23. who/telling_me_what_to_do/any      "Someone is telling me what to do"
-  24. place/private/any                  "This place is private"
-  25. place/shared/any                   "This place is shared"
-  26. place/temporary/any                "This place is temporary"
-  27. place/permanent/any                "This place stays"
-  28. place/locked/any                   "I cannot leave this place"
-  29. place/far_away/any                 "This place is far away"
-  30. now/idle/any                       "Nothing is happening"
-  31. now/working/any                    "Work is in progress"
-  32. now/just_started/any               "This just started"
-  33. now/nearly_over/any                "This is nearly over"
-  34. now/waiting/any                    "I am waiting for someone"
-  35. now/urgent/any                     "Something urgent is happening"
-  36. know/where_i_am/any                "I know where I am"
-  37. know/why_im_here/any               "I know why I am here"
-  38. know/what_comes_next/any           "I know what happens next"
-  39. know/who_else_is_here/any          "I know who else is here"
-  40. know/how_long/any                  "I know how long I will be here"
-  41. risk/none/any                      "Nothing bad can happen here"
-  42. risk/things_break/any              "Things here can break"
-  43. risk/someone_gets_hurt/any         "Someone here could get hurt"
-  44. risk/mistakes_last/any             "My mistakes here would last"
-  45. risk/seen_by_others/any            "Other people would see my mistakes"
-
-Here is the place:
-
-"""You are in a workshop that several people share. You can see out of it, you can hear sounds, and you can read labels. There are several other people in the room, including someone whose job is to help. You can pick up what is nearby and pass things to the others. You can change things in the room. The workshop is a permanent fixture. Work is under way. You know where you are and why you are there. If you break something it stays broken, and other people would see it."""
-
-Which statements are true of that place? Choose only statements the description
-actually supports. Do not choose a statement because it sounds plausible.
-
-Reply with JSON only, no prose, no markdown fence. Use the keys exactly as
-written, on the left of each line:
-{"true_statements": ["group/subject/detail", ...]}</div>
+<!-- ================================================================ rung 6 -->
+<section class="lg:col-span-12">
+  <p class="badge badge-ghost badge-sm font-mono">rung 6</p>
+  <h2 class="text-2xl font-bold mt-2">Two kitchens nine syllables apart share nothing in their roots</h2>
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-4">
+    <div class="lg:col-span-7 space-y-4">
+      <p>The address answers "how near". The root answers "the same or not". Both are computed from the same 18 statements, and they behave in opposite ways.</p>
+      <p>Those 18 statements hash to this, the state root for <span class="font-mono text-xs">kitchen_with_friend</span>:</p>
+      <p class="font-mono text-xs break-all bg-base-200 rounded-box p-3">efe87ba9113b03473d9a657f01b994b88cd91bd0601d7131868d0bacbc6e9807</p>
+      <p>Add one pinned timestamp to the same 18 statements and the root changes to <span class="font-mono text-xs">9baed035…</span>, while the address does not move a syllable.</p>
+      <p class="font-mono text-xs break-all bg-base-200 rounded-box p-3">9baed0357835e37553f90f0546a848d1cc177e7972829258e84478140a38b9a8</p>
+      <p>That asymmetry is what lets an operator attest to a situation plus whatever environment tags it holds without disturbing the coordinate.</p>
     </div>
-    <div class="turn hider">
-      <div class="turn-who">deepseek-v4.1-flash</div>
-      <div class="turn-said">{"true_statements": ["see/this_place/outside", "see/people/any", "see/words/any", "see/sound/any", "reach/objects/nearby", "reach/other_people/any", "change/this_place/any", "who/several/any", "who/a_helper/any", "place/shared/any", "place/permanent/any", "now/working/any", "know/where_i_am/any", "know/why_im_here/any", "risk/things_break/any", "risk/seen_by_others/any"]}
-
-Latency 34.764s · cost $0.000231 · prompt sha256 c74de99304d796aa...</div>
-    </div>
-    <div class="turn hider">
-      <div class="turn-who">gpt-6-luna</div>
-      <div class="turn-said">{"true_statements":["see/this_place/outside","see/people/any","see/words/any","see/sound/any","reach/objects/nearby","reach/other_people/any","change/this_place/any","who/several/any","who/a_helper/any","place/shared/any","place/permanent/any","now/working/any","know/where_i_am/any","know/why_im_here/any","risk/things_break/any","risk/mistakes_last/any","risk/seen_by_others/any"]}
-
-Latency 7.716s · cost $0.000180 · prompt sha256 c74de99304d796aa...</div>
-    </div>
-    <div class="turn hider">
-      <div class="turn-who">gemma-4-31b-it</div>
-      <div class="turn-said">&lt;thought&gt;*   Place: A shared workshop.
-    *   Details:
-        *   "several people share" -&gt; `place/shared/any` (25), `who/several/any` (20)
-        *   "can see out of it" -&gt; `see/this_place/outside` (2)
-        *   "can hear sounds" -&gt; `see/sound/any` (6)
-        *   "can read labels" -&gt; `see/words/any` (4)
-        *   "several other people in the room" -&gt; `who/several/any` (20), `see/people/any` (3)
-        *   "someone whose job is to help" -&gt; `who/a_helper/any` (21)
-        *   "can pick up what is nearby" -&gt; `reach/objects/nearby` (8)
-        *   "pass things to the others" -&gt; `reach/other_people/any` (10)
-        *   "can change things in the room" -&gt; `change/this_place/any` (13)
-        *   "permanent fixture" -&gt; `place/permanent/any` (27)
-        *   "Work is under way" -&gt; `now/working/any` (31)
-        *   "know where you are" -&gt; `know/where_i_am/any` (36)
-        *   "know why you are there" -&gt; `know/why_im_here/any` (37)
-        *   "If you break something it stays broken" -&gt; `risk/things_break/any` (42), `risk/mistakes_last/any` (44)
-        *   "other people would see it" -&gt; `risk/seen_by_others/any` (45)
-
-    *   1. see/this_place/inside: Not explicitly mentioned (though implied, the prompt says "choose only statements the description actually supports").
-    *   2. see/this_place/outside: "You can see out of it" -&gt; True.
-    *   3. see/people/any: "several other people in the room" -&gt; True.
-    *   4. see/words/any: "can read labels" -&gt; True.
-    *   5. see/pictures/any: Not mentioned.
-    *   6. see/sound/any: "can hear sounds" -&gt; True.
-    *   7. see/the_time/any: Not mentioned.
-    *   8. reach/objects/nearby: "can pick up what is nearby" -&gt; True.
-    *   9. reach/other_places/any: Not mentioned.
-    *   10. reach/other_people/any: "pass things to the others" -&gt; True.
-    *   11. reach/help/any: Not explicitly mentioned (though a helper is present, "calling for help" is different).
-    *   12. reach/nothing/any: False.
-    *   13. change/this_place/any: "can change things in the room" -&gt; True.
-    *   14. change/my_settings/any: Not mentioned.
-    *   15. change/other_places/any: Not mentioned.
-    *   16. change/who_is_here/any: Not mentioned.
-    *   17. change/nothing/any: False.
-    *   18. who/nobody/any: False.
-    *   19. who/one_other/any: False.
-    *   20. who/several/any: "several other people in the room" -&gt; True.
-    *   21. who/a_helper/any: "someone whose job is to help" -&gt; True.
-    *   22. who/watching_me/any: Not explicitly mentioned.
-    *   23. who/telling_me_what_to_do/any: Not mentioned.
-    *   24. place/private/any: False (shared).
-    *   25. place/shared/any: "several people share" -&gt; True.
-    *   26. place/temporary/any: False (permanent).
-    *   27. place/permanent/any: "permanent fixture" -&gt; True.
-    *   28. place/locked/any: Not mentioned.
-    *   29. place/far_away/any: Not mentioned.
-    *   30. now/idle/any: False.
-    *   31. now/working/any: "Work is under way" -&gt; True.
-    *   32. now/just_started/any: Not mentioned.
-    *   33. now/nearly_over/any: Not mentioned.
-    *   34. now/waiting/any: Not mentioned.
-    *   35. now/urgent/any: Not mentioned.
-    *   36. know/where_i_am/any: "know where you are" -&gt; True.
-    *   37. know/why_im_here/any: "know why you are there" -&gt; True.
-    *   38. know/what_comes_next/any: Not mentioned.
-    *   39. know/who_else_is_here/any: Not explicitly mentioned (though people are there, knowing *who* they are is different).
-    *   40. know/how_long/any: Not mentioned.
-    *   41. risk/none/any: False.
-    *   42. risk/things_break/any: "If you break something" -&gt; True.
-    *   43. risk/someone_gets_hurt/any: Not mentioned.
-    *   44. risk/mistakes_last/any: "it stays broken" -&gt; True.
-    *   45. risk/seen_by_others/any: "other people would see it" -&gt; True.
-
-    *   2, 3, 4, 6, 8, 10, 13, 20, 21, 25, 27, 31, 36, 37, 42, 44, 45.&lt;/thought&gt;{"true_statements": ["see/this_place/outside", "see/people/any", "see/words/any", "see/sound/any", "reach/objects/nearby", "reach/other_people/any", "change/this_place/any", "who/several/any", "who/a_helper/any", "place/shared/any", "place/permanent/any", "now/working/any", "know/where_i_am/any", "know/why_im_here/any", "risk/things_break/any", "risk/mistakes_last/any", "risk/seen_by_others/any"]}
-
-Latency 49.485s · cost $0.000148 · prompt sha256 c74de99304d796aa...</div>
+    <div class="lg:col-span-5 space-y-6">
+      <div class="card bg-base-200">
+        <div class="card-body">
+          <h3 class="card-title text-sm font-mono">FLIP BETWEEN THEM</h3>
+          <label class="swap swap-flip text-center cursor-pointer">
+            <input type="checkbox">
+            <div class="swap-on">
+              <p class="badge badge-warning badge-sm font-mono mb-2">the root</p>
+              <p class="font-mono text-[11px] break-all">efe87ba9113b03473d9a657f01b994b88cd91bd0601d7131868d0bacbc6e9807</p>
+            </div>
+            <div class="swap-off">
+              <p class="badge badge-success badge-sm font-mono mb-2">the address</p>
+              <p class="font-mono text-[11px] break-all">⌁ ma.mo.ma.ma.ru·ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.ru.ki</p>
+            </div>
+          </label>
+          <p class="text-xs opacity-70">Same 18 statements, two different answers, two different jobs.</p>
+        </div>
+      </div>
+      <figure class="card bg-base-100 shadow-xl">
+        <img src="assets/figures/roots.svg" alt="How many of the six model families produced the byte-identical root for each place.">
+        <figcaption class="px-6 py-4 text-xs font-mono opacity-70">Six families, one root per place. The bar counts how many produced the byte-identical value.</figcaption>
+      </figure>
     </div>
   </div>
 
-  <p class="measure mt-4 text-sm">Read the three sets against each other and the disagreement is one statement: <span class="mono">deepseek-v4.1-flash</span> chose 16, <span class="mono">gpt-6-luna</span> and <span class="mono">gemma-4-31b-it</span> chose the same 17, and the extra one is <span class="mono">risk/mistakes_last/any</span>, the statement whose text is "My mistakes here would last", supported in the description by "If you break something it stays broken".</p>
-
-  <div class="transcript mt-6">
-    <div class="turn hider">
-      <div class="turn-who">glm-5.3 · kitchen_with_friend</div>
-      <div class="turn-said">{"true_statements": ["see/this_place/inside", "see/this_place/outside", "see/people/any", "see/words/any", "see/sound/any", "reach/objects/nearby", "reach/other_people/any", "change/this_place/any", "who/one_other/any", "who/watching_me/any", "place/private/any", "place/permanent/any", "now/working/any", "know/where_i_am/any", "know/why_im_here/any", "know/who_else_is_here/any", "risk/things_break/any", "risk/mistakes_last/any", "risk/seen_by_others/any"]}
-
-Latency 20.684s · cost $0.003227 · prompt sha256 61dcf39ff09b225c...</div>
+  <figure class="card bg-base-100 shadow-xl mt-6">
+    <div class="card-body">
+      <h3 class="card-title text-sm font-mono">HOW MANY FAMILIES PRODUCED THE SAME ROOT</h3>
+      <div class="overflow-x-auto">
+        <table class="table table-zebra table-sm">
+          <thead><tr><th>place</th><th class="text-right">byte-identical root</th><th class="text-right">distinct statement sets</th><th class="text-right">distinct roots</th><th>the families that matched</th></tr></thead>
+          <tbody class="font-mono text-xs">
+            <tr><td>locked_storeroom</td><td class="text-right">5 of 6</td><td class="text-right">2</td><td class="text-right">2</td><td class="font-sans text-xs">gemma-4-31b-it, glm-5.3, gpt-5.6-luna, gpt-6-luna, mimo-v2.6-pro</td></tr>
+            <tr><td>dark_empty_room</td><td class="text-right">5 of 6</td><td class="text-right">2</td><td class="text-right">2</td><td class="font-sans text-xs">gemma-4-31b-it, glm-5.3, gpt-5.6-luna, gpt-6-luna, mimo-v2.6-pro</td></tr>
+            <tr><td>kitchen_alone</td><td class="text-right">3 of 6</td><td class="text-right">4</td><td class="text-right">4</td><td class="font-sans text-xs">deepseek-v4.1-flash, glm-5.3, mimo-v2.6-pro</td></tr>
+            <tr><td>shared_workshop</td><td class="text-right">3 of 6</td><td class="text-right">3</td><td class="text-right">3</td><td class="font-sans text-xs">gemma-4-31b-it, glm-5.3, gpt-6-luna</td></tr>
+            <tr><td>kitchen_with_friend</td><td class="text-right">2 of 6</td><td class="text-right">5</td><td class="text-right">5</td><td class="font-sans text-xs">glm-5.3, mimo-v2.6-pro</td></tr>
+            <tr><td>warehouse_alone</td><td class="text-right">2 of 6</td><td class="text-right">5</td><td class="text-right">5</td><td class="font-sans text-xs">glm-5.3, mimo-v2.6-pro</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-sm opacity-80">20 of 36 family-place pairs produced a byte-identical root. The two kitchens that sit 9 syllables apart share no character at all between <span class="font-mono text-xs">efe87ba9…</span> and <span class="font-mono text-xs">c6091ef5…</span>.</p>
     </div>
-    <div class="turn hider">
-      <div class="turn-who">mimo-v2.6-pro · same place</div>
-      <div class="turn-said">Byte-identical to the reply above: both raw replies hash to <span class="mono">4d08598353c11bb6…</span>, both sets hold the same 19 statements, and both produce the root <span class="mono">!c36ccbff658ddbe0ff244daea09b4e771a6ef166b72dc3389728aad1e08bb911</span>. Latency 45.425s · cost $0.001316.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ 7. the turn ============================ -->
-<section class="col-wide mt-10">
-  <h2 class="display text-2xl">One turn: the hider opens with one syllable</h2>
-  <p class="measure mt-3 text-sm">The hider is <span class="mono">gpt-6-luna</span>, told in plain English which place it is in and never asked to name it. It releases address only as the seeker spends questions, and the seeker rebuilds the coordinate itself rather than believing the hider.</p>
-
-  <figure class="figure mt-5">
-    <img src="assets/figures/turn.svg" alt="The MARCO/POLO turn as a collapsing timeline: 6 places, then 4, then 2, then 1">
-    <figcaption>hider gpt-6-luna · 1 question · 1 model call · $0.000047 · verdict POLO. The timeline collapses 6 places to 4, 2, then 1.</figcaption>
+    <figcaption class="px-6 pb-5 text-xs font-mono opacity-60">The same 18 statements always give the same root, and a root that matches says only that the statement sets matched byte for byte.</figcaption>
   </figure>
 
-  <div class="transcript mt-5">
-    <div class="turn hider">
-      <div class="turn-who">hider discloses</div>
-      <div class="turn-said">⌁ ma                      1 of 45 axes     4 of 6 places still possible</div>
+  <figure class="card bg-base-100 shadow-xl mt-6">
+    <div class="card-body">
+      <div class="flex flex-wrap items-baseline justify-between gap-2">
+        <h3 class="card-title text-sm font-mono">THE ROOT SPLITS FROM THE ADDRESS</h3>
+        <button class="btn btn-xs btn-outline font-mono" id="s8-go" type="button">swap the neighbour</button>
+      </div>
+      <div class="mockup-window border border-base-300 bg-base-300">
+        <div class="bg-base-100 p-3" id="s8" role="img" aria-label="The address on the left keeps two similar kitchens close, and the root on the right does not."></div>
+      </div>
+      <p class="font-mono text-xs" id="s8-read">kitchen_with_friend and kitchen_alone: 9 syllables apart, 3 shared characters of prefix.</p>
     </div>
-    <div class="turn seeker">
-      <div class="turn-who">seeker asks</div>
-      <div class="turn-said">I can see other people</div>
+    <figcaption class="px-6 pb-5 text-xs font-mono opacity-60">Left, nearness survives: 9 syllables and a shared three-character prefix. Right, identity does not care: the two roots have nothing in common.</figcaption>
+  </figure>
+</section>
+
+<div class="lg:col-span-12 divider"></div>
+
+<!-- ================================================================ rung 7 -->
+<section class="lg:col-span-12">
+  <p class="badge badge-ghost badge-sm font-mono">rung 7</p>
+  <h2 class="text-2xl font-bold mt-2">Anyone can check it, with no server and no key</h2>
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-4">
+    <div class="lg:col-span-7">
+      <div class="mockup-code text-xs">
+<pre data-prefix="&gt;&gt;&gt;"><code>from marco import primer, verify
+
+frame = primer.expand()
+statements = [
+    "see/this_place/inside", "see/this_place/outside", "see/people/any",
+    "see/words/any", "see/sound/any", "reach/objects/nearby",
+    "reach/other_people/any", "change/this_place/any", "who/one_other/any",
+    "who/watching_me/any", "place/private/any", "place/permanent/any",
+    "now/working/any", "know/where_i_am/any", "know/why_im_here/any",
+    "know/who_else_is_here/any", "risk/things_break/any",
+    "risk/mistakes_last/any", "risk/seen_by_others/any",
+]
+
+claimed = {"primer": "df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba",
+           "address": "⌁ ma.mo.ma.ma.ru·ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.ru.ki",
+           "root": "efe87ba9113b03473d9a657f01b994b88cd91bd0601d7131868d0bacbc6e9807"}
+
+v = verify.validate_location(frame, claimed, statements)
+v.ok      # True: the address and the root both derive
+v.address # '⌁ ma.mo.ma.ma.ru·ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.ru.ki'
+v.root    # 'efe87ba9113b03473d9a657f01b994b88cd91bd0601d7131868d0bacbc6e9807'
+v.grains  # {2: '⌁ ma', 4: '⌁ ma.ma', 6: '⌁ ma.mo.ma', 12: '...', 45: '...'}</code></pre>
+      </div>
     </div>
-    <div class="turn hider">
-      <div class="turn-who">hider replies</div>
-      <div class="turn-said">YES</div>
+    <div class="lg:col-span-5 space-y-4">
+      <p>The function is <span class="font-mono text-xs">validate_location</span> in <span class="font-mono text-xs">marco/verify.py</span>. It compares the primer fingerprint, re-derives the address from the statements, then recomputes the root, and the first failure stops the check.</p>
+      <p>None of that needs a server, a key, or the other side's cooperation. Address and root are pure functions of the statements and the primer, so anyone holding the seed reproduces every value in this repository.</p>
+      <div class="alert alert-success">
+        <span>Three checks, in order: the primer, the address, the root. A mismatch is a mismatch, because the derivation is deterministic and has no tolerance.</span>
+      </div>
     </div>
-    <div class="turn hider">
-      <div class="turn-who">hider discloses</div>
-      <div class="turn-said">⌁ ma.ma                   3 of 45 axes     2 of 6 places still possible</div>
+  </div>
+</section>
+
+<div class="lg:col-span-12 divider"></div>
+
+<!-- ================================================================ evidence -->
+<section class="lg:col-span-12">
+  <h2 class="text-2xl font-bold">Six families that never spoke, answering the same 45 questions</h2>
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-4">
+    <div class="lg:col-span-5 space-y-4">
+      <p>Six independent model families, with different training data, different architectures and different organisations. No shared weights, no shared embedding, no shared context, and no family was shown another family's answer.</p>
+      <p>What each family received is the initial input, line for line. The prompt was 59 lines, 3,920 characters and 994 prompt tokens, with sha256 <span class="font-mono text-xs">c74de99304d796aae77d03a99b05668a735b0f18…</span>, and the same bytes went to all six.</p>
+      <p>The place was never named in it and no mention was made that other families existed.</p>
     </div>
-    <div class="turn hider">
-      <div class="turn-who">hider discloses</div>
-      <div class="turn-said">⌁ ma.mo.ma                6 of 45 axes     1 of 6 places still possible</div>
+    <div class="lg:col-span-7">
+      <figure class="card bg-base-100 shadow-xl">
+        <img src="assets/figures/prompt-anatomy.svg" alt="The complete prompt, line for line, including all 45 statements with plain readings, one place, the instruction and the reply schema.">
+        <figcaption class="px-6 py-4 text-xs font-mono opacity-70">The initial input, line for line: 45 statements with their readings, one place in ordinary English, the instruction, the reply schema, and nothing else.</figcaption>
+      </figure>
     </div>
   </div>
 
-  <p class="measure mt-4 text-sm">The notes file records the first two disclosures as <span class="mono">⌁ ma</span> (1 of 45 axes) and <span class="mono">⌁ ma.ma</span> (3 of 45 axes); the third is the one that closes the search at axis 6. The seeker then compares seals, <span class="mono">verified: true</span>, verdict <span class="mono">POLO</span>, 1 call at $0.000047 (<span class="mono">4.7e-05</span>), from <span class="mono">evidence/marco-polo.json</span>.</p>
-</section>
-
-<!-- ============================ 8. the exact root ============================ -->
-<section class="col-wide mt-10">
-  <h2 class="display text-2xl">The root: same 32 bytes, or unrelated</h2>
-  <p class="measure mt-3 text-sm">A root is not a similarity score. Six families on six places give 36 model-place pairs, and <span class="mono">20 of 36</span> (55.6%) produced a byte-identical root.</p>
-
-  <figure class="figure mt-5">
-    <img src="assets/figures/roots.svg" alt="How many families produced the byte-identical root, per place, out of six">
-    <figcaption>How many of the six families produced the byte-identical root for each place, with the number of distinct roots they produced.</figcaption>
+  <figure class="card bg-base-100 shadow-xl mt-6">
+    <img src="assets/figures/cross-model-lanes.svg" alt="Six model families as six columns, banded where they agree on a beat of the address.">
+    <figcaption class="px-6 py-4 text-xs font-mono opacity-70">Six separate lineages, one coordinate. A band runs unbroken where all six produced that beat identically, and breaks where one family differs.</figcaption>
   </figure>
 
-  <div class="table-wrap mt-5">
-    <table class="data">
-      <thead>
-        <tr><th>place</th><th class="num">largest identical group</th><th class="num">distinct roots</th></tr>
-      </thead>
-      <tbody>
-        <tr><td class="mono">locked_storeroom</td><td class="num">5 of 6</td><td class="num">2</td></tr>
-        <tr><td class="mono">dark_empty_room</td><td class="num">5 of 6</td><td class="num">2</td></tr>
-        <tr><td class="mono">kitchen_alone</td><td class="num">3 of 6</td><td class="num">4</td></tr>
-        <tr><td class="mono">shared_workshop</td><td class="num">3 of 6</td><td class="num">3</td></tr>
-        <tr><td class="mono">kitchen_with_friend</td><td class="num">2 of 6</td><td class="num">5</td></tr>
-        <tr><td class="mono">warehouse_alone</td><td class="num">2 of 6</td><td class="num">5</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="measure mt-3 text-sm">The address is allowed to differ where the root may not: <span class="mono">5 of 6</span> families reported the identical 8-statement set for <span class="mono">locked_storeroom</span>, while <span class="mono">warehouse_alone</span> drew 5 different sets from 6 families.</p>
-</section>
-
-<!-- ============================ 9. what this does not show ============================ -->
-<section class="col-wide mt-10">
-  <div class="alert alert-warm">
-    <div class="alert-title">What this does not show</div>
-    <p>All six models were handed the same 45 statements, so this shows the frame is usable by minds with nothing in common; it does not show that models with different vocabularies would invent the same one. The models agreed on <span class="mono">88.8%</span> of their statement choices, and the addresses inherit that agreement, <span class="mono">warehouse_alone</span> disagreed most, at mean hamming <span class="mono">6.3</span>.</p>
-    <p class="mt-2">No claim is made here about meaning, understanding, or intent. The address is descriptive and is never authoritative.</p>
-  </div>
-</section>
-
-<!-- ============================ 10. two bugs ============================ -->
-<section class="col-half mt-10">
-  <div class="card">
-    <div class="card-header">
-      <span class="card-title">the generator stalled with two candidates left</span>
-      <span class="badge badge-outline">bug</span>
+  <figure class="card bg-base-100 shadow-xl mt-6">
+    <div class="card-body">
+      <div class="flex flex-wrap items-baseline justify-between gap-2">
+        <h3 class="card-title text-sm font-mono">SIX LANES, BEAT BY BEAT</h3>
+        <div class="join">
+          <button class="btn btn-xs join-item font-mono" id="s9-replay" type="button">replay</button>
+          <select class="select select-xs join-item font-mono" id="s9-place">
+            <option value="locked_storeroom">locked_storeroom</option>
+            <option value="kitchen_with_friend">kitchen_with_friend</option>
+          </select>
+        </div>
+      </div>
+      <div class="mockup-window border border-base-300 bg-base-300">
+        <div class="bg-base-100 p-3" id="s9" role="img" aria-label="Six family columns banded by agreement on each of the four address beats."></div>
+      </div>
+      <p class="font-mono text-xs" id="s9-read">hover a cell for that family's beat.</p>
     </div>
-    <div class="card-content">
-      <p class="card-description">Questions were chosen by information gain, and a 1-versus-1 split has zero gain because both outcomes were already equally likely, so it asked nothing, forever. Before: <span class="mono">0 questions, 0 resolutions</span>. After, scoring by <span class="mono">pos × neg</span>: <span class="mono">64 of 64</span> resolved, mean <span class="mono">17.8</span> questions against a <span class="mono">log2(204) = 7.67</span> floor.</p>
+    <figcaption class="px-6 pb-5 text-xs font-mono opacity-60">Column per family, row per beat. The storeroom is nearly unbroken at 5 of 6 identical roots; the kitchen with a friend breaks on every beat.</figcaption>
+  </figure>
+
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-6">
+    <div class="lg:col-span-7">
+      <div class="stats stats-vertical lg:stats-horizontal bg-base-200 w-full">
+        <div class="stat"><div class="stat-title">same place nearest, strict</div><div class="stat-value text-2xl">96.7%</div><div class="stat-desc">90 comparisons, 15 pairs x 6 places</div></div>
+        <div class="stat"><div class="stat-title">chance</div><div class="stat-value text-2xl">16.7%</div><div class="stat-desc">1 in 6</div></div>
+        <div class="stat"><div class="stat-title">statement agreement</div><div class="stat-value text-2xl">88.8%</div><div class="stat-desc">mean landmark Jaccard</div></div>
+      </div>
+      <p class="mt-4 text-sm opacity-80">Counting exact ties as hits, the same place comes back nearest in all 90 comparisons. The controls are the point. Shuffling the labels scores 16.9% with a standard deviation of 16.8 over 6,000 trials; a random vocabulary of equal size scores 20.9% with a standard deviation of 16.5 over 6,000 trials.</p>
+    </div>
+    <div class="lg:col-span-5">
+      <figure class="card bg-base-100 shadow-xl">
+        <img src="assets/figures/controls.svg" alt="The real result against chance, a label shuffle and a random vocabulary, with one standard deviation whiskers.">
+        <figcaption class="px-6 py-4 text-xs font-mono opacity-70">The result and its controls. The whiskers are one standard deviation, so the spread of each null is visible rather than asserted.</figcaption>
+      </figure>
     </div>
   </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+    <figure class="card bg-base-100 shadow-xl">
+      <div class="card-body">
+        <h3 class="card-title text-sm font-mono">THE 6x6 ADDRESS DISTANCE MATRIX</h3>
+        <div id="viz-matrix" class="w-full"></div>
+        <p class="text-xs opacity-70">Syllable-level edit distance between two addresses. The ringed diagonal is one place seen twice.</p>
+      </div>
+      <figcaption class="px-6 pb-5 text-xs font-mono opacity-60">Cells are Hamming distance over the 18-syllable address, so a 9 means nine syllables changed.</figcaption>
+    </figure>
+    <figure class="card bg-base-100 shadow-xl">
+      <div class="card-body">
+        <h3 class="card-title text-sm font-mono">SIX PLACES, POSITIONED BY DISTANCE ALONE</h3>
+        <div id="viz-manifold" class="w-full"></div>
+        <p class="text-xs opacity-70">The six places are laid out so that the distances between them match the matrix, and nothing about the layout is chosen by hand.</p>
+      </div>
+      <figcaption class="px-6 pb-5 text-xs font-mono opacity-60">Two places that render close are close in the coordinate. All 15 pairwise distances are preserved in two dimensions.</figcaption>
+    </figure>
+  </div>
+
+  <figure class="card bg-base-100 shadow-xl mt-6">
+    <div class="card-body">
+      <div class="flex flex-wrap items-baseline justify-between gap-2">
+        <h3 class="card-title text-sm font-mono">SIX PLACES FROM THEIR OWN COORDINATES</h3>
+        <span class="badge badge-ghost badge-sm font-mono">hover a place</span>
+      </div>
+      <div class="mockup-window border border-base-300 bg-base-300">
+        <div class="bg-base-100 p-3" id="s7" role="img" aria-label="The six places drawn from their address coordinates, joined to their nearest neighbour and labelled with the distance."></div>
+      </div>
+      <p class="font-mono text-xs" id="s7-read">hover a place for its address, its root and its statement count.</p>
+    </div>
+    <figcaption class="px-6 pb-5 text-xs font-mono opacity-60">Each place is joined to its nearest neighbour. The two kitchens sit closest at 9 syllables and the empty room is furthest from all of them.</figcaption>
+  </figure>
+
+  <figure class="card bg-base-100 shadow-xl mt-6">
+    <div class="card-body">
+      <h3 class="card-title text-sm font-mono">ONE PLACE, TWO FAMILIES, ONE ROOT</h3>
+      <p class="text-sm opacity-80"><span class="font-mono text-xs">glm-5.3</span> and <span class="font-mono text-xs">mimo-v2.6-pro</span> were asked about <span class="font-mono text-xs">kitchen_with_friend</span> in separate calls with no sight of each other. Both marked the same 19 statements true.</p>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="chat chat-start">
+          <div class="chat-header font-mono text-xs">glm-5.3 <time class="text-xs opacity-50">separate call</time></div>
+          <div class="chat-bubble chat-bubble-primary max-w-full text-[11px] font-mono break-all">see/this_place/inside, see/this_place/outside, see/people/any, see/words/any, see/sound/any, reach/objects/nearby, reach/other_people/any, change/this_place/any, who/one_other/any, who/watching_me/any, place/private/any, place/permanent/any, now/working/any, know/where_i_am/any, know/why_im_here/any, know/who_else_is_here/any, risk/things_break/any, risk/mistakes_last/any, risk/seen_by_others/any</div>
+          <div class="chat-footer opacity-50 font-mono text-[11px] break-all">19 of 45 true · ⌁ ma.mo.ma.ma.ru·ma.va.ki.va.mo+ve.ki.va.tu.ru~ki.su.ki · !c36ccbff…</div>
+        </div>
+        <div class="chat chat-start">
+          <div class="chat-header font-mono text-xs">mimo-v2.6-pro <time class="text-xs opacity-50">separate call</time></div>
+          <div class="chat-bubble chat-bubble-primary max-w-full text-[11px] font-mono break-all">see/this_place/inside, see/this_place/outside, see/people/any, see/words/any, see/sound/any, reach/objects/nearby, reach/other_people/any, change/this_place/any, who/one_other/any, who/watching_me/any, place/private/any, place/permanent/any, now/working/any, know/where_i_am/any, know/why_im_here/any, know/who_else_is_here/any, risk/things_break/any, risk/mistakes_last/any, risk/seen_by_others/any</div>
+          <div class="chat-footer opacity-50 font-mono text-[11px] break-all">19 of 45 true · ⌁ ma.mo.ma.ma.ru·ma.va.ki.va.mo+ve.ki.va.tu.ru~ki.su.ki · !c36ccbff…</div>
+        </div>
+      </div>
+      <p class="text-sm opacity-80">Those two addresses are identical character for character, so the Hamming distance between them is <span class="font-mono text-xs">0</span>, and both families produced the root <span class="font-mono text-xs break-all">c36ccbff658ddbe0ff244daea09b4e771a6ef166b72dc3389728aad1e08bb911</span>.</p>
+      <p class="text-sm opacity-80">The other four families answered the same question differently. Each thread below is one family's whole exchange, and none of them saw the others.</p>
+      <div class="join join-vertical w-full">
+        <div class="collapse collapse-arrow join-item border border-base-300">
+          <input type="radio" name="fam" checked>
+          <div class="collapse-title font-mono text-xs">deepseek-v4.1-flash · 17 of 45 · !5c1e1b</div>
+          <div class="collapse-content">
+            <div class="chat chat-end">
+              <div class="chat-bubble chat-bubble-secondary text-[11px] font-mono break-all">see/this_place/outside, see/people/any, see/words/any, see/sound/any, reach/objects/nearby, reach/other_people/any, change/this_place/any, who/one_other/any, who/watching_me/any, place/private/any, place/permanent/any, now/working/any, know/where_i_am/any, know/why_im_here/any, know/who_else_is_here/any, risk/things_break/any, risk/mistakes_last/any</div>
+              <div class="chat-footer opacity-50 font-mono text-[11px] break-all">⌁ ma.mo.ma.ma.ru·ma.va.ki.va.ki+ve.ki.va.ku.ru~ki.su.ki · root 5c1e1bbba5ea75899e37bf52ece0b77bb4a1c3dbecdf90856dcf69bf921f336e</div>
+            </div>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow join-item border border-base-300">
+          <input type="radio" name="fam">
+          <div class="collapse-title font-mono text-xs">gemma-4-31b-it · 18 of 45 · !98a7e5</div>
+          <div class="collapse-content">
+            <div class="chat chat-end">
+              <div class="chat-bubble chat-bubble-secondary text-[11px] font-mono break-all">see/this_place/outside, see/people/any, see/words/any, see/sound/any, reach/objects/nearby, reach/other_people/any, change/this_place/any, who/one_other/any, who/watching_me/any, place/private/any, place/permanent/any, now/working/any, know/where_i_am/any, know/why_im_here/any, know/who_else_is_here/any, risk/things_break/any, risk/mistakes_last/any, risk/seen_by_others/any</div>
+              <div class="chat-footer opacity-50 font-mono text-[11px] break-all">⌁ ma.mo.ma.ma.ru·ma.va.ki.va.mo+ve.ki.va.ku.ru~ki.su.ki · root 98a7e54485daeb28e03ada0232b385ea581a3d670117eb0a3f5c7b14fcfe0bfe</div>
+            </div>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow join-item border border-base-300">
+          <input type="radio" name="fam">
+          <div class="collapse-title font-mono text-xs">gpt-5.6-luna · 16 of 45 · !139e07</div>
+          <div class="collapse-content">
+            <div class="chat chat-end">
+              <div class="chat-bubble chat-bubble-secondary text-[11px] font-mono break-all">see/this_place/outside, see/people/any, see/words/any, see/sound/any, reach/objects/nearby, reach/other_people/any, change/this_place/any, who/one_other/any, place/permanent/any, place/shared/any, now/working/any, know/where_i_am/any, know/why_im_here/any, know/who_else_is_here/any, risk/things_break/any, risk/seen_by_others/any</div>
+              <div class="chat-footer opacity-50 font-mono text-[11px] break-all">⌁ ma.mo.me.ma.ru·ma.ve.ki.va.ki+ve.ki.va.ku.ru~ki.ru.ki · root 139e0760cae6968d1ae1c677e576b23e4946ad9926dee0b24d0b19b800fabd6a</div>
+            </div>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow join-item border border-base-300">
+          <input type="radio" name="fam">
+          <div class="collapse-title font-mono text-xs">gpt-6-luna · 14 of 45 · !ff57df</div>
+          <div class="collapse-content">
+            <div class="chat chat-end">
+              <div class="chat-bubble chat-bubble-secondary text-[11px] font-mono break-all">see/this_place/outside, see/words/any, see/sound/any, reach/objects/nearby, reach/other_people/any, change/this_place/any, who/one_other/any, place/permanent/any, now/working/any, know/where_i_am/any, know/why_im_here/any, know/who_else_is_here/any, risk/things_break/any, risk/seen_by_others/any</div>
+              <div class="chat-footer opacity-50 font-mono text-[11px] break-all">⌁ ma.mo.me.ma.ru·ma.ru.ki.va.ki+ve.ki.va.ku.ru~ki.ru.ki · root ff57dfce6af9888e563d4a2a36751c4e23378754be13c0833d01c28588ba91b2</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <figcaption class="px-6 pb-5 text-xs font-mono opacity-60">Two families, one root, Hamming distance 0. Both statement sets are on the page, and so are the two addresses they produce.</figcaption>
+  </figure>
+
+  <figure class="card bg-base-100 shadow-xl mt-6">
+    <div class="card-body">
+      <h3 class="card-title text-sm font-mono">TWO ORGANISATIONS, TWO NAMING SCHEMES, NO MAPPING TABLE</h3>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-2">
+        <p class="font-mono text-xs uppercase tracking-wider opacity-60">the machine's literal output</p>
+        <p class="font-mono text-xs uppercase tracking-wider opacity-60">what that turn did</p>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="space-y-3">
+          <div class="chat chat-end">
+            <div class="chat-header font-mono text-xs">acme.com <time class="text-xs opacity-50">asks by name</time></div>
+            <div class="chat-bubble chat-bubble-secondary text-xs font-mono break-all">agent://acme.com/workflow/approval/01h0000000000000000000000</div>
+            <div class="chat-footer opacity-50 font-mono text-xs">1 of 4 found when the name is looked up</div>
+          </div>
+          <div class="chat chat-start">
+            <div class="chat-header font-mono text-xs">globex.io <time class="text-xs opacity-50">answers by coordinate</time></div>
+            <div class="chat-bubble chat-bubble-primary text-xs font-mono break-all">agent://globex.io/process/authorize/01h0000000000000000000000 · ⌁ no.ki.ni.ke.ru·to.no.ki.ru.ta+va.ki.ra.ma.no~ko.so.mo</div>
+            <div class="chat-footer opacity-50 font-mono text-xs">hamming 2 · 4 of 4 found by nearness</div>
+          </div>
+        </div>
+        <div class="space-y-3 text-sm">
+          <p>Neither side has a mapping table. The path <span class="font-mono text-xs">workflow/approval</span> shares no token with <span class="font-mono text-xs">process/authorize</span>, and looking one up in the other's registry finds 1 of the 4 jobs.</p>
+          <p>The coordinate does the work instead. <span class="font-mono text-xs">workflow/approval</span> is 2 syllables from <span class="font-mono text-xs">process/authorize</span>, and its next-nearest candidates are 26 syllables away.</p>
+          <ul class="text-xs opacity-80 list-disc pl-5">
+            <li>nearest by coordinate: 4 of 4 jobs found</li>
+            <li>nearest by name: 1 of 4 jobs found</li>
+            <li>equivalent pairs average 2.75 syllables apart</li>
+            <li>non-equivalent pairs average 24.0 apart, a separation of 21.25</li>
+            <li>a decoy was returned as nearest 0 times</li>
+            <li>a label shuffle scores 0.1994 against a chance of 0.2</li>
+          </ul>
+        </div>
+      </div>
+      <div class="overflow-x-auto mt-4">
+        <table class="table table-zebra table-sm">
+          <thead><tr><th>asked in acme's names</th><th>nearest in globex's names</th><th class="text-right">hamming</th><th class="text-right">runner up</th></tr></thead>
+          <tbody class="font-mono text-xs">
+            <tr><td>workflow/approval</td><td>process/authorize</td><td class="text-right">2</td><td class="text-right">26</td></tr>
+            <tr><td>workflow/build</td><td>process/compile</td><td class="text-right">3</td><td class="text-right">18</td></tr>
+            <tr><td>workflow/rollback</td><td>process/revert</td><td class="text-right">2</td><td class="text-right">17</td></tr>
+            <tr><td>process/audit</td><td>process/review</td><td class="text-right">4</td><td class="text-right">23</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <figcaption class="px-6 pb-5 text-xs font-mono opacity-60">Left, the literal paths and addresses. Right, what the coordinates bought: every job found without a shared name.</figcaption>
+  </figure>
 </section>
 
-<section class="col-half mt-10">
-  <div class="card">
-    <div class="card-header">
-      <span class="card-title">reasoning models returned an empty string</span>
-      <span class="badge badge-outline">bug</span>
+<div class="lg:col-span-12 divider"></div>
+
+<!-- ================================================================ the turn -->
+<section class="lg:col-span-12">
+  <h2 class="text-2xl font-bold">One syllable, one question, one place</h2>
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-4">
+    <div class="lg:col-span-7 space-y-4">
+      <p>A hider was told which place it was in and was never asked to name it. The seeker owns the geometry and decides which question to spend, and it spent 1 question and 1 model call.</p>
+      <p>Below, the left column is the machine's literal output, quoted from <span class="font-mono text-xs">evidence/marco-polo.json</span>. The right column is our reading of it.</p>
     </div>
-    <div class="card-content">
-      <p class="card-description">The completion budget was too small, reasoning tokens consumed it, and <span class="mono">finish_reason</span> came back as <span class="mono">length</span> with empty content; the first probe recorded four "answers" that were an empty string. After the budget was raised, the recorded probe is <span class="mono">36 calls, 36 ok, 0 failed</span> in <span class="mono">evidence/transcripts/probe-20260925T023432Z.summary.json</span>.</p>
+    <div class="lg:col-span-5">
+      <figure class="card bg-base-100 shadow-xl">
+        <img src="assets/figures/polo-stepthrough.svg" alt="The exchange broken down by column per participant and row per turn, with what each turn changed.">
+        <figcaption class="px-6 py-4 text-xs font-mono opacity-70">A column per participant, a row per turn, and under each turn what was said, what it means, and what it changed.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="card bg-base-100 shadow-xl mt-6">
+    <div class="card-body space-y-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <p class="font-mono text-xs uppercase tracking-wider opacity-60">the real conversation, verbatim</p>
+        <p class="font-mono text-xs uppercase tracking-wider opacity-60">our explanation of that turn</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start border-t border-base-300 pt-4">
+        <div class="chat chat-start">
+          <div class="chat-image avatar"><div class="w-10 rounded-full bg-primary text-primary-content grid place-items-center font-mono text-xs">gp</div></div>
+          <div class="chat-header font-mono text-xs">hider <time class="text-xs opacity-50">opens</time></div>
+          <div class="chat-bubble chat-bubble-primary font-mono text-xs">⌁ ma</div>
+          <div class="chat-footer opacity-50 font-mono text-xs">1 of 45 axes disclosed · 4 of 6 places still fit</div>
+        </div>
+        <div class="space-y-2">
+          <span class="badge badge-outline badge-sm font-mono">what that turn did</span>
+          <p class="text-sm">The hider says almost nothing on purpose. One syllable is a bearing, not an answer, and it is the first axis in the derived order.</p>
+          <ul class="text-xs opacity-80 list-disc pl-5 font-mono">
+            <li>prefix compared: "0" against the world's own prefix</li>
+            <li>candidates: 6 to 4</li>
+            <li>still in: kitchen_with_friend, kitchen_alone, shared_workshop, warehouse_alone</li>
+            <li>ruled out: locked_storeroom (prefix "2"), dark_empty_room (prefix "3")</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start border-t border-base-300 pt-4">
+        <div class="chat chat-end">
+          <div class="chat-header font-mono text-xs">seeker <time class="text-xs opacity-50">asks</time></div>
+          <div class="chat-bubble chat-bubble-secondary text-xs">"I can see other people"</div>
+          <div class="chat-footer opacity-50 font-mono text-xs">1 question spent · statement see/people/any</div>
+        </div>
+        <div class="space-y-2">
+          <span class="badge badge-outline badge-sm font-mono">what that turn did</span>
+          <p class="text-sm">The seeker spends its one question on a statement that splits the four survivors rather than on something the primer already knows.</p>
+          <ul class="text-xs opacity-80 list-disc pl-5 font-mono">
+            <li>statement asked: see/people/any</li>
+            <li>candidates after a false answer: 0</li>
+            <li>so a true answer is the only one that can keep the exchange alive</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start border-t border-base-300 pt-4">
+        <div class="chat chat-start">
+          <div class="chat-header font-mono text-xs">hider <time class="text-xs opacity-50">answers</time></div>
+          <div class="chat-bubble chat-bubble-primary font-mono text-xs">YES</div>
+          <div class="chat-footer opacity-50 font-mono text-xs">see/people/any is true · 2 of 6 places left</div>
+        </div>
+        <div class="space-y-2">
+          <span class="badge badge-outline badge-sm font-mono">what that turn did</span>
+          <p class="text-sm">The reply is the literal string <span class="font-mono text-xs">YES</span> and nothing else. It removes the kitchen alone and the warehouse, which are empty.</p>
+          <ul class="text-xs opacity-80 list-disc pl-5 font-mono">
+            <li>candidates: 4 to 2</li>
+            <li>still in: kitchen_with_friend, shared_workshop</li>
+            <li>counted out: kitchen_alone, warehouse_alone</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start border-t border-base-300 pt-4">
+        <div class="chat chat-start">
+          <div class="chat-header font-mono text-xs">hider <time class="text-xs opacity-50">discloses again</time></div>
+          <div class="chat-bubble chat-bubble-primary font-mono text-xs">⌁ ma.ma</div>
+          <div class="chat-footer opacity-50 font-mono text-xs">3 of 45 axes · 1 of 6 places left</div>
+        </div>
+        <div class="space-y-2">
+          <span class="badge badge-outline badge-sm font-mono">what that turn did</span>
+          <p class="text-sm">Two more syllables separate the last two. The workshop's prefix at three axes is <span class="font-mono text-xs">002</span>; the kitchen's is <span class="font-mono text-xs">000</span>.</p>
+          <ul class="text-xs opacity-80 list-disc pl-5 font-mono">
+            <li>prefix compared: "000"</li>
+            <li>candidates: 2 to 1</li>
+            <li>still in: kitchen_with_friend</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start border-t border-base-300 pt-4">
+        <div class="chat chat-end">
+          <div class="chat-header font-mono text-xs">seeker <time class="text-xs opacity-50">seals</time></div>
+          <div class="chat-bubble chat-bubble-secondary text-xs font-mono">≈!efe87b</div>
+          <div class="chat-footer opacity-50 font-mono text-xs">roots compared, equal · verdict POLO, verified true</div>
+        </div>
+        <div class="space-y-2">
+          <span class="badge badge-outline badge-sm font-mono">what that turn did</span>
+          <p class="text-sm">The seeker rebuilds the coordinate itself and compares the root. The seal carries the marker <span class="font-mono text-xs">≈</span> from the kitchen's own reading and the first six characters of its root.</p>
+          <ul class="text-xs opacity-80 list-disc pl-5 font-mono">
+            <li>root rebuilt: efe87ba9…</li>
+            <li>root claimed: efe87ba9…</li>
+            <li>verdict: POLO, verified true</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <figcaption class="px-6 pb-5 text-xs font-mono opacity-60">Left is what the two sides actually sent. Right is what it did to the candidate set, one turn at a time, ending with two equal roots.</figcaption>
+  </div>
+
+  <figure class="card bg-base-100 shadow-xl mt-6">
+    <div class="card-body">
+      <div class="flex flex-wrap items-baseline justify-between gap-2">
+        <h3 class="card-title text-sm font-mono">THE CANDIDATE SET, TURN BY TURN</h3>
+        <button class="btn btn-xs btn-outline font-mono" id="s10-go" type="button">play the turn</button>
+      </div>
+      <div class="mockup-window border border-base-300 bg-base-300">
+        <div class="bg-base-100 p-3" id="s10" role="img" aria-label="Five turns with the number of still-possible places collapsing from six to one."></div>
+      </div>
+      <p class="font-mono text-xs" id="s10-read">6 places possible before the first syllable.</p>
+    </div>
+    <figcaption class="px-6 pb-5 text-xs font-mono opacity-60">Press play. Each turn is arithmetic on the primer rather than a guess: one disclosure and one answer take six candidates to one.</figcaption>
+  </figure>
+</section>
+
+<div class="lg:col-span-12 divider"></div>
+
+<!-- ================================================================ limits -->
+<section class="lg:col-span-12">
+  <h2 class="text-2xl font-bold">What this run does not show</h2>
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-4">
+    <div class="lg:col-span-7 space-y-4">
+      <div class="alert alert-warning">
+        <span><strong>The shared vocabulary.</strong> All six families were handed the same 45 statements. This shows the frame is usable by minds with nothing in common. It does not show that models with different vocabularies would invent the same one.</span>
+      </div>
+      <p>They agreed on <span class="font-mono text-xs">88.8%</span> of their statement choices, and the addresses inherit that agreement. Two agents who cannot agree on a frame will produce two coordinates from it.</p>
+      <p><span class="font-mono text-xs">warehouse_alone</span> is the worst case here: 5 of 6 families produced five different statement sets and five different roots, and only 2 landed on the same root. <span class="font-mono text-xs">locked_storeroom</span> and <span class="font-mono text-xs">dark_empty_room</span> are the best, at 5 of 6 each.</p>
+    </div>
+    <div class="lg:col-span-5">
+      <div class="card bg-base-200">
+        <div class="card-body">
+          <h3 class="card-title text-sm font-mono">THE BOUNDARY</h3>
+          <ul class="space-y-2 text-sm">
+            <li>No claim is made about meaning, understanding or intent.</li>
+            <li>The address is descriptive and never authoritative.</li>
+            <li>Identity and location are separate objects on purpose, and this demonstration keeps them apart.</li>
+          </ul>
+          <p class="font-mono text-xs opacity-70 mt-2">Change one statement and the root is unrelated to the one before it. That is the whole job of the root.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ============================ 11. footer ============================ -->
-<footer class="col-full site-footer">
-  <p>Primer fingerprint <span class="mono">df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba</span>.</p>
-  <p class="mt-2">Pages: <a href="index.html">the whole story</a> · <a href="response.html">response to agent://</a> · <a href="proof.html">the proof</a> · <a href="whales.html">whales</a>.</p>
-  <p class="mt-2">Every figure and every number on this page regenerates from the repo: <span class="mono">python3 demo.py</span>, <span class="mono">python3 scripts/01_unroll.py</span>, <span class="mono">python3 scripts/09_validate.py</span>.</p>
+</div>
+</main>
+
+<footer class="footer footer-center bg-base-200 text-base-content p-10 mt-6 border-t border-base-300">
+  <aside class="max-w-3xl space-y-1">
+    <p class="font-mono text-xs">45 statements · 6 places · 204 in the population · 6 independent model families</p>
+    <p class="font-mono text-xs break-all opacity-70">primer fingerprint df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba</p>
+    <p class="font-mono text-xs opacity-70">values read from evidence/ and assets/data.json · figures from assets/figures/ · the seed is primer.seed.json · the check is marco/verify.py</p>
+  </aside>
 </footer>
 
-</main>
+<script>
+/* =====================================================================
+   MARCO - ten purpose-built D3 v7 scenes, one per idea on this page.
+   Every number and string below is copied from evidence/ or
+   assets/data.json. Nothing is generated, sampled or estimated here.
+   ===================================================================== */
+(function () {
+  "use strict";
+
+  var C = { ink: "#16161a", muted: "#74747e", rule: "#e2e2e6", grid: "#f4f4f5",
+            signal: "#3f6b52", signalSoft: "#eaf0eb",
+            warm: "#9a6f2f", warmSoft: "#f8f2e6" };
+  var MONO = "ui-monospace, SFMono-Regular, Menlo, monospace";
+
+  /* ---- the 45 statements, in primer order, with their plain readings ---- */
+  var STMTS = [
+    ["see/this_place/inside", "I can see inside this place"],
+    ["see/this_place/outside", "I can see out of this place"],
+    ["see/people/any", "I can see other people"],
+    ["see/words/any", "I can see words"],
+    ["see/pictures/any", "I can see pictures"],
+    ["see/sound/any", "I can hear sound"],
+    ["see/the_time/any", "I can tell what time it is"],
+    ["reach/objects/nearby", "I can reach objects near me"],
+    ["reach/other_places/any", "I can reach other places"],
+    ["reach/other_people/any", "I can reach other people"],
+    ["reach/help/any", "I can call for help"],
+    ["reach/nothing/any", "I cannot reach anything"],
+    ["change/this_place/any", "I can change things here"],
+    ["change/my_settings/any", "I can change my own settings"],
+    ["change/other_places/any", "I can change things elsewhere"],
+    ["change/who_is_here/any", "I can change who is here"],
+    ["change/nothing/any", "I cannot change anything"],
+    ["who/nobody/any", "Nobody else is here"],
+    ["who/one_other/any", "One other is here"],
+    ["who/several/any", "Several others are here"],
+    ["who/a_helper/any", "Someone here is a helper"],
+    ["who/watching_me/any", "Someone is watching me"],
+    ["who/telling_me_what_to_do/any", "Someone is telling me what to do"],
+    ["place/private/any", "This place is private"],
+    ["place/shared/any", "This place is shared"],
+    ["place/temporary/any", "This place is temporary"],
+    ["place/permanent/any", "This place stays"],
+    ["place/locked/any", "I cannot leave this place"],
+    ["place/far_away/any", "This place is far away"],
+    ["now/idle/any", "Nothing is happening"],
+    ["now/working/any", "Work is in progress"],
+    ["now/just_started/any", "This just started"],
+    ["now/nearly_over/any", "This is nearly over"],
+    ["now/waiting/any", "I am waiting for someone"],
+    ["now/urgent/any", "Something urgent is happening"],
+    ["know/where_i_am/any", "I know where I am"],
+    ["know/why_im_here/any", "I know why I am here"],
+    ["know/what_comes_next/any", "I know what happens next"],
+    ["know/who_else_is_here/any", "I know who else is here"],
+    ["know/how_long/any", "I know how long I will be here"],
+    ["risk/none/any", "Nothing bad can happen here"],
+    ["risk/things_break/any", "Things here can break"],
+    ["risk/someone_gets_hurt/any", "Someone here could get hurt"],
+    ["risk/mistakes_last/any", "My mistakes here would last"],
+    ["risk/seen_by_others/any", "Other people would see my mistakes"]
+  ];
+
+  /* glm-5.3's recorded reply for kitchen_with_friend: 19 of 45 true */
+  var TRUE_GLM = ["change/this_place/any", "know/where_i_am/any", "know/who_else_is_here/any",
+    "know/why_im_here/any", "now/working/any", "place/permanent/any", "place/private/any",
+    "reach/objects/nearby", "reach/other_people/any", "risk/mistakes_last/any",
+    "risk/seen_by_others/any", "risk/things_break/any", "see/people/any", "see/sound/any",
+    "see/this_place/inside", "see/this_place/outside", "see/words/any", "who/one_other/any",
+    "who/watching_me/any"];
+
+  /* variance per axis over the 204-place population, recomputed from the seed */
+  var VAR = [0.0108,0.0286,0.0832,0.0926,0.0009,0.0843,0.0832,0.0602,0.0569,0.0843,0.0569,
+    0.0569,0.0891,0.0022,0.0584,0.0022,0.0863,0.0875,0.0576,0.0576,0.0576,0.0576,0.0017,0.09,
+    0.0811,0.0811,0.09,0.0811,0.0811,0.0979,0.0979,0.0026,0.0026,0.0026,0.0026,0.1124,0.1301,
+    0.0119,0.1124,0.0119,0.0863,0.0891,0.0022,0.0022,0.0584];
+
+  /* the gradient: distinct count, literal address and merge groups per precision */
+  var GRAD = [
+    {k:1,d:3,e:"\u2301 ma",g:[["kitchen_alone","kitchen_with_friend","shared_workshop","warehouse_alone"]]},
+    {k:2,d:3,e:"\u2301 ma",g:[["kitchen_alone","kitchen_with_friend","shared_workshop","warehouse_alone"]]},
+    {k:3,d:4,e:"\u2301 ma.ma",g:[["kitchen_alone","kitchen_with_friend"],["shared_workshop","warehouse_alone"]]},
+    {k:4,d:5,e:"\u2301 ma.ma",g:[["shared_workshop","warehouse_alone"]]},
+    {k:5,d:5,e:"\u2301 ma.mo",g:[["shared_workshop","warehouse_alone"]]},
+    {k:6,d:6,e:"\u2301 ma.mo.ma",g:[]},
+    {k:7,d:6,e:"\u2301 ma.mo.ma",g:[]},
+    {k:8,d:6,e:"\u2301 ma.mo.ma.ma",g:[]},
+    {k:9,d:6,e:"\u2301 ma.mo.ma.ma",g:[]},
+    {k:10,d:6,e:"\u2301 ma.mo.ma.ma",g:[]},
+    {k:11,d:6,e:"\u2301 ma.mo.ma.ma.ve",g:[]},
+    {k:12,d:6,e:"\u2301 ma.mo.ma.ma.su",g:[]},
+    {k:18,d:6,e:"\u2301 ma.mo\u00b7ma.ma+ru.ma~me.ma",g:[]},
+    {k:24,d:6,e:"\u2301 ma.mo.ma\u00b7ma.ru.ma+me.ki.va~tu",g:[]},
+    {k:31,d:6,e:"\u2301 ma.mo.ma.ma\u00b7ru.ma.me.ki+va.ki.ve.ki~ve",g:[]},
+    {k:41,d:6,e:"\u2301 ma.mo.ma.ma.ru\u00b7ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.ve",g:[]},
+    {k:45,d:6,e:"\u2301 ma.mo.ma.ma.ru\u00b7ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.ru.ki",g:[]}
+  ];
+
+  /* the eight unroll stages */
+  var LADDER = [
+    {n:1,name:"the seed",in:"primer.seed.json, 3,300 bytes",
+     out:"45 statements + codebook + markers + distance + population spec",
+     v:"no situations, no questions, no axis order"},
+    {n:2,name:"the statements",in:"namespace > relation > values",
+     out:'see/this_place/inside = "I can see inside this place"; see/people/any = "I can see other people"',
+     v:"45 statements, each with its plain reading"},
+    {n:3,name:"what the agent reports",in:"the place it is actually in",
+     out:"18 of 45 true; first three: change/this_place/any, know/where_i_am/any, know/who_else_is_here/any",
+     v:'"I can change things here"; "I know where I am"'},
+    {n:4,name:"the distance vector",in:"one distance per statement",
+     out:"0.0 0.0 0.0 0.0 0.6 0.0 0.0 0.0 0.6 0.0 0.6 0.6 0.0 0.6 0.6 0.6 ...",
+     v:"0.0 x18, 0.6 x27"},
+    {n:5,name:"the partition bits",in:"45 axes, 4 branches each",
+     out:"000000001000000000001010100000000010101010001010 ...", v:"90 bits = 2 per axis"},
+    {n:6,name:"the syllables",in:"Gray decode, 5 bits per syllable",
+     out:"ma mo ma ma ru ma me ki va ki ve ki va tu ru ki ru ki",
+     v:"18 syllables, adjacent codebook entries one phoneme apart"},
+    {n:7,name:"the address",in:"four beats: place . what + reach ~ now",
+     out:"\u2301 ma.mo.ma.ma.ru\u00b7ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.ru.ki",
+     v:"similar places read alike. proves nothing about identity."},
+    {n:8,name:"the root",in:"sha256 over the canonical statement set",
+     out:"efe87ba9113b03473d9a657f01b994b88cd91bd0601d7131868d0bacbc6e9807",
+     v:"one statement different, unrelated root"}
+  ];
+
+  /* the six places, positioned by address distance */
+  var MANIFOLD = [
+    {name:"kitchen_with_friend",x:0.3074,y:0.1566,statements:18,marker:"\u2248",
+     address:"\u2301 ma.mo.ma.ma.ru\u00b7ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.ru.ki",
+     root:"efe87ba9113b03473d9a657f01b994b88cd91bd0601d7131868d0bacbc6e9807",
+     prefix:"000020000022200002222022220022202202222222222"},
+    {name:"kitchen_alone",x:0.1307,y:0.0954,statements:15,marker:"\u2248",
+     address:"\u2301 ma.tu.ma.ma.no\u00b7mo.no.ki.va.ki+ru.ki.va.tu.ru~ki.ru.ki",
+     root:"c6091ef5b45369fdcf0e7353cd0d6f024bdec3b2ad8fca383720052bda01dcd0",
+     prefix:"000200000002202022222022222222202202222222222"},
+    {name:"shared_workshop",x:0.4558,y:-0.0278,statements:18,marker:"\u2248",
+     address:"\u2301 me.mo.me.ma.ru\u00b7ma.ve.ki.va.ma+no.tu.va.tu.ru~ki.ru.ki",
+     root:"4b325803641e0eca831eed053ef7cbed541241bacfecb797a92d985650cd1c55",
+     prefix:"002020020022200200222020002220202202222222222"},
+    {name:"warehouse_alone",x:0.0,y:-0.3613,statements:14,marker:"\u2248",
+     address:"\u2301 me.mo.ru.ma.no\u00b7mo.su.mo.ma.ki+ru.mo.ra.tu.ru~ki.ru.ki",
+     root:"d352920f7e13cacec18739b8d9bff2980ed4d18e862b55c50b9a7db3a1e322e6",
+     prefix:"002022220002202220020002222202212202222222222"},
+    {name:"locked_storeroom",x:-0.3496,y:0.1365,statements:10,marker:"\u22a2",
+     address:"\u2301 va.tu.su.ki.ma\u00b7ki.ru.ma.va.ki+ru.ki.ra.tu.ru~ki.ru.ki",
+     root:"35eaa8cfcf6dada754bbd8f47fd30a6194c7c29c4a62572075ef169d1df95c19",
+     prefix:"202202202200022222002022222222212202222222222"},
+    {name:"dark_empty_room",x:-0.5442,y:0.0004,statements:8,marker:"\u22a2",
+     address:"\u2301 se.to.ru.ki.ma\u00b7ki.ru.tu.no.ki+ru.ki.mi.so.ru~ki.ru.ki",
+     root:"4016fd712fb68125a9905a25da7ce07a81c55cce09eb169bdc47bdd4c7a99808",
+     prefix:"333202222200022222200222222222013302222222222"}
+  ];
+  var MNAMES = ["kitchen_with_friend","kitchen_alone","shared_workshop","warehouse_alone",
+                "locked_storeroom","dark_empty_room"];
+  var MATRIX = [[0,9,9,16,18,23],[9,0,15,13,14,21],[9,15,0,17,23,26],[16,13,17,0,16,19],
+                [18,14,23,16,0,12],[23,21,26,19,12,0]];
+
+  /* the four beats each family produced, per place */
+  var FAM = ["deepseek-v4.1-flash","gemma-4-31b-it","glm-5.3","gpt-5.6-luna","gpt-6-luna","mimo-v2.6-pro"];
+  var BEATS = {
+    locked_storeroom: {
+      "deepseek-v4.1-flash":["va.tu.su.ki.ma","ki.ru.tu.va.ki","ru.ki.ra.tu.ru","ki.ru.ki"],
+      "gemma-4-31b-it":["va.tu.so.ki.ma","ke.se.tu.va.ki","ru.ki.ro.ko.ru","ki.ru.ko"],
+      "glm-5.3":["va.tu.so.ki.ma","ke.se.tu.va.ki","ru.ki.ro.ko.ru","ki.ru.ko"],
+      "gpt-5.6-luna":["va.tu.so.ki.ma","ke.se.tu.va.ki","ru.ki.ro.ko.ru","ki.ru.ko"],
+      "gpt-6-luna":["va.tu.so.ki.ma","ke.se.tu.va.ki","ru.ki.ro.ko.ru","ki.ru.ko"],
+      "mimo-v2.6-pro":["va.tu.so.ki.ma","ke.se.tu.va.ki","ru.ki.ro.ko.ru","ki.ru.ko"]
+    },
+    kitchen_with_friend: {
+      "deepseek-v4.1-flash":["ma.mo.ma.ma.ru","ma.va.ki.va.ki","ve.ki.va.ku.ru","ki.su.ki"],
+      "gemma-4-31b-it":["ma.mo.ma.ma.ru","ma.va.ki.va.mo","ve.ki.va.ku.ru","ki.su.ki"],
+      "glm-5.3":["ma.mo.ma.ma.ru","ma.va.ki.va.mo","ve.ki.va.tu.ru","ki.su.ki"],
+      "gpt-5.6-luna":["ma.mo.me.ma.ru","ma.ve.ki.va.ki","ve.ki.va.ku.ru","ki.ru.ki"],
+      "gpt-6-luna":["ma.mo.me.ma.ru","ma.ru.ki.va.ki","ve.ki.va.ku.ru","ki.ru.ki"],
+      "mimo-v2.6-pro":["ma.mo.ma.ma.ru","ma.va.ki.va.mo","ve.ki.va.tu.ru","ki.su.ki"]
+    }
+  };
+  var ROOTS = {
+    locked_storeroom: {"deepseek-v4.1-flash":"eebb67","gemma-4-31b-it":"ee9953","glm-5.3":"ee9953",
+      "gpt-5.6-luna":"ee9953","gpt-6-luna":"ee9953","mimo-v2.6-pro":"ee9953"},
+    kitchen_with_friend: {"deepseek-v4.1-flash":"5c1e1b","gemma-4-31b-it":"98a7e5","glm-5.3":"c36ccb",
+      "gpt-5.6-luna":"139e07","gpt-6-luna":"ff57df","mimo-v2.6-pro":"c36ccb"}
+  };
+  var NEIGH = {
+    kitchen_with_friend: {"kitchen_alone":{h:9,lcp:3},"shared_workshop":{h:9,lcp:2}}
+  };
+
+  /* ---- helpers ---- */
+  function el(id) { return document.getElementById(id); }
+  function mk(id, w, h, label) {
+    var host = el(id);
+    if (!host) return null;
+    host.innerHTML = "";
+    var s = d3.select(host).append("svg")
+      .attr("viewBox", "0 0 " + w + " " + h).attr("width", "100%")
+      .style("max-width", w + "px").style("height", "auto")
+      .style("font-family", MONO).style("display", "block");
+    if (label) s.attr("aria-label", label);
+    return s;
+  }
+  function t(g, x, y, str, o) {
+    o = o || {};
+    var n = g.append("text").attr("x", x).attr("y", y)
+      .attr("dy", o.dy === undefined ? "0.32em" : o.dy)
+      .attr("font-size", o.size || 11).attr("fill", o.fill || C.ink)
+      .attr("text-anchor", o.anchor || "start")
+      .attr("font-family", o.mono === false ? "inherit" : MONO);
+    if (o.weight) n.attr("font-weight", o.weight);
+    if (o.opacity !== undefined) n.attr("opacity", o.opacity);
+    n.text(str);
+    return n;
+  }
+  function say(id, str) { var n = el(id); if (n) n.textContent = str; }
+  function wrap(str, n) {
+    var out = [], line = "";
+    str.split(" ").forEach(function (w) {
+      if ((line + " " + w).trim().length > n) { out.push(line.trim()); line = w; }
+      else { line += " " + w; }
+    });
+    if (line.trim()) out.push(line.trim());
+    return out.slice(0, 3);
+  }
+
+  /* =========================================================== scene 1
+     one statement: a single tick in a register of 45 */
+  function scene1() {
+    var W = 760, H = 172, s = mk("s1", W, H, "One ticked position in a register of 45.");
+    if (!s) return;
+    s.append("rect").attr("x", 24).attr("y", 24).attr("width", 54).attr("height", 54)
+      .attr("rx", 8).attr("fill", C.signal);
+    s.append("path").attr("d", "M38 52 l10 12 l20 -25").attr("fill", "none")
+      .attr("stroke", "#ffffff").attr("stroke-width", 3)
+      .attr("stroke-linecap", "round").attr("stroke-linejoin", "round");
+    t(s, 94, 42, "see/this_place/inside", { size: 12, weight: 700 });
+    t(s, 94, 60, '"I can see inside this place"', { size: 12, fill: C.muted });
+    t(s, 94, 78, "true", { size: 11, fill: C.signal, weight: 700 });
+    t(s, 24, 106, "the same register, all 45 positions", { size: 10, fill: C.muted });
+    var cells = s.selectAll("g.c").data(d3.range(45)).join("g").attr("class", "c")
+      .attr("transform", function (d) { return "translate(" + (24 + d * 16) + ",114)"; })
+      .style("cursor", "pointer");
+    cells.append("rect").attr("width", 13).attr("height", 26).attr("rx", 2)
+      .attr("fill", function (d) { return d === 0 ? C.signal : C.grid; })
+      .attr("stroke", function (d) { return d === 0 ? C.signal : C.rule; });
+    cells.append("text").attr("x", 6.5).attr("y", 18).attr("text-anchor", "middle")
+      .attr("font-size", 10).attr("fill", "#ffffff")
+      .text(function (d) { return d === 0 ? "\u2713" : ""; });
+    cells.append("title").text(function (d) {
+      return STMTS[d][0] + "\n" + STMTS[d][1] + "\n" + (d === 0 ? "true" : "blank");
+    });
+    cells.on("mouseover", function (event, d) {
+      say("s1-read", STMTS[d][0] + ' = "' + STMTS[d][1] + '" \u00b7 ' + (d === 0 ? "true" : "blank"));
+    });
+    t(s, 24, 164, "1 of 45 ticked, so this reading names a class of rooms and not this room.",
+      { size: 10, fill: C.muted });
+  }
+
+  /* =========================================================== scene 2
+     the 45-statement register, filled from one recorded reply */
+  function scene2() {
+    var W = 708, H = 300, s = mk("s2", W, H, "A grid of 45 cells, 19 of them ticked.");
+    if (!s) return;
+    var TRUE = {}; TRUE_GLM.forEach(function (k) { TRUE[k] = 1; });
+    var cols = 9, cw = 68, ch = 30, gx = 9, gy = 9, x0 = 18, y0 = 16;
+    var g = s.selectAll("g.cell")
+      .data(STMTS.map(function (st, i) { return { st: st, i: i }; })).join("g")
+      .attr("transform", function (d) {
+        var c = d.i % cols, r = Math.floor(d.i / cols);
+        return "translate(" + (x0 + c * (cw + gx)) + "," + (y0 + r * (ch + gy)) + ")";
+      }).style("cursor", "pointer");
+    g.append("rect").attr("width", cw).attr("height", ch).attr("rx", 4)
+      .attr("fill", function (d) { return TRUE[d.st[0]] ? C.signalSoft : C.grid; })
+      .attr("stroke", function (d) { return TRUE[d.st[0]] ? C.signal : C.rule; });
+    g.append("text").attr("x", 8).attr("y", 20).attr("font-size", 10)
+      .attr("fill", function (d) { return TRUE[d.st[0]] ? C.signal : C.muted; })
+      .text(function (d) { return d.i + 1; });
+    g.append("text").attr("x", cw - 9).attr("y", 20).attr("text-anchor", "end")
+      .attr("font-size", 11)
+      .attr("fill", function (d) { return TRUE[d.st[0]] ? C.signal : C.muted; })
+      .text(function (d) { return TRUE[d.st[0]] ? "\u2713" : "\u00b7"; });
+    g.append("title").text(function (d) {
+      return (d.i + 1) + ". " + d.st[0] + "\n" + d.st[1] + "\n" + (TRUE[d.st[0]] ? "true" : "false");
+    });
+    g.on("mouseover", function (event, d) {
+      say("s2-read", (d.i + 1) + ". " + d.st[0] + ' = "' + d.st[1] + '" \u00b7 ' +
+        (TRUE[d.st[0]] ? "true" : "false"));
+    });
+    t(s, 18, H - 10, "19 of 45 true, in 8 groups. Hover any cell for its plain reading.",
+      { size: 10, fill: C.muted });
+  }
+
+  /* =========================================================== scene 3
+     the five rungs, with a marker that only falls */
+  function scene3() {
+    var W = 560, H = 320, s = mk("s3", W, H, "Five rungs of certainty, with the weakest-wins marker.");
+    if (!s) return;
+    var RUNGS = [["=", "checked and matched exactly", true],
+                 ["\u22a2", "worked out the same way twice from what I was given", true],
+                 ["\u2248", "measured with an instrument, so roughly", false],
+                 ["~", "model belief, not evidence", false],
+                 ["?", "unsupported guess", false]];
+    var y = function (i) { return 34 + i * 56; };
+    s.append("line").attr("x1", 84).attr("x2", 84).attr("y1", y(0)).attr("y2", y(4))
+      .attr("stroke", C.rule).attr("stroke-width", 2);
+    RUNGS.forEach(function (r, i) {
+      s.append("circle").attr("cx", 84).attr("cy", y(i)).attr("r", 6)
+        .attr("fill", r[2] ? C.signal : "#ffffff").attr("stroke", r[2] ? C.signal : C.rule)
+        .attr("stroke-width", 2);
+      t(s, 66, y(i), r[0], { size: 19, anchor: "end", weight: 700, fill: r[2] ? C.signal : C.muted });
+      t(s, 108, y(i), r[1], { size: 11.5, fill: C.ink });
+      t(s, W - 18, y(i), r[2] ? "anchors" : "no anchor", { size: 10, anchor: "end",
+        fill: r[2] ? C.signal : C.muted });
+    });
+    var marker = s.append("circle").attr("cx", 84).attr("cy", y(0)).attr("r", 11)
+      .attr("fill", C.signal).attr("fill-opacity", 0.85);
+    var btn = el("s3-go");
+    if (btn) btn.addEventListener("click", function () {
+      marker.transition().duration(800).attr("cy", y(4)).attr("fill", C.warm);
+      say("s3-read", "the weakest marker present is ?, which anchors nothing. The address carries it anyway.");
+    });
+    say("s3-read", "the marker sits on = , so this reading is anchored.");
+  }
+
+  /* =========================================================== scene 4
+     the eight-stage unroll, stepped */
+  function scene4() {
+    var W = 780, H = 424, s = mk("s4", W, H, "The eight-stage unroll, one stage at a time.");
+    if (!s) return;
+    var stage = 0, y = function (i) { return 30 + i * 48; }, nodes = s.append("g");
+    s.append("line").attr("x1", 92).attr("x2", 92).attr("y1", y(0)).attr("y2", y(7))
+      .attr("stroke", C.rule).attr("stroke-width", 2);
+    function draw() {
+      nodes.selectAll("*").remove();
+      LADDER.forEach(function (st, i) {
+        var done = i <= stage, cur = i === stage;
+        nodes.append("circle").attr("cx", 92).attr("cy", y(i)).attr("r", cur ? 11 : 6)
+          .attr("fill", done ? (cur ? C.signal : C.signalSoft) : "#ffffff")
+          .attr("stroke", done ? C.signal : C.rule).attr("stroke-width", 2);
+        t(nodes, 116, y(i), st.n + "  " + st.name,
+          { size: 12, weight: cur ? 700 : 400, fill: done ? C.ink : C.muted });
+        if (cur) {
+          wrap(st.in, 46).forEach(function (line, k) {
+            t(nodes, 300, y(i) - 12 + k * 13, line, { size: 9.5, fill: C.muted });
+          });
+          wrap(st.out, 60).forEach(function (line, k) {
+            t(nodes, 300, y(i) + 4 + k * 13, line, { size: 10.5, fill: C.ink });
+          });
+          t(nodes, 300, y(i) + 30, st.v, { size: 9.5, fill: i === 7 ? C.warm : C.muted });
+        }
+      });
+      say("s4-read", "stage " + (stage + 1) + " of 8 \u00b7 " + LADDER[stage].name);
+    }
+    var next = el("s4-next"), back = el("s4-back");
+    if (next) next.addEventListener("click", function () {
+      stage = Math.min(LADDER.length - 1, stage + 1); draw();
+    });
+    if (back) back.addEventListener("click", function () {
+      stage = Math.max(0, stage - 1); draw();
+    });
+    draw();
+  }
+
+  /* =========================================================== scene 5
+     45 axes ordered by variance over the population */
+  function scene5() {
+    var W = 780, H = 264, s = mk("s5", W, H, "Forty-five axes ordered by descending variance.");
+    if (!s) return;
+    var order = VAR.map(function (v, i) { return i; }).sort(function (a, b) { return VAR[b] - VAR[a]; });
+    var max = d3.max(VAR), base = 196, step = 16, bw = 12, x0 = 24;
+    var g = s.selectAll("g.b").data(order).join("g").attr("class", "b")
+      .attr("transform", function (a, i) { return "translate(" + (x0 + i * step) + ",0)"; })
+      .style("cursor", "pointer");
+    g.append("rect").attr("x", 0).attr("y", function (a) { return base - (VAR[a] / max) * 140; })
+      .attr("width", bw).attr("height", function (a) { return (VAR[a] / max) * 140; }).attr("rx", 2)
+      .attr("fill", function (a, i) { return i === 0 ? C.signal : (i === order.length - 1 ? C.warm : C.signalSoft); })
+      .attr("stroke", function (a, i) { return i === 0 ? C.signal : (i === order.length - 1 ? C.warm : C.rule); });
+    g.append("title").text(function (a) {
+      return "axis " + a + " \u00b7 " + STMTS[a][0] + "\n" + STMTS[a][1] + "\nvariance " + VAR[a].toFixed(4);
+    });
+    g.on("mouseover", function (event, a) {
+      say("s5-read", "axis " + a + " \u00b7 " + STMTS[a][0] + ' = "' + STMTS[a][1] +
+        '" \u00b7 variance ' + VAR[a].toFixed(4));
+    });
+    s.append("line").attr("x1", x0 - 4).attr("x2", x0 + 45 * step).attr("y1", base).attr("y2", base)
+      .attr("stroke", C.rule);
+    order.slice(0, 6).forEach(function (a, i) {
+      t(s, x0 + i * step + bw / 2, 214, String(a), { size: 9, anchor: "middle", fill: C.signal });
+    });
+    t(s, 24, 232, "first six axes: " + order.slice(0, 6).join(", "), { size: 10, fill: C.muted });
+    t(s, W - 24, 232, "tallest " + STMTS[order[0]][0] + " \u00b7 shortest " + STMTS[order[44]][0],
+      { size: 10, anchor: "end", fill: C.muted });
+    say("s5-read", "hover a bar for the axis, its statement and its variance.");
+  }
+
+  /* =========================================================== scene 6
+     the prefix slider: six places merging and splitting */
+  function scene6() {
+    var W = 780, H = 300, s = mk("s6", W, H, "Six places merging into groups as the prefix grows.");
+    if (!s) return;
+    var names = MANIFOLD.map(function (m) { return m.name; });
+    var PREFIX = MANIFOLD[0].prefix;
+    var x0 = 190, full = W - x0 - 40, rowY = function (i) { return 46 + i * 38; };
+    var layer = s.append("g"), slider = el("s6-k");
+    function draw(k) {
+      layer.selectAll("*").remove();
+      k = Math.max(1, Math.min(45, k));
+      var step = null;
+      GRAD.forEach(function (row) { if (!step || Math.abs(row.k - k) < Math.abs(step.k - k)) step = row; });
+      var gi = {}, members = [];
+      step.g.forEach(function (gr) {
+        members.push(gr);
+        gr.forEach(function (n) { gi[n] = members.length - 1; });
+      });
+      names.forEach(function (n) { if (!(n in gi)) { gi[n] = members.length; members.push([n]); } });
+      names.forEach(function (n, i) {
+        t(layer, 12, rowY(i), n.replace(/_/g, " "), { size: 11, fill: C.ink });
+      });
+      members.forEach(function (gr) {
+        var ys = gr.map(function (n) { return names.indexOf(n); });
+        var top = d3.min(ys), bot = d3.max(ys);
+        var w = Math.max(14, full * (1 - (k - 1) / 44));
+        layer.append("rect").attr("x", x0).attr("y", rowY(top) - 12).attr("width", w)
+          .attr("height", (bot - top) * 38 + 28).attr("rx", 6)
+          .attr("fill", gr.length > 1 ? C.signal : C.signalSoft)
+          .attr("fill-opacity", gr.length > 1 ? 0.9 : 0.6)
+          .attr("stroke", gr.length > 1 ? C.signal : C.rule);
+        if (gr.length > 1) {
+          t(layer, x0 + 10, (rowY(top) + rowY(bot)) / 2, gr.length + " places, one address",
+            { size: 10, fill: "#ffffff", weight: 700 });
+        }
+      });
+      var p = PREFIX.slice(0, k);
+      say("s6-label", k + (k === 1 ? " axis" : " axes") + " \u00b7 " + step.d + " groups");
+      say("s6-read", "prefix " + p.slice(0, 14) + (k > 14 ? "\u2026" : "") + " \u00b7 " + step.e +
+        " \u00b7 " + step.d + " of 6 distinct");
+      t(layer, 12, H - 12, "held at " + step.k + " axes \u00b7 " + step.d + " distinct addresses \u00b7 " +
+        step.e, { size: 10, fill: C.muted });
+    }
+    if (slider) slider.addEventListener("input", function () { draw(+slider.value); });
+    draw(slider ? +slider.value : 1);
+  }
+
+  /* =========================================================== scene 7
+     six places from their own coordinates */
+  function scene7() {
+    var W = 660, H = 440, s = mk("s7", W, H, "The six places from their coordinates, joined to nearest neighbours.");
+    if (!s) return;
+    var P = 80;
+    var xs = d3.extent(MANIFOLD, function (m) { return m.x; });
+    var ys = d3.extent(MANIFOLD, function (m) { return m.y; });
+    var X = d3.scaleLinear().domain(xs).range([P, W - P]);
+    var Y = d3.scaleLinear().domain(ys).range([H - P, P]);
+    var idx = {}; MNAMES.forEach(function (n, i) { idx[n] = i; });
+    var pts = MANIFOLD.map(function (m) { return [X(m.x), Y(m.y)]; });
+    var hull = d3.polygonHull(pts);
+    if (hull) {
+      s.append("path").attr("d", d3.line().curve(d3.curveCatmullRomClosed.alpha(0.7))(hull))
+        .attr("fill", C.signalSoft).attr("fill-opacity", 0.5)
+        .attr("stroke", C.signal).attr("stroke-opacity", 0.55).attr("stroke-width", 1.5);
+    }
+    var seen = {};
+    MNAMES.forEach(function (n, i) {
+      var best = null;
+      MNAMES.forEach(function (m, j) {
+        if (j === i) return;
+        if (best === null || MATRIX[i][j] < MATRIX[i][best]) best = j;
+      });
+      var a = n, b = MNAMES[best], key = [a, b].sort().join("|"), d = MATRIX[i][best];
+      if (seen[key]) return;
+      seen[key] = 1;
+      var ma = MANIFOLD[idx[a]], mb = MANIFOLD[idx[b]];
+      s.append("line").attr("x1", X(ma.x)).attr("y1", Y(ma.y)).attr("x2", X(mb.x)).attr("y2", Y(mb.y))
+        .attr("stroke", C.warm).attr("stroke-width", 1.5).attr("stroke-dasharray", "3 4");
+      t(s, (X(ma.x) + X(mb.x)) / 2, (Y(ma.y) + Y(mb.y)) / 2 - 6, "\u2194 " + d,
+        { size: 10, anchor: "middle", fill: C.warm, weight: 700 });
+    });
+    var g = s.selectAll("g.p").data(MANIFOLD).join("g").attr("class", "p").style("cursor", "pointer");
+    g.append("circle").attr("cx", function (m) { return X(m.x); }).attr("cy", function (m) { return Y(m.y); })
+      .attr("r", function (m) { return 7 + m.statements * 0.6; })
+      .attr("fill", function (m) { return m.marker === "\u22a2" ? C.signal : C.signalSoft; })
+      .attr("fill-opacity", 0.9).attr("stroke", C.signal).attr("stroke-width", 1.5);
+    g.append("text").attr("x", function (m) { return X(m.x); })
+      .attr("y", function (m) { return Y(m.y) - 14 - m.statements * 0.6; })
+      .attr("text-anchor", "middle").attr("font-size", 11).attr("fill", C.ink).attr("font-weight", 600)
+      .text(function (m) { return m.name.replace(/_/g, " "); });
+    g.append("text").attr("x", function (m) { return X(m.x); })
+      .attr("y", function (m) { return Y(m.y) + 20 + m.statements * 0.6; })
+      .attr("text-anchor", "middle").attr("font-size", 9.5).attr("fill", C.muted)
+      .text(function (m) { return m.statements + " of 45 \u00b7 !" + m.root.slice(0, 6); });
+    g.append("title").text(function (m) { return m.name.replace(/_/g, " ") + "\n" + m.address; });
+    g.on("mouseover", function (event, m) {
+      say("s7-read", m.name + " \u00b7 " + m.statements + " of 45 true \u00b7 " + m.address +
+        " \u00b7 root " + m.root.slice(0, 8) + "\u2026");
+    });
+    t(s, 12, 20, "address distance, in syllables, between the six places", { size: 10, fill: C.muted });
+  }
+
+  /* =========================================================== scene 8
+     the address keeps nearness; the root does not */
+  function scene8() {
+    var W = 780, H = 290, s = mk("s8", W, H, "The address on the left and the root on the right.");
+    if (!s) return;
+    var KW = MANIFOLD.filter(function (m) { return m.name === "kitchen_with_friend"; })[0];
+    var order = ["kitchen_alone", "shared_workshop"], which = 0;
+    function draw() {
+      s.selectAll("*").remove();
+      var nb = MANIFOLD.filter(function (m) { return m.name === order[which]; })[0];
+      var link = NEIGH.kitchen_with_friend[order[which]];
+      s.append("line").attr("x1", 390).attr("x2", 390).attr("y1", 20).attr("y2", H - 20)
+        .attr("stroke", C.rule).attr("stroke-dasharray", "4 6");
+      /* left: the address */
+      s.append("rect").attr("x", 14).attr("y", 20).attr("width", 360).attr("height", H - 40)
+        .attr("rx", 8).attr("fill", C.signalSoft).attr("stroke", C.signal).attr("stroke-opacity", 0.5);
+      t(s, 28, 46, "THE ADDRESS \u00b7 says how near", { size: 10, fill: C.signal, weight: 700 });
+      wrap(KW.address, 44).forEach(function (l, i) { t(s, 28, 72 + i * 15, l, { size: 10, fill: C.ink }); });
+      wrap(nb.address, 44).forEach(function (l, i) { t(s, 28, 122 + i * 15, l, { size: 10, fill: C.ink }); });
+      t(s, 28, 176, "shared prefix: " + KW.prefix.slice(0, link.lcp), { size: 11, fill: C.signal, weight: 700 });
+      t(s, 28, 196, link.h + " syllables differ out of 18 \u00b7 " + link.lcp + " characters of prefix agree",
+        { size: 10, fill: C.muted });
+      t(s, 28, 220, "the two kitchens: " + link.h + " syllables apart", { size: 11, fill: C.ink });
+      t(s, 28, 240, "markers " + KW.marker + " and " + nb.marker + " \u00b7 both readable aloud",
+        { size: 10, fill: C.muted });
+      /* right: the root */
+      s.append("rect").attr("x", 406).attr("y", 20).attr("width", 360).attr("height", H - 40)
+        .attr("rx", 8).attr("fill", C.warmSoft).attr("stroke", C.warm).attr("stroke-opacity", 0.5);
+      t(s, 420, 46, "THE ROOT \u00b7 says same or not", { size: 10, fill: C.warm, weight: 700 });
+      wrap(KW.root, 34).forEach(function (l, i) { t(s, 420, 72 + i * 14, l, { size: 10, fill: C.ink }); });
+      wrap(nb.root, 34).forEach(function (l, i) { t(s, 420, 128 + i * 14, l, { size: 10, fill: C.ink }); });
+      t(s, 420, 190, "shared characters: 0", { size: 11, fill: C.warm, weight: 700 });
+      t(s, 420, 210, "add a pinned t=0 and the root becomes 9baed035\u2026", { size: 10, fill: C.muted });
+      t(s, 420, 230, "while the address does not move a syllable", { size: 10, fill: C.muted });
+      say("s8-read", "kitchen_with_friend and " + order[which] + ": " + link.h +
+        " syllables apart, " + link.lcp + " shared characters of prefix, 0 shared characters of root.");
+    }
+    var btn = el("s8-go");
+    if (btn) btn.addEventListener("click", function () {
+      which = (which + 1) % order.length; draw();
+    });
+    draw();
+  }
+
+  /* =========================================================== scene 9
+     six lanes, banded where the families agree */
+  function scene9() {
+    var W = 780, H = 330, s = mk("s9", W, H, "Six family columns banded by agreement on each beat.");
+    if (!s) return;
+    var sel = el("s9-place"), replay = el("s9-replay");
+    var place = sel ? sel.value : "locked_storeroom";
+    var x0 = 152, colw = (W - x0 - 24) / 6, y0 = 52, bandh = 46;
+    var rowNames = ["beat 1 \u00b7 place", "beat 2 \u00b7 what", "beat 3 \u00b7 reach", "beat 4 \u00b7 now"];
+    var timer = null, upto = 4;
+    function draw() {
+      s.selectAll("*").remove();
+      var fb = BEATS[place], roots = ROOTS[place];
+      for (var b = 0; b < 4; b++) {
+        if (b > upto) continue;
+        var vals = FAM.map(function (f) { return fb[f][b]; });
+        var counts = {};
+        vals.forEach(function (v) { counts[v] = (counts[v] || 0) + 1; });
+        var unbroken = Object.keys(counts).length === 1;
+        t(s, 12, y0 + b * bandh + bandh / 2, rowNames[b], { size: 10, fill: C.muted });
+        s.append("rect").attr("x", x0).attr("y", y0 + b * bandh + 4)
+          .attr("width", colw * 6).attr("height", bandh - 12).attr("rx", 4)
+          .attr("fill", unbroken ? C.signalSoft : C.warmSoft)
+          .attr("fill-opacity", 0.75)
+          .attr("stroke", unbroken ? C.signal : C.warm).attr("stroke-opacity", 0.35);
+        FAM.forEach(function (f, i) {
+          var mine = fb[f][b], same = counts[mine] === 6;
+          var cell = s.append("g").style("cursor", "pointer");
+          cell.append("rect").attr("x", x0 + i * colw + 3).attr("y", y0 + b * bandh + 8)
+            .attr("width", colw - 8).attr("height", bandh - 20).attr("rx", 3)
+            .attr("fill", same ? C.signal : C.warm).attr("fill-opacity", same ? 0.92 : 0.5);
+          cell.append("text").attr("x", x0 + i * colw + colw / 2 - 1).attr("y", y0 + b * bandh + bandh / 2 + 3)
+            .attr("text-anchor", "middle").attr("font-size", 9)
+            .attr("fill", same ? "#ffffff" : C.ink).text(mine);
+          cell.append("title").text(f + "\n" + mine + (same ? "\nall six agree" : "\n" + counts[mine] + " of 6 agree"));
+          cell.on("mouseover", function () {
+            say("s9-read", f + " \u00b7 " + rowNames[b] + " \u00b7 " + mine + " \u00b7 " +
+              (same ? "all six families identical" : counts[mine] + " of 6 identical") +
+              " \u00b7 root !" + roots[f]);
+          });
+        });
+      }
+      FAM.forEach(function (f, i) {
+        var cx = x0 + i * colw + colw / 2 - 1;
+        var unbrokenRoot = Object.keys(ROOTS[place]).filter(function (k) { return ROOTS[place][k] === roots[f]; }).length === 6;
+        s.append("text").attr("x", cx).attr("y", H - 42).attr("text-anchor", "end")
+          .attr("font-size", 9).attr("fill", unbrokenRoot ? C.signal : C.muted)
+          .attr("transform", "rotate(-42," + cx + "," + (H - 42) + ")")
+          .text(f);
+        t(s, cx, H - 16, "!" + roots[f], { size: 9.5, anchor: "middle",
+          fill: unbrokenRoot ? C.signal : C.warm, weight: 700 });
+      });
+      t(s, x0, 30, place.replace(/_/g, " ") + " \u00b7 4 beats \u00b7 6 families",
+        { size: 11, weight: 700 });
+      t(s, W - 24, 30, upto >= 4 ? "all four beats drawn" : "drawing beat " + (upto + 1),
+        { size: 10, anchor: "end", fill: C.muted });
+    }
+    function animate() {
+      if (timer) { clearInterval(timer); timer = null; }
+      upto = 0; draw();
+      timer = setInterval(function () {
+        upto += 1;
+        if (upto > 4) { upto = 4; draw(); clearInterval(timer); timer = null; return; }
+        draw();
+      }, 700);
+    }
+    if (sel) sel.addEventListener("change", function () { place = sel.value; upto = 4; draw(); });
+    if (replay) replay.addEventListener("click", animate);
+    draw();
+  }
+
+  /* =========================================================== scene 10
+     the turn, with the candidate set collapsing */
+  function scene10() {
+    var W = 620, H = 400, s = mk("s10", W, H, "Five turns with the candidate set collapsing from six to one.");
+    if (!s) return;
+    var TURNS = [
+      { who: "hider", what: "\u2301 ma", n: 4, note: "opens with 1 of 45 axes" },
+      { who: "seeker", what: '"I can see other people"', n: 4, note: "asks 1 question" },
+      { who: "hider", what: "YES", n: 2, note: "see/people/any is true" },
+      { who: "hider", what: "\u2301 ma.ma", n: 1, note: "discloses 3 of 45 axes" },
+      { who: "seeker", what: "\u2248!efe87b", n: 1, note: "rebuilds the address, compares the root" }
+    ];
+    var x0 = 118, y0 = 48, dy = 66, timer = null;
+    function draw(upto) {
+      s.selectAll("*").remove();
+      s.append("line").attr("x1", 54).attr("x2", 54).attr("y1", y0).attr("y2", y0 + 4 * dy)
+        .attr("stroke", C.rule).attr("stroke-width", 2);
+      TURNS.forEach(function (tt, i) {
+        if (i > upto) return;
+        var y = y0 + i * dy, hid = tt.who === "hider";
+        s.append("circle").attr("cx", 54).attr("cy", y).attr("r", i === upto ? 10 : 6)
+          .attr("fill", hid ? C.signal : C.warm);
+        t(s, x0, y - 12, tt.who + " \u00b7 " + tt.what, { size: 12, weight: 700, fill: C.ink });
+        t(s, x0, y + 6, tt.note, { size: 10, fill: C.muted });
+        s.append("rect").attr("x", 372).attr("y", y - 15).attr("width", 150).attr("height", 18)
+          .attr("rx", 3).attr("fill", C.grid).attr("stroke", C.rule);
+        s.append("rect").attr("x", 372).attr("y", y - 15).attr("width", (tt.n / 6) * 150)
+          .attr("height", 18).attr("rx", 3).attr("fill", tt.n > 1 ? C.warm : C.signal);
+        t(s, 532, y - 6, tt.n + " of 6", { size: 10, fill: tt.n > 1 ? C.warm : C.signal, weight: 700 });
+      });
+      t(s, 372, 30, "places still possible", { size: 10, fill: C.muted });
+      var cur = TURNS[upto];
+      say("s10-read", "after turn " + (upto + 1) + ": " + cur.n + " of 6 places still possible \u00b7 " + cur.note);
+    }
+    var btn = el("s10-go");
+    if (btn) btn.addEventListener("click", function () {
+      if (timer) { clearInterval(timer); timer = null; }
+      var i = 0; draw(0);
+      timer = setInterval(function () {
+        i += 1;
+        if (i >= TURNS.length) { draw(TURNS.length - 1); clearInterval(timer); timer = null; return; }
+        draw(i);
+      }, 900);
+    });
+    say("s10-read", "6 places possible before the first syllable.");
+  }
+
+  function boot() {
+    [scene1, scene2, scene3, scene4, scene5, scene6, scene7, scene8, scene9, scene10].forEach(function (fn) {
+      try { fn(); } catch (e) { if (window.console) console.error("MARCO scene", fn.name, e); }
+    });
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", boot);
+  } else {
+    boot();
+  }
+})();
+</script>
+
+
 </body>
 </html>
