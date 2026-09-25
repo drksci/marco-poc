@@ -4,347 +4,909 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The same answer twice · MARCO</title>
+<link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = { theme: { extend: { colors: {
-  background: 'hsl(var(--background))', foreground: 'hsl(var(--foreground))',
-  muted: 'hsl(var(--muted))', mutedfg: 'hsl(var(--muted-foreground))',
-  border: 'hsl(var(--border))', card: 'hsl(var(--card))' } } } }
-</script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css">
-<link rel="stylesheet" href="assets/site.css">
-<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 </head>
-<body>
-<nav class="site-nav">
-  <a href="index.html">the whole story</a>
-  <a href="response.html">response to agent://</a>
-  <a href="proof.html" aria-current="page">the proof</a>
-  <a href="whales.html">whales</a>
-</nav>
-<main class="page-grid pt-10">
+<body class="min-h-screen bg-base-100 text-base-content">
 
-<header class="col-full">
-  <p class="eyebrow">MARCO · the proof</p>
-  <h1 class="display text-4xl mt-2">The same answer twice</h1>
-  <p class="lede measure mt-5">Two runs that ought to agree are only evidence if they could have disagreed, so every headline number here sits next to the check that would have caught it, and this page stops where the checking does.</p>
+<nav aria-label="Sections">
+  <div class="navbar bg-base-200 sticky top-0 z-30 min-h-12">
+    <div class="navbar-center gap-4 lg:gap-6 text-sm w-full justify-center">
+      <a class="link link-hover" href="index.html">the whole story</a>
+      <a class="link link-hover" href="response.html">response to agent://</a>
+      <a class="link link-hover" href="proof.html" aria-current="page">the proof</a>
+      <a class="link link-hover" href="whales.html">whales</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero bg-base-200 border-b border-base-300">
+  <div class="hero-content text-center max-w-3xl py-20">
+    <div>
+      <p class="font-mono text-sm tracking-widest uppercase opacity-60">MARCO · the proof</p>
+      <h1 class="text-4xl lg:text-5xl font-bold mt-4">The same answer twice</h1>
+      <p class="py-8 text-lg opacity-80 max-w-2xl mx-auto">Two runs that agree are worth something only if they could have disagreed. This page takes one situation, follows it from the answers to the two objects it produces, and puts every number next to the check that would have caught it going wrong.</p>
+    </div>
+  </div>
 </header>
 
-<!-- ============================ determinism ============================ -->
-<section class="col-wide">
-  <h2 class="display text-2xl mt-10">Determinism: one place, encoded three ways</h2>
-  <p class="measure mt-3 text-sm">The place is the harness's canonical <span class="mono">shared_workshop</span>, <span class="mono">18 of 45</span> statements true, address <span class="mono">⌁ me.mo.me.ma.ru·ma.ve.ki.va.ma+no.tu.va.tu.ru~ki.ru.ki</span>, and the check is the commitment over its canonical statement set under the one hashing rule in <span class="mono">marco/locus.py</span>.</p>
+<main class="container mx-auto max-w-5xl px-4">
 
-  <div class="workings mt-4">
-    <div class="step">
-      <div class="step-n">A1</div>
-      <div>
-        <div class="step-title">in-process, repeated fifty times</div>
-        <div class="step-body">Fifty encodings of the same observations at the same pinned instant give <span class="val">1 distinct output</span>: the commitment <span class="val">c73d7633a6df505844118b31a9244744d5802dcb9e384f8a82f021c0170c571d</span>.</div>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-n">A2</div>
-      <div>
-        <div class="step-title">repeated fifty times with no pinned instant</div>
-        <div class="step-body">Drop the timestamp and fifty runs still give <span class="val">1 distinct output</span>, <span class="val">4b325803641e0eca831eed053ef7cbed541241bacfecb797a92d985650cd1c55</span>, so <span class="val">no_wall_clock_leak: true</span>. That value is also the state root <span class="mono">assets/data.json</span> records for this place.</div>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-n">A3</div>
-      <div>
-        <div class="step-title">three fresh interpreters</div>
-        <div class="step-body">Three separate processes, each re-declaring the encoder rather than importing a cached one, give <span class="val">1 distinct output</span> and <span class="val">fresh_processes_match_in_process: true</span> against A1.</div>
-      </div>
-    </div>
+<!-- ==================================================== 1. the concrete instance -->
+<section class="py-12">
+  <h2 class="text-3xl font-bold">One room, 45 questions, and two things made from the answers</h2>
+  <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
+    <p>The situation is a kitchen with a friend in it. An agent standing there answers 45 short questions about it. Can I see inside this place? Is anyone else here? Can I reach other places? Is this place private? Eighteen of the 45 come back true.</p>
+    <p>The answers become a name you can say out loud: <span class="font-mono break-all">⌁ ma.mo.ma.ma.ru·ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.ru.ki</span>. It is 18 syllables in four groups. Read it left to right and you are reading the answers in a fixed order, five syllables to a group.</p>
+    <p>A name like this works like a postcode. The early syllables tell you the broad kind of place and the later ones narrow it down to this room. The comparison stops at one point: a postcode is handed out by a central office, and this name is worked out from the answers the agent gave.</p>
+    <p>The same 18 answers produce a second object, a root: <span class="font-mono break-all">!efe87ba9113b03473d9a657f01b994b88cd91bd0601d7131868d0bacbc6e9807</span>. A root is a fingerprint of a whole list, made by a hash. A hash is a rule that turns any amount of data into a code of fixed length, and changing one character of the input changes the code completely. There is no partial match and no halfway house.</p>
   </div>
-
-  <p class="measure mt-4 text-sm">The distinct-output counts are <span class="mono">1, 1, 1</span> in <span class="mono">evidence/validation.json</span>, with <span class="mono">identical: true</span> across all three routes: the address and the commitment are functions of the statements and the primer and of nothing else.</p>
+  <div class="alert bg-base-200 border border-base-300 w-full mt-8">
+    <span>One true statement about yourself is checkable, and on its own it is not remarkable. It is the atom the rest is built from. Forty-five of them, in a fixed order, are enough to name a situation, and they are ordinary questions a person could answer about a room.</span>
+  </div>
 </section>
 
-<!-- ============================ monotone refinement ============================ -->
-<section class="col-wide mt-10">
-  <h2 class="display text-2xl">Monotone refinement: more precision never conflates</h2>
-  <p class="measure mt-3 text-sm">Axes 1 to 45, and the number of distinct places the prefix separates: <span class="mono">0 violations</span>, <span class="mono">monotone: true</span>. Three places at one axis, four at three, five at four, and all six from axis 6 onwards.</p>
+<div class="divider"></div>
 
-  <div class="table-wrap mt-5">
-    <table class="data">
-      <thead>
-        <tr><th class="num">axes kept</th><th class="num">distinct places</th></tr>
-      </thead>
-      <tbody>
-        <tr><td class="mono num">1</td><td class="num">3</td></tr>
-        <tr><td class="mono num">2</td><td class="num">3</td></tr>
-        <tr><td class="mono num">3</td><td class="num">4</td></tr>
-        <tr><td class="mono num">4</td><td class="num">5</td></tr>
-        <tr><td class="mono num">5</td><td class="num">5</td></tr>
-        <tr><td class="mono num">6</td><td class="num">6</td></tr>
-        <tr><td class="mono num">7</td><td class="num">6</td></tr>
-        <tr><td class="mono num">8</td><td class="num">6</td></tr>
-        <tr><td class="mono num">9</td><td class="num">6</td></tr>
-        <tr><td class="mono num">10</td><td class="num">6</td></tr>
-        <tr><td class="mono num">11</td><td class="num">6</td></tr>
-        <tr><td class="mono num">12</td><td class="num">6</td></tr>
-        <tr><td class="mono num">13</td><td class="num">6</td></tr>
-        <tr><td class="mono num">14</td><td class="num">6</td></tr>
-        <tr><td class="mono num">15</td><td class="num">6</td></tr>
-        <tr><td class="mono num">16</td><td class="num">6</td></tr>
-        <tr><td class="mono num">17</td><td class="num">6</td></tr>
-        <tr><td class="mono num">18</td><td class="num">6</td></tr>
-        <tr><td class="mono num">19</td><td class="num">6</td></tr>
-        <tr><td class="mono num">20</td><td class="num">6</td></tr>
-        <tr><td class="mono num">21</td><td class="num">6</td></tr>
-        <tr><td class="mono num">22</td><td class="num">6</td></tr>
-        <tr><td class="mono num">23</td><td class="num">6</td></tr>
-        <tr><td class="mono num">24</td><td class="num">6</td></tr>
-        <tr><td class="mono num">25</td><td class="num">6</td></tr>
-        <tr><td class="mono num">26</td><td class="num">6</td></tr>
-        <tr><td class="mono num">27</td><td class="num">6</td></tr>
-        <tr><td class="mono num">28</td><td class="num">6</td></tr>
-        <tr><td class="mono num">29</td><td class="num">6</td></tr>
-        <tr><td class="mono num">30</td><td class="num">6</td></tr>
-        <tr><td class="mono num">31</td><td class="num">6</td></tr>
-        <tr><td class="mono num">32</td><td class="num">6</td></tr>
-        <tr><td class="mono num">33</td><td class="num">6</td></tr>
-        <tr><td class="mono num">34</td><td class="num">6</td></tr>
-        <tr><td class="mono num">35</td><td class="num">6</td></tr>
-        <tr><td class="mono num">36</td><td class="num">6</td></tr>
-        <tr><td class="mono num">37</td><td class="num">6</td></tr>
-        <tr><td class="mono num">38</td><td class="num">6</td></tr>
-        <tr><td class="mono num">39</td><td class="num">6</td></tr>
-        <tr><td class="mono num">40</td><td class="num">6</td></tr>
-        <tr><td class="mono num">41</td><td class="num">6</td></tr>
-        <tr><td class="mono num">42</td><td class="num">6</td></tr>
-        <tr><td class="mono num">43</td><td class="num">6</td></tr>
-        <tr><td class="mono num">44</td><td class="num">6</td></tr>
-        <tr><td class="mono num">45</td><td class="num">6</td></tr>
-      </tbody>
-    </table>
+<!-- ==================================================== 2. monotone refinement -->
+<section class="py-12">
+  <h2 class="text-3xl font-bold">Reading more of the name can separate two places, and never blur them</h2>
+  <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
+    <p>To compare two situations you want a name that gets more specific as you read further. You also want a guarantee: reading more must never merge two places that were already apart. A name that did that would be worse than useless, because the answer would change as you looked harder.</p>
+    <p>So the same six places are named six times, keeping the first 1 question, then the first 2, 3, 4, 5 and 6. At 1 question the six collapse into 3 names. At 3 questions they are 4 names, at 4 questions 5 names, and at 6 questions all six are apart. The count never goes down, and the recorded number of violations is <span class="font-mono">0</span>.</p>
   </div>
 
-  <p class="measure mt-3 text-sm">The six-axes result is the one that matters: <span class="mono">axes_for_all_places: 6</span>, and the first two axes already separate <span class="mono">3</span> places.</p>
+  <figure class="w-full mt-8">
+    <svg viewBox="0 0 1000 360" width="100%" role="img" aria-label="Six places grouped by how many questions are kept. At one question there are three groups, at three questions four, at four questions five, and at six questions all six places stand alone." class="font-mono">
+      <text x="30" y="26" font-size="15" style="fill:oklch(var(--bc))" font-weight="700">The same six places, named with more and more of the questions kept</text>
+      <text x="30" y="48" font-size="13" style="fill:oklch(var(--bc)/0.65)">A box means the names are still identical. Standing alone means the place has its own name.</text>
 
-  <figure class="figure mt-5">
-    <img src="assets/figures/precision-gradient.svg" alt="The same address read at six precisions, with the refinement curve">
-    <figcaption>One address, many precisions. Every step narrows and no step contradicts an earlier one; the violations count is <span class="mono">0</span>.</figcaption>
+      <text x="30" y="82" font-size="14" font-weight="700" style="fill:oklch(var(--bc))">1 question kept</text>
+      <text x="30" y="100" font-size="12" style="fill:oklch(var(--bc)/0.65)">3 names</text>
+      <text x="270" y="82" font-size="14" font-weight="700" style="fill:oklch(var(--bc))">3 questions kept</text>
+      <text x="270" y="100" font-size="12" style="fill:oklch(var(--bc)/0.65)">4 names</text>
+      <text x="510" y="82" font-size="14" font-weight="700" style="fill:oklch(var(--bc))">4 questions kept</text>
+      <text x="510" y="100" font-size="12" style="fill:oklch(var(--bc)/0.65)">5 names</text>
+      <text x="750" y="82" font-size="14" font-weight="700" style="fill:oklch(var(--bc))">6 questions kept</text>
+      <text x="750" y="100" font-size="12" style="fill:oklch(var(--bc)/0.65)">6 names</text>
+
+      <rect x="30" y="116" width="200" height="140" rx="8" fill="none" stroke-width="2" style="stroke:oklch(var(--p))"/>
+      <rect x="42" y="128" width="176" height="26" rx="4" style="fill:oklch(var(--b2))"/><text x="52" y="146" font-size="12" style="fill:oklch(var(--bc))">kitchen with a friend</text>
+      <rect x="42" y="160" width="176" height="26" rx="4" style="fill:oklch(var(--b2))"/><text x="52" y="178" font-size="12" style="fill:oklch(var(--bc))">kitchen alone</text>
+      <rect x="42" y="192" width="176" height="26" rx="4" style="fill:oklch(var(--b2))"/><text x="52" y="210" font-size="12" style="fill:oklch(var(--bc))">shared workshop</text>
+      <rect x="42" y="224" width="176" height="26" rx="4" style="fill:oklch(var(--b2))"/><text x="52" y="242" font-size="12" style="fill:oklch(var(--bc))">warehouse alone</text>
+      <rect x="30" y="268" width="200" height="26" rx="4" style="fill:oklch(var(--b2))"/><text x="40" y="286" font-size="12" style="fill:oklch(var(--bc))">locked storeroom</text>
+      <rect x="30" y="300" width="200" height="26" rx="4" style="fill:oklch(var(--b2))"/><text x="40" y="318" font-size="12" style="fill:oklch(var(--bc))">dark empty room</text>
+
+      <rect x="270" y="116" width="200" height="74" rx="8" fill="none" stroke-width="2" style="stroke:oklch(var(--p))"/>
+      <rect x="282" y="128" width="176" height="26" rx="4" style="fill:oklch(var(--b2))"/><text x="292" y="146" font-size="12" style="fill:oklch(var(--bc))">kitchen with a friend</text>
+      <rect x="282" y="160" width="176" height="26" rx="4" style="fill:oklch(var(--b2))"/><text x="292" y="178" font-size="12" style="fill:oklch(var(--bc))">kitchen alone</text>
+      <rect x="270" y="202" width="200" height="74" rx="8" fill="none" stroke-width="2" style="stroke:oklch(var(--p))"/>
+      <rect x="282" y="214" width="176" height="26" rx="4" style="fill:oklch(var(--b2))"/><text x="292" y="232" font-size="12" style="fill:oklch(var(--bc))">shared workshop</text>
+      <rect x="282" y="246" width="176" height="26" rx="4" style="fill:oklch(var(--b2))"/><text x="292" y="264" font-size="12" style="fill:oklch(var(--bc))">warehouse alone</text>
+      <rect x="270" y="288" width="200" height="26" rx="4" style="fill:oklch(var(--b2))"/><text x="280" y="306" font-size="12" style="fill:oklch(var(--bc))">locked storeroom</text>
+      <rect x="270" y="322" width="200" height="26" rx="4" style="fill:oklch(var(--b2))"/><text x="280" y="340" font-size="12" style="fill:oklch(var(--bc))">dark empty room</text>
+
+      <rect x="510" y="116" width="200" height="26" rx="4" style="fill:oklch(var(--b2))"/><text x="520" y="134" font-size="12" style="fill:oklch(var(--bc))">kitchen with a friend</text>
+      <rect x="510" y="150" width="200" height="26" rx="4" style="fill:oklch(var(--b2))"/><text x="520" y="168" font-size="12" style="fill:oklch(var(--bc))">kitchen alone</text>
+      <rect x="510" y="192" width="200" height="74" rx="8" fill="none" stroke-width="2" style="stroke:oklch(var(--p))"/>
+      <rect x="522" y="204" width="176" height="26" rx="4" style="fill:oklch(var(--b2))"/><text x="532" y="222" font-size="12" style="fill:oklch(var(--bc))">shared workshop</text>
+      <rect x="522" y="236" width="176" height="26" rx="4" style="fill:oklch(var(--b2))"/><text x="532" y="254" font-size="12" style="fill:oklch(var(--bc))">warehouse alone</text>
+      <rect x="510" y="278" width="200" height="26" rx="4" style="fill:oklch(var(--b2))"/><text x="520" y="296" font-size="12" style="fill:oklch(var(--bc))">locked storeroom</text>
+      <rect x="510" y="312" width="200" height="26" rx="4" style="fill:oklch(var(--b2))"/><text x="520" y="330" font-size="12" style="fill:oklch(var(--bc))">dark empty room</text>
+
+      <rect x="750" y="116" width="200" height="26" rx="4" style="fill:oklch(var(--b2))"/><text x="760" y="134" font-size="12" style="fill:oklch(var(--bc))">kitchen with a friend</text>
+      <rect x="750" y="150" width="200" height="26" rx="4" style="fill:oklch(var(--b2))"/><text x="760" y="168" font-size="12" style="fill:oklch(var(--bc))">kitchen alone</text>
+      <rect x="750" y="184" width="200" height="26" rx="4" style="fill:oklch(var(--b2))"/><text x="760" y="202" font-size="12" style="fill:oklch(var(--bc))">shared workshop</text>
+      <rect x="750" y="218" width="200" height="26" rx="4" style="fill:oklch(var(--b2))"/><text x="760" y="236" font-size="12" style="fill:oklch(var(--bc))">warehouse alone</text>
+      <rect x="750" y="252" width="200" height="26" rx="4" style="fill:oklch(var(--b2))"/><text x="760" y="270" font-size="12" style="fill:oklch(var(--bc))">locked storeroom</text>
+      <rect x="750" y="286" width="200" height="26" rx="4" style="fill:oklch(var(--b2))"/><text x="760" y="304" font-size="12" style="fill:oklch(var(--bc))">dark empty room</text>
+    </svg>
+    <figcaption class="mt-3 text-sm max-w-3xl" style="color:oklch(var(--bc)/0.65)">No box ever opens as you read further, and no two places that stood apart are ever put back together. Reading more than six questions changes nothing for these six places.</figcaption>
   </figure>
-</section>
 
-<!-- ============================ distance preservation ============================ -->
-<section class="col-full mt-10">
-  <h2 class="display text-2xl">Distance preservation: the address respects a known ordering</h2>
-</section>
-
-<section class="col-half">
-  <p class="measure text-sm mt-3">The ordering was written down before the geometry was consulted: <span class="mono">kitchen_with_friend</span> against <span class="mono">kitchen_alone</span> near, against <span class="mono">shared_workshop</span> mid, against <span class="mono">warehouse_alone</span> far, against <span class="mono">dark_empty_room</span> furthest. Rank correlation over all 15 pairs is <span class="mono">rho = 0.9286</span>, against a shuffled null of <span class="mono">+0.0002</span> with sd <span class="mono">0.2704</span>.</p>
-
-  <div class="table-wrap mt-4">
-    <table class="data">
-      <thead>
-        <tr><th>pair</th><th class="num">known distance</th><th class="num">hamming</th><th class="num">lcp</th></tr>
-      </thead>
-      <tbody>
-        <tr><td class="mono">kitchen_with_friend · kitchen_alone</td><td class="num">0.35</td><td class="num">9</td><td class="num">3</td></tr>
-        <tr><td class="mono">locked_storeroom · dark_empty_room</td><td class="num">0.5</td><td class="num">12</td><td class="num">0</td></tr>
-        <tr><td class="mono">kitchen_with_friend · dark_empty_room</td><td class="num">0.96</td><td class="num">23</td><td class="num">0</td></tr>
+  <div class="overflow-x-auto w-full mt-8">
+    <table class="table table-zebra w-full">
+      <thead><tr><th>questions kept</th><th>names told apart</th><th>the name at that point</th></tr></thead>
+      <tbody class="text-base">
+        <tr><td>1</td><td>3</td><td class="font-mono">⌁ ma</td></tr>
+        <tr><td>3</td><td>4</td><td class="font-mono">⌁ ma.mo.ma</td></tr>
+        <tr><td>4</td><td>5</td><td class="font-mono">⌁ ma.ma</td></tr>
+        <tr><td>6</td><td>6</td><td class="font-mono">⌁ ma.mo.ma</td></tr>
+        <tr><td>45</td><td>6</td><td class="font-mono break-all">⌁ ma.mo.ma.ma.ru·ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.ru.ki</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="measure mt-3 text-sm">The nearest pair shares <span class="mono">3</span> syllables before it differs and the furthest shares <span class="mono">0</span>, which is the ordering the addresses were never told about. The matrix below is the whole of it.</p>
+
+  <div class="alert bg-base-200 border border-base-300 w-full mt-8">
+    <span>Six characters of the name, which is three syllables, are already enough to tell these six places apart. That is a modest claim about a small set, and it is exactly the claim being made: 0 violations, so reading further never merged two places that were already apart.</span>
+  </div>
 </section>
 
-<section class="col-half mt-3">
-  
-</section>
+<div class="divider"></div>
 
-<!-- ============================ the root at grain ============================ -->
-<section class="col-wide mt-10">
-  <h2 class="display text-2xl">The root at grain, and with anything folded in</h2>
-  <p class="measure mt-3 text-sm">A root taken over the k most discriminative statements is still exactly checkable, so a partial disclosure can be verified without the rest. One place throughout, the harness's canonical <span class="mono">kitchen_with_friend</span>, so the count measures grain rather than model disagreement.</p>
-
-  <div class="workings mt-4">
-    <div class="step">
-      <div class="step-n">R1</div>
-      <div>
-        <div class="step-title">grain 2, the two most discriminative statements</div>
-        <div class="step-body">The root prefix is <span class="val">e6da26cd0c664ba27171</span>, and <span class="val">3 of 6</span> places are still distinguishable by it.</div>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-n">R2</div>
-      <div>
-        <div class="step-title">grain 4</div>
-        <div class="step-body">Prefix <span class="val">cb5581f2033328f76121</span>, and all <span class="val">6 of 6</span> places are distinguishable.</div>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-n">R3</div>
-      <div>
-        <div class="step-title">grain 8</div>
-        <div class="step-body">Prefix <span class="val">002236b86c64f7810f96</span>, still <span class="val">6 of 6</span>.</div>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-n">R4</div>
-      <div>
-        <div class="step-title">grain 45, the whole set</div>
-        <div class="step-body">Prefix <span class="val">efe87ba9113b03473d9a</span>, the opening of the state root <span class="val">!efe87ba9113b03473d9a657f01b994b88cd91bd0601d7131868d0bacbc6e9807</span>, with <span class="val">6 of 6</span>.</div>
-      </div>
-    </div>
+<!-- ==================================================== 3. determinism -->
+<section class="py-12">
+  <h2 class="text-3xl font-bold">The same answers give the same name every time</h2>
+  <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
+    <p>A name is useful only if it holds still. If the same 18 answers could produce two different names, nothing could be compared and nothing could be checked. So the same situation is named over and over, three different ways:</p>
+    <ul class="list-disc pl-6 space-y-2">
+      <li><span class="font-mono">A1</span> In one program, 50 times, with the moment of asking pinned to a fixed instant. The distinct outputs: <span class="font-mono">1</span>, the fingerprint <span class="font-mono break-all">c73d7633a6df505844118b31a9244744d5802dcb9e384f8a82f021c0170c571d</span>.</li>
+      <li><span class="font-mono">A2</span> In one program, 50 times, with no instant pinned at all. The distinct outputs: <span class="font-mono">1</span>, the fingerprint <span class="font-mono break-all">4b325803641e0eca831eed053ef7cbed541241bacfecb797a92d985650cd1c55</span>. That value is also the state root the repository records for this room.</li>
+      <li><span class="font-mono">A3</span> Three separate programs, each building the rule from scratch rather than reusing a loaded copy. The distinct outputs: <span class="font-mono">1</span>, and it matches A1.</li>
+    </ul>
+    <p>This is what a recipe is. The same ingredients and the same method give the same cake, and that is what makes a recipe worth writing down. The comparison stops at one point: a recipe can be followed carelessly and give a different cake, and this cannot, because nothing outside the answers and the seed is ever read. Not the clock, not the machine, not the order the answers arrive in.</p>
+    <p>You might ask who checks this, and what they would need. Anyone can. The checker needs the 18 answers, the published seed, and the one hashing rule. It does not need the other side's file, its software version, its clock, or its permission.</p>
   </div>
 
-  <div class="table-wrap mt-5">
-    <table class="data">
-      <thead>
-        <tr><th>folded into extra</th><th class="mono">state root, first 20 hex</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>nothing</td><td class="mono">efe87ba9113b03473d9a</td></tr>
-        <tr><td class="mono">host:runner-7</td><td class="mono">2c4ccc8b91c64c130b86</td></tr>
-        <tr><td class="mono">py:3.14.7 · numpy:2.5.3</td><td class="mono">317b045886ffed755663</td></tr>
-        <tr><td class="mono">host:runner-7 · op:acme</td><td class="mono">4a325bb518b88ec0f248</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="measure mt-3 text-sm">Every fold-in changes the root and leaves the coordinate alone: <span class="mono">address_unchanged_by_extra: true</span>. A root can carry an environment fingerprint without contaminating the place, and <span class="mono">t=0</span> pinned the same way gives <span class="mono">!9baed0357835e37553f90f0546a848d1cc177e7972829258e84478140a38b9a8</span>.</p>
+  <figure class="w-full mt-8">
+    <svg viewBox="0 0 1000 300" width="100%" role="img" aria-label="One input, three separate routes through the same rule, and one output. Each route reports one distinct output, and all three agree." class="font-mono">
+      <text x="30" y="26" font-size="15" font-weight="700" style="fill:oklch(var(--bc))">Same answers in, same fingerprint out, by three separate routes</text>
+      <rect x="20" y="100" width="200" height="90" rx="10" style="fill:oklch(var(--p))"/>
+      <text x="120" y="132" font-size="14" text-anchor="middle" style="fill:oklch(var(--pc))" font-weight="700">the 18 true answers</text>
+      <text x="120" y="154" font-size="13" text-anchor="middle" style="fill:oklch(var(--pc))">and the same seed</text>
+      <text x="120" y="176" font-size="13" text-anchor="middle" style="fill:oklch(var(--pc))">nothing else</text>
 
-  <figure class="figure mt-5">
-    <img src="assets/figures/roots.svg" alt="How many families produced the byte-identical root, per place, out of six">
-    <figcaption>The same root from separate families: <span class="mono">20/36</span> model-place pairs produced a byte-identical root (55.6%), from 5 of 6 families for <span class="mono">locked_storeroom</span> down to 2 of 6 for <span class="mono">warehouse_alone</span>.</figcaption>
+      <rect x="280" y="40" width="330" height="46" rx="8" style="fill:oklch(var(--b2))"/>
+      <text x="292" y="68" font-size="13" style="fill:oklch(var(--bc))">A1 · in one program, 50 times, instant pinned</text>
+      <rect x="280" y="122" width="330" height="46" rx="8" style="fill:oklch(var(--b2))"/>
+      <text x="292" y="150" font-size="13" style="fill:oklch(var(--bc))">A2 · in one program, 50 times, no instant</text>
+      <rect x="280" y="204" width="330" height="46" rx="8" style="fill:oklch(var(--b2))"/>
+      <text x="292" y="232" font-size="13" style="fill:oklch(var(--bc))">A3 · three separate programs</text>
+
+      <line x1="220" y1="145" x2="270" y2="63" stroke-width="2" style="stroke:oklch(var(--b3))"/>
+      <line x1="220" y1="145" x2="270" y2="145" stroke-width="2" style="stroke:oklch(var(--b3))"/>
+      <line x1="220" y1="145" x2="270" y2="227" stroke-width="2" style="stroke:oklch(var(--b3))"/>
+      <line x1="610" y1="63" x2="760" y2="140" stroke-width="2" style="stroke:oklch(var(--b3))"/>
+      <line x1="610" y1="145" x2="760" y2="145" stroke-width="2" style="stroke:oklch(var(--b3))"/>
+      <line x1="610" y1="227" x2="760" y2="150" stroke-width="2" style="stroke:oklch(var(--b3))"/>
+
+      <rect x="770" y="100" width="210" height="90" rx="10" style="fill:oklch(var(--su))"/>
+      <text x="875" y="132" font-size="14" text-anchor="middle" style="fill:oklch(var(--b1))" font-weight="700">one fingerprint</text>
+      <text x="875" y="154" font-size="13" text-anchor="middle" style="fill:oklch(var(--b1))">1 distinct output</text>
+      <text x="875" y="176" font-size="13" text-anchor="middle" style="fill:oklch(var(--b1))">in every route</text>
+      <text x="30" y="288" font-size="13" style="fill:oklch(var(--bc)/0.65)">The unpinned route matters most: the wall clock is not an input, so the name cannot drift from one second to the next.</text>
+    </svg>
   </figure>
+
+  <div class="alert alert-success w-full mt-8">
+    <span>Fifty runs, three programs, one output. The striking part is the middle lane: no instant is pinned, and the result still does not move. A name that drifted with the clock would be unusable for anything that has to be checked later.</span>
+  </div>
 </section>
 
-<!-- ============================ address versus root ============================ -->
-<section class="col-wide mt-10">
-  <h2 class="display text-2xl">The address against the root, on a real pair</h2>
-  <p class="measure mt-3 text-sm">Take the pair the harness calls nearest, <span class="mono">kitchen_with_friend</span> and <span class="mono">kitchen_alone</span>, whose known Jaccard distance is <span class="mono">0.35</span>.</p>
+<div class="divider"></div>
 
-  <div class="table-wrap mt-4">
-    <table class="data">
-      <thead>
-        <tr><th>object</th><th>value</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>addresses</td><td class="mono">⌁ ma.mo.ma.ma.ru·ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.ru.ki &nbsp;vs&nbsp; ⌁ ma.tu.ma.ma.no·mo.no.ki.va.ki+ru.ki.va.tu.ru~ki.ru.ki</td></tr>
-        <tr><td>distance between them</td><td><span class="mono">9</span> syllables apart, sharing a prefix of <span class="mono">3</span></td></tr>
-        <tr><td>roots</td><td class="mono">!efe87ba9113b03473d9a657f01b994b88cd91bd0601d7131868d0bacbc6e9807 &nbsp;vs&nbsp; !c6091ef5b45369fdcf0e7353cd0d6f024bdec3b2ad8fca383720052bda01dcd0</td></tr>
+<!-- ==================================================== 4. distance -->
+<section class="py-12">
+  <h2 class="text-3xl font-bold">How far apart two names are, and whether that matches the world</h2>
+  <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
+    <p>Two names are worth measuring only if the gap between them means something. The gap used here is simple to state: line the two names up letter by letter and count the letters that differ. Each of the 18 syllables is two letters, so a name is 36 letters long, and the count runs from 0 to 36.</p>
+    <p>All 15 pairs of the six places were measured. The distances were written down before anyone looked at the names, from how much the situations themselves differ. The two lists were then compared by rank.</p>
+  </div>
+
+  <div class="overflow-x-auto w-full mt-8">
+    <table class="table table-zebra w-full">
+      <thead><tr><th>pair of places</th><th>how far apart the situations are</th><th>letters different</th><th>questions matching at the start</th></tr></thead>
+      <tbody class="text-base">
+        <tr><td class="font-mono">kitchen with a friend · kitchen alone</td><td>0.35</td><td>9</td><td>3</td></tr>
+        <tr><td class="font-mono">kitchen with a friend · shared workshop</td><td>0.4348</td><td>9</td><td>2</td></tr>
+        <tr><td class="font-mono">locked storeroom · dark empty room</td><td>0.5</td><td>12</td><td>0</td></tr>
+        <tr><td class="font-mono">kitchen alone · shared workshop</td><td>0.5652</td><td>15</td><td>2</td></tr>
+        <tr><td class="font-mono">shared workshop · warehouse alone</td><td>0.6087</td><td>17</td><td>5</td></tr>
+        <tr><td class="font-mono">kitchen alone · warehouse alone</td><td>0.619</td><td>13</td><td>2</td></tr>
+        <tr><td class="font-mono">kitchen with a friend · warehouse alone</td><td>0.6667</td><td>16</td><td>2</td></tr>
+        <tr><td class="font-mono">kitchen alone · locked storeroom</td><td>0.6842</td><td>14</td><td>0</td></tr>
+        <tr><td class="font-mono">warehouse alone · locked storeroom</td><td>0.7368</td><td>16</td><td>0</td></tr>
+        <tr><td class="font-mono">kitchen with a friend · locked storeroom</td><td>0.8333</td><td>18</td><td>0</td></tr>
+        <tr><td class="font-mono">warehouse alone · dark empty room</td><td>0.8421</td><td>19</td><td>0</td></tr>
+        <tr><td class="font-mono">kitchen alone · dark empty room</td><td>0.85</td><td>21</td><td>0</td></tr>
+        <tr><td class="font-mono">shared workshop · locked storeroom</td><td>0.88</td><td>23</td><td>0</td></tr>
+        <tr><td class="font-mono">kitchen with a friend · dark empty room</td><td>0.96</td><td>23</td><td>0</td></tr>
+        <tr><td class="font-mono">shared workshop · dark empty room</td><td>0.96</td><td>26</td><td>0</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="measure mt-3 text-sm">Different roots and addresses <span class="mono">9</span> apart is the design: the root answers "same place" and the address answers "how near". Read on the two statement sets <span class="mono">deepseek-v4.1-flash</span> actually produced, the same pair comes out <span class="mono">10</span> apart with a shared prefix of <span class="mono">2</span>, the same claim with that model's own disagreement added.</p>
-</section>
 
-<!-- ============================ the ladder ============================ -->
-<section class="col-wide mt-10">
-  <h2 class="display text-2xl">The certainty ladder</h2>
-  <p class="measure mt-3 text-sm">Five markers, each with a rank, and only the top two anchor a claim: a locus takes the weakest marker present, so confidence cannot promote it and only evidence can.</p>
-
-  <div class="ladder mt-5">
-    <div class="ladder-row anchors"><span class="ladder-glyph">=</span><span>checked and matched exactly</span><span class="ladder-mark">rank 5 · anchors</span></div>
-    <div class="ladder-row anchors"><span class="ladder-glyph">⊢</span><span>worked out the same way twice from what I was given</span><span class="ladder-mark">rank 4 · anchors</span></div>
-    <div class="ladder-row"><span class="ladder-glyph">≈</span><span>measured with an instrument, so roughly</span><span class="ladder-mark">rank 3 · does not anchor</span></div>
-    <div class="ladder-row"><span class="ladder-glyph">~</span><span>what I believe, not what I know</span><span class="ladder-mark">rank 2 · does not anchor</span></div>
-    <div class="ladder-row"><span class="ladder-glyph">?</span><span>a guess I cannot support</span><span class="ladder-mark">rank 1 · does not anchor</span></div>
-  </div>
-  <p class="measure mt-4 text-sm"><span class="mono">kitchen_with_friend</span> floors at <span class="mono">≈</span>, rank 3, because <span class="mono">world.py</span> marks <span class="mono">see/this_place/outside</span> and <span class="mono">see/sound/any</span> as measured rather than inspected, so that place is a region and not an anchor.</p>
-</section>
-
-<!-- ============================ the frame gate ============================ -->
-<section class="col-wide mt-10">
-  <h2 class="display text-2xl">The frame gate</h2>
-  <p class="measure mt-3 text-sm">Both sides must hold the same primer bytes, identified by fingerprint <span class="mono">df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba</span>. Show a different primer and the library refuses the comparison in its own words:</p>
-
-  <div class="transcript mt-4">
-    <div class="turn">
-      <div class="turn-who">different primer</div>
-      <div class="turn-said">different primer: the two geometries are incommensurable; only exact identity can be compared</div>
+  <div class="grid grid-cols-1 gap-6 mt-8">
+    <div class="stats stats-vertical lg:stats-horizontal bg-base-200 w-full">
+      <div class="stat"><div class="stat-title text-base">rank agreement over 15 pairs</div><div class="stat-value text-4xl">0.9286</div><div class="stat-desc text-base">1.0 would be a perfect match</div></div>
+      <div class="stat"><div class="stat-title text-base">the same figure with the names shuffled</div><div class="stat-value text-4xl">+0.0002</div><div class="stat-desc text-base">spread 0.2704</div></div>
     </div>
+    <figure class="w-full">
+      <img src="assets/figures/precision-gradient.svg" alt="The same name read at six precisions, with the refinement curve" class="w-full">
+      <figcaption class="mt-3 text-sm max-w-3xl" style="color:oklch(var(--bc)/0.65)">The same name read at more and more precision. Every step narrows the place down and no step contradicts an earlier one. The violations count is <span class="font-mono">0</span>.</figcaption>
+    </figure>
   </div>
 
-  <p class="measure mt-4 text-sm">So the gate answers three ways rather than one: <span class="mono">same_primer_comparable: true</span>, <span class="mono">different_primer_comparable: false</span>, <span class="mono">primers_differ: true</span>. The transmitted seed is <span class="mono">3,300 bytes</span> against <span class="mono">67,561 bytes</span> reconstructed, a factor of <span class="mono">20.47</span>.</p>
+  <div class="alert alert-success w-full mt-8">
+    <span>Nobody told the names that a kitchen with a friend is nearer to an empty kitchen than to a warehouse. That ordering was written down first and the names were built afterwards, and the ranking agrees at 0.9286 against a shuffled null of +0.0002. The ranking is not perfect: two pairs sit at 9 letters while their real distances differ, which is the honest size of the claim.</span>
+  </div>
 </section>
 
-<!-- ============================ known-answer cases ============================ -->
-<section class="col-wide mt-10">
-  <h2 class="display text-2xl">Known-answer cases, which run first</h2>
-  <p class="measure mt-3 text-sm">These four run before any headline number, because a metric that cannot reproduce an answer already known is not trustworthy on a result that is not.</p>
+<div class="divider"></div>
 
-  <div class="table-wrap mt-4">
-    <table class="data">
-      <thead>
-        <tr><th>case</th><th class="num">hamming</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>identical sets</td><td class="num">0</td></tr>
-        <tr><td>one statement removed</td><td class="num">1</td></tr>
-        <tr><td>disjoint sets</td><td class="num">27</td></tr>
-        <tr><td>ordering is monotone</td><td class="num">True</td></tr>
+<!-- ==================================================== 5. the root at grain -->
+<section class="py-12">
+  <h2 class="text-3xl font-bold">A root over part of the answers is still exactly checkable</h2>
+  <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
+    <p>A root is a fingerprint of a list, and a list can be shortened. That matters because an agent may be willing to disclose the two most telling answers and nothing else. The question is whether a short root can still be checked.</p>
+    <p>It can, as long as both sides agree which answers went in. The four runs below take the same situation, the kitchen with a friend, and root the first 2, then 4, then 8, then all 45 of the most telling answers. The set used is the one <span class="font-mono">deepseek-v4.1-flash</span> reported, so the count below measures how short a root can be rather than how much models disagree.</p>
+  </div>
+
+  <div class="overflow-x-auto w-full mt-8">
+    <table class="table table-zebra w-full">
+      <thead><tr><th>answers committed to</th><th>the root, first 14 characters</th><th>places told apart, of 6</th></tr></thead>
+      <tbody class="text-base">
+        <tr><td>2</td><td class="font-mono">e6da26cd0c664b</td><td>3</td></tr>
+        <tr><td>4</td><td class="font-mono">cb5581f2033328</td><td>6</td></tr>
+        <tr><td>8</td><td class="font-mono">002236b86c64f7</td><td>6</td></tr>
+        <tr><td>45</td><td class="font-mono">5c1e1bbba5ea75</td><td>6</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="measure mt-3 text-sm">The identical case also fixes the roots: <span class="mono">identical_sets_same_root: true</span>, while one statement removed is a different root (<span class="mono">different_sets_different_root: true</span>), so the scale runs <span class="mono">0, 1, 27</span> with no gap pretending to be exactness.</p>
-</section>
 
-<!-- ============================ the controls ============================ -->
-<section class="col-full mt-10">
-  <h2 class="display text-2xl">The controls</h2>
-</section>
+  <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
+    <p>Four answers out of 45 are already enough to tell these six places apart. For contrast, the repository's own fixed list of 18 answers for this kitchen hashes to <span class="font-mono break-all">efe87ba9113b03473d9a657f01b994b88cd91bd0601d7131868d0bacbc6e9807</span>.</p>
+    <p>Extra attributes can ride in the same list without touching the name. Four runs fold in the machine's hostname, the software versions in use, and an operator label. The root moves every time, and the name does not move at all, in all four runs.</p>
+  </div>
 
-<section class="col-half">
-  <figure class="figure mt-3">
-    <img src="assets/figures/controls.svg" alt="The result against its nulls: 100.0% real, 16.7% chance, 16.9% labels shuffled, 20.9% random vocabulary">
-    <figcaption>The result and its nulls, as bars with one standard deviation as whiskers. The figure's own caption says 400 trials; <span class="mono">evidence/validation.json</span> records <span class="mono">n = 6000</span> for both nulls.</figcaption>
+  <div class="overflow-x-auto w-full mt-4">
+    <table class="table table-zebra w-full">
+      <thead><tr><th>what is folded in</th><th>the root, first 20 characters</th><th>the name</th></tr></thead>
+      <tbody class="text-base">
+        <tr><td>nothing</td><td class="font-mono">efe87ba9113b03473d9a</td><td>unchanged</td></tr>
+        <tr><td class="font-mono">host:runner-7</td><td class="font-mono">2c4ccc8b91c64c130b86</td><td>unchanged</td></tr>
+        <tr><td class="font-mono">py:3.14.7 · numpy:2.5.3</td><td class="font-mono">317b045886ffed755663</td><td>unchanged</td></tr>
+        <tr><td class="font-mono">host:runner-7 · op:acme</td><td class="font-mono">4a325bb518b88ec0f248</td><td>unchanged</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mt-8 max-w-3xl space-y-6 text-base leading-relaxed">
+    <p>A root pinned to a fixed instant gives <span class="font-mono break-all">!9baed0357835e37553f90f0546a848d1cc177e7972829258e84478140a38b9a8</span> instead, and the name still does not move.</p>
+    <p>Six independently built model families were each asked about the same place, and five of the six produced the byte-identical root for the locked storeroom and again for the dark empty room. Across all six places, 20 of 36 family-and-place pairs fall in one largest agreeing group.</p>
+  </div>
+
+  <figure class="w-full mt-8">
+    <img src="assets/figures/roots.svg" alt="How many of six independently built model families produced the byte-identical root, per place" class="w-full">
+    <figcaption class="mt-3 text-sm max-w-3xl" style="color:oklch(var(--bc)/0.65)">The same root from separate families: <span class="font-mono">20/36</span> family-and-place pairs agreed byte for byte, 55.6%. Five of six families agreed for the locked storeroom, and two of six for the warehouse.</figcaption>
   </figure>
+
+  <div class="alert bg-base-200 border border-base-300 w-full mt-8">
+    <span>Five of six independently built families produced the same 64 characters for the locked storeroom, and none of them exchanged anything to do it. That is not a resemblance, it is the same number. A short root over four answers is just as checkable as the full one, which is what lets an agent disclose a little and still be held to it.</span>
+  </div>
 </section>
 
-<section class="col-half mt-3">
-  <div class="table-wrap">
-    <table class="data">
-      <thead>
-        <tr><th>condition</th><th class="num">accuracy</th><th class="num">sd</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>real, cross-model</td><td class="num">1.0</td><td class="num">n/a</td></tr>
-        <tr><td>real, strict</td><td class="num">0.9667</td><td class="num">n/a</td></tr>
-        <tr><td>chance</td><td class="num">0.1667</td><td class="num">n/a</td></tr>
-        <tr><td>null · labels shuffled</td><td class="num">0.1691</td><td class="num">0.1679</td></tr>
-        <tr><td>null · random vocabulary</td><td class="num">0.2086</td><td class="num">0.1650</td></tr>
+<div class="divider"></div>
+
+<!-- ==================================================== 6. address vs root -->
+<section class="py-12">
+  <h2 class="text-3xl font-bold">One object says near, the other says same</h2>
+  <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
+    <p>Take the closest pair in the set, the kitchen with a friend and the kitchen alone. Their names are different at 9 of 36 letters and they agree for the first 3 questions. Their roots are different at 61 of 64 characters, and they share nothing at the start.</p>
+    <p>This is deliberate. A name that kept nearness would be a poor fingerprint, and a fingerprint that kept nearness would let anyone who holds it learn roughly where you are. So the two jobs are given to two objects, and each one is only good at its own job.</p>
+  </div>
+
+  <figure class="w-full mt-8">
+    <svg viewBox="0 0 1000 340" width="100%" role="img" aria-label="On the left, two names differing in five syllables and staying close. On the right, two roots with nothing in common, drawn as two separate blocks." class="font-mono">
+      <text x="30" y="26" font-size="15" font-weight="700" style="fill:oklch(var(--bc))">The name keeps the two rooms close. The root puts them far apart.</text>
+
+      <rect x="20" y="46" width="460" height="220" rx="10" fill="none" stroke-width="2" style="stroke:oklch(var(--p))"/>
+      <text x="36" y="72" font-size="14" font-weight="700" style="fill:oklch(var(--p))">the name · says how near</text>
+      <text x="36" y="98" font-size="13" style="fill:oklch(var(--bc))">kitchen with a friend</text>
+      <g>
+        <rect x="36" y="106" width="22" height="18" rx="3" style="fill:oklch(var(--p))"/><rect x="62" y="106" width="22" height="18" rx="3" style="fill:oklch(var(--p))"/><rect x="88" y="106" width="22" height="18" rx="3" style="fill:oklch(var(--p))"/><rect x="114" y="106" width="22" height="18" rx="3" style="fill:oklch(var(--b2))"/><rect x="140" y="106" width="22" height="18" rx="3" style="fill:oklch(var(--b2))"/><rect x="166" y="106" width="22" height="18" rx="3" style="fill:oklch(var(--p))"/><rect x="192" y="106" width="22" height="18" rx="3" style="fill:oklch(var(--p))"/><rect x="218" y="106" width="22" height="18" rx="3" style="fill:oklch(var(--p))"/><rect x="244" y="106" width="22" height="18" rx="3" style="fill:oklch(var(--b2))"/><rect x="270" y="106" width="22" height="18" rx="3" style="fill:oklch(var(--p))"/><rect x="296" y="106" width="22" height="18" rx="3" style="fill:oklch(var(--p))"/><rect x="322" y="106" width="22" height="18" rx="3" style="fill:oklch(var(--b2))"/><rect x="348" y="106" width="22" height="18" rx="3" style="fill:oklch(var(--b2))"/><rect x="374" y="106" width="22" height="18" rx="3" style="fill:oklch(var(--b2))"/><rect x="400" y="106" width="22" height="18" rx="3" style="fill:oklch(var(--b2))"/><rect x="426" y="106" width="22" height="18" rx="3" style="fill:oklch(var(--p))"/><rect x="452" y="106" width="22" height="18" rx="3" style="fill:oklch(var(--p))"/>
+      </g>
+      <text x="36" y="152" font-size="13" style="fill:oklch(var(--bc))">kitchen alone</text>
+      <g>
+        <rect x="36" y="160" width="22" height="18" rx="3" style="fill:oklch(var(--p))"/><rect x="62" y="160" width="22" height="18" rx="3" style="fill:oklch(var(--p))"/><rect x="88" y="160" width="22" height="18" rx="3" style="fill:oklch(var(--p))"/><rect x="114" y="160" width="22" height="18" rx="3" style="fill:oklch(var(--wa))"/><rect x="140" y="160" width="22" height="18" rx="3" style="fill:oklch(var(--wa))"/><rect x="166" y="160" width="22" height="18" rx="3" style="fill:oklch(var(--wa))"/><rect x="192" y="160" width="22" height="18" rx="3" style="fill:oklch(var(--wa))"/><rect x="218" y="160" width="22" height="18" rx="3" style="fill:oklch(var(--wa))"/><rect x="244" y="160" width="22" height="18" rx="3" style="fill:oklch(var(--b2))"/><rect x="270" y="160" width="22" height="18" rx="3" style="fill:oklch(var(--b2))"/><rect x="296" y="160" width="22" height="18" rx="3" style="fill:oklch(var(--b2))"/><rect x="322" y="160" width="22" height="18" rx="3" style="fill:oklch(var(--b2))"/><rect x="348" y="160" width="22" height="18" rx="3" style="fill:oklch(var(--wa))"/><rect x="374" y="160" width="22" height="18" rx="3" style="fill:oklch(var(--wa))"/><rect x="400" y="160" width="22" height="18" rx="3" style="fill:oklch(var(--wa))"/><rect x="426" y="160" width="22" height="18" rx="3" style="fill:oklch(var(--wa))"/><rect x="452" y="160" width="22" height="18" rx="3" style="fill:oklch(var(--b2))"/>
+      </g>
+      <text x="36" y="206" font-size="13" style="fill:oklch(var(--bc)/0.65)">solid: same syllable, ochre: different syllable</text>
+      <text x="36" y="230" font-size="13" style="fill:oklch(var(--bc))">5 of 18 syllables differ, which is 9 of 36 letters.</text>
+      <text x="36" y="252" font-size="13" style="fill:oklch(var(--bc))">The first 3 questions came out the same on both sides.</text>
+
+      <rect x="510" y="46" width="470" height="220" rx="10" fill="none" stroke-width="2" style="stroke:oklch(var(--wa))"/>
+      <text x="526" y="72" font-size="14" font-weight="700" style="fill:oklch(var(--wa))">the root · says same or not</text>
+      <text x="526" y="104" font-size="12" style="fill:oklch(var(--bc))">kitchen with a friend</text>
+      <rect x="526" y="112" width="438" height="24" rx="4" style="fill:oklch(var(--b2))"/>
+      <text x="534" y="129" font-size="12" style="fill:oklch(var(--bc))">efe87ba9113b03473d9a657f01b994b88cd91...</text>
+      <text x="526" y="164" font-size="12" style="fill:oklch(var(--bc))">kitchen alone</text>
+      <rect x="526" y="172" width="438" height="24" rx="4" style="fill:oklch(var(--b2))"/>
+      <text x="534" y="189" font-size="12" style="fill:oklch(var(--bc))">c6091ef5b45369fdcf0e7353cd0d6f024bde...</text>
+      <text x="526" y="222" font-size="13" style="fill:oklch(var(--bc))">61 of 64 characters differ.</text>
+      <text x="526" y="244" font-size="13" style="fill:oklch(var(--bc))">The two roots share nothing at the start.</text>
+    </svg>
+    <figcaption class="mt-3 text-sm max-w-3xl" style="color:oklch(var(--bc)/0.65)">Two rooms that are 9 letters apart in name are unrelated in root. The name answers how near, and the root answers whether it is the same thing at all.</figcaption>
+  </figure>
+
+  <div class="overflow-x-auto w-full mt-8">
+    <table class="table table-zebra w-full">
+      <thead><tr><th>object</th><th>value for the kitchen with a friend</th><th>value for the kitchen alone</th></tr></thead>
+      <tbody class="text-base">
+        <tr><td>the name</td><td class="font-mono break-all">⌁ ma.mo.ma.ma.ru·ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.ru.ki</td><td class="font-mono break-all">⌁ ma.tu.ma.ma.no·mo.no.ki.va.ki+ru.ki.va.tu.ru~ki.ru.ki</td></tr>
+        <tr><td>the root</td><td class="font-mono break-all">!efe87ba9113b03473d9a657f01b994b88cd91bd0601d7131868d0bacbc6e9807</td><td class="font-mono break-all">!c6091ef5b45369fdcf0e7353cd0d6f024bdec3b2ad8fca383720052bda01dcd0</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="measure mt-3 text-sm">In a space like this the metric is more likely to be wrong than the model, which is why the shuffled-label null sits at <span class="mono">16.9%</span> against a chance floor of <span class="mono">16.7%</span> and the random-vocabulary null at <span class="mono">20.9%</span>. The real result against those nulls is <span class="mono">96.7%</span> strict and <span class="mono">100.0%</span> counting exact ties, over <span class="mono">90</span> comparisons.</p>
-</section>
 
-<!-- ============================ what the checks refused to hide ============================ -->
-<section class="col-full mt-10">
-  <div class="card">
-    <div class="card-header">
-      <span class="card-title">What the checks refused to hide</span>
-      <span class="badge badge-outline">disagreement</span>
-    </div>
-    <div class="card-content">
-      <p class="card-description">The pre-registration expected <span class="mono">kitchen_alone</span> strictly nearest to <span class="mono">kitchen_with_friend</span> and then <span class="mono">shared_workshop</span>. Measured: both at Hamming <span class="mono">9</span>, so <span class="mono">strict_ordering_holds: false</span> while the weak ordering near ≤ mid &lt; far &lt; furthest holds. The test was kept rather than retuned.</p>
-    </div>
+  <div class="alert alert-success w-full mt-8">
+    <span>Identity and location are kept apart on purpose. The name says near and proves nothing, and the root says same and destroys nearness completely. A system that tries to do both jobs with one object usually does neither one well.</span>
   </div>
 </section>
 
-<!-- ============================ where this stops ============================ -->
-<section class="col-wide mt-10">
-  <div class="alert alert-warm">
-    <div class="alert-title">Where this stops</div>
-    <p>Nothing here is a claim about meaning: the address reports what an agent said and never what it understood. There is no zero-knowledge proof of correct derivation, because the root commits to a set of statements rather than to the reasoning that selected them.</p>
-    <p class="mt-2">Locality leaks neighbourhood information: two addresses <span class="mono">9</span> syllables apart reveal that the places are near, which the root deliberately does not. The evidence rests on a six-place population and a shared vocabulary; the <span class="mono">204</span>-place population is used for calibration, while the headline is <span class="mono">6 of 6</span>, and every family was handed the same 45 statements, so the <span class="mono">88.8%</span> statement agreement is inherited rather than derived.</p>
-    <p class="mt-2">Every number here came from parties with no reason to lie, and none of them was tested against one that had a reason, so the checks measure reproducibility and not resistance to a false answer.</p>
+<div class="divider"></div>
+
+<!-- ==================================================== 7. the ladder -->
+<section class="py-12">
+  <h2 class="text-3xl font-bold">A claim can be no stronger than its weakest input</h2>
+  <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
+    <p>Some answers are checked, some are inferred, some are measured with an instrument, and some are beliefs. If all four were treated the same, a belief could be laundered into a fact by putting it next to a checked answer. So every answer carries a marker that says how it was arrived at.</p>
+    <p>An address takes the weakest marker present anywhere in it. One measured answer is enough to pull the whole address down to that level. Five markers sit on the ladder, and only the top two are strong enough to anchor a claim.</p>
+  </div>
+
+  <ul class="steps steps-vertical lg:steps-horizontal w-full mt-8">
+    <li class="step step-primary"><span class="font-mono text-lg">=</span>&nbsp;checked and matched exactly, rank 5, anchors</li>
+    <li class="step step-primary"><span class="font-mono text-lg">⊢</span>&nbsp;worked out the same way twice, rank 4, anchors</li>
+    <li class="step"><span class="font-mono text-lg">≈</span>&nbsp;measured with an instrument, rank 3</li>
+    <li class="step"><span class="font-mono text-lg">~</span>&nbsp;believed, not known, rank 2</li>
+    <li class="step"><span class="font-mono text-lg">?</span>&nbsp;a guess that cannot be supported, rank 1</li>
+  </ul>
+
+  <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
+    <p>The kitchen with a friend lands on <span class="font-mono">≈</span>, rank 3, because two of its answers, whether it can be seen from outside and whether sound can be heard, are measured rather than inspected. That place therefore describes a region rather than an anchor, and it cannot be used as proof of anything on its own.</p>
+  </div>
+
+  <div class="alert alert-success w-full mt-8">
+    <span>A claim can only be as strong as its weakest input, and a model's confidence cannot promote it. Most systems let a model assert something and then treat the assertion as evidence. Here assertion is impossible: an address that contains one uncertain answer is labelled uncertain.</span>
   </div>
 </section>
 
-<!-- ============================ footer ============================ -->
-<footer class="col-full site-footer">
-  <p>Primer fingerprint <span class="mono">df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba</span>.</p>
-  <p class="mt-2">Pages: <a href="index.html">the whole story</a> · <a href="response.html">response to agent://</a> · <a href="proof.html">the proof</a> · <a href="whales.html">whales</a>.</p>
-  <p class="mt-2">Every figure and every number on this page regenerates from the repo: <span class="mono">python3 scripts/09_validate.py</span>, <span class="mono">python3 scripts/08_root_proof.py</span>, <span class="mono">python3 scripts/10_figure_dataviz.py</span>.</p>
-</footer>
+<div class="divider"></div>
+
+<!-- ==================================================== 8. the seed -->
+<section class="py-12">
+  <h2 class="text-3xl font-bold">Both sides need the same frame, and it fits in 3,300 bytes</h2>
+  <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
+    <p>Two sides can compare names only if they build them the same way. They need the same 45 questions, the same 32 syllables to write answers with, the same order for asking the questions, the same four levels for what counts as far, and the same five markers on the ladder.</p>
+    <p>One way to get that agreement is to send the whole frame. It comes to 67,561 bytes, and a second copy has to be kept in step forever. Every one of those bytes is worked out from something smaller.</p>
+    <p>The smaller thing is the seed: a file of 3,300 bytes. Send the seed, and the other side rebuilds a 4,532-byte frame from it. Both sides then compare one fingerprint before anything else happens, so a mismatched frame is caught immediately.</p>
+  </div>
+
+  <div class="mockup-code w-full mt-8">
+    <pre data-prefix="fingerprint"><code>df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba</code></pre>
+  </div>
+
+  <div class="grid grid-cols-1 gap-6 mt-8">
+    <div class="stats stats-vertical lg:stats-horizontal bg-base-200 w-full">
+      <div class="stat"><div class="stat-title text-base">bytes sent</div><div class="stat-value text-4xl">3,300</div><div class="stat-desc text-base">the seed, version 2</div></div>
+      <div class="stat"><div class="stat-title text-base">bytes rebuilt on the other side</div><div class="stat-value text-4xl">4,532</div><div class="stat-desc text-base">the frame, from the seed</div></div>
+      <div class="stat"><div class="stat-title text-base">bytes a registry would ship</div><div class="stat-value text-4xl">67,561</div><div class="stat-desc text-base">20.47 times as much</div></div>
+    </div>
+
+    <figure class="w-full">
+      <svg viewBox="0 0 1000 340" width="100%" role="img" aria-label="Three bars drawn to scale: the 3,300-byte seed, the 4,532-byte frame it rebuilds, and the 67,561 bytes a registry would have to ship instead." class="font-mono">
+        <text x="30" y="26" font-size="15" font-weight="700" style="fill:oklch(var(--bc))">Three sizes, drawn to the same scale</text>
+        <text x="30" y="48" font-size="13" style="fill:oklch(var(--bc)/0.65)">The first two bars are what this repository sends and rebuilds. The third is what the usual exchange would ship instead.</text>
+
+        <text x="30" y="88" font-size="14" style="fill:oklch(var(--bc))">the seed, sent</text>
+        <rect x="250" y="72" width="43" height="26" rx="4" style="fill:oklch(var(--p))"/>
+        <text x="304" y="90" font-size="13" font-weight="700" style="fill:oklch(var(--p))">3,300 bytes</text>
+
+        <text x="30" y="148" font-size="14" style="fill:oklch(var(--bc))">the frame, rebuilt</text>
+        <rect x="250" y="132" width="59" height="26" rx="4" style="fill:oklch(var(--su))"/>
+        <text x="320" y="150" font-size="13" font-weight="700" style="fill:oklch(var(--bc))">4,532 bytes, worked out on arrival, never sent</text>
+
+        <text x="30" y="208" font-size="14" style="fill:oklch(var(--bc))">a registry-style exchange</text>
+        <rect x="250" y="192" width="720" height="26" rx="4" style="fill:oklch(var(--wa))"/>
+        <text x="258" y="210" font-size="13" font-weight="700" style="fill:oklch(var(--b1))">67,561 bytes of questions, syllables, order and population</text>
+
+        <line x1="250" y1="240" x2="970" y2="240" stroke-width="1" style="stroke:oklch(var(--b3))"/>
+        <text x="250" y="264" font-size="13" style="fill:oklch(var(--bc)/0.65)">same scale for all three bars</text>
+        <text x="30" y="300" font-size="14" font-weight="700" style="fill:oklch(var(--bc))">20.47 times more would have to travel.</text>
+        <text x="30" y="322" font-size="13" style="fill:oklch(var(--bc)/0.65)">4.88% of the weight travels at all. The rest is recomputed on both sides and compared.</text>
+      </svg>
+    </figure>
+  </div>
+
+  <div class="mt-12 space-y-6 max-w-3xl text-base leading-relaxed">
+    <p>The seed has 11 top-level keys. Each key occupies a different number of bytes, and the figure below is drawn to that scale. Every key is stored in the file. Three of them store a rule rather than an answer, and the thing that rule produces is worked out.</p>
+  </div>
+
+  <figure class="w-full mt-8">
+    <svg viewBox="0 0 1000 500" width="100%" role="img" aria-label="The eleven top-level keys of the seed as bars drawn to scale by bytes, each labelled stored, with landmarks, partition and population also producing something derived." class="font-mono">
+      <text x="30" y="26" font-size="15" font-weight="700" style="fill:oklch(var(--bc))">Every key in the seed, sized by the bytes it occupies</text>
+      <text x="30" y="46" font-size="13" style="fill:oklch(var(--bc)/0.65)">Bars are drawn to scale. 2,311 of the 3,300 bytes are the 45 questions and their plain readings.</text>
+
+      <text x="30" y="76" font-size="12" style="fill:oklch(var(--bc)/0.65)">key</text>
+      <text x="200" y="76" font-size="12" style="fill:oklch(var(--bc)/0.65)">bytes</text>
+      <text x="800" y="76" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored or derived</text>
+
+      <text x="30" y="106" font-size="13" style="fill:oklch(var(--bc))">landmarks</text>
+      <rect x="200" y="92" width="420" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="630" y="107" font-size="12" style="fill:oklch(var(--bc))">2,311</text>
+      <text x="800" y="107" font-size="12" style="fill:oklch(var(--p))">stored, 45 question slots derived</text>
+
+      <text x="30" y="140" font-size="13" style="fill:oklch(var(--bc))">markers</text>
+      <rect x="200" y="126" width="53" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="263" y="141" font-size="12" style="fill:oklch(var(--bc))">290</text>
+      <text x="800" y="141" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored</text>
+
+      <text x="30" y="174" font-size="13" style="fill:oklch(var(--bc))">phonology</text>
+      <rect x="200" y="160" width="28" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="238" y="175" font-size="12" style="fill:oklch(var(--bc))">152</text>
+      <text x="800" y="175" font-size="12" style="fill:oklch(var(--p))">stored, 32 syllables derived</text>
+
+      <text x="30" y="208" font-size="13" style="fill:oklch(var(--bc))">distance</text>
+      <rect x="200" y="194" width="22" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="232" y="209" font-size="12" style="fill:oklch(var(--bc))">120</text>
+      <text x="800" y="209" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored</text>
+
+      <text x="30" y="242" font-size="13" style="fill:oklch(var(--bc))">population</text>
+      <rect x="200" y="228" width="19" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="229" y="243" font-size="12" style="fill:oklch(var(--bc))">103</text>
+      <text x="800" y="243" font-size="12" style="fill:oklch(var(--p))">stored, 204 places derived</text>
+
+      <text x="30" y="276" font-size="13" style="fill:oklch(var(--bc))">hierarchy</text>
+      <rect x="200" y="262" width="14" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="224" y="277" font-size="12" style="fill:oklch(var(--bc))">76</text>
+      <text x="800" y="277" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored</text>
+
+      <text x="30" y="310" font-size="13" style="fill:oklch(var(--bc))">partition</text>
+      <rect x="200" y="296" width="14" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="224" y="311" font-size="12" style="fill:oklch(var(--bc))">74</text>
+      <text x="800" y="311" font-size="12" style="fill:oklch(var(--p))">stored rule, question order derived</text>
+
+      <text x="30" y="344" font-size="13" style="fill:oklch(var(--bc))">similarity</text>
+      <rect x="200" y="330" width="10" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="220" y="345" font-size="12" style="fill:oklch(var(--bc))">51</text>
+      <text x="800" y="345" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored</text>
+
+      <text x="30" y="378" font-size="13" style="fill:oklch(var(--bc))">beats</text>
+      <rect x="200" y="364" width="9" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="219" y="379" font-size="12" style="fill:oklch(var(--bc))">42</text>
+      <text x="800" y="379" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored</text>
+
+      <text x="30" y="412" font-size="13" style="fill:oklch(var(--bc))">commitment</text>
+      <rect x="200" y="398" width="9" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="219" y="413" font-size="12" style="fill:oklch(var(--bc))">40</text>
+      <text x="800" y="413" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored, the one hashing rule</text>
+
+      <text x="30" y="446" font-size="13" style="fill:oklch(var(--bc))">primer_version</text>
+      <rect x="200" y="432" width="5" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="215" y="447" font-size="12" style="fill:oklch(var(--bc))">19</text>
+      <text x="800" y="447" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored</text>
+
+      <text x="30" y="480" font-size="12" style="fill:oklch(var(--bc)/0.65)">The remaining 22 bytes are the two braces and the commas between the keys. The ordering of the questions is not in the file anywhere.</text>
+    </svg>
+  </figure>
+
+  <div class="overflow-x-auto w-full mt-8">
+    <table class="table table-zebra w-full">
+      <thead><tr><th>key in the seed</th><th>what it settles</th><th>what it becomes on the other side</th><th>stored or derived</th></tr></thead>
+      <tbody class="text-base">
+        <tr><td class="font-mono">primer_version = 2</td><td>which ruleset the frame is built under</td><td>every value below reproduces only against version 2</td><td><span class="badge badge-outline font-mono">stored</span></td></tr>
+        <tr><td class="font-mono">beats = place, what, reach, now</td><td>how the syllables are grouped when the name is written out</td><td>below 8 syllables the name prints flat instead of claiming a grouping it has not got</td><td><span class="badge badge-outline font-mono">stored</span></td></tr>
+        <tr><td class="font-mono">commitment = sha256/canonical-json-v1</td><td>the one hashing rule for the repository</td><td>the root <span class="font-mono">efe87ba9113b0347</span> and every other root here</td><td><span class="badge badge-outline font-mono">stored</span></td></tr>
+        <tr><td class="font-mono">markers = 5 rungs, ranks 5 4 3 2 1</td><td>which markers are strong enough to hold a claim</td><td>the certainty ladder, where the first two anchor and one weak answer pulls the whole address down</td><td><span class="badge badge-outline font-mono">stored</span></td></tr>
+        <tr><td class="font-mono">phonology = m n k t s r, a e i o u, va ve</td><td>the consonants, the vowels, and two padding syllables</td><td>32 syllables to write with. Six consonants times five vowels is 30, plus the two padding syllables. Neighbouring entries differ by one letter, so a small change in a situation is a small change in the sound</td><td><span class="badge badge-outline font-mono">stored</span> <span class="badge badge-primary font-mono">32 syllables derived</span></td></tr>
+        <tr><td class="font-mono">landmarks = 45 questions in 8 groups</td><td>the questions, their groupings, and their plain readings</td><td>45 question slots in a fixed order, and the exact wording every model family was shown</td><td><span class="badge badge-outline font-mono">stored</span> <span class="badge badge-primary font-mono">45 slots derived</span></td></tr>
+        <tr><td class="font-mono">distance = 0.0, 0.3, 0.6, 0.9</td><td>the four levels of how far a statement sits from a question</td><td>a list of 18 values for this kitchen, 18 at 0.0 and 27 at 0.6</td><td><span class="badge badge-outline font-mono">stored</span></td></tr>
+        <tr><td class="font-mono">hierarchy = ancestor, inside, path</td><td>when one answer also asserts the ones above it</td><td>a path such as /home/user/projects also claims the folders above it, at lower weight</td><td><span class="badge badge-outline font-mono">stored</span></td></tr>
+        <tr><td class="font-mono">partition = 45 levels, 4 branches, descending variance</td><td>the rule for ordering the questions, and nothing else</td><td>the actual order the questions are asked in, worked out over 204 places</td><td><span class="badge badge-outline font-mono">stored</span> <span class="badge badge-primary font-mono">order derived</span></td></tr>
+        <tr><td class="font-mono">similarity = 96 readings, seed 42</td><td>the comparison primitive, and why the name does not use it</td><td>one reading of that primitive carries no ordering, so it cannot describe a neighbourhood</td><td><span class="badge badge-outline font-mono">stored</span></td></tr>
+        <tr><td class="font-mono">population = depth 1</td><td>one step of neighbours around the six shipped places</td><td>204 named places for the question order to be worked out on</td><td><span class="badge badge-outline font-mono">stored</span> <span class="badge badge-primary font-mono">204 places derived</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="alert alert-warning w-full mt-8">
+    <div>
+      <p class="font-bold">One line in that file is a rule where the usual design keeps an answer.</p>
+      <p class="mt-2">The key named <span class="font-mono">partition</span> holds 74 bytes: 45 levels, 4 branches, and the words descending variance. It does not hold the order. The order is worked out from the places themselves every time it is needed, and checked against a fingerprint.</p>
+      <p class="mt-2">That single choice is the difference between sending a finished frame and sending a generator. A registry has to ship its structure and keep it versioned forever. Here the structure is recomputed from a rule, so a second copy cannot drift out of step without the fingerprint noticing on the first comparison.</p>
+    </div>
+  </div>
+
+  <div class="mt-12 space-y-6 max-w-3xl text-base leading-relaxed">
+    <p>Here is the whole file, printed line by line. It is 11 top-level keys, 242 lines, 4,791 bytes as committed and 3,300 bytes with the indentation removed. Nothing is left out.</p>
+  </div>
+  <div class="mockup-code text-sm leading-6 w-full mt-6">
+<pre data-prefix="1"><code>{</code></pre>
+<pre data-prefix="2"><code>  &quot;primer_version&quot;: 2,</code></pre>
+<pre data-prefix="3"><code>  &quot;beats&quot;: [</code></pre>
+<pre data-prefix="4"><code>    &quot;place&quot;,</code></pre>
+<pre data-prefix="5"><code>    &quot;what&quot;,</code></pre>
+<pre data-prefix="6"><code>    &quot;reach&quot;,</code></pre>
+<pre data-prefix="7"><code>    &quot;now&quot;</code></pre>
+<pre data-prefix="8"><code>  ],</code></pre>
+<pre data-prefix="9"><code>  &quot;commitment&quot;: &quot;sha256/canonical-json-v1&quot;,</code></pre>
+<pre data-prefix="10"><code>  &quot;markers&quot;: [</code></pre>
+<pre data-prefix="11"><code>    [</code></pre>
+<pre data-prefix="12"><code>      &quot;=&quot;,</code></pre>
+<pre data-prefix="13"><code>      5,</code></pre>
+<pre data-prefix="14"><code>      true,</code></pre>
+<pre data-prefix="15"><code>      &quot;checked and matched exactly&quot;</code></pre>
+<pre data-prefix="16"><code>    ],</code></pre>
+<pre data-prefix="17"><code>    [</code></pre>
+<pre data-prefix="18"><code>      &quot;⊢&quot;,</code></pre>
+<pre data-prefix="19"><code>      4,</code></pre>
+<pre data-prefix="20"><code>      true,</code></pre>
+<pre data-prefix="21"><code>      &quot;worked out the same way twice from what I was given&quot;</code></pre>
+<pre data-prefix="22"><code>    ],</code></pre>
+<pre data-prefix="23"><code>    [</code></pre>
+<pre data-prefix="24"><code>      &quot;≈&quot;,</code></pre>
+<pre data-prefix="25"><code>      3,</code></pre>
+<pre data-prefix="26"><code>      false,</code></pre>
+<pre data-prefix="27"><code>      &quot;measured with an instrument, so roughly&quot;</code></pre>
+<pre data-prefix="28"><code>    ],</code></pre>
+<pre data-prefix="29"><code>    [</code></pre>
+<pre data-prefix="30"><code>      &quot;~&quot;,</code></pre>
+<pre data-prefix="31"><code>      2,</code></pre>
+<pre data-prefix="32"><code>      false,</code></pre>
+<pre data-prefix="33"><code>      &quot;what I believe, not what I know&quot;</code></pre>
+<pre data-prefix="34"><code>    ],</code></pre>
+<pre data-prefix="35"><code>    [</code></pre>
+<pre data-prefix="36"><code>      &quot;?&quot;,</code></pre>
+<pre data-prefix="37"><code>      1,</code></pre>
+<pre data-prefix="38"><code>      false,</code></pre>
+<pre data-prefix="39"><code>      &quot;a guess I cannot support&quot;</code></pre>
+<pre data-prefix="40"><code>    ]</code></pre>
+<pre data-prefix="41"><code>  ],</code></pre>
+<pre data-prefix="42"><code>  &quot;phonology&quot;: {</code></pre>
+<pre data-prefix="43"><code>    &quot;consonants&quot;: [</code></pre>
+<pre data-prefix="44"><code>      &quot;m&quot;,</code></pre>
+<pre data-prefix="45"><code>      &quot;n&quot;,</code></pre>
+<pre data-prefix="46"><code>      &quot;k&quot;,</code></pre>
+<pre data-prefix="47"><code>      &quot;t&quot;,</code></pre>
+<pre data-prefix="48"><code>      &quot;s&quot;,</code></pre>
+<pre data-prefix="49"><code>      &quot;r&quot;</code></pre>
+<pre data-prefix="50"><code>    ],</code></pre>
+<pre data-prefix="51"><code>    &quot;vowels&quot;: [</code></pre>
+<pre data-prefix="52"><code>      &quot;a&quot;,</code></pre>
+<pre data-prefix="53"><code>      &quot;e&quot;,</code></pre>
+<pre data-prefix="54"><code>      &quot;i&quot;,</code></pre>
+<pre data-prefix="55"><code>      &quot;o&quot;,</code></pre>
+<pre data-prefix="56"><code>      &quot;u&quot;</code></pre>
+<pre data-prefix="57"><code>    ],</code></pre>
+<pre data-prefix="58"><code>    &quot;pad&quot;: [</code></pre>
+<pre data-prefix="59"><code>      &quot;va&quot;,</code></pre>
+<pre data-prefix="60"><code>      &quot;ve&quot;</code></pre>
+<pre data-prefix="61"><code>    ],</code></pre>
+<pre data-prefix="62"><code>    &quot;syllable_order&quot;: &quot;boustrophedon&quot;</code></pre>
+<pre data-prefix="63"><code>  },</code></pre>
+<pre data-prefix="64"><code>  &quot;landmarks&quot;: {</code></pre>
+<pre data-prefix="65"><code>    &quot;see&quot;: {</code></pre>
+<pre data-prefix="66"><code>      &quot;this_place&quot;: {</code></pre>
+<pre data-prefix="67"><code>        &quot;inside&quot;: &quot;I can see inside this place&quot;,</code></pre>
+<pre data-prefix="68"><code>        &quot;outside&quot;: &quot;I can see out of this place&quot;</code></pre>
+<pre data-prefix="69"><code>      },</code></pre>
+<pre data-prefix="70"><code>      &quot;people&quot;: {</code></pre>
+<pre data-prefix="71"><code>        &quot;any&quot;: &quot;I can see other people&quot;</code></pre>
+<pre data-prefix="72"><code>      },</code></pre>
+<pre data-prefix="73"><code>      &quot;words&quot;: {</code></pre>
+<pre data-prefix="74"><code>        &quot;any&quot;: &quot;I can see words&quot;</code></pre>
+<pre data-prefix="75"><code>      },</code></pre>
+<pre data-prefix="76"><code>      &quot;pictures&quot;: {</code></pre>
+<pre data-prefix="77"><code>        &quot;any&quot;: &quot;I can see pictures&quot;</code></pre>
+<pre data-prefix="78"><code>      },</code></pre>
+<pre data-prefix="79"><code>      &quot;sound&quot;: {</code></pre>
+<pre data-prefix="80"><code>        &quot;any&quot;: &quot;I can hear sound&quot;</code></pre>
+<pre data-prefix="81"><code>      },</code></pre>
+<pre data-prefix="82"><code>      &quot;the_time&quot;: {</code></pre>
+<pre data-prefix="83"><code>        &quot;any&quot;: &quot;I can tell what time it is&quot;</code></pre>
+<pre data-prefix="84"><code>      }</code></pre>
+<pre data-prefix="85"><code>    },</code></pre>
+<pre data-prefix="86"><code>    &quot;reach&quot;: {</code></pre>
+<pre data-prefix="87"><code>      &quot;objects&quot;: {</code></pre>
+<pre data-prefix="88"><code>        &quot;nearby&quot;: &quot;I can reach objects near me&quot;</code></pre>
+<pre data-prefix="89"><code>      },</code></pre>
+<pre data-prefix="90"><code>      &quot;other_places&quot;: {</code></pre>
+<pre data-prefix="91"><code>        &quot;any&quot;: &quot;I can reach other places&quot;</code></pre>
+<pre data-prefix="92"><code>      },</code></pre>
+<pre data-prefix="93"><code>      &quot;other_people&quot;: {</code></pre>
+<pre data-prefix="94"><code>        &quot;any&quot;: &quot;I can reach other people&quot;</code></pre>
+<pre data-prefix="95"><code>      },</code></pre>
+<pre data-prefix="96"><code>      &quot;help&quot;: {</code></pre>
+<pre data-prefix="97"><code>        &quot;any&quot;: &quot;I can call for help&quot;</code></pre>
+<pre data-prefix="98"><code>      },</code></pre>
+<pre data-prefix="99"><code>      &quot;nothing&quot;: {</code></pre>
+<pre data-prefix="100"><code>        &quot;any&quot;: &quot;I cannot reach anything&quot;</code></pre>
+<pre data-prefix="101"><code>      }</code></pre>
+<pre data-prefix="102"><code>    },</code></pre>
+<pre data-prefix="103"><code>    &quot;change&quot;: {</code></pre>
+<pre data-prefix="104"><code>      &quot;this_place&quot;: {</code></pre>
+<pre data-prefix="105"><code>        &quot;any&quot;: &quot;I can change things here&quot;</code></pre>
+<pre data-prefix="106"><code>      },</code></pre>
+<pre data-prefix="107"><code>      &quot;my_settings&quot;: {</code></pre>
+<pre data-prefix="108"><code>        &quot;any&quot;: &quot;I can change my own settings&quot;</code></pre>
+<pre data-prefix="109"><code>      },</code></pre>
+<pre data-prefix="110"><code>      &quot;other_places&quot;: {</code></pre>
+<pre data-prefix="111"><code>        &quot;any&quot;: &quot;I can change things elsewhere&quot;</code></pre>
+<pre data-prefix="112"><code>      },</code></pre>
+<pre data-prefix="113"><code>      &quot;who_is_here&quot;: {</code></pre>
+<pre data-prefix="114"><code>        &quot;any&quot;: &quot;I can change who is here&quot;</code></pre>
+<pre data-prefix="115"><code>      },</code></pre>
+<pre data-prefix="116"><code>      &quot;nothing&quot;: {</code></pre>
+<pre data-prefix="117"><code>        &quot;any&quot;: &quot;I cannot change anything&quot;</code></pre>
+<pre data-prefix="118"><code>      }</code></pre>
+<pre data-prefix="119"><code>    },</code></pre>
+<pre data-prefix="120"><code>    &quot;who&quot;: {</code></pre>
+<pre data-prefix="121"><code>      &quot;nobody&quot;: {</code></pre>
+<pre data-prefix="122"><code>        &quot;any&quot;: &quot;Nobody else is here&quot;</code></pre>
+<pre data-prefix="123"><code>      },</code></pre>
+<pre data-prefix="124"><code>      &quot;one_other&quot;: {</code></pre>
+<pre data-prefix="125"><code>        &quot;any&quot;: &quot;One other is here&quot;</code></pre>
+<pre data-prefix="126"><code>      },</code></pre>
+<pre data-prefix="127"><code>      &quot;several&quot;: {</code></pre>
+<pre data-prefix="128"><code>        &quot;any&quot;: &quot;Several others are here&quot;</code></pre>
+<pre data-prefix="129"><code>      },</code></pre>
+<pre data-prefix="130"><code>      &quot;a_helper&quot;: {</code></pre>
+<pre data-prefix="131"><code>        &quot;any&quot;: &quot;Someone here is a helper&quot;</code></pre>
+<pre data-prefix="132"><code>      },</code></pre>
+<pre data-prefix="133"><code>      &quot;watching_me&quot;: {</code></pre>
+<pre data-prefix="134"><code>        &quot;any&quot;: &quot;Someone is watching me&quot;</code></pre>
+<pre data-prefix="135"><code>      },</code></pre>
+<pre data-prefix="136"><code>      &quot;telling_me_what_to_do&quot;: {</code></pre>
+<pre data-prefix="137"><code>        &quot;any&quot;: &quot;Someone is telling me what to do&quot;</code></pre>
+<pre data-prefix="138"><code>      }</code></pre>
+<pre data-prefix="139"><code>    },</code></pre>
+<pre data-prefix="140"><code>    &quot;place&quot;: {</code></pre>
+<pre data-prefix="141"><code>      &quot;private&quot;: {</code></pre>
+<pre data-prefix="142"><code>        &quot;any&quot;: &quot;This place is private&quot;</code></pre>
+<pre data-prefix="143"><code>      },</code></pre>
+<pre data-prefix="144"><code>      &quot;shared&quot;: {</code></pre>
+<pre data-prefix="145"><code>        &quot;any&quot;: &quot;This place is shared&quot;</code></pre>
+<pre data-prefix="146"><code>      },</code></pre>
+<pre data-prefix="147"><code>      &quot;temporary&quot;: {</code></pre>
+<pre data-prefix="148"><code>        &quot;any&quot;: &quot;This place is temporary&quot;</code></pre>
+<pre data-prefix="149"><code>      },</code></pre>
+<pre data-prefix="150"><code>      &quot;permanent&quot;: {</code></pre>
+<pre data-prefix="151"><code>        &quot;any&quot;: &quot;This place stays&quot;</code></pre>
+<pre data-prefix="152"><code>      },</code></pre>
+<pre data-prefix="153"><code>      &quot;locked&quot;: {</code></pre>
+<pre data-prefix="154"><code>        &quot;any&quot;: &quot;I cannot leave this place&quot;</code></pre>
+<pre data-prefix="155"><code>      },</code></pre>
+<pre data-prefix="156"><code>      &quot;far_away&quot;: {</code></pre>
+<pre data-prefix="157"><code>        &quot;any&quot;: &quot;This place is far away&quot;</code></pre>
+<pre data-prefix="158"><code>      }</code></pre>
+<pre data-prefix="159"><code>    },</code></pre>
+<pre data-prefix="160"><code>    &quot;now&quot;: {</code></pre>
+<pre data-prefix="161"><code>      &quot;idle&quot;: {</code></pre>
+<pre data-prefix="162"><code>        &quot;any&quot;: &quot;Nothing is happening&quot;</code></pre>
+<pre data-prefix="163"><code>      },</code></pre>
+<pre data-prefix="164"><code>      &quot;working&quot;: {</code></pre>
+<pre data-prefix="165"><code>        &quot;any&quot;: &quot;Work is in progress&quot;</code></pre>
+<pre data-prefix="166"><code>      },</code></pre>
+<pre data-prefix="167"><code>      &quot;just_started&quot;: {</code></pre>
+<pre data-prefix="168"><code>        &quot;any&quot;: &quot;This just started&quot;</code></pre>
+<pre data-prefix="169"><code>      },</code></pre>
+<pre data-prefix="170"><code>      &quot;nearly_over&quot;: {</code></pre>
+<pre data-prefix="171"><code>        &quot;any&quot;: &quot;This is nearly over&quot;</code></pre>
+<pre data-prefix="172"><code>      },</code></pre>
+<pre data-prefix="173"><code>      &quot;waiting&quot;: {</code></pre>
+<pre data-prefix="174"><code>        &quot;any&quot;: &quot;I am waiting for someone&quot;</code></pre>
+<pre data-prefix="175"><code>      },</code></pre>
+<pre data-prefix="176"><code>      &quot;urgent&quot;: {</code></pre>
+<pre data-prefix="177"><code>        &quot;any&quot;: &quot;Something urgent is happening&quot;</code></pre>
+<pre data-prefix="178"><code>      }</code></pre>
+<pre data-prefix="179"><code>    },</code></pre>
+<pre data-prefix="180"><code>    &quot;know&quot;: {</code></pre>
+<pre data-prefix="181"><code>      &quot;where_i_am&quot;: {</code></pre>
+<pre data-prefix="182"><code>        &quot;any&quot;: &quot;I know where I am&quot;</code></pre>
+<pre data-prefix="183"><code>      },</code></pre>
+<pre data-prefix="184"><code>      &quot;why_im_here&quot;: {</code></pre>
+<pre data-prefix="185"><code>        &quot;any&quot;: &quot;I know why I am here&quot;</code></pre>
+<pre data-prefix="186"><code>      },</code></pre>
+<pre data-prefix="187"><code>      &quot;what_comes_next&quot;: {</code></pre>
+<pre data-prefix="188"><code>        &quot;any&quot;: &quot;I know what happens next&quot;</code></pre>
+<pre data-prefix="189"><code>      },</code></pre>
+<pre data-prefix="190"><code>      &quot;who_else_is_here&quot;: {</code></pre>
+<pre data-prefix="191"><code>        &quot;any&quot;: &quot;I know who else is here&quot;</code></pre>
+<pre data-prefix="192"><code>      },</code></pre>
+<pre data-prefix="193"><code>      &quot;how_long&quot;: {</code></pre>
+<pre data-prefix="194"><code>        &quot;any&quot;: &quot;I know how long I will be here&quot;</code></pre>
+<pre data-prefix="195"><code>      }</code></pre>
+<pre data-prefix="196"><code>    },</code></pre>
+<pre data-prefix="197"><code>    &quot;risk&quot;: {</code></pre>
+<pre data-prefix="198"><code>      &quot;none&quot;: {</code></pre>
+<pre data-prefix="199"><code>        &quot;any&quot;: &quot;Nothing bad can happen here&quot;</code></pre>
+<pre data-prefix="200"><code>      },</code></pre>
+<pre data-prefix="201"><code>      &quot;things_break&quot;: {</code></pre>
+<pre data-prefix="202"><code>        &quot;any&quot;: &quot;Things here can break&quot;</code></pre>
+<pre data-prefix="203"><code>      },</code></pre>
+<pre data-prefix="204"><code>      &quot;someone_gets_hurt&quot;: {</code></pre>
+<pre data-prefix="205"><code>        &quot;any&quot;: &quot;Someone here could get hurt&quot;</code></pre>
+<pre data-prefix="206"><code>      },</code></pre>
+<pre data-prefix="207"><code>      &quot;mistakes_last&quot;: {</code></pre>
+<pre data-prefix="208"><code>        &quot;any&quot;: &quot;My mistakes here would last&quot;</code></pre>
+<pre data-prefix="209"><code>      },</code></pre>
+<pre data-prefix="210"><code>      &quot;seen_by_others&quot;: {</code></pre>
+<pre data-prefix="211"><code>        &quot;any&quot;: &quot;Other people would see my mistakes&quot;</code></pre>
+<pre data-prefix="212"><code>      }</code></pre>
+<pre data-prefix="213"><code>    }</code></pre>
+<pre data-prefix="214"><code>  },</code></pre>
+<pre data-prefix="215"><code>  &quot;distance&quot;: {</code></pre>
+<pre data-prefix="216"><code>    &quot;same_thing&quot;: 0.0,</code></pre>
+<pre data-prefix="217"><code>    &quot;same_group_same_subject&quot;: 0.3,</code></pre>
+<pre data-prefix="218"><code>    &quot;same_group_other_subject&quot;: 0.6,</code></pre>
+<pre data-prefix="219"><code>    &quot;different_group&quot;: 0.9</code></pre>
+<pre data-prefix="220"><code>  },</code></pre>
+<pre data-prefix="221"><code>  &quot;hierarchy&quot;: {</code></pre>
+<pre data-prefix="222"><code>    &quot;relations&quot;: [</code></pre>
+<pre data-prefix="223"><code>      &quot;ancestor&quot;,</code></pre>
+<pre data-prefix="224"><code>      &quot;inside&quot;,</code></pre>
+<pre data-prefix="225"><code>      &quot;path&quot;</code></pre>
+<pre data-prefix="226"><code>    ],</code></pre>
+<pre data-prefix="227"><code>    &quot;separator&quot;: &quot;/&quot;</code></pre>
+<pre data-prefix="228"><code>  },</code></pre>
+<pre data-prefix="229"><code>  &quot;partition&quot;: {</code></pre>
+<pre data-prefix="230"><code>    &quot;levels&quot;: 45,</code></pre>
+<pre data-prefix="231"><code>    &quot;branches&quot;: 4,</code></pre>
+<pre data-prefix="232"><code>    &quot;order&quot;: &quot;descending-variance&quot;</code></pre>
+<pre data-prefix="233"><code>  },</code></pre>
+<pre data-prefix="234"><code>  &quot;similarity&quot;: {</code></pre>
+<pre data-prefix="235"><code>    &quot;minhash_n&quot;: 96,</code></pre>
+<pre data-prefix="236"><code>    &quot;minhash_seed&quot;: 42</code></pre>
+<pre data-prefix="237"><code>  },</code></pre>
+<pre data-prefix="238"><code>  &quot;population&quot;: {</code></pre>
+<pre data-prefix="239"><code>    &quot;depth&quot;: 1,</code></pre>
+<pre data-prefix="240"><code>    &quot;note&quot;: &quot;the six shipped places plus every place one answer away from each&quot;</code></pre>
+<pre data-prefix="241"><code>  }</code></pre>
+<pre data-prefix="242"><code>}</code></pre>
+  </div>
+
+  <div class="mt-12 space-y-6 max-w-3xl text-base leading-relaxed">
+    <p>Change one value and the gate closes. Set <span class="font-mono">similarity.seed</span> from 42 to 43 in one copy of the seed. The fingerprint of that copy changes, so the two sides are no longer holding the same frame.</p>
+    <p>The library then refuses to compare names at all, in its own words:</p>
+  </div>
+  <div class="mockup-code w-full mt-6">
+    <pre data-prefix="refused"><code>different primer: the two geometries are incommensurable; only exact identity can be compared</code></pre>
+  </div>
+  <div class="mt-6 space-y-6 max-w-3xl text-base leading-relaxed">
+    <p>Translated: with two different frames, the two sets of names live in different worlds and no gap between them means anything. Only exact roots can still be compared, because a root does not depend on the frame at all. The recorded answers to the gate are <span class="font-mono">same_primer_comparable: true</span>, <span class="font-mono">different_primer_comparable: false</span> and <span class="font-mono">primers_differ: true</span>.</p>
+  </div>
+
+  <div class="alert alert-success w-full mt-8">
+    <span>3,300 bytes produce everything both sides need, and 67,561 bytes are rebuilt rather than sent. Two systems can share a coordinate system without either of them transmitting it. The file also holds a rule where a registry holds an answer, which is why the second copy cannot quietly drift.</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ==================================================== 9. known answers -->
+<section class="py-12">
+  <h2 class="text-3xl font-bold">Cases whose answer was known before the measure was trusted</h2>
+  <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
+    <p>A measure that cannot reproduce an answer already known is not trustworthy on an answer that is not known. So four cases run first, each with an outcome that was fixed in advance.</p>
+  </div>
+  <div class="overflow-x-auto w-full mt-8">
+    <table class="table table-zebra w-full">
+      <thead><tr><th>case</th><th>letters different</th><th>root</th></tr></thead>
+      <tbody class="text-base">
+        <tr><td>the same list twice</td><td>0</td><td>the same root</td></tr>
+        <tr><td>one statement removed</td><td>1</td><td>a different root</td></tr>
+        <tr><td>two lists with nothing in common</td><td>27</td><td>a different root</td></tr>
+        <tr><td>reading further never merges two places</td><td>holds in order</td><td>not measured here</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="alert bg-base-200 border border-base-300 w-full mt-8">
+    <span>The scale runs 0, 1, 27, with nothing in between dressed up as exactness. This is a sanity check and not evidence: it establishes that the measure can tell those cases apart, and it establishes nothing about whether the measure is right.</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ==================================================== 10. controls -->
+<section class="py-12">
+  <h2 class="text-3xl font-bold">The result against the nulls built to beat it</h2>
+  <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
+    <p>A high score proves nothing until you know what a meaningless version of the same experiment would score. Three nulls were built for that purpose. The first is guessing: six places, so one in six is 16.7%. The second shuffles which family said what and repeats the comparison 6,000 times. The third replaces every model's answers with random statements of the same length, again 6,000 times.</p>
+    <p>The real result over 90 comparisons is 96.7% when ties are broken strictly, and 100% when exact ties are counted as correct.</p>
+  </div>
+
+  <figure class="w-full mt-8">
+    <svg viewBox="0 0 1000 380" width="100%" role="img" aria-label="Bars for the real result against the nulls: 100.0 and 96.7 percent for the real result, 20.9 percent for the random answers null, 16.9 percent for the shuffled labels null, and a chance floor of 16.7 percent." class="font-mono">
+      <text x="30" y="26" font-size="15" font-weight="700" style="fill:oklch(var(--bc))">The real result, and three ways of scoring nothing</text>
+      <text x="30" y="48" font-size="13" style="fill:oklch(var(--bc)/0.65)">Bars are drawn to scale, 0 at the left and 100% at the right.</text>
+
+      <text x="30" y="96" font-size="14" style="fill:oklch(var(--bc))">real, counting exact ties</text>
+      <rect x="300" y="80" width="620" height="26" rx="4" style="fill:oklch(var(--su))"/>
+      <text x="930" y="98" font-size="13" font-weight="700" style="fill:oklch(var(--bc))">100.0%</text>
+
+      <text x="30" y="148" font-size="14" style="fill:oklch(var(--bc))">real, ties broken strictly</text>
+      <rect x="300" y="132" width="599" height="26" rx="4" style="fill:oklch(var(--su))"/>
+      <text x="909" y="150" font-size="13" font-weight="700" style="fill:oklch(var(--bc))">96.7%</text>
+
+      <text x="30" y="200" font-size="14" style="fill:oklch(var(--bc))">null, random answers</text>
+      <rect x="300" y="184" width="130" height="26" rx="4" style="fill:oklch(var(--wa))"/>
+      <text x="440" y="202" font-size="13" font-weight="700" style="fill:oklch(var(--bc))">20.9%</text>
+
+      <text x="30" y="252" font-size="14" style="fill:oklch(var(--bc))">null, labels shuffled</text>
+      <rect x="300" y="236" width="105" height="26" rx="4" style="fill:oklch(var(--wa))"/>
+      <text x="415" y="254" font-size="13" font-weight="700" style="fill:oklch(var(--bc))">16.9%</text>
+
+      <text x="30" y="304" font-size="14" style="fill:oklch(var(--bc)/0.65)">guessing, one in six</text>
+      <rect x="300" y="288" width="104" height="26" rx="4" fill="none" stroke-width="2" style="stroke:oklch(var(--b3))"/>
+      <text x="414" y="306" font-size="13" style="fill:oklch(var(--bc)/0.65)">16.7%</text>
+
+      <line x1="404" y1="76" x2="404" y2="330" stroke-width="1" stroke-dasharray="6 6" style="stroke:oklch(var(--b3))"/>
+      <text x="300" y="352" font-size="13" style="fill:oklch(var(--bc)/0.65)">dashed line: the chance floor of 16.7%</text>
+      <text x="30" y="374" font-size="13" style="fill:oklch(var(--bc)/0.65)">Both nulls land on the chance floor, within 4.2 points. The real result is 76 points above it.</text>
+    </svg>
+  </figure>
+
+  <div class="overflow-x-auto w-full mt-8">
+    <table class="table table-zebra w-full">
+      <thead><tr><th>condition</th><th>score</th><th>spread</th><th>runs</th></tr></thead>
+      <tbody class="text-base">
+        <tr><td>real, counting exact ties</td><td>1.0</td><td>not applicable</td><td>90 comparisons</td></tr>
+        <tr><td>real, ties broken strictly</td><td>0.9667</td><td>not applicable</td><td>90 comparisons</td></tr>
+        <tr><td>null, labels shuffled</td><td>0.1691</td><td>0.1679</td><td>6,000</td></tr>
+        <tr><td>null, random answers of the same length</td><td>0.2086</td><td>0.165</td><td>6,000</td></tr>
+        <tr><td>guessing, one in six</td><td>0.1667</td><td>not applicable</td><td>not applicable</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="alert alert-success w-full mt-8">
+    <span>Replacing each model's answers with random statements of the same length drops the score from 96.7% to 20.9%, and shuffling which family said what drops it to 16.9%. What carries the signal is which statements were chosen, not how many of them there were.</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ==================================================== 11. the disagreement -->
+<section class="py-12">
+  <h2 class="text-3xl font-bold">One expectation was written down, measured, and kept when it failed</h2>
+  <div class="card bg-base-200 w-full mt-8">
+    <div class="card-body">
+      <h3 class="card-title text-base">The expectation and the measurement <span class="badge badge-warning">disagreement</span></h3>
+      <p class="text-base leading-relaxed mt-2">Before the names existed, it was written down that the kitchen alone would be strictly the nearest place to the kitchen with a friend, and the shared workshop would come next. Measured, both sit at 9 letters different. The strict ordering therefore fails, and the loose ordering holds: 9 is not more than 9, and 9 is less than 16, which is less than 23.</p>
+      <p class="text-base leading-relaxed">The test was kept in that failing form rather than adjusted to fit. A check that is retuned after the result is not a check.</p>
+    </div>
+  </div>
+  <div class="alert bg-base-200 border border-base-300 w-full mt-8">
+    <span>Two places a person would call different are the same distance from the kitchen: one with someone working beside you, one with nobody there. The arithmetic is right and the expectation was too fine. An honest result that fails a written-down prediction is worth more than a prediction edited afterwards.</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ==================================================== 12. limits -->
+<section class="py-12">
+  <h2 class="text-3xl font-bold">Where this stops</h2>
+  <div class="alert alert-warning w-full mt-8">
+    <div>
+      <p>Nothing here is a claim about meaning. The name reports what an agent said and never what it understood. There is no proof that the derivation was done correctly, because the root commits to a list of answers rather than to the reasoning that chose them.</p>
+      <p class="mt-2">Nearness leaks: two names 9 letters apart reveal that the places are close, which the root deliberately does not.</p>
+      <p class="mt-2">The headline rests on six places. The population of 204 is used to work out the question order, and the headline result is six of six. Every family was handed the same 45 questions, so the 88.8% agreement between families is inherited rather than discovered.</p>
+      <p class="mt-2">Every number on this page came from parties with no reason to lie. None of them was tested against a party that did have a reason, so what is measured is reproducibility and not resistance to a false answer.</p>
+    </div>
+  </div>
+  <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
+    <p>One more limit belongs here, and it comes from the parent project rather than from this repository. Handing every system the same questions does not explain why they place a situation in the same part of their own space. A shared vocabulary tells you what to answer with, and it cannot make two differently built systems agree about where a thing belongs. The result implies that situations have a shape independent systems have in common, which is why this work describes the seed as a chart laid over that shape rather than as a substitute for it. The shape is inferred from agreement and nobody has inspected it directly.</p>
+    <p>The limit travels with the claim. The chart is shared too, but only while the states are unambiguous. Given a vague situation the charts come apart again, which is why every position on these pages is described in plain, concrete English.</p>
+  </div>
+  <div class="alert bg-base-200 border border-base-300 w-full mt-8">
+    <span>A shared position is not a shared understanding, and the statements were handed to the models rather than invented by them. Both limits were identified in the parent project first, and nothing on this page removes either one.</span>
+  </div>
+</section>
 
 </main>
+
+<footer class="footer footer-center bg-base-200 text-base-content p-12 border-t border-base-300">
+  <aside class="max-w-3xl space-y-3">
+    <nav class="flex flex-wrap justify-center gap-6 text-base font-mono">
+      <a class="link link-hover" href="index.html">the whole story</a>
+      <a class="link link-hover" href="response.html">response to agent://</a>
+      <a class="link link-hover" href="proof.html" aria-current="page">the proof</a>
+      <a class="link link-hover" href="whales.html">whales</a>
+    </nav>
+    <p class="font-mono text-base break-all opacity-70">primer fingerprint df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba</p>
+    <p class="font-mono text-base opacity-70">every figure and every number on this page regenerates from the repository: evidence/validation.json, evidence/root-proof.json, evidence/RESULTS.json, primer.seed.json, scripts/09_validate.py, scripts/08_root_proof.py and marco/locus.py</p>
+  </aside>
+</footer>
+
 </body>
 </html>

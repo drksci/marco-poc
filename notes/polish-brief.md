@@ -143,3 +143,81 @@ Rebuild all four pages as **standard daisyUI**:
 6. **Layout with Tailwind utilities only.** `container mx-auto max-w-5xl px-4`, `grid grid-cols-1 gap-6`, `lg:grid-cols-12` for two-column sections where a figure genuinely needs a caption beside it, `py-12` between movements. Artefacts full width. Prose about 68 characters.
 
 When you report, state explicitly that the page contains zero references to `assets/site.css`, and list the daisyUI components you used per section.
+
+## FAILURE 0c — the opening must be one transcript, not an explanation
+
+The pages do not express what is actually remarkable here. They explain a system. They never show the moment that makes someone sit up. Fix the opening of index.html, and put the same example wherever the other pages first make the claim.
+
+### What is actually remarkable, stated once
+
+Six AI systems, built by six different organisations, trained on different data, with different designs, no shared weights and no shared context, were each shown the same ordinary English paragraph describing a room. None of them saw the others. None was told what the others said. None was told that any other system existed.
+
+Each returned a short nonsense-looking string.
+
+**The strings for the same room matched.**
+
+Nobody defined what a kitchen is. Nobody gave them a vocabulary of places, or a map, or a shared embedding. Two systems that share nothing looked at the same description and independently landed in the same neighbourhood. That is the thing. Everything else on these pages is the machinery that makes it checkable.
+
+### The opening, exactly
+
+Do not open with the kitchen anecdote as a rhetorical device. Open with the exchange itself, as a transcript, at the top of the page, before any explanation:
+
+1. **One paragraph of plain English**, set in a bordered block and labelled as the input. Use a real one, verbatim from `marco/world.py`: the `kitchen_with_friend` description. It is about five sentences and mentions a window, a friend, labels on things, cooking, and that broken things stay broken.
+
+2. **Two chat bubbles side by side or stacked**, labelled with two of the real model ids, each containing only the string that system returned. Use the real addresses from `evidence/lanes-summary.json` for `kitchen_with_friend`; two of the six families produced the identical string, so show that pair and let the identity land. Beneath each bubble, in small type, the model id and the fact that it was a separate call.
+
+3. **One line under the pair**, in large type, stating the fact plainly: two systems built by different organisations, trained on different data, never in contact, and shown only the paragraph above, returned the same address for the same room.
+
+4. **One line under that** giving the scale: the same thing held for eighty-seven of ninety comparisons across six such systems, and random answers would have scored sixteen.
+
+5. **Then, and only then**, one sentence naming what the reader is about to find out: what the string is made of, why it is short, and how a stranger can check it without trusting anyone.
+
+That is the whole opening. No headings, no preamble, no "imagine two programs meet". The transcript is the hook. The reader should be surprised before they are taught anything.
+
+### Then, immediately after the opening, the same example worked in full
+
+Before any general explanation, take that one room and walk it end to end with real values, in this order, each step on its own line with its value:
+
+- the paragraph the systems were given
+- the 45 statements, and the 19 that this room makes true, listed
+- the distance from each of the 45 statements to the room, as numbers
+- the ticks those distances produce
+- the syllables those ticks produce
+- **the address, which is the string in the transcript above**
+- **the root**, and the fact that it is exact while the address is only near
+
+Then say: that is one room, one address, and it took no shared map to produce. Everything after this point on the page explains why the string looks the way it does and why you can trust it.
+
+Move the current general exposition, the seed section, and the controls to after this worked example. The page currently explains the machinery before showing the thing the machinery does.
+
+### The rule for every page
+
+Wherever a page makes its central claim, show the claim as a transcript or a worked instance first, and explain it second. proof.html: show the same room checked twice and matching, before explaining determinism. response.html: show the two organisations' addresses for the same job, before explaining nearness. whales.html: show one coda described, before explaining a phrase vector.
+
+Do this in addition to FAILURE 0 (the register). The register makes the explanation followable; this makes it worth following.
+
+## THE TARGET STANDARD — the form this publication is aiming at
+
+Golden reference: `https://transformer-circuits.pub/2026/workspace/index.html`
+
+Read it before finishing, and take its *form* rather than its subject. What that publication does, and what these pages must do:
+
+1. **The figures are the explanation, not decoration for it.** A figure there is not a chart of a result; it is a small, self-contained, explorable object that teaches one idea by being looked at. Each of our fourteen static SVGs should be reworked in that spirit: a reader should be able to *read* a figure and understand the concept without the surrounding prose.
+
+2. **One idea per figure, and the figure is where the reader learns it.** The prose introduces the figure and then gets out of the way. If a paragraph is doing the teaching and the figure is illustrating the paragraph, invert it.
+
+3. **A step-by-step build-up in which every step is visible at once.** That publication shows you the small case, then the slightly larger case, then the real case, all on the page, so you can compare them. Not one at a time behind a control. Not "the animation shows". Every stage present, in order.
+
+4. **Concrete before abstract, always, and the concrete thing is shown.** A real token, a real string, a real number, a real transcript. Never a schematic standing in for a real value when the real value exists.
+
+5. **Annotations placed on the figure itself.** Labels, arrows and short callouts sit on the drawing, next to the thing they name. Not a legend below, not a caption that says "as shown". Point at the thing.
+
+6. **Numbered figures referenced from the prose.** "Figure 3" appears in the sentence that needs it. The reader can find it. Captions say what the figure shows, in one sentence, and state the takeaway.
+
+7. **Plain but precise prose, with no hype.** Confident, specific, unhurried. It never says something is remarkable; it shows the thing and lets the reader conclude it.
+
+8. **Generous whitespace and a calm typographic hierarchy.** One column, wide margins, large headings, short paragraphs. Nothing competes.
+
+9. **Explorable where exploration teaches, static where it does not.** An interactive figure is acceptable when a reader dragging or stepping through it produces *insight* — seeing a space collapse, watching a value propagate. It is not acceptable as a way to hide information. Every value on these pages must be visible without interaction; exploration may only add.
+
+Apply that form to all four pages in addition to FAILURE 0 (register), 0b (daisyUI) and 0c (open on the transcript). The figures are the largest remaining gap: they are currently charts that report, when they need to be diagrams that teach.
