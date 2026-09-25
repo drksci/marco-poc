@@ -22,8 +22,12 @@
   --hair: oklch(var(--b3));
   --hair-soft: oklch(var(--b3) / 0.55);
   --ink: oklch(var(--bc));
-  --faint: oklch(var(--bc) / 0.55);
-  --fainter: oklch(var(--bc) / 0.4);
+  /* Secondary text still has to be readable. Measured against the white page,
+     alpha 0.55 gave 3.5:1 and alpha 0.40 gave 2.4:1, both under the 4.5:1
+     floor. Hierarchy is carried by size, case and letter-spacing instead, so
+     these two stay legible: 0.72 measures 5.9:1 and 0.66 measures 4.9:1. */
+  --faint: oklch(var(--bc) / 0.72);
+  --fainter: oklch(var(--bc) / 0.66);
   --serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 
