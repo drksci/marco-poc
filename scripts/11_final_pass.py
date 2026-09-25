@@ -337,6 +337,12 @@ def check_one_hashing_rule(files: list[Path]) -> list[str]:
                 if job in jobs:
                     selections.append(sorted(set(jobs[job]) | set(variations.get((org, job), []))))
 
+    ft = ROOT / "evidence" / "field-test.json"
+    if ft.exists():
+        rec = json.loads(ft.read_text())
+        keep = set(rec["expected_answer_numbers"])
+        selections.append(sorted(x["key"] for x in rec["statements"] if x["n"] in keep))
+
     for stmts in selections:
         canon = L.canonical([L.Obs(*k.split("/", 2)) for k in sorted(set(stmts))],
                             frame.hierarchy)
