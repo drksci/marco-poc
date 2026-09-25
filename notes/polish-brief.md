@@ -378,3 +378,25 @@ A verbatim seed inside a `chat-bubble` breaks the bubble: long lines overflow, i
 - Every `chat-bubble` carries an explicit width limit, roughly `max-w-[68ch]`, with `break-words` so a long coordinate wraps rather than widening the column. A bubble that stretches the full page width is not a bubble.
 - Code inside a chat indents with the mockup block's own padding, never with leading spaces typed into the markup, because leading spaces collapse in HTML.
 - Where a bubble carries a coordinate, keep it on one line if it fits and let it wrap if it does not; never break it with hard newlines that the reader might mistake for part of the string.
+
+## FAILURE 0f — the MARCO/POLO exchange must be shown, not tabulated
+
+The exchange is currently a numbered figure with a caption. It is the most human thing in the project and it reads like a log. Rebuild it as something a reader can follow in one pass.
+
+Present it as a single continuous conversation, in order, with the state of the search drawn alongside each turn:
+
+1. **A timeline, not a table.** daisyUI `timeline timeline-vertical`. Each turn is one item. The hider's turns and the seeker's turns alternate and are labelled.
+
+2. **Every turn says three things:** what was actually sent, in the bubble; what it means in plain words, in the timeline box; and what it changed, as a number.
+
+3. **Draw the narrowing beside the exchange.** Next to the timeline, a small persistent strip showing the six places and which are still possible after each turn: 6, then 4 after the opening syllable, then 2 after the question, then 1. A reader should be able to watch the set collapse while reading down. Static, all stages visible at once, no interaction.
+
+4. **The opening syllable must look like what it is.** Show `⌁ ma` on its own, with the four places it still permits named. The point of the opening is that it gives almost nothing away, and that only lands if the reader sees how little one syllable rules out.
+
+5. **The question is the interesting turn.** Show what the seeker knew before asking, why that question and not another, and what each possible answer would have left. The seeker chooses by which question splits the survivors most evenly, and that reasoning is the substance of the turn.
+
+6. **The ending is a check, not a claim.** The seeker never accepts the hider's word. Show it rebuilding the coordinate from the statements and comparing the root, and show the two roots equal. Do not say the seeker trusted the answer.
+
+7. **Keep the real strings throughout.** The opening `⌁ ma`, the question as written, the reply, the further disclosure, both roots, and the verdict. Nothing paraphrased in the bubbles.
+
+8. **No cost or timing figures.** The exchange is short, and saying so is enough.
