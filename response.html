@@ -98,7 +98,7 @@
     <p>The two sides do not observe identical statements, so equivalent jobs land near each other instead of on top of each other. That is what keeps this from being a tautology: the positions were not copied from the names.</p>
   </div>
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full w-full">
+    <table class="table table-zebra w-full">
       <thead><tr><th>organisation</th><th>capability path</th><th>the job it does</th><th>agent:// URI</th><th>⌁ position</th></tr></thead>
       <tbody class="text-base">
         <tr><td class="font-mono">acme.com</td><td class="font-mono">workflow/approval</td><td>approval</td><td class="font-mono break-all">agent://acme.com/workflow/approval/01h0000000000000000000000</td><td class="font-mono break-all">⌁ no.ki.ni.ke.ru·to.ru.ki.ru.ta+va.ki.ra.ma.no~ko.so.mo</td></tr>
@@ -127,7 +127,7 @@
     <p>Each query is one company's own capability path, asked against the other company's nine agents. The table below gives the outcome both ways, and the distance is in letters of the position, out of the 36 letters a position has.</p>
   </div>
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full w-full">
+    <table class="table table-zebra w-full">
       <thead><tr><th>query, as issued</th><th>found by matching the path</th><th>found by nearest position</th><th>letters apart</th><th>same job?</th></tr></thead>
       <tbody class="text-base">
         <tr><td class="font-mono">workflow/approval</td><td>nothing <span class="badge badge-outline font-mono">miss</span></td><td class="font-mono">process/authorize</td><td>2</td><td><span class="badge badge-success font-mono">hit</span></td></tr>
@@ -236,7 +236,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
   </ul>
 
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full w-full">
+    <table class="table table-zebra w-full">
       <thead><tr><th>question</th><th>answer</th></tr></thead>
       <tbody class="text-base">
         <tr><td>is the path identical?</td><td>no, <span class="font-mono">workflow/approval</span> against <span class="font-mono">process/authorize</span></td></tr>
@@ -378,7 +378,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
     <p>What the agent sees is a virtual tree assembled from those layers. It is a view, not a folder. The table below pairs what the agent sees with where the bytes really are.</p>
   </div>
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full w-full">
+    <table class="table table-zebra w-full">
       <thead><tr><th>the path the agent sees</th><th>where it really is on the host</th></tr></thead>
       <tbody class="text-base">
         <tr><td class="font-mono">.config/claude/config.json</td><td class="font-mono break-all">/var/lib/ai-envs/env-1/claude/config/config.json</td></tr>
@@ -465,7 +465,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
     <div class="stat"><div class="stat-title text-base">for scale, a sealed empty room</div><div class="stat-value text-4xl">24</div><div class="stat-desc text-base">letters from the base position</div></div>
   </div>
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full w-full">
+    <table class="table table-zebra w-full">
       <thead><tr><th>pair</th><th>letters apart</th><th>questions the same at the start</th><th>how much the statements overlap</th><th>same root?</th><th>what the upper layer adds</th></tr></thead>
       <tbody class="text-base">
         <tr><td class="font-mono">base and project</td><td>2</td><td>29 of 45</td><td>0.8571</td><td>no</td><td class="font-mono break-all">reach/help/any, see/this_place/outside</td></tr>
@@ -535,7 +535,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
   <figure class="w-full mt-8">
     <svg viewBox="0 0 1000 500" width="100%" role="img" aria-label="The eleven top-level keys of the seed as bars drawn to scale by bytes, each labelled stored, with landmarks, partition and population also producing something derived." class="font-mono">
       <text x="30" y="26" font-size="15" font-weight="700" style="fill:oklch(var(--bc))">Figure 4. Every key in the seed, sized by the bytes it occupies</text>
-      <text x="30" y="46" font-size="13" style="fill:oklch(var(--bc)/0.65)">Bars are drawn to scale. 2,311 of the 3,300 bytes are the 45 questions and their plain readings.</text>
+      <text x="30" y="46" font-size="13" style="fill:oklch(var(--bc)/0.65)">Bars are drawn to scale. Each block is counted on one line with its own key name, so the eleven add up to exactly 3,300 bytes. 2,313 of them belong to the 45 questions and their plain readings.</text>
 
       <text x="30" y="76" font-size="12" style="fill:oklch(var(--bc)/0.65)">key</text>
       <text x="200" y="76" font-size="12" style="fill:oklch(var(--bc)/0.65)">bytes</text>
@@ -543,65 +543,65 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
 
       <text x="30" y="106" font-size="13" style="fill:oklch(var(--bc))">landmarks</text>
       <rect x="200" y="92" width="420" height="20" rx="3" style="fill:oklch(var(--p))"/>
-      <text x="630" y="107" font-size="12" style="fill:oklch(var(--bc))">2,311</text>
+      <text x="630" y="107" font-size="12" style="fill:oklch(var(--bc))">2,313</text>
       <text x="800" y="107" font-size="12" style="fill:oklch(var(--p))">stored, 45 question slots derived</text>
 
       <text x="30" y="140" font-size="13" style="fill:oklch(var(--bc))">markers</text>
       <rect x="200" y="126" width="53" height="20" rx="3" style="fill:oklch(var(--p))"/>
-      <text x="263" y="141" font-size="12" style="fill:oklch(var(--bc))">290</text>
+      <text x="263" y="141" font-size="12" style="fill:oklch(var(--bc))">292</text>
       <text x="800" y="141" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored</text>
 
       <text x="30" y="174" font-size="13" style="fill:oklch(var(--bc))">phonology</text>
       <rect x="200" y="160" width="28" height="20" rx="3" style="fill:oklch(var(--p))"/>
-      <text x="238" y="175" font-size="12" style="fill:oklch(var(--bc))">152</text>
+      <text x="238" y="175" font-size="12" style="fill:oklch(var(--bc))">154</text>
       <text x="800" y="175" font-size="12" style="fill:oklch(var(--p))">stored, 32 syllables derived</text>
 
       <text x="30" y="208" font-size="13" style="fill:oklch(var(--bc))">distance</text>
       <rect x="200" y="194" width="22" height="20" rx="3" style="fill:oklch(var(--p))"/>
-      <text x="232" y="209" font-size="12" style="fill:oklch(var(--bc))">120</text>
+      <text x="232" y="209" font-size="12" style="fill:oklch(var(--bc))">122</text>
       <text x="800" y="209" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored</text>
 
       <text x="30" y="242" font-size="13" style="fill:oklch(var(--bc))">population</text>
       <rect x="200" y="228" width="19" height="20" rx="3" style="fill:oklch(var(--p))"/>
-      <text x="229" y="243" font-size="12" style="fill:oklch(var(--bc))">103</text>
+      <text x="229" y="243" font-size="12" style="fill:oklch(var(--bc))">105</text>
       <text x="800" y="243" font-size="12" style="fill:oklch(var(--p))">stored, 204 places derived</text>
 
       <text x="30" y="276" font-size="13" style="fill:oklch(var(--bc))">hierarchy</text>
       <rect x="200" y="262" width="14" height="20" rx="3" style="fill:oklch(var(--p))"/>
-      <text x="224" y="277" font-size="12" style="fill:oklch(var(--bc))">76</text>
+      <text x="224" y="277" font-size="12" style="fill:oklch(var(--bc))">78</text>
       <text x="800" y="277" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored</text>
 
       <text x="30" y="310" font-size="13" style="fill:oklch(var(--bc))">partition</text>
       <rect x="200" y="296" width="14" height="20" rx="3" style="fill:oklch(var(--p))"/>
-      <text x="224" y="311" font-size="12" style="fill:oklch(var(--bc))">74</text>
+      <text x="224" y="311" font-size="12" style="fill:oklch(var(--bc))">76</text>
       <text x="800" y="311" font-size="12" style="fill:oklch(var(--p))">stored rule, question order derived</text>
 
       <text x="30" y="344" font-size="13" style="fill:oklch(var(--bc))">similarity</text>
       <rect x="200" y="330" width="10" height="20" rx="3" style="fill:oklch(var(--p))"/>
-      <text x="220" y="345" font-size="12" style="fill:oklch(var(--bc))">51</text>
+      <text x="220" y="345" font-size="12" style="fill:oklch(var(--bc))">53</text>
       <text x="800" y="345" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored</text>
 
       <text x="30" y="378" font-size="13" style="fill:oklch(var(--bc))">beats</text>
-      <rect x="200" y="364" width="9" height="20" rx="3" style="fill:oklch(var(--p))"/>
-      <text x="219" y="379" font-size="12" style="fill:oklch(var(--bc))">42</text>
+      <rect x="200" y="364" width="8" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="219" y="379" font-size="12" style="fill:oklch(var(--bc))">44</text>
       <text x="800" y="379" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored</text>
 
       <text x="30" y="412" font-size="13" style="fill:oklch(var(--bc))">commitment</text>
-      <rect x="200" y="398" width="9" height="20" rx="3" style="fill:oklch(var(--p))"/>
-      <text x="219" y="413" font-size="12" style="fill:oklch(var(--bc))">40</text>
+      <rect x="200" y="398" width="8" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="219" y="413" font-size="12" style="fill:oklch(var(--bc))">42</text>
       <text x="800" y="413" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored, the one hashing rule</text>
 
       <text x="30" y="446" font-size="13" style="fill:oklch(var(--bc))">primer_version</text>
-      <rect x="200" y="432" width="5" height="20" rx="3" style="fill:oklch(var(--p))"/>
-      <text x="215" y="447" font-size="12" style="fill:oklch(var(--bc))">19</text>
+      <rect x="200" y="432" width="4" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="215" y="447" font-size="12" style="fill:oklch(var(--bc))">21</text>
       <text x="800" y="447" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored</text>
 
-      <text x="30" y="480" font-size="12" style="fill:oklch(var(--bc)/0.65)">The remaining 22 bytes are the two braces and the commas between the keys. The ordering of the questions is not in the file anywhere.</text>
+      <text x="30" y="480" font-size="12" style="fill:oklch(var(--bc)/0.65)">Counted this way the eleven keys account for all 3,300 bytes, with nothing left over. The ordering of the questions is not in the file anywhere.</text>
     </svg>
   </figure>
 
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full w-full">
+    <table class="table table-zebra w-full">
       <thead><tr><th>key in the seed</th><th>what it settles</th><th>what it becomes on the other side</th><th>stored or derived</th></tr></thead>
       <tbody class="text-base">
         <tr><td class="font-mono">primer_version = 2</td><td>which ruleset the frame is built under</td><td>every value below reproduces only against version 2</td><td><span class="badge badge-outline font-mono">stored</span></td></tr>
@@ -622,7 +622,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
   <div class="alert alert-warning w-full mt-8">
     <div>
       <p class="font-bold">One line in that file is a rule where the usual design keeps an answer.</p>
-      <p class="mt-2">The key named <span class="font-mono">partition</span> holds 74 bytes: 45 levels, 4 branches, and the words descending variance. It does not hold the order. The order is worked out from the places themselves every time it is needed, and checked against a fingerprint.</p>
+      <p class="mt-2">The key named <span class="font-mono">partition</span> holds 76 bytes: 45 levels, 4 branches, and the words descending variance. It does not hold the order. The order is worked out from the places themselves every time it is needed, and checked against a fingerprint.</p>
       <p class="mt-2">That single choice is the difference between sending a finished frame and sending a generator. A registry has to ship its structure and keep it versioned forever. Here the structure is recomputed from a rule, so a second copy cannot drift out of step without the fingerprint noticing on the first comparison.</p>
     </div>
   </div>
@@ -920,7 +920,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
     <p>The table gives every place, how many different lists of answers the six families reported, how many different roots came out, and which families agreed exactly.</p>
   </div>
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full w-full">
+    <table class="table table-zebra w-full">
       <thead><tr><th>place</th><th>different lists</th><th>different roots</th><th>the families that agreed exactly</th><th>group size</th><th>the root they agreed on</th></tr></thead>
       <tbody class="text-base">
         <tr><td class="font-mono">locked_storeroom</td><td>2</td><td>2</td><td class="font-mono">gemma-4-31b-it, glm-5.3, gpt-5.6-luna, gpt-6-luna, mimo-v2.6-pro</td><td>5 of 6</td><td class="font-mono break-all">ee9953d9b356615f308d8a6a4debc4578f17770cf6db6dac52d4f57ac13ad971</td></tr>
@@ -949,7 +949,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
     <p>An agent may be willing to disclose a few answers and nothing else. A root over part of a list is as checkable as a root over the whole list, as long as both sides agree which answers went in. The four runs below take the same situation and root the first 2, then 4, then 8, then all 45 of the most telling answers.</p>
   </div>
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full w-full">
+    <table class="table table-zebra w-full">
       <thead><tr><th>answers committed to</th><th>places told apart, of 6</th><th>the root, first 14 characters</th></tr></thead>
       <tbody class="text-base">
         <tr><td>2</td><td>3</td><td class="font-mono">e6da26cd0c664b</td></tr>
@@ -973,7 +973,7 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
     <p>Extra attributes ride in the same list, sorted the same way. The root moves and the position does not, in all four runs.</p>
   </div>
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full w-full">
+    <table class="table table-zebra w-full">
       <thead><tr><th>extra attributes folded in</th><th>the root, first 20 characters</th><th>the position</th></tr></thead>
       <tbody class="text-base">
         <tr><td>nothing</td><td class="font-mono">efe87ba9113b03473d9a</td><td>unchanged</td></tr>

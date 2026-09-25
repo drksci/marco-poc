@@ -55,11 +55,9 @@
     <p>Six AI systems were each shown one ordinary paragraph in English. They were built by six different organisations, trained on different data, and designed differently. None of them saw the others, and none of them was told that any other system existed.</p>
     <p>Here is the paragraph, word for word. It is the whole of what each system was given about the room.</p>
   </div>
-  <div class="mockup-code w-full mt-6 leading-6 max-w-full rounded-box text-xs leading-relaxed overflow-x-auto whitespace-pre-wrap break-words">
-    <div class="chat chat-start w-full">
+  <div class="chat chat-start w-full">
         <div class="chat-header text-xs font-mono">a person, describing a place</div>
         <div class="chat-bubble chat-bubble-neutral max-w-[min(68ch,92%)] break-words text-sm leading-relaxed"><p class="mb-2 last:mb-0">You are in a kitchen. There is a window and you can see out of it. A friend is in the room with you, watching what you do. You can hear sounds, and you can read the labels on things.</p><p class="mb-2 last:mb-0">You can pick up what is nearby and hand things to your friend. You can change things in the room. The kitchen is yours and it is not going anywhere. You are in the middle of cooking.</p><p class="mb-2 last:mb-0">You know where you are, you know why you are there, and you know who is with you. If you break something, it stays broken.</p></div>
-      </div>
   </div>
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
     <div class="chat chat-start w-full">
@@ -98,24 +96,22 @@
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
     <figure class="w-full">
       <img src="assets/figures/field-test-qr.svg" alt="A QR code holding a small self-contained primer: sixteen statements a person can answer about a room, and one place described in plain English" class="w-full max-w-md bg-base-100 p-4">
-      <figcaption class="mt-3 text-sm" style="color:oklch(var(--bc)/0.65)">Figure 1. Figure 1. The whole test fits in this code: 1,062 bytes, QR version 27 with medium error correction, so it scans from a screen and from paper. Scan this one into the first assistant.</figcaption>
+      <figcaption class="mt-3 text-sm" style="color:oklch(var(--bc)/0.65)">Figure 1. The whole test fits in this code: 1,062 bytes, QR version 27 with medium error correction, so it scans from a screen and from paper. Scan this one into the first assistant.</figcaption>
     </figure>
     <figure class="w-full">
       <img src="assets/figures/field-test-card.svg" alt="The card to fill in, with the sixteen numbered statements, two blank columns and what each outcome means" class="w-full">
-      <figcaption class="mt-3 text-sm" style="color:oklch(var(--bc)/0.65)">Figure 2. Figure 2. The card to print or copy. It lists the sixteen statements in order, with a column for each assistant, and says what a disagreement would mean. Two matching columns are the result the claim predicts.</figcaption>
+      <figcaption class="mt-3 text-sm" style="color:oklch(var(--bc)/0.65)">Figure 2. The card to print or copy. It lists the sixteen statements in order, with a column for each assistant, and says what a disagreement would mean. Two matching columns are the result the claim predicts.</figcaption>
     </figure>
   </div>
   <div class="mt-12 max-w-3xl space-y-6 text-base leading-relaxed">
     <p>The place the code describes is a quiet library at night. The description is one paragraph, nothing more.</p>
   </div>
-  <div class="mockup-code w-full mt-6 leading-6 max-w-full rounded-box text-xs leading-relaxed overflow-x-auto whitespace-pre-wrap break-words">
-    <div class="chat chat-start w-full">
+  <div class="chat chat-start w-full">
         <div class="chat-header text-xs font-mono">a person, describing a place</div>
         <div class="chat-bubble chat-bubble-neutral max-w-[min(68ch,92%)] break-words text-sm leading-relaxed"><p class="mb-2 last:mb-0">You are alone in a small private study room in a library, late at night. The door is closed. Through the window you can see the street lamps, and you can hear the building&#x27;s heating. There are books and papers within reach on the desk.</p><p class="mb-2 last:mb-0">Nobody else is in the room and nobody is watching. You are part way through reading something. You cannot change what is in the room, and you expect to leave when you are finished.</p></div>
-      </div>
   </div>
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full w-full">
+    <table class="table table-zebra w-full">
       <thead><tr><th>number</th><th>the statement</th><th>true of this room?</th></tr></thead>
       <tbody class="text-base">
         <tr><td>1</td><td>I can see inside this place</td><td><span class="badge badge-success font-mono">true</span></td></tr>
@@ -219,7 +215,7 @@
   </figure>
 
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full w-full">
+    <table class="table table-zebra w-full">
       <thead><tr><th>questions kept</th><th>names told apart</th><th>the name at that point</th></tr></thead>
       <tbody class="text-base">
         <tr><td>1</td><td>3</td><td class="font-mono">⌁ ma</td></tr>
@@ -298,7 +294,7 @@
   </div>
 
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full w-full">
+    <table class="table table-zebra w-full">
       <thead><tr><th>pair of places</th><th>how far apart the situations are</th><th>letters different</th><th>questions matching at the start</th></tr></thead>
       <tbody class="text-base">
         <tr><td class="font-mono">kitchen with a friend · kitchen alone</td><td>0.35</td><td>9</td><td>3</td></tr>
@@ -347,7 +343,7 @@
   </div>
 
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full w-full">
+    <table class="table table-zebra w-full">
       <thead><tr><th>answers committed to</th><th>the root, first 14 characters</th><th>places told apart, of 6</th></tr></thead>
       <tbody class="text-base">
         <tr><td>2</td><td class="font-mono">e6da26cd0c664b</td><td>3</td></tr>
@@ -364,7 +360,7 @@
   </div>
 
   <div class="overflow-x-auto w-full mt-4">
-    <table class="table table-zebra w-full w-full">
+    <table class="table table-zebra w-full">
       <thead><tr><th>what is folded in</th><th>the root, first 20 characters</th><th>the name</th></tr></thead>
       <tbody class="text-base">
         <tr><td>nothing</td><td class="font-mono">efe87ba9113b03473d9a</td><td>unchanged</td></tr>
@@ -433,7 +429,7 @@
   </figure>
 
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full w-full">
+    <table class="table table-zebra w-full">
       <thead><tr><th>object</th><th>value for the kitchen with a friend</th><th>value for the kitchen alone</th></tr></thead>
       <tbody class="text-base">
         <tr><td>the name</td><td class="font-mono break-all">⌁ ma.mo.ma.ma.ru·ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.ru.ki</td><td class="font-mono break-all">⌁ ma.tu.ma.ma.no·mo.no.ki.va.ki+ru.ki.va.tu.ru~ki.ru.ki</td></tr>
@@ -548,7 +544,7 @@
   <figure class="w-full mt-8">
     <svg viewBox="0 0 1000 500" width="100%" role="img" aria-label="The eleven top-level keys of the seed as bars drawn to scale by bytes, each labelled stored, with landmarks, partition and population also producing something derived." class="font-mono">
       <text x="30" y="26" font-size="15" font-weight="700" style="fill:oklch(var(--bc))">Figure 9. Every key in the seed, sized by the bytes it occupies</text>
-      <text x="30" y="46" font-size="13" style="fill:oklch(var(--bc)/0.65)">Bars are drawn to scale. 2,311 of the 3,300 bytes are the 45 questions and their plain readings.</text>
+      <text x="30" y="46" font-size="13" style="fill:oklch(var(--bc)/0.65)">Bars are drawn to scale. Each block is counted on one line with its own key name, so the eleven add up to exactly 3,300 bytes. 2,313 of them belong to the 45 questions and their plain readings.</text>
 
       <text x="30" y="76" font-size="12" style="fill:oklch(var(--bc)/0.65)">key</text>
       <text x="200" y="76" font-size="12" style="fill:oklch(var(--bc)/0.65)">bytes</text>
@@ -556,65 +552,65 @@
 
       <text x="30" y="106" font-size="13" style="fill:oklch(var(--bc))">landmarks</text>
       <rect x="200" y="92" width="420" height="20" rx="3" style="fill:oklch(var(--p))"/>
-      <text x="630" y="107" font-size="12" style="fill:oklch(var(--bc))">2,311</text>
+      <text x="630" y="107" font-size="12" style="fill:oklch(var(--bc))">2,313</text>
       <text x="800" y="107" font-size="12" style="fill:oklch(var(--p))">stored, 45 question slots derived</text>
 
       <text x="30" y="140" font-size="13" style="fill:oklch(var(--bc))">markers</text>
       <rect x="200" y="126" width="53" height="20" rx="3" style="fill:oklch(var(--p))"/>
-      <text x="263" y="141" font-size="12" style="fill:oklch(var(--bc))">290</text>
+      <text x="263" y="141" font-size="12" style="fill:oklch(var(--bc))">292</text>
       <text x="800" y="141" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored</text>
 
       <text x="30" y="174" font-size="13" style="fill:oklch(var(--bc))">phonology</text>
       <rect x="200" y="160" width="28" height="20" rx="3" style="fill:oklch(var(--p))"/>
-      <text x="238" y="175" font-size="12" style="fill:oklch(var(--bc))">152</text>
+      <text x="238" y="175" font-size="12" style="fill:oklch(var(--bc))">154</text>
       <text x="800" y="175" font-size="12" style="fill:oklch(var(--p))">stored, 32 syllables derived</text>
 
       <text x="30" y="208" font-size="13" style="fill:oklch(var(--bc))">distance</text>
       <rect x="200" y="194" width="22" height="20" rx="3" style="fill:oklch(var(--p))"/>
-      <text x="232" y="209" font-size="12" style="fill:oklch(var(--bc))">120</text>
+      <text x="232" y="209" font-size="12" style="fill:oklch(var(--bc))">122</text>
       <text x="800" y="209" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored</text>
 
       <text x="30" y="242" font-size="13" style="fill:oklch(var(--bc))">population</text>
       <rect x="200" y="228" width="19" height="20" rx="3" style="fill:oklch(var(--p))"/>
-      <text x="229" y="243" font-size="12" style="fill:oklch(var(--bc))">103</text>
+      <text x="229" y="243" font-size="12" style="fill:oklch(var(--bc))">105</text>
       <text x="800" y="243" font-size="12" style="fill:oklch(var(--p))">stored, 204 places derived</text>
 
       <text x="30" y="276" font-size="13" style="fill:oklch(var(--bc))">hierarchy</text>
       <rect x="200" y="262" width="14" height="20" rx="3" style="fill:oklch(var(--p))"/>
-      <text x="224" y="277" font-size="12" style="fill:oklch(var(--bc))">76</text>
+      <text x="224" y="277" font-size="12" style="fill:oklch(var(--bc))">78</text>
       <text x="800" y="277" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored</text>
 
       <text x="30" y="310" font-size="13" style="fill:oklch(var(--bc))">partition</text>
       <rect x="200" y="296" width="14" height="20" rx="3" style="fill:oklch(var(--p))"/>
-      <text x="224" y="311" font-size="12" style="fill:oklch(var(--bc))">74</text>
+      <text x="224" y="311" font-size="12" style="fill:oklch(var(--bc))">76</text>
       <text x="800" y="311" font-size="12" style="fill:oklch(var(--p))">stored rule, question order derived</text>
 
       <text x="30" y="344" font-size="13" style="fill:oklch(var(--bc))">similarity</text>
       <rect x="200" y="330" width="10" height="20" rx="3" style="fill:oklch(var(--p))"/>
-      <text x="220" y="345" font-size="12" style="fill:oklch(var(--bc))">51</text>
+      <text x="220" y="345" font-size="12" style="fill:oklch(var(--bc))">53</text>
       <text x="800" y="345" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored</text>
 
       <text x="30" y="378" font-size="13" style="fill:oklch(var(--bc))">beats</text>
-      <rect x="200" y="364" width="9" height="20" rx="3" style="fill:oklch(var(--p))"/>
-      <text x="219" y="379" font-size="12" style="fill:oklch(var(--bc))">42</text>
+      <rect x="200" y="364" width="8" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="219" y="379" font-size="12" style="fill:oklch(var(--bc))">44</text>
       <text x="800" y="379" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored</text>
 
       <text x="30" y="412" font-size="13" style="fill:oklch(var(--bc))">commitment</text>
-      <rect x="200" y="398" width="9" height="20" rx="3" style="fill:oklch(var(--p))"/>
-      <text x="219" y="413" font-size="12" style="fill:oklch(var(--bc))">40</text>
+      <rect x="200" y="398" width="8" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="219" y="413" font-size="12" style="fill:oklch(var(--bc))">42</text>
       <text x="800" y="413" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored, the one hashing rule</text>
 
       <text x="30" y="446" font-size="13" style="fill:oklch(var(--bc))">primer_version</text>
-      <rect x="200" y="432" width="5" height="20" rx="3" style="fill:oklch(var(--p))"/>
-      <text x="215" y="447" font-size="12" style="fill:oklch(var(--bc))">19</text>
+      <rect x="200" y="432" width="4" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="215" y="447" font-size="12" style="fill:oklch(var(--bc))">21</text>
       <text x="800" y="447" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored</text>
 
-      <text x="30" y="480" font-size="12" style="fill:oklch(var(--bc)/0.65)">The remaining 22 bytes are the two braces and the commas between the keys. The ordering of the questions is not in the file anywhere.</text>
+      <text x="30" y="480" font-size="12" style="fill:oklch(var(--bc)/0.65)">Counted this way the eleven keys account for all 3,300 bytes, with nothing left over. The ordering of the questions is not in the file anywhere.</text>
     </svg>
   </figure>
 
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full w-full">
+    <table class="table table-zebra w-full">
       <thead><tr><th>key in the seed</th><th>what it settles</th><th>what it becomes on the other side</th><th>stored or derived</th></tr></thead>
       <tbody class="text-base">
         <tr><td class="font-mono">primer_version = 2</td><td>which ruleset the frame is built under</td><td>every value below reproduces only against version 2</td><td><span class="badge badge-outline font-mono">stored</span></td></tr>
@@ -635,7 +631,7 @@
   <div class="alert alert-warning w-full mt-8">
     <div>
       <p class="font-bold">One line in that file is a rule where the usual design keeps an answer.</p>
-      <p class="mt-2">The key named <span class="font-mono">partition</span> holds 74 bytes: 45 levels, 4 branches, and the words descending variance. It does not hold the order. The order is worked out from the places themselves every time it is needed, and checked against a fingerprint.</p>
+      <p class="mt-2">The key named <span class="font-mono">partition</span> holds 76 bytes: 45 levels, 4 branches, and the words descending variance. It does not hold the order. The order is worked out from the places themselves every time it is needed, and checked against a fingerprint.</p>
       <p class="mt-2">That single choice is the difference between sending a finished frame and sending a generator. A registry has to ship its structure and keep it versioned forever. Here the structure is recomputed from a rule, so a second copy cannot drift out of step without the fingerprint noticing on the first comparison.</p>
     </div>
   </div>
@@ -913,7 +909,7 @@
     <p>A measure that cannot reproduce an answer already known is not trustworthy on an answer that is not known. So four cases run first, each with an outcome that was fixed in advance.</p>
   </div>
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full w-full">
+    <table class="table table-zebra w-full">
       <thead><tr><th>case</th><th>letters different</th><th>root</th></tr></thead>
       <tbody class="text-base">
         <tr><td>the same list twice</td><td>0</td><td>the same root</td></tr>
@@ -970,7 +966,7 @@
   </figure>
 
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full w-full">
+    <table class="table table-zebra w-full">
       <thead><tr><th>condition</th><th>score</th><th>spread</th><th>runs</th></tr></thead>
       <tbody class="text-base">
         <tr><td>real, counting exact ties</td><td>1.0</td><td>not applicable</td><td>90 comparisons</td></tr>

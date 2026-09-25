@@ -59,7 +59,7 @@
   </div>
   <p class="font-mono text-sm opacity-60 mt-8">what has actually been measured, by animal</p>
   <div class="overflow-x-auto w-full mt-4">
-    <table class="table table-zebra w-full w-full">
+    <table class="table table-zebra w-full">
       <thead><tr><th class="w-40">animal</th><th>what has been measured</th></tr></thead>
       <tbody class="text-base">
         <tr><td><strong>bat</strong></td><td>single-unit auditory-cortex neurons tuned to echo delay and velocity, yielding range-like maps</td></tr>
@@ -110,7 +110,7 @@
   <h2 class="text-3xl font-bold">What is established, what is contested, what is speculative</h2>
   <p class="mt-8 max-w-3xl text-base leading-relaxed">Every claim this page takes from biology is listed here with its label and its primary source. Two rows carry a limit that the popular account usually drops.</p>
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full w-full">
+    <table class="table table-zebra w-full">
       <thead><tr><th>claim</th><th>status</th><th>citation</th></tr></thead>
       <tbody class="text-base">
         <tr>
@@ -456,8 +456,8 @@
         <text x="720" y="24" font-size="16" font-weight="700" fill="currentColor">what it turns into</text>
         <g font-size="13" fill="currentColor">
           <text x="150" y="134" text-anchor="end">landmarks</text>
-          <rect x="165" y="120" width="400.0" height="20" fill="currentColor" opacity="0.75"/>
-          <text x="575" y="134" font-size="12" fill="currentColor" opacity="0.7">2,311 bytes, 70%</text>
+          <rect x="165" y="120" width="400.4" height="20" fill="currentColor" opacity="0.75"/>
+          <text x="575" y="134" font-size="12" fill="currentColor" opacity="0.7">2,313 bytes, 70%</text>
           <text x="720" y="134">45 plain statements and their readings</text>
 
           <text x="150" y="180" text-anchor="end">markers</text>
@@ -476,8 +476,8 @@
           <text x="720" y="272">the four distance levels</text>
 
           <text x="150" y="318" text-anchor="end">population</text>
-          <rect x="165" y="304" width="17.8" height="20" fill="currentColor" opacity="0.75"/>
-          <text x="193" y="318" font-size="12" fill="currentColor" opacity="0.7">103 bytes</text>
+          <rect x="165" y="304" width="21.1" height="20" fill="currentColor" opacity="0.75"/>
+          <text x="193" y="318" font-size="12" fill="currentColor" opacity="0.7">122 bytes</text>
           <text x="720" y="318">the 204 places the order is measured on</text>
 
           <text x="150" y="364" text-anchor="end">hierarchy</text>
@@ -506,17 +506,17 @@
           <text x="720" y="548">the other half of the one hashing rule</text>
 
           <text x="150" y="594" text-anchor="end">primer_version</text>
-          <rect x="165" y="580" width="3.3" height="20" fill="currentColor" opacity="0.75"/>
-          <text x="178" y="594" font-size="12" fill="currentColor" opacity="0.7">19 bytes</text>
+          <rect x="165" y="580" width="7.6" height="20" fill="currentColor" opacity="0.75"/>
+          <text x="178" y="594" font-size="12" fill="currentColor" opacity="0.7">44 bytes</text>
           <text x="720" y="594">which ruleset is in force</text>
         </g>
-        <text x="0" y="638" font-size="12" fill="currentColor" opacity="0.6">Byte counts use the same single-line convention that gives the file its 3,300 bytes. Landmarks is 2,311 of them and the key named partition is 74.</text>
+        <text x="0" y="638" font-size="12" fill="currentColor" opacity="0.6">Byte counts use the single-line convention here: each key and its value written as one line of JSON, with its own key name and punctuation. That convention gives the file its 3,300 bytes exactly. Landmarks is 2,313 of them and the key named partition is 76.</text>
       </g>
     </svg>
     <figcaption class="text-sm font-mono opacity-70 mt-2">each key sized by the bytes it occupies, with the thing it turns into</figcaption>
   </figure>
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full w-full">
+    <table class="table table-zebra w-full">
       <thead><tr><th>key in the seed</th><th>what it becomes once the frame is rebuilt</th><th>stored or derived</th></tr></thead>
       <tbody class="text-base">
         <tr><td class="font-mono">primer_version = 2</td><td>which ruleset the frame is built under</td><td><span class="badge badge-outline font-mono">stored</span></td></tr>
@@ -534,7 +534,7 @@
     </table>
   </div>
   <div class="alert mt-8 w-full">
-    <span>Eleven keys, and one of them is 70 per cent of the file. The key to look at is the smallest interesting one: it is named partition, it is 74 bytes, and it holds a rule rather than a list. Everything a registry would have to store and keep in step, this file works out again from that rule.</span>
+    <span>Eleven keys, and one of them is 70 per cent of the file. The key to look at is the smallest interesting one: it is named partition, it is 76 bytes, and it holds a rule rather than a list. Everything a registry would have to store and keep in step, this file works out again from that rule.</span>
   </div>
 </section>
 
@@ -595,7 +595,7 @@
     <p>A registry would ship that order as a list and keep it versioned forever, because a list cannot explain itself. This file ships the rule and lets both sides work out the list.</p>
   </div>
   <div class="alert alert-success mt-8 w-full">
-    <span><strong>One line, 74 bytes, and both sides agree without coordinating.</strong> The rule is stored, the order is derived, and neither side has to trust the other side's copy of the order.</span>
+    <span><strong>One line, 76 bytes, and both sides agree without coordinating.</strong> The rule is stored, the order is derived, and neither side has to trust the other side's copy of the order.</span>
   </div>
   <div class="mt-12 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>Now change one number and watch what it costs. Take the seed and change <span class="font-mono">similarity.minhash_seed</span> from 42 to 43. Everything else stays the same. The fingerprint of the frame changes, because the fingerprint covers every setting, including this one.</p>
@@ -831,7 +831,7 @@
   </figure>
   <p class="font-mono text-sm opacity-60 mt-8">the seven controls, and what each one rules out</p>
   <div class="overflow-x-auto w-full mt-4">
-    <table class="table table-zebra w-full w-full">
+    <table class="table table-zebra w-full">
       <thead><tr><th>control</th><th>what it rules out</th></tr></thead>
       <tbody class="text-base">
         <tr><td><strong>Permutation null over phrase labels</strong></td><td>Randomly reassign phrase identities to neural windows, rerun the complete search, and keep the maximum score per permutation. The null must include the same <span class="font-mono">360,000</span>-candidate structure search.</td></tr>

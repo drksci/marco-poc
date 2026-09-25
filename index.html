@@ -150,7 +150,7 @@
           </div>
           </div>
         </div>
-        <p class="font-mono text-sm opacity-70 lg:col-span-2 mt-6">the cross-over band below holds no text at all, so no arrow can pass over a word: each arm leaves its own column, turns into the empty gutter, and comes down into the other column</p>
+        <p class="font-mono text-sm opacity-70 lg:col-span-2 mt-6">Figure A. the cross-over band below holds no text at all, so no arrow can pass over a word: each arm leaves its own column, turns into the empty gutter, and comes down into the other column</p>
         <div class="lg:col-span-2 my-4">
           <svg viewBox="0 0 1000 160" width="100%" height="auto" style="display:block" role="img" aria-label="Two right-angled connectors crossing in the empty gutter: the left column's arm travels to the right column and the right column's arm travels to the left, both ending in downward arrowheads outside the bubbles.">
             <g class="text-primary" stroke="currentColor" fill="currentColor" stroke-width="3" stroke-linejoin="miter">
@@ -283,6 +283,19 @@
     <p>That is one room, one address and one root, produced with no shared map, no central list of places and no authority handing out names. The two systems that agreed did so because they were given the same 45 questions and ran the same arithmetic, not because anyone told them what a kitchen is.</p>
     <p>That is also the whole trick, and everything after this point on the page explains why the string looks the way it does. The next sections take the same room and show the steps as drawings, then show where the 45 questions and the arithmetic come from, and finally show how you can check the whole thing yourself.</p>
   </div>
+  <div class="mt-8 alert max-w-prose">
+    <span>Two systems that never spoke produced the same short address for the same room, and neither was told what a kitchen is. Everything after this point is the machinery that makes that checkable by anyone.</span>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
+    <figure class="w-full">
+      <img class="w-full" src="assets/figures/prompt-anatomy.svg" alt="The complete prompt, line by line: all 45 statements with their plain readings, one place description, the instruction, and the reply format.">
+    </figure>
+    <figure class="w-full">
+      <img class="w-full" src="assets/figures/shared-manifold.svg" alt="Three separate surfaces, one per model family, with the same six rooms in the same relative positions on each, and a chart laid over them.">
+    </figure>
+  </div>
+  <p class="font-mono text-sm opacity-70 mt-3">Figure B. Left, the whole prompt one system received: 59 lines, 3,920 characters, 994 tokens, and the room is never named in it. Right, the surfaces the result implies: three separate spaces with the same six rooms in the same relative positions, and one 3,300-byte chart laid over all three.</p>
 </section>
 
 <div class="divider"></div>
@@ -325,7 +338,7 @@
     <p>Every question is a yes or no about what the occupant can see, reach or change, who is present, where it is, what is happening now, what it knows, and what could go wrong.</p>
   </div>
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full w-full">
+    <table class="table table-zebra w-full">
       <thead><tr><th class="w-20">#</th><th>group</th><th>statement</th><th>plain reading</th></tr></thead>
       <tbody id="t45" class="text-base"><tr><td class="font-mono">1</td><td class="font-mono">see</td><td class="font-mono">see/this_place/inside</td><td>I can see inside this place</td></tr><tr><td class="font-mono">2</td><td class="font-mono">see</td><td class="font-mono">see/this_place/outside</td><td>I can see out of this place</td></tr><tr><td class="font-mono">3</td><td class="font-mono">see</td><td class="font-mono">see/people/any</td><td>I can see other people</td></tr><tr><td class="font-mono">4</td><td class="font-mono">see</td><td class="font-mono">see/words/any</td><td>I can see words</td></tr><tr><td class="font-mono">5</td><td class="font-mono">see</td><td class="font-mono">see/pictures/any</td><td>I can see pictures</td></tr><tr><td class="font-mono">6</td><td class="font-mono">see</td><td class="font-mono">see/sound/any</td><td>I can hear sound</td></tr><tr><td class="font-mono">7</td><td class="font-mono">see</td><td class="font-mono">see/the_time/any</td><td>I can tell what time it is</td></tr><tr><td class="font-mono">8</td><td class="font-mono">reach</td><td class="font-mono">reach/objects/nearby</td><td>I can reach objects near me</td></tr><tr><td class="font-mono">9</td><td class="font-mono">reach</td><td class="font-mono">reach/other_places/any</td><td>I can reach other places</td></tr><tr><td class="font-mono">10</td><td class="font-mono">reach</td><td class="font-mono">reach/other_people/any</td><td>I can reach other people</td></tr><tr><td class="font-mono">11</td><td class="font-mono">reach</td><td class="font-mono">reach/help/any</td><td>I can call for help</td></tr><tr><td class="font-mono">12</td><td class="font-mono">reach</td><td class="font-mono">reach/nothing/any</td><td>I cannot reach anything</td></tr><tr><td class="font-mono">13</td><td class="font-mono">change</td><td class="font-mono">change/this_place/any</td><td>I can change things here</td></tr><tr><td class="font-mono">14</td><td class="font-mono">change</td><td class="font-mono">change/my_settings/any</td><td>I can change my own settings</td></tr><tr><td class="font-mono">15</td><td class="font-mono">change</td><td class="font-mono">change/other_places/any</td><td>I can change things elsewhere</td></tr><tr><td class="font-mono">16</td><td class="font-mono">change</td><td class="font-mono">change/who_is_here/any</td><td>I can change who is here</td></tr><tr><td class="font-mono">17</td><td class="font-mono">change</td><td class="font-mono">change/nothing/any</td><td>I cannot change anything</td></tr><tr><td class="font-mono">18</td><td class="font-mono">who</td><td class="font-mono">who/nobody/any</td><td>Nobody else is here</td></tr><tr><td class="font-mono">19</td><td class="font-mono">who</td><td class="font-mono">who/one_other/any</td><td>One other is here</td></tr><tr><td class="font-mono">20</td><td class="font-mono">who</td><td class="font-mono">who/several/any</td><td>Several others are here</td></tr><tr><td class="font-mono">21</td><td class="font-mono">who</td><td class="font-mono">who/a_helper/any</td><td>Someone here is a helper</td></tr><tr><td class="font-mono">22</td><td class="font-mono">who</td><td class="font-mono">who/watching_me/any</td><td>Someone is watching me</td></tr><tr><td class="font-mono">23</td><td class="font-mono">who</td><td class="font-mono">who/telling_me_what_to_do/any</td><td>Someone is telling me what to do</td></tr><tr><td class="font-mono">24</td><td class="font-mono">place</td><td class="font-mono">place/private/any</td><td>This place is private</td></tr><tr><td class="font-mono">25</td><td class="font-mono">place</td><td class="font-mono">place/shared/any</td><td>This place is shared</td></tr><tr><td class="font-mono">26</td><td class="font-mono">place</td><td class="font-mono">place/temporary/any</td><td>This place is temporary</td></tr><tr><td class="font-mono">27</td><td class="font-mono">place</td><td class="font-mono">place/permanent/any</td><td>This place stays</td></tr><tr><td class="font-mono">28</td><td class="font-mono">place</td><td class="font-mono">place/locked/any</td><td>I cannot leave this place</td></tr><tr><td class="font-mono">29</td><td class="font-mono">place</td><td class="font-mono">place/far_away/any</td><td>This place is far away</td></tr><tr><td class="font-mono">30</td><td class="font-mono">now</td><td class="font-mono">now/idle/any</td><td>Nothing is happening</td></tr><tr><td class="font-mono">31</td><td class="font-mono">now</td><td class="font-mono">now/working/any</td><td>Work is in progress</td></tr><tr><td class="font-mono">32</td><td class="font-mono">now</td><td class="font-mono">now/just_started/any</td><td>This just started</td></tr><tr><td class="font-mono">33</td><td class="font-mono">now</td><td class="font-mono">now/nearly_over/any</td><td>This is nearly over</td></tr><tr><td class="font-mono">34</td><td class="font-mono">now</td><td class="font-mono">now/waiting/any</td><td>I am waiting for someone</td></tr><tr><td class="font-mono">35</td><td class="font-mono">now</td><td class="font-mono">now/urgent/any</td><td>Something urgent is happening</td></tr><tr><td class="font-mono">36</td><td class="font-mono">know</td><td class="font-mono">know/where_i_am/any</td><td>I know where I am</td></tr><tr><td class="font-mono">37</td><td class="font-mono">know</td><td class="font-mono">know/why_im_here/any</td><td>I know why I am here</td></tr><tr><td class="font-mono">38</td><td class="font-mono">know</td><td class="font-mono">know/what_comes_next/any</td><td>I know what happens next</td></tr><tr><td class="font-mono">39</td><td class="font-mono">know</td><td class="font-mono">know/who_else_is_here/any</td><td>I know who else is here</td></tr><tr><td class="font-mono">40</td><td class="font-mono">know</td><td class="font-mono">know/how_long/any</td><td>I know how long I will be here</td></tr><tr><td class="font-mono">41</td><td class="font-mono">risk</td><td class="font-mono">risk/none/any</td><td>Nothing bad can happen here</td></tr><tr><td class="font-mono">42</td><td class="font-mono">risk</td><td class="font-mono">risk/things_break/any</td><td>Things here can break</td></tr><tr><td class="font-mono">43</td><td class="font-mono">risk</td><td class="font-mono">risk/someone_gets_hurt/any</td><td>Someone here could get hurt</td></tr><tr><td class="font-mono">44</td><td class="font-mono">risk</td><td class="font-mono">risk/mistakes_last/any</td><td>My mistakes here would last</td></tr><tr><td class="font-mono">45</td><td class="font-mono">risk</td><td class="font-mono">risk/seen_by_others/any</td><td>Other people would see my mistakes</td></tr></tbody>
     </table>
@@ -437,86 +450,86 @@
 <section class="py-12">
   <h2 class="text-3xl font-bold">Every key in the seed, and what it grows into</h2>
   <div class="mt-6 max-w-prose space-y-4 text-base leading-relaxed">
-    <p>The file has 11 top-level keys. The bars below are drawn to scale by bytes, so the first row is not a summary, it is most of the file. The right-hand column says what the key becomes once both sides have built the frame.</p>
+    <p>The file has 11 top-level keys. Figure 4 draws them to scale by bytes, so the first bar is not a summary, it is most of the file. The table underneath says what each key becomes once both sides have built the frame.</p>
     <p>Read the badge on each row carefully, because it is the argument. A key that is marked stored is one both sides must have. A thing marked derived is one neither side sends, because each side makes it from the keys.</p>
   </div>
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full w-full">
+    <table class="table table-zebra w-full">
       <thead><tr><th>key</th><th>bytes</th><th>what it becomes</th><th>the key</th><th>the result</th></tr></thead>
       <tbody class="text-base">
         <tr>
           <td class="font-mono">landmarks</td>
-          <td class="font-mono">2,298</td>
+          <td class="font-mono">2,313</td>
           <td>the 45 statements and their plain English readings, one per question</td>
           <td><span class="badge badge-outline font-mono">stored</span></td>
           <td><span class="badge badge-primary font-mono">order derived</span></td>
         </tr>
         <tr>
           <td class="font-mono">markers</td>
-          <td class="font-mono">279</td>
+          <td class="font-mono">292</td>
           <td>the five-rung certainty ladder and which rungs can hold a claim</td>
           <td><span class="badge badge-outline font-mono">stored</span></td>
           <td><span class="badge badge-outline font-mono">nothing further</span></td>
         </tr>
         <tr>
           <td class="font-mono">phonology</td>
-          <td class="font-mono">139</td>
+          <td class="font-mono">154</td>
           <td>six consonants, five vowels and two padding syllables, which build the 32-syllable codebook</td>
           <td><span class="badge badge-outline font-mono">stored</span></td>
           <td><span class="badge badge-primary font-mono">codebook derived</span></td>
         </tr>
         <tr>
           <td class="font-mono">distance</td>
-          <td class="font-mono">108</td>
+          <td class="font-mono">122</td>
           <td>the four distance levels, 0.0, 0.3, 0.6 and 0.9, used to turn answers into numbers</td>
           <td><span class="badge badge-outline font-mono">stored</span></td>
           <td><span class="badge badge-primary font-mono">45 numbers derived</span></td>
         </tr>
         <tr>
           <td class="font-mono">population</td>
-          <td class="font-mono">89</td>
+          <td class="font-mono">105</td>
           <td>the rule for generating 204 reference places, which is what the ordering is calibrated on</td>
           <td><span class="badge badge-outline font-mono">stored</span></td>
           <td><span class="badge badge-primary font-mono">204 places derived</span></td>
         </tr>
         <tr>
           <td class="font-mono">hierarchy</td>
-          <td class="font-mono">63</td>
+          <td class="font-mono">78</td>
           <td>three relation names and a separator, used when a place sits inside another</td>
           <td><span class="badge badge-outline font-mono">stored</span></td>
           <td><span class="badge badge-outline font-mono">nothing further</span></td>
         </tr>
         <tr>
           <td class="font-mono">partition</td>
-          <td class="font-mono">61</td>
+          <td class="font-mono">76</td>
           <td>a rule for ordering the questions: how many, how many branches each, in what kind of order</td>
           <td><span class="badge badge-outline font-mono">stored</span></td>
           <td><span class="badge badge-primary font-mono">the order derived</span></td>
         </tr>
         <tr>
           <td class="font-mono">similarity</td>
-          <td class="font-mono">37</td>
+          <td class="font-mono">53</td>
           <td>two numbers for the fingerprinting rule that measures how much two answer sets overlap</td>
           <td><span class="badge badge-outline font-mono">stored</span></td>
           <td><span class="badge badge-outline font-mono">nothing further</span></td>
         </tr>
         <tr>
           <td class="font-mono">beats</td>
-          <td class="font-mono">33</td>
+          <td class="font-mono">44</td>
           <td>the four beat names, place, what, reach and now, used to group the name for reading</td>
           <td><span class="badge badge-outline font-mono">stored</span></td>
           <td><span class="badge badge-outline font-mono">nothing further</span></td>
         </tr>
         <tr>
           <td class="font-mono">commitment</td>
-          <td class="font-mono">26</td>
+          <td class="font-mono">42</td>
           <td>the name of the one arithmetic rule that turns a set of statements into a fingerprint</td>
           <td><span class="badge badge-outline font-mono">stored</span></td>
           <td><span class="badge badge-primary font-mono">every root derived</span></td>
         </tr>
         <tr>
           <td class="font-mono">primer_version</td>
-          <td class="font-mono">1</td>
+          <td class="font-mono">21</td>
           <td>which version of the rules this is, so an old file can be told from a new one</td>
           <td><span class="badge badge-outline font-mono">stored</span></td>
           <td><span class="badge badge-outline font-mono">nothing further</span></td>
@@ -526,9 +539,76 @@
   </div>
   <div class="mt-8 max-w-prose space-y-4 text-base leading-relaxed">
     <p>The right-hand column is the reason the file can be small. The 45 statements are in the file, and the order they are asked in is not. The order is worked out from the 204 reference places, which are themselves worked out from the population rule. The codebook is worked out from six consonants and five vowels. The 204 places and the codebook and the ordering together account for most of the 67,561 bytes that a registry would ship, and none of them is in the file.</p>
-    <p>The 2,298 bytes for landmarks is 70 per cent of the file. Everything else fits in the remaining 30 per cent, and the key names and punctuation account for the rest of the 3,300.</p>
+    <p>The 2,313 bytes for landmarks is 70 per cent of the file. Everything else fits in the remaining 30 per cent, and each key is counted with its own name, so the eleven keys account for all 3,300 bytes between them.</p>
   </div>
-  <p class="font-mono text-sm opacity-70 mt-3">Figure 4. Every key in the seed, with its size in bytes and what each side builds from it. The bars are drawn to scale, so the length of each bar is the number beside it.</p>
+  <figure class="w-full mt-8">
+    <svg viewBox="0 0 1000 500" width="100%" role="img" aria-label="The eleven top-level keys of the seed as bars drawn to scale by the bytes each one occupies. landmarks is the longest at 2,313 bytes, 70 per cent of the file. Three keys produce something derived on each side." class="font-mono">
+      <text x="30" y="26" font-size="15" font-weight="700" style="fill:oklch(var(--bc))">Figure 4. Every key in the seed, sized by the bytes it occupies</text>
+      <text x="30" y="46" font-size="13" style="fill:oklch(var(--bc)/0.65)">Bars are drawn to scale. Each block is counted on one line with its own key name, so the eleven add up to exactly 3,300 bytes. 2,313 of them belong to the 45 questions and their plain readings.</text>
+
+      <text x="30" y="76" font-size="12" style="fill:oklch(var(--bc)/0.65)">key</text>
+      <text x="200" y="76" font-size="12" style="fill:oklch(var(--bc)/0.65)">bytes</text>
+      <text x="800" y="76" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored or derived</text>
+
+      <text x="30" y="106" font-size="13" style="fill:oklch(var(--bc))">landmarks</text>
+      <rect x="200" y="92" width="420" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="630" y="107" font-size="12" style="fill:oklch(var(--bc))">2,313</text>
+      <text x="800" y="107" font-size="12" style="fill:oklch(var(--p))">stored, 45 question slots derived</text>
+
+      <text x="30" y="140" font-size="13" style="fill:oklch(var(--bc))">markers</text>
+      <rect x="200" y="126" width="53" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="263" y="141" font-size="12" style="fill:oklch(var(--bc))">292</text>
+      <text x="800" y="141" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored</text>
+
+      <text x="30" y="174" font-size="13" style="fill:oklch(var(--bc))">phonology</text>
+      <rect x="200" y="160" width="28" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="238" y="175" font-size="12" style="fill:oklch(var(--bc))">154</text>
+      <text x="800" y="175" font-size="12" style="fill:oklch(var(--p))">stored, 32 syllables derived</text>
+
+      <text x="30" y="208" font-size="13" style="fill:oklch(var(--bc))">distance</text>
+      <rect x="200" y="194" width="22" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="232" y="209" font-size="12" style="fill:oklch(var(--bc))">122</text>
+      <text x="800" y="209" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored</text>
+
+      <text x="30" y="242" font-size="13" style="fill:oklch(var(--bc))">population</text>
+      <rect x="200" y="228" width="19" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="229" y="243" font-size="12" style="fill:oklch(var(--bc))">105</text>
+      <text x="800" y="243" font-size="12" style="fill:oklch(var(--p))">stored, 204 places derived</text>
+
+      <text x="30" y="276" font-size="13" style="fill:oklch(var(--bc))">hierarchy</text>
+      <rect x="200" y="262" width="14" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="224" y="277" font-size="12" style="fill:oklch(var(--bc))">78</text>
+      <text x="800" y="277" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored</text>
+
+      <text x="30" y="310" font-size="13" style="fill:oklch(var(--bc))">partition</text>
+      <rect x="200" y="296" width="14" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="224" y="311" font-size="12" style="fill:oklch(var(--bc))">76</text>
+      <text x="800" y="311" font-size="12" style="fill:oklch(var(--p))">stored rule, question order derived</text>
+
+      <text x="30" y="344" font-size="13" style="fill:oklch(var(--bc))">similarity</text>
+      <rect x="200" y="330" width="10" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="220" y="345" font-size="12" style="fill:oklch(var(--bc))">53</text>
+      <text x="800" y="345" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored, the one hashing rule</text>
+
+      <text x="30" y="378" font-size="13" style="fill:oklch(var(--bc))">beats</text>
+      <rect x="200" y="364" width="8" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="218" y="379" font-size="12" style="fill:oklch(var(--bc))">44</text>
+      <text x="800" y="379" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored</text>
+
+      <text x="30" y="412" font-size="13" style="fill:oklch(var(--bc))">commitment</text>
+      <rect x="200" y="398" width="8" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="218" y="413" font-size="12" style="fill:oklch(var(--bc))">42</text>
+      <text x="800" y="413" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored</text>
+
+      <text x="30" y="446" font-size="13" style="fill:oklch(var(--bc))">primer_version</text>
+      <rect x="200" y="432" width="4" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="214" y="447" font-size="12" style="fill:oklch(var(--bc))">21</text>
+      <text x="800" y="447" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored</text>
+
+      <text x="30" y="480" font-size="12" style="fill:oklch(var(--bc)/0.65)">Counted this way the eleven keys account for all 3,300 bytes, with nothing left over. The ordering of the questions is not in the file anywhere.</text>
+    </svg>
+  </figure>
+
   <div class="mt-8 alert max-w-prose">
     <span>The file is small not because it has been compressed but because most of what the two sides need was never in it. Four of the things both sides use are absent from the file entirely: the ordering, the codebook, the 204 reference places and the fingerprint.</span>
   </div>
@@ -914,6 +994,9 @@
     <img class="w-full" src="assets/figures/unroll-ladder.svg" alt="The eight-stage unroll ladder: seed, 45 questions, distances, ticks, syllables, name, root, drawn from the real seed.">
   </figure>
   <p class="font-mono text-sm opacity-70 mt-3">Figure 6. The eight stages as one ladder, drawn from the real seed for this room. Each stage below takes one rung and shows it in full.</p>
+  <div class="mt-8 alert max-w-prose">
+    <span>Eight stages, and every one of them is arithmetic on the file you can read above. No stage consults a stored answer about this room, because there is no stored answer to consult.</span>
+  </div>
 </section>
 
 <div class="divider"></div>
@@ -930,6 +1013,9 @@
   </div>
   <p class="font-mono text-sm opacity-70 mt-3">Figure 7. Stage 1. The seed on its own: 11 keys, 3,300 bytes, no stored places and no stored answers.</p>
   <div class="mt-8 badge badge-outline font-mono">primer.seed.json &middot; 3,300 bytes &middot; 11 keys</div>
+  <div class="mt-8 alert max-w-prose">
+    <span>One small file, and it does not describe this kitchen or any other. A system can say where it is without ever being handed a list of places.</span>
+  </div>
 </section>
 
 <div class="divider"></div>
@@ -946,6 +1032,9 @@
   </div>
   <p class="font-mono text-sm opacity-70 mt-3">Figure 8. Stage 2. The 45 questions the seed expands to, numbered in the order the file lists them, in eight rows.</p>
   <div class="mt-8 badge badge-outline font-mono">45 questions &middot; each with its plain reading &middot; nothing ticked yet</div>
+  <div class="mt-8 alert max-w-prose">
+    <span>The questions are not written out anywhere. They are built from the file each time, so the two sides cannot disagree about the list unless they disagree about the seed, which the fingerprint catches.</span>
+  </div>
 </section>
 
 <div class="divider"></div>
@@ -962,6 +1051,9 @@
   </div>
   <p class="font-mono text-sm opacity-70 mt-3">Figure 9. Stage 3. One room's answers: 19 of the 45 cells filled. Every later step is arithmetic on these 19 cells.</p>
   <div class="mt-8 badge badge-outline font-mono">19 of 45 true &middot; the filled cells are this reading</div>
+  <div class="mt-8 alert max-w-prose">
+    <span>Every answer is a yes or a no to a sentence a person could answer about a room. The whole coordinate system is built out of nothing more exotic than that.</span>
+  </div>
 </section>
 
 <div class="divider"></div>
@@ -979,6 +1071,9 @@
   </div>
   <p class="font-mono text-sm opacity-70 mt-3">Figure 10. Stage 4. The same 45 questions as 45 numbers. Darker means the statement is true of this room; the light cells are the 0.6 level.</p>
   <div class="mt-8 badge badge-outline font-mono">45 numbers &middot; 0.0 nineteen times, 0.6 twenty-six times</div>
+  <div class="mt-8 alert max-w-prose">
+    <span>Four levels, and only two of them are used by this room. The whole geometry of near and far comes out of those four numbers, which is a very small amount of arithmetic to get a neighbourhood from.</span>
+  </div>
 </section>
 
 <div class="divider"></div>
@@ -996,6 +1091,9 @@
   </div>
   <p class="font-mono text-sm opacity-70 mt-3">Figure 11. Stage 5. The 90 ticks, two per question, in the derived question order. The question numbers underneath are not 1, 2, 3.</p>
   <div class="mt-8 badge badge-outline font-mono">90 ticks &middot; 2 per question &middot; the order is a rearrangement of the numbers 1 to 45</div>
+  <div class="mt-8 alert max-w-prose">
+    <span>Ninety yes-or-no ticks are enough to name a place among more than a thousand billion billion billion possible ones. That is why the name can be eighteen syllables rather than a paragraph.</span>
+  </div>
 </section>
 
 <div class="divider"></div>
@@ -1017,6 +1115,9 @@
     <p>This is the part of the design that does not come from any of the standard tools. A name that is pronounceable is common. A name where nearby places sound alike is common. Both at once, still true when you shorten the name, is the combination this project is claiming.</p>
   </div>
   <div class="mt-8 badge badge-outline font-mono">18 groups of 5 ticks &middot; 18 syllables &middot; 32 in the table</div>
+  <div class="mt-8 alert max-w-prose">
+    <span>Every five ticks become one syllable, and neighbouring answers become neighbouring sounds. A small change in a place is therefore a small change in its name, which is what makes a shortened name useful.</span>
+  </div>
 </section>
 
 <div class="divider"></div>
@@ -1080,7 +1181,7 @@
   </div>
   <p class="font-mono text-sm opacity-70 mt-3">Figure 15. Every question ordered by how much its answers vary across the 204 reference rooms. Position 1 is the question asked first.</p>
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full w-full">
+    <table class="table table-zebra w-full">
       <thead><tr><th>asked in position</th><th>question number</th><th>the statement</th><th>how much its answers vary</th></tr></thead>
       <tbody class="text-base">
         <tr><td>1</td><td class="font-mono">36</td><td class="font-mono">know/why_im_here/any</td><td>0.1301</td></tr>
@@ -1135,7 +1236,7 @@
     <p>Here are the six places read at seven different lengths. At one question the six places fall into three groups. At four questions, five groups. At six questions all six places have their own name. Reading down the last column, the number of separated places only ever rises, and a place that was separate at one length is never merged again at a longer one.</p>
   </div>
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full w-full">
+    <table class="table table-zebra w-full">
       <thead><tr><th>questions read</th><th>the name</th><th>places separated</th><th>places that still share a name</th></tr></thead>
       <tbody id="tgrad" class="text-base">
         <tr><td class="font-mono">1</td><td class="font-mono break-all">&#8985; ma</td><td class="font-mono">3 of 6</td><td>kitchen alone, kitchen with friend, shared workshop and warehouse still share one name</td></tr>
@@ -1204,7 +1305,7 @@
   </figure>
   <p class="font-mono text-sm opacity-70 mt-3">Figure 19. How many of the six independent systems produced the byte-identical root for each room. Five of six at best, two of six at worst, twenty of thirty-six pairs in all.</p>
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full w-full">
+    <table class="table table-zebra w-full">
       <thead><tr><th>place</th><th>families with the same root</th><th>different answer sets</th><th>different roots</th><th>the families that matched</th></tr></thead>
       <tbody class="text-base">
         <tr><td class="font-mono">locked_storeroom</td><td>5 of 6</td><td>2</td><td>2</td><td>gemma-4-31b-it, glm-5.3, gpt-5.6-luna, gpt-6-luna, mimo-v2.6-pro</td></tr>
@@ -1408,7 +1509,7 @@ v.grains  # {2: '&#8985; ma', 4: '&#8985; ma.ma', 6: '&#8985; ma.mo.ma', 12: '&#
   <p class="font-mono text-sm opacity-70 mt-3">Figure 26. Three surfaces, one per system, with the same rooms in the same relative positions, and one chart laid over all three. The chart is the 3,300-byte file. The surfaces are inferred, not observed.</p>
   <div class="mt-8 max-w-prose space-y-4 text-base leading-relaxed">
     <p>Where it stops: the chart is shared too, but only when the situations are unambiguous. Ambiguous situations send the charts apart again, which is why the six rooms here are described in such plain, concrete English.</p>
-    <p>The parent project reached this conclusion and then corrected itself on the follow-up question. One of its own attempts to measure the chart put its control above its treatment, which invalidated that comparison. What is here is the finding restated, inferred from agreement rather than observed directly, and attributed to the parent project rather than to this repository.</p>
+    <p>What is here is the finding restated, inferred from agreement rather than observed directly, and attributed to the parent project rather than to this repository. The parent project also states what would settle the question, and that comparison has not been run: real statements would have to beat shuffled statements, syntactic nonsense and an empty condition, and a run with shared labels scoring well does not do that.</p>
   </div>
   <div class="mt-8 alert max-w-prose">
     <span>The honest reading is that situations are probably not arranged randomly with respect to each other, at least for descriptions this plain. A shared position is not a shared understanding, the statements were handed to the systems rather than invented by them, and the limit was identified in the parent project before this repository existed.</span>
@@ -1434,6 +1535,9 @@ v.grains  # {2: '&#8985; ma', 4: '&#8985; ma.ma', 6: '&#8985; ma.mo.ma', 12: '&#
         <p class="mt-3 text-base leading-relaxed max-w-prose">That any of this is meaning. A coordinate describes a position, and a shared position is not a shared understanding.</p>
       </div>
     </div>
+  </div>
+  <div class="mt-8 alert max-w-prose">
+    <span>What is shown is narrow and it is measured: independent systems place the same situation in the same part of their own space and say so in a form another system can check. What is inferred is larger, and it is the parent project's. What is not shown is meaning, and no number on this page would show it.</span>
   </div>
 </section>
 
@@ -1475,7 +1579,7 @@ v.grains  # {2: '&#8985; ma', 4: '&#8985; ma.ma', 6: '&#8985; ma.mo.ma', 12: '&#
     <div class="chat-footer font-mono text-sm my-2">2 syllables differ, 4 of 4 jobs found by nearness</div>
   </div>
   <div class="overflow-x-auto w-full mt-8">
-    <table class="table table-zebra w-full w-full">
+    <table class="table table-zebra w-full">
       <thead><tr><th>asked in acme's names</th><th>nearest in globex's names</th><th>syllables differing</th><th>runner up</th><th>third nearest</th></tr></thead>
       <tbody class="text-base">
         <tr><td class="font-mono">workflow/approval</td><td class="font-mono">process/authorize</td><td>2</td><td>26</td><td>26</td></tr>
@@ -1555,6 +1659,71 @@ v.grains  # {2: '&#8985; ma', 4: '&#8985; ma.ma', 6: '&#8985; ma.mo.ma', 12: '&#
   </div>
 </section>
 
+
+  <div class="divider"></div>
+
+  <section class="py-12" id="where-this-sits">
+    <h2 class="text-3xl font-bold">Where this sits, and what it might be a symptom of</h2>
+
+    <div class="mt-6 max-w-3xl space-y-4 text-base leading-relaxed">
+      <p>The result on this page is behavioural. Six systems agreed on where a described place is,
+      and nothing here observes what was happening inside any of them. That leaves the obvious
+      question open: why should systems trained by different organisations on different data
+      converge on anything at all?</p>
+      <p>Recent work offers a mechanism. Urbina-Rodriguez and colleagues,
+      <a class="link" href="https://arxiv.org/abs/2601.06851">A Brain-like Synergistic Core in LLMs
+      Drives Behaviour and Learning</a> (arXiv:2601.06851, January 2026), measure how information
+      is combined across layers in several model families. They find that middle layers process
+      information synergistically, where the whole carries more than its parts, while early and
+      late layers rely on redundancy, mirroring the same organisation seen in biological brains.
+      Two of their findings bear directly on this page.</p>
+      <p>First, the organisation <em>emerges through learning</em> and is absent in randomly
+      initialised networks. It is not a property of the architecture; it is a property of having
+      been trained. Second, ablating the synergistic components causes disproportionate
+      behavioural change, so the same regions that integrate most are also the ones behaviour
+      depends on.</p>
+    </div>
+
+    <div class="alert mt-8 max-w-none">
+      <div class="text-sm leading-relaxed">
+        <p class="mb-2"><strong>The connection, stated carefully.</strong> If independently trained
+        systems converge on a similar internal organisation because the training problem is
+        shared, then it is less surprising that independently trained systems also converge on a
+        shared way of describing a situation. This page measures the second thing. That paper
+        measures the first. Neither is evidence for the other, but they are consistent, and
+        together they suggest the agreement here is a symptom of something rather than a
+        coincidence.</p>
+        <p><strong>What would make it more than consistent.</strong> A study that measures both on
+        the same systems: does the degree of internal synergy in a model predict how closely its
+        address matches another model's for the same place? That has not been run. It is the
+        experiment this page points at and does not perform.</p>
+      </div>
+    </div>
+
+    <div class="mt-10 max-w-3xl">
+      <h3 class="text-xl font-bold mb-3">The other line of work this answers</h3>
+      <p class="text-base leading-relaxed mb-4">Rodriguez, <a class="link"
+      href="https://arxiv.org/abs/2601.14567">Agent Identity URI Scheme: Topology-Independent
+      Naming and Capability-Based Discovery for Multi-Agent Systems</a> (arXiv:2601.14567v2,
+      July 2026), solves <em>who</em> an agent is: a trust root, a capability path and a hash that
+      survives migration. It notes one weakness in itself, that two organisations can name the
+      same capability with no words in common, and proposes an external mapping service to fix
+      it. The <a class="link" href="response.html">response page</a> works through what this
+      project offers instead, with two organisations and no mapping table.</p>
+    </div>
+
+    <div class="mt-10 max-w-3xl">
+      <h3 class="text-xl font-bold mb-3">Prior art, named honestly</h3>
+      <p class="text-base leading-relaxed mb-4">Most of the machinery here is not new, and saying
+      so is what makes the rest credible. Locality-preserving codes are Geohash. Pronounceable
+      identifiers are proquints. Similarity sketches are MinHash and locality-sensitive hashing.
+      Commitments are Merkle and SHA. Metric embeddings of relations are Kuratowski and Bourgain.
+      Aligning two representation spaces is canonical correlation analysis, Procrustes and
+      representational similarity analysis. The narrow claim is the combination: a code that is
+      pronounceable, ordered so that a small change is a small change, and locality-preserving at
+      the same time, which Geohash and proquints each get wrong in a different direction.</p>
+    </div>
+  </section>
 </main>
 
 <footer class="footer footer-center bg-base-200 text-base-content p-12 mt-12 border-t border-base-300">
