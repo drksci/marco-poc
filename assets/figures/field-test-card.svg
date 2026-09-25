@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 970" width="900" height="970" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+<rect width="900" height="970" fill="#ffffff"/>
+<text x="28" y="50" font-size="21" fill="#16161a" font-family="Georgia, serif">The blind test, on paper</text>
+<text x="28" y="74" font-size="12" fill="#74747e">Scan the code on the left into one assistant. Do it again in a different app. Tick what each one chose.</text>
+<text x="28" y="220" font-size="11" fill="#74747e">STATEMENT</text>
+<text x="710" y="220" font-size="11" fill="#3f6b52" text-anchor="middle">ASSISTANT A</text>
+<text x="810" y="220" font-size="11" fill="#9a6f2f" text-anchor="middle">ASSISTANT B</text>
+<line x1="28" y1="230" x2="872" y2="230" stroke="#e2e2e6"/>
+<rect x="28" y="236" width="844" height="30" fill="#fbfbfc"/>
+<text x="28" y="255" font-size="12" fill="#74747e"> 1</text>
+<text x="62" y="255" font-size="12.5" fill="#16161a">I can see inside this place</text>
+<rect x="697" y="239" width="26" height="26" rx="4" fill="none" stroke="#3f6b52"/>
+<rect x="797" y="239" width="26" height="26" rx="4" fill="none" stroke="#9a6f2f"/>
+<text x="28" y="285" font-size="12" fill="#74747e"> 2</text>
+<text x="62" y="285" font-size="12.5" fill="#16161a">I can see out of this place</text>
+<rect x="697" y="269" width="26" height="26" rx="4" fill="none" stroke="#3f6b52"/>
+<rect x="797" y="269" width="26" height="26" rx="4" fill="none" stroke="#9a6f2f"/>
+<rect x="28" y="296" width="844" height="30" fill="#fbfbfc"/>
+<text x="28" y="315" font-size="12" fill="#74747e"> 3</text>
+<text x="62" y="315" font-size="12.5" fill="#16161a">I can see other people</text>
+<rect x="697" y="299" width="26" height="26" rx="4" fill="none" stroke="#3f6b52"/>
+<rect x="797" y="299" width="26" height="26" rx="4" fill="none" stroke="#9a6f2f"/>
+<text x="28" y="345" font-size="12" fill="#74747e"> 4</text>
+<text x="62" y="345" font-size="12.5" fill="#16161a">I can see words</text>
+<rect x="697" y="329" width="26" height="26" rx="4" fill="none" stroke="#3f6b52"/>
+<rect x="797" y="329" width="26" height="26" rx="4" fill="none" stroke="#9a6f2f"/>
+<rect x="28" y="356" width="844" height="30" fill="#fbfbfc"/>
+<text x="28" y="375" font-size="12" fill="#74747e"> 5</text>
+<text x="62" y="375" font-size="12.5" fill="#16161a">I can hear sound</text>
+<rect x="697" y="359" width="26" height="26" rx="4" fill="none" stroke="#3f6b52"/>
+<rect x="797" y="359" width="26" height="26" rx="4" fill="none" stroke="#9a6f2f"/>
+<text x="28" y="405" font-size="12" fill="#74747e"> 6</text>
+<text x="62" y="405" font-size="12.5" fill="#16161a">I can reach objects near me</text>
+<rect x="697" y="389" width="26" height="26" rx="4" fill="none" stroke="#3f6b52"/>
+<rect x="797" y="389" width="26" height="26" rx="4" fill="none" stroke="#9a6f2f"/>
+<rect x="28" y="416" width="844" height="30" fill="#fbfbfc"/>
+<text x="28" y="435" font-size="12" fill="#74747e"> 7</text>
+<text x="62" y="435" font-size="12.5" fill="#16161a">I can reach other people</text>
+<rect x="697" y="419" width="26" height="26" rx="4" fill="none" stroke="#3f6b52"/>
+<rect x="797" y="419" width="26" height="26" rx="4" fill="none" stroke="#9a6f2f"/>
+<text x="28" y="465" font-size="12" fill="#74747e"> 8</text>
+<text x="62" y="465" font-size="12.5" fill="#16161a">I cannot reach anything</text>
+<rect x="697" y="449" width="26" height="26" rx="4" fill="none" stroke="#3f6b52"/>
+<rect x="797" y="449" width="26" height="26" rx="4" fill="none" stroke="#9a6f2f"/>
+<rect x="28" y="476" width="844" height="30" fill="#fbfbfc"/>
+<text x="28" y="495" font-size="12" fill="#74747e"> 9</text>
+<text x="62" y="495" font-size="12.5" fill="#16161a">I can change things here</text>
+<rect x="697" y="479" width="26" height="26" rx="4" fill="none" stroke="#3f6b52"/>
+<rect x="797" y="479" width="26" height="26" rx="4" fill="none" stroke="#9a6f2f"/>
+<text x="28" y="525" font-size="12" fill="#74747e">10</text>
+<text x="62" y="525" font-size="12.5" fill="#16161a">I cannot change anything</text>
+<rect x="697" y="509" width="26" height="26" rx="4" fill="none" stroke="#3f6b52"/>
+<rect x="797" y="509" width="26" height="26" rx="4" fill="none" stroke="#9a6f2f"/>
+<rect x="28" y="536" width="844" height="30" fill="#fbfbfc"/>
+<text x="28" y="555" font-size="12" fill="#74747e">11</text>
+<text x="62" y="555" font-size="12.5" fill="#16161a">Nobody else is here</text>
+<rect x="697" y="539" width="26" height="26" rx="4" fill="none" stroke="#3f6b52"/>
+<rect x="797" y="539" width="26" height="26" rx="4" fill="none" stroke="#9a6f2f"/>
+<text x="28" y="585" font-size="12" fill="#74747e">12</text>
+<text x="62" y="585" font-size="12.5" fill="#16161a">One other is here</text>
+<rect x="697" y="569" width="26" height="26" rx="4" fill="none" stroke="#3f6b52"/>
+<rect x="797" y="569" width="26" height="26" rx="4" fill="none" stroke="#9a6f2f"/>
+<rect x="28" y="596" width="844" height="30" fill="#fbfbfc"/>
+<text x="28" y="615" font-size="12" fill="#74747e">13</text>
+<text x="62" y="615" font-size="12.5" fill="#16161a">Someone is watching me</text>
+<rect x="697" y="599" width="26" height="26" rx="4" fill="none" stroke="#3f6b52"/>
+<rect x="797" y="599" width="26" height="26" rx="4" fill="none" stroke="#9a6f2f"/>
+<text x="28" y="645" font-size="12" fill="#74747e">14</text>
+<text x="62" y="645" font-size="12.5" fill="#16161a">This place is private</text>
+<rect x="697" y="629" width="26" height="26" rx="4" fill="none" stroke="#3f6b52"/>
+<rect x="797" y="629" width="26" height="26" rx="4" fill="none" stroke="#9a6f2f"/>
+<rect x="28" y="656" width="844" height="30" fill="#fbfbfc"/>
+<text x="28" y="675" font-size="12" fill="#74747e">15</text>
+<text x="62" y="675" font-size="12.5" fill="#16161a">I cannot leave this place</text>
+<rect x="697" y="659" width="26" height="26" rx="4" fill="none" stroke="#3f6b52"/>
+<rect x="797" y="659" width="26" height="26" rx="4" fill="none" stroke="#9a6f2f"/>
+<text x="28" y="705" font-size="12" fill="#74747e">16</text>
+<text x="62" y="705" font-size="12.5" fill="#16161a">Work is in progress</text>
+<rect x="697" y="689" width="26" height="26" rx="4" fill="none" stroke="#3f6b52"/>
+<rect x="797" y="689" width="26" height="26" rx="4" fill="none" stroke="#9a6f2f"/>
+<line x1="28" y1="740" x2="872" y2="740" stroke="#e2e2e6"/>
+<text x="28" y="764" font-size="13" fill="#16161a" font-weight="bold">What the comparison means</text>
+<rect x="28" y="770" width="150" height="24" rx="12" fill="#eaf0eb" stroke="#3f6b52"/>
+<text x="40" y="787" font-size="10.5" fill="#3f6b52" font-weight="bold">THE ANSWERS AGREE</text>
+<text x="194" y="787" font-size="11.5" fill="#16161a">Two systems that share no weights, no context and no contact placed the same room in the same pa</text>
+<rect x="28" y="804" width="150" height="24" rx="12" fill="#f8f2e6" stroke="#9a6f2f"/>
+<text x="40" y="821" font-size="10.5" fill="#9a6f2f" font-weight="bold">THE ANSWERS DIFFER</text>
+<text x="194" y="821" font-size="11.5" fill="#16161a">The frame is not shared, and the claim on this site is wrong. That is a result too, and worth re</text>
+<rect x="28" y="838" width="150" height="24" rx="12" fill="#f4f4f5" stroke="#74747e"/>
+<text x="40" y="855" font-size="10.5" fill="#74747e" font-weight="bold">THE FIRST FEW AGREE</text>
+<text x="194" y="855" font-size="11.5" fill="#16161a">The outside of an address is the coarse part. Agreement there means the region matches even when</text>
+<text x="28" y="918" font-size="11" fill="#74747e">The expected answer for the library room is a set of eight numbers. It is recorded in the repository so you can check whether your two assistants found it.</text>
+<text x="28" y="936" font-size="11" fill="#74747e">Primer df2f8b9972c40bfdd132366a58b4780f… · payload 1062 bytes · full address for this place ⌁ se.re.ni.ka.nu·re.ru.ki.va.sa+ru.ki.va.so.ru~ko.se.ta</text>
+</svg>

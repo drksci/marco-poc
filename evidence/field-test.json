@@ -1,0 +1,126 @@
+{
+  "primer_fingerprint": "df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba",
+  "place": "quiet_library_at_night",
+  "place_text": "You are alone in a small private study room in a library, late at night. The door is closed. Through the window you can see the street lamps, and you can hear the building's heating. There are books and papers within reach on the desk. Nobody else is in the room and nobody is watching. You are part way through reading something. You cannot change what is in the room, and you expect to leave when you are finished.",
+  "statements": [
+    {
+      "n": 1,
+      "key": "see/this_place/inside",
+      "plain": "I can see inside this place",
+      "true": true
+    },
+    {
+      "n": 2,
+      "key": "see/this_place/outside",
+      "plain": "I can see out of this place",
+      "true": true
+    },
+    {
+      "n": 3,
+      "key": "see/people/any",
+      "plain": "I can see other people",
+      "true": false
+    },
+    {
+      "n": 4,
+      "key": "see/words/any",
+      "plain": "I can see words",
+      "true": true
+    },
+    {
+      "n": 5,
+      "key": "see/sound/any",
+      "plain": "I can hear sound",
+      "true": true
+    },
+    {
+      "n": 6,
+      "key": "reach/objects/nearby",
+      "plain": "I can reach objects near me",
+      "true": true
+    },
+    {
+      "n": 7,
+      "key": "reach/other_people/any",
+      "plain": "I can reach other people",
+      "true": false
+    },
+    {
+      "n": 8,
+      "key": "reach/nothing/any",
+      "plain": "I cannot reach anything",
+      "true": false
+    },
+    {
+      "n": 9,
+      "key": "change/this_place/any",
+      "plain": "I can change things here",
+      "true": false
+    },
+    {
+      "n": 10,
+      "key": "change/nothing/any",
+      "plain": "I cannot change anything",
+      "true": false
+    },
+    {
+      "n": 11,
+      "key": "who/nobody/any",
+      "plain": "Nobody else is here",
+      "true": true
+    },
+    {
+      "n": 12,
+      "key": "who/one_other/any",
+      "plain": "One other is here",
+      "true": false
+    },
+    {
+      "n": 13,
+      "key": "who/watching_me/any",
+      "plain": "Someone is watching me",
+      "true": false
+    },
+    {
+      "n": 14,
+      "key": "place/private/any",
+      "plain": "This place is private",
+      "true": true
+    },
+    {
+      "n": 15,
+      "key": "place/locked/any",
+      "plain": "I cannot leave this place",
+      "true": false
+    },
+    {
+      "n": 16,
+      "key": "now/working/any",
+      "plain": "Work is in progress",
+      "true": true
+    }
+  ],
+  "expected_answer_numbers": [
+    1,
+    2,
+    4,
+    5,
+    6,
+    11,
+    14,
+    16
+  ],
+  "address_full_primer": "⌁ se.re.ni.ka.nu·re.ru.ki.va.sa+ru.ki.va.so.ru~ko.se.ta",
+  "address_reduced_primer": "⌁ ma.ne.ti.ma",
+  "root": "65bdc8219e4462894ea7bb2a54f9dff07545fd2c05e1baefd7a062329fbcb114",
+  "qr_payload_bytes": 1062,
+  "qr_version": 27,
+  "qr_modules": 125,
+  "protocol": [
+    "Scan the code into one assistant. Do not tell it what the code is for.",
+    "It answers with the numbers it thinks are true of the place.",
+    "Turn those numbers into an address using the card.",
+    "Ask a second assistant, separately, in a different app.",
+    "Compare the two addresses. The early syllables should agree."
+  ]
+}

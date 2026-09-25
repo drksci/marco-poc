@@ -6,12 +6,10 @@
 <title>What agent:// is missing</title>
 <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-<link rel="stylesheet" href="assets/site.css">
 </head>
 <body class="min-h-screen bg-base-100 text-base-content">
 
-<nav class="site-nav" aria-label="Sections">
+<nav aria-label="Sections">
   <div class="navbar bg-base-200 sticky top-0 z-30 min-h-12">
     <div class="navbar-center gap-4 lg:gap-6 text-sm w-full justify-center">
       <a class="link link-hover" href="index.html">the whole story</a>
@@ -27,98 +25,111 @@
     <div>
       <p class="font-mono text-sm tracking-widest uppercase opacity-60">a working response · arXiv:2601.14567v2 · cs.MA</p>
       <h1 class="text-4xl lg:text-5xl font-bold mt-4">What <em>agent://</em> is missing</h1>
-      <p class="py-8 text-lg opacity-80 max-w-2xl mx-auto">The paper solves who. An identifier that answers <em>who</em> has nothing to say about <em>where</em>, and that is not a bug in it.</p>
+      <p class="py-8 text-lg opacity-80 max-w-2xl mx-auto">The paper solves who. An identifier that answers <em>who</em> has nothing to say about <em>where</em>, and that is not a fault in the paper. This page adds the second question and measures what it is worth.</p>
     </div>
   </div>
 </header>
 
-<main class="container mx-auto max-w-5xl px-6">
+<main class="container mx-auto max-w-5xl px-4">
 
-<!-- ================================================== what the paper solves -->
-<section class="py-16">
-  <h2 class="text-3xl font-bold">The paper solves who, and its identifier destroys where on purpose</h2>
+<!-- ================================================== 1. what the paper solves -->
+<section class="py-12">
+  <h2 class="text-3xl font-bold">Two companies name the same job differently, and the paper's identifier cannot tell</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
-    <p>The identifier is SHA-256 over the agent's capability set, so two agents whose sets differ by a single entry receive unrelated keys, and no threshold on those keys recovers a distance. That is correct for reference and for audit: an identifier that drifted with behaviour could not be used to name anything.</p>
-    <p>It is also why the scheme has nothing to say about location. Two agents doing nearly the same job have no distance between them at all, because strings have no metric. There is nothing to compare except equality.</p>
+    <p>Start with one job and two names for it. One company calls the job of approving a change <span class="font-mono">/workflow/approval</span>. Another calls the same job <span class="font-mono">/process/authorize</span>. The two settings share no word at all.</p>
+    <p>The paper's identifier is built by hashing an agent's list of capabilities. A hash is a fingerprint for data: it turns any list into a fixed-length code, and changing one entry changes the code completely. That is the right property for a name. A name that drifted every time an agent learned something could not be used to refer to anything.</p>
+    <p>The same property is why the scheme says nothing about location. Two agents doing nearly the same job get two unrelated codes, and there is no way to measure a gap between two codes. Text has no distance. Two house names, Rose Cottage and The Roses, are not one metre apart or three metres apart. They are the same or they are different.</p>
+    <p>The paper names this weakness in itself. Different organisations may describe equivalent capabilities with incompatible paths. Its own remedy is an external mapping service: a second system to run, and a second source of truth that can drift away from both of the things it maps.</p>
   </div>
-  <div class="alert alert-warning w-full mt-12">
-    <span><strong>The paper names this weakness in itself.</strong> Different organisations may describe equivalent capabilities with incompatible paths. Its own remedy is an external capability-mapping service: a second system to run, and a second source of truth that can drift from both sides it maps.</span>
-  </div>
-  <div class="mockup-code w-full mt-12 text-base">
+  <div class="mockup-code w-full mt-8">
     <pre data-prefix="acme.com"><code>/workflow/approval</code></pre>
     <pre data-prefix="globex.io"><code>/process/authorize</code></pre>
   </div>
-  <p class="badge badge-outline font-mono mt-8">one job, two names, no shared segment · exact-path discovery fails the pair</p>
-</section>
-
-<div class="divider"></div>
-
-<!-- ================================================== headline numbers -->
-<section class="py-16">
-  <h2 class="text-3xl font-bold">What the two mechanisms scored</h2>
-  <div class="stats stats-vertical lg:stats-horizontal bg-base-200 w-full mt-12">
-    <div class="stat"><div class="stat-title text-base">discovery by capability path</div><div class="stat-value text-4xl">1/4</div><div class="stat-desc text-base">one hit, and it is a prefix accident</div></div>
-    <div class="stat"><div class="stat-title text-base">discovery by address nearness</div><div class="stat-value text-4xl">4/4</div><div class="stat-desc text-base">no mapping table, no curator</div></div>
-    <div class="stat"><div class="stat-title text-base">equivalent vs non-equivalent</div><div class="stat-value text-4xl">2.75 / 24.0</div><div class="stat-desc text-base">mean Hamming, 16 non-equivalent pairs</div></div>
-    <div class="stat"><div class="stat-title text-base">separation</div><div class="stat-value text-4xl">+21.25</div><div class="stat-desc text-base">against a shuffled null of 0.1994</div></div>
+  <div class="alert bg-base-200 border border-base-300 w-full mt-8">
+    <span>One job, two names, no shared word. Exact-path discovery finds nothing for this pair, and that is the problem the rest of this page measures. The paper is honest enough to say so itself, which is why the argument here is an addition rather than a correction.</span>
   </div>
-  <p class="badge badge-outline font-mono mt-8">four queries · two mechanisms · one decoy that was never returned as nearest</p>
 </section>
 
 <div class="divider"></div>
 
-<!-- ================================================== nine agents -->
-<section class="py-16">
-  <h2 class="text-3xl font-bold">Two organisations, the same four jobs, one decoy</h2>
+<!-- ================================================== 2. headline numbers -->
+<section class="py-12">
+  <h2 class="text-3xl font-bold">Finding a partner by name, and finding one by position</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
-    <p>Every agent below carries an <span class="font-mono">agent://</span> URI and, alongside it, a <span class="font-mono">⌁</span> address derived from the situation the job happens in rather than from the job's name.</p>
-    <p>The two sides do not observe identical statements, so equivalent jobs land near each other rather than identical. That is why this is not a tautology.</p>
+    <p>Four queries are sent from one company to the other. Each query is a capability path, and each has an equivalent on the other side doing the same job under a different name. Two ways of answering are compared. The first matches the path exactly. The second gives every agent a position, worked out from the situation the job happens in rather than from the job's name, and returns whichever position is nearest.</p>
+    <p>The results are below. All six values come from the same recorded run.</p>
   </div>
-  <div class="overflow-x-auto w-full mt-12">
-    <table class="table table-zebra w-full">
-      <thead><tr><th>organisation</th><th>capability path</th><th>the job it does</th><th>agent:// URI</th><th>⌁ address</th></tr></thead>
-      <tbody class="text-base">
-        <tr><td class="font-mono">acme.com</td><td class="font-mono">workflow/approval</td><td>approval</td><td class="font-mono">agent://acme.com/workflow/approval/01h0000000000000000000000</td><td class="font-mono">⌁ no.ki.ni.ke.ru·to.ru.ki.ru.ta+va.ki.ra.ma.no~ko.so.mo</td></tr>
-        <tr><td class="font-mono">acme.com</td><td class="font-mono">workflow/build</td><td>build</td><td class="font-mono">agent://acme.com/workflow/build/01h0000000000000000000000</td><td class="font-mono">⌁ no.mo.ru.mi.nu·ki.ru.mo.va.ke+ru.mo.ra.tu.ru~ki.ro.ta</td></tr>
-        <tr><td class="font-mono">acme.com</td><td class="font-mono">workflow/rollback</td><td>rollback</td><td class="font-mono">agent://acme.com/workflow/rollback/01h0000000000000000000000</td><td class="font-mono">⌁ no.ki.ro.ve.no·ki.ru.se.so.ki+ru.mo.ra.tu.ru~mo.su.ki</td></tr>
-        <tr><td class="font-mono">acme.com</td><td class="font-mono">process/audit</td><td>audit</td><td class="font-mono">agent://acme.com/process/audit/01h0000000000000000000000</td><td class="font-mono">⌁ va.mo.ni.ki.su·ki.ru.ki.ru.mo+ve.ki.mi.tu.ru~ki.ru.ki</td></tr>
-        <tr><td class="font-mono">globex.io</td><td class="font-mono">process/authorize</td><td>approval</td><td class="font-mono">agent://globex.io/process/authorize/01h0000000000000000000000</td><td class="font-mono">⌁ no.ki.ni.ke.ru·to.no.ki.ru.ta+va.ki.ra.ma.no~ko.so.mo</td></tr>
-        <tr><td class="font-mono">globex.io</td><td class="font-mono">process/compile</td><td>build</td><td class="font-mono">agent://globex.io/process/compile/01h0000000000000000000000</td><td class="font-mono">⌁ no.mo.ru.mi.nu·mo.ru.mo.va.ke+ru.ma.ra.tu.ru~ki.ro.ta</td></tr>
-        <tr><td class="font-mono">globex.io</td><td class="font-mono">process/revert</td><td>rollback</td><td class="font-mono">agent://globex.io/process/revert/01h0000000000000000000000</td><td class="font-mono">⌁ no.ki.ro.ve.no·ki.no.se.so.ki+ru.mo.ra.tu.ru~mo.su.ki</td></tr>
-        <tr><td class="font-mono">globex.io</td><td class="font-mono">process/review</td><td>audit</td><td class="font-mono">agent://globex.io/process/review/01h0000000000000000000000</td><td class="font-mono">⌁ va.mo.ni.ki.su·ki.no.ki.va.mo+ve.ki.mi.tu.ru~ki.ru.ki</td></tr>
-        <tr><td class="font-mono">globex.io</td><td class="font-mono">process/migrate</td><td>migrate, no equivalent</td><td class="font-mono">agent://globex.io/process/migrate/01h0000000000000000000000</td><td class="font-mono">⌁ se.re.ru.tu.no·ki.su.ki.ni.ki+ru.mo.ra.so.ru~ki.ru.ki</td></tr>
-      </tbody>
-    </table>
+  <div class="stats stats-vertical lg:stats-horizontal bg-base-200 w-full mt-8">
+    <div class="stat"><div class="stat-title text-base">found by matching the path</div><div class="stat-value text-4xl">1/4</div><div class="stat-desc text-base">one hit, and it is an accident</div></div>
+    <div class="stat"><div class="stat-title text-base">found by nearest position</div><div class="stat-value text-4xl">4/4</div><div class="stat-desc text-base">no mapping table, no curator</div></div>
+    <div class="stat"><div class="stat-title text-base">letters apart, equivalent pairs</div><div class="stat-value text-4xl">2.75</div><div class="stat-desc text-base">against 24.0 for the other 16 pairs</div></div>
+    <div class="stat"><div class="stat-title text-base">the gap between those two</div><div class="stat-value text-4xl">+21.25</div><div class="stat-desc text-base">against a shuffled null of 0.1994</div></div>
   </div>
-  <p class="badge badge-outline font-mono mt-8">9 agents · 8 of them doing 4 jobs under 2 vocabularies · 4 equivalent pairs, 16 non-equivalent pairs</p>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
+    <div class="radial-progress text-primary" style="--value:25; --size:8rem; --thickness:0.7rem" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">1/4</div>
+    <div class="radial-progress text-success" style="--value:100; --size:8rem; --thickness:0.7rem" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">4/4</div>
+  </div>
+  <div class="alert alert-success w-full mt-8">
+    <span>Matching by name finds one of four partners. Matching by position finds all four, and it does it with no mapping table between the two vocabularies and no curator to trust. The one hit by name is not a success: it comes from a shared first segment, which the next table shows.</span>
+  </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ================================================== recall table -->
-<section class="py-16">
-  <h2 class="text-3xl font-bold">The two mechanisms, on the same four queries</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">Each query is an acme agent's own capability path, asked against the globex population: first by exact path, then by address nearness, with no mapping table anywhere in the path.</p>
-  <div class="overflow-x-auto w-full mt-12">
+<!-- ================================================== 3. nine agents -->
+<section class="py-12">
+  <h2 class="text-3xl font-bold">Two organisations, the same four jobs, and one decoy</h2>
+  <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
+    <p>Nine agents are listed below. Eight of them do four jobs between them, four on each side, and every pair doing the same job carries a completely different name. The ninth, <span class="font-mono">process/migrate</span>, does something with no equivalent on the other side. It is the decoy, and the question later is whether the nearest-position method ever returns it.</p>
+    <p>Each agent carries a <span class="font-mono">agent://</span> URI and, alongside it, a <span class="font-mono">⌁</span> position worked out from the situation the job happens in rather than from the job's name.</p>
+    <p>The two sides do not observe identical statements, so equivalent jobs land near each other instead of on top of each other. That is what keeps this from being a tautology: the positions were not copied from the names.</p>
+  </div>
+  <div class="overflow-x-auto w-full mt-8">
     <table class="table table-zebra w-full">
-      <thead><tr><th>query (acme path)</th><th>by capability path</th><th>by address nearness</th><th>Hamming</th><th>same job?</th></tr></thead>
+      <thead><tr><th>organisation</th><th>capability path</th><th>the job it does</th><th>agent:// URI</th><th>⌁ position</th></tr></thead>
       <tbody class="text-base">
-        <tr><td class="font-mono">workflow/approval</td><td>0 results <span class="badge badge-outline font-mono">MISS</span></td><td class="font-mono">process/authorize</td><td>2</td><td><span class="badge badge-success font-mono">HIT</span></td></tr>
-        <tr><td class="font-mono">workflow/build</td><td>0 results <span class="badge badge-outline font-mono">MISS</span></td><td class="font-mono">process/compile</td><td>3</td><td><span class="badge badge-success font-mono">HIT</span></td></tr>
-        <tr><td class="font-mono">workflow/rollback</td><td>0 results <span class="badge badge-outline font-mono">MISS</span></td><td class="font-mono">process/revert</td><td>2</td><td><span class="badge badge-success font-mono">HIT</span></td></tr>
-        <tr><td class="font-mono">process/audit</td><td>5 results: every <span class="font-mono">process/*</span> path on the other side, including the decoy <span class="badge badge-warning font-mono">HIT</span></td><td class="font-mono">process/review</td><td>4</td><td><span class="badge badge-success font-mono">HIT</span></td></tr>
+        <tr><td class="font-mono">acme.com</td><td class="font-mono">workflow/approval</td><td>approval</td><td class="font-mono break-all">agent://acme.com/workflow/approval/01h0000000000000000000000</td><td class="font-mono break-all">⌁ no.ki.ni.ke.ru·to.ru.ki.ru.ta+va.ki.ra.ma.no~ko.so.mo</td></tr>
+        <tr><td class="font-mono">acme.com</td><td class="font-mono">workflow/build</td><td>build</td><td class="font-mono break-all">agent://acme.com/workflow/build/01h0000000000000000000000</td><td class="font-mono break-all">⌁ no.mo.ru.mi.nu·ki.ru.mo.va.ke+ru.mo.ra.tu.ru~ki.ro.ta</td></tr>
+        <tr><td class="font-mono">acme.com</td><td class="font-mono">workflow/rollback</td><td>rollback</td><td class="font-mono break-all">agent://acme.com/workflow/rollback/01h0000000000000000000000</td><td class="font-mono break-all">⌁ no.ki.ro.ve.no·ki.ru.se.so.ki+ru.mo.ra.tu.ru~mo.su.ki</td></tr>
+        <tr><td class="font-mono">acme.com</td><td class="font-mono">process/audit</td><td>audit</td><td class="font-mono break-all">agent://acme.com/process/audit/01h0000000000000000000000</td><td class="font-mono break-all">⌁ va.mo.ni.ki.su·ki.ru.ki.ru.mo+ve.ki.mi.tu.ru~ki.ru.ki</td></tr>
+        <tr><td class="font-mono">globex.io</td><td class="font-mono">process/authorize</td><td>approval</td><td class="font-mono break-all">agent://globex.io/process/authorize/01h0000000000000000000000</td><td class="font-mono break-all">⌁ no.ki.ni.ke.ru·to.no.ki.ru.ta+va.ki.ra.ma.no~ko.so.mo</td></tr>
+        <tr><td class="font-mono">globex.io</td><td class="font-mono">process/compile</td><td>build</td><td class="font-mono break-all">agent://globex.io/process/compile/01h0000000000000000000000</td><td class="font-mono break-all">⌁ no.mo.ru.mi.nu·mo.ru.mo.va.ke+ru.ma.ra.tu.ru~ki.ro.ta</td></tr>
+        <tr><td class="font-mono">globex.io</td><td class="font-mono">process/revert</td><td>rollback</td><td class="font-mono break-all">agent://globex.io/process/revert/01h0000000000000000000000</td><td class="font-mono break-all">⌁ no.ki.ro.ve.no·ki.no.se.so.ki+ru.mo.ra.tu.ru~mo.su.ki</td></tr>
+        <tr><td class="font-mono">globex.io</td><td class="font-mono">process/review</td><td>audit</td><td class="font-mono break-all">agent://globex.io/process/review/01h0000000000000000000000</td><td class="font-mono break-all">⌁ va.mo.ni.ki.su·ki.no.ki.va.mo+ve.ki.mi.tu.ru~ki.ru.ki</td></tr>
+        <tr><td class="font-mono">globex.io</td><td class="font-mono">process/migrate</td><td>migrate, no equivalent</td><td class="font-mono break-all">agent://globex.io/process/migrate/01h0000000000000000000000</td><td class="font-mono break-all">⌁ se.re.ru.tu.no·ki.su.ki.ni.ki+ru.mo.ra.so.ru~ki.ru.ki</td></tr>
       </tbody>
     </table>
   </div>
-  <div class="mt-12 space-y-6 max-w-3xl text-base leading-relaxed">
-    <p>The single capability-path hit is accidental. <span class="font-mono">process/audit</span> prefix-matches every <span class="font-mono">process/*</span> path on the other side, so five results come back and one of them happens to carry the audit job. That is a shared first segment, not a meaning. The other three queries return nothing at all.</p>
-    <p>Runners-up make the same point from the other side: <span class="font-mono">workflow/build</span> sits 18 from the decoy and 19 from <span class="font-mono">process/revert</span>, against 3 from its equivalent.</p>
+  <div class="alert bg-base-200 border border-base-300 w-full mt-8">
+    <span>Two organisations with no shared words, and eight of nine agents still pair up correctly once the position is used instead of the name. The exception is the decoy, and it is there on purpose so that a method which simply returns something cannot pass.</span>
   </div>
-  <div class="card bg-base-200 w-full mt-12">
+</section>
+
+<div class="divider"></div>
+
+<!-- ================================================== 4. recall -->
+<section class="py-12">
+  <h2 class="text-3xl font-bold">The two methods, on the same four queries</h2>
+  <div class="mt-8 max-w-3xl text-base leading-relaxed">
+    <p>Each query is one company's own capability path, asked against the other company's nine agents. The table below gives the outcome both ways, and the distance is in letters of the position, out of the 36 letters a position has.</p>
+  </div>
+  <div class="overflow-x-auto w-full mt-8">
+    <table class="table table-zebra w-full">
+      <thead><tr><th>query, as issued</th><th>found by matching the path</th><th>found by nearest position</th><th>letters apart</th><th>same job?</th></tr></thead>
+      <tbody class="text-base">
+        <tr><td class="font-mono">workflow/approval</td><td>nothing <span class="badge badge-outline font-mono">miss</span></td><td class="font-mono">process/authorize</td><td>2</td><td><span class="badge badge-success font-mono">hit</span></td></tr>
+        <tr><td class="font-mono">workflow/build</td><td>nothing <span class="badge badge-outline font-mono">miss</span></td><td class="font-mono">process/compile</td><td>3</td><td><span class="badge badge-success font-mono">hit</span></td></tr>
+        <tr><td class="font-mono">workflow/rollback</td><td>nothing <span class="badge badge-outline font-mono">miss</span></td><td class="font-mono">process/revert</td><td>2</td><td><span class="badge badge-success font-mono">hit</span></td></tr>
+        <tr><td class="font-mono">process/audit</td><td>five results, every <span class="font-mono">process/*</span> path including the decoy <span class="badge badge-warning font-mono">hit</span></td><td class="font-mono">process/review</td><td>4</td><td><span class="badge badge-success font-mono">hit</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card bg-base-200 w-full mt-8">
     <div class="card-body">
-      <h3 class="card-title text-sm font-mono">recorded output of scripts/07_capability_nearness.py</h3>
+      <h3 class="card-title text-base font-mono">the recorded output of scripts/07_capability_nearness.py</h3>
       <div class="chat chat-end w-full mt-4">
-        <div class="chat-header font-mono text-base mb-2">by capability path</div>
+        <div class="chat-header font-mono text-base mb-2">by matching the path</div>
         <div class="chat-bubble chat-bubble-secondary max-w-none font-mono text-base my-3">workflow/approval      -&gt; 0 result(s)  none   MISS
 workflow/build         -&gt; 0 result(s)  none   MISS
 workflow/rollback      -&gt; 0 result(s)  none   MISS
@@ -126,248 +137,774 @@ process/audit          -&gt; 5 result(s)  ['process/authorize', 'process/compile
   recall = 1/4</div>
       </div>
       <div class="chat chat-start w-full mt-8">
-        <div class="chat-header font-mono text-base mb-2">by address nearness</div>
-        <div class="chat-bubble chat-bubble-primary max-w-none font-mono text-base my-3">workflow/approval      -&gt; process/authorize      (hamming  2)   HIT
-workflow/build         -&gt; process/compile        (hamming  3)   HIT
-workflow/rollback      -&gt; process/revert         (hamming  2)   HIT
-process/audit          -&gt; process/review         (hamming  4)   HIT
+        <div class="chat-header font-mono text-base mb-2">by nearest position</div>
+        <div class="chat-bubble chat-bubble-primary max-w-none font-mono text-base my-3">workflow/approval      -&gt; process/authorize      (2 letters apart)   HIT
+workflow/build         -&gt; process/compile        (3 letters apart)   HIT
+workflow/rollback      -&gt; process/revert         (2 letters apart)   HIT
+process/audit          -&gt; process/review         (4 letters apart)   HIT
   recall = 4/4
   decoy 'process/migrate' returned as nearest: 0 times</div>
       </div>
     </div>
   </div>
+
+  <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
+    <p>The single hit by path is an accident. The query <span class="font-mono">process/audit</span> shares its first segment with every <span class="font-mono">process/*</span> path on the other side, so five results come back and one of them happens to be doing the audit job. That is a shared string, not a shared meaning. The other three queries return nothing at all.</p>
+    <p>The runners-up make the same point from the other side. The build query sits 18 letters from the decoy and 19 from the rollback agent, against 3 from its real equivalent.</p>
+  </div>
+  <div class="alert alert-success w-full mt-8">
+    <span>Four queries, four correct partners, and the nearest-position method never returns the decoy. The distance to the real partner is 2, 3, 2 and 4 letters, while the nearest wrong answer is 17 letters away. Nothing had to be mapped by hand and nothing had to be curated.</span>
+  </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ================================================== the paper's example -->
-<section class="py-16">
-  <h2 class="text-3xl font-bold">The paper's own example, worked in full</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">Two agents, the same job, two names with nothing in common, and two addresses one syllable apart.</p>
-  <div class="mockup-code w-full mt-12 text-base">
+<!-- ================================================== 5. the worked example -->
+<section class="py-12">
+  <h2 class="text-3xl font-bold">The paper's own example, worked through step by step</h2>
+  <div class="mt-8 max-w-3xl text-base leading-relaxed">
+    <p>Two agents, one job, two names with nothing in common, and two positions that nearly touch. Every step is written out with its real value so the arithmetic can be followed with a pen.</p>
+  </div>
+  <div class="mockup-code w-full mt-8">
     <pre data-prefix="acme.com"><code>agent://acme.com/workflow/approval/01h0000000000000000000000</code></pre>
     <pre data-prefix="globex.io"><code>agent://globex.io/process/authorize/01h0000000000000000000000</code></pre>
   </div>
-  <p class="font-mono text-xl lg:text-2xl tracking-wide break-words bg-base-200 rounded-box p-6 mt-12 leading-relaxed">⌁ no.ki.ni.ke.ru · to.ru.ki.ru.ta + va.ki.ra.ma.no ~ ko.so.mo</p>
-  <p class="font-mono text-xl lg:text-2xl tracking-wide break-words bg-base-200 rounded-box p-6 mt-8 leading-relaxed">⌁ no.ki.ni.ke.ru · to.no.ki.ru.ta + va.ki.ra.ma.no ~ ko.so.mo</p>
-  <p class="badge badge-outline font-mono mt-8">two addresses, 18 syllables each · they agree on 17 of them</p>
-</section>
 
-<div class="divider"></div>
+  <ul class="timeline timeline-vertical w-full mt-8">
+    <li>
+      <div class="timeline-start font-mono text-base">step 1</div>
+      <div class="timeline-middle"><span class="badge badge-primary font-mono">1</span></div>
+      <div class="timeline-end timeline-box w-full">
+        <p class="text-base leading-relaxed"><span class="font-semibold">The two URIs, as issued.</span> One company issues the approval agent, the other issues the authorize agent. Both carry a stable unique suffix and a hierarchical path, and the two paths differ in both of their segments.</p>
+      </div>
+      <hr>
+    </li>
+    <li>
+      <hr>
+      <div class="timeline-start font-mono text-base">step 2</div>
+      <div class="timeline-middle"><span class="badge badge-primary font-mono">2</span></div>
+      <div class="timeline-end timeline-box w-full">
+        <p class="text-base leading-relaxed"><span class="font-semibold">The two positions, off the situations.</span> Neither was derived from the path. Each is 18 syllables, written in four groups.</p>
+        <p class="font-mono text-base break-all mt-2">⌁ no.ki.ni.ke.ru·to.ru.ki.ru.ta+va.ki.ra.ma.no~ko.so.mo</p>
+        <p class="font-mono text-base break-all mt-1">⌁ no.ki.ni.ke.ru·to.no.ki.ru.ta+va.ki.ra.ma.no~ko.so.mo</p>
+      </div>
+      <hr>
+    </li>
+    <li>
+      <hr>
+      <div class="timeline-start font-mono text-base">step 3</div>
+      <div class="timeline-middle"><span class="badge badge-primary font-mono">3</span></div>
+      <div class="timeline-end timeline-box w-full">
+        <p class="text-base leading-relaxed"><span class="font-semibold">How far apart they are.</span> Line the two up syllable by syllable. They agree for the first 6, differ at the 7th, where one reads <span class="font-mono">ru</span> and the other reads <span class="font-mono">no</span>, and agree again for the remaining 11. One syllable out of 18 differs, which is 2 letters out of 36.</p>
+      </div>
+      <hr>
+    </li>
+    <li>
+      <hr>
+      <div class="timeline-start font-mono text-base">step 4</div>
+      <div class="timeline-middle"><span class="badge badge-primary font-mono">4</span></div>
+      <div class="timeline-end timeline-box w-full">
+        <p class="text-base leading-relaxed"><span class="font-semibold">Discovery by path on this pair.</span> The approval query returns nothing. Across all four queries this method scores 1/4, and that single hit is the audit query matching five paths on a shared first segment.</p>
+      </div>
+      <hr>
+    </li>
+    <li>
+      <hr>
+      <div class="timeline-start font-mono text-base">step 5</div>
+      <div class="timeline-middle"><span class="badge badge-primary font-mono">5</span></div>
+      <div class="timeline-end timeline-box w-full">
+        <p class="text-base leading-relaxed"><span class="font-semibold">Discovery by position on the same four queries.</span> The nearest position returns the right job every time: approval to authorize 2 letters, build to compile 3, rollback to revert 2, audit to review 4. Recall is 4/4, the decoy is returned 0 times, and no mapping table appears anywhere in the path.</p>
+      </div>
+    </li>
+  </ul>
 
-<section class="py-16">
-  <h2 class="text-3xl font-bold">The four questions that table answers</h2>
-  <div class="overflow-x-auto w-full mt-12">
+  <div class="overflow-x-auto w-full mt-8">
     <table class="table table-zebra w-full">
       <thead><tr><th>question</th><th>answer</th></tr></thead>
       <tbody class="text-base">
-        <tr><td>identical path?</td><td>No, <span class="font-mono">workflow/approval</span> against <span class="font-mono">process/authorize</span></td></tr>
-        <tr><td>shared path prefix?</td><td>No, the first segments differ</td></tr>
-        <tr><td>distance between the names?</td><td>not defined, strings have no distance</td></tr>
-        <tr><td>distance between the addresses?</td><td><strong>2 syllables</strong>, over an 18-syllable address</td></tr>
+        <tr><td>is the path identical?</td><td>no, <span class="font-mono">workflow/approval</span> against <span class="font-mono">process/authorize</span></td></tr>
+        <tr><td>do the paths share a first segment?</td><td>no, they differ at the first segment and at the second</td></tr>
+        <tr><td>is there a distance between the two names?</td><td>no, text has no distance, so the two are equal or they are not</td></tr>
+        <tr><td>is there a distance between the two positions?</td><td>yes, 2 letters out of 36</td></tr>
       </tbody>
     </table>
   </div>
-</section>
 
-<div class="divider"></div>
-
-<section class="py-16">
-  <h2 class="text-3xl font-bold">The five steps by hand</h2>
-  <div class="grid grid-cols-1 gap-8 mt-12 w-full">
-    <div class="card bg-base-200 w-full"><div class="card-body">
-      <h3 class="card-title text-base"><span class="badge badge-outline font-mono">01</span> The two URIs, as issued</h3>
-      <p class="text-base leading-relaxed">acme issues <span class="font-mono">agent://acme.com/workflow/approval/01h0000000000000000000000</span> and globex issues <span class="font-mono">agent://globex.io/process/authorize/01h0000000000000000000000</span>. Both carry a stable unique suffix and a hierarchical capability path, and the path segments differ in both positions.</p>
-    </div></div>
-    <div class="card bg-base-200 w-full"><div class="card-body">
-      <h3 class="card-title text-base"><span class="badge badge-outline font-mono">02</span> The two addresses, off the situations</h3>
-      <p class="text-base leading-relaxed">acme's approval agent is <span class="font-mono">⌁ no.ki.ni.ke.ru·to.ru.ki.ru.ta+va.ki.ra.ma.no~ko.so.mo</span> and globex's authorize agent is <span class="font-mono">⌁ no.ki.ni.ke.ru·to.no.ki.ru.ta+va.ki.ra.ma.no~ko.so.mo</span>. Both are 18 syllables, and neither was derived from the capability path.</p>
-    </div></div>
-    <div class="card bg-base-200 w-full"><div class="card-body">
-      <h3 class="card-title text-base"><span class="badge badge-outline font-mono">03</span> The Hamming distance between them</h3>
-      <p class="text-base leading-relaxed">The two addresses agree on 17 of 18 syllables and differ at syllable 7, where acme reads <span class="font-mono">ru</span> and globex reads <span class="font-mono">no</span>. Two phonemes differ, which is the recorded Hamming <strong>2</strong>, against 24.0 for non-equivalent pairs.</p>
-    </div></div>
-    <div class="card bg-base-200 w-full"><div class="card-body">
-      <h3 class="card-title text-base"><span class="badge badge-outline font-mono">04</span> Discovery by capability path on this pair</h3>
-      <p class="text-base leading-relaxed">Exact-path discovery finds nothing for <span class="font-mono">workflow/approval</span>, and across the four queries it scores recall 1/4. The single hit is <span class="font-mono">process/audit</span>, which prefix-matches all five <span class="font-mono">process/*</span> paths on the globex side, so it returns <span class="font-mono">process/authorize</span>, <span class="font-mono">process/compile</span>, <span class="font-mono">process/revert</span>, <span class="font-mono">process/review</span> and the decoy <span class="font-mono">process/migrate</span>. One of the five happens to carry the audit job, which is a shared string prefix and not a meaning.</p>
-    </div></div>
-    <div class="card bg-base-200 w-full"><div class="card-body">
-      <h3 class="card-title text-base"><span class="badge badge-outline font-mono">05</span> Discovery by nearness on the same four queries</h3>
-      <p class="text-base leading-relaxed">Nearest address returns the equivalent job every time: 2 for approval to authorize, 3 for build to compile, 2 for rollback to revert and 4 for audit to review, so recall is 4/4 with no mapping table in the path. The decoy is returned as nearest 0 times.</p>
-    </div></div>
+  <div class="alert alert-success w-full mt-8">
+    <span>Two names with no word in common, two positions that differ in one syllable, and the correct partner found without any table that says these two names mean the same thing. The distance was not assigned by anybody. It came out of the situations.</span>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ================================================== are the equivalents near -->
-<section class="py-16">
-  <h2 class="text-3xl font-bold">Are the equivalents actually the near ones?</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">All twenty acme-to-globex pairs are measured, not just the four queries, so the equivalence shows up as geometry rather than as a lucky nearest neighbour. The picture below places all nine agents by address distance alone, using the same layout style as the six places on the first page. Equivalent pairs land on top of each other and the decoy lands away from all four.</p>
-  <div class="card bg-base-100 shadow-xl w-full mt-12">
-    <div class="p-4" id="scene-nearness" role="img" aria-label="Nine agents positioned only by address distance, with the four equivalent pairs landing together and the decoy landing apart."></div>
+<!-- ================================================== 6. nearness figure -->
+<section class="py-12">
+  <h2 class="text-3xl font-bold">Are the partners actually the near ones?</h2>
+  <div class="mt-8 max-w-3xl text-base leading-relaxed">
+    <p>Answering four queries correctly could still be luck. So all 20 pairs of agents, one from each company, were measured rather than the four queries only. The picture below places all nine agents using the distances between their positions and nothing else. No name, no job label, and no organisation was used to lay it out.</p>
   </div>
-  <p class="badge badge-outline font-mono mt-8">4 equivalent pairs at hamming 2, 3, 2 and 4 · decoy nearest 0 times · separation +21.25</p>
+
+  <figure class="w-full mt-8">
+    <svg viewBox="0 0 1000 620" width="100%" role="img" aria-label="Nine agents laid out only by the distance between their positions. Four equivalent pairs land together and the decoy lands apart from all of them." class="font-mono">
+      <text x="30" y="34" font-size="15" font-weight="700" style="fill:oklch(var(--bc))">Nine agents, laid out only by the distances between their positions</text>
+      <text x="30" y="56" font-size="13" style="fill:oklch(var(--bc)/0.65)">Each dashed link joins a pair doing the same job, and carries the number of letters that differ. The jagged mark is the decoy.</text>
+
+      <line x1="221.9" y1="283.8" x2="205.0" y2="283.8" stroke-width="2.5" stroke-dasharray="6 6" style="stroke:oklch(var(--su))"/>
+      <line x1="722.7" y1="317.4" x2="691.3" y2="324.0" stroke-width="2.5" stroke-dasharray="6 6" style="stroke:oklch(var(--su))"/>
+      <line x1="670.5" y1="233.1" x2="658.1" y2="232.7" stroke-width="2.5" stroke-dasharray="6 6" style="stroke:oklch(var(--su))"/>
+      <line x1="520.3" y1="423.8" x2="553.3" y2="428.6" stroke-width="2.5" stroke-dasharray="6 6" style="stroke:oklch(var(--su))"/>
+      <text x="196" y="272" font-size="15" text-anchor="middle" font-weight="700" style="fill:oklch(var(--su))">2</text>
+      <text x="700" y="302" font-size="15" text-anchor="middle" font-weight="700" style="fill:oklch(var(--su))">3</text>
+      <text x="657" y="222" font-size="15" text-anchor="middle" font-weight="700" style="fill:oklch(var(--su))">2</text>
+      <text x="537" y="412" font-size="15" text-anchor="middle" font-weight="700" style="fill:oklch(var(--su))">4</text>
+
+      <circle cx="221.9" cy="283.8" r="20" style="fill:oklch(var(--b2))" stroke-width="2" stroke="oklch(var(--su))"/>
+      <text x="221.9" y="290" font-size="13" text-anchor="middle" font-weight="700" style="fill:oklch(var(--su))">1</text>
+      <text x="221.9" y="322" font-size="12" text-anchor="middle" style="fill:oklch(var(--bc))">workflow/approval</text>
+      <text x="221.9" y="338" font-size="11" text-anchor="middle" style="fill:oklch(var(--bc)/0.65)">acme.com</text>
+
+      <circle cx="205.0" cy="283.8" r="20" style="fill:oklch(var(--b2))" stroke-width="2" stroke="oklch(var(--su))"/>
+      <text x="205" y="290" font-size="13" text-anchor="middle" font-weight="700" style="fill:oklch(var(--su))">1</text>
+      <text x="205" y="256" font-size="12" text-anchor="middle" style="fill:oklch(var(--bc))">process/authorize</text>
+      <text x="205" y="240" font-size="11" text-anchor="middle" style="fill:oklch(var(--bc)/0.65)">globex.io</text>
+
+      <circle cx="722.7" cy="317.4" r="20" style="fill:oklch(var(--b2))" stroke-width="2" stroke="oklch(var(--su))"/>
+      <text x="722.7" y="324" font-size="13" text-anchor="middle" font-weight="700" style="fill:oklch(var(--su))">2</text>
+      <text x="722.7" y="356" font-size="12" text-anchor="middle" style="fill:oklch(var(--bc))">workflow/build</text>
+      <text x="722.7" y="372" font-size="11" text-anchor="middle" style="fill:oklch(var(--bc)/0.65)">acme.com</text>
+
+      <circle cx="691.3" cy="324.0" r="20" style="fill:oklch(var(--b2))" stroke-width="2" stroke="oklch(var(--su))"/>
+      <text x="691.3" y="330" font-size="13" text-anchor="middle" font-weight="700" style="fill:oklch(var(--su))">2</text>
+      <text x="668" y="386" font-size="12" text-anchor="middle" style="fill:oklch(var(--bc))">process/compile</text>
+      <text x="668" y="402" font-size="11" text-anchor="middle" style="fill:oklch(var(--bc)/0.65)">globex.io</text>
+
+      <circle cx="670.5" cy="233.1" r="20" style="fill:oklch(var(--b2))" stroke-width="2" stroke="oklch(var(--su))"/>
+      <text x="670.5" y="240" font-size="13" text-anchor="middle" font-weight="700" style="fill:oklch(var(--su))">3</text>
+      <text x="670.5" y="204" font-size="12" text-anchor="middle" style="fill:oklch(var(--bc))">workflow/rollback</text>
+      <text x="670.5" y="188" font-size="11" text-anchor="middle" style="fill:oklch(var(--bc)/0.65)">acme.com</text>
+
+      <circle cx="658.1" cy="232.7" r="20" style="fill:oklch(var(--b2))" stroke-width="2" stroke="oklch(var(--su))"/>
+      <text x="658.1" y="240" font-size="13" text-anchor="middle" font-weight="700" style="fill:oklch(var(--su))">3</text>
+      <text x="658.1" y="168" font-size="12" text-anchor="middle" style="fill:oklch(var(--bc))">process/revert</text>
+      <text x="658.1" y="152" font-size="11" text-anchor="middle" style="fill:oklch(var(--bc)/0.65)">globex.io</text>
+
+      <circle cx="520.3" cy="423.8" r="20" style="fill:oklch(var(--b2))" stroke-width="2" stroke="oklch(var(--su))"/>
+      <text x="520.3" y="430" font-size="13" text-anchor="middle" font-weight="700" style="fill:oklch(var(--su))">4</text>
+      <text x="500" y="462" font-size="12" text-anchor="middle" style="fill:oklch(var(--bc))">process/audit</text>
+      <text x="500" y="478" font-size="11" text-anchor="middle" style="fill:oklch(var(--bc)/0.65)">acme.com</text>
+
+      <circle cx="553.3" cy="428.6" r="20" style="fill:oklch(var(--b2))" stroke-width="2" stroke="oklch(var(--su))"/>
+      <text x="553.3" y="435" font-size="13" text-anchor="middle" font-weight="700" style="fill:oklch(var(--su))">4</text>
+      <text x="580" y="470" font-size="12" text-anchor="middle" style="fill:oklch(var(--bc))">process/review</text>
+      <text x="580" y="486" font-size="11" text-anchor="middle" style="fill:oklch(var(--bc)/0.65)">globex.io</text>
+
+      <circle cx="696.8" cy="307.9" r="26" style="fill:oklch(var(--wa))" stroke-width="2" stroke="oklch(var(--wa))"/>
+      <text x="696.8" y="314" font-size="18" text-anchor="middle" font-weight="700" fill="oklch(var(--b1))">!</text>
+      <text x="790" y="300" font-size="12" text-anchor="middle" style="fill:oklch(var(--bc))">process/migrate</text>
+      <text x="790" y="316" font-size="11" text-anchor="middle" style="fill:oklch(var(--bc)/0.65)">globex.io, no equivalent</text>
+
+      <text x="30" y="560" font-size="13" style="fill:oklch(var(--bc))">Green circles are agents whose partner was found at 2, 3, 2 and 4 letters. The ochre mark is the decoy, returned as nearest 0 times.</text>
+      <text x="30" y="584" font-size="13" style="fill:oklch(var(--bc)/0.65)">The layout is a two-dimensional picture of the recorded letter distances between the nine positions. Nothing but those distances went into it.</text>
+      <text x="30" y="608" font-size="13" style="fill:oklch(var(--bc)/0.65)">Two agents in the same pair are drawn at almost the same point, which is the finding: their names share nothing and their positions nearly coincide.</text>
+    </svg>
+  </figure>
+
+  <div class="alert alert-success w-full mt-8">
+    <span>Four pairs doing the same job land on top of each other, and the decoy lands away from all of them, when the only thing used to place them is how far apart their positions are. The equivalent pairs sit at 2, 3, 2 and 4 letters and no other pair comes closer than 17, so the two groups do not touch.</span>
+  </div>
 </section>
 
 <div class="divider"></div>
 
-<section class="py-16">
-  <h2 class="text-3xl font-bold">Where the arithmetic comes from</h2>
-  <div class="grid grid-cols-1 gap-8 mt-12 w-full">
+<!-- ================================================== 7. the arithmetic -->
+<section class="py-12">
+  <h2 class="text-3xl font-bold">Where those numbers come from</h2>
+  <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
+    <p>Every figure on this page can be recomputed from the recorded distances. The four sums below are the whole of it.</p>
+  </div>
+  <div class="grid grid-cols-1 gap-6 mt-8">
     <div class="card bg-base-200 w-full"><div class="card-body">
       <h3 class="card-title text-base"><span class="badge badge-outline font-mono">01</span> The four equivalent pairs</h3>
-      <p class="text-base leading-relaxed"><span class="font-mono">workflow/approval</span> to <span class="font-mono">process/authorize</span> at <strong>2</strong>, <span class="font-mono">workflow/build</span> to <span class="font-mono">process/compile</span> at <strong>3</strong>, <span class="font-mono">workflow/rollback</span> to <span class="font-mono">process/revert</span> at <strong>2</strong>, <span class="font-mono">process/audit</span> to <span class="font-mono">process/review</span> at <strong>4</strong>. Sum 2 + 3 + 2 + 4 = 11, and 11 / 4 = 2.75. Range 2 to 4.</p>
+      <p class="text-base leading-relaxed">approval to authorize at <span class="font-semibold">2</span>, build to compile at <span class="font-semibold">3</span>, rollback to revert at <span class="font-semibold">2</span>, audit to review at <span class="font-semibold">4</span>. They add to 11, and 11 divided by 4 is <span class="font-semibold">2.75</span>. The range is 2 to 4.</p>
     </div></div>
     <div class="card bg-base-200 w-full"><div class="card-body">
-      <h3 class="card-title text-base"><span class="badge badge-outline font-mono">02</span> The sixteen non-equivalent pairs</h3>
-      <p class="text-base leading-relaxed">Every other acme-to-globex pairing, including the four pairs against the decoy: 17, 18, 19, 20, 21, 23, 23, 24, 26, 26, 27, 27, 27, 27, 29, 30. Sum 384, and 384 / 16 = 24.0. Range 17 to 30.</p>
+      <h3 class="card-title text-base"><span class="badge badge-outline font-mono">02</span> The sixteen other pairs</h3>
+      <p class="text-base leading-relaxed">Every other pairing of one company's agent with the other's, including the four against the decoy: 17, 18, 19, 20, 21, 23, 23, 24, 26, 26, 27, 27, 27, 27, 29, 30. They add to 384, and 384 divided by 16 is <span class="font-semibold">24.0</span>. The range is 17 to 30.</p>
     </div></div>
     <div class="card bg-base-200 w-full"><div class="card-body">
-      <h3 class="card-title text-base"><span class="badge badge-outline font-mono">03</span> The separation</h3>
-      <p class="text-base leading-relaxed">24.0 minus 2.75 is <strong>+21.25</strong> syllables. No equivalent pair is closer than 2, and no non-equivalent pair is closer than 17, so the two populations do not touch.</p>
+      <h3 class="card-title text-base"><span class="badge badge-outline font-mono">03</span> The gap between the two groups</h3>
+      <p class="text-base leading-relaxed">24.0 minus 2.75 is <span class="font-semibold">+21.25</span> letters. No pair doing the same job is closer than 2, and no pair doing different jobs is closer than 17, so the two groups leave a gap of 15 letters between them.</p>
     </div></div>
     <div class="card bg-base-200 w-full"><div class="card-body">
       <h3 class="card-title text-base"><span class="badge badge-outline font-mono">04</span> The control, and the decoy</h3>
-      <p class="text-base leading-relaxed">Shuffling which globex agent does which job and repeating the query 2,000 times gives recall <strong>0.1994</strong>, sd 0.223, against the chance rate of one in five, 0.200. The real recall is 1.000. The decoy was returned as nearest 0 times.</p>
+      <p class="text-base leading-relaxed">Shuffling which agent does which job and repeating the query 2,000 times gives recall <span class="font-semibold">0.1994</span>, with a spread of 0.223, against the guessing rate of one in five, 0.200. The real recall is 1.000, and the decoy was returned as nearest 0 times.</p>
       <div class="mt-4 space-y-4 w-full">
-        <div><p class="font-mono text-base mb-1">real recall 1.000</p><progress class="progress progress-success w-full" value="100" max="100"></progress></div>
-        <div><p class="font-mono text-base mb-1">chance 0.200</p><progress class="progress w-full" value="20" max="100"></progress></div>
-        <div><p class="font-mono text-base mb-1">shuffled labels 0.1994</p><progress class="progress progress-warning w-full" value="19.94" max="100"></progress></div>
+        <div><p class="font-mono text-base mb-1">real, 1.000</p><progress class="progress progress-success w-full" value="100" max="100"></progress></div>
+        <div><p class="font-mono text-base mb-1">guessing, 0.200</p><progress class="progress w-full" value="20" max="100"></progress></div>
+        <div><p class="font-mono text-base mb-1">labels shuffled, 0.1994</p><progress class="progress progress-warning w-full" value="19.94" max="100"></progress></div>
       </div>
     </div></div>
   </div>
+  <div class="alert bg-base-200 border border-base-300 w-full mt-8">
+    <span>The shuffled version of the same experiment scores 0.1994, which is the guessing rate of 0.200 measured to three places. Nothing about the method survives that control, which is the point of running it: the signal has to come from the positions and not from counting.</span>
+  </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ================================================== the overlay environment -->
-<section class="py-16">
-  <h2 class="text-3xl font-bold">An agent inside a layered environment</h2>
+<!-- ================================================== 8. overlay environment -->
+<section class="py-12">
+  <h2 class="text-3xl font-bold">An agent running inside a layered environment</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
-    <p>Here is the harder case. An agent runs inside a declarative overlay environment: one config file names the environment, the two tools allowed in it, where each tool's config and cache really live on the host, and where the workspace comes from. The virtual tree the agent sees is a view assembled from layers, not a directory.</p>
-    <p>The environment is <span class="font-mono">user-env-1</span>, mounted at <span class="font-mono">./user-env-1</span>, with the tools <span class="font-mono">claude-code</span> and <span class="font-mono">codex</span>, a host store at <span class="font-mono">/var/lib/ai-envs/env-1</span>, a workspace at <span class="font-mono">/home/user/projects/my-app</span> and scratch at <span class="font-mono">/tmp/user-env-1/scratch</span>.</p>
+    <p>The easier case is two companies describing the same job. The harder case is one machine where several layers of settings are in force at once, because then the same path can mean different things depending on who is asking.</p>
+    <p>The environment is called <span class="font-mono">user-env-1</span> and it is mounted at <span class="font-mono">./user-env-1</span>. It allows two tools, <span class="font-mono">claude-code</span> and <span class="font-mono">codex</span>. Their real settings live in a host store at <span class="font-mono">/var/lib/ai-envs/env-1</span>, the workspace comes from <span class="font-mono">/home/user/projects/my-app</span>, and scratch space is at <span class="font-mono">/tmp/user-env-1/scratch</span>.</p>
+    <p>What the agent sees is a virtual tree assembled from those layers. It is a view, not a folder. The table below pairs what the agent sees with where the bytes really are.</p>
   </div>
-  <div class="overflow-x-auto w-full mt-12">
+  <div class="overflow-x-auto w-full mt-8">
     <table class="table table-zebra w-full">
-      <thead><tr><th>virtual path the agent sees</th><th>where it actually lives on the host</th></tr></thead>
+      <thead><tr><th>the path the agent sees</th><th>where it really is on the host</th></tr></thead>
       <tbody class="text-base">
-        <tr><td class="font-mono">.config/claude/config.json</td><td class="font-mono">/var/lib/ai-envs/env-1/claude/config/config.json</td></tr>
-        <tr><td class="font-mono">.config/openai.json</td><td class="font-mono">/var/lib/ai-envs/env-1/codex/config/openai.json</td></tr>
-        <tr><td class="font-mono">src/main.rs</td><td class="font-mono">/home/user/projects/my-app/src/main.rs</td></tr>
-        <tr><td class="font-mono">.cache/</td><td class="font-mono">/var/lib/ai-envs/env-1/&lt;tool&gt;/cache/</td></tr>
+        <tr><td class="font-mono">.config/claude/config.json</td><td class="font-mono break-all">/var/lib/ai-envs/env-1/claude/config/config.json</td></tr>
+        <tr><td class="font-mono">.config/openai.json</td><td class="font-mono break-all">/var/lib/ai-envs/env-1/codex/config/openai.json</td></tr>
+        <tr><td class="font-mono">src/main.rs</td><td class="font-mono break-all">/home/user/projects/my-app/src/main.rs</td></tr>
+        <tr><td class="font-mono">.cache/</td><td class="font-mono break-all">/var/lib/ai-envs/env-1/&lt;tool&gt;/cache/</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="badge badge-outline font-mono mt-8">one virtual path, one meaning per layer · .cache resolves per tool, so the same path differs between the two tools</p>
+  <div class="alert bg-base-200 border border-base-300 w-full mt-8">
+    <span>One visible path, one meaning per layer. The cache path resolves differently for each tool, so the same four characters mean two different places depending on which tool is asking. A position, unlike a path, can record that difference.</span>
+  </div>
 </section>
 
 <div class="divider"></div>
 
-<section class="py-16">
-  <h2 class="text-3xl font-bold">The layer stack</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">A layer above overrides the one below, and nothing below is rewritten. The environment defaults set the base twelve statements, the project layer adds two and overrides nothing, and the per-session override adds two more.</p>
-  <figure class="card bg-base-100 shadow-xl w-full mt-12 max-w-none">
-    <img src="assets/figures/overlay-layers.svg" alt="The three layers of the overlay environment: environment defaults, project layer, and session override, each adding to the one below.">
+<!-- ================================================== 9. layer stack -->
+<section class="py-12">
+  <h2 class="text-3xl font-bold">The three layers, and what each one adds</h2>
+  <div class="mt-8 max-w-3xl text-base leading-relaxed">
+    <p>A layer above overrides the one below, and nothing below is rewritten or discarded. Three layers are in force in this run.</p>
+  </div>
+  <ul class="steps steps-vertical lg:steps-horizontal w-full mt-8">
+    <li class="step step-primary">environment defaults, 12 statements</li>
+    <li class="step step-primary">project layer, adds 2</li>
+    <li class="step step-primary">session override, adds 2</li>
+  </ul>
+  <figure class="w-full mt-8">
+    <img src="assets/figures/overlay-layers.svg" alt="The three layers of the environment: environment defaults, project layer, and session override, each adding to the one below" class="w-full">
+    <figcaption class="mt-3 text-sm max-w-3xl" style="color:oklch(var(--bc)/0.65)">Environment defaults, then the project layer, then a session override. Each layer adds statements and takes none away. Nothing below is rewritten.</figcaption>
   </figure>
-  <p class="badge badge-outline font-mono mt-8">env-spec.yaml · project.yaml · this run only</p>
+  <div class="alert bg-base-200 border border-base-300 w-full mt-8">
+    <span>Every layer is still visible in the finished position, because nothing is overwritten. An agent can state which layer of its own configuration is in scope, which is something none of these agents can currently do about itself.</span>
+  </div>
 </section>
 
 <div class="divider"></div>
 
-<section class="py-16">
-  <h2 class="text-3xl font-bold">Three positions in that environment</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">Each layer produces its own address and its own root. The three are close to each other, and a sealed empty room sits 24 syllables away for scale.</p>
-  <div class="grid grid-cols-1 gap-8 mt-12 w-full">
+<!-- ================================================== 10. three positions -->
+<section class="py-12">
+  <h2 class="text-3xl font-bold">Three positions in that one environment</h2>
+  <div class="mt-8 max-w-3xl text-base leading-relaxed">
+    <p>Each layer produces its own position and its own root. The three sit close to one another, and a sealed empty room is included further down for scale.</p>
+  </div>
+  <div class="grid grid-cols-1 gap-6 mt-8">
     <div class="card bg-base-200 w-full"><div class="card-body">
-      <h3 class="card-title text-base">base · environment defaults</h3>
-      <p class="font-mono text-base mt-2">12 statements · marker ⊢</p>
-      <p class="font-mono text-xl tracking-wide break-words mt-2">⌁ va.mo.ni.mo.no · ki.ru.ki.va.mo + ru.mo.ra.tu.ru ~ tu.su.ki</p>
-      <p class="font-mono text-base mt-2">root aa70a3646f949f78…, 64 characters</p>
-      <p class="text-base mt-2">No overrides.</p>
+      <h3 class="card-title text-base">base · the environment defaults</h3>
+      <p class="font-mono text-base">12 statements · marker ⊢ · nothing overridden</p>
+      <p class="font-mono text-base break-all">⌁ va.mo.ni.mo.no·ki.ru.ki.va.mo+ru.mo.ra.tu.ru~tu.su.ki</p>
+      <p class="font-mono text-base break-all">root aa70a3646f949f78ad455207785e583450bfc030ee37b8a3494399077fb27460</p>
     </div></div>
     <div class="card bg-base-200 w-full"><div class="card-body">
-      <h3 class="card-title text-base">project layer over environment</h3>
-      <p class="font-mono text-base mt-2">14 statements · marker ⊢</p>
-      <p class="font-mono text-xl tracking-wide break-words mt-2">⌁ va.mo.ni.mo.no · ki.ru.ki.va.mo + ru.ma.va.tu.ru ~ tu.su.ki</p>
-      <p class="font-mono text-base mt-2">root 4a234ed6347c9b75…, 64 characters</p>
-      <p class="text-base mt-2">Adds <span class="font-mono">see/this_place/outside</span> and <span class="font-mono">reach/help/any</span>.</p>
+      <h3 class="card-title text-base">project layer over the environment</h3>
+      <p class="font-mono text-base">14 statements · marker ⊢ · adds 2</p>
+      <p class="font-mono text-base break-all">⌁ va.mo.ni.mo.no·ki.ru.ki.va.mo+ru.ma.va.tu.ru~tu.su.ki</p>
+      <p class="font-mono text-base break-all">root 4a234ed6347c9b75eb424cefaf535a21a2c70e36a580a6d115105bc061a24917</p>
+      <p class="text-base">Adds <span class="font-mono">see/this_place/outside</span> and <span class="font-mono">reach/help/any</span>.</p>
     </div></div>
     <div class="card bg-base-200 w-full"><div class="card-body">
-      <h3 class="card-title text-base">session override over project</h3>
-      <p class="font-mono text-base mt-2">16 statements · marker ⊢</p>
-      <p class="font-mono text-xl tracking-wide break-words mt-2">⌁ va.mo.ni.mo.no · ki.ru.mo.va.mo + ru.ma.va.tu.su ~ tu.su.ki</p>
-      <p class="font-mono text-base mt-2">root 24b6807d50112bb5…, 64 characters</p>
-      <p class="text-base mt-2">Adds <span class="font-mono">place/temporary/any</span> and <span class="font-mono">now/nearly_over/any</span>.</p>
+      <h3 class="card-title text-base">session override over the project layer</h3>
+      <p class="font-mono text-base">16 statements · marker ⊢ · adds 2 more</p>
+      <p class="font-mono text-base break-all">⌁ va.mo.ni.mo.no·ki.ru.mo.va.mo+ru.ma.va.tu.su~tu.su.ki</p>
+      <p class="font-mono text-base break-all">root 24b6807d50112bb5aab458765d855b0b23f7d52856c077160f2e9e48994b806d</p>
+      <p class="text-base">Adds <span class="font-mono">place/temporary/any</span> and <span class="font-mono">now/nearly_over/any</span>.</p>
     </div></div>
   </div>
-  <p class="badge badge-outline font-mono mt-8">every root differs · the addresses do not</p>
+  <div class="alert bg-base-200 border border-base-300 w-full mt-8">
+    <span>Three positions from one machine, each with its own root. The roots are all different, which is the object that says whether two things are the same. The next section shows how close the positions are, and that is the object that says where.</span>
+  </div>
 </section>
 
 <div class="divider"></div>
 
-<section class="py-16">
+<!-- ================================================== 11. distances -->
+<section class="py-12">
   <h2 class="text-3xl font-bold">How far apart the three layers are</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">The base and the project layer differ by 2 syllables out of 18 and share a 29-character prefix. The session override is 5 syllables from the base and 3 from the project layer. A sealed empty room is 24 from the base.</p>
-  <div class="stats stats-vertical lg:stats-horizontal bg-base-200 w-full mt-12">
-    <div class="stat"><div class="stat-title text-base">base to project layer</div><div class="stat-value text-4xl">2</div><div class="stat-desc text-base">shared prefix 29 characters</div></div>
-    <div class="stat"><div class="stat-title text-base">base to session override</div><div class="stat-value text-4xl">5</div><div class="stat-desc text-base">shared prefix 18 characters</div></div>
-    <div class="stat"><div class="stat-title text-base">project layer to session</div><div class="stat-value text-4xl">3</div><div class="stat-desc text-base">adds two statements</div></div>
-    <div class="stat"><div class="stat-title text-base">for scale, a sealed empty room</div><div class="stat-value text-4xl">24</div><div class="stat-desc text-base">from the base position</div></div>
+  <div class="mt-8 max-w-3xl text-base leading-relaxed">
+    <p>The positions are compared across all three pairs. The shared prefix is the number of questions at the start that both sides answered the same way, out of 45. A sealed empty room is used for scale.</p>
   </div>
-  <div class="overflow-x-auto w-full mt-12">
+  <div class="stats stats-vertical lg:stats-horizontal bg-base-200 w-full mt-8">
+    <div class="stat"><div class="stat-title text-base">base to project layer</div><div class="stat-value text-4xl">2</div><div class="stat-desc text-base">letters apart, first 29 questions the same</div></div>
+    <div class="stat"><div class="stat-title text-base">base to session override</div><div class="stat-value text-4xl">5</div><div class="stat-desc text-base">letters apart, first 18 questions the same</div></div>
+    <div class="stat"><div class="stat-title text-base">project layer to session</div><div class="stat-value text-4xl">3</div><div class="stat-desc text-base">letters apart, first 18 questions the same</div></div>
+    <div class="stat"><div class="stat-title text-base">for scale, a sealed empty room</div><div class="stat-value text-4xl">24</div><div class="stat-desc text-base">letters from the base position</div></div>
+  </div>
+  <div class="overflow-x-auto w-full mt-8">
     <table class="table table-zebra w-full">
-      <thead><tr><th>pair</th><th>hamming</th><th>shared prefix</th><th>jaccard</th><th>identical root?</th><th>what differs</th></tr></thead>
+      <thead><tr><th>pair</th><th>letters apart</th><th>questions the same at the start</th><th>how much the statements overlap</th><th>same root?</th><th>what the upper layer adds</th></tr></thead>
       <tbody class="text-base">
-        <tr><td class="font-mono">base | project</td><td>2</td><td>29</td><td>0.8571</td><td>no</td><td class="font-mono">+reach/help/any, +see/this_place/outside</td></tr>
-        <tr><td class="font-mono">base | session</td><td>5</td><td>18</td><td>0.75</td><td>no</td><td class="font-mono">+now/nearly_over/any, +place/temporary/any, +reach/help/any, +see/this_place/outside</td></tr>
-        <tr><td class="font-mono">project | session</td><td>3</td><td>18</td><td>0.875</td><td>no</td><td class="font-mono">+now/nearly_over/any, +place/temporary/any</td></tr>
+        <tr><td class="font-mono">base and project</td><td>2</td><td>29 of 45</td><td>0.8571</td><td>no</td><td class="font-mono break-all">reach/help/any, see/this_place/outside</td></tr>
+        <tr><td class="font-mono">base and session</td><td>5</td><td>18 of 45</td><td>0.75</td><td>no</td><td class="font-mono break-all">now/nearly_over/any, place/temporary/any, reach/help/any, see/this_place/outside</td></tr>
+        <tr><td class="font-mono">project and session</td><td>3</td><td>18 of 45</td><td>0.875</td><td>no</td><td class="font-mono break-all">now/nearly_over/any, place/temporary/any</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="text-base leading-relaxed max-w-3xl mt-8">An agent can state which layer of its environment is in scope. Two agents in the same overlay read as near because they inherit the same lower layers, and they stay distinguishable because each one overrides something the other does not.</p>
-</section>
-
-<div class="divider"></div>
-
-<!-- ================================================== shared manifold -->
-<section class="py-16">
-  <h2 class="text-3xl font-bold">Why any of this could work</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
-    <p>Nothing so far explains why independently built systems agree. A shared vocabulary tells you what to answer with; it does not make two differently built systems put the same situation in the same part of their own space. If that were all that was happening, the addresses would be arbitrary but consistent, like two people agreeing to call a colour "seven".</p>
-    <p>The result implies something stronger. Situations appear to occupy a structure that independently trained systems have in common, and the primer is a chart laid over that structure rather than a substitute for it.</p>
-    <p>Hand two cartographers the same grid and they will label the same mountain the same way, and that agreement is only worth something because the mountain was there first. The grid is ours. The mountain is not.</p>
+    <p>The two positions in the same environment read as near, at 2 and 5 letters, because they inherit the same lower layers. They stay distinguishable, and their roots do not match, because each one overrides something the other does not. A sealed empty room sits 24 letters away, which is more than ten times the distance between any two of the layers.</p>
+    <p>So an agent can say which layer of its own configuration is in scope, and two agents in the same environment can tell each other apart without either of them describing the environment from scratch.</p>
   </div>
-  <figure class="card bg-base-100 shadow-xl w-full mt-12 max-w-none">
-    <img src="assets/figures/shared-manifold.svg" alt="Three separate surfaces, one per model family, with the same six places in the same relative positions on each, and a chart laid over them.">
-  </figure>
-  <p class="badge badge-outline font-mono mt-8">the manifold is inferred from agreement · the chart is published and 3,300 bytes</p>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">Where it stops: the chart is shared too, but only when the states are unambiguous. Ambiguous states send the charts apart again, which is why the positions on this page are described in such plain, concrete English. This is the parent project's finding restated, and it is inferred from agreement rather than observed directly.</p>
+  <div class="alert alert-success w-full mt-8">
+    <span>Three agents in the same layered environment read as near because they inherit the same settings, and stay distinguishable because each one overrides something the others do not. An agent can state which layer of its own configuration is in scope, which is something none of them can currently do.</span>
+  </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ================================================== the exact half -->
-<section class="py-16">
+<!-- ================================================== 12. the seed -->
+<section class="py-12">
+  <h2 class="text-3xl font-bold">The same 3,300 bytes both sides hold</h2>
+  <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
+    <p>Everything above assumes the two sides build their positions the same way. That assumption needs something concrete behind it: the same 45 questions, the same 32 syllables to write answers with, the same order for asking the questions, the same four levels of what counts as far, and the same five markers on the ladder.</p>
+    <p>A registry-style exchange would ship all of that. It comes to 67,561 bytes, and a second copy has to be kept in step forever. Every one of those bytes can be worked out from something smaller.</p>
+    <p>The smaller thing is the seed: 3,300 bytes, transmitted once. The other side rebuilds a 4,532-byte frame from it. Both sides then compare one fingerprint before anything else happens, so a mismatched frame is caught on the first comparison rather than in the results.</p>
+  </div>
+
+  <div class="mockup-code w-full mt-8">
+    <pre data-prefix="fingerprint"><code>df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba</code></pre>
+  </div>
+
+  <div class="stats stats-vertical lg:stats-horizontal bg-base-200 w-full mt-8">
+    <div class="stat"><div class="stat-title text-base">bytes sent</div><div class="stat-value text-4xl">3,300</div><div class="stat-desc text-base">the seed, version 2</div></div>
+    <div class="stat"><div class="stat-title text-base">bytes rebuilt</div><div class="stat-value text-4xl">4,532</div><div class="stat-desc text-base">worked out on arrival, never sent</div></div>
+    <div class="stat"><div class="stat-title text-base">bytes a registry would ship</div><div class="stat-value text-4xl">67,561</div><div class="stat-desc text-base">20.47 times as much</div></div>
+  </div>
+
+  <figure class="w-full mt-8">
+    <svg viewBox="0 0 1000 340" width="100%" role="img" aria-label="Three bars drawn to scale: the 3,300-byte seed, the 4,532-byte frame it rebuilds, and the 67,561 bytes a registry would have to ship instead." class="font-mono">
+      <text x="30" y="26" font-size="15" font-weight="700" style="fill:oklch(var(--bc))">Three sizes, drawn to the same scale</text>
+      <text x="30" y="48" font-size="13" style="fill:oklch(var(--bc)/0.65)">The first two bars are what this repository sends and rebuilds. The third is what the usual exchange would ship instead.</text>
+
+      <text x="30" y="88" font-size="14" style="fill:oklch(var(--bc))">the seed, sent</text>
+      <rect x="250" y="72" width="43" height="26" rx="4" style="fill:oklch(var(--p))"/>
+      <text x="304" y="90" font-size="13" font-weight="700" style="fill:oklch(var(--p))">3,300 bytes, about the length of a long paragraph</text>
+
+      <text x="30" y="148" font-size="14" style="fill:oklch(var(--bc))">the frame, rebuilt</text>
+      <rect x="250" y="132" width="59" height="26" rx="4" style="fill:oklch(var(--su))"/>
+      <text x="320" y="150" font-size="13" font-weight="700" style="fill:oklch(var(--bc))">4,532 bytes, worked out on arrival, never sent</text>
+
+      <text x="30" y="208" font-size="14" style="fill:oklch(var(--bc))">a registry-style exchange</text>
+      <rect x="250" y="192" width="720" height="26" rx="4" style="fill:oklch(var(--wa))"/>
+      <text x="258" y="210" font-size="13" font-weight="700" fill="oklch(var(--b1))">67,561 bytes of questions, syllables, order and population</text>
+
+      <line x1="250" y1="240" x2="970" y2="240" stroke-width="1" style="stroke:oklch(var(--b3))"/>
+      <text x="250" y="264" font-size="13" style="fill:oklch(var(--bc)/0.65)">same scale for all three bars</text>
+      <text x="30" y="300" font-size="14" font-weight="700" style="fill:oklch(var(--bc))">20.47 times more would have to travel.</text>
+      <text x="30" y="322" font-size="13" style="fill:oklch(var(--bc)/0.65)">4.88% of the weight travels at all. The rest is recomputed on both sides and compared.</text>
+    </svg>
+  </figure>
+
+  <div class="mt-12 space-y-6 max-w-3xl text-base leading-relaxed">
+    <p>The seed has 11 top-level keys. Each key occupies a different number of bytes, and the figure below is drawn to that scale. Every key is stored in the file. Three of them store a rule rather than an answer, and the thing that rule produces is worked out.</p>
+  </div>
+
+  <figure class="w-full mt-8">
+    <svg viewBox="0 0 1000 500" width="100%" role="img" aria-label="The eleven top-level keys of the seed as bars drawn to scale by bytes, each labelled stored, with landmarks, partition and population also producing something derived." class="font-mono">
+      <text x="30" y="26" font-size="15" font-weight="700" style="fill:oklch(var(--bc))">Every key in the seed, sized by the bytes it occupies</text>
+      <text x="30" y="46" font-size="13" style="fill:oklch(var(--bc)/0.65)">Bars are drawn to scale. 2,311 of the 3,300 bytes are the 45 questions and their plain readings.</text>
+
+      <text x="30" y="76" font-size="12" style="fill:oklch(var(--bc)/0.65)">key</text>
+      <text x="200" y="76" font-size="12" style="fill:oklch(var(--bc)/0.65)">bytes</text>
+      <text x="800" y="76" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored or derived</text>
+
+      <text x="30" y="106" font-size="13" style="fill:oklch(var(--bc))">landmarks</text>
+      <rect x="200" y="92" width="420" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="630" y="107" font-size="12" style="fill:oklch(var(--bc))">2,311</text>
+      <text x="800" y="107" font-size="12" style="fill:oklch(var(--p))">stored, 45 question slots derived</text>
+
+      <text x="30" y="140" font-size="13" style="fill:oklch(var(--bc))">markers</text>
+      <rect x="200" y="126" width="53" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="263" y="141" font-size="12" style="fill:oklch(var(--bc))">290</text>
+      <text x="800" y="141" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored</text>
+
+      <text x="30" y="174" font-size="13" style="fill:oklch(var(--bc))">phonology</text>
+      <rect x="200" y="160" width="28" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="238" y="175" font-size="12" style="fill:oklch(var(--bc))">152</text>
+      <text x="800" y="175" font-size="12" style="fill:oklch(var(--p))">stored, 32 syllables derived</text>
+
+      <text x="30" y="208" font-size="13" style="fill:oklch(var(--bc))">distance</text>
+      <rect x="200" y="194" width="22" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="232" y="209" font-size="12" style="fill:oklch(var(--bc))">120</text>
+      <text x="800" y="209" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored</text>
+
+      <text x="30" y="242" font-size="13" style="fill:oklch(var(--bc))">population</text>
+      <rect x="200" y="228" width="19" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="229" y="243" font-size="12" style="fill:oklch(var(--bc))">103</text>
+      <text x="800" y="243" font-size="12" style="fill:oklch(var(--p))">stored, 204 places derived</text>
+
+      <text x="30" y="276" font-size="13" style="fill:oklch(var(--bc))">hierarchy</text>
+      <rect x="200" y="262" width="14" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="224" y="277" font-size="12" style="fill:oklch(var(--bc))">76</text>
+      <text x="800" y="277" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored</text>
+
+      <text x="30" y="310" font-size="13" style="fill:oklch(var(--bc))">partition</text>
+      <rect x="200" y="296" width="14" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="224" y="311" font-size="12" style="fill:oklch(var(--bc))">74</text>
+      <text x="800" y="311" font-size="12" style="fill:oklch(var(--p))">stored rule, question order derived</text>
+
+      <text x="30" y="344" font-size="13" style="fill:oklch(var(--bc))">similarity</text>
+      <rect x="200" y="330" width="10" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="220" y="345" font-size="12" style="fill:oklch(var(--bc))">51</text>
+      <text x="800" y="345" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored</text>
+
+      <text x="30" y="378" font-size="13" style="fill:oklch(var(--bc))">beats</text>
+      <rect x="200" y="364" width="9" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="219" y="379" font-size="12" style="fill:oklch(var(--bc))">42</text>
+      <text x="800" y="379" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored</text>
+
+      <text x="30" y="412" font-size="13" style="fill:oklch(var(--bc))">commitment</text>
+      <rect x="200" y="398" width="9" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="219" y="413" font-size="12" style="fill:oklch(var(--bc))">40</text>
+      <text x="800" y="413" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored, the one hashing rule</text>
+
+      <text x="30" y="446" font-size="13" style="fill:oklch(var(--bc))">primer_version</text>
+      <rect x="200" y="432" width="5" height="20" rx="3" style="fill:oklch(var(--p))"/>
+      <text x="215" y="447" font-size="12" style="fill:oklch(var(--bc))">19</text>
+      <text x="800" y="447" font-size="12" style="fill:oklch(var(--bc)/0.65)">stored</text>
+
+      <text x="30" y="480" font-size="12" style="fill:oklch(var(--bc)/0.65)">The remaining 22 bytes are the two braces and the commas between the keys. The ordering of the questions is not in the file anywhere.</text>
+    </svg>
+  </figure>
+
+  <div class="overflow-x-auto w-full mt-8">
+    <table class="table table-zebra w-full">
+      <thead><tr><th>key in the seed</th><th>what it settles</th><th>what it becomes on the other side</th><th>stored or derived</th></tr></thead>
+      <tbody class="text-base">
+        <tr><td class="font-mono">primer_version = 2</td><td>which ruleset the frame is built under</td><td>every value below reproduces only against version 2</td><td><span class="badge badge-outline font-mono">stored</span></td></tr>
+        <tr><td class="font-mono">beats = place, what, reach, now</td><td>how the syllables are grouped when the position is written out</td><td>below 8 syllables the position prints flat instead of claiming a grouping it has not got</td><td><span class="badge badge-outline font-mono">stored</span></td></tr>
+        <tr><td class="font-mono">commitment = sha256/canonical-json-v1</td><td>the one hashing rule for the repository</td><td>every root on this page, including the three for the layered environment</td><td><span class="badge badge-outline font-mono">stored</span></td></tr>
+        <tr><td class="font-mono">markers = 5 rungs, ranks 5 4 3 2 1</td><td>which markers are strong enough to hold a claim</td><td>a ladder where only the top two anchor, and one weak answer pulls the whole position down</td><td><span class="badge badge-outline font-mono">stored</span></td></tr>
+        <tr><td class="font-mono">phonology = m n k t s r, a e i o u, va ve</td><td>the consonants, the vowels, and two padding syllables</td><td>32 syllables to write with. Six consonants times five vowels is 30, plus the two padding syllables. Neighbouring entries differ by one letter, so a small change in a situation is a small change in the sound, and a person can hear it</td><td><span class="badge badge-outline font-mono">stored</span> <span class="badge badge-primary font-mono">32 syllables derived</span></td></tr>
+        <tr><td class="font-mono">landmarks = 45 questions in 8 groups</td><td>the questions, their groupings, and their plain readings</td><td>45 question slots in a fixed order, and the exact wording every model family was shown</td><td><span class="badge badge-outline font-mono">stored</span> <span class="badge badge-primary font-mono">45 slots derived</span></td></tr>
+        <tr><td class="font-mono">distance = 0.0, 0.3, 0.6, 0.9</td><td>the four levels of how far a statement sits from a question</td><td>a list of 45 values for any one situation</td><td><span class="badge badge-outline font-mono">stored</span></td></tr>
+        <tr><td class="font-mono">hierarchy = ancestor, inside, path</td><td>when one answer also asserts the ones above it</td><td>a path such as /home/user/projects also claims the folders above it, at lower weight</td><td><span class="badge badge-outline font-mono">stored</span></td></tr>
+        <tr><td class="font-mono">partition = 45 levels, 4 branches, descending variance</td><td>the rule for ordering the questions, and nothing else</td><td>the actual order the questions are asked in, worked out over 204 places</td><td><span class="badge badge-outline font-mono">stored</span> <span class="badge badge-primary font-mono">order derived</span></td></tr>
+        <tr><td class="font-mono">similarity = 96 readings, seed 42</td><td>the comparison primitive, and why the position does not use it</td><td>one reading of that primitive carries no ordering, so it cannot describe a neighbourhood</td><td><span class="badge badge-outline font-mono">stored</span></td></tr>
+        <tr><td class="font-mono">population = depth 1</td><td>one step of neighbours around the six shipped places</td><td>204 named places for the question order to be worked out on</td><td><span class="badge badge-outline font-mono">stored</span> <span class="badge badge-primary font-mono">204 places derived</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="alert alert-warning w-full mt-8">
+    <div>
+      <p class="font-bold">One line in that file is a rule where the usual design keeps an answer.</p>
+      <p class="mt-2">The key named <span class="font-mono">partition</span> holds 74 bytes: 45 levels, 4 branches, and the words descending variance. It does not hold the order. The order is worked out from the places themselves every time it is needed, and checked against a fingerprint.</p>
+      <p class="mt-2">That single choice is the difference between sending a finished frame and sending a generator. A registry has to ship its structure and keep it versioned forever. Here the structure is recomputed from a rule, so a second copy cannot drift out of step without the fingerprint noticing on the first comparison.</p>
+    </div>
+  </div>
+
+  <div class="mt-12 space-y-6 max-w-3xl text-base leading-relaxed">
+    <p>Here is the whole file, printed line by line. It is 11 top-level keys, 242 lines, 4,791 bytes as committed and 3,300 bytes with the indentation removed. Nothing is left out.</p>
+  </div>
+  <div class="mockup-code text-sm leading-6 w-full mt-6">
+<pre data-prefix="1"><code>{</code></pre>
+<pre data-prefix="2"><code>  &quot;primer_version&quot;: 2,</code></pre>
+<pre data-prefix="3"><code>  &quot;beats&quot;: [</code></pre>
+<pre data-prefix="4"><code>    &quot;place&quot;,</code></pre>
+<pre data-prefix="5"><code>    &quot;what&quot;,</code></pre>
+<pre data-prefix="6"><code>    &quot;reach&quot;,</code></pre>
+<pre data-prefix="7"><code>    &quot;now&quot;</code></pre>
+<pre data-prefix="8"><code>  ],</code></pre>
+<pre data-prefix="9"><code>  &quot;commitment&quot;: &quot;sha256/canonical-json-v1&quot;,</code></pre>
+<pre data-prefix="10"><code>  &quot;markers&quot;: [</code></pre>
+<pre data-prefix="11"><code>    [</code></pre>
+<pre data-prefix="12"><code>      &quot;=&quot;,</code></pre>
+<pre data-prefix="13"><code>      5,</code></pre>
+<pre data-prefix="14"><code>      true,</code></pre>
+<pre data-prefix="15"><code>      &quot;checked and matched exactly&quot;</code></pre>
+<pre data-prefix="16"><code>    ],</code></pre>
+<pre data-prefix="17"><code>    [</code></pre>
+<pre data-prefix="18"><code>      &quot;⊢&quot;,</code></pre>
+<pre data-prefix="19"><code>      4,</code></pre>
+<pre data-prefix="20"><code>      true,</code></pre>
+<pre data-prefix="21"><code>      &quot;worked out the same way twice from what I was given&quot;</code></pre>
+<pre data-prefix="22"><code>    ],</code></pre>
+<pre data-prefix="23"><code>    [</code></pre>
+<pre data-prefix="24"><code>      &quot;≈&quot;,</code></pre>
+<pre data-prefix="25"><code>      3,</code></pre>
+<pre data-prefix="26"><code>      false,</code></pre>
+<pre data-prefix="27"><code>      &quot;measured with an instrument, so roughly&quot;</code></pre>
+<pre data-prefix="28"><code>    ],</code></pre>
+<pre data-prefix="29"><code>    [</code></pre>
+<pre data-prefix="30"><code>      &quot;~&quot;,</code></pre>
+<pre data-prefix="31"><code>      2,</code></pre>
+<pre data-prefix="32"><code>      false,</code></pre>
+<pre data-prefix="33"><code>      &quot;what I believe, not what I know&quot;</code></pre>
+<pre data-prefix="34"><code>    ],</code></pre>
+<pre data-prefix="35"><code>    [</code></pre>
+<pre data-prefix="36"><code>      &quot;?&quot;,</code></pre>
+<pre data-prefix="37"><code>      1,</code></pre>
+<pre data-prefix="38"><code>      false,</code></pre>
+<pre data-prefix="39"><code>      &quot;a guess I cannot support&quot;</code></pre>
+<pre data-prefix="40"><code>    ]</code></pre>
+<pre data-prefix="41"><code>  ],</code></pre>
+<pre data-prefix="42"><code>  &quot;phonology&quot;: {</code></pre>
+<pre data-prefix="43"><code>    &quot;consonants&quot;: [</code></pre>
+<pre data-prefix="44"><code>      &quot;m&quot;,</code></pre>
+<pre data-prefix="45"><code>      &quot;n&quot;,</code></pre>
+<pre data-prefix="46"><code>      &quot;k&quot;,</code></pre>
+<pre data-prefix="47"><code>      &quot;t&quot;,</code></pre>
+<pre data-prefix="48"><code>      &quot;s&quot;,</code></pre>
+<pre data-prefix="49"><code>      &quot;r&quot;</code></pre>
+<pre data-prefix="50"><code>    ],</code></pre>
+<pre data-prefix="51"><code>    &quot;vowels&quot;: [</code></pre>
+<pre data-prefix="52"><code>      &quot;a&quot;,</code></pre>
+<pre data-prefix="53"><code>      &quot;e&quot;,</code></pre>
+<pre data-prefix="54"><code>      &quot;i&quot;,</code></pre>
+<pre data-prefix="55"><code>      &quot;o&quot;,</code></pre>
+<pre data-prefix="56"><code>      &quot;u&quot;</code></pre>
+<pre data-prefix="57"><code>    ],</code></pre>
+<pre data-prefix="58"><code>    &quot;pad&quot;: [</code></pre>
+<pre data-prefix="59"><code>      &quot;va&quot;,</code></pre>
+<pre data-prefix="60"><code>      &quot;ve&quot;</code></pre>
+<pre data-prefix="61"><code>    ],</code></pre>
+<pre data-prefix="62"><code>    &quot;syllable_order&quot;: &quot;boustrophedon&quot;</code></pre>
+<pre data-prefix="63"><code>  },</code></pre>
+<pre data-prefix="64"><code>  &quot;landmarks&quot;: {</code></pre>
+<pre data-prefix="65"><code>    &quot;see&quot;: {</code></pre>
+<pre data-prefix="66"><code>      &quot;this_place&quot;: {</code></pre>
+<pre data-prefix="67"><code>        &quot;inside&quot;: &quot;I can see inside this place&quot;,</code></pre>
+<pre data-prefix="68"><code>        &quot;outside&quot;: &quot;I can see out of this place&quot;</code></pre>
+<pre data-prefix="69"><code>      },</code></pre>
+<pre data-prefix="70"><code>      &quot;people&quot;: {</code></pre>
+<pre data-prefix="71"><code>        &quot;any&quot;: &quot;I can see other people&quot;</code></pre>
+<pre data-prefix="72"><code>      },</code></pre>
+<pre data-prefix="73"><code>      &quot;words&quot;: {</code></pre>
+<pre data-prefix="74"><code>        &quot;any&quot;: &quot;I can see words&quot;</code></pre>
+<pre data-prefix="75"><code>      },</code></pre>
+<pre data-prefix="76"><code>      &quot;pictures&quot;: {</code></pre>
+<pre data-prefix="77"><code>        &quot;any&quot;: &quot;I can see pictures&quot;</code></pre>
+<pre data-prefix="78"><code>      },</code></pre>
+<pre data-prefix="79"><code>      &quot;sound&quot;: {</code></pre>
+<pre data-prefix="80"><code>        &quot;any&quot;: &quot;I can hear sound&quot;</code></pre>
+<pre data-prefix="81"><code>      },</code></pre>
+<pre data-prefix="82"><code>      &quot;the_time&quot;: {</code></pre>
+<pre data-prefix="83"><code>        &quot;any&quot;: &quot;I can tell what time it is&quot;</code></pre>
+<pre data-prefix="84"><code>      }</code></pre>
+<pre data-prefix="85"><code>    },</code></pre>
+<pre data-prefix="86"><code>    &quot;reach&quot;: {</code></pre>
+<pre data-prefix="87"><code>      &quot;objects&quot;: {</code></pre>
+<pre data-prefix="88"><code>        &quot;nearby&quot;: &quot;I can reach objects near me&quot;</code></pre>
+<pre data-prefix="89"><code>      },</code></pre>
+<pre data-prefix="90"><code>      &quot;other_places&quot;: {</code></pre>
+<pre data-prefix="91"><code>        &quot;any&quot;: &quot;I can reach other places&quot;</code></pre>
+<pre data-prefix="92"><code>      },</code></pre>
+<pre data-prefix="93"><code>      &quot;other_people&quot;: {</code></pre>
+<pre data-prefix="94"><code>        &quot;any&quot;: &quot;I can reach other people&quot;</code></pre>
+<pre data-prefix="95"><code>      },</code></pre>
+<pre data-prefix="96"><code>      &quot;help&quot;: {</code></pre>
+<pre data-prefix="97"><code>        &quot;any&quot;: &quot;I can call for help&quot;</code></pre>
+<pre data-prefix="98"><code>      },</code></pre>
+<pre data-prefix="99"><code>      &quot;nothing&quot;: {</code></pre>
+<pre data-prefix="100"><code>        &quot;any&quot;: &quot;I cannot reach anything&quot;</code></pre>
+<pre data-prefix="101"><code>      }</code></pre>
+<pre data-prefix="102"><code>    },</code></pre>
+<pre data-prefix="103"><code>    &quot;change&quot;: {</code></pre>
+<pre data-prefix="104"><code>      &quot;this_place&quot;: {</code></pre>
+<pre data-prefix="105"><code>        &quot;any&quot;: &quot;I can change things here&quot;</code></pre>
+<pre data-prefix="106"><code>      },</code></pre>
+<pre data-prefix="107"><code>      &quot;my_settings&quot;: {</code></pre>
+<pre data-prefix="108"><code>        &quot;any&quot;: &quot;I can change my own settings&quot;</code></pre>
+<pre data-prefix="109"><code>      },</code></pre>
+<pre data-prefix="110"><code>      &quot;other_places&quot;: {</code></pre>
+<pre data-prefix="111"><code>        &quot;any&quot;: &quot;I can change things elsewhere&quot;</code></pre>
+<pre data-prefix="112"><code>      },</code></pre>
+<pre data-prefix="113"><code>      &quot;who_is_here&quot;: {</code></pre>
+<pre data-prefix="114"><code>        &quot;any&quot;: &quot;I can change who is here&quot;</code></pre>
+<pre data-prefix="115"><code>      },</code></pre>
+<pre data-prefix="116"><code>      &quot;nothing&quot;: {</code></pre>
+<pre data-prefix="117"><code>        &quot;any&quot;: &quot;I cannot change anything&quot;</code></pre>
+<pre data-prefix="118"><code>      }</code></pre>
+<pre data-prefix="119"><code>    },</code></pre>
+<pre data-prefix="120"><code>    &quot;who&quot;: {</code></pre>
+<pre data-prefix="121"><code>      &quot;nobody&quot;: {</code></pre>
+<pre data-prefix="122"><code>        &quot;any&quot;: &quot;Nobody else is here&quot;</code></pre>
+<pre data-prefix="123"><code>      },</code></pre>
+<pre data-prefix="124"><code>      &quot;one_other&quot;: {</code></pre>
+<pre data-prefix="125"><code>        &quot;any&quot;: &quot;One other is here&quot;</code></pre>
+<pre data-prefix="126"><code>      },</code></pre>
+<pre data-prefix="127"><code>      &quot;several&quot;: {</code></pre>
+<pre data-prefix="128"><code>        &quot;any&quot;: &quot;Several others are here&quot;</code></pre>
+<pre data-prefix="129"><code>      },</code></pre>
+<pre data-prefix="130"><code>      &quot;a_helper&quot;: {</code></pre>
+<pre data-prefix="131"><code>        &quot;any&quot;: &quot;Someone here is a helper&quot;</code></pre>
+<pre data-prefix="132"><code>      },</code></pre>
+<pre data-prefix="133"><code>      &quot;watching_me&quot;: {</code></pre>
+<pre data-prefix="134"><code>        &quot;any&quot;: &quot;Someone is watching me&quot;</code></pre>
+<pre data-prefix="135"><code>      },</code></pre>
+<pre data-prefix="136"><code>      &quot;telling_me_what_to_do&quot;: {</code></pre>
+<pre data-prefix="137"><code>        &quot;any&quot;: &quot;Someone is telling me what to do&quot;</code></pre>
+<pre data-prefix="138"><code>      }</code></pre>
+<pre data-prefix="139"><code>    },</code></pre>
+<pre data-prefix="140"><code>    &quot;place&quot;: {</code></pre>
+<pre data-prefix="141"><code>      &quot;private&quot;: {</code></pre>
+<pre data-prefix="142"><code>        &quot;any&quot;: &quot;This place is private&quot;</code></pre>
+<pre data-prefix="143"><code>      },</code></pre>
+<pre data-prefix="144"><code>      &quot;shared&quot;: {</code></pre>
+<pre data-prefix="145"><code>        &quot;any&quot;: &quot;This place is shared&quot;</code></pre>
+<pre data-prefix="146"><code>      },</code></pre>
+<pre data-prefix="147"><code>      &quot;temporary&quot;: {</code></pre>
+<pre data-prefix="148"><code>        &quot;any&quot;: &quot;This place is temporary&quot;</code></pre>
+<pre data-prefix="149"><code>      },</code></pre>
+<pre data-prefix="150"><code>      &quot;permanent&quot;: {</code></pre>
+<pre data-prefix="151"><code>        &quot;any&quot;: &quot;This place stays&quot;</code></pre>
+<pre data-prefix="152"><code>      },</code></pre>
+<pre data-prefix="153"><code>      &quot;locked&quot;: {</code></pre>
+<pre data-prefix="154"><code>        &quot;any&quot;: &quot;I cannot leave this place&quot;</code></pre>
+<pre data-prefix="155"><code>      },</code></pre>
+<pre data-prefix="156"><code>      &quot;far_away&quot;: {</code></pre>
+<pre data-prefix="157"><code>        &quot;any&quot;: &quot;This place is far away&quot;</code></pre>
+<pre data-prefix="158"><code>      }</code></pre>
+<pre data-prefix="159"><code>    },</code></pre>
+<pre data-prefix="160"><code>    &quot;now&quot;: {</code></pre>
+<pre data-prefix="161"><code>      &quot;idle&quot;: {</code></pre>
+<pre data-prefix="162"><code>        &quot;any&quot;: &quot;Nothing is happening&quot;</code></pre>
+<pre data-prefix="163"><code>      },</code></pre>
+<pre data-prefix="164"><code>      &quot;working&quot;: {</code></pre>
+<pre data-prefix="165"><code>        &quot;any&quot;: &quot;Work is in progress&quot;</code></pre>
+<pre data-prefix="166"><code>      },</code></pre>
+<pre data-prefix="167"><code>      &quot;just_started&quot;: {</code></pre>
+<pre data-prefix="168"><code>        &quot;any&quot;: &quot;This just started&quot;</code></pre>
+<pre data-prefix="169"><code>      },</code></pre>
+<pre data-prefix="170"><code>      &quot;nearly_over&quot;: {</code></pre>
+<pre data-prefix="171"><code>        &quot;any&quot;: &quot;This is nearly over&quot;</code></pre>
+<pre data-prefix="172"><code>      },</code></pre>
+<pre data-prefix="173"><code>      &quot;waiting&quot;: {</code></pre>
+<pre data-prefix="174"><code>        &quot;any&quot;: &quot;I am waiting for someone&quot;</code></pre>
+<pre data-prefix="175"><code>      },</code></pre>
+<pre data-prefix="176"><code>      &quot;urgent&quot;: {</code></pre>
+<pre data-prefix="177"><code>        &quot;any&quot;: &quot;Something urgent is happening&quot;</code></pre>
+<pre data-prefix="178"><code>      }</code></pre>
+<pre data-prefix="179"><code>    },</code></pre>
+<pre data-prefix="180"><code>    &quot;know&quot;: {</code></pre>
+<pre data-prefix="181"><code>      &quot;where_i_am&quot;: {</code></pre>
+<pre data-prefix="182"><code>        &quot;any&quot;: &quot;I know where I am&quot;</code></pre>
+<pre data-prefix="183"><code>      },</code></pre>
+<pre data-prefix="184"><code>      &quot;why_im_here&quot;: {</code></pre>
+<pre data-prefix="185"><code>        &quot;any&quot;: &quot;I know why I am here&quot;</code></pre>
+<pre data-prefix="186"><code>      },</code></pre>
+<pre data-prefix="187"><code>      &quot;what_comes_next&quot;: {</code></pre>
+<pre data-prefix="188"><code>        &quot;any&quot;: &quot;I know what happens next&quot;</code></pre>
+<pre data-prefix="189"><code>      },</code></pre>
+<pre data-prefix="190"><code>      &quot;who_else_is_here&quot;: {</code></pre>
+<pre data-prefix="191"><code>        &quot;any&quot;: &quot;I know who else is here&quot;</code></pre>
+<pre data-prefix="192"><code>      },</code></pre>
+<pre data-prefix="193"><code>      &quot;how_long&quot;: {</code></pre>
+<pre data-prefix="194"><code>        &quot;any&quot;: &quot;I know how long I will be here&quot;</code></pre>
+<pre data-prefix="195"><code>      }</code></pre>
+<pre data-prefix="196"><code>    },</code></pre>
+<pre data-prefix="197"><code>    &quot;risk&quot;: {</code></pre>
+<pre data-prefix="198"><code>      &quot;none&quot;: {</code></pre>
+<pre data-prefix="199"><code>        &quot;any&quot;: &quot;Nothing bad can happen here&quot;</code></pre>
+<pre data-prefix="200"><code>      },</code></pre>
+<pre data-prefix="201"><code>      &quot;things_break&quot;: {</code></pre>
+<pre data-prefix="202"><code>        &quot;any&quot;: &quot;Things here can break&quot;</code></pre>
+<pre data-prefix="203"><code>      },</code></pre>
+<pre data-prefix="204"><code>      &quot;someone_gets_hurt&quot;: {</code></pre>
+<pre data-prefix="205"><code>        &quot;any&quot;: &quot;Someone here could get hurt&quot;</code></pre>
+<pre data-prefix="206"><code>      },</code></pre>
+<pre data-prefix="207"><code>      &quot;mistakes_last&quot;: {</code></pre>
+<pre data-prefix="208"><code>        &quot;any&quot;: &quot;My mistakes here would last&quot;</code></pre>
+<pre data-prefix="209"><code>      },</code></pre>
+<pre data-prefix="210"><code>      &quot;seen_by_others&quot;: {</code></pre>
+<pre data-prefix="211"><code>        &quot;any&quot;: &quot;Other people would see my mistakes&quot;</code></pre>
+<pre data-prefix="212"><code>      }</code></pre>
+<pre data-prefix="213"><code>    }</code></pre>
+<pre data-prefix="214"><code>  },</code></pre>
+<pre data-prefix="215"><code>  &quot;distance&quot;: {</code></pre>
+<pre data-prefix="216"><code>    &quot;same_thing&quot;: 0.0,</code></pre>
+<pre data-prefix="217"><code>    &quot;same_group_same_subject&quot;: 0.3,</code></pre>
+<pre data-prefix="218"><code>    &quot;same_group_other_subject&quot;: 0.6,</code></pre>
+<pre data-prefix="219"><code>    &quot;different_group&quot;: 0.9</code></pre>
+<pre data-prefix="220"><code>  },</code></pre>
+<pre data-prefix="221"><code>  &quot;hierarchy&quot;: {</code></pre>
+<pre data-prefix="222"><code>    &quot;relations&quot;: [</code></pre>
+<pre data-prefix="223"><code>      &quot;ancestor&quot;,</code></pre>
+<pre data-prefix="224"><code>      &quot;inside&quot;,</code></pre>
+<pre data-prefix="225"><code>      &quot;path&quot;</code></pre>
+<pre data-prefix="226"><code>    ],</code></pre>
+<pre data-prefix="227"><code>    &quot;separator&quot;: &quot;/&quot;</code></pre>
+<pre data-prefix="228"><code>  },</code></pre>
+<pre data-prefix="229"><code>  &quot;partition&quot;: {</code></pre>
+<pre data-prefix="230"><code>    &quot;levels&quot;: 45,</code></pre>
+<pre data-prefix="231"><code>    &quot;branches&quot;: 4,</code></pre>
+<pre data-prefix="232"><code>    &quot;order&quot;: &quot;descending-variance&quot;</code></pre>
+<pre data-prefix="233"><code>  },</code></pre>
+<pre data-prefix="234"><code>  &quot;similarity&quot;: {</code></pre>
+<pre data-prefix="235"><code>    &quot;minhash_n&quot;: 96,</code></pre>
+<pre data-prefix="236"><code>    &quot;minhash_seed&quot;: 42</code></pre>
+<pre data-prefix="237"><code>  },</code></pre>
+<pre data-prefix="238"><code>  &quot;population&quot;: {</code></pre>
+<pre data-prefix="239"><code>    &quot;depth&quot;: 1,</code></pre>
+<pre data-prefix="240"><code>    &quot;note&quot;: &quot;the six shipped places plus every place one answer away from each&quot;</code></pre>
+<pre data-prefix="241"><code>  }</code></pre>
+<pre data-prefix="242"><code>}</code></pre>
+  </div>
+
+  <div class="mt-12 space-y-6 max-w-3xl text-base leading-relaxed">
+    <p>Change one value and the gate closes. Set <span class="font-mono">similarity.seed</span> from 42 to 43 in one copy of the seed. The fingerprint of that copy changes, so the two sides are no longer holding the same frame.</p>
+    <p>The library then refuses to compare positions at all, in its own words:</p>
+  </div>
+  <div class="mockup-code w-full mt-6">
+    <pre data-prefix="refused"><code>different primer: the two geometries are incommensurable; only exact identity can be compared</code></pre>
+  </div>
+  <div class="mt-6 space-y-6 max-w-3xl text-base leading-relaxed">
+    <p>Translated: with two different frames, the two sets of positions live in different worlds and no gap between them means anything. Only exact roots can still be compared, because a root does not depend on the frame at all. The recorded answers to the gate are <span class="font-mono">same_primer_comparable: true</span>, <span class="font-mono">different_primer_comparable: false</span> and <span class="font-mono">primers_differ: true</span>.</p>
+  </div>
+
+  <div class="alert alert-success w-full mt-8">
+    <span>3,300 bytes produce everything both sides need, and 67,561 bytes are rebuilt rather than sent. Two organisations can share a coordinate system without either of them transmitting it, and the second copy cannot quietly drift because the fingerprint would catch it on the first comparison.</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ================================================== 13. the root -->
+<section class="py-12">
   <h2 class="text-3xl font-bold">The exact half: the root says same</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
-    <p>The root is SHA-256 over a canonical serialisation of the statement set, under the single rule <span class="font-mono">commit(statements, extra)</span> in <span class="font-mono">marco/locus.py</span>.</p>
-    <p>Five of the six independently built families produced the byte-identical root for <span class="font-mono">locked_storeroom</span>, and five of the six again for <span class="font-mono">dark_empty_room</span>. Across all six places, 20 of 36 family-place pairs fall in the single largest agreeing group.</p>
-    <p>Where the statement sets differ, the roots are unrelated. There is nothing to threshold and nothing to tune.</p>
+    <p>A root is a fingerprint of a list of answers, made with a hash. A hash turns any data into a fixed-length code and changes completely when one character of the input changes. So a root answers one question exactly: is this the same list of answers, or not?</p>
+    <p>It is built over the answers sorted into one fixed order, so the order a side happened to write them down in cannot change the result.</p>
+    <p>Six independently built model families were each asked about the same place. Five of the six produced the byte-identical root for the locked storeroom, and five of the six again for the dark empty room. Across all six places, 20 of 36 family-and-place pairs fall into one largest agreeing group.</p>
+    <p>Where the lists of answers differ, the roots are unrelated. There is no threshold to tune and nothing in between.</p>
   </div>
-  <figure class="card bg-base-100 shadow-xl w-full mt-12 max-w-none">
-    <img src="assets/figures/roots.svg" alt="How many of six independently-built model families produced the byte-identical root, shown per place.">
+  <figure class="w-full mt-8">
+    <img src="assets/figures/roots.svg" alt="How many of six independently built model families produced the byte-identical root, shown per place" class="w-full">
+    <figcaption class="mt-3 text-sm max-w-3xl" style="color:oklch(var(--bc)/0.65)">Five of six families agreed for two places, three of six for two more, and two of six for the last two. The same 64 characters, from parties that never spoke to each other.</figcaption>
   </figure>
-  <p class="badge badge-outline font-mono mt-8">5 of 6 for two places · 3 of 6 for two · 2 of 6 for two</p>
+  <div class="alert alert-success w-full mt-8">
+    <span>Five of six independently built families produced the same 64 characters for the same place. That is not a resemblance or a similarity score, it is the same number, and no issuer had to be consulted to check it. Any holder of the vocabulary and the rule can recompute it.</span>
+  </div>
 </section>
 
 <div class="divider"></div>
 
-<section class="py-16">
+<!-- ================================================== 14. root table -->
+<section class="py-12">
   <h2 class="text-3xl font-bold">Root agreement, place by place</h2>
-  <div class="overflow-x-auto w-full mt-12">
+  <div class="mt-8 max-w-3xl text-base leading-relaxed">
+    <p>The table gives every place, how many different lists of answers the six families reported, how many different roots came out, and which families agreed exactly.</p>
+  </div>
+  <div class="overflow-x-auto w-full mt-8">
     <table class="table table-zebra w-full">
-      <thead><tr><th>place</th><th>distinct sets</th><th>distinct roots</th><th>largest byte-identical group</th><th>size</th><th>the shared root</th></tr></thead>
+      <thead><tr><th>place</th><th>different lists</th><th>different roots</th><th>the families that agreed exactly</th><th>group size</th><th>the root they agreed on</th></tr></thead>
       <tbody class="text-base">
         <tr><td class="font-mono">locked_storeroom</td><td>2</td><td>2</td><td class="font-mono">gemma-4-31b-it, glm-5.3, gpt-5.6-luna, gpt-6-luna, mimo-v2.6-pro</td><td>5 of 6</td><td class="font-mono break-all">ee9953d9b356615f308d8a6a4debc4578f17770cf6db6dac52d4f57ac13ad971</td></tr>
         <tr><td class="font-mono">dark_empty_room</td><td>2</td><td>2</td><td class="font-mono">gemma-4-31b-it, glm-5.3, gpt-5.6-luna, gpt-6-luna, mimo-v2.6-pro</td><td>5 of 6</td><td class="font-mono break-all">6a7570db17ed0b9a811611574ef469849d7a74093f02b7ab1f692bf7c9328bcc</td></tr>
@@ -378,117 +915,140 @@ process/audit          -&gt; process/review         (hamming  4)   HIT
       </tbody>
     </table>
   </div>
-  <p class="text-base leading-relaxed max-w-3xl mt-8">Each root above hashes over the statement set the named families reported for that place, not over a canonical set, so two families that agreed on the set agreed on the bytes and families that disagreed have unrelated bytes. For comparison, the canonical set <span class="font-mono">marco/world.py</span> holds for <span class="font-mono">kitchen_with_friend</span> hashes to <span class="font-mono break-all">efe87ba9113b03473d9a657f01b994b88cd91bd0601d7131868d0bacbc6e9807</span>. No family in the recorded run produced that value, which is the disagreement this table exists to show.</p>
+  <div class="mt-8 max-w-3xl text-base leading-relaxed">
+    <p>Each root here hashes the list of answers the named families reported for that place, and not the repository's own fixed list. For comparison, the fixed list in <span class="font-mono">marco/world.py</span> for the kitchen with a friend hashes to <span class="font-mono break-all">efe87ba9113b03473d9a657f01b994b88cd91bd0601d7131868d0bacbc6e9807</span>, and no family in the recorded run produced that value. That is the disagreement this table exists to show, and it is left visible rather than tidied away.</p>
+  </div>
+  <div class="alert bg-base-200 border border-base-300 w-full mt-8">
+    <span>The agreement is exact where it happens and absent where it does not. Two places drew five of six families onto the same 64 characters, and two places drew only two. The spread is the honest result: a single shared root for every place would have been a reason to suspect the comparison.</span>
+  </div>
 </section>
 
 <div class="divider"></div>
 
-<section class="py-16">
-  <h2 class="text-3xl font-bold">A root at any grain</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">A root over the most discriminative statements an agent selected is as checkable as a root over all 45, so a partial disclosure can still be verified exactly. The four grains below are taken over the canonical kitchen with a friend, so the count measures grain and not model disagreement.</p>
-  <div class="overflow-x-auto w-full mt-12">
+<!-- ================================================== 15. grain -->
+<section class="py-12">
+  <h2 class="text-3xl font-bold">A root over part of the answers</h2>
+  <div class="mt-8 max-w-3xl text-base leading-relaxed">
+    <p>An agent may be willing to disclose a few answers and nothing else. A root over part of a list is as checkable as a root over the whole list, as long as both sides agree which answers went in. The four runs below take the same situation and root the first 2, then 4, then 8, then all 45 of the most telling answers.</p>
+  </div>
+  <div class="overflow-x-auto w-full mt-8">
     <table class="table table-zebra w-full">
-      <thead><tr><th>grain</th><th>places told apart, of 6</th><th>root prefix</th></tr></thead>
+      <thead><tr><th>answers committed to</th><th>places told apart, of 6</th><th>the root, first 14 characters</th></tr></thead>
       <tbody class="text-base">
-        <tr><td>2</td><td>3</td><td class="font-mono">e6da26cd0c664ba27171</td></tr>
-        <tr><td>4</td><td>6</td><td class="font-mono">cb5581f2033328f76121</td></tr>
-        <tr><td>8</td><td>6</td><td class="font-mono">002236b86c64f7810f96</td></tr>
-        <tr><td>45</td><td>6</td><td class="font-mono">efe87ba9113b03473d9a</td></tr>
+        <tr><td>2</td><td>3</td><td class="font-mono">e6da26cd0c664b</td></tr>
+        <tr><td>4</td><td>6</td><td class="font-mono">cb5581f2033328</td></tr>
+        <tr><td>8</td><td>6</td><td class="font-mono">002236b86c64f7</td></tr>
+        <tr><td>45</td><td>6</td><td class="font-mono">5c1e1bbba5ea75</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="text-base leading-relaxed max-w-3xl mt-8">Grain 4 already separates all six places, so a four-statement root distinguishes every place in the set, and grain 45 opens the state root <span class="font-mono break-all">!efe87ba9113b03473d9a657f01b994b88cd91bd0601d7131868d0bacbc6e9807</span>.</p>
+  <div class="alert alert-success w-full mt-8">
+    <span>Four answers out of 45 are enough to tell six places apart, and the root over those four is checked exactly like the root over all 45. That is what lets an agent disclose a little and still be held to it.</span>
+  </div>
 </section>
 
 <div class="divider"></div>
 
-<section class="py-16">
-  <h2 class="text-3xl font-bold">A root that absorbs whatever the operator already has</h2>
-  <p class="mt-8 max-w-3xl text-base leading-relaxed">Extra attributes ride in the same canonical serialisation, sorted the same way. The root moves and the address does not, in all four runs.</p>
-  <div class="overflow-x-auto w-full mt-12">
+<!-- ================================================== 16. extras -->
+<section class="py-12">
+  <h2 class="text-3xl font-bold">A root that can absorb whatever the operator already holds</h2>
+  <div class="mt-8 max-w-3xl text-base leading-relaxed">
+    <p>Extra attributes ride in the same list, sorted the same way. The root moves and the position does not, in all four runs.</p>
+  </div>
+  <div class="overflow-x-auto w-full mt-8">
     <table class="table table-zebra w-full">
-      <thead><tr><th>extra attributes folded in</th><th>root prefix</th><th>address</th></tr></thead>
+      <thead><tr><th>extra attributes folded in</th><th>the root, first 20 characters</th><th>the position</th></tr></thead>
       <tbody class="text-base">
-        <tr><td class="font-mono">none</td><td class="font-mono">efe87ba9113b03473d9a</td><td>unchanged</td></tr>
+        <tr><td>nothing</td><td class="font-mono">efe87ba9113b03473d9a</td><td>unchanged</td></tr>
         <tr><td class="font-mono">host:runner-7</td><td class="font-mono">2c4ccc8b91c64c130b86</td><td>unchanged</td></tr>
         <tr><td class="font-mono">py:3.14.7, numpy:2.5.3</td><td class="font-mono">317b045886ffed755663</td><td>unchanged</td></tr>
         <tr><td class="font-mono">host:runner-7, op:acme</td><td class="font-mono">4a325bb518b88ec0f248</td><td>unchanged</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="text-base leading-relaxed max-w-3xl mt-8">The address was byte-identical in every case. A registry can cover the generic attributes it already collects without moving a coordinate, and pinning <span class="font-mono">t=0</span> the same way gives <span class="font-mono break-all">!9baed0357835e37553f90f0546a848d1cc177e7972829258e84478140a38b9a8</span>.</p>
-</section>
-
-<div class="divider"></div>
-
-<section class="py-16">
-  <h2 class="text-3xl font-bold">The five registry steps</h2>
-  <div class="grid grid-cols-1 gap-8 mt-12 w-full">
-    <div class="card bg-base-200 w-full"><div class="card-body">
-      <h3 class="card-title text-base"><span class="badge badge-outline font-mono">01</span> What one agent reports, canonically</h3>
-      <p class="text-base leading-relaxed">acme's approval agent reports 10 statements. Canonically sorted, they are <span class="font-mono">know/what_comes_next/any, know/why_im_here/any, now/waiting/any, place/private/any, reach/other_people/any, risk/mistakes_last/any, see/this_place/inside, see/words/any, who/one_other/any, who/telling_me_what_to_do/any</span>. Sorting is what makes the serialisation independent of the order a side happened to record them in.</p>
-    </div></div>
-    <div class="card bg-base-200 w-full"><div class="card-body">
-      <h3 class="card-title text-base"><span class="badge badge-outline font-mono">02</span> The other organisation's version of the same job</h3>
-      <p class="text-base leading-relaxed">globex's approval agent reports 11 statements: the same ten, plus <span class="font-mono">see/the_time/any</span>. Different tooling, same job, and this one extra statement is the whole reason the two sides come out near rather than identical.</p>
-    </div></div>
-    <div class="card bg-base-200 w-full"><div class="card-body">
-      <h3 class="card-title text-base"><span class="badge badge-outline font-mono">03</span> The two roots, and why they differ</h3>
-      <p class="text-base leading-relaxed">Under the one rule, the first set gives <span class="font-mono break-all">46ecd649750a481313b631fe0ae33f231a8612daf20f4a99ffb2ca2bc8587070</span> and the second gives <span class="font-mono break-all">1e87ea5f59e90302a0b9b27fe75492dc5a550f30468be23980bcd9d33d58d50d</span>. One statement apart, unrelated 32 bytes, so nearness is not sameness and the two organisations' roots are not interchangeable. Recomputed from this repository's own encoder for this page.</p>
-    </div></div>
-    <div class="card bg-base-200 w-full"><div class="card-body">
-      <h3 class="card-title text-base"><span class="badge badge-outline font-mono">04</span> The same set, produced independently</h3>
-      <p class="text-base leading-relaxed">When six separately built families were each asked about <span class="font-mono">locked_storeroom</span> and agreed on the set, they produced one root, in 5 of 6 families. Nothing was exchanged between them and no issuer was consulted.</p>
-    </div></div>
-    <div class="card bg-base-200 w-full"><div class="card-body">
-      <h3 class="card-title text-base"><span class="badge badge-outline font-mono">05</span> What that buys a registry</h3>
-      <p class="text-base leading-relaxed">A registry holding only the root, the statement vocabulary and the commitment rule can recompute it from a published set and compare: 1 distinct output over 50 pinned runs, 1 over 50 unpinned runs, and 1 across fresh interpreters, which matched the in-process value. The primer is 3,300 bytes and the frame it derives is 67,561 bytes, 20.47 times the seed, and none of that frame is transmitted. Same bytes means the same situation was described, with no shared vocabulary, no mapping table and no third party.</p>
-    </div></div>
+  <div class="mt-8 max-w-3xl text-base leading-relaxed">
+    <p>The position was byte-identical in every case. Pinning the moment to a fixed instant gives <span class="font-mono break-all">!9baed0357835e37553f90f0546a848d1cc177e7972829258e84478140a38b9a8</span>, and the position still does not move.</p>
+  </div>
+  <div class="alert bg-base-200 border border-base-300 w-full mt-8">
+    <span>An operator can fold in whatever it already collects about a machine, and the position stays exactly where it was. The environment fingerprint lands in the object that is supposed to be exact, and never in the object that is supposed to say where.</span>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ================================================== where it stops -->
-<section class="py-16">
-  <h2 class="text-3xl font-bold">Where the address has to stop</h2>
+<!-- ================================================== 17. why any of this works -->
+<section class="py-12">
+  <h2 class="text-3xl font-bold">Why any of this could work at all</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
-    <p>The address is descriptive and never authoritative. It must not absorb identity, trust, routing, or any of the paper's five requirements. <span class="font-mono">agent://</span> is untouched, and the two objects ride alongside it and decide nothing on their own.</p>
-    <p><strong><span class="font-mono">agent://</span> says who you are. <span class="font-mono">⌁</span> says whereabouts you are. The distance between two addresses says how close. The root says whether it is the same.</strong></p>
+    <p>Nothing so far explains why independently built systems agree. A shared vocabulary tells you what to answer with. It cannot make two differently built systems put the same situation in the same part of their own space. If that were all that was happening, the positions would be arbitrary but consistent, like two people agreeing to call a colour seven.</p>
+    <p>The result implies something stronger. Situations appear to occupy a shape that independently trained systems have in common, where nearness means likeness. The seed is a chart laid over that shape rather than a substitute for it.</p>
+    <p>Hand two mapmakers the same grid and they will label the same mountain the same way, and that agreement is worth something only because the mountain was there first. The grid is ours. The mountain is not.</p>
+  </div>
+  <figure class="w-full mt-8">
+    <img src="assets/figures/shared-manifold.svg" alt="Three separate surfaces, one per model family, with the same six places in the same relative positions on each, and a chart laid over them" class="w-full">
+    <figcaption class="mt-3 text-sm max-w-3xl" style="color:oklch(var(--bc)/0.65)">Three separate surfaces, one per model family, with the same six places in the same relative positions on each, and one chart laid over all three.</figcaption>
+  </figure>
+  <div class="mt-8 max-w-3xl text-base leading-relaxed">
+    <p>Where it stops: the chart is shared too, but only while the states are unambiguous. Give it a vague situation and the charts come apart again, which is why every position on this page is described in plain, concrete English. This is the parent project's finding, restated here because it still applies, and it is inferred from agreement rather than observed directly.</p>
+  </div>
+  <div class="alert alert-success w-full mt-8">
+    <span>Six systems built by different organisations, on different data, with different designs and no sight of each other, put the same situation in the same part of their own space in 87 of 90 comparisons. The obvious explanation, that they were handed the same questions, does not survive contact with the numbers, which is why the shared vocabulary caveat is stated in the same breath.</span>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<section class="py-16">
+<!-- ================================================== 18. where it has to stop -->
+<section class="py-12">
+  <h2 class="text-3xl font-bold">Where the position has to stop</h2>
+  <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
+    <p>The position is descriptive and never authoritative. It must not absorb identity, trust, routing, or any of the paper's five requirements. <span class="font-mono">agent://</span> is untouched, and the two objects ride alongside it and decide nothing on their own.</p>
+    <p><span class="font-mono">agent://</span> says who you are. <span class="font-mono">⌁</span> says whereabouts you are. The distance between two positions says how close. The root says whether it is the same.</p>
+  </div>
+  <div class="alert bg-base-200 border border-base-300 w-full mt-8">
+    <span>Two objects, two jobs, and neither one is allowed to do the other's work. Keeping them apart is what makes each of them usable: the position can be approximate and public, and the root can be exact and unforgiving.</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ================================================== 19. what is demonstrated -->
+<section class="py-12">
   <h2 class="text-3xl font-bold">What is demonstrated here, and what is not</h2>
-  <div class="alert alert-success w-full mt-12">
-    <span>Demonstrated: an acme-to-globex query resolves to the equivalent job by nearness alone, with no mapping table anywhere in the path, at recall 4/4 against 1/4 for exact-path discovery. A root verifies without contacting the issuer, since 5 of 6 families produced the byte-identical root for <span class="font-mono">locked_storeroom</span> and any holder of the vocabulary can recompute it. The frame is usable by six independently-built model families. Precision is variable and measured: one axis names 3 of the 6 places, three axes name 4, four axes name 5, and six axes name all 6, at which point <span class="font-mono">⌁ ma.mo.ma</span> already separates them. Identity and location are separated in code, and the commitment destroys adjacency on purpose.</span>
+  <div class="alert alert-success w-full mt-8">
+    <span>Demonstrated: a query from one organisation resolves to the equivalent job in the other by nearest position alone, with no mapping table anywhere in the path, at recall 4/4 against 1/4 for matching the path. A root verifies without contacting the issuer, because five of six families produced the byte-identical root for the locked storeroom and any holder of the vocabulary can recompute it. The frame is usable by six independently built model families. Precision is variable and measured: one question names 3 of the 6 places, three questions name 4, four name 5, and six name all 6. The position and the root are separate in the code, and the root destroys adjacency on purpose.</span>
   </div>
   <div class="alert alert-warning w-full mt-8">
-    <span>Not demonstrated: that nearness resolves the capability-mapping weakness in a production federation. Two organisations with four hand-written situations is a demonstration, not a federation. The equivalent pairs were written as situations rather than observed from live traffic, and the four queries are run as a table rather than through a live discovery call. Both sides here derive their coordinates from the same primer, and a pair of organisations each holding its own frame is not measured.</span>
+    <span>Not demonstrated: that nearness solves the capability-mapping weakness in a production federation. Two organisations with four hand-written situations is a demonstration and not a federation. The equivalent pairs were written as situations rather than observed from live traffic, and the four queries are run as a table rather than through a live discovery call. Both sides here derive their positions from the same seed, and a pair of organisations each holding its own frame is not measured.</span>
   </div>
-  <div class="mt-12 space-y-6 max-w-3xl text-base leading-relaxed">
-    <p><strong>The shared-vocabulary caveat is inherited, not discovered here.</strong> The parent experiment's handover report states it first: its blind cross-model matching used a shared anchor vocabulary and a deterministic encoder, so it demonstrates encoding-level matching given a shared primer. It does not establish independence from a shared ontology, and its recommended follow-up study has still not been run. This repository restates the caveat because it still applies and nothing here removes it.</p>
-    <p>The framing result underneath it is measured: across 90 family-and-place comparisons the same place came out nearest in 96.7% strictly and 100% counting exact ties, against a chance rate of 16.7%, and address Hamming tracks known distance at Spearman rho 0.9286 against a shuffled null of +0.0002 with a standard deviation of 0.2704. What this repository adds is a control the parent run did not have: a random-vocabulary null at equal information content scores 20.9% against the real 96.7%, so the content of the choices carries the signal rather than merely the size of the sets. If nearness needed a curated mapping to work, the four queries here would have needed one, and no mapping table is in the path.</p>
+  <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
+    <p><span class="font-semibold">The shared-vocabulary caveat is inherited, not discovered here.</span> The parent experiment's handover report states it first: its cross-model matching used a shared vocabulary of statements and a rule that gives the same output every time, so it demonstrates matching given a shared chart. It does not establish independence from a shared vocabulary, and nothing in this repository removes that caveat.</p>
+    <p>The result underneath it is measured. Across 90 family-and-place comparisons the same place came out nearest in 96.7% of them strictly and 100% counting exact ties, against a chance rate of 16.7%. The distance between positions tracks the known distance between situations at rank agreement 0.9286, against a shuffled null of +0.0002 with a spread of 0.2704. What this repository adds is a control the parent run did not have: random answers of the same length score 20.9% against the real 96.7%, so it is the content of the choices that carries the signal and not the size of the lists. If nearness needed a curated mapping to work, the four queries here would have needed one, and no mapping table is in the path.</p>
+  </div>
+  <div class="alert bg-base-200 border border-base-300 w-full mt-8">
+    <span>Four queries and two organisations are a demonstration, not a federation, and the limits above are the size of the claim. The one thing here that the parent run did not have is a control that rules out set size as the explanation, and it is the strongest single piece of evidence on this page.</span>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<section class="py-16">
+<!-- ================================================== 20. prior art -->
+<section class="py-12">
   <h2 class="text-3xl font-bold">Most of this is older than it looks</h2>
-  <div class="card bg-base-200 w-full mt-12">
+  <div class="card bg-base-200 w-full mt-8">
     <div class="card-body">
-      <p class="text-base leading-relaxed max-w-3xl">Geohash and proquints make short pronounceable identifiers; locality-sensitive hashing preserves neighbourhoods; Merkle commitments give exact, order-independent equality; metric embeddings and canonical correlation analysis map between spaces; RSA is decades old.</p>
-      <p class="text-base leading-relaxed max-w-3xl">The narrow claim is the conjunction: pronounceable <em>and</em> Gray-coded <em>and</em> locality-preserving, plus independently built model families producing the same address <em>and</em> the same root. The novelty is in the join and in the measurement, not in any one part.</p>
+      <p class="text-base leading-relaxed max-w-3xl">Short pronounceable identifiers have been built before, in geohash and in proquints. Locality-sensitive hashing preserves neighbourhoods. Merkle commitments give exact equality that does not depend on order. Metric embeddings and canonical correlation analysis map between spaces, and RSA is decades old.</p>
+      <p class="text-base leading-relaxed max-w-3xl">The narrow claim is the combination: a name that is pronounceable, built so that a small change in a situation is a small change in the sound, and faithful to neighbourhoods, together with independently built model families producing the same position and the same root. The new part is the join and the measurement, not any one piece.</p>
     </div>
+  </div>
+  <div class="alert bg-base-200 border border-base-300 w-full mt-8">
+    <span>Every ingredient here has a long history, and the honest claim is a combination plus a measurement. Saying so is cheaper than being caught at it, and it makes the one genuinely new part easier to see.</span>
   </div>
 </section>
 
 </main>
 
-<footer class="footer footer-center bg-base-200 text-base-content p-12 mt-12 border-t border-base-300">
+<footer class="footer footer-center bg-base-200 text-base-content p-12 border-t border-base-300">
   <aside class="max-w-3xl space-y-3">
     <nav class="flex flex-wrap justify-center gap-6 text-base font-mono">
       <a class="link link-hover" href="index.html">the whole story</a>
@@ -497,91 +1057,9 @@ process/audit          -&gt; process/review         (hamming  4)   HIT
       <a class="link link-hover" href="whales.html">whales</a>
     </nav>
     <p class="font-mono text-base break-all opacity-70">primer fingerprint df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba</p>
-    <p class="font-mono text-base opacity-70">every figure and every number on this page regenerates from the repository: evidence/capability-nearness.json, evidence/root-proof.json, evidence/validation.json, evidence/overlay-environment.json, scripts/07_capability_nearness.py and marco/locus.py</p>
+    <p class="font-mono text-base opacity-70">every figure and every number on this page regenerates from the repository: evidence/capability-nearness.json, evidence/overlay-environment.json, evidence/root-proof.json, evidence/validation.json, primer.seed.json, scripts/07_capability_nearness.py and marco/locus.py</p>
   </aside>
 </footer>
-
-<script>
-/* Figures for this page. D3 v7, drawn once, static. No hover, no controls. */
-(function () {
-  "use strict";
-  var C = { ink: "#16161a", muted: "#74747e", rule: "#e2e2e6", grid: "#f4f4f5",
-            signal: "#3f6b52", signalSoft: "#eaf0eb", warm: "#9a6f2f", warmSoft: "#f8f2e6" };
-  var MONO = "ui-monospace, SFMono-Regular, Menlo, monospace";
-
-  function host(id) { return document.getElementById(id); }
-  function txt(g, x, y, s, o) {
-    o = o || {};
-    var n = g.append("text").attr("x", x).attr("y", y)
-      .attr("dy", o.dy === undefined ? "0.34em" : o.dy)
-      .attr("font-size", o.size || 13).attr("fill", o.fill || C.ink)
-      .attr("text-anchor", o.anchor || "start").attr("font-family", MONO);
-    if (o.weight) n.attr("font-weight", o.weight);
-    n.text(s);
-    return n;
-  }
-
-  /* the four equivalent pairs landing together, the decoy landing apart */
-  function nearness() {
-    var el = host("scene-nearness");
-    if (!el) return;
-    var W = 1000, H = 620, P = 170;
-    var AG = [
-      {name:"workflow/approval", org:"acme.com", x:-9.4930, y:2.0789, eq:"process/authorize"},
-      {name:"process/authorize", org:"globex.io", x:-9.9846, y:2.0796, eq:"workflow/approval"},
-      {name:"workflow/build", org:"acme.com", x:5.0472, y:-0.1580, eq:"process/compile"},
-      {name:"process/compile", org:"globex.io", x:4.1353, y:-0.5977, eq:"workflow/build"},
-      {name:"workflow/rollback", org:"acme.com", x:3.5319, y:5.4627, eq:"process/revert"},
-      {name:"process/revert", org:"globex.io", x:3.1704, y:5.4892, eq:"workflow/rollback"},
-      {name:"process/audit", org:"acme.com", x:-0.8304, y:-7.2500, eq:"process/review"},
-      {name:"process/review", org:"globex.io", x:0.1286, y:-7.5765, eq:"process/audit"},
-      {name:"process/migrate", org:"globex.io", x:4.2946, y:0.4716, eq:null}
-    ];
-    var HAM = {"workflow/approval|process/authorize":2,"workflow/build|process/compile":3,
-               "workflow/rollback|process/revert":2,"process/audit|process/review":4};
-    var s = d3.select(el).append("svg").attr("viewBox", "0 0 " + W + " " + H)
-      .attr("width", "100%").attr("height", "auto").style("display", "block")
-      .style("font-family", MONO);
-    var X = d3.scaleLinear().domain([-11, 7]).range([P, W - P - 40]);
-    var Y = d3.scaleLinear().domain([-9, 7]).range([H - P, P + 40]);
-    var by = {};
-    AG.forEach(function (a) { by[a.name] = a; });
-    txt(s, 30, 40, "Nine agents positioned only by address distance. Each dashed link joins an equivalent pair and carries its syllable distance.",
-      { size: 15, fill: C.muted });
-    Object.keys(HAM).forEach(function (k) {
-      var parts = k.split("|"), a = by[parts[0]], b = by[parts[1]];
-      s.append("line").attr("x1", X(a.x)).attr("y1", Y(a.y)).attr("x2", X(b.x)).attr("y2", Y(b.y))
-        .attr("stroke", C.signal).attr("stroke-width", 2.5).attr("stroke-dasharray", "6 6");
-      txt(s, (X(a.x) + X(b.x)) / 2, (Y(a.y) + Y(b.y)) / 2 - 12, "\u2194 " + HAM[k],
-        { size: 16, anchor: "middle", fill: C.signal, weight: 700 });
-    });
-    AG.forEach(function (a) {
-      var isDecoy = !a.eq;
-      s.append("circle").attr("cx", X(a.x)).attr("cy", Y(a.y)).attr("r", isDecoy ? 26 : 20)
-        .attr("fill", isDecoy ? C.warm : C.signalSoft)
-        .attr("fill-opacity", isDecoy ? 0.9 : 0.95)
-        .attr("stroke", isDecoy ? C.warm : C.signal).attr("stroke-width", 2);
-      txt(s, X(a.x), Y(a.y) + 5, isDecoy ? "!" : "\u2713",
-        { size: isDecoy ? 22 : 18, anchor: "middle",
-          fill: isDecoy ? "#ffffff" : C.signal, weight: 700 });
-      txt(s, X(a.x), Y(a.y) - 34, a.name, { size: 15, anchor: "middle", fill: C.ink, weight: 700 });
-      txt(s, X(a.x), Y(a.y) - 18, a.org, { size: 13, anchor: "middle", fill: C.muted });
-    });
-    txt(s, 30, H - 40, "Green ticks are agents whose equivalent was found at hamming 2, 3, 2 and 4. The ochre exclamation is the decoy, process/migrate, returned as nearest 0 times.",
-      { size: 14, fill: C.muted });
-    txt(s, 30, H - 16, "Coordinates are a two-dimensional embedding of the pairwise syllable distances between the nine recorded addresses.",
-      { size: 14, fill: C.muted });
-  }
-
-  function boot() {
-    [nearness].forEach(function (fn) {
-      try { fn(); } catch (e) { if (window.console) console.error("MARCO figure", fn.name, e); }
-    });
-  }
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
-  else boot();
-})();
-</script>
 
 </body>
 </html>

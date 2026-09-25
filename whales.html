@@ -63,7 +63,7 @@
       <thead><tr><th class="w-40">animal</th><th>what has been measured</th></tr></thead>
       <tbody class="text-base">
         <tr><td><strong>bat</strong></td><td>single-unit auditory-cortex neurons tuned to echo delay and velocity, yielding range-like maps</td></tr>
-        <tr><td><strong>zebra finch</strong></td><td>single-unit auditory-forebrain responses encode conspecific song and tutor familiarity</td></tr>
+        <tr><td><strong>zebra finch</strong></td><td>single-unit auditory-forebrain responses track conspecific song and tutor familiarity</td></tr>
         <tr><td><strong>marmoset</strong></td><td>single-unit A1 activity tracks self-generated vocal feedback (Eliades &amp; Wang 2008, Journal of Neuroscience)</td></tr>
         <tr><td><strong>macaque</strong></td><td>voice-selective temporal cortex, fMRI and single-unit (Petkov et al. 2008, Neuron)</td></tr>
         <tr><td><strong>cetacean</strong></td><td>no chronic single-unit or ECoG recordings; evoked potentials and psychoacoustics only</td></tr>
@@ -857,8 +857,8 @@
   <h2 class="text-3xl font-bold">With a few phrases and thousands of neurons, a fit can be pure luck</h2>
   <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
     <p>Before naming any method, here is the trap in everyday terms. If you have enough knobs to turn, you can fit a curve to any handful of points, and the curve will touch every one of them. It will then predict nothing new. Where the analogy breaks: a fitted curve is not useless on purpose, and a real fit can genuinely work. The problem is only that touching the data you fitted is no evidence at all about data you did not.</p>
-    <p>The setting on this page is exactly that shape. A study might have a few hundred phrases and a neural response spread over thousands of neurons. When the number of measurements available to fit with approaches the number of phrases you have, a flexible method can align noise and report a near-perfect match. The method with this reputation is canonical correlation analysis, mentioned once, and the failure is called sample-size collapse.</p>
-    <p>Reducing the number of measurements does not fix it by itself. If the reduction is chosen using all the phrases, including the ones used to score the result, the leak has simply moved one step earlier.</p>
+    <p>The setting on this page is exactly that shape. A study might have a few hundred phrases and a neural response spread over thousands of neurons. When the number of measurements available to fit with approaches the number of phrases you have, a flexible method can align noise and report a near-perfect match. The method with this reputation is the one named in the section above, mentioned once, and the failure is called sample-size collapse.</p>
+    <p>Reducing the number of measurements does not fix it by itself. If the reduction is chosen using all the phrases, including the ones used to score the result, the leak has moved one step earlier.</p>
   </div>
   <figure class="w-full mt-8">
     <svg viewBox="0 0 1200 560" class="w-full text-base-content" role="img" aria-label="Left, six phrase points with a wiggly curve passing exactly through all of them. Right, the same curve with a seventh held-out point far below it, showing that a perfect fit on six points predicts nothing about a seventh." xmlns="http://www.w3.org/2000/svg">
@@ -902,7 +902,7 @@
     <figcaption class="text-sm font-mono opacity-70 mt-2">why a flexible fit on few phrases predicts nothing about a phrase it never saw</figcaption>
   </figure>
   <div class="alert alert-warning mt-8 w-full">
-    <span><strong>Sample-size collapse.</strong> Canonical correlation analysis can produce a near-perfect match measured on the same data that chose the fit, when the number of measurements approaches the number of phrases. A few hundred phrases against thousands of neurons is that regime, and the search over anchors, measures, alignments and penalties makes it easier. Reducing the measurements does not cure it automatically, because a reduction chosen on all the phrases moves the leak upstream.</span>
+    <span><strong>Sample-size collapse.</strong> That method can produce a near-perfect match measured on the same data that chose the fit, when the number of measurements approaches the number of phrases. A few hundred phrases against thousands of neurons is that regime, and the search over anchors, measures, alignments and penalties makes it easier. Reducing the measurements does not cure it automatically, because a reduction chosen on all the phrases moves the leak upstream.</span>
   </div>
   <div class="alert mt-8 w-full">
     <span>This is the honest state of the mapping: with the data that exists, a convincing-looking result is easy to produce and hard to trust. The controls above are the only thing that turns the difficulty into something a reader can judge, and they are why the whale settings of the plan stop early.</span>
