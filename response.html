@@ -1063,6 +1063,95 @@ process/audit          -&gt; process/review         (4 letters apart)   HIT
   </div>
 </section>
 
+
+  <div class="divider"></div>
+
+  <section class="py-12" id="deterministic">
+    <h2 class="text-3xl font-bold">The whole check, as pseudocode</h2>
+
+    <div class="mt-6 max-w-3xl space-y-4 text-base leading-relaxed">
+      <p>There are four operations, and only four. Everything else on this page is a consequence
+      of them. They are written out as the implementation performs them, so the claim can be
+      checked by hand rather than taken on trust.</p>
+      <p>Note what is absent: no key, no server, no third party. Each operation is a pure
+      function of the statements and the primer, so two parties who do not trust each other can
+      still agree on a result, because either can recompute it from scratch.</p>
+    </div>
+
+    <div class="mockup-code w-full max-w-full overflow-x-auto text-sm mt-8">
+<pre data-prefix="1"><code>ENCODE(statements, primer) -&gt; address</code></pre>
+<pre data-prefix="2"><code>    canon  = sort(unique(statements))</code></pre>
+<pre data-prefix="3"><code>    vec    = [ min distance from canon to each of the 45 landmarks ]</code></pre>
+<pre data-prefix="4"><code>    ticks  = []</code></pre>
+<pre data-prefix="5"><code>    for axis in primer.order:            # the order is derived, not transmitted</code></pre>
+<pre data-prefix="6"><code>        b      = floor(vec[axis] * 4)    # 4 branches, so 2 ticks per question</code></pre>
+<pre data-prefix="7"><code>        ticks += [ high bit of b, low bit of b ]</code></pre>
+<pre data-prefix="8"><code>    for each group of 5 ticks:</code></pre>
+<pre data-prefix="9"><code>        val   = binary value of the group</code></pre>
+<pre data-prefix="10"><code>        gray  = val XOR (val &gt;&gt; 1)       # one tick of change, one sound of change</code></pre>
+<pre data-prefix="11"><code>        sylls += primer.codebook[gray]</code></pre>
+<pre data-prefix="12"><code>    return render(sylls)                 # place . what + reach ~ now</code></pre>
+<pre data-prefix="13"><code></code></pre>
+<pre data-prefix="14"><code>ROOT(statements, extra=()) -&gt; 64 hex characters</code></pre>
+<pre data-prefix="15"><code>    payload = json({&quot;statements&quot;: sort(statements), &quot;extra&quot;: sort(extra)})</code></pre>
+<pre data-prefix="16"><code>    return sha256(payload)               # exact. one difference, unrelated root.</code></pre>
+<pre data-prefix="17"><code></code></pre>
+<pre data-prefix="18"><code>VERIFY(claimed, statements, primer) -&gt; verdict</code></pre>
+<pre data-prefix="19"><code>    if claimed.primer != primer.fingerprint:</code></pre>
+<pre data-prefix="20"><code>        return REFUSE(&quot;different primer: the two geometries are incommensurable;</code></pre>
+<pre data-prefix="21"><code>                       only exact identity can be compared&quot;)</code></pre>
+<pre data-prefix="22"><code>    if claimed.address != ENCODE(statements, primer):</code></pre>
+<pre data-prefix="23"><code>        return FAIL(&quot;address does not derive from these statements&quot;)</code></pre>
+<pre data-prefix="24"><code>    if claimed.root != ROOT(statements):</code></pre>
+<pre data-prefix="25"><code>        return FAIL(&quot;root does not derive from these statements&quot;)</code></pre>
+<pre data-prefix="26"><code>    return OK(&quot;address and root both derive from the statements&quot;)</code></pre>
+<pre data-prefix="27"><code></code></pre>
+<pre data-prefix="28"><code>DECODE(address, primer) -&gt; candidate statements</code></pre>
+<pre data-prefix="29"><code>    sylls  = split(address)              # the four beats are separators only</code></pre>
+<pre data-prefix="30"><code>    groups = [ primer.codebook.index(syllable) for syllable in sylls ]</code></pre>
+<pre data-prefix="31"><code>    ticks  = concat( gray_decode(g) as 5 bits for g in groups )</code></pre>
+<pre data-prefix="32"><code>    for i, axis in enumerate(primer.order):</code></pre>
+<pre data-prefix="33"><code>        b        = 2-bit number from ticks[2i], ticks[2i+1]</code></pre>
+<pre data-prefix="34"><code>        bound    = b / 4                 # a bin, not a point</code></pre>
+<pre data-prefix="35"><code>        region  += [ landmark i is nearer than bound ]</code></pre>
+<pre data-prefix="36"><code>    return region                        # a REGION, never one statement set</code></pre>
+    </div>
+
+    <div class="alert mt-8 max-w-none">
+      <div class="text-sm leading-relaxed">
+        <p class="mb-2"><strong>Why DECODE returns a region and not an answer.</strong> An
+        address is lossy on purpose. Turning one back into statements gives the neighbourhood,
+        not the exact set, because several statement sets can render to the same address. That
+        is what makes near places read alike. Anything that must be exact uses ROOT instead.</p>
+        <p><strong>Why the primer is checked first.</strong> If two sides hold different primers,
+        their addresses are not comparable at all, and VERIFY refuses rather than returning a
+        meaningless number. The fingerprint is what prevents that failure.</p>
+      </div>
+    </div>
+
+    <div class="mt-8 max-w-3xl">
+      <h3 class="text-xl font-bold mb-3">Running it against the place on this page</h3>
+      <p class="text-base leading-relaxed">These are the four operations above, called on the
+      kitchen with a friend, exactly as they appear in
+      <code class="font-mono text-sm">marco/verify.py</code>:</p>
+    </div>
+    <div class="mockup-code w-full max-w-full overflow-x-auto text-sm mt-4">
+      <pre data-prefix="$"><code>python3 -c "from marco import primer, world, verify; f = primer.expand(); \
+    s = sorted(world.WORLDS['kitchen_with_friend']); \
+    print(verify.address_of(f, s)); print(verify.root_of(f, s))"</code></pre>
+      <pre data-prefix="&gt;"><code>⌁ ma.mo.ma.ma.ru·ma.me.ki.va.ki+ve.ki.va.tu.ru~ki.ru.ki</code></pre>
+      <pre data-prefix="&gt;"><code>efe87ba9113b03473d9a657f01b994b88cd91bd0601d7131868d0bacbc6e9807</code></pre>
+      <pre data-prefix="#"><code>primer fingerprint df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba</code></pre>
+    </div>
+
+    <div class="alert mt-6 max-w-none">
+      <div class="text-sm leading-relaxed">
+        Run that in the repository and you get those two values. Change one statement and the
+        root changes completely while the address barely moves. That is the separation: the
+        address is for finding a place, the root is for proving you are in the same one.
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer class="footer footer-center bg-base-200 text-base-content p-12 border-t border-base-300">
