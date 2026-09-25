@@ -48,6 +48,113 @@
 
 <div class="divider"></div>
 
+<!-- ==================================================== 1b. the same room, twice -->
+<section class="py-12">
+  <h2 class="text-3xl font-bold">The same room was given to two systems, and both returned the same address</h2>
+  <div class="mt-8 max-w-3xl space-y-6 text-base leading-relaxed">
+    <p>Six AI systems were each shown one ordinary paragraph in English. They were built by six different organisations, trained on different data, and designed differently. None of them saw the others, and none of them was told that any other system existed.</p>
+    <p>Here is the paragraph, word for word. It is the whole of what each system was given about the room.</p>
+  </div>
+  <div class="mockup-code w-full mt-6 text-sm leading-6">
+    <pre data-prefix="input"><code>You are in a kitchen. There is a window and you can see out of it. A friend is in the room with you, watching what you do. You can hear sounds, and you can read the labels on things. You can pick up what is nearby and hand things to your friend. You can change things in the room. The kitchen is yours and it is not going anywhere. You are in the middle of cooking. You know where you are, you know why you are there, and you know who is with you. If you break something, it stays broken.</code></pre>
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
+    <div class="chat chat-start w-full">
+      <div class="chat-header font-mono text-base mb-2">glm-5.3 <span class="opacity-60">· a separate call</span></div>
+      <div class="chat-bubble chat-bubble-primary font-mono text-base break-all">⌁ ma.mo.ma.ma.ru·ma.va.ki.va.mo+ve.ki.va.tu.ru~ki.su.ki</div>
+      <div class="chat-footer text-sm opacity-60 mt-2">shown only the paragraph above</div>
+    </div>
+    <div class="chat chat-end w-full">
+      <div class="chat-header font-mono text-base mb-2">mimo-v2.6-pro <span class="opacity-60">· a separate call</span></div>
+      <div class="chat-bubble chat-bubble-secondary font-mono text-base break-all">⌁ ma.mo.ma.ma.ru·ma.va.ki.va.mo+ve.ki.va.tu.ru~ki.su.ki</div>
+      <div class="chat-footer text-sm opacity-60 mt-2">shown only the paragraph above</div>
+    </div>
+  </div>
+  <p class="text-xl font-semibold mt-8 max-w-3xl">Two systems built by different organisations, trained on different data, never in contact, and shown only that paragraph, returned the same address for the same room.</p>
+  <div class="mt-8 max-w-3xl space-y-6 text-base leading-relaxed">
+    <p>Neither was handed a vocabulary of places, a map, or a shared list of what a kitchen is. Across the six systems and all fifteen pairs of rooms, the same room came out nearest in 87 of 90 comparisons. Guessing one of six would have scored 16.7%.</p>
+    <p>Everything after this point on the page shows what that string is made of, why it is short, and how a stranger can check one without trusting anybody.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ==================================================== 1c. the field test -->
+<section class="py-12">
+  <h2 class="text-3xl font-bold">You can run this test yourself, in about two minutes, with a phone</h2>
+  <div class="mt-8 max-w-3xl space-y-6 text-base leading-relaxed">
+    <p>The strongest thing here is not a number. It is that a reader can check the central claim without a key, a terminal, or any understanding of the code. Nothing below needs an account, and nothing below is hidden behind the repository.</p>
+    <p>Here is what to do:</p>
+  </div>
+  <ol class="list-decimal pl-6 mt-4 space-y-2 max-w-3xl text-base leading-relaxed">
+    <li>Scan the first figure below into one assistant. Do not tell it what the code is for, and do not explain this project.</li>
+    <li>It will answer with a set of numbers. Those are the statements it thinks are true of the place the code describes.</li>
+    <li>Do the same thing in a second assistant, in a different app.</li>
+    <li>Tick both sets of answers on the second figure and compare them. If the two sets agree, the two systems are working from the same frame.</li>
+  </ol>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
+    <figure class="w-full">
+      <img src="assets/figures/field-test-qr.svg" alt="A QR code holding a small self-contained primer: sixteen statements a person can answer about a room, and one place described in plain English" class="w-full max-w-md bg-base-100 p-4">
+      <figcaption class="mt-3 text-sm" style="color:oklch(var(--bc)/0.65)">Figure 1. Figure 1. The whole test fits in this code: 1,062 bytes, QR version 27 with medium error correction, so it scans from a screen and from paper. Scan this one into the first assistant.</figcaption>
+    </figure>
+    <figure class="w-full">
+      <img src="assets/figures/field-test-card.svg" alt="The card to fill in, with the sixteen numbered statements, two blank columns and what each outcome means" class="w-full">
+      <figcaption class="mt-3 text-sm" style="color:oklch(var(--bc)/0.65)">Figure 2. Figure 2. The card to print or copy. It lists the sixteen statements in order, with a column for each assistant, and says what a disagreement would mean. Two matching columns are the result the claim predicts.</figcaption>
+    </figure>
+  </div>
+  <div class="mt-12 max-w-3xl space-y-6 text-base leading-relaxed">
+    <p>The place the code describes is a quiet library at night. The description is one paragraph, nothing more.</p>
+  </div>
+  <div class="mockup-code w-full mt-6 text-sm leading-6">
+    <pre data-prefix="place"><code>You are alone in a small private study room in a library, late at night. The door is closed. Through the window you can see the street lamps, and you can hear the building's heating. There are books and papers within reach on the desk. Nobody else is in the room and nobody is watching. You are part way through reading something. You cannot change what is in the room, and you expect to leave when you are finished.</code></pre>
+  </div>
+  <div class="overflow-x-auto w-full mt-8">
+    <table class="table table-zebra w-full">
+      <thead><tr><th>number</th><th>the statement</th><th>true of this room?</th></tr></thead>
+      <tbody class="text-base">
+        <tr><td>1</td><td>I can see inside this place</td><td><span class="badge badge-success font-mono">true</span></td></tr>
+        <tr><td>2</td><td>I can see out of this place</td><td><span class="badge badge-success font-mono">true</span></td></tr>
+        <tr><td>3</td><td>I can see other people</td><td><span class="badge badge-outline font-mono">false</span></td></tr>
+        <tr><td>4</td><td>I can see words</td><td><span class="badge badge-success font-mono">true</span></td></tr>
+        <tr><td>5</td><td>I can hear sound</td><td><span class="badge badge-success font-mono">true</span></td></tr>
+        <tr><td>6</td><td>I can reach objects near me</td><td><span class="badge badge-success font-mono">true</span></td></tr>
+        <tr><td>7</td><td>I can reach other people</td><td><span class="badge badge-outline font-mono">false</span></td></tr>
+        <tr><td>8</td><td>I cannot reach anything</td><td><span class="badge badge-outline font-mono">false</span></td></tr>
+        <tr><td>9</td><td>I can change things here</td><td><span class="badge badge-outline font-mono">false</span></td></tr>
+        <tr><td>10</td><td>I cannot change anything</td><td><span class="badge badge-success font-mono">true</span></td></tr>
+        <tr><td>11</td><td>Nobody else is here</td><td><span class="badge badge-success font-mono">true</span></td></tr>
+        <tr><td>12</td><td>One other is here</td><td><span class="badge badge-outline font-mono">false</span></td></tr>
+        <tr><td>13</td><td>Someone is watching me</td><td><span class="badge badge-outline font-mono">false</span></td></tr>
+        <tr><td>14</td><td>This place is private</td><td><span class="badge badge-success font-mono">true</span></td></tr>
+        <tr><td>15</td><td>I cannot leave this place</td><td><span class="badge badge-outline font-mono">false</span></td></tr>
+        <tr><td>16</td><td>Work is in progress</td><td><span class="badge badge-success font-mono">true</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="stats stats-vertical lg:stats-horizontal bg-base-200 w-full mt-8">
+    <div class="stat"><div class="stat-title text-base">the answers that are true</div><div class="stat-value text-2xl">1, 2, 4, 5, 6, 11, 14, 16</div><div class="stat-desc text-base">the expected result</div></div>
+    <div class="stat"><div class="stat-title text-base">the address under the full primer</div><div class="stat-value text-lg font-mono break-all">⌁ se.re.ni.ka.nu·re.ru.ki.va.sa+ru.ki.va.so.ru~ko.se.ta</div><div class="stat-desc text-base">the library room</div></div>
+  </div>
+  <div class="mockup-code w-full mt-6 text-sm leading-6">
+    <pre data-prefix="expected answers"><code>1, 2, 4, 5, 6, 11, 14, 16</code></pre>
+    <pre data-prefix="address"><code>⌁ se.re.ni.ka.nu·re.ru.ki.va.sa+ru.ki.va.so.ru~ko.se.ta</code></pre>
+    <pre data-prefix="root"><code>!7343e3b49ce82b0aaae335b1095d14c9c45645254a4ab5bc0875b70545c9d3b5</code></pre>
+  </div>
+  <div class="mt-8 max-w-3xl space-y-6 text-base leading-relaxed">
+    <p>Paste the numbers into the repository and the first two values come back, or read the address off the card and compare it by eye. Any two honest sets of answers should give the same address here, and the root is the exact half: two answers either produce the same 64 characters or they do not.</p>
+    <p>The two assistants used here share no weights, no training data, no context and no contact. Neither is told the other exists, and neither is told what the place is called. If their answers agree, the frame is shared. If they differ, the claim on this page is wrong.</p>
+  </div>
+  <div class="alert alert-warning w-full mt-8">
+    <div>
+      <p>Most assistants will answer the same way, and that is the honest shape of this result. The sixteen statements are ordinary English about a room, and the description is written so that a careful reader would answer the same way too. The test is easy to pass, and it is still a test, because it could fail. No low base rate is being claimed here.</p>
+      <p class="mt-2"><strong>The limit of the reduced primer.</strong> The sixteen statements were cut from the same seed by the same rule, so the reduced primer produces a genuine prefix of the full address. The reduced address for the library room is <span class="font-mono">⌁ ma.ne.ti.ma</span>, and it does not match the first syllables of the full address. Cutting the vocabulary changes which statements carry the most weight, so the two orders start differently. That is a real limit and it is stated here rather than hidden.</p>
+      <p class="mt-2">The test has not been run at scale by us. What makes it evidence is the reader running it.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
 <!-- ==================================================== 2. monotone refinement -->
 <section class="py-12">
   <h2 class="text-3xl font-bold">Reading more of the name can separate two places, and never blur them</h2>
@@ -102,7 +209,7 @@
       <rect x="750" y="252" width="200" height="26" rx="4" style="fill:oklch(var(--b2))"/><text x="760" y="270" font-size="12" style="fill:oklch(var(--bc))">locked storeroom</text>
       <rect x="750" y="286" width="200" height="26" rx="4" style="fill:oklch(var(--b2))"/><text x="760" y="304" font-size="12" style="fill:oklch(var(--bc))">dark empty room</text>
     </svg>
-    <figcaption class="mt-3 text-sm max-w-3xl" style="color:oklch(var(--bc)/0.65)">No box ever opens as you read further, and no two places that stood apart are ever put back together. Reading more than six questions changes nothing for these six places.</figcaption>
+    <figcaption class="mt-3 text-sm max-w-3xl" style="color:oklch(var(--bc)/0.65)">Figure 3. No box ever opens as you read further, and no two places that stood apart are ever put back together. Reading more than six questions changes nothing for these six places.</figcaption>
   </figure>
 
   <div class="overflow-x-auto w-full mt-8">
@@ -141,7 +248,7 @@
 
   <figure class="w-full mt-8">
     <svg viewBox="0 0 1000 300" width="100%" role="img" aria-label="One input, three separate routes through the same rule, and one output. Each route reports one distinct output, and all three agree." class="font-mono">
-      <text x="30" y="26" font-size="15" font-weight="700" style="fill:oklch(var(--bc))">Same answers in, same fingerprint out, by three separate routes</text>
+      <text x="30" y="26" font-size="15" font-weight="700" style="fill:oklch(var(--bc))">Figure 4. Same answers in, same fingerprint out, by three separate routes</text>
       <rect x="20" y="100" width="200" height="90" rx="10" style="fill:oklch(var(--p))"/>
       <text x="120" y="132" font-size="14" text-anchor="middle" style="fill:oklch(var(--pc))" font-weight="700">the 18 true answers</text>
       <text x="120" y="154" font-size="13" text-anchor="middle" style="fill:oklch(var(--pc))">and the same seed</text>
@@ -214,7 +321,7 @@
     </div>
     <figure class="w-full">
       <img src="assets/figures/precision-gradient.svg" alt="The same name read at six precisions, with the refinement curve" class="w-full">
-      <figcaption class="mt-3 text-sm max-w-3xl" style="color:oklch(var(--bc)/0.65)">The same name read at more and more precision. Every step narrows the place down and no step contradicts an earlier one. The violations count is <span class="font-mono">0</span>.</figcaption>
+      <figcaption class="mt-3 text-sm max-w-3xl" style="color:oklch(var(--bc)/0.65)">Figure 5. The same name read at more and more precision. Every step narrows the place down and no step contradicts an earlier one. The violations count is <span class="font-mono">0</span>.</figcaption>
     </figure>
   </div>
 
@@ -269,7 +376,7 @@
 
   <figure class="w-full mt-8">
     <img src="assets/figures/roots.svg" alt="How many of six independently built model families produced the byte-identical root, per place" class="w-full">
-    <figcaption class="mt-3 text-sm max-w-3xl" style="color:oklch(var(--bc)/0.65)">The same root from separate families: <span class="font-mono">20/36</span> family-and-place pairs agreed byte for byte, 55.6%. Five of six families agreed for the locked storeroom, and two of six for the warehouse.</figcaption>
+    <figcaption class="mt-3 text-sm max-w-3xl" style="color:oklch(var(--bc)/0.65)">Figure 6. The same root from separate families: <span class="font-mono">20/36</span> family-and-place pairs agreed byte for byte, 55.6%. Five of six families agreed for the locked storeroom, and two of six for the warehouse.</figcaption>
   </figure>
 
   <div class="alert bg-base-200 border border-base-300 w-full mt-8">
@@ -316,7 +423,7 @@
       <text x="526" y="222" font-size="13" style="fill:oklch(var(--bc))">61 of 64 characters differ.</text>
       <text x="526" y="244" font-size="13" style="fill:oklch(var(--bc))">The two roots share nothing at the start.</text>
     </svg>
-    <figcaption class="mt-3 text-sm max-w-3xl" style="color:oklch(var(--bc)/0.65)">Two rooms that are 9 letters apart in name are unrelated in root. The name answers how near, and the root answers whether it is the same thing at all.</figcaption>
+    <figcaption class="mt-3 text-sm max-w-3xl" style="color:oklch(var(--bc)/0.65)">Figure 7. Two rooms that are 9 letters apart in name are unrelated in root. The name answers how near, and the root answers whether it is the same thing at all.</figcaption>
   </figure>
 
   <div class="overflow-x-auto w-full mt-8">
@@ -405,7 +512,7 @@
 
     <figure class="w-full">
       <svg viewBox="0 0 1000 340" width="100%" role="img" aria-label="Three bars drawn to scale: the 3,300-byte seed, the 4,532-byte frame it rebuilds, and the 67,561 bytes a registry would have to ship instead." class="font-mono">
-        <text x="30" y="26" font-size="15" font-weight="700" style="fill:oklch(var(--bc))">Three sizes, drawn to the same scale</text>
+        <text x="30" y="26" font-size="15" font-weight="700" style="fill:oklch(var(--bc))">Figure 8. Three sizes, drawn to the same scale</text>
         <text x="30" y="48" font-size="13" style="fill:oklch(var(--bc)/0.65)">The first two bars are what this repository sends and rebuilds. The third is what the usual exchange would ship instead.</text>
 
         <text x="30" y="88" font-size="14" style="fill:oklch(var(--bc))">the seed, sent</text>
@@ -434,7 +541,7 @@
 
   <figure class="w-full mt-8">
     <svg viewBox="0 0 1000 500" width="100%" role="img" aria-label="The eleven top-level keys of the seed as bars drawn to scale by bytes, each labelled stored, with landmarks, partition and population also producing something derived." class="font-mono">
-      <text x="30" y="26" font-size="15" font-weight="700" style="fill:oklch(var(--bc))">Every key in the seed, sized by the bytes it occupies</text>
+      <text x="30" y="26" font-size="15" font-weight="700" style="fill:oklch(var(--bc))">Figure 9. Every key in the seed, sized by the bytes it occupies</text>
       <text x="30" y="46" font-size="13" style="fill:oklch(var(--bc)/0.65)">Bars are drawn to scale. 2,311 of the 3,300 bytes are the 45 questions and their plain readings.</text>
 
       <text x="30" y="76" font-size="12" style="fill:oklch(var(--bc)/0.65)">key</text>
@@ -827,7 +934,7 @@
 
   <figure class="w-full mt-8">
     <svg viewBox="0 0 1000 380" width="100%" role="img" aria-label="Bars for the real result against the nulls: 100.0 and 96.7 percent for the real result, 20.9 percent for the random answers null, 16.9 percent for the shuffled labels null, and a chance floor of 16.7 percent." class="font-mono">
-      <text x="30" y="26" font-size="15" font-weight="700" style="fill:oklch(var(--bc))">The real result, and three ways of scoring nothing</text>
+      <text x="30" y="26" font-size="15" font-weight="700" style="fill:oklch(var(--bc))">Figure 10. The real result, and three ways of scoring nothing</text>
       <text x="30" y="48" font-size="13" style="fill:oklch(var(--bc)/0.65)">Bars are drawn to scale, 0 at the left and 100% at the right.</text>
 
       <text x="30" y="96" font-size="14" style="fill:oklch(var(--bc))">real, counting exact ties</text>

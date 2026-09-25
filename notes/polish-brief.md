@@ -283,3 +283,25 @@ Draw the seed row with a horizontal bracket spanning both columns to show it is 
 - Do not claim the models understood anything. The claim is that they recognise the coordinate as describing the same place.
 
 Use a real model id in each column heading, taken from `evidence/lanes-summary.json`, and take the answers from the same file. Nothing in this figure may be invented.
+
+## FINAL PASS — bring all four pages to the same level, then stop
+
+The four pages were built at different times by different agents and they show it. `whales.html` was rebuilt to the full standard: 20 sections, 6 figures, the seed printed and decomposed, every section closing with a plain statement of what is remarkable. `index.html` has the structure and the figures. `proof.html` and `response.html` are the thinnest.
+
+Bring all four to one level. Work through them together, comparing as you go, so no page is left behind:
+
+1. **Same section rhythm.** Each of the four reads: a `hero` masthead, then sections of comparable length, each closing with a plain statement of what is remarkable or where it stops. If one page has that and another does not, fix the one that does not.
+
+2. **Same figure density.** Count the figures per page and bring the lowest up. Every page needs a diagram for each of its central concepts, drawn in the same visual language: labelled inline SVG, annotations on the drawing, currentColor and opacity only, no hex literals.
+
+3. **Same treatment of the seed.** All four print it in full in a `mockup-code` block and decompose it. All four show the size contrast to scale.
+
+4. **Same register.** The high-school-teacher standard from FAILURE 0. Read the four openings side by side; the one that is least followable gets rewritten to match the best.
+
+5. **Same components.** The same daisyUI component is used for the same job on every page, and every page ends with the same `footer footer-center` carrying the fingerprint and the four cross-links.
+
+6. **Encoded form in chat bubbles.** A bubble shows the coordinate an agent would actually transmit, never a bare list of tick numbers. The tick list is the working and belongs in a list beneath the chat, labelled as such. Example: `⌁ se.re.ni.ko.mu·mo.ru.ki.va.ke+ru.ki.va.so.ru~ki.ro.ta`.
+
+7. **No page may be thinner than another in kind.** Length may differ. Completeness of treatment may not.
+
+When you have finished, `python3 scripts/11_final_pass.py --check` must report zero problems and `.venv/bin/python -m pytest tests/ -q` must pass. Report per page: byte size, section count, figure count, and the single sentence you would use to describe what that page delivers.

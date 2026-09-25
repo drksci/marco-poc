@@ -45,6 +45,19 @@
     <pre data-prefix="acme.com"><code>/workflow/approval</code></pre>
     <pre data-prefix="globex.io"><code>/process/authorize</code></pre>
   </div>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
+    <div class="chat chat-start w-full">
+      <div class="chat-header font-mono text-base mb-2">acme.com approval agent</div>
+      <div class="chat-bubble chat-bubble-primary font-mono text-base break-all">⌁ no.ki.ni.ke.ru·to.ru.ki.ru.ta+va.ki.ra.ma.no~ko.so.mo</div>
+      <div class="chat-footer text-sm opacity-60 mt-2">a position worked out from the situation, not the name</div>
+    </div>
+    <div class="chat chat-end w-full">
+      <div class="chat-header font-mono text-base mb-2">globex.io authorize agent</div>
+      <div class="chat-bubble chat-bubble-secondary font-mono text-base break-all">⌁ no.ki.ni.ke.ru·to.no.ki.ru.ta+va.ki.ra.ma.no~ko.so.mo</div>
+      <div class="chat-footer text-sm opacity-60 mt-2">a position worked out from the situation, not the name</div>
+    </div>
+  </div>
+  <p class="text-xl font-semibold mt-8 max-w-3xl">Two names with no word in common, and two positions that differ in 2 letters out of 36.</p>
   <div class="alert bg-base-200 border border-base-300 w-full mt-8">
     <span>One job, two names, no shared word. Exact-path discovery finds nothing for this pair, and that is the problem the rest of this page measures. The paper is honest enough to say so itself, which is why the argument here is an addition rather than a correction.</span>
   </div>
@@ -130,11 +143,24 @@
       <h3 class="card-title text-base font-mono">the recorded output of scripts/07_capability_nearness.py</h3>
       <div class="chat chat-end w-full mt-4">
         <div class="chat-header font-mono text-base mb-2">by matching the path</div>
-        <div class="alert max-w-none my-3"><div class="text-sm leading-relaxed"><p class="mb-2">workflow/approval -&gt; 0 result(s) none MISS workflow/build -&gt; 0 result(s) none MISS workflow/rollback -&gt; 0 result(s) none MISS process/audit -&gt; 5 result(s) [&#x27;process/authorize&#x27;, &#x27;process/compile&#x27;, &#x27;process/revert&#x27;, &#x27;process/review&#x27;, &#x27;process/migrate&#x27;] HIT recall = 1/4</p></div></div>
+        <div class="chat-bubble chat-bubble-secondary text-base my-3">Four queries. One hit, and it is a prefix accident.</div>
       </div>
-      <div class="chat chat-start w-full mt-8">
+      <div class="chat chat-start w-full mt-4">
         <div class="chat-header font-mono text-base mb-2">by nearest position</div>
-        <div class="alert max-w-none my-3"><div class="text-sm leading-relaxed"><p class="mb-2">workflow/approval -&gt; process/authorize (2 letters apart) HIT workflow/build -&gt; process/compile (3 letters apart) HIT workflow/rollback -&gt; process/revert (2 letters apart) HIT process/audit -&gt; process/review (4 letters apart) HIT recall = 4/4 decoy &#x27;process/migrate&#x27; returned as nearest: 0 times</p></div></div>
+        <div class="chat-bubble chat-bubble-primary text-base my-3">Four queries, four hits, and the decoy 0 times.</div>
+      </div>
+      <div class="mockup-code w-full mt-6 text-sm leading-6">
+        <pre data-prefix="path"><code>workflow/approval      -&gt; 0 result(s)  none   MISS
+workflow/build         -&gt; 0 result(s)  none   MISS
+workflow/rollback      -&gt; 0 result(s)  none   MISS
+process/audit          -&gt; 5 result(s)  ['process/authorize', 'process/compile', 'process/revert', 'process/review', 'process/migrate']   HIT
+  recall = 1/4</code></pre>
+        <pre data-prefix="position"><code>workflow/approval      -&gt; process/authorize      (2 letters apart)   HIT
+workflow/build         -&gt; process/compile        (3 letters apart)   HIT
+workflow/rollback      -&gt; process/revert         (2 letters apart)   HIT
+process/audit          -&gt; process/review         (4 letters apart)   HIT
+  recall = 4/4
+  decoy 'process/migrate' returned as nearest: 0 times</code></pre>
       </div>
     </div>
   </div>
@@ -237,7 +263,7 @@
 
   <figure class="w-full mt-8">
     <svg viewBox="0 0 1000 620" width="100%" role="img" aria-label="Nine agents laid out only by the distance between their positions. Four equivalent pairs land together and the decoy lands apart from all of them." class="font-mono">
-      <text x="30" y="34" font-size="15" font-weight="700" style="fill:oklch(var(--bc))">Nine agents, laid out only by the distances between their positions</text>
+      <text x="30" y="34" font-size="15" font-weight="700" style="fill:oklch(var(--bc))">Figure 1. Nine agents, laid out only by the distances between their positions</text>
       <text x="30" y="56" font-size="13" style="fill:oklch(var(--bc)/0.65)">Each dashed link joins a pair doing the same job, and carries the number of letters that differ. The jagged mark is the decoy.</text>
 
       <line x1="221.9" y1="283.8" x2="205.0" y2="283.8" stroke-width="2.5" stroke-dasharray="6 6" style="stroke:oklch(var(--su))"/>
@@ -382,7 +408,7 @@
   </ul>
   <figure class="w-full mt-8">
     <img src="assets/figures/overlay-layers.svg" alt="The three layers of the environment: environment defaults, project layer, and session override, each adding to the one below" class="w-full">
-    <figcaption class="mt-3 text-sm max-w-3xl" style="color:oklch(var(--bc)/0.65)">Environment defaults, then the project layer, then a session override. Each layer adds statements and takes none away. Nothing below is rewritten.</figcaption>
+    <figcaption class="mt-3 text-sm max-w-3xl" style="color:oklch(var(--bc)/0.65)">Figure 2. Environment defaults, then the project layer, then a session override. Each layer adds statements and takes none away. Nothing below is rewritten.</figcaption>
   </figure>
   <div class="alert bg-base-200 border border-base-300 w-full mt-8">
     <span>Every layer is still visible in the finished position, because nothing is overwritten. An agent can state which layer of its own configuration is in scope, which is something none of these agents can currently do about itself.</span>
@@ -480,7 +506,7 @@
 
   <figure class="w-full mt-8">
     <svg viewBox="0 0 1000 340" width="100%" role="img" aria-label="Three bars drawn to scale: the 3,300-byte seed, the 4,532-byte frame it rebuilds, and the 67,561 bytes a registry would have to ship instead." class="font-mono">
-      <text x="30" y="26" font-size="15" font-weight="700" style="fill:oklch(var(--bc))">Three sizes, drawn to the same scale</text>
+      <text x="30" y="26" font-size="15" font-weight="700" style="fill:oklch(var(--bc))">Figure 3. Three sizes, drawn to the same scale</text>
       <text x="30" y="48" font-size="13" style="fill:oklch(var(--bc)/0.65)">The first two bars are what this repository sends and rebuilds. The third is what the usual exchange would ship instead.</text>
 
       <text x="30" y="88" font-size="14" style="fill:oklch(var(--bc))">the seed, sent</text>
@@ -508,7 +534,7 @@
 
   <figure class="w-full mt-8">
     <svg viewBox="0 0 1000 500" width="100%" role="img" aria-label="The eleven top-level keys of the seed as bars drawn to scale by bytes, each labelled stored, with landmarks, partition and population also producing something derived." class="font-mono">
-      <text x="30" y="26" font-size="15" font-weight="700" style="fill:oklch(var(--bc))">Every key in the seed, sized by the bytes it occupies</text>
+      <text x="30" y="26" font-size="15" font-weight="700" style="fill:oklch(var(--bc))">Figure 4. Every key in the seed, sized by the bytes it occupies</text>
       <text x="30" y="46" font-size="13" style="fill:oklch(var(--bc)/0.65)">Bars are drawn to scale. 2,311 of the 3,300 bytes are the 45 questions and their plain readings.</text>
 
       <text x="30" y="76" font-size="12" style="fill:oklch(var(--bc)/0.65)">key</text>
@@ -878,7 +904,7 @@
   </div>
   <figure class="w-full mt-8">
     <img src="assets/figures/roots.svg" alt="How many of six independently built model families produced the byte-identical root, shown per place" class="w-full">
-    <figcaption class="mt-3 text-sm max-w-3xl" style="color:oklch(var(--bc)/0.65)">Five of six families agreed for two places, three of six for two more, and two of six for the last two. The same 64 characters, from parties that never spoke to each other.</figcaption>
+    <figcaption class="mt-3 text-sm max-w-3xl" style="color:oklch(var(--bc)/0.65)">Figure 5. Five of six families agreed for two places, three of six for two more, and two of six for the last two. The same 64 characters, from parties that never spoke to each other.</figcaption>
   </figure>
   <div class="alert alert-success w-full mt-8">
     <span>Five of six independently built families produced the same 64 characters for the same place. That is not a resemblance or a similarity score, it is the same number, and no issuer had to be consulted to check it. Any holder of the vocabulary and the rule can recompute it.</span>
@@ -977,7 +1003,7 @@
   </div>
   <figure class="w-full mt-8">
     <img src="assets/figures/shared-manifold.svg" alt="Three separate surfaces, one per model family, with the same six places in the same relative positions on each, and a chart laid over them" class="w-full">
-    <figcaption class="mt-3 text-sm max-w-3xl" style="color:oklch(var(--bc)/0.65)">Three separate surfaces, one per model family, with the same six places in the same relative positions on each, and one chart laid over all three.</figcaption>
+    <figcaption class="mt-3 text-sm max-w-3xl" style="color:oklch(var(--bc)/0.65)">Figure 6. Three separate surfaces, one per model family, with the same six places in the same relative positions on each, and one chart laid over all three.</figcaption>
   </figure>
   <div class="mt-8 max-w-3xl text-base leading-relaxed">
     <p>Where it stops: the chart is shared too, but only while the states are unambiguous. Give it a vague situation and the charts come apart again, which is why every position on this page is described in plain, concrete English. This is the parent project's finding, restated here because it still applies, and it is inferred from agreement rather than observed directly.</p>

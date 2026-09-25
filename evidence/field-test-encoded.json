@@ -1,0 +1,18 @@
+{
+  "field_test_room": "quiet_library_at_night",
+  "encoded_full_primer": "⌁ se.re.ni.ko.mu·mo.ru.ki.va.ke+ru.ki.va.so.ru~ki.ro.ta",
+  "encoded_reduced_primer": "⌁ ma.tu.me.ma",
+  "answer_numbers": [
+    1,
+    2,
+    4,
+    5,
+    6,
+    10,
+    11,
+    14,
+    16
+  ],
+  "root": "7343e3b49ce82b0aaae335b1095d14c9c45645254a4ab5bc0875b70545c9d3b5",
+  "note": "A chat bubble shows the encoded coordinate, which is what an agent would actually transmit. The tick list is the working behind it and belongs beneath the chat, not inside the message."
+}
