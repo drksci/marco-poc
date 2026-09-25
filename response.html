@@ -7,10 +7,11 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
 tailwind.config = { theme: { extend: { colors: {
-  background: 'hsl(var(, background))', foreground: 'hsl(var(, foreground))',
-  muted: 'hsl(var(, muted))', mutedfg: 'hsl(var(, muted-foreground))',
-  border: 'hsl(var(, border))', card: 'hsl(var(, card))' } } } }
+  background: 'hsl(var(--background))', foreground: 'hsl(var(--foreground))',
+  muted: 'hsl(var(--muted))', mutedfg: 'hsl(var(--muted-foreground))',
+  border: 'hsl(var(--border))', card: 'hsl(var(--card))' } } } }
 </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css">
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
@@ -187,14 +188,14 @@ agent://globex.io/process/authorize/01h0000000000000000000000</div>
         <div class="step-n">01</div>
         <div>
           <div class="step-title">The four equivalent pairs</div>
-          <div class="step-body"><code>workflow/approval</code>→<code>process/authorize</code> at <span class="val">2</span>, <code>workflow/build</code>→<code>process/compile</code> at <span class="val">3</span>, <code>workflow/rollback</code>→<code>process/revert</code> at <span class="val">2</span>, <code>process/audit</code>→<code>process/review</code> at <span class="val">4</span>. Sum <span class="val">2 + 3 + 2 + 4 = 11</span>, and <span class="val">11 / 4 = 2.75</span>. Range <span class="val">2, 4</span>.</div>
+          <div class="step-body"><code>workflow/approval</code>→<code>process/authorize</code> at <span class="val">2</span>, <code>workflow/build</code>→<code>process/compile</code> at <span class="val">3</span>, <code>workflow/rollback</code>→<code>process/revert</code> at <span class="val">2</span>, <code>process/audit</code>→<code>process/review</code> at <span class="val">4</span>. Sum <span class="val">2 + 3 + 2 + 4 = 11</span>, and <span class="val">11 / 4 = 2.75</span>. Range <span class="val">2–4</span>.</div>
         </div>
       </div>
       <div class="step">
         <div class="step-n">02</div>
         <div>
           <div class="step-title">The sixteen non-equivalent pairs</div>
-          <div class="step-body">Every other acme-to-globex pairing, including the four pairs against the decoy: <span class="val">17, 18, 19, 20, 21, 23, 23, 24, 26, 26, 27, 27, 27, 27, 29, 30</span>. Sum <span class="val">384</span>, and <span class="val">384 / 16 = 24.0</span>. Range <span class="val">17, 30</span>.</div>
+          <div class="step-body">Every other acme-to-globex pairing, including the four pairs against the decoy: <span class="val">17, 18, 19, 20, 21, 23, 23, 24, 26, 26, 27, 27, 27, 27, 29, 30</span>. Sum <span class="val">384</span>, and <span class="val">384 / 16 = 24.0</span>. Range <span class="val">17–30</span>.</div>
         </div>
       </div>
       <div class="step">
@@ -245,6 +246,7 @@ agent://globex.io/process/authorize/01h0000000000000000000000</div>
         </tbody>
       </table>
     </div>
+    <p class="measure text-sm mt-3">Each root above hashes over the statement set that the named families reported for that place, not over a canonical set, so two families that agreed on the set agreed on the bytes and families that disagreed have unrelated bytes. For comparison, the canonical set that <code>marco/world.py</code> holds for <code>kitchen_with_friend</code> hashes to <span class="mono">efe87ba9113b03473d9a657f01b994b88cd91bd0601d7131868d0bacbc6e9807</span>, a value that no family in the recorded run produced, which is the disagreement this table exists to show.</p>
   </div>
 
   <div class="col-span-6 mt-8">

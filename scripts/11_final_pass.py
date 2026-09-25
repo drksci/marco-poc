@@ -86,13 +86,14 @@ def fix_dashes(text: str) -> tuple[str, int]:
     becomes a full stop, one inside a sentence becomes a comma, and a dash with
     no surrounding spaces becomes a colon when it introduces a list-like clause.
     """
+    # En dashes in numeric ranges (3–40 clicks, 225–231) are correct
+    # typography, not an AI tell. Only em dashes and doubled hyphens are.
     n = len(re.findall(r"\u2014|--", text))
     text = re.sub(r"\s*\u2014\s*(?=[A-Z])", ". ", text)
     text = re.sub(r"\s*\u2014\s*(?=[a-z])", ", ", text)
     text = re.sub(r"\s*\u2014\s*", ", ", text)
     text = re.sub(r"\s*--\s*(?=[A-Z])", ". ", text)
     text = re.sub(r"\s*--\s*", ", ", text)
-    text = re.sub(r"\u2013", ", ", text)
     return text, n
 
 
@@ -104,6 +105,15 @@ def apply_style(files: list[Path], check_only: bool) -> dict:
         html = f.read_text(encoding="utf-8")
         before = html
         # Only touch text between tags: never rewrite an attribute or a class.
+        # Only prose is editable. Script and style content is code: a colour
+        # token inside a tailwind config is not a sentence, and an earlier
+        # revision of this pass rewrote var(--background) to var(, background)
+        # there. Masked out, never touched.
+        masked = []
+        def _mask(m):
+            masked.append(m.group(0))
+            return f"\x00{len(masked)-1}\x00"
+        html = re.sub(r"<(script|style)[\s\S]*?</\1>", _mask, html, flags=re.I)
         parts = re.split(r"(<[^>]+>)", html)
         for i, part in enumerate(parts):
             if part.startswith("<"):
@@ -123,6 +133,7 @@ def apply_style(files: list[Path], check_only: bool) -> dict:
             dashes += n
             parts[i] = part
         html = "".join(parts)
+        html = re.sub(r"\x00(\d+)\x00", lambda m: masked[int(m.group(1))], html)
         changed = html != before
         if changed and not check_only:
             f.write_text(html, encoding="utf-8")
