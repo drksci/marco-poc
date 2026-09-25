@@ -1,334 +1,813 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Can a whale phrase be given an address? · MARCO</title>
+<title>Can a whale phrase be given an address?</title>
+<link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = { theme: { extend: { colors: {
-  background: 'hsl(var(--background))', foreground: 'hsl(var(--foreground))',
-  muted: 'hsl(var(--muted))', mutedfg: 'hsl(var(--muted-foreground))',
-  border: 'hsl(var(--border))', card: 'hsl(var(--card))' } } } }
-</script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css">
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 <link rel="stylesheet" href="assets/site.css">
 </head>
-<body>
-<nav class="site-nav">
-  <a href="index.html">the whole story</a>
-  <a href="response.html">response to agent://</a>
-  <a href="proof.html">the proof</a>
-  <a href="whales.html" aria-current="page">whales</a>
+<body class="min-h-screen bg-base-100 text-base-content">
+
+<nav class="site-nav" aria-label="Sections">
+  <div class="navbar bg-base-200 sticky top-0 z-30 min-h-12">
+    <div class="navbar-center gap-4 lg:gap-6 text-sm w-full justify-center">
+      <a class="link link-hover" href="index.html">the whole story</a>
+      <a class="link link-hover" href="response.html">response to agent://</a>
+      <a class="link link-hover" href="proof.html">the proof</a>
+      <a class="link link-hover" href="whales.html" aria-current="page">whales</a>
+    </div>
+  </div>
 </nav>
-<main class="page-grid pt-10">
 
-  <div class="col-wide">
-    <p class="eyebrow">an extension · mostly speculative · <code>notes/whale-topologies.md</code></p>
-    <h1 class="display text-4xl mt-3">Can a whale phrase be given an address?</h1>
-    <p class="lede measure mt-4">Whale structure is described in a behavioural vocabulary, <code>5R</code>, <code>1+1+3</code>, tempo, inter-click intervals, and a neural response is described in a physiological one, spike rate, latency, a trajectory through population activity, a BOLD change. These are valid descriptions of different observables with no shared frame, which is the problem the rest of this repository just worked on.</p>
-    <p class="measure mt-3">What follows keeps three labels apart throughout: <span class="badge badge-signal">established</span> <span class="badge badge-warm">contested</span> <span class="badge badge-muted">speculative</span>. Nothing here decodes a whale, and nothing here claims that a coda or a song phrase has a meaning.</p>
+<header class="hero bg-base-200 border-b border-base-300">
+  <div class="hero-content text-center max-w-3xl py-20">
+    <div>
+      <p class="font-mono text-sm tracking-widest uppercase opacity-60">MARCO · an extension · mostly speculative · notes/whale-topologies.md</p>
+      <h1 class="text-4xl lg:text-5xl font-bold mt-4">Can a whale phrase be given an address?</h1>
+      <p class="py-8 text-lg opacity-80 max-w-2xl mx-auto">A coda is written down as <span class="font-mono">5R</span> and a neural response as a spike rate, and the two descriptions share no frame. Nothing here decodes a whale.</p>
+      <p class="flex flex-wrap justify-center gap-3">
+        <span class="badge badge-outline font-mono">established</span>
+        <span class="badge badge-outline font-mono">contested</span>
+        <span class="badge badge-outline font-mono">speculative</span>
+      </p>
+    </div>
   </div>
+</header>
 
-  <div class="col-main mt-8">
-    <h2 class="display text-2xl">The analogy is structural, not semantic</h2>
-    <p class="mt-4">In this repository an agent declares landmarks about itself, and a shared frame converts those declarations into distances, a coarse-to-fine address of 18 syllables, and a separate exact identity of 32 bytes. For whale work the recording supplies measurable acoustic features instead of declarations, and neural activity supplies a second observation space, so the proposed bridge is a learned correspondence between the two spaces rather than a shared dictionary. <strong>Established:</strong> that separation of objects is implemented and measured in this repository. <strong>Speculative:</strong> that it will be useful for cetacean neurobiology.</p>
+<main class="container mx-auto max-w-5xl px-6">
+
+<!-- ============================================================ 1 the problem -->
+<section class="py-16">
+  <h2 class="text-3xl font-bold">Two descriptions of one sound share no frame</h2>
+  <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
+    <p>A field biologist describes a sperm-whale coda as <span class="font-mono">5R</span> or <span class="font-mono">1+1+3</span> and reports its tempo and its inter-click intervals. A neurophysiologist describes the response to that same sound as a spike rate, a latency, a trajectory through population activity, or a BOLD change.</p>
+    <p>The two vocabularies name different observables, so no conversion between them is available on either side. That is the problem the rest of this repository worked on, with 45 statements, a 3,300-byte seed and one derived frame.</p>
   </div>
+  <div class="card bg-base-200 w-full mt-12">
+    <div class="card-body">
+      <h3 class="card-title text-sm font-mono">the same sound, two descriptions</h3>
+      <ul class="mt-4 space-y-4 text-base">
+        <li><span class="badge badge-outline font-mono">behaviour</span> <span class="font-mono">5R</span>, <span class="font-mono">1+1+3</span>, tempo, inter-click intervals, and a behavioural context.</li>
+        <li><span class="badge badge-outline font-mono">physiology</span> spike rate, latency, a trajectory through population activity, a BOLD change.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="badge badge-outline font-mono mt-8">45 statements · 1 frame · 2 vocabularies with no mapping between them</p>
+</section>
 
-  <div class="col-side mt-8">
-    <div class="card">
-      <div class="card-header">
-        <div class="card-title">Three objects, three jobs</div>
-        <div class="card-description">kept apart on purpose</div>
-      </div>
-      <div class="card-content text-sm">
-        <p><strong>A descriptive address.</strong> Preserves neighbourhood: near phrases land near each other. Measured here at Spearman rho <span class="val">0.9286</span> over all <span class="val">15</span> pairs of six places, against a shuffled null of <span class="val">+0.0002</span> (sd <span class="val">0.2704</span>).</p>
-        <p class="mt-3"><strong>An exact root.</strong> SHA-256 over a canonical set. Same set, same 32 bytes; one statement different, unrelated bytes. It destroys adjacency deliberately.</p>
-        <p class="mt-3"><strong>A prediction.</strong> An empirical estimate of a measured response. It is not a decoded message, and it is not an address.</p>
+<div class="divider"></div>
+
+<!-- ============================================================ 2 the analogy -->
+<section class="py-16">
+  <h2 class="text-3xl font-bold">The analogy is structural, not semantic</h2>
+  <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
+    <p>In this repository an agent declares landmarks about itself, and one frame converts those declarations into distances, a coarse-to-fine address of 18 syllables, and a separate exact identity of 32 bytes. The separation of those objects is implemented and measured here.</p>
+    <p>For whale work the recording supplies measurable acoustic features where the declarations were, and neural activity supplies a second observation space. The bridge is a learned correspondence between the two spaces rather than a shared dictionary, and the figure further down draws it stage by stage with a control hanging off every stage.</p>
+    <p><span class="badge badge-outline font-mono">established</span> the separation of a descriptive address from an exact identity is implemented and measured in this repository. <span class="badge badge-outline font-mono">speculative</span> that it is useful for cetacean neurobiology.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================================ 3 three objects -->
+<section class="py-16">
+  <h2 class="text-3xl font-bold">Three objects, three jobs</h2>
+  <p class="mt-8 max-w-3xl text-base leading-relaxed">A descriptive address, an exact root and a prediction answer three different questions, and they are kept apart on purpose.</p>
+  <div class="stats stats-vertical lg:stats-horizontal bg-base-200 w-full mt-12">
+    <div class="stat"><div class="stat-title text-base">neighbourhood kept</div><div class="stat-value text-4xl">0.9286</div><div class="stat-desc text-base">Spearman rho over all 15 pairs</div></div>
+    <div class="stat"><div class="stat-title text-base">shuffled null</div><div class="stat-value text-4xl">+0.0002</div><div class="stat-desc text-base">standard deviation 0.2704</div></div>
+    <div class="stat"><div class="stat-title text-base">exact identity</div><div class="stat-value text-4xl">32</div><div class="stat-desc text-base">bytes, and adjacency destroyed on purpose</div></div>
+  </div>
+  <div class="card bg-base-200 w-full mt-12">
+    <div class="card-body">
+      <h3 class="card-title text-xl">A descriptive address</h3>
+      <p class="text-base leading-relaxed max-w-3xl mt-2">It preserves neighbourhood, so near phrases land near each other. Measured here at Spearman rho <span class="font-mono">0.9286</span> over all <span class="font-mono">15</span> pairs of six places, against a shuffled null of <span class="font-mono">+0.0002</span> with a standard deviation of <span class="font-mono">0.2704</span>.</p>
+    </div>
+  </div>
+  <div class="card bg-base-200 w-full mt-10">
+    <div class="card-body">
+      <h3 class="card-title text-xl">An exact root</h3>
+      <p class="text-base leading-relaxed max-w-3xl mt-2">SHA-256 over a canonical set. The same set gives the same 32 bytes, and one statement different gives unrelated bytes, so the root destroys adjacency deliberately. The address and the root are built from the same 45 statements and behave in opposite ways.</p>
+    </div>
+  </div>
+  <div class="card bg-base-200 w-full mt-10">
+    <div class="card-body">
+      <h3 class="card-title text-xl">A prediction</h3>
+      <p class="text-base leading-relaxed max-w-3xl mt-2">An empirical estimate of a measured response, scored on held-out phrases. It is not a decoded message, and it is not an address.</p>
+    </div>
+  </div>
+  <p class="badge badge-outline font-mono mt-8">rho 0.9286 · null +0.0002 · 32-byte identity · 3 objects</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================================ 4 the labels -->
+<section class="py-16">
+  <h2 class="text-3xl font-bold">What is established, what is contested, what is speculative</h2>
+  <p class="mt-8 max-w-3xl text-base leading-relaxed">Every row carries its label and its primary source. Two rows carry a limit that the popular account usually drops, and the Sharma et al. row is the clearest case.</p>
+  <div class="overflow-x-auto w-full mt-12">
+    <table class="table table-zebra w-full">
+      <thead><tr><th>claim</th><th>status</th><th>citation</th></tr></thead>
+      <tbody class="text-base">
+        <tr>
+          <td>Sperm-whale codas are stereotyped click sequences, roughly <strong>3 to 40 clicks</strong> long, whose inter-click intervals define rhythm; relative timing is commonly notated in forms such as <span class="font-mono">5R</span> and <span class="font-mono">1+1+3</span>.</td>
+          <td><span class="badge badge-outline font-mono">established</span></td>
+          <td class="font-mono">Rendell &amp; Whitehead 2003, Proceedings of the Royal Society B 270:225-231, doi:10.1098/rspb.2002.2239</td>
+        </tr>
+        <tr>
+          <td>Codas overlap and are matched in interaction.</td>
+          <td><span class="badge badge-outline font-mono">established</span></td>
+          <td class="font-mono">Schulz et al. 2008, Animal Behaviour 76:1977-1988, doi:10.1016/j.anbehav.2008.07.032</td>
+        </tr>
+        <tr>
+          <td>Identity cues occur at unit, individual and clan levels.</td>
+          <td><span class="badge badge-outline font-mono">established</span></td>
+          <td class="font-mono">Gero, Whitehead &amp; Rendell 2016, Royal Society Open Science 3:150372, doi:10.1098/rsos.150372</td>
+        </tr>
+        <tr>
+          <td>Additional acoustic and social analysis of the coda repertoire.</td>
+          <td><span class="badge badge-outline font-mono">established</span></td>
+          <td class="font-mono">Antunes et al. 2011, Animal Behaviour 81:723-730, doi:10.1016/j.anbehav.2010.12.019</td>
+        </tr>
+        <tr>
+          <td>Context-sensitive features called <strong>rubato</strong> and <strong>ornamentation</strong> are systematically controlled and imitated across whales; combined with context-independent <strong>rhythm</strong> and <strong>tempo</strong> they give nearly an order of magnitude more distinguishable codas. <em>The paper claims no semantics, no syntax, and no language; the popular “codas are a language” framing is not supported by its primary source.</em></td>
+          <td><span class="badge badge-outline font-mono">established, with a limited claim</span></td>
+          <td class="font-mono">Sharma et al. 2024, Nature Communications 15:3617, doi:10.1038/s41467-024-47221-8</td>
+        </tr>
+        <tr>
+          <td>What the extra distinguishability does socially: recognition, coordination, turn-taking, affective modulation, or something else. A structured acoustic repertoire is not evidence of compositional meaning.</td>
+          <td><span class="badge badge-outline font-mono">contested</span></td>
+          <td class="font-mono">no source settles it</td>
+        </tr>
+        <tr>
+          <td>Humpback song has a nested hierarchy of phrase → theme → song → song session.</td>
+          <td><span class="badge badge-outline font-mono">established</span></td>
+          <td class="font-mono">Payne &amp; McVay 1971, Science, doi:10.1126/science.173.3997.585</td>
+        </tr>
+        <tr>
+          <td>Songs are culturally transmitted and can undergo population-level revolutions.</td>
+          <td><span class="badge badge-outline font-mono">established</span></td>
+          <td class="font-mono">Noad et al. 2000, Proceedings of the Royal Society B, doi:10.1098/rspb.2000.1271 · Garland et al. 2011, Proceedings of the Royal Society B, doi:10.1098/rspb.2011.0630</td>
+        </tr>
+        <tr>
+          <td>The behavioural hierarchy establishes no linguistic grammar and no referential semantics.</td>
+          <td><span class="badge badge-outline font-mono">contested</span></td>
+          <td class="font-mono">as above</td>
+        </tr>
+        <tr>
+          <td>Bottlenose-dolphin signature whistles are individually distinctive learned contours, used as vocal labels and copied or addressed. They are the strongest referential-label analogue here, and they are not demonstrated to be words.</td>
+          <td><span class="badge badge-outline font-mono">established</span></td>
+          <td class="font-mono">Janik et al. 2013, PNAS, doi:10.1073/pnas.1304459110</td>
+        </tr>
+        <tr>
+          <td>A descriptive address could organise the coda repertoire without deciding among those social functions.</td>
+          <td><span class="badge badge-outline font-mono">speculative</span></td>
+          <td class="font-mono">this proposal</td>
+        </tr>
+        <tr>
+          <td>Signature-whistle contour space could be a useful test case for an acoustic address. That would still not be translation.</td>
+          <td><span class="badge badge-outline font-mono">speculative</span></td>
+          <td class="font-mono">this proposal</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="badge badge-outline font-mono mt-8">12 rows · 8 established · 2 contested · 2 speculative · every row carries its primary source</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================================ 5 the absence -->
+<section class="py-16">
+  <h2 class="text-3xl font-bold">Neural decoding exists for four other animals</h2>
+  <p class="mt-8 max-w-3xl text-base leading-relaxed">The contrast is what bounds the claim, so it belongs on the page before any of the machinery. Bat, zebra finch, marmoset and macaque each have a published single-unit or imaging result, and the cetacean row has none of them.</p>
+  <div class="card bg-base-200 w-full mt-12">
+    <div class="card-body">
+      <h3 class="card-title text-xl">Four animals, one absence</h3>
+      <div class="overflow-x-auto w-full mt-4">
+        <table class="table table-zebra w-full">
+          <thead><tr><th class="w-40">animal</th><th>what has been measured</th></tr></thead>
+          <tbody class="text-base">
+            <tr><td><strong>bat</strong></td><td>single-unit auditory-cortex neurons tuned to echo delay and velocity, yielding range-like maps</td></tr>
+            <tr><td><strong>zebra finch</strong></td><td>single-unit auditory-forebrain responses encode conspecific song and tutor familiarity</td></tr>
+            <tr><td><strong>marmoset</strong></td><td>single-unit A1 activity tracks self-generated vocal feedback (Eliades &amp; Wang 2008, Journal of Neuroscience)</td></tr>
+            <tr><td><strong>macaque</strong></td><td>voice-selective temporal cortex, fMRI and single-unit (Petkov et al. 2008, Neuron)</td></tr>
+            <tr><td><strong>cetacean</strong></td><td>no chronic single-unit or ECoG recordings; evoked potentials and psychoacoustics only</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
-
-  <div class="col-full mt-8">
-    <h2 class="display text-2xl">What is established, what is contested, what is speculative</h2>
-    <p class="measure mt-4">Every row carries its label and its primary source. Two rows carry a limit that the popular account usually drops, and the Sharma et al. row is the clearest case.</p>
+  <p class="mt-12 max-w-3xl text-base leading-relaxed">Cetacean neural data of this kind does not exist, because ethics, permits, animal size, immersion and cetacean neuroanatomy make the bat, songbird and marmoset approach unavailable. Non-invasive auditory evoked potentials and behavioural psychoacoustics do exist, and for this question that is the ceiling.</p>
+  <div class="alert alert-warning mt-8 max-w-3xl">
+    <span>Any claim of a whale phrase-to-neuron map is <strong>speculative</strong> until a lawful, interpretable neural measurement exists. The four animals above are the whole of the evidence base.</span>
   </div>
+  <p class="badge badge-outline font-mono mt-8">4 animals with single-unit or imaging data · 1 with none · 2 non-invasive methods as the ceiling</p>
+</section>
 
-  <div class="col-full mt-4">
-    <div class="table-wrap">
-      <table class="data">
-        <thead>
-          <tr><th>claim</th><th>status</th><th>citation</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Sperm-whale codas are stereotyped click sequences, roughly <strong>3–40 clicks</strong> long, whose inter-click intervals define rhythm; relative timing is commonly notated in forms such as <code>5R</code> and <code>1+1+3</code>.</td>
-            <td><span class="badge badge-signal">established</span></td>
-            <td class="mono">Rendell &amp; Whitehead 2003, Proceedings of the Royal Society B 270:225–231, doi:10.1098/rspb.2002.2239</td>
-          </tr>
-          <tr>
-            <td>Codas overlap and are matched in interaction.</td>
-            <td><span class="badge badge-signal">established</span></td>
-            <td class="mono">Schulz et al. 2008, Animal Behaviour 76:1977–1988, doi:10.1016/j.anbehav.2008.07.032</td>
-          </tr>
-          <tr>
-            <td>Identity cues occur at unit, individual and clan levels.</td>
-            <td><span class="badge badge-signal">established</span></td>
-            <td class="mono">Gero, Whitehead &amp; Rendell 2016, Royal Society Open Science 3:150372, doi:10.1098/rsos.150372</td>
-          </tr>
-          <tr>
-            <td>Additional acoustic and social analysis of the coda repertoire.</td>
-            <td><span class="badge badge-signal">established</span></td>
-            <td class="mono">Antunes et al. 2011, Animal Behaviour 81:723–730, doi:10.1016/j.anbehav.2010.12.019</td>
-          </tr>
-          <tr>
-            <td>Context-sensitive features called <strong>rubato</strong> and <strong>ornamentation</strong> are systematically controlled and imitated across whales; combined with context-independent <strong>rhythm</strong> and <strong>tempo</strong> they give nearly an order of magnitude more distinguishable codas. <em>The paper claims no semantics, no syntax, and no language; the popular “codas are a language” framing is not supported by its primary source.</em></td>
-            <td><span class="badge badge-warm">established, with a limited claim</span></td>
-            <td class="mono">Sharma et al. 2024, Nature Communications 15:3617, doi:10.1038/s41467-024-47221-8</td>
-          </tr>
-          <tr>
-            <td>What the extra distinguishability does socially: recognition, coordination, turn-taking, affective modulation, or something else. A structured acoustic repertoire is not evidence of compositional meaning.</td>
-            <td><span class="badge badge-warm">contested</span></td>
-            <td class="mono">no source settles it</td>
-          </tr>
-          <tr>
-            <td>Humpback song has a nested hierarchy of phrase → theme → song → song session.</td>
-            <td><span class="badge badge-signal">established</span></td>
-            <td class="mono">Payne &amp; McVay 1971, Science, doi:10.1126/science.173.3997.585</td>
-          </tr>
-          <tr>
-            <td>Songs are culturally transmitted and can undergo population-level revolutions.</td>
-            <td><span class="badge badge-signal">established</span></td>
-            <td class="mono">Noad et al. 2000, Proceedings of the Royal Society B, doi:10.1098/rspb.2000.1271 · Garland et al. 2011, Proceedings of the Royal Society B, doi:10.1098/rspb.2011.0630</td>
-          </tr>
-          <tr>
-            <td>The behavioural hierarchy establishes no linguistic grammar and no referential semantics.</td>
-            <td><span class="badge badge-warm">contested</span></td>
-            <td class="mono">as above</td>
-          </tr>
-          <tr>
-            <td>Bottlenose-dolphin signature whistles are individually distinctive learned contours, used as vocal labels and copied or addressed. They are the strongest referential-label analogue here, and they are not demonstrated to be words.</td>
-            <td><span class="badge badge-signal">established</span> <span class="badge badge-warm">not words</span></td>
-            <td class="mono">Janik et al. 2013, PNAS, doi:10.1073/pnas.1304459110</td>
-          </tr>
-          <tr>
-            <td>A descriptive address could organise the coda repertoire without deciding among those social functions.</td>
-            <td><span class="badge badge-muted">speculative</span></td>
-            <td class="mono">this proposal</td>
-          </tr>
-          <tr>
-            <td>Signature-whistle contour space could be a useful test case for an acoustic address. That would still not be translation.</td>
-            <td><span class="badge badge-muted">speculative</span></td>
-            <td class="mono">this proposal</td>
-          </tr>
-        </tbody>
-      </table>
+<div class="divider"></div>
+
+<!-- ============================================================ 6 the five steps -->
+<section class="py-16">
+  <h2 class="text-3xl font-bold">The bridge, built in five steps</h2>
+  <p class="mt-8 max-w-3xl text-base leading-relaxed">Every step below is a quantity someone can measure or a search someone can bound. Nothing in it needs a whale to have a language.</p>
+
+  <div class="card bg-base-200 w-full mt-12">
+    <div class="card-body">
+      <h3 class="card-title text-xl font-mono">01</h3>
+      <p class="card-title text-xl">A phrase vector of 18 dimensions, from a calibrated recording</p>
+      <p class="text-base leading-relaxed max-w-3xl mt-2">Dimension <span class="font-mono">1</span> is unit count: clicks for a coda, segmented syllables or events for a phrase. Dimensions <span class="font-mono">2</span> to <span class="font-mono">6</span> are the first five inter-unit intervals, in milliseconds and normalised by phrase duration, with shorter phrases padded by an explicit missing-value mask. Dimension <span class="font-mono">7</span> is median tempo in events per second.</p>
+      <p class="text-base leading-relaxed max-w-3xl">Dimensions <span class="font-mono">8</span> to <span class="font-mono">10</span> are rubato: mean signed deviation from a nominal timing grid, its standard deviation, and the maximum absolute deviation. Dimensions <span class="font-mono">11</span> to <span class="font-mono">14</span> are spectral-centroid trajectory at four equally spaced temporal landmarks, <span class="font-mono">15</span> to <span class="font-mono">16</span> are bandwidth at an early and a late window, and <span class="font-mono">17</span> to <span class="font-mono">18</span> are ornamentation flags or scores. That is <span class="font-mono">1 + 5 + 1 + 3 + 4 + 2 + 2 = 18</span>.</p>
+      <p class="text-base leading-relaxed max-w-3xl"><span class="badge badge-outline font-mono">established</span> these are measurable acoustic quantities. <span class="badge badge-outline font-mono">speculative</span> that this 18-dimensional representation is the biologically relevant one, because microphone placement, propagation, overlap and detector error can dominate small differences.</p>
     </div>
   </div>
 
-  <div class="col-main mt-8">
-    <h2 class="display text-2xl">Neural decoding exists for four other animals</h2>
-    <p class="mt-4">The contrast is what bounds the proposal, so it belongs on the page before any of the machinery. Cetacean neural data of this kind does not exist: there are no chronic implanted single-unit or ECoG recordings in wild cetaceans, because ethics, permits, animal size, immersion and cetacean neuroanatomy make the bat, songbird and marmoset approach unavailable.</p>
-    <p class="mt-4">Non-invasive auditory evoked potentials and behavioural psychoacoustics do exist, and for the question proposed here that is the ceiling. Any claim of a whale phrase-to-neuron map is therefore <span class="badge badge-muted">speculative</span> until a lawful, interpretable neural measurement exists.</p>
-  </div>
-
-  <div class="col-side mt-8">
-    <div class="alert">
-      <div class="alert-title">Four animals, one absence</div>
-      <table class="data">
-        <tbody>
-          <tr><td><strong>bat</strong></td><td class="text-sm">single-unit auditory-cortex neurons tuned to echo delay and velocity, yielding range-like maps</td></tr>
-          <tr><td><strong>zebra finch</strong></td><td class="text-sm">single-unit auditory-forebrain responses encode conspecific song and tutor familiarity</td></tr>
-          <tr><td><strong>marmoset</strong></td><td class="text-sm">single-unit A1 activity tracks self-generated vocal feedback (Eliades &amp; Wang 2008, Journal of Neuroscience)</td></tr>
-          <tr><td><strong>macaque</strong></td><td class="text-sm">voice-selective temporal cortex, fMRI and single-unit (Petkov et al. 2008, Neuron)</td></tr>
-          <tr><td><strong>cetacean</strong></td><td class="text-sm">no chronic single-unit or ECoG recordings; evoked potentials and psychoacoustics only</td></tr>
-        </tbody>
-      </table>
+  <div class="card bg-base-200 w-full mt-10">
+    <div class="card-body">
+      <h3 class="card-title text-xl font-mono">02</h3>
+      <p class="card-title text-xl">Spectral anchors replace the hand-declared statements</p>
+      <p class="text-base leading-relaxed max-w-3xl mt-2">The demonstration's <span class="font-mono">45</span> plain statements become a fixed set of <span class="font-mono">K = 64</span> spectral anchors, each a reference phrase or reference template in the standardised feature space.</p>
+      <p class="text-base leading-relaxed max-w-3xl">They are chosen before any neural fitting, by k-means++ over a training corpus repeated <span class="font-mono">100</span> times with the lowest held-out distortion retained, or by hand-picked exemplars spanning unit count, tempo, timing shape and ornamentation, and the exact exemplars and preprocessing parameters are stored.</p>
+      <p class="text-base leading-relaxed max-w-3xl">For phrase vector <span class="font-mono">x</span> and anchor <span class="font-mono">a_k</span>, the distance <span class="font-mono">d_k</span> is scaled Euclidean for continuous features, dynamic-time-warping for trajectories and Hamming for flags, weighted only inside training folds, then quantised into four bins analogous to <span class="font-mono">0.0, 0.3, 0.6, 0.9</span> with thresholds calibrated on training data. <span class="badge badge-outline font-mono">contested</span> no single metric is justified in advance.</p>
     </div>
   </div>
 
-  <hr class="separator col-full">
-
-  <div class="col-wide">
-    <h2 class="display text-2xl">The bridge, built in five steps</h2>
-    <p class="measure mt-4">Every step below is a quantity someone can measure or a search someone can bound. Nothing in it needs a whale to have a language.</p>
-  </div>
-
-  <div class="col-full mt-4">
-    <div class="workings">
-      <div class="step">
-        <div class="step-n">01</div>
-        <div>
-          <div class="step-title">A phrase vector of 18 dimensions, from a calibrated recording</div>
-          <div class="step-body">Dimension <span class="val">1</span> is unit count: clicks for a coda, segmented syllables or events for a phrase. Dimensions <span class="val">2–6</span> are the first five inter-unit intervals, in milliseconds and normalised by phrase duration, with shorter phrases padded by an explicit missing-value mask. Dimension <span class="val">7</span> is median tempo in events per second. Dimensions <span class="val">8–10</span> are rubato: mean signed deviation from a nominal timing grid, its standard deviation, and the maximum absolute deviation. Dimensions <span class="val">11–14</span> are spectral-centroid trajectory at four equally spaced temporal landmarks; <span class="val">15–16</span> are bandwidth at an early and a late window; <span class="val">17–18</span> are ornamentation flags or scores. That is <span class="val">1 + 5 + 1 + 3 + 4 + 2 + 2 = 18</span>. <strong>Established:</strong> these are measurable acoustic quantities. <strong>Speculative:</strong> that this 18-dimensional representation is the biologically relevant one, because microphone placement, propagation, overlap and detector error can dominate small differences.</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-n">02</div>
-        <div>
-          <div class="step-title">Spectral anchors replace the hand-declared statements</div>
-          <div class="step-body">The demonstration's <span class="val">45</span> plain statements become a fixed set of <span class="val">K = 64</span> spectral anchors: each a reference phrase or reference template in the standardised feature space. They are chosen before any neural fitting, by k-means++ over a training corpus repeated <span class="val">100</span> times with the lowest held-out distortion retained, or by hand-picked exemplars spanning unit count, tempo, timing shape and ornamentation; the exact exemplars and preprocessing parameters are stored. For phrase vector <span class="mono">x</span> and anchor <span class="mono">a_k</span>, the distance <span class="mono">d_k</span> is scaled Euclidean for continuous features, dynamic-time-warping for trajectories and Hamming for flags, weighted only inside training folds, then quantised into four bins analogous to <span class="val">0.0, 0.3, 0.6, 0.9</span> with thresholds calibrated on training data. <strong>Contested:</strong> no single metric is justified in advance.</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-n">03</div>
-        <div>
-          <div class="step-title">The same coarse-to-fine partition gives a phrase address</div>
-          <div class="step-body">The 64-distance vector is partitioned hierarchically at <span class="val">4</span> branches per axis, which is <span class="val">64 × 2 = 128 bits</span> before any rendering, with axes ordered by discriminative power measured only on training folds. The order matters more here than in the demonstration: the first axis should probably be unit count or tempo rather than spectral centroid, and that is a hypothesis to test rather than a result. The quantised path is Gray-decoded into the same <span class="val">32</span>-entry adjacent-phoneme codebook on the same one-phoneme-per-bit principle, so the address is a stable neighbourhood label and not a name for a behavioural category.</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-n">04</div>
-        <div>
-          <div class="step-title">The predictive hypothesis, stated formally</div>
-          <div class="step-body">Let <span class="mono">q(x)</span> be the phrase address as a real-valued bit or branch vector after calibration, and let <span class="mono">y</span> be a neural response vector, binned firing rates, latency features, or a low-dimensional population trajectory. The primary hypothesis is that there exist <span class="mono">W</span> and <span class="mono">b</span> such that <span class="val">ŷ = W q(x) + b</span>, where prediction on held-out phrases exceeds a preregistered null and generalises across recording sessions, individuals and contexts. Nonlinear extensions are tested only after this linear baseline. A successful <span class="mono">W</span> would mean the address preserves information useful for predicting a measured response; it would not mean the address is a neural code. <span class="badge badge-muted">speculative hypothesis, with no cetacean neural data behind it</span></div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-n">05</div>
-        <div>
-          <div class="step-title">A deliberately broad brute-force search, with its size stated</div>
-          <div class="step-body">Roughly <span class="val">10³</span> candidate anchor sets after clustering and exemplar sampling, <span class="val">6</span> feature metrics, <span class="val">5</span> quantisation schemes, <span class="val">4</span> axis-ordering rules and <span class="val">3</span> response alignments give <span class="val">10³ × 6 × 5 × 4 × 3 = 360,000</span> topological candidates. Fitting <span class="mono">W</span> by ridge regression over <span class="val">20</span> logarithmically spaced penalties gives <span class="val">360,000 × 20 = 7,200,000</span> fitted candidates before permutations, plus CCA and, where dimensions are matched, orthogonal Procrustes. The objective is held-out neural prediction, cross-validated correlation, mean-squared error and representational dissimilarity alignment, combined only after a predeclared primary metric. Inner folds select anchors, metrics, quantisation, axis order and penalty; outer folds estimate performance on phrases and sessions never used for selection. <strong>A candidate that wins 7.2 million trials by chance has not discovered a map.</strong></div>
-        </div>
-      </div>
+  <div class="card bg-base-200 w-full mt-10">
+    <div class="card-body">
+      <h3 class="card-title text-xl font-mono">03</h3>
+      <p class="card-title text-xl">The same coarse-to-fine partition gives a phrase address</p>
+      <p class="text-base leading-relaxed max-w-3xl mt-2">The 64-distance vector is partitioned hierarchically at <span class="font-mono">4</span> branches per axis, which is <span class="font-mono">64 × 2 = 128 bits</span> before any rendering, with axes ordered by discriminative power measured only on training folds. The order matters more here than in the demonstration: the first axis should probably be unit count or tempo rather than spectral centroid, and that is a hypothesis to test rather than a result.</p>
+      <p class="text-base leading-relaxed max-w-3xl">The quantised path is Gray-decoded into the same <span class="font-mono">32</span>-entry adjacent-phoneme codebook on the same one-phoneme-per-bit principle, so the address is a stable neighbourhood label and not a name for a behavioural category.</p>
     </div>
   </div>
 
-  <div class="col-full mt-6">
-    <div class="root-block">recording ──&gt; segmentation ──&gt; 18-D phrase vector ──&gt; 64 anchors ──&gt; distances
-   │                 │                                      │
-   └─ quality/null ──┴─ held-out preprocessing ─────────────┘
-                                      │
-                         quantise + ordered partition
-                                      │
-                           Gray/codebook phrase address
-                                      │
-neural window ──&gt; response vector ──&gt; ridge / CCA / Procrustes ──&gt; prediction
-      │                    │                  │                    │
-      └─ temporal shuffle ──┴─ label permutation ─┴─ nested CV ──────┘
-                                      │
-                         known-answer + decoy + multiple-comparison correction</div>
+  <div class="card bg-base-200 w-full mt-10">
+    <div class="card-body">
+      <h3 class="card-title text-xl font-mono">04</h3>
+      <p class="card-title text-xl">The predictive hypothesis, stated formally</p>
+      <p class="text-base leading-relaxed max-w-3xl mt-2">Let <span class="font-mono">q(x)</span> be the phrase address as a real-valued bit or branch vector after calibration, and let <span class="font-mono">y</span> be a neural response vector, binned firing rates, latency features, or a low-dimensional population trajectory. The primary hypothesis is that there exist <span class="font-mono">W</span> and <span class="font-mono">b</span> such that prediction on held-out phrases exceeds a preregistered null and generalises across recording sessions, individuals and contexts.</p>
+      <p class="text-base leading-relaxed max-w-3xl">Nonlinear extensions are tested only after this linear baseline. A successful <span class="font-mono">W</span> would mean the address preserves information useful for predicting a measured response; it would not mean the address is a neural code.</p>
+    </div>
+  </div>
+  <div class="mockup-code w-full mt-8 text-base">
+    <pre data-prefix="hypothesis"><code>&#375; = W q(x) + b</code></pre>
+    <pre data-prefix="q(x)"><code>the phrase address, as a bit or branch vector after calibration</code></pre>
+    <pre data-prefix="y"><code>binned firing rates, latency features, or a low-dimensional population trajectory</code></pre>
+    <pre data-prefix="status"><code>speculative hypothesis, with no cetacean neural data behind it</code></pre>
   </div>
 
-  <hr class="separator col-full">
-
-  <div class="col-wide">
-    <h2 class="display text-2xl">The controls, which are the hard part</h2>
-    <p class="measure mt-4">The canonical tools are long established: canonical correlation analysis (CCA) originates with Hotelling (1936), orthogonal Procrustes gives a constrained alignment (Schönemann 1966, Psychometrika, doi:10.1007/BF02289451), representational similarity analysis compares dissimilarity structures instead of pretending that coordinates are commensurate (Kriegeskorte et al. 2008, Frontiers in Human Neuroscience, doi:10.3389/neuro.01.1.1.004.2008), encoding models predict neural measurements from stimulus features (Naselaris et al. 2011, NeuroImage, doi:10.1016/j.neuroimage.2010.07.073), and semantic encoding maps show both the ambition and the assumptions (Huth et al. 2016, Nature, doi:10.1038/nature17637). Circular analysis is the same error in another form, selecting features because they fit the neural data and then evaluating them on those same data (Kriegeskorte et al. 2009, Nature Neuroscience, doi:10.1038/nn.2303).</p>
+  <div class="card bg-base-200 w-full mt-10">
+    <div class="card-body">
+      <h3 class="card-title text-xl font-mono">05</h3>
+      <p class="card-title text-xl">A deliberately broad brute-force search, with its size stated</p>
+      <p class="text-base leading-relaxed max-w-3xl mt-2">Roughly <span class="font-mono">10³</span> candidate anchor sets after clustering and exemplar sampling, <span class="font-mono">6</span> feature metrics, <span class="font-mono">5</span> quantisation schemes, <span class="font-mono">4</span> axis-ordering rules and <span class="font-mono">3</span> response alignments give <span class="font-mono">10³ × 6 × 5 × 4 × 3 = 360,000</span> topological candidates. Fitting <span class="font-mono">W</span> by ridge regression over <span class="font-mono">20</span> logarithmically spaced penalties gives <span class="font-mono">360,000 × 20 = 7,200,000</span> fitted candidates before permutations, plus CCA and, where dimensions are matched, orthogonal Procrustes.</p>
+      <p class="text-base leading-relaxed max-w-3xl">The objective is held-out neural prediction, cross-validated correlation, mean-squared error and representational dissimilarity alignment, combined only after a predeclared primary metric. Inner folds select anchors, metrics, quantisation, axis order and penalty, and outer folds estimate performance on phrases and sessions never used for selection.</p>
+    </div>
   </div>
+  <div class="alert alert-warning mt-8 max-w-3xl">
+    <span><strong>A candidate that wins 7.2 million trials by chance has not discovered a map.</strong> The search is that large on purpose, and the null has to be that large with it.</span>
+  </div>
+  <p class="badge badge-outline font-mono mt-8">5 steps · 18 dimensions · 64 anchors · 128 bits · 360,000 topologies · 7,200,000 fits</p>
+</section>
 
-  <div class="col-main mt-4">
-    <div class="table-wrap">
-      <table class="data">
-        <thead><tr><th>control</th><th>what it rules out</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Permutation null over phrase labels</strong></td><td>Randomly reassign phrase identities to neural windows, rerun the complete search, and keep the maximum score per permutation. The null must include the same <span class="val">360,000</span>-candidate topology search.</td></tr>
-          <tr><td><strong>Temporal-alignment shuffle</strong></td><td>Shift or permute the phrase relative to the neural window while preserving autocorrelation and trial counts. A mapping that survives arbitrary misalignment is probably exploiting session structure.</td></tr>
-          <tr><td><strong>Cross-validated held-out phrases</strong></td><td>Report only outer-fold predictions, with held-out individuals or sessions where possible. In-sample CCA correlation is never evidence.</td></tr>
-          <tr><td><strong>A known-answer case</strong></td><td>Generate synthetic phrase vectors, choose a hand-built <span class="mono">W</span> with known noise, and confirm recovery, calibration and the expected degradation as noise rises.</td></tr>
-          <tr><td><strong>A decoy</strong></td><td>Pair the phrase set with an unrelated neural dataset and require the pipeline to report no mapping above the corrected null.</td></tr>
-          <tr><td><strong>Held-out anchors</strong></td><td>Fit anchors on one corpus partition and evaluate addresses using anchors never selected from the test phrases.</td></tr>
-          <tr><td><strong>Multiplicity correction</strong></td><td>Correct across the whole candidate topology and model search, preferably by maximum-statistic permutation or a preregistered family-wise procedure.</td></tr>
-        </tbody>
-      </table>
+<div class="divider"></div>
+
+<!-- ============================================================ 7 the pipeline figure -->
+<section class="py-16">
+  <h2 class="text-3xl font-bold">The pipeline, and where each control attaches</h2>
+  <p class="mt-8 max-w-3xl text-base leading-relaxed">Six stages take one calibrated recording to a prediction of a held-out response, and six controls hang off the stages they can corrupt. The phrase address is stage four and the prediction is stage six, so nothing downstream can be scored before the address is frozen.</p>
+  <div class="card bg-base-100 shadow-xl w-full mt-12">
+    <div class="p-4" id="fig-pipeline" role="img" aria-label="The pipeline from recording through segmentation into units, an 18-dimensional phrase vector, 64 spectral anchors and a phrase address to a prediction of a held-out response, with one control drawn hanging off each stage."></div>
+  </div>
+  <p class="badge badge-outline font-mono mt-8">6 stages · 6 controls · every control box names the stage it attaches to</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================================ 8 the controls -->
+<section class="py-16">
+  <h2 class="text-3xl font-bold">The controls, which are the hard part</h2>
+  <p class="mt-8 max-w-3xl text-base leading-relaxed">The canonical tools are long established: canonical correlation analysis (CCA) originates with Hotelling (1936), orthogonal Procrustes gives a constrained alignment (Schönemann 1966, Psychometrika, doi:10.1007/BF02289451), representational similarity analysis compares dissimilarity structures instead of pretending that coordinates are commensurate (Kriegeskorte et al. 2008, Frontiers in Human Neuroscience, doi:10.3389/neuro.01.1.1.004.2008), encoding models predict neural measurements from stimulus features (Naselaris et al. 2011, NeuroImage, doi:10.1016/j.neuroimage.2010.07.073), and semantic encoding maps show both the ambition and the assumptions (Huth et al. 2016, Nature, doi:10.1038/nature17637).</p>
+  <p class="mt-6 max-w-3xl text-base leading-relaxed">Circular analysis is the same error in another form, selecting features because they fit the neural data and then evaluating them on those same data (Kriegeskorte et al. 2009, Nature Neuroscience, doi:10.1038/nn.2303). The address is frozen before the test fold, and neural preprocessing never uses a held-out label.</p>
+  <div class="overflow-x-auto w-full mt-12">
+    <table class="table table-zebra w-full">
+      <thead><tr><th>control</th><th>what it rules out</th></tr></thead>
+      <tbody class="text-base">
+        <tr><td><strong>Permutation null over phrase labels</strong></td><td>Randomly reassign phrase identities to neural windows, rerun the complete search, and keep the maximum score per permutation. The null must include the same <span class="font-mono">360,000</span>-candidate topology search.</td></tr>
+        <tr><td><strong>Temporal-alignment shuffle</strong></td><td>Shift or permute the phrase relative to the neural window while preserving autocorrelation and trial counts. A mapping that survives arbitrary misalignment is probably exploiting session structure.</td></tr>
+        <tr><td><strong>Cross-validated held-out phrases</strong></td><td>Report only outer-fold predictions, with held-out individuals or sessions where possible. In-sample CCA correlation is never evidence.</td></tr>
+        <tr><td><strong>A known-answer case</strong></td><td>Generate synthetic phrase vectors, choose a hand-built <span class="font-mono">W</span> with known noise, and confirm recovery, calibration and the expected degradation as noise rises.</td></tr>
+        <tr><td><strong>A decoy</strong></td><td>Pair the phrase set with an unrelated neural dataset and require the pipeline to report no mapping above the corrected null.</td></tr>
+        <tr><td><strong>Held-out anchors</strong></td><td>Fit anchors on one corpus partition and evaluate addresses using anchors never selected from the test phrases.</td></tr>
+        <tr><td><strong>Multiplicity correction</strong></td><td>Correct across the whole candidate topology and model search, preferably by maximum-statistic permutation or a preregistered family-wise procedure.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="badge badge-outline font-mono mt-8">7 controls · 1 search of 360,000 topologies · 6,000 permutations per null</p>
+  <div class="alert alert-warning mt-12 max-w-3xl">
+    <span><strong>Sample-size collapse.</strong> CCA can produce near-perfect in-sample correlation when predictor and response dimensions approach the number of samples. A few hundred phrases against a population response containing thousands of neurons is exactly that regime, and flexible projections can align noise after a search over anchors, metrics, alignments and penalties. Dimensionality reduction does not cure it automatically: if the reduction is selected using all trials, the leakage merely moves upstream.</span>
+  </div>
+  <p class="mt-8 max-w-3xl text-base leading-relaxed">The governing rule is severe: in a space like this the metric is more likely to be wrong than the model, and any reported mapping must survive a null with identical information content. A high correlation, a clean visual trajectory or an intelligible phonetic address is not a control.</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================================ 9 the nulls -->
+<section class="py-16">
+  <h2 class="text-3xl font-bold">The real result against each null</h2>
+  <p class="mt-8 max-w-3xl text-base leading-relaxed">Every family was placed against every other family for every place, which is 90 comparisons, and the same place came back nearest in all 90 of them. Counting exact ties, the score is 100.0 per cent; strictly, it is 96.7 per cent against a chance of 16.7 per cent, which is 1 in 6.</p>
+  <p class="mt-6 max-w-3xl text-base leading-relaxed">Shuffling the phrase labels scores 16.9 per cent with a standard deviation of 16.8 over 6,000 trials. A random vocabulary of equal size, which replaces each family's selection with a random set of the same size drawn from the same 45 statements, scores 20.9 per cent with a standard deviation of 16.5 over the same 6,000 trials.</p>
+  <div class="card bg-base-100 shadow-xl w-full mt-12">
+    <div class="p-4" id="fig-controls" role="img" aria-label="The real cross-model result at 100.0 and 96.7 per cent against chance at 16.7, a label shuffle at 16.9 and a random vocabulary at 20.9, with one standard deviation drawn as a whisker, and the distance-preservation correlation of 0.9286 against its shuffled null of +0.0002."></div>
+  </div>
+  <p class="badge badge-outline font-mono mt-8">real 100.0% counting ties · strict 96.7% · chance 16.7% · shuffled labels 16.9% · random vocabulary 20.9%</p>
+  <div class="card bg-base-200 w-full mt-12">
+    <div class="card-body space-y-6">
+      <h3 class="card-title text-xl">The same four numbers, drawn as bars</h3>
+      <div>
+        <p class="text-base flex justify-between max-w-3xl mb-2"><span>real, counting exact ties</span><span class="font-mono">100.0%</span></p>
+        <progress class="progress progress-success w-full" value="100" max="100"></progress>
+      </div>
+      <div>
+        <p class="text-base flex justify-between max-w-3xl mb-2"><span>real, strict</span><span class="font-mono">96.7%</span></p>
+        <progress class="progress progress-success w-full" value="96.7" max="100"></progress>
+      </div>
+      <div>
+        <p class="text-base flex justify-between max-w-3xl mb-2"><span>random vocabulary of equal size</span><span class="font-mono">20.9%</span></p>
+        <progress class="progress progress-warning w-full" value="20.9" max="100"></progress>
+      </div>
+      <div>
+        <p class="text-base flex justify-between max-w-3xl mb-2"><span>shuffled labels</span><span class="font-mono">16.9%</span></p>
+        <progress class="progress progress-warning w-full" value="16.9" max="100"></progress>
+      </div>
+      <div>
+        <p class="text-base flex justify-between max-w-3xl mb-2"><span>chance, 1 in 6</span><span class="font-mono">16.7%</span></p>
+        <progress class="progress w-full" value="16.7" max="100"></progress>
+      </div>
+    </div>
+  </div>
+  <p class="mt-12 max-w-3xl text-base leading-relaxed">The distance preservation measurement is a separate null. Address Hamming distance tracks the known distance between places at Spearman rho 0.9286 over 15 pairs, against a shuffled null of +0.0002 with a standard deviation of 0.2704.</p>
+  <p class="badge badge-outline font-mono mt-8">90 comparisons · 6,000 trials per null · 15 pairs · one standard deviation drawn</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================================ 10 the six settings -->
+<section class="py-16">
+  <h2 class="text-3xl font-bold">Six settings, each with the result that would end it</h2>
+  <p class="mt-8 max-w-3xl text-base leading-relaxed">Every rung below names the measurement it uses and the single result that ends it. None of them is tested on an animal whose neural response cannot be measured, which is why the cetacean rungs stop where they do.</p>
+
+  <div class="card bg-base-200 w-full mt-12">
+    <div class="card-body">
+      <h3 class="card-title text-xl font-mono">00 · synthetic phrase spaces, no whales</h3>
+      <p class="text-base leading-relaxed max-w-3xl mt-2">Phrase spaces carry known anchors, a known axis order, known quantisation and a known <span class="font-mono">W</span>. <strong>Falsifier:</strong> the pipeline cannot recover <span class="font-mono">W</span>, or its out-of-sample performance collapses under realistic noise. This rung is where the failure is cheapest to find, so it varies sample size until the CCA failure becomes visible.</p>
     </div>
   </div>
 
-  <div class="col-side mt-4">
-    <div class="alert alert-warm">
-      <div class="alert-title">Sample-size collapse</div>
-      CCA can produce near-perfect in-sample correlation when predictor and response dimensions approach the number of samples. A few hundred phrases against a population response containing thousands of neurons is exactly that regime, and flexible projections can align noise after a search over anchors, metrics, alignments and penalties. Dimensionality reduction does not cure it automatically: if the reduction is selected using all trials, the leakage merely moves upstream.
-    </div>
-    <p class="text-sm mt-3">The governing rule is severe: in a space like this the metric is more likely to be wrong than the model, and any reported mapping must survive a null with identical information content. A high correlation, a clean visual trajectory or an intelligible phonetic address is not a control.</p>
-  </div>
-
-  <hr class="separator col-full">
-
-  <div class="col-full">
-    <h2 class="display text-2xl">Milestones, each with its falsifier written next to it</h2>
-    <p class="measure mt-4">A proposal without a falsifier is a hope, so every rung below names the result that ends it. The order matters: the mapping is never tested on an animal whose neural response cannot be measured.</p>
-  </div>
-
-  <div class="col-full mt-4">
-    <div class="workings">
-      <div class="step">
-        <div class="step-n">00</div>
-        <div>
-          <div class="step-title">Synthetic phrase spaces, no whales</div>
-          <div class="step-body">Build phrase spaces with known anchors, a known axis order, known quantisation and a known <span class="mono">W</span>. <strong>Falsifier:</strong> the pipeline cannot recover <span class="mono">W</span>, or its out-of-sample performance collapses under realistic noise. Vary sample size until the CCA failure becomes visible and publish the curve, because this rung is where the failure is cheapest to find.</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-n">01</div>
-        <div>
-          <div class="step-title">Bird song, where signal and neural response both exist</div>
-          <div class="step-body">Zebra-finch song features against auditory-forebrain responses, with tutor familiarity as a known behavioural and neural contrast. <strong>Falsifier:</strong> the method fails to distinguish known song classes, or cannot beat a simple spectrotemporal baseline under held-out birds and sessions. This tests the whole measurement-to-neural pipeline where recordings exist.</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-n">02</div>
-        <div>
-          <div class="step-title">Bat echolocation, where the physical variable is known</div>
-          <div class="step-body">Echolocation parameters against auditory-cortex single-unit responses, including delay and velocity tuning. <strong>Falsifier:</strong> a topology of this kind performs no better than shuffled addresses, or cannot recover a range-like response manifold. This tests whether anchors and coarse-to-fine order preserve a known physical variable.</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-n">03</div>
-        <div>
-          <div class="step-title">Marmoset vocal feedback</div>
-          <div class="step-body">Self-generated vocalisations against A1 activity, in the Eliades &amp; Wang 2008 setting. <strong>Falsifier:</strong> no held-out prediction beyond acoustic energy, onset and motor-corollary baselines. This tests active feedback rather than passive stimulus response.</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-n">04</div>
-        <div>
-          <div class="step-title">Cetacean behaviour, without neurons</div>
-          <div class="step-body">Build stable coda and song addresses from independently recorded populations, and test identity, context, overlap, matching, cultural change and cross-site stability. <strong>Falsifier:</strong> addresses fail to replicate under microphone, recorder, location or individual hold-out. This is useful topology engineering, and it is not a neural map.</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-n">05</div>
-        <div>
-          <div class="step-title">Non-invasive cetacean physiology, if it is ever justified</div>
-          <div class="step-body">Pair controlled acoustic presentation with auditory evoked potentials or other permitted non-invasive measures. <strong>Falsifier:</strong> no reproducible phrase-conditioned response after correcting for loudness, timing, movement and subject identity. Even success would establish prediction of a measured evoked signal, not cortical semantics. At every rung, the address has to beat raw acoustic features, a standard spectrogram embedding, a simple timing model and a randomly generated topology carrying equal information.</div>
-        </div>
-      </div>
+  <div class="card bg-base-200 w-full mt-10">
+    <div class="card-body">
+      <h3 class="card-title text-xl font-mono">01 · bird song, where signal and neural response both exist</h3>
+      <p class="text-base leading-relaxed max-w-3xl mt-2">Zebra-finch song features against auditory-forebrain responses, with tutor familiarity as a known behavioural and neural contrast. <strong>Falsifier:</strong> the method fails to distinguish known song classes, or cannot beat a simple spectrotemporal baseline under held-out birds and sessions. This tests the whole measurement-to-neural pipeline where recordings exist.</p>
     </div>
   </div>
 
-  <div class="col-full mt-8">
-    <div class="alert alert-warm">
-      <div class="alert-title">What this cannot become</div>
-      <p>Nothing in this proposal can establish that a coda or a song phrase has meaning. A predictive acoustic-to-neural map would not identify a referent, an intention or a semantic composition; it would be an encoding model, signal in and measured response out, and a good predictor is not a dictionary.</p>
-      <p class="mt-3">A locus, a phrase address or a neural coordinate is descriptive and never authoritative. In a whale application, a highly repeatable acoustic feature must not be promoted to a behavioural landmark without independent evidence, and an inferred neural association stays a hypothesis until it survives held-out subjects, temporal shuffles, decoys and search-corrected nulls.</p>
-      <p class="mt-3">The strongest defensible outcome is modest: a reproducible, topology-preserving description of vocal signals, plus a rigorously tested prediction of a particular neural measurement where such data exist. For cetaceans today the first object is feasible and the second is not established.</p>
+  <div class="card bg-base-200 w-full mt-10">
+    <div class="card-body">
+      <h3 class="card-title text-xl font-mono">02 · bat echolocation, where the physical variable is known</h3>
+      <p class="text-base leading-relaxed max-w-3xl mt-2">Echolocation parameters against auditory-cortex single-unit responses, including delay and velocity tuning. <strong>Falsifier:</strong> a topology of this kind performs no better than shuffled addresses, or cannot recover a range-like response manifold. This tests whether anchors and coarse-to-fine order preserve a known physical variable.</p>
     </div>
   </div>
 
-  <div class="col-span-6 mt-8">
-    <h3 class="display text-xl">The marker ladder, unchanged</h3>
-    <p class="text-sm mt-3">A claim takes the weakest marker present in it, and confidence cannot promote a marker: only evidence can. Interpretation and hypothesis cannot anchor anything.</p>
-    <div class="ladder mt-3">
-      <div class="ladder-row anchors"><span class="ladder-glyph">=</span><span>checked and matched exactly</span><span class="ladder-mark">rank 5 · anchors</span></div>
-      <div class="ladder-row anchors"><span class="ladder-glyph">⊢</span><span>worked out the same way twice from what I was given</span><span class="ladder-mark">rank 4 · anchors</span></div>
-      <div class="ladder-row"><span class="ladder-glyph">≈</span><span>measured with an instrument, so roughly</span><span class="ladder-mark">rank 3 · does not anchor</span></div>
-      <div class="ladder-row"><span class="ladder-glyph">~</span><span>what I believe, not what I know</span><span class="ladder-mark">rank 2 · does not anchor</span></div>
-      <div class="ladder-row"><span class="ladder-glyph">?</span><span>a guess I cannot support</span><span class="ladder-mark">rank 1 · does not anchor</span></div>
+  <div class="card bg-base-200 w-full mt-10">
+    <div class="card-body">
+      <h3 class="card-title text-xl font-mono">03 · marmoset vocal feedback</h3>
+      <p class="text-base leading-relaxed max-w-3xl mt-2">Self-generated vocalisations against A1 activity, in the Eliades &amp; Wang 2008 setting. <strong>Falsifier:</strong> no held-out prediction beyond acoustic energy, onset and motor-corollary baselines. This tests active feedback rather than passive stimulus response.</p>
     </div>
   </div>
 
-  <div class="col-span-6 mt-8">
-    <h3 class="display text-xl">What the demonstration contributes, and what it does not</h3>
-    <p class="text-sm mt-3">Its 3300-byte primer expands deterministically to 45 statements, a 32-syllable adjacent-phoneme codebook and an axis order derived from variance over a population of <span class="val">204</span> places; the landmarks, codebook and population together would cost <span class="val">67,561 bytes</span> to ship, <span class="val">20.47×</span> the seed, and none of it is transmitted. A question-selecting generator resolves any of the 204 places in a mean of <span class="val">17.8</span> questions, against an information floor of <span class="val">log2(204) = 7.672</span>.</p>
-    <p class="text-sm mt-3">Across 90 family-and-place comparisons the same place came out nearest in 96.7% strictly and 100% counting exact ties, against a chance rate of 16.7%, and address Hamming tracks known distance at rho 0.9286 against a shuffled null of +0.0002 (sd 0.2704). Those numbers validate a topology-preserving protocol. They are not evidence about whales, and they do not make a whale address meaningful.</p>
+  <div class="card bg-base-200 w-full mt-10">
+    <div class="card-body">
+      <h3 class="card-title text-xl font-mono">04 · cetacean behaviour, without neurons</h3>
+      <p class="text-base leading-relaxed max-w-3xl mt-2">Stable coda and song addresses built from independently recorded populations, tested on identity, context, overlap, matching, cultural change and cross-site stability. <strong>Falsifier:</strong> addresses fail to replicate under microphone, recorder, location or individual hold-out. This is useful topology engineering, and it is not a neural map.</p>
+    </div>
   </div>
 
-  <footer class="site-footer col-full">
-    <p>Primer fingerprint <code>df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba</code>, the frame whose behaviour, and not whose biology, is borrowed above.</p>
-    <p class="mt-2">Read on: <a href="index.html">the whole story</a> · <a href="response.html">response to agent://</a> · <a href="proof.html">the proof</a></p>
-    <p class="mt-2">Every figure and number on this page regenerates from the repository: the demonstration numbers from <code>evidence/RESULTS.json</code> and <code>evidence/validation.json</code>, the ladder from <code>primer.seed.json</code>, and the argument from <code>notes/whale-topologies.md</code>. Every citation above is the primary source named in that note.</p>
-  </footer>
+  <div class="card bg-base-200 w-full mt-10">
+    <div class="card-body">
+      <h3 class="card-title text-xl font-mono">05 · non-invasive cetacean physiology, if it is ever justified</h3>
+      <p class="text-base leading-relaxed max-w-3xl mt-2">Controlled acoustic presentation paired with auditory evoked potentials or other permitted non-invasive measures. <strong>Falsifier:</strong> no reproducible phrase-conditioned response after correcting for loudness, timing, movement and subject identity. Even success would establish prediction of a measured evoked signal, not cortical semantics.</p>
+    </div>
+  </div>
+
+  <p class="mt-12 max-w-3xl text-base leading-relaxed">At every rung the address has to beat raw acoustic features, a standard spectrogram embedding, a simple timing model and a randomly generated topology carrying equal information. That comparison is the whole test of whether the topology earns its complexity.</p>
+  <p class="badge badge-outline font-mono mt-8">6 rungs · 1 falsifier each · 4 baselines to beat at every rung</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================================ 11 limits -->
+<section class="py-16">
+  <h2 class="text-3xl font-bold">What this cannot become</h2>
+  <div class="alert alert-warning mt-12 max-w-3xl">
+    <p>Nothing in this proposal can establish that a coda or a song phrase has meaning. A predictive acoustic-to-neural map would not identify a referent, an intention or a semantic composition; it would be an encoding model, signal in and measured response out, and a good predictor is not a dictionary.</p>
+    <p class="mt-3">A locus, a phrase address or a neural coordinate is descriptive and never authoritative. In a whale application, a highly repeatable acoustic feature must not be promoted to a behavioural landmark without independent evidence, and an inferred neural association stays a hypothesis until it survives held-out subjects, temporal shuffles, decoys and search-corrected nulls.</p>
+    <p class="mt-3">The strongest defensible outcome is modest: a reproducible, topology-preserving description of vocal signals, plus a rigorously tested prediction of a particular neural measurement where such data exist. For cetaceans today the first object is feasible and the second is not established.</p>
+  </div>
+  <p class="badge badge-outline font-mono mt-8">2 objects, 1 feasible · 0 whale decodings claimed · 0 claims about meaning</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================================ 12 the ladder -->
+<section class="py-16">
+  <h2 class="text-3xl font-bold">The marker ladder, unchanged</h2>
+  <p class="mt-8 max-w-3xl text-base leading-relaxed">A claim takes the weakest marker present in it, and confidence cannot promote a marker: only evidence can. Interpretation and hypothesis cannot anchor anything, and rank 5 is the only rung that anchors a claim outright alongside rank 4.</p>
+  <div class="card bg-base-200 w-full mt-12">
+    <div class="card-body">
+      <ul class="timeline timeline-vertical timeline-compact">
+        <li>
+          <div class="timeline-middle"><span class="badge badge-success font-mono">=</span></div>
+          <div class="timeline-end timeline-box my-3 text-base"><span class="badge badge-success mr-2">anchors</span>checked and matched exactly <span class="font-mono opacity-60 ml-2">rank 5</span></div>
+          <hr class="bg-success">
+        </li>
+        <li>
+          <hr class="bg-success">
+          <div class="timeline-middle"><span class="badge badge-success font-mono">⊢</span></div>
+          <div class="timeline-end timeline-box my-3 text-base"><span class="badge badge-success mr-2">anchors</span>worked out the same way twice from what I was given <span class="font-mono opacity-60 ml-2">rank 4</span></div>
+          <hr class="bg-base-300">
+        </li>
+        <li>
+          <hr class="bg-base-300">
+          <div class="timeline-middle"><span class="badge badge-outline font-mono">≈</span></div>
+          <div class="timeline-end timeline-box my-3 text-base"><span class="badge badge-outline mr-2">no anchor</span>measured with an instrument, so roughly <span class="font-mono opacity-60 ml-2">rank 3</span></div>
+          <hr class="bg-base-300">
+        </li>
+        <li>
+          <hr class="bg-base-300">
+          <div class="timeline-middle"><span class="badge badge-outline font-mono">~</span></div>
+          <div class="timeline-end timeline-box my-3 text-base"><span class="badge badge-outline mr-2">no anchor</span>what I believe, not what I know <span class="font-mono opacity-60 ml-2">rank 2</span></div>
+          <hr class="bg-base-300">
+        </li>
+        <li>
+          <hr class="bg-base-300">
+          <div class="timeline-middle"><span class="badge badge-outline font-mono">?</span></div>
+          <div class="timeline-end timeline-box my-3 text-base"><span class="badge badge-outline mr-2">no anchor</span>a guess I cannot support <span class="font-mono opacity-60 ml-2">rank 1</span></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <p class="badge badge-outline font-mono mt-8">5 rungs · 2 anchor · ranks 5 4 3 2 1 · the weakest present wins</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================================ 13 the contribution -->
+<section class="py-16">
+  <h2 class="text-3xl font-bold">What the demonstration contributes, and what it does not</h2>
+  <p class="mt-8 max-w-3xl text-base leading-relaxed">The 3,300-byte primer expands deterministically to 45 statements, a 32-syllable adjacent-phoneme codebook and an axis order derived from variance over a population of 204 places. The landmarks, the codebook and the population together would take 67,561 bytes to ship, 20.47 times the seed, and none of it is transmitted.</p>
+  <div class="stats stats-vertical lg:stats-horizontal bg-base-200 w-full mt-12">
+    <div class="stat"><div class="stat-title text-base">the seed, transmitted</div><div class="stat-value text-4xl">3,300</div><div class="stat-desc text-base">bytes, 11 keys</div></div>
+    <div class="stat"><div class="stat-title text-base">the frame, rebuilt</div><div class="stat-value text-4xl">67,561</div><div class="stat-desc text-base">bytes, 20.47 times as much</div></div>
+    <div class="stat"><div class="stat-title text-base">questions to name a place</div><div class="stat-value text-4xl">17.8</div><div class="stat-desc text-base">mean, against a floor of log2(204) = 7.672</div></div>
+    <div class="stat"><div class="stat-title text-base">places resolvable</div><div class="stat-value text-4xl">204</div><div class="stat-desc text-base">64 of 64 trials resolved</div></div>
+  </div>
+  <p class="mt-12 max-w-3xl text-base leading-relaxed">Across 90 family-and-place comparisons the same place came out nearest in 96.7 per cent strictly and 100 per cent counting exact ties, against a chance rate of 16.7 per cent, and address Hamming tracks known distance at rho 0.9286 against a shuffled null of +0.0002 with a standard deviation of 0.2704.</p>
+  <p class="mt-6 max-w-3xl text-base leading-relaxed">Those numbers validate a topology-preserving protocol. They are not evidence about whales, and they do not make a whale address meaningful.</p>
+  <p class="badge badge-outline font-mono mt-8">3,300 bytes in · 45 statements · 32 syllables · 204 places · 67,561 bytes rebuilt, never sent</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================================ 14 shared manifold -->
+<section class="py-16">
+  <h2 class="text-3xl font-bold">Why six independent systems could agree at all</h2>
+  <div class="mt-8 space-y-6 max-w-3xl text-base leading-relaxed">
+    <p>Handing six systems the same 45 statements does not explain the result. A shared vocabulary tells you what to answer with; it does not make two differently built systems put the same situation in the same part of their own space. If that were all that was happening, the addresses would be arbitrary but consistent, like two people agreeing to call a colour "seven".</p>
+    <p>What the agreement implies is stronger. Situations appear to occupy a structure that independently trained systems have in common, and a chart laid over that structure is what the primer is, rather than a substitute for it.</p>
+    <p>The two halves are different kinds of object. The manifold is shared, emergent and not ours: we did not build it, we cannot inspect it directly, and its existence is inferred from the fact that independent systems agree. The chart is ours, published and small: 45 statements, a 32-syllable codebook, an axis order derived over 204 places, one hashing rule, 3,300 bytes.</p>
+  </div>
+  <figure class="card bg-base-100 shadow-xl w-full mt-12 max-w-none">
+    <img src="assets/figures/shared-manifold.svg" alt="Three separate surfaces, one per model family, with the same six places in the same relative positions on each, and a chart laid over them.">
+    <figcaption class="p-4 text-sm opacity-70 font-mono">three surfaces, one set of six places, and one chart laid over all three</figcaption>
+  </figure>
+  <p class="badge badge-outline font-mono mt-8">the manifold is inferred from agreement · the chart is published and 3,300 bytes</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================================ 15 what the numbers license -->
+<section class="py-16">
+  <h2 class="text-3xl font-bold">What the numbers license</h2>
+  <div class="card bg-base-200 w-full mt-12">
+    <div class="card-body space-y-8">
+      <div>
+        <p class="badge badge-success font-mono">shown</p>
+        <p class="mt-3 text-base leading-relaxed max-w-3xl">Independent systems with separate lineage place the same situation in the same part of their own space, and state it in a form another system can check. Same place nearest in 90 of 90 comparisons, strict 96.7%, against a chance of 16.7% and a random-vocabulary null of 20.9%.</p>
+      </div>
+      <div>
+        <p class="badge badge-outline font-mono">implied</p>
+        <p class="mt-3 text-base leading-relaxed max-w-3xl">Situations have a structure that independently trained systems share. The primer charts that structure rather than inventing it, which is the only reason a shared whale frame is possible at all.</p>
+      </div>
+      <div>
+        <p class="badge badge-warning font-mono">not shown</p>
+        <p class="mt-3 text-base leading-relaxed max-w-3xl">That any of this is meaning. A coordinate describes a position, and a shared position is not a shared understanding.</p>
+      </div>
+    </div>
+  </div>
+  <p class="badge badge-outline font-mono mt-8">the inference is the parent project's · restated here, and inferred from agreement</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================================ 16 the caveat -->
+<section class="py-16">
+  <h2 class="text-3xl font-bold">The shared-vocabulary caveat, and nothing here removes it</h2>
+  <div class="alert alert-warning mt-12 max-w-3xl">
+    <span><strong>The shared-vocabulary caveat is inherited, not discovered here.</strong> The parent experiment's handover report states it first: its blind cross-model matching used a shared anchor vocabulary and a deterministic encoder, so it demonstrates encoding-level matching <em>given a shared primer</em>. It does not establish independence from a shared ontology. Its recommended follow-up, a genuine-versus-shuffled-anchors-versus-random-loci-versus-garbage study, has still not been run.</span>
+  </div>
+  <p class="mt-8 max-w-3xl text-base leading-relaxed">The parent project also set out the falsifier. Independence from a shared ontology is shown only when genuine anchors beat shuffled anchors, syntax-valid random loci, and an empty or garbage condition, not when a shared-label run scores well. This repository restates the caveat because it still applies and nothing here removes it.</p>
+  <div class="chat chat-start w-full mt-12">
+    <div class="chat-header font-mono text-base mb-2">the parent project's handover report <time class="text-sm opacity-50">states it first</time></div>
+    <div class="chat-bubble chat-bubble-primary max-w-none text-base leading-relaxed my-3">The blind cross-model matching used a shared anchor vocabulary and a deterministic encoder, so what it shows is encoding-level matching given a shared primer, not independence from a shared ontology.</div>
+    <div class="chat-footer font-mono text-base my-2">the genuine-versus-shuffled-versus-random-loci-versus-garbage study has not been run</div>
+  </div>
+  <div class="chat chat-end w-full mt-12">
+    <div class="chat-header font-mono text-base mb-2">this repository <time class="text-sm opacity-50">restates it</time></div>
+    <div class="chat-bubble chat-bubble-secondary max-w-none text-base leading-relaxed my-3">The caveat still applies to this page, and nothing on it removes the limitation. What this repository adds is one control the parent run did not have, a random-vocabulary null at equal information content, and that null scores 20.9% against the real 96.7%.</div>
+    <div class="chat-footer font-mono text-base my-2">the caveat stands · 96.7% real against 20.9% null</div>
+  </div>
+  <p class="mt-12 max-w-3xl text-base leading-relaxed">That narrows the caveat without removing it. The families still chose from a vocabulary we handed them, so what is shown is that the frame is usable by minds with nothing in common, not that minds with different vocabularies would invent the same one.</p>
+  <p class="mt-6 max-w-3xl text-base leading-relaxed">They agreed on 88.8% of their statement choices, and the addresses inherit that agreement. The warehouse alone is the worst case: 5 of 6 families produced five different statement sets and five different roots, and only 2 landed on the same root. The locked storeroom and the dark empty room are the best, at 5 of 6 each.</p>
+  <p class="mt-6 max-w-3xl text-base leading-relaxed">No claim is made about meaning, understanding or intent. The address is descriptive and never authoritative, and identity and location are separate objects on purpose.</p>
+  <p class="mt-6 max-w-3xl text-base leading-relaxed">Every figure and number on this page comes from <span class="font-mono">evidence/RESULTS.json</span> and <span class="font-mono">evidence/validation.json</span>, the ladder comes from <span class="font-mono">primer.seed.json</span>, and the argument comes from <span class="font-mono">notes/whale-topologies.md</span>. Every citation above is the primary source named in that note.</p>
+  <p class="badge badge-outline font-mono mt-8">identified in the parent project · restated here · removed by nothing on this page</p>
+</section>
 
 </main>
+
+<footer class="footer footer-center bg-base-200 text-base-content p-12 mt-12 border-t border-base-300">
+  <aside class="max-w-3xl space-y-3">
+    <nav class="flex flex-wrap justify-center gap-6 text-base font-mono">
+      <a class="link link-hover" href="index.html">the whole story</a>
+      <a class="link link-hover" href="response.html">response to agent://</a>
+      <a class="link link-hover" href="proof.html">the proof</a>
+      <a class="link link-hover" href="whales.html" aria-current="page">whales</a>
+    </nav>
+    <p class="font-mono text-base break-all opacity-70">primer fingerprint df2f8b9972c40bfdd132366a58b4780f65f23feba1ef20a060c25d4eff2661ba</p>
+    <p class="font-mono text-base opacity-70">45 statements · 6 places · 204 in the population · 6 independent model families</p>
+    <p class="font-mono text-base opacity-70">every figure and every number on this page regenerates from the repository: the seed is primer.seed.json, the evidence is evidence/, the check is marco/verify.py</p>
+  </aside>
+</footer>
+
+<script>
+/* =====================================================================
+   MARCO - the figures on this page. D3 v7, drawn once, static.
+   No hover, no tooltips, no sliders: every value a reader needs is
+   printed in the drawing itself. All values are read from what this
+   page states, and from evidence/RESULTS.json and evidence/validation.json.
+   ===================================================================== */
+(function () {
+  "use strict";
+
+  var C = { ink: "#16161a", muted: "#74747e", rule: "#e2e2e6", grid: "#f4f4f5",
+            signal: "#3f6b52", signalSoft: "#eaf0eb",
+            warm: "#9a6f2f", warmSoft: "#f8f2e6" };
+  var MONO = "ui-monospace, SFMono-Regular, Menlo, monospace";
+
+  function svgIn(id, w, h) {
+    var host = document.getElementById(id);
+    if (!host) return null;
+    return d3.select(host).append("svg")
+      .attr("viewBox", "0 0 " + w + " " + h)
+      .attr("width", "100%").attr("height", "auto")
+      .style("max-width", "100%").style("display", "block")
+      .style("font-family", MONO);
+  }
+  function txt(g, x, y, str, o) {
+    o = o || {};
+    var n = g.append("text").attr("x", x).attr("y", y)
+      .attr("dy", o.dy === undefined ? "0.34em" : o.dy)
+      .attr("font-size", o.size || 13).attr("fill", o.fill || C.ink)
+      .attr("text-anchor", o.anchor || "start").attr("font-family", MONO);
+    if (o.weight) n.attr("font-weight", o.weight);
+    if (o.opacity !== undefined) n.attr("opacity", o.opacity);
+    n.text(str);
+    return n;
+  }
+  function box(g, x, y, w, h, o) {
+    o = o || {};
+    g.append("rect").attr("x", x).attr("y", y).attr("width", w).attr("height", h)
+      .attr("rx", o.rx === undefined ? 10 : o.rx)
+      .attr("fill", o.fill || "#ffffff")
+      .attr("stroke", o.stroke || C.rule)
+      .attr("stroke-width", o.sw === undefined ? 1.5 : o.sw);
+  }
+  function vArrow(g, x, y1, y2) {
+    g.append("line").attr("x1", x).attr("x2", x).attr("y1", y1).attr("y2", y2)
+      .attr("stroke", C.ink).attr("stroke-width", 2);
+    g.append("path").attr("d", "M" + x + " " + (y2 + 9) + " l-7 -10 l14 0 z").attr("fill", C.ink);
+  }
+
+  /* ------------------------------------------- the pipeline and controls */
+  function figPipeline() {
+    var W = 1200, H = 880, s = svgIn("fig-pipeline", W, H);
+    if (!s) return;
+
+    var ST = [
+      { t: "recording",
+        i: "consumes: one calibrated recording of an isolated coda or phrase",
+        o: "produces: detected onsets and inter-unit intervals" },
+      { t: "segmentation into units",
+        i: "consumes: detected onsets",
+        o: "produces: unit count, and the first five inter-unit intervals in milliseconds" },
+      { t: "unit vocabulary, 18-D phrase vector",
+        i: "consumes: unit count, intervals, tempo, rubato, centroid, bandwidth, ornamentation",
+        o: "produces: 1 + 5 + 1 + 3 + 4 + 2 + 2 = 18 dimensions" },
+      { t: "distance to 64 spectral anchors",
+        i: "consumes: the standardised 18-D vector",
+        o: "produces: 64 distances, scaled Euclidean, dynamic-time-warping or Hamming" },
+      { t: "phrase address",
+        i: "consumes: 64 distances quantised into four bins at 0.0, 0.3, 0.6 and 0.9",
+        o: "produces: 4 branches per axis, 64 × 2 = 128 bits, Gray-decoded into 32 syllables" },
+      { t: "prediction of a held-out response",
+        i: "consumes: q(x), the address as a branch vector, and y, the response vector",
+        o: "produces: ŷ = W q(x) + b, scored on phrases never used to select" }
+    ];
+    var CT = [
+      { t: "quality null",
+        a: "detector error and propagation",
+        b: "artefacts are excluded before a",
+        c: "feature counts" },
+      { t: "held-out preprocessing",
+        a: "preprocessing is fitted inside",
+        b: "training folds only, never on",
+        c: "the phrases being scored" },
+      { t: "64 anchors, chosen before fitting",
+        a: "k-means++ over a training corpus,",
+        b: "100 repeats, lowest held-out",
+        c: "distortion kept" },
+      { t: "known-answer, decoy, correction",
+        a: "a hand-built W, an unrelated",
+        b: "neural set, and correction across",
+        c: "the whole search" },
+      { t: "temporal shuffle, label permutation",
+        a: "the null must include the same",
+        b: "360,000-candidate topology",
+        c: "search, run 6,000 times" },
+      { t: "nested cross-validation",
+        a: "inner folds select, outer folds",
+        b: "estimate: 7,200,000 fitted",
+        c: "candidates before permutations" }
+    ];
+
+    var x0 = 40, bw = 700, bh = 92, pitch = 126, y0 = 62;
+    var cx = 800, cw = 370, chh = 92;
+
+    txt(s, 30, 26, "recording to phrase address to prediction. Every control hangs off the stage it can corrupt.",
+      { size: 15, fill: C.muted });
+
+    ST.forEach(function (st, i) {
+      var y = y0 + i * pitch;
+      box(s, x0, y, bw, bh, { fill: "#ffffff", stroke: C.signal, sw: 1.6 });
+      txt(s, x0 + 18, y + 26, st.t, { size: 17, weight: 700, fill: C.ink });
+      txt(s, x0 + 18, y + 52, st.i, { size: 12.5, fill: C.muted });
+      txt(s, x0 + 18, y + 74, st.o, { size: 12.5, fill: C.signal });
+      if (i < ST.length - 1) vArrow(s, x0 + bw / 2, y + bh + 3, y + pitch - 3);
+
+      box(s, cx, y, cw, chh, { fill: C.warmSoft, stroke: C.warm, sw: 1.4 });
+      txt(s, cx + 14, y + 24, CT[i].t, { size: 13.5, weight: 700, fill: C.warm });
+      txt(s, cx + 14, y + 46, CT[i].a, { size: 11.5, fill: C.ink });
+      txt(s, cx + 14, y + 64, CT[i].b, { size: 11.5, fill: C.ink });
+      txt(s, cx + 14, y + 82, CT[i].c, { size: 11.5, fill: C.ink });
+      s.append("line").attr("x1", x0 + bw).attr("x2", cx)
+        .attr("y1", y + chh / 2).attr("y2", y + chh / 2)
+        .attr("stroke", C.warm).attr("stroke-width", 1.8)
+        .attr("stroke-dasharray", "6 5");
+      s.append("circle").attr("cx", x0 + bw).attr("cy", y + chh / 2).attr("r", 3.5)
+        .attr("fill", C.warm);
+    });
+
+    txt(s, 30, H - 22, "Six stages, six controls. The address is a neighbourhood label and the prediction is an estimate of a measured response, not a decoded message.",
+      { size: 13.5, fill: C.muted });
+  }
+
+  /* --------------------------------------------- the real result vs nulls */
+  function figControls() {
+    var W = 1040, H = 700, s = svgIn("fig-controls", W, H);
+    if (!s) return;
+
+    var x0 = 330, x1 = 960, span = x1 - x0;
+    function X(p) { return x0 + p * span; }
+
+    txt(s, 30, 26, "The real cross-model result against each null, with one standard deviation drawn as a whisker.",
+      { size: 15, fill: C.muted });
+
+    /* panel A: accuracy as a percentage */
+    txt(s, 30, 78, "same place nearest", { size: 14, weight: 700 });
+    s.append("line").attr("x1", x0).attr("x2", x1).attr("y1", 96).attr("y2", 96).attr("stroke", C.rule);
+    [0, 0.2, 0.4, 0.6, 0.8, 1].forEach(function (t) {
+      s.append("line").attr("x1", X(t)).attr("x2", X(t)).attr("y1", 92).attr("y2", 100)
+        .attr("stroke", C.rule);
+      txt(s, X(t), 82, Math.round(t * 100) + "%", { size: 12, anchor: "middle", fill: C.muted });
+    });
+
+    s.append("line").attr("x1", X(0.1667)).attr("x2", X(0.1667)).attr("y1", 110).attr("y2", 400)
+      .attr("stroke", C.ink).attr("stroke-width", 1.4).attr("stroke-dasharray", "4 4")
+      .attr("opacity", 0.45);
+
+    var A = [
+      { lab: "real, counting exact ties", v: 1.0, sd: null, fill: C.signal,
+        note: "90 of 90 comparisons, top-1 accuracy 100.0%" },
+      { lab: "real, strict", v: 0.9667, sd: null, fill: C.signal,
+        note: "96.7% against a chance of 16.7%" },
+      { lab: "random vocabulary of equal size", v: 0.2086, sd: 0.165, fill: C.warm,
+        note: "null mean 20.9%, sd 16.5, over 6,000 trials" },
+      { lab: "label shuffle", v: 0.1691, sd: 0.1679, fill: C.warm,
+        note: "null mean 16.9%, sd 16.8, over 6,000 trials" },
+      { lab: "chance, 1 in 6", v: 0.1667, sd: null, fill: "#c9c9d1",
+        note: "16.7%, the rate a coin-flip placement would give" }
+    ];
+    A.forEach(function (r, i) {
+      var y = 132 + i * 62;
+      txt(s, x0 - 14, y, r.lab, { size: 13.5, anchor: "end", fill: C.ink });
+      s.append("rect").attr("x", x0).attr("y", y - 9)
+        .attr("width", Math.max(2, r.v * span)).attr("height", 18).attr("rx", 4)
+        .attr("fill", r.fill).attr("fill-opacity", 0.9);
+      if (r.sd === null) {
+        txt(s, x0 + Math.max(2, r.v * span) + 10, y, r.v.toFixed(4).replace(/0+$/, ""),
+          { size: 14, weight: 700, fill: r.fill === "#c9c9d1" ? C.muted : r.fill });
+      } else {
+        var a = X(Math.max(0, r.v - r.sd)), b = X(Math.min(1, r.v + r.sd));
+        s.append("line").attr("x1", a).attr("x2", b).attr("y1", y).attr("y2", y)
+          .attr("stroke", C.ink).attr("stroke-width", 2);
+        s.append("line").attr("x1", a).attr("x2", a).attr("y1", y - 9).attr("y2", y + 9)
+          .attr("stroke", C.ink).attr("stroke-width", 2);
+        s.append("line").attr("x1", b).attr("x2", b).attr("y1", y - 9).attr("y2", y + 9)
+          .attr("stroke", C.ink).attr("stroke-width", 2);
+        txt(s, b + 10, y, r.v.toFixed(4), { size: 14, weight: 700, fill: C.warm });
+      }
+      txt(s, x0, y + 26, r.note, { size: 12, fill: C.muted });
+    });
+    txt(s, x0 - 14, 424, "whiskers are one standard deviation", { size: 12, anchor: "end", fill: C.muted });
+    txt(s, X(0.1667) + 10, 424, "chance 16.7%", { size: 12, fill: C.muted });
+
+    /* panel B: the distance-preservation correlation */
+    txt(s, 30, 476, "address Hamming against known distance", { size: 14, weight: 700 });
+    s.append("line").attr("x1", x0).attr("x2", x1).attr("y1", 498).attr("y2", 498).attr("stroke", C.rule);
+    [0, 0.25, 0.5, 0.75, 1].forEach(function (t) {
+      s.append("line").attr("x1", X(t)).attr("x2", X(t)).attr("y1", 494).attr("y2", 502)
+        .attr("stroke", C.rule);
+      txt(s, X(t), 484, t.toFixed(2), { size: 12, anchor: "middle", fill: C.muted });
+    });
+
+    var rho = [
+      { lab: "Spearman rho, 15 pairs", v: 0.9286, sd: null, fill: C.signal,
+        note: "15 pairs of six places, rho 0.9286" },
+      { lab: "shuffled null", v: 0.0002, sd: 0.2704, fill: C.warm,
+        note: "null mean +0.0002, sd 0.2704, so one sd reaches 0.2704" }
+    ];
+    rho.forEach(function (r, i) {
+      var y = 534 + i * 62;
+      txt(s, x0 - 14, y, r.lab, { size: 13.5, anchor: "end", fill: C.ink });
+      s.append("rect").attr("x", x0).attr("y", y - 9)
+        .attr("width", Math.max(2, r.v * span)).attr("height", 18).attr("rx", 4)
+        .attr("fill", r.fill).attr("fill-opacity", 0.9);
+      if (r.sd === null) {
+        txt(s, x0 + Math.max(2, r.v * span) + 10, y, "0.9286",
+          { size: 14, weight: 700, fill: C.signal });
+      } else {
+        var b = X(Math.min(1, r.v + r.sd));
+        s.append("line").attr("x1", x0).attr("x2", b).attr("y1", y).attr("y2", y)
+          .attr("stroke", C.ink).attr("stroke-width", 2);
+        s.append("line").attr("x1", x0).attr("x2", x0).attr("y1", y - 9).attr("y2", y + 9)
+          .attr("stroke", C.ink).attr("stroke-width", 2);
+        s.append("line").attr("x1", b).attr("x2", b).attr("y1", y - 9).attr("y2", y + 9)
+          .attr("stroke", C.ink).attr("stroke-width", 2);
+        txt(s, b + 10, y, "+0.0002", { size: 14, weight: 700, fill: C.warm });
+      }
+      txt(s, x0, y + 26, r.note, { size: 12, fill: C.muted });
+    });
+
+    txt(s, 30, H - 20, "The nulls sit on top of each other and on top of chance. Only the real result separates.",
+      { size: 13.5, fill: C.muted });
+  }
+
+  function boot() {
+    [figPipeline, figControls].forEach(function (fn) {
+      try { fn(); } catch (e) { if (window.console) console.error("MARCO figure", fn.name, e); }
+    });
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", boot);
+  } else {
+    boot();
+  }
+})();
+
+</script>
+
 </body>
 </html>

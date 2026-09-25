@@ -75,3 +75,35 @@ Draw the wording from what the evidence actually shows. The genuinely striking t
 Use those as the substance but write them in the page's own voice, tied to the specific values on that page. Never write "what is remarkable here is" as a formula; state the fact and let it stand. And where the honest reading is that something is modest, say that instead.
 
 Then run the two checks and report.
+
+## FAILURE 0 — the register. This is the most important one.
+
+Everything else is secondary to this. The pages must read as though written by **an excellent high-school teacher**, not by a researcher summarising their own work.
+
+What that means concretely:
+
+1. **Assume the reader knows nothing and is smart.** Not a specialist. Someone who did well at school, is curious, and has never seen a coordinate system, a hash, or a model. Never assume a term. Never assume a concept.
+
+2. **Define every term the first time, in the same sentence, in everyday words.** "A hash is a fingerprint for data: change one character and the fingerprint changes completely." Then use it freely. Never define something twice and never leave it undefined.
+
+3. **One new idea per paragraph. Never two.** If a paragraph introduces a coordinate *and* a hashing rule, split it. A reader who has to hold two new things at once puts the page down.
+
+4. **Lead with the concrete instance, then generalise.** Never the reverse. Not "a locus is a locality-preserving embedding" but "here is one place, here is what the agent notices about it, here is the short name it gets". The general statement comes after the reader has seen two or three instances.
+
+5. **Use an everyday analogy for anything abstract, and say where the analogy breaks.** A coordinate is like a postcode: the first letters tell you the region, the whole thing tells you the street. Where it breaks: a postcode is assigned by a central authority, whereas this is worked out from what is around you. An analogy with its limit stated is teaching. An analogy without one is decoration.
+
+6. **Numbers must be small and concrete before they are large or abstract.** Not "90 bits" but "45 questions, each answered yes or no. Ninety ticks in all." Not "20.47x" alone but "the seed is about the length of this paragraph; the thing it rebuilds is about the length of this page."
+
+7. **Show the working, in the order you would do it on a whiteboard.** Every step written out, with the actual value, so the reader could reproduce it with a pen. No step skipped as obvious.
+
+8. **Say why each step is needed before doing it.** A teacher says "we need a way to compare two places, so let's turn each one into a number" before introducing the number. Never introduce a mechanism without first saying what problem it solves.
+
+9. **Anticipate the obvious question and answer it right there.** "You might ask why 45 questions and not 5. Here is what happens if you use 5." A teacher answers the question the class is about to ask. Do not save it for later and do not leave it.
+
+10. **Short sentences. Active voice. No subordinate clauses stacked three deep.** If a sentence needs a comma to survive, split it.
+
+11. **Warm, never patronising.** Do not say "simply", "just", "obviously", "of course", or "it's easy to see". Those words tell a struggling reader that they are the problem.
+
+12. **Every section answers three questions, in this order:** what are we trying to do, how did we do it, and what did we get. Then, separately, what is interesting about it.
+
+Go through all four pages and rewrite to this register. This will make the pages longer. That is correct and expected: the current pages are too short for the ideas in them, not too long. Density is not the same as brevity, and the current density is what makes them unreadable.

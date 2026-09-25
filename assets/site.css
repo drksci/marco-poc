@@ -1,74 +1,33 @@
 /* ==========================================================================
-   MARCO — site component layer, in the shadcn/ui idiom.
+   TOKEN LAYER — aliases onto daisyUI, not our own palette.
 
-   shadcn/ui is a React component set built on Tailwind and Radix. This site is
-   static HTML published from a repo, so there is no React build here. What is
-   reproduced instead is the *design language and the token contract*: the same
-   CSS custom properties, the same card / badge / table / separator / stat
-   primitives, the same neutral palette, the same focus and radius conventions.
+   These pages previously carried a hand-rolled token set (--ink, --muted,
+   --canvas, ...) alongside a prefers-color-scheme block. Mixing two token
+   systems is what produced light text on light surfaces and dark on dark: the
+   bespoke variables did not track the theme, so a surface could flip while its
+   text did not.
 
-   Tailwind (CDN) supplies the utilities and the CSS Grid layout on each page.
-   This file supplies the tokens and the component classes, so markup stays
-   readable: <div class="card"><div class="card-header">…</div></div> rather than
-   a wall of utilities.
-
-   Load order per page:
-     <script src="https://cdn.tailwindcss.com"></script>
-     <script>tailwind.config = { theme: { extend: { colors: … } } }</script>
-     <link rel="stylesheet" href="assets/site.css">
+   Everything below now resolves to a daisyUI semantic token instead. daisyUI
+   ships foregrounds paired with their backgrounds, so a pairing cannot go
+   wrong here. There is no dark-mode block on purpose: the site uses one theme,
+   and the figures are drawn on white.
    ========================================================================== */
 
 :root {
-  /* shadcn/ui token names, light theme. HSL triples. */
-  --background: 0 0% 100%;
-  --foreground: 240 10% 4%;
-  --card: 0 0% 100%;
-  --card-foreground: 240 10% 4%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 240 10% 4%;
-  --primary: 240 6% 10%;
-  --primary-foreground: 0 0% 98%;
-  --secondary: 240 5% 96%;
-  --secondary-foreground: 240 6% 10%;
-  --muted: 240 5% 96%;
-  --muted-foreground: 240 4% 46%;
-  --accent: 240 5% 96%;
-  --accent-foreground: 240 6% 10%;
-  --destructive: 0 72% 51%;
-  --border: 240 6% 90%;
-  --input: 240 6% 90%;
-  --ring: 240 5% 65%;
-  --radius: 0.6rem;
-
-  /* the two accents this project actually uses */
-  --signal: 152 26% 33%;         /* the green: agreement, anchoring */
-  --signal-soft: 152 30% 95%;
-  --warm: 36 52% 40%;            /* the ochre: caveats, controls */
-  --warm-soft: 38 55% 95%;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: 240 10% 4%;
-    --foreground: 0 0% 98%;
-    --card: 240 8% 7%;
-    --card-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 6% 10%;
-    --secondary: 240 4% 16%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 4% 16%;
-    --muted-foreground: 240 5% 65%;
-    --accent: 240 4% 16%;
-    --accent-foreground: 0 0% 98%;
-    --border: 240 4% 18%;
-    --input: 240 4% 18%;
-    --ring: 240 5% 45%;
-    --signal: 152 40% 62%;
-    --signal-soft: 152 20% 12%;
-    --warm: 36 60% 62%;
-    --warm-soft: 36 25% 12%;
-  }
+  --ink: hsl(var(--bc));
+  --ink-soft: hsl(var(--bc) / 0.82);
+  --muted: hsl(var(--bc) / 0.62);
+  --rule: hsl(var(--bc) / 0.14);
+  --canvas: hsl(var(--b1));
+  --surface: hsl(var(--b2));
+  --signal: hsl(var(--su));
+  --signal-soft: hsl(var(--su) / 0.12);
+  --warm: hsl(var(--wa));
+  --warm-soft: hsl(var(--wa) / 0.12);
+  --measure: 34em;
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 html { scroll-behavior: smooth; }
@@ -377,7 +336,7 @@ table.data .num { text-align: right; font-variant-numeric: tabular-nums; }
   border: 1px solid hsl(var(--border));
   border-radius: var(--radius);
   overflow: hidden;
-  background: #fff;
+  background: hsl(var(--b1));
 }
 .figure img { display: block; width: 100%; height: auto; }
 .figure figcaption {
