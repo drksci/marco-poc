@@ -153,12 +153,47 @@ def check_figures(files: list[Path]) -> list[str]:
                 continue
             if not (ROOT / src).exists():
                 problems.append(f"{f.name}: dangling reference to {src}")
-        if "assets/site.css" not in html:
-            problems.append(f"{f.name}: missing stylesheet link")
-        if 'class="site-nav"' not in html:
-            problems.append(f"{f.name}: missing nav")
+        # The pages are standard daisyUI. daisyUI supplies the components and
+        # the colour pairings, so the requirement is the daisyUI stylesheet and
+        # not the local one. The local stylesheet is on its way out.
+        if "daisyui" not in html:
+            problems.append(f"{f.name}: no daisyUI stylesheet")
+        if "assets/site.css" in html:
+            problems.append(f"{f.name}: still references the hand-rolled "
+                            f"assets/site.css; pages are daisyUI-only now")
         if 'aria-current="page"' not in html:
             problems.append(f"{f.name}: nav has no current-page marker")
+        if "tailwindcss" not in html:
+            problems.append(f"{f.name}: no Tailwind, so daisyUI utilities will not apply")
+    return problems
+
+
+def check_theme_colours(files: list[Path]) -> list[str]:
+    """Pages must take their colour from the daisyUI theme, not from literals.
+
+    Two palettes on one page is what produced light text on light surfaces: a
+    surface flipped with the theme while hand-picked text did not. daisyUI ships
+    each semantic colour paired with a matching foreground, so using only its
+    classes makes a wrong pairing impossible.
+    """
+    problems = []
+    bad = [
+        (r"text-white\b", "text-white (use text-primary-content and friends)"),
+        (r"text-black\b", "text-black (use text-base-content)"),
+        (r"bg-white\b", "bg-white (use bg-base-100)"),
+        (r"bg-black\b", "bg-black (use bg-neutral)"),
+        (r"text-\[#[0-9a-fA-F]{3,8}\]", "an arbitrary text colour literal"),
+        (r"bg-\[#[0-9a-fA-F]{3,8}\]", "an arbitrary background colour literal"),
+        (r"text-(?:gray|slate|zinc|neutral)-[0-9]{2,3}\b", "a Tailwind grey scale"),
+        (r"bg-(?:gray|slate|zinc)-[0-9]{2,3}\b", "a Tailwind grey scale"),
+    ]
+    for f in files:
+        if not f.exists():
+            continue
+        html = f.read_text(encoding="utf-8")
+        for pat, label in bad:
+            if re.search(pat, html):
+                problems.append(f"{f.name}: {label}")
     return problems
 
 
@@ -385,7 +420,14 @@ def main() -> int:
     if not hashing:
         print("     one hashing rule; no stray root values quoted")
 
-    print("\n5  leftovers")
+    print("\n5  colour comes from the theme")
+    colour = check_theme_colours(present)
+    for p in colour:
+        print(f"     {p}")
+    if not colour:
+        print("     no hand-picked colours; every pairing is daisyUI's")
+
+    print("\n6  leftovers")
     left = check_leftovers(present)
     for p in left:
         print(f"     {p}")
@@ -393,7 +435,7 @@ def main() -> int:
         print("     no placeholders, tracking parameters or chatbot markup")
 
     total = (len(fig_problems) + len(claim_problems) + len(left)
-             + len(fwd) + len(hashing))
+             + len(fwd) + len(hashing) + len(colour))
     print(f"\n{len(present)}/{len(PAGES)} pages present; {total} problem(s)")
     return 1 if total else 0
 

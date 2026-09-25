@@ -107,3 +107,39 @@ What that means concretely:
 12. **Every section answers three questions, in this order:** what are we trying to do, how did we do it, and what did we get. Then, separately, what is interesting about it.
 
 Go through all four pages and rewrite to this register. This will make the pages longer. That is correct and expected: the current pages are too short for the ideas in them, not too long. Density is not the same as brevity, and the current density is what makes them unreadable.
+
+## FAILURE 0b — rebuild as standard daisyUI. No custom layer.
+
+Final structural requirement, and it supersedes the flat-override approach.
+
+The pages are currently a hybrid: daisyUI classes, plus a hand-rolled stylesheet (`assets/site.css`) with its own tokens and components, plus an override layer appended to that stylesheet. That hybrid is the source of the contrast faults and the nested layout. Two component systems on one page will always drift.
+
+Rebuild all four pages as **standard daisyUI**:
+
+1. **Use no class from `assets/site.css`.** Not one. The classes to stop using: `card` is fine because daisyUI has it, but drop `wrap`, `masthead`, `kicker`, `title`, `standfirst`, `lede`, `rung`, `rung__num`, `rung__title`, `figure`, `figcaption`, `takeaway`, `meta-strip`, `stat-grid`, `stat`, `stat-label`, `stat-value`, `stat-note`, `locus-block`, `root-block`, `ladder`, `ladder-row`, `ladder-glyph`, `workings`, `step`, `step-n`, `step-title`, `step-body`, `transcript`, `turn`, `turn-who`, `turn-said`, `table-wrap`, `prose-block`, `pull`, `aside`, `honest`, `alert-signal`, `alert-warm`, `site-nav`, `site-footer`, `page-grid`, `col-main`, `col-wide`, `col-side`, `col-full`, `col-half`, `col-third`, `measure`, `measure-tight`, `lanes-note`, `quote`, `mono`.
+
+2. **Use daisyUI's own component for each job, out of the box, unmodified.** No extra CSS to make them look a particular way.
+   - page shell: `navbar`, `hero`, `footer footer-center`, `divider`
+   - grouped content: `card` + `card-body` + `card-title`
+   - numbers: `stats` + `stat` + `stat-title` + `stat-value` + `stat-desc`
+   - steps: `steps` + `step` + `step-primary` (this replaces the hand-rolled ladder and the numbered workings)
+   - sequences and turns: `timeline timeline-vertical` + `timeline-start`/`timeline-middle`/`timeline-end`
+   - transcripts: `chat` + `chat-start`/`chat-end` + `chat-bubble` + `chat-header` + `chat-footer` + `chat-image avatar`
+   - comparison and contrast: `diff` + `diff-item-1` + `diff-item-2` + `diff-resizer`
+   - warnings and limits: `alert alert-warning`; confirmations: `alert alert-success`
+   - literal content: `mockup-code` for code and the seed; `mockup-window` for figures that need a frame
+   - labels and statuses: `badge badge-outline` and `badge badge-primary`
+   - comparisons: `table table-zebra`
+   - progress and proportion: `progress` and `radial-progress`
+   - interaction-free emphasis: `tooltip` is forbidden, since nothing may require hover
+   - buttons and controls: only where a reader genuinely acts, which on these pages is nowhere
+
+3. **Colour comes only from the theme.** Use daisyUI semantic classes: `bg-base-100`, `bg-base-200`, `bg-base-300`, `text-base-content`, `text-primary`, `bg-primary text-primary-content`, `text-secondary`, `text-accent`, `text-warning`, `text-success`, `border-base-300`. No hardcoded hex, no arbitrary Tailwind colour values like `text-[#333]` or `bg-gray-100`, and no `text-white` or `text-black` anywhere. Each of daisyUI's pairings is contrast-checked; hand-picked colours are where the contrast faults came from.
+
+4. **One theme, declared once.** Keep `<html lang="en" data-theme="light">`. The figures are drawn on white, so a light theme is required for them to be legible. Do not add a dark variant and do not use `prefers-color-scheme`.
+
+5. **Load order:** the daisyUI stylesheet, then nothing else. Delete the `<link rel="stylesheet" href="assets/site.css">` tag. I will remove the file itself once all four pages stop referencing it, and I will verify that with a check.
+
+6. **Layout with Tailwind utilities only.** `container mx-auto max-w-5xl px-4`, `grid grid-cols-1 gap-6`, `lg:grid-cols-12` for two-column sections where a figure genuinely needs a caption beside it, `py-12` between movements. Artefacts full width. Prose about 68 characters.
+
+When you report, state explicitly that the page contains zero references to `assets/site.css`, and list the daisyUI components you used per section.
